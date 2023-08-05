@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+notebooks/tutorial.ipynb
+src/SpatialViewPy.egg-info/PKG-INFO
+src/SpatialViewPy.egg-info/SOURCES.txt
+src/SpatialViewPy.egg-info/dependency_links.txt
+src/SpatialViewPy.egg-info/requires.txt
+src/SpatialViewPy.egg-info/top_level.txt
+src/spatialviewpy/__init__.py
+src/spatialviewpy/__version.py
+src/spatialviewpy/prepare_viz.py

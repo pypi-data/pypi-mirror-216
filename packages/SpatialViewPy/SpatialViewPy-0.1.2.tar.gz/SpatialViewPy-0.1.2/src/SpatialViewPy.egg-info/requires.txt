@@ -1,0 +1,9 @@
+requests>=2.0.0
+numpy>=1.23.0
+pandas>=2.0.0
+scipy>=1.10
+scanpy>=1.9
+anndata>=0.8
+pandas>=1.5
+zipfile2>=0.0.12
+seaborn>=0.12.2
