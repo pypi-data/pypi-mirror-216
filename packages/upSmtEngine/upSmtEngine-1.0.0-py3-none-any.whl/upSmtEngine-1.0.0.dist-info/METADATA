@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: upSmtEngine
+Version: 1.0.0
+Summary: Engine for unified-planning, implementing a SMT solver.
+License-File: LICENSE.txt
+Requires-Dist: pre-commit
+Requires-Dist: black
+Requires-Dist: unified-planning (>=0.4.2)
+Requires-Dist: z3 (>=0.2.0)
+Requires-Dist: z3-solver
+
