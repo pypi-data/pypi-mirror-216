@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: chatgpt-functions
+Version: 0.1.0
+Summary: Wrapper over the gpt3.5 model, capable of calling functions
+Home-page: https://github.com/Wellmare/chatgpt-functions
+Author: Wellmare
+Author-email: ivan.kolipov@gmail.com
+Keywords: chatgpt functions gpt
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Example of usage:
+```python
+import asyncio
+from chatgpt_functions import (
+    ChatGPT,
+    Message,
+    Roles,
+    ChatGptFunction,
+    Parameters,
+    Property,
+)
+from config import API_KEY
+
+chatgpt = ChatGPT(openai_api_key=API_KEY)
+
+
+async def main():
+    def say_hello(args):
+        print(args)
+
+    await chatgpt.get_chatgpt_response_with_functions(
+        functions=[
+            ChatGptFunction(
+                function=say_hello,
+                parameters=Parameters(
+                    properties=[
+                        Property(
+                            property_name="name",
+                            prop_type="string",
+                            description="Name who to say hello to",
+                            enum=["Evan", "Micha"],
+                        ),
+                        Property(
+                            property_name="text",
+                            prop_type="string",
+                            description="Greeting",
+                        ),
+                    ]
+                ),
+                function_description="Say hello to user",
+            )
+        ],
+        messages=[Message(role=Roles.USER, content='РЎРєР°Р¶Рё РїСЂРёРІРµС‚РёРє РјРёС‡Рµ')]
+    )
+
+
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+loop.run_until_complete(main())
+```
