@@ -1,0 +1,22 @@
+[project]
+authors = [
+  {name = "Josh Burkart"},
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+description = "Make Matplotlib plots in Jupyter notebooks using a context manager API"
+name = "contextplot"
+readme = "README.md"
+requires-python = ">=3.11"
+version = "0.0.2"
+
+[project.urls]
+"Bug Tracker" = "https://gitlab.com/joshburkart/joshpyutil/-/issues"
+"Homepage" = "https://gitlab.com/joshburkart/joshpyutil"
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0"]
