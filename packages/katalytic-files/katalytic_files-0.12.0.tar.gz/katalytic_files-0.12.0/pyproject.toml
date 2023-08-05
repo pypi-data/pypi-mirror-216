@@ -1,0 +1,57 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "katalytic-files"
+version = "0.12.0"
+description = "This plugin adds utilities for working with files to the katalytic namespace"
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Filesystems",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+keywords = [
+    "automation",
+    "filesystem"
+]
+authors = [{name="Valentin Neagu", email="vali19th@protonmail.com"}]
+
+requires-python = ">=3.6"
+dependencies = [
+    "katalytic-data>=0.9.1",
+    "katalytic-pkg>=0.2.0",
+]
+
+[project.optional-dependencies]
+all = [
+	"ujson",
+]
+
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-clarity",
+    "pytest-randomly",
+]
+
+[project.urls]
+homepage = "https://gitlab.com/katalytic/katalytic-files.git"
+repository = "https://gitlab.com/katalytic/katalytic-files.git"
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+
+[tool.flit.module]
+name = "katalytic.files"
