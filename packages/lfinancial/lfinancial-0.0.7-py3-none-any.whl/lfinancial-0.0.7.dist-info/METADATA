@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: lfinancial
+Version: 0.0.7
+Summary: Generate financial test data
+Author: zaneliu
+Author-email: lzy291980138@163.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+LFinancial is a Python package that generates financial fake data.
+
+---
+```
+.-.    .----. .-. .-. .-.   .--.   .-. .-. .----. .-.   .--.   .-.    
+} |    } |__} { | |  \{ |  / {} \  |  \{ | | }`-' { |  / {} \  } |    
+} '--. } '_}  | } | }\  { /  /\  \ | }\  { | },-. | } /  /\  \ } '--. 
+`----' `--'   `-' `-' `-' `-'  `-' `-' `-' `----' `-' `-'  `-' `----' 
+```
+[![pypi](https://img.shields.io/pypi/v/lfinancial)](https://pypi.org/project/lfinancial/)
+
+---
+
+#### How to install?
+```shell
+pip install lfinancial
+```
+
+#### How to use it? 
+```python
+from lfinancial import Financial
+
+
+f = Financial()
+
+f.id_code('SSN')
+f.id_code('SSN', 'US')
+f.id_code('IDCard', 'CN')
+f.id_code('Passport')
+f.id_code('NRIC')
+f.id_code('MyNumber')
+```
