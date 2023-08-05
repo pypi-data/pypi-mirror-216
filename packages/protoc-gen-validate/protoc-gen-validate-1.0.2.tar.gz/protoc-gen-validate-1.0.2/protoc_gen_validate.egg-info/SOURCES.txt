@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+validate.proto
+protoc_gen_validate/__init__.py
+protoc_gen_validate/validator.py
+protoc_gen_validate.egg-info/PKG-INFO
+protoc_gen_validate.egg-info/SOURCES.txt
+protoc_gen_validate.egg-info/dependency_links.txt
+protoc_gen_validate.egg-info/requires.txt
+protoc_gen_validate.egg-info/top_level.txt
