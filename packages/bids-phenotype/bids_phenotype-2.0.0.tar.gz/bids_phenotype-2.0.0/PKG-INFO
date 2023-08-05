@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: bids-phenotype
+Version: 2.0.0
+Summary: A command-line interface to convert big neuroimaging dataset tabular phenotype data and dictionaries to BIDS format.
+License: CC0 1.0 Universal
+Author: Eric Earl
+Author-email: eric.earl@nih.gov
+Requires-Python: >=3.8,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: openpyxl (>=3.1.2,<4.0.0)
+Requires-Dist: pandas (>=2.0.2,<3.0.0)
+Requires-Dist: xmltodict (>=0.13.0,<0.14.0)
