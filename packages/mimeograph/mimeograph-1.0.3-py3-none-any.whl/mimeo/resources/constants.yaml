@@ -1,0 +1,87 @@
+---
+mimeo-config:
+  key: mimeo_configuration
+
+  output:
+    key: output
+
+    direction:
+      key: direction
+      values:
+        std-out:
+          key: stdout
+        file:
+          key: file
+          details:
+            directory-path:
+              key: directory_path
+            file-name:
+              key: file_name
+        http:
+          key: http
+          details:
+            method:
+              key: method
+              values:
+                post: POST
+                put: PUT
+            protocol:
+              key: protocol
+              values:
+                http: http
+                https: https
+            host:
+              key: host
+              required: Yes
+            port:
+              key: port
+            endpoint:
+              key: endpoint
+              required: Yes
+            username:
+              key: username
+              required: Yes
+            password:
+              key: password
+              required: Yes
+
+    format:
+      key: format
+      details:
+        indent:
+          key: indent
+      values:
+        xml:
+          key: xml
+          details:
+            xml-declaration:
+              key: xml_declaration
+        json:
+          key: json
+
+
+  vars:
+    key: vars
+
+
+  templates:
+    key: _templates_
+
+    xml-template-tag:
+      key: _template_
+
+    count:
+      key: count
+
+    model:
+      key: model
+      context:
+        key: context
+      attributes:
+        key: "@"
+      text-node-value:
+        key: "#text"
+      mimeo-util:
+        key: _mimeo_util
+        name:
+          key: _name
