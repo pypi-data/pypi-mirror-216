@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: grib2io-interp
+Version: 1.0.0rc1
+Summary: Interpolation component for grib2io
+Home-page: https://github.com/NOAA-MDL/grib2io-interp
+Download-URL: http://python.org/pypi/grib2io-interp
+Author: Eric Engle
+Author-email: eric.engle@noaa.gov
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE

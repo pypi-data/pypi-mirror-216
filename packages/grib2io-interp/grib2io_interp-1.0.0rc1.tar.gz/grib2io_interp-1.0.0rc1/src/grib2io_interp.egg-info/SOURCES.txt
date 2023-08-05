@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/grib2io_interp/__config__.py
+src/grib2io_interp/__init__.py
+src/grib2io_interp.egg-info/PKG-INFO
+src/grib2io_interp.egg-info/SOURCES.txt
+src/grib2io_interp.egg-info/dependency_links.txt
+src/grib2io_interp.egg-info/top_level.txt
+src/interpolate/interpolate.f90
