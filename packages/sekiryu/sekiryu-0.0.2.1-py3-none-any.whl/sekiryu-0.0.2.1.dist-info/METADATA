@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: sekiryu
+Version: 0.0.2.1
+Summary: Sekiryu: A comprehension toolkit to pilot Ghidra Headless
+Home-page: https://github.com/20urc3/Sekiryu
+Author: 20urc3
+Author-email: 20urc3@bushido-sec.com
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: Jinja2 (==3.1.2)
+Requires-Dist: dataplane (==0.0.20)
+Requires-Dist: numpy (==1.24.2)
+Requires-Dist: openai (==0.26.5)
+Requires-Dist: pandas (==1.5.3)
+Requires-Dist: setuptools (==59.6.0)
+
+UNKNOWN
+
