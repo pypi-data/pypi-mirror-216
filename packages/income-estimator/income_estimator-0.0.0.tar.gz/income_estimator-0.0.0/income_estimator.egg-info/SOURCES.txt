@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+income_estimator/__init__.py
+income_estimator/income_estimator.py
+income_estimator/usd_string_class.py
+income_estimator.egg-info/PKG-INFO
+income_estimator.egg-info/SOURCES.txt
+income_estimator.egg-info/dependency_links.txt
+income_estimator.egg-info/top_level.txt

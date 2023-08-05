@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: income-estimator
+Version: 0.0.0
+Summary: Proprietary Python 3.7 package to be used by for Bronsoneering purposes, by permitted personnel.
+Author-email: Jacob Bronson <bronsoneering@gmail.com>
+License: BRONSONEERING LLC END USER LICENSE AGREEMENT (EULA)
+        
+        Preamble:
+        By accepting this End User License Agreement (“EULA” or this “Agreement,” inclusive of the Addendums annexed hereto) or
+        by downloading or using the software you signify that you have read and agree to all the terms of this Agreement, as it
+        may be updated or amended from time to time.
+        
+        By pressing the "Accept" button below, User hereby indicates User's complete and unconditional acceptance of all the
+        terms and conditions of this Agreement, including each and all of the Addendums attached to this Agreement. This
+        Agreement constitutes the complete agreement between User and Bronsoneering with regard to User's access, download,
+        and/or use of Content except in the case where User has a version of the Agreement signed by both parties, in which
+        case the signed agreement will supersede this Agreement. Except for any signed agreement between Bronsoneering and
+        User, this agreement supersedes and replaces any other agreement that was or will be presented at the time of content
+        installation.
+        
+        If User does not agree to the terms of this Agreement, User must not select the "Accept" button below. User
+        acknowledges and agrees that Bronsoneering may update, amend, and/or modify this Agreement from time to time and that,
+        by continuing to use Bronsoneering’s website and services, the User agrees to be bound by all such updates, amendments,
+        and/or modifications. It is the User’s responsibility to review this Agreement in connection with any use of
+        Bronsoneering’s website or services after the User’s initial acceptance of this Agreement. If the User does not intend
+        to be bound by any updates, amendments, or modifications of this Agreement, the User should cease and desist from any
+        further use of Bronsoneering or services and/or terminate the User’s acceptance of this Agreement in the manner
+        provided below.
+        
+        The online Bronsoneering store offers for sale a license to Content owned or licensed by Bronsoneering and/or a
+        license to Content owned or licensed by third-party published artists ("PA"). In this Agreement, "Bronsoneering
+        Content" shall refer to Content owned solely by Bronsoneering or to libraries licensed by Bronsoneering; "PA Content"
+        shall refer to Content owned solely by a PA or to libraries licensed to PAs; and "Content" shall refer to both
+        Bronsoneering Content and PA Content.
+        
+        1.0 General License Agreement.
+        Content License. Bronsoneering grants to User and User hereby accepts, subject to the limitations and obligations of
+        this Agreement, (ii) Bronsoneering cannot and does not warrant that the User Creative will be protected from
+        unauthorized access, copying or downloading. Accordingly, the parties agree that Bronsoneering will not be liable for
+        any third-party use of the User Creative unless such use is both wrongful and expressly authorized in writing by
+        Bronsoneering.
+        
+        Bronsoneering LLC
+        bronsoneering@gmail.com
+        
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: Other/Proprietary License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Scientific/Engineering
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# ----------------------------
+# ===== INCOME ESTIMATOR =====
+# ----------------------------
+

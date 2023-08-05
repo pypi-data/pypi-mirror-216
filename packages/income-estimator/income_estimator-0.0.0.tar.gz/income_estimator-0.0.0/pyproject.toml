@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=67.8.0", "wheel>=0.40.0"]  # build requirements (don't include build or twine)
+build-backend = "setuptools.build_meta"
+
+
+[project]
+version = "0.0.0"                       # increment version number before pushing to pypi
+name = "income_estimator"
+authors = [{ name = "Jacob Bronson", email = "bronsoneering@gmail.com" }]
+description = "Proprietary Python 3.7 package to be used by for Bronsoneering purposes, by permitted personnel."
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = []
+license = { file = "LICENSE" }
+
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Scientific/Engineering",
+    "Development Status :: 1 - Planning",
+]
