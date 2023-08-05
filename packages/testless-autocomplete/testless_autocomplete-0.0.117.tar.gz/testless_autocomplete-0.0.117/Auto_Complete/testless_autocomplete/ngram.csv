@@ -1,0 +1,393 @@
+ngram,next_word
+the,"['page', 'login', 'email', 'class', 'div', 'button', 'create', 'url', 'website', 'password', 'following', 'input', 'header', 'user', 'cart', 'item', 'next', 'first', 'add', 'title', 'app', 'todos', 'delete', 'play', 'register', 'sign', 'mark', 'volume', 'message', 'remember', 'section', 'test', 'options', 'send', 'fruit', 'word', 'unfollow', 'string', 'file', 'window', 'term', 'date', 'product', 'search', 'print', 'current', 'computer', 'gender', 'contact', 'user1', 'power', 'table', 'username', 'browser', 'option', 'comment', 'continue', 'more', 'decline', 'actions', 'view', 'bottom', 'form', 'beginning', 'follow', 'above', 'game', 'moon', 'home', 'messgae', 'remind', 'expand', 'offer', 'cursor', 'sound', 'reset', 'mouse', 'background', 'schedule', 'navbar', 'value', 'operation', 'proceed', 'lock', 'accept', 'changes', 'survey', 'log', 'video', 'help', 'menu', 'question', 'collapse', 'escape', 'load', 'highlight', 'draft', 'update', 'birthdate', 'unsubscribe', 'apples', 'open', 'cat', 'month', 'fullscreen', 'submit', 'clear', 'dark', 'span', 'plus', 'list', 'support', 'confirm']"
+login,"['button', 'page', 'email', 'buttion']"
+button,"['to', 'should', 'have', 'is', 'that', 'will', 'sort', 'submit', 'for', 'in', 'login']"
+should,"['have', 'be', 'contain', 'exist', 'not', 'see', 'equals', 'show', 'exists']"
+be,"['disabled', 'focused', 'on', 'anything', 'equals', 'empty', 'selected', 'able', 'contained']"
+title,"['of', 'not', 'include', 'includes']"
+of,"['the', 'id', 'btn', '1', 'your', '10', 'footer', 'fakepassword', 'seconds', 'type', 'user0', 'greeting', '1234567', 'class', 'hellomailcom', 'hellogmailcom']"
+page,"['title', 'should', 'wwwurlcom', 'at', 'has', 'is', 'by', 'httpswwwcoformatiquecom']"
+equals,['to']
+to,"['the', 'save', 'start', 'cart', 'turn', 'mark', 'sign', 'be', 'navigate', 'add', 'move', 'arrange', 'see', 'purchase', 'fakegmailcom', 'reject', 'paste', 'this', 'hello', 'collapse', 'restore', 'expand', 'cahnge', 'close', 'click', 'display', 'remove', 'set', 'stop', 'open', 'share', 'text', 'send', 'transmit', 'print', 'learn', 'copy', 'submit', 'clear', 'proceed', 'include', 'access', 'choose', 'exit', 'your', 'begin', 'wwwgooglecom', 'wwwurlcom', 'play', 'httpsdocsgooglecom', 'find', 'hover']"
+hello,['world']
+email,"['input', 'should', 'field', 'or']"
+input,"['field', 'should', 'of', 'to', 'has', 'is', 'fields', 'by', 'shouldt']"
+have,"['a', 'text', 'value', 'no', '4', 'length', 'id']"
+a,"['class', 'new', 'draft', 'bold', 'dropdown', 'delay', 'file', 'comment', 'couple', 'user', 'rest', 'div', 'footer', 'click', 'border', 'date', 'short', 'message', 'background', 'margin', 'value', 'black', 'quick', 'centered', 'link', 'while', 'breather', 'grey', 'white', 'gender', 'reminder', 'blue', 'modal']"
+value,"['of', 'male', 'food']"
+you,"['into', 'should']"
+see,"['2', 'the']"
+2,"['seconds', 'tags']"
+tags,['of']
+class,"['error', 'name', 'header', 'total', 'fashoppingcart', 'tagclass', 'popup', 'should', 'errorclass']"
+sould,['have']
+4,['inputs']
+inputs,['of']
+type,"['arrow', 'tab', 'cantaloupe', 'ctrlv', 'password123enter', 'emailexamplecom', 'apple', '199912', 'ctrlc', 'enter', 'esc', 'hello', 'yousif', 'text']"
+text,"['cart', 'total', 'football', 'color', 'homer', 'equals', 'about', 'input', 'should', 'from', 'by', 'invalid', 'decoration', 'in', 'data', 'welcome']"
+in,"['the', 'a', 'it', 'an', 'option', 'to', 'silence', 'page', 'select']"
+div,"['with', 'of', 'in']"
+with,"['the', 'index', 'text', 'data', 'value', 'url', 'popup', 'hello', 'id', 'class']"
+id,"['email', 'logindiv', 'of', 'seconditem']"
+logindiv,['must']
+must,['have']
+check,"['that', 'url', 'button']"
+that,"['the', 'says', 'password', 'url', 'is', 'every', 'all', 'its']"
+url,"['httpsgithubcomlogin', 'is', 'not', 'to', 'wwwgooglecom', 'wwwurlcom', 'include', 'includes']"
+includes,"['the', 'docsgooglecom']"
+confirm,"['that', 'your', 'url', 'button']"
+include,"['a', 'word', 'gid123', 'gid']"
+gid123,['as']
+as,"['parameter', 'read', 'unread', 'a']"
+not,"['hidden', 'exist', 'include', 'equal', 'contains', 'includes']"
+gid,['as']
+verify,"['title', 'that']"
+is,"['not', 'visible', 'bold', 'focused', 'shown', 'black', 'checked', 'unchecked', 'empty', 'called', 'in', 'equal']"
+equal,"['httpsdocsgooglecom', 'to']"
+validate,"['that', 'url']"
+term,['word']
+test,['whether']
+whether,['the']
+contains,['the']
+string,['word']
+ensure,['that']
+has,"['the', 'a', 'no', 'password', 'text']"
+word,"['word', 'in']"
+password,"['input', 'field', 'of']"
+contain,"['a', 'fakegmailcom']"
+error,['should']
+header,"['should', 'with']"
+welcome,['to']
+invalid,['email']
+or,['password']
+cart,"['button', '0', '1']"
+dropdown,"['list', 'menu', 'should']"
+making,['sure']
+sure,"['that', 'the']"
+span,['with']
+total,"['199', 'has']"
+an,"['icon', 'option', 'appointment', 'input', 'email']"
+icon,['with']
+fashoppingcart,['should']
+table,['rows']
+rows,['should']
+length,['of']
+he,['div']
+seconditem,['should']
+first,"['div', 'visit', 'step', 'heading', 'option', 'name', 'search']"
+message,"['of', 'field']"
+shouldnt,['be']
+able,['to']
+click,"['the', 'on', 'it', 'button', 'mute']"
+continue,['button']
+body,['should']
+option,"['with', 'to', 'in', 'name']"
+select,"['the', 'option', 'an', 'add', 'button', 'should', 'options']"
+username,['input']
+shouldt,['have']
+focused,"['input', 'on', 'textarea']"
+on,"['the', 'for', 'it', 'hold', 'email', 'share']"
+popup,['class']
+show,['up']
+world,"['into', 'text', 'should']"
+contained,['within']
+within,['the']
+following,"['the', 'data', 'footer']"
+footer,['should']
+name,"['of', 'input', 'field']"
+register,['button']
+will,['be']
+make,"['sure', 'a']"
+navbar,"['links', 'has']"
+link,"['httpswwwcoformatiquecom', 'has', 'with']"
+about,['us']
+background,['color']
+color,['of']
+field,"['is', 'write', 'to', 'type', 'delete']"
+heading,['in']
+assert,['that']
+remember,['me']
+me,"['check', 'feature', 'checkbox', 'wwwurlcom']"
+press,"['the', 'button']"
+its,"['text', 'called']"
+called,"['create', 'add']"
+submit,"['it', 'the', 'button', 'admin', 'a', 'your', 'data']"
+save,"['the', 'as', 'draft', 'a', 'your']"
+your,"['account', 'choice', 'device', 'changes', 'screen', 'horses', 'form']"
+tap,['the']
+add,"['to', 'a', 'button', 'contact', 'item']"
+item,"['as', 'button']"
+new,"['contact', 'entry']"
+entry,['in']
+proceed,"['with', 'button']"
+search,"['for', 'button']"
+find,['relevant']
+relevant,['results']
+hit,['the']
+send,"['feedback', 'to']"
+transmit,['the']
+push,['the']
+play,"['game', 'the', 'button']"
+start,"['the', 'following']"
+touch,['the']
+menu,['button']
+access,"['additional', 'the']"
+additional,"['options', 'content']"
+activate,['the']
+delete,"['the', 'option', 'button', 'highlighted', 'its']"
+remove,"['a', 'the', 'focused', 'data']"
+execute,['the']
+purchase,['the']
+apply,['the']
+changes,['by']
+by,"['selecting', 'pressing', 'clicking', 'activating', 'tapping', 'hitting', 'for']"
+clicking,['the']
+update,['button']
+move,"['the', 'to', 'for', 'forward']"
+forward,['by']
+pressing,"['the', 'save']"
+view,"['details', 'wwwurlcom']"
+details,['button']
+learn,['more']
+invoke,['the']
+load,['more']
+more,['button']
+display,['additional']
+fire,['the']
+reset,['button']
+restore,['default']
+default,['settings']
+choice,"['by', 'to']"
+selecting,"['the', 'share']"
+accept,['button']
+strike,['the']
+escape,['button']
+exit,['the']
+fullscreen,['mode']
+sort,['to']
+arrange,['items']
+items,['alphabetically']
+next,"['page', 'input', 'button']"
+form,"['submit', 'by', 'type', 'with']"
+hitting,['button']
+options,"['with', 'by']"
+bring,['up']
+up,"['the', 'key', 'in', 'button']"
+help,['window']
+window,['by']
+tapping,"['the', 'close']"
+question,['mark']
+mark,"['the', 'as', 'button']"
+enable,['the']
+dark,['mode']
+mode,['by']
+moon,['button']
+step,['click']
+mute,['button']
+turn,['off']
+off,['the']
+set,"['a', 'the']"
+volume,"['by', 'slider']"
+slider,['button']
+lock,"['your', 'button']"
+screen,['by']
+activating,"['the', 'directions']"
+unsubscribe,['by']
+launch,['the']
+app,['by']
+open,"['the', 'this', 'button', 'wwwurlcom', 'httpswwwcoformatiquecom']"
+for,"['two', 'the', 'seven', '7', '2', 'ten', 'five', '200', 'me', '5', 'six', '10', 'one', 'httpswwwcoformatiquecom', 'nine', 'eight', '1000', '9', '8', '6', '05', 'our', 'four', 'a', 'httpswwwfacebookcom', 'just', 'three']"
+clear,"['the', 'text', 'focused', 'button', 'its']"
+highlight,"['text', 'button']"
+share,"['content', 'screen', 'button']"
+content,['by']
+get,['directions']
+directions,['by']
+draft,"['by', 'feature']"
+schedule,"['an', 'button']"
+appointment,['by']
+close,"['a', 'the', 'button']"
+contact,"['form', 'button']"
+sign,"['in', 'up', 'on', 'out']"
+account,['click']
+remind,['me']
+feature,['to']
+file,['from']
+from,"['a', 'your', 'clipboard']"
+device,['by']
+decline,['choice']
+reject,['the']
+date,['picker']
+picker,['option']
+choose,"['the', 'a']"
+power,['button']
+game,"['option', 'choose']"
+expand,"['the', 'feature']"
+collapse,"['the', 'option']"
+print,"['the', 'feature']"
+comment,['feature']
+log,['out']
+out,"['of', 'option']"
+follow,['feature']
+unfollow,['option']
+stop,['following']
+simply,['tap']
+actions,['sheet']
+sheet,['to']
+cahnge,['the']
+current,['sheet']
+feedback,['option']
+read,['feature']
+unread,['option']
+says,"['submit', 'begin', 'download']"
+just,"['3', 'hit']"
+look,['for']
+download,['and']
+and,"['2', 'panana', '454', 'click']"
+it,"['that', 'to']"
+bottom,['right']
+right,"['key', 'in', 'corner']"
+corner,['with']
+plus,['sign']
+user1,['option']
+apples,"['and', 'option']"
+index,"['0', '7']"
+data,"['to', 'in', 'apples', '444', 'which']"
+444,['and']
+0,['and']
+homer,['simpson']
+football,['world']
+male,['from']
+gender,"['dropdown', 'form']"
+highlighted,['input']
+go,['to']
+which,['is']
+birthdate,['field']
+into,"['the', 'name', 'an']"
+yousif,['ahmed']
+ahmed,['into']
+write,"['female', 'how', 'yousifgmailcom']"
+fruit,['form']
+199912,['in']
+month,['field']
+cantaloupe,['in']
+female,['in']
+how,['are']
+are,['you']
+messgae,['field']
+emailexamplecom,['into']
+tab,['key']
+key,['to']
+ctrlc,['to']
+copy,['selected']
+selected,['text']
+ctrlv,['to']
+paste,['text']
+enter,['key']
+user,['form']
+esc,['key']
+modal,['dialog']
+arrow,"['right', 'up', 'down']"
+down,"['key', 'in']"
+navigate,"['up', 'down']"
+cursor,['right']
+visit,"['the', 'wwwgooglecom', 'for', 'our', 'httpswwwcoformatiquecom']"
+website,"['httpswwwgooglecom', 'with', 'wwwurlcom', 'httpswwwfacebookcom', 'httpswwwcoformatiquecom']"
+browse,['to']
+i,['want']
+want,['to']
+wwwurlcom,['in']
+at,"['the', 'httpswwwcoformatiquecom']"
+this,"['url', 'link']"
+our,"['web', 'website']"
+web,['application']
+application,['at']
+httpswwwcoformatiquecom,"['to', 'at']"
+home,['page']
+begin,['the']
+above,['data']
+admin,['form']
+survey,['form']
+after,['filling']
+filling,['the']
+support,['ticket']
+ticket,['form']
+hold,"['for', 'your', 'on']"
+wait,"['for', 'in', 'patiently']"
+patiently,['for']
+two,['seconds']
+delay,"['for', 'a']"
+couple,['of']
+take,['a']
+quick,['break']
+break,['for']
+ten,"['milliseconds', 'seconds']"
+pause,"['for', 'briefly']"
+10,"['pixels', 'seconds']"
+hang,"['tight', 'on']"
+one,['second']
+1000,['millisecond']
+stay,"['calm', 'on', 'put']"
+put,['for']
+dont,"['move', 'do']"
+six,['seconds']
+calm,['for']
+seven,['seconds']
+silence,['for']
+keep,"['quiet', 'still']"
+quiet,['for']
+four,['seconds']
+sit,['tight']
+tight,['for']
+three,['seconds']
+do,['anything']
+anything,['for']
+five,['seconds']
+still,['for']
+nine,['seconds']
+breather,['delay']
+7,['seconds']
+remain,['motionless']
+motionless,['waiting']
+waiting,['for']
+6,['seconds']
+stand,['by']
+9,['seconds']
+horses,['for']
+briefly,['for']
+short,['break']
+5,['seconds']
+3,['seconds']
+rest,['for']
+eight,['seconds']
+8,['seconds']
+sleep,['for']
+05,['seconds']
+200,['milliseconds']
+change,['the']
+mouse,['to']
+hove,['over']
+over,['the']
+try,['to']
+hover,['over']
+bold,['font']
+font,['weight']
+checkbox,['is']
+cat,['image']
+image,['is']
+fields,['have']
+no,"['borders', 'text', 'list']"
+every,['link']
+all,"['navbar', 'paragraphs']"
+paragraphs,['should']
+black,['color']
+links,['have']
+grey,['color']
+create,['button']
+blue,['background']
+white,['text']
+centered,['text']
+todos,['list']
+list,"['should', 'style']"
+margin,['of']
+0,[]

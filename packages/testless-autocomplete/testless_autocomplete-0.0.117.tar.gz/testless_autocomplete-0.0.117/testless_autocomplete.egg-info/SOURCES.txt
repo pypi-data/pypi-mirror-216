@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+Auto_Complete/__init__.py
+Auto_Complete/testless_autocomplete/AutoCompleteAPI.py
+Auto_Complete/testless_autocomplete/__init__.py
+Auto_Complete/testless_autocomplete/model.py
+Auto_Complete/testless_autocomplete/ngram.csv
+Auto_Complete/testless_autocomplete/preprocessing.py
+testless_autocomplete.egg-info/PKG-INFO
+testless_autocomplete.egg-info/SOURCES.txt
+testless_autocomplete.egg-info/dependency_links.txt
+testless_autocomplete.egg-info/requires.txt
+testless_autocomplete.egg-info/top_level.txt
