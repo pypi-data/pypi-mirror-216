@@ -1,0 +1,4 @@
+[console_scripts]
+ABodyBuilder2 = ImmuneBuilder.ABodyBuilder2:command_line_interface
+NanoBodyBuilder2 = ImmuneBuilder.NanoBodyBuilder2:command_line_interface
+TCRBuilder2 = ImmuneBuilder.TCRBuilder2:command_line_interface
