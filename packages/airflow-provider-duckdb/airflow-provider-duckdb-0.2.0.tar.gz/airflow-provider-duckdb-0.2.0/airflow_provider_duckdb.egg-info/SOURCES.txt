@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+airflow_provider_duckdb.egg-info/PKG-INFO
+airflow_provider_duckdb.egg-info/SOURCES.txt
+airflow_provider_duckdb.egg-info/dependency_links.txt
+airflow_provider_duckdb.egg-info/entry_points.txt
+airflow_provider_duckdb.egg-info/requires.txt
+airflow_provider_duckdb.egg-info/top_level.txt
+duckdb_provider/__init__.py
+duckdb_provider/hooks/__init__.py
+duckdb_provider/hooks/duckdb_hook.py
