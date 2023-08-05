@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: compmec-section
+Version: 0.1.2
+Summary: Compute characteristics of an arbitrary cross-section in python
+Author: Carlos Adir
+Author-email: carlos.adir.leite@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: numpy (>=1.0.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+[![PyPI Version][pypi-image]][pypi-url]
+[![Build Status][build-image]][build-url]
+[![Code Coverage][coverage-image]][coverage-url]
+[![][versions-image]][versions-url]
+<a href="https://github.com/compmec/section-properties"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+<a href="https://github.com/compmec/section-properties/blob/main/LICENSE.md"><img alt="License: MIT" src="https://black.readthedocs.io/en/stable/_static/license.svg"></a>
+
+
+A python package for analysis of arbitrary beam cross section using boundary element method.
+
+This package can be used in structural design and visualise deformed profile, stress due to applied forces and momentums
+
+### Installation:
+
+This library is available in [PyPI][pypilink]. To install it
+
+```
+$ pip install compmec-section
+```
+
+### Documentation
+
+In progress
+
+
+### Contribute
+
+Please use the [Issues][issueslink] or refer to the email ```compmecgit@gmail.com```
+
+<!-- Badges: -->
+
+[pypi-image]: https://img.shields.io/pypi/v/compmec-section
+[pypi-url]: https://pypi.org/project/compmec-section/
+[build-image]: https://github.com/compmec/section-properties/actions/workflows/build.yaml/badge.svg
+[build-url]: https://github.com/compmec/section-properties/actions/workflows/build.yaml
+[coverage-image]: https://codecov.io/gh/compmec/section-properties/branch/main/graph/badge.svg?token=vfGMPe9W3I
+[coverage-url]: https://codecov.io/gh/compmec/section-properties
+[versions-image]: https://img.shields.io/pypi/pyversions/compmec-section.svg?style=flat-square
+[versions-url]: https://pypi.org/project/compmec-section/
+[pypilink]: https://pypi.org/project/compmec-section/
+[issueslink]: https://github.com/compmec/section-properties/issues
+
