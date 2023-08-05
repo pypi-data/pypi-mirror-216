@@ -1,0 +1,112 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ianhi",
+      "name": "Ian Hunt-Isaak",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10111092?v=4",
+      "profile": "http://ianhi.github.io",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "samanthahamilton",
+      "name": "Sam",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/67113216?v=4",
+      "profile": "https://darlingdocs.wordpress.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "jcoulter12",
+      "name": "Jenny Coulter",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/14036348?v=4",
+      "profile": "https://github.com/jcoulter12",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "sjhaque14",
+      "name": "Sabina Haque",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/61242473?v=4",
+      "profile": "https://sjhaque14.wixsite.com/sjhaque",
+      "contributions": [
+        "doc",
+        "userTesting",
+        "code"
+      ]
+    },
+    {
+      "login": "jrussell25",
+      "name": "John Russell",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/35578729?v=4",
+      "profile": "https://github.com/jrussell25",
+      "contributions": [
+        "code",
+        "userTesting",
+        "doc"
+      ]
+    },
+    {
+      "login": "mwshinn",
+      "name": "Max Shinn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/951986?v=4",
+      "profile": "http://maxshinnpotential.com",
+      "contributions": [
+        "code",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "kmdalton",
+      "name": "Kevin Dalton",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2790777?v=4",
+      "profile": "https://github.com/kmdalton",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "redeboer",
+      "name": "Remco de Boer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/29308176?v=4",
+      "profile": "https://github.com/redeboer",
+      "contributions": [
+        "code",
+        "userTesting",
+        "doc"
+      ]
+    },
+    {
+      "login": "samwelborn",
+      "name": "samwelborn",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55868530?v=4",
+      "profile": "https://github.com/samwelborn",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "matthewfeickert",
+      "name": "Matthew Feickert",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5142394?v=4",
+      "profile": "http://www.matthewfeickert.com/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "mpl-interactions",
+  "projectOwner": "ianhi",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
