@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+airavata_django_portal_commons/__init__.py
+airavata_django_portal_commons.egg-info/PKG-INFO
+airavata_django_portal_commons.egg-info/SOURCES.txt
+airavata_django_portal_commons.egg-info/dependency_links.txt
+airavata_django_portal_commons.egg-info/requires.txt
+airavata_django_portal_commons.egg-info/top_level.txt
+airavata_django_portal_commons/dynamic_apps/__init__.py
+airavata_django_portal_commons/dynamic_apps/context_processors.py
+airavata_django_portal_commons/dynamic_apps/urls.py
