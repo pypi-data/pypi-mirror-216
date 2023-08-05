@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: SNIIMAPP_2
+Version: 0.2.2
+Summary: Extraccion de precios SNIIM
+Author-email: Rodolfo Lopez <1803672F@umich.mx>
+Project-URL: Homepage, https://github.com/rodolfolopezfcca/
+Project-URL: Bug Tracker, https://github.com/rodolfolopezfcca/
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### Autores:
+
+- MC. Rodolfo Lopez
+- Dr. Oscar de la Torre
+- Dr. Felipe Andoni
+
+### Descripcion:
+
+- Extraccion de datos del SNIIM.
+
+### Requerimientos:
+
+- pip install SNIIM_2
+- pip install mysql-connector-Python
+
+### Uso:
+
+La clase devuelve un diccionario con los datos.
+
+- from precios_sniim import SNIIM
+- sniim     = SNIIM('fyh', '2023-06-22', '2023-06-22')
+- resultado = sniim.get_data()
+
+**Para formatear la fecha**
+- resultado[0]['fecha'].strftime("%Y-%m-%d")
