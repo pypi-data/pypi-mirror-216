@@ -1,0 +1,40 @@
+input: .
+output: .retype
+
+url: # Add your website address here
+
+branding:
+  title: DLTA-AI User Guide
+  logo: assets/icon.png
+  colors:
+    label:
+      text: "#ffffff"
+      background: "#ff0000"
+
+favicon: assets/icon.png
+
+links:
+- text: GitHub
+  link: https://github.com/0ssamaak0/DLTA-AI
+  icon: mark-github
+
+- text: Issues
+  link: https://github.com/0ssamaak0/DLTA-AI/issues
+  icon: bug
+
+- text: Release Notes
+  link: https://github.com/0ssamaak0/DLTA-AI/releases
+  icon: note
+
+- text: Youtube Channel
+  link: https://www.youtube.com/@DLTA-AI
+  icon: video
+
+
+footer:
+  copyright: "DLTA-AI is licensed under GPLv3 License" 
+  links:                               
+    - text: License    
+      link: https://github.com/0ssamaak0/DLTA-AI/blob/master/LICENSE
+      icon: law
+
