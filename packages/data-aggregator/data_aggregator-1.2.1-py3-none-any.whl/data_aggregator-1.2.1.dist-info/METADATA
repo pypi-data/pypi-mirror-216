@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: data-aggregator
+Version: 1.2.1
+Summary: Simple data aggregator framework to simplify data processing
+Home-page: https://github.com/vw-wob-it-edu-ngitl/data_aggregator/
+Author: NG:ITL
+Author-email: torsten.wylegala@volkswagen.de
+License: GPLv3
+Requires-Dist: ngitl-common-py (~=0.4.3)
+Requires-Dist: openpyxl (~=3.0.10)
+Requires-Dist: watchdog (~=3.0.0)
+Requires-Dist: PySide6 (~=6.5.1)
+Requires-Dist: pywin32 (==306)
+Requires-Dist: requests (~=2.31.0)
+Requires-Dist: chardet (~=5.1.0)
+
+Simple data aggregator framework to simplify data processing
