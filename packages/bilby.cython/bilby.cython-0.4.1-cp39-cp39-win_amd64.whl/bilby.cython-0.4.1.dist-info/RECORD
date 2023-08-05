@@ -1,0 +1,17 @@
+bilby_cython/.version,sha256=G-MM1Nat2DUIkY5aQ7EOWgDD4X0NcfRd-NjIMLcKeKU,50
+bilby_cython/__init__.py,sha256=diKbQ_w05WQyQ3dpgf0uhgG5BqhzfmmZJDBUT5EPRqY,61
+bilby_cython/_version.py,sha256=zxzdyRknlt0Y7h6K3aiEe_H1m2O8d9FRHAlesghexvU,164
+bilby_cython/geometry.cp39-win_amd64.pyd,sha256=K5g2gbx2NBWdZygmHg_-PWd00XTQBSOS7HY_E9ZAyzw,171520
+bilby_cython/geometry.pyx,sha256=eh4_SLqcumPPgxC3_YxtihH8JEUAH9Lyy_pcCRZT1NU,15707
+bilby_cython/time.cp39-win_amd64.pyd,sha256=Pcd1O65iOelyrLcgramClKjSsgF_ia1wO9-mwnD4HiI,128512
+bilby_cython/time.pyx,sha256=poFABuyrHRxY1hiuF8c8ffR1eTKfnGIS0GxOdyUAOTs,3472
+bilby_cython/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bilby_cython/test/old_code.py,sha256=AVSx8Xnr60MUejYnMv_P7dGKwfEc3czGASnqh-K7o1I,7168
+bilby_cython/test/test_geometry.py,sha256=_2ftiXV-iYacpIPP49n-knxN87pU7cHqPt9g3fGcq0k,6128
+bilby_cython/test/test_time.py,sha256=RjT1cYMJxTrrtiQhUnPBVUpFzkLl5pbBz0rckcrVrp4,1373
+bilby_cython/test/timing.py,sha256=g9LHXHdYUX4310eHO7NUUfBy6U7WrqJn8WAPy95WHIk,5021
+bilby.cython-0.4.1.dist-info/LICENSE,sha256=hAswYdDf2eDN3nyzcACGXcw-1lcYiUIRJ0KCd5DxKCI,1089
+bilby.cython-0.4.1.dist-info/METADATA,sha256=0fxAjJMx0mHk2PlR4MR3Bs4akKbvO41-iFbFuTTuaR0,4571
+bilby.cython-0.4.1.dist-info/WHEEL,sha256=eep6QWEFiQfg2wcclssb_WY-D33AnLYLnEKGA9Rn-VU,100
+bilby.cython-0.4.1.dist-info/top_level.txt,sha256=zLDE8qSLXh2BNgBgFFsgWTVODGNnbWgatne7yfpYVwA,13
+bilby.cython-0.4.1.dist-info/RECORD,,
