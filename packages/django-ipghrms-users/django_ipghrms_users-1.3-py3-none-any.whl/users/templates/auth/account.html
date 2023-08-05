@@ -1,0 +1,48 @@
+{% extends "main/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid"><br/>
+	<div class="row">
+		<div class="col-xl-4 col-md-4">
+			<div class="card shadow-lg pt-1 rounded">
+				<div class="card-header border-primary">
+					<center>
+						<h3>INFORMASAUN KONTA</h3>
+					</center>
+				</div>
+				<div class="card-body">
+					<table class="table table-sm table-bordered">
+						<tr>
+							<td>Username</td>
+							<td>: {{ user.username }}</td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td>: {{ user.email }}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="card-footer">
+					<div class="small"><i class="fa-solid fa-angles-right"></i> <a href="{% url 'user-change-password' %}">TROKA PASSWORD</a></div>
+				</div>
+			</div>
+		</div> <!--end card-md-6-->
+		<div class="col-xl-8 col-md-8">
+			<div class="card shadow-lg pt-1 rounded">
+				<div class="card-header border-primary">
+					<center>
+						<h3>FORMULARIO ALTERA KONTA</h3>
+					</center>
+				</div>
+				<div class="card-body">
+					<fieldset class="form-group">
+						{% crispy u_form %}
+					</fieldset>
+					<hr/>
+					<div class="alert alert-warning">Favor prenche email nebe los ba asaun renova senha.</div>
+				</div>
+			</div>
+		</div> <!--end card-md-6-->
+	</div> <!--end row-->
+</div>
+{% endblock content %}
