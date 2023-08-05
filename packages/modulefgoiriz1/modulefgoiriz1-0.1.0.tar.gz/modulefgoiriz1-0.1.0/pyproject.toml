@@ -1,0 +1,12 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "modulefgoiriz1"
+version = "0.1.0"
+description = "My super cool Python module."
+readme = "README.md"
+authors = [
+    {name = "modulefgoiriz1", email = "modulefgoiriz1@example.com"},
+]
