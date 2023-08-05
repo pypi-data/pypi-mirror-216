@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+vexpr/__init__.py
+vexpr/base.py
+vexpr/numpy.py
+vexpr/torch.py
+vexpr.egg-info/PKG-INFO
+vexpr.egg-info/SOURCES.txt
+vexpr.egg-info/dependency_links.txt
+vexpr.egg-info/top_level.txt
