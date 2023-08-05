@@ -1,0 +1,13 @@
+pandas
+sqlalchemy
+sqlalchemy_utils
+psycopg2
+requests
+scipy
+pymannkendall
+matplotlib
+comtradeapicall
+
+[api]
+fastapi
+uvicorn
