@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: orzo
+Version: 0.1.0
+Summary: A python client application geared towards rendering 3D scenes with NOODLES
+Keywords: noodles,cbor,Websockets,client,NOODLES
+Author: Alex Racapé
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Dist: penne
+Requires-Dist: numpy
+Requires-Dist: moderngl
+Requires-Dist: moderngl-window
+Requires-Dist: imgui[pyglet]
+Requires-Dist: pytest ; extra == "testing"
+Requires-Dist: rigatoni[geometry] ; extra == "testing"
+Requires-Dist: pandas ; extra == "testing"
+Project-URL: Documentation, https://insightcenternoodles.github.io/Orzo/
+Project-URL: Source, https://github.com/InsightCenterNoodles/Orzo
+Provides-Extra: testing
+
+# Orzo
+
+Rendering Client Application for NOODLES and Python
+
