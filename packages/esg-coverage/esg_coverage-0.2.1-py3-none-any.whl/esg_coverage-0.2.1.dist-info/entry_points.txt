@@ -1,0 +1,3 @@
+[console_scripts]
+esgcov=esgcov.__cli__:main
+
