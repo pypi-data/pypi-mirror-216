@@ -1,0 +1,97 @@
+Metadata-Version: 2.1
+Name: port-ocean
+Version: 0.1.0.dev1
+Summary: Port Ocean is a CLI tool for managing your Port projects.
+Author: Daniel Sinai
+Author-email: daniel@getport.io
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: cli
+Requires-Dist: click (>=8.1.3,<9.0.0) ; extra == "cli"
+Requires-Dist: confluent-kafka (>=2.1.1,<3.0.0)
+Requires-Dist: cookiecutter (>=2.1.1,<3.0.0) ; extra == "cli"
+Requires-Dist: fastapi (>=0.96.0,<0.97.0)
+Requires-Dist: httpx (>=0.24.1,<0.25.0)
+Requires-Dist: loguru (>=0.7.0,<0.8.0)
+Requires-Dist: pydantic (>=1.10.8,<2.0.0)
+Requires-Dist: pyjq (>=2.6.0,<3.0.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: rich (>=13.4.1,<14.0.0) ; extra == "cli"
+Requires-Dist: six (>=1.16.0,<2.0.0)
+Requires-Dist: urllib3 (>=1.26.16,<2.0.0)
+Requires-Dist: uvicorn (>=0.22.0,<0.23.0)
+Requires-Dist: werkzeug (>=2.3.4,<3.0.0)
+Description-Content-Type: text/markdown
+
+<img align="right" width="100" height="74" src="https://user-images.githubusercontent.com/8277210/183290025-d7b24277-dfb4-4ce1-bece-7fe0ecd5efd4.svg" />
+
+# Integration Framework
+
+Integration Framework is a solution developed by Port to address the challenges faced while integrating various third-party systems with our developer portal product. This framework provides a standardized approach for implementing integrations, simplifying the process and allowing platform engineers to focus on the core functionality of the third-party system.
+ 
+## Export Architecture
+![image](./assets/IntegrationFrameworkExportArchitecture.svg)
+
+## Real-Time updates Architecture
+![image](./assets/IntergationFrameworkRealTimeUpdatesArchitecture.svg)
+
+## Self Service Architecture
+![image](./assets/IntegrationFrameworkSelfServiceArchitecture.svg)
+
+## Folder Structure
+The Integration Framework follows a specific folder structure within the mono repository. This structure ensures proper organization and easy identification of integration modules. The suggested folder structure is as follows:
+
+```
+integration-framework/
+├── framework/
+│ ├── main.py
+│ └── requirements.txt
+| └── ...
+└── integrations/
+├────integration_name/
+│ ├──── main.py
+│ └──── requirements.txt
+├── ...
+└── ...
+```
+
+- The `framework` folder contains the core logic for managing the integration lifecycle.
+- Each integration is represented by a separate folder inside the `integrations` directory.
+- Inside each integration folder, you'll find a `main.py` file that implements the core functionality of the integration for the specific third-party system.
+- The `requirements.txt` file inside each integration folder lists the required dependencies for that integration.
+
+## Integration Lifecycle
+
+![image](./assets/IntegrationFrameworkLifecycleOfIntegration.svg)
+
+## Configuration
+The Integration Framework utilizes a `config.yaml` file for configuration. This file specifies the integrations to be used within an array. Each integration has a unique identifier and type, which are used during initialization to update Port accordingly.
+
+Example `config.yaml`:
+```yaml
+port:
+  clientId: PORT_CLIENT_ID # Can be loaded via environment variable: PORT_CLIENT_ID
+  clientSecret: PORT_CLIENT_SECRET # Can be loaded via environment variable: PORT_CLIENT_SECRET
+  baseUrl: https://api.getport.io/v1
+triggerChannel: 
+  type: KAFKA
+integrations:
+  # The name of the integration.
+  - identifier: "my_kafka_integration"
+    # The type of the integration.
+    type: "kafka"
+    # The configuration of the integration.
+    config:
+      bootstrap_servers: "localhost:9092"
+```
+
+## Contributing
+We welcome contributions to the Integration Framework project. If you have any suggestions, bug reports, or would like to contribute new features, please follow our guidelines outlined in the `CONTRIBUTING.md` file.
+
+## License
+The Integration Framework is open-source software licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). See the `LICENSE` file for more details.
+
+## Contact
+For any questions or inquiries, please reach out to our team at support@getport.io
