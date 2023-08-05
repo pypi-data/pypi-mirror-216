@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: torchkin
+Version: 0.1.0rc1
+Summary: Torch extension for differentiable kinematics.
+Home-page: https://github.com/facebookresearch/theseus/lie
+Author: Meta Research
+Keywords: lie groups,differentiable optimization
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: urdf-parser-py (>=0.0.4)
+Requires-Dist: torchlie
+
+<p align="center">
+    <!-- License -->
+    <a href="https://github.com/facebookresearch/theseus/blob/main/torchkin/LICENSE">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License" height="20">
+    </a>
+    <!-- pypi -->
+    <a href="https://pypi.org/project/torchkin/">
+        <img src="https://img.shields.io/pypi/v/torchkin" alt="pypi"
+        heigh="20">
+    <!-- Downloads counter -->
+    <a href="https://pypi.org/project/torchkin/">
+        <img src="https://pepy.tech/badge/torchkin" alt="PyPi Downloads" height="20">
+    </a>
+    <!-- Python -->
+    <a href="https://www.python.org/downloads/release/">
+        <img src="https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue.svg" alt="Python" height="20">
+    </a>
+    <!-- Pre-commit -->
+    <a href="https://github.com/pre-commit/pre-commit">
+        <img src="https://img.shields.io/badge/pre--commit-enabled-green?logo=pre-commit&logoColor=white" alt="pre-commit" height="20">
+    </a>
+    <!-- Black -->
+    <a href="https://github.com/psf/black">
+        <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="black" height="20">
+    </a>
+    <!-- PRs -->
+    <a href="https://github.com/facebookresearch/theseus/blob/main/CONTRIBUTING.md">
+        <img src="https://img.shields.io/badge/PRs-welcome-green.svg" alt="PRs" height="20">
+    </a>
+</p>
+
+<p align="center">
+    <i>A library for differentiable kinematics</i>
+</p>
