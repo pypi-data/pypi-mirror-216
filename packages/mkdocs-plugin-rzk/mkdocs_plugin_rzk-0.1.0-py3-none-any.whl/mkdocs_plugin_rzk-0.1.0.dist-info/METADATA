@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: mkdocs-plugin-rzk
+Version: 0.1.0
+Summary: A MkDocs plugin for Literate Rzk
+Author: Abdelrahman Abounegm
+Author-email: a.abounegm@innopolis.university
+License: MIT
+Keywords: mkdocs
+Requires-Dist: mkdocs (>=1.4.0)
+
+This plugin automates the generation of SVG renderings for code snippets in Literate Rzk Markdown files rendered using MkDocs.
