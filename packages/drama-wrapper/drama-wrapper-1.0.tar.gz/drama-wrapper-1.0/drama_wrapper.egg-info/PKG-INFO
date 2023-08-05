@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: drama-wrapper
+Version: 1.0
+Summary: Dynamically Restricted Action Spaces for Multi-Agent Reinforcement Learning Frameworks
+Home-page: https://github.com/michoest/hicss-2024
+Download-URL: https://github.com/michoest/hicss-2024/archive/refs/tags/v1.0.tar.gz
+Author: Michael Oesterle, Tim Grams
+Author-email: michael.oesterle@uni-mannheim.de, tim.nico.grams@uni-mannheim.de
+License: MIT
+Requires-Python: >=3.6
+License-File: LICENSE.txt
