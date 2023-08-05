@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: bien
+Version: 0.1.0
+Summary: Component based HTML rendering for HTTP servers.
+Author-Email: Zhaksylyk Beisenbayev <zhaks@use.startmail.com>
+License: MIT
+Requires-Python: <4,>=3.8
+Provides-Extra: lint
+Provides-Extra: test
+Provides-Extra: ci
+Requires-Dist: mypy<2,>=1.4.1; extra == "lint"
+Requires-Dist: ruff<1,>=0.0.275; extra == "lint"
+Requires-Dist: pytest<8,>=7.4.0; extra == "test"
+Requires-Dist: pytest-cov<5,>=4.1.0; extra == "test"
+Requires-Dist: nox>=2023.4.22; extra == "ci"
+Description-Content-Type: text/markdown
+
+# bien
+
+Component based HTML rendering for HTTP servers.
+
+You will need [PDM](https://pdm.fming.dev) and [just](https://just.systems) for development.
+
+```bash
+# Create a virtual environment, install all dependencies
+# and configure the Python interpreter to collect coverage
+# from called subprocesses:
+just bootstrap
+
+# Run ruff, mypy and pytest:
+just
+
+# See available recipes:
+just help
+```
