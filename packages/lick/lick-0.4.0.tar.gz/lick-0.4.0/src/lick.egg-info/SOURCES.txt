@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/lick/__init__.py
+src/lick/__version__.py
+src/lick/lick.py
+src/lick.egg-info/PKG-INFO
+src/lick.egg-info/SOURCES.txt
+src/lick.egg-info/dependency_links.txt
+src/lick.egg-info/entry_points.txt
+src/lick.egg-info/requires.txt
+src/lick.egg-info/top_level.txt
+src/lick/_vendor/vectorplot/core.c
+tests/test_image_comp.py
+tests/test_single_prec.py
