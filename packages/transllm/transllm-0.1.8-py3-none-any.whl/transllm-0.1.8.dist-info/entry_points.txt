@@ -1,0 +1,2 @@
+[console_scripts]
+transllm = transllm.cli:main
