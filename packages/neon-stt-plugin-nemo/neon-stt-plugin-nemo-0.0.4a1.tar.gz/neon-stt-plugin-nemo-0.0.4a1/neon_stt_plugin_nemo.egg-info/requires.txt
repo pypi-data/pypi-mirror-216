@@ -1,0 +1,8 @@
+ovos-plugin-manager~=0.0.21
+ovos-utils~=0.0.30
+streaming-stt-nemo~=0.2
+SpeechRecognition~=3.8
+mycroft-messagebus-client~=0.10
+
+[docker]
+ovos-stt-http-server~=0.0.2
