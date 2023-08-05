@@ -1,0 +1,2 @@
+[console_scripts]
+python_baserow_simple = python_baserow_simple.__main__:main
