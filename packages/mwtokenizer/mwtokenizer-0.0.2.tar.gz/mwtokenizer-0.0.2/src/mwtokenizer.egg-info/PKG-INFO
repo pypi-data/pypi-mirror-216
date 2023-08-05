@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: mwtokenizer
+Version: 0.0.2
+Summary: Wikipedia Tokenizer Utility
+Home-page: https://gitlab.wikimedia.org/repos/research/wiki-nlp-tools/
+Author: Appledora & Isaac Johnson & Martin Gerlach
+Author-email: <isaac@wikimedia.org>
+License: MIT License
+Keywords: python,wikipedia,nlp,tokenizer
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Provides-Extra: tests
+Provides-Extra: pre-commit
+Provides-Extra: typing
+Provides-Extra: benchmarking
+Provides-Extra: dev
+License-File: LICENSE
+
+
+# Wiki NLP Tools
+Python package to perform language-agnostic tokenization.
+## Vision
+ - Researchers can start with a Wikipedia article (wikitext or HTML), strip syntax to leave just paragraphs of plaintext, and then further tokenize these sentences into sentences and words for input into models.
+ - This would be language-agnostic – i.e. the library would work equally well regardless of Wikipedia language.
+  https://meta.wikimedia.org/wiki/List_of_Wikipedias
+ - This would be easily accessible – i.e. each component is a open-source, pip-installable Python library that is configurable but provides good default performance out-of-the-box that Wikimedia could use internally via PySpark UDFs on our cluster and external organizations/researchers could incorporate into their workflows.
+ - The connections between states are transparent – i.e. for any text extracted in word tokenization, that text can be connected directly back to the original wikitext or HTML that it was derived from.
+
+
+## Features
+- Tokenize text to sentence and words across `300+` languages out-of-the-box
+- Abbreviations can be used to improve performances
+- Word-toknizer takes non-whitespace delimited languages into account during tokenization
+- Input can be exactly reconstructed from the tokenization output
+
+### Installation
+```bash
+$ pip install mwtokenizer
+```
+
+### Basic Usage
+```python
+from mwtokenizer.tokenizer import Tokenizer
+# initiate a tokenizer for "en" or English
+tokenizer = Tokenizer(language_code = "en")
+sample_text =  '''Have Moly and Co. made it to the shop near St. Michael's Church?? \n\t The address is written by Bohr Jr.   here!'''
+print(list(tokenizer.sentence_tokenize(sample_text, use_abbreviation=True)))
+'''
+[output] ["Have Moly and Co. made it to the shop near St. Michael's Church?? \n\t ", 'The address is written by Bohr Jr.   here!']
+'''
+print(list(tokenizer.word_tokenize(text=sample_text, use_abbreviation=True)))
+'''
+[output] ['Have', ' ', 'Moly', ' ', 'and', ' ', 'Co.', ' ', 'made', ' ', 'it', ' ', 'to', ' ', 'the', ' ', 'shop', ' ', 'near', ' ', 'St.', ' ', "Michael's", ' ', 'Church', '??', ' \n\t ', 'The', ' ', 'address', ' ', 'is', ' ', 'written', ' ', 'by', ' ', 'Bohr', ' ', 'Jr.', '   ', 'here', '!']
+'''
+```
+
+## Project Information
+- [Licensing](https://gitlab.wikimedia.org/repos/research/wiki-nlp-tools/-/blob/main/LICENSE)
+- [Repository](https://gitlab.wikimedia.org/repos/research/wiki-nlp-tools)
+- [Issue Tracker](https://gitlab.wikimedia.org/repos/research/wiki-nlp-tools/-/issues)
+- [Contribution Guidelines](CONTRIBUTION.md)
+- [Benchmarking](benchmarking/)
+- Resource Generation: [Abbreviations & Benchmarking data](notebooks/) + [Sentencepiece Corpus and Training](spc_scripts/)
