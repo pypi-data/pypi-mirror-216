@@ -1,0 +1,3 @@
+[console_scripts]
+optipack=optipack.__main__:start
+
