@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: xia-broadcast
+Version: 0.1.1
+Summary: X-I-A Broadcast
+Home-page: https://develop.x-i-a.com/docs/xia-broadcast/0.1.1/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: requests
+Requires-Dist: xia-engine
+
+.. image:: https://img.shields.io/pypi/v/xia-broadcast.svg?color=blue
+   :alt: PyPI-Server
+   :target: https://pypi.org/project/xia-broadcast/
+
+====================================
+X-I-A Broadcast
+====================================
+
+
+Introduction
+=============================
+
+xia-broadcast aimed to transfer a subscription to a broadcasting by using web sockets.
+
+
+Quick start
+=============================
+
+Install the package::
+
+    pip install xia-broadcast
+
+
