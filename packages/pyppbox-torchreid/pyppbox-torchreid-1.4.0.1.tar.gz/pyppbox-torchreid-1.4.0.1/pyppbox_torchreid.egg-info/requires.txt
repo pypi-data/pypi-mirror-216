@@ -1,0 +1,15 @@
+Cython>=0.29.32
+numpy>=1.21.6
+h5py
+Pillow
+six
+scipy>=1.10.0
+matplotlib
+tensorboard
+future
+yacs
+gdown
+yapf
+isort
+imageio
+chardet
