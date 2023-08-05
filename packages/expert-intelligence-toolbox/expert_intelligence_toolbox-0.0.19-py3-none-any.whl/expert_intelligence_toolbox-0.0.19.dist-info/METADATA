@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: expert-intelligence-toolbox
+Version: 0.0.19
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: OSMPythonTools (==0.3.5)
+Requires-Dist: configparser (==5.3.0)
+Requires-Dist: geolib (==1.0.7)
+Requires-Dist: geopandas (==0.12.2)
+Requires-Dist: geopy (==2.2.0)
+Requires-Dist: pandas (==2.0.2)
+Requires-Dist: pyarrow (==10.0.1)
+Requires-Dist: shapely (==2.0.1)
+Requires-Dist: snowflake-connector-python (==3.0.4)
+Requires-Dist: snowflake-snowpark-python (==1.5.0)
+
+UNKNOWN
+
+
