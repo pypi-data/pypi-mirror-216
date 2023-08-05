@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: recursiveseriation
+Version: 0.1.2
+Summary: Python implementation of the 'Recursive Seriation' algorithm for reordering strict circular Robisonian matrices
+Author: Santiago Armstrong
+Author-email: santiagoarmstrong@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: numpy (>=1.24.2,<2.0.0)
+Requires-Dist: pydantic (>=1.7.3,<2.0.0)
+Requires-Dist: python-dotenv (>=0.15.0,<0.16.0)
+Requires-Dist: structlog (>=20.2.0,<21.0.0)
