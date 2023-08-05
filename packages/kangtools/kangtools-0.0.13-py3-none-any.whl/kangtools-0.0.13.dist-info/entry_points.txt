@@ -1,0 +1,4 @@
+[console_scripts]
+kangtools_commit_version_to_git = kangtools.commit_version_to_git:main
+kangtools_upgrade_package_to_pip = upgrade_pypi_package_pip_install:main.py
+kangtools_version_control = kangtools.version_control:main
