@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "dataframe_handlers"
+version = "0.0.5"
+description = "A package for handling dataframes with optional backends."
+authors = [{name="Joshua Sundance Bailey"}]
+maintainers = [{name="Joshua Sundance Bailey"}]
+license = {text="MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["dataframe", "interoperability"]
+
+[project.urls]
+Repository = "https://github.com/joshuasundance-swca/dataframe_handlers.git"
+
+[project.optional-dependencies]
+pandas = ["pandas"]
+dask = ["dask[dataframe]", "pandas"]
+#vaex = ["vaex"]
+xarray = ["xarray"]
+
+
+[tool.bumpver]
+current_version = "0.0.5"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"dataframe_handlers/__init__.py" = ["{version}"]
