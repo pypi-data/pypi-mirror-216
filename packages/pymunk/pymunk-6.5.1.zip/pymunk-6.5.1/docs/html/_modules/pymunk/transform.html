@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pymunk.transform &#8212; Pymunk 6.5.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script async="async" data-goatcounter="https://pymunk.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+    <link rel="icon" href="../../_static/pymunk_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for pymunk.transform</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">overload</span>
+
+<span class="kn">from</span> <span class="nn">.vec2d</span> <span class="kn">import</span> <span class="n">Vec2d</span>
+
+
+<div class="viewcode-block" id="Transform"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform">[docs]</a><span class="k">class</span> <span class="nc">Transform</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Type used for 2x3 affine transforms.</span>
+
+<span class="sd">    See wikipedia for details:</span>
+<span class="sd">    http://en.wikipedia.org/wiki/Affine_transformation</span>
+
+<span class="sd">    The properties map to the matrix in this way:</span>
+
+<span class="sd">    = = ==</span>
+<span class="sd">    a c tx</span>
+<span class="sd">    b d ty</span>
+<span class="sd">    0 0  1</span>
+<span class="sd">    = = ==</span>
+
+<span class="sd">    An instance can be created in this way:</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform(1,2,3,4,5,6)</span>
+<span class="sd">        Transform(a=1, b=2, c=3, d=4, tx=5, ty=6)</span>
+
+<span class="sd">    Or overriding only some of the values (on a identity matrix):</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform(b=3,ty=5)</span>
+<span class="sd">        Transform(a=1, b=3, c=0, d=1, tx=0, ty=5)</span>
+
+<span class="sd">    Or using one of the static methods like identity or translation (see each</span>
+<span class="sd">    method for details).</span>
+
+<span class="sd">    The Transform supports the matrix multiplicaiton operator (@) with a</span>
+<span class="sd">    Transform, Vec2d or tuple as second operand, which produces a transformed</span>
+<span class="sd">    Transform or Vec2d as result:</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(2) @ Transform.scaling(3)</span>
+<span class="sd">        Transform(a=6, b=0, c=0, d=6, tx=0, ty=0)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(2) @ Vec2d(1, 2)</span>
+<span class="sd">        Vec2d(2, 4)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">c</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">d</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">tx</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ty</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="fm">__matmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Vec2d</span><span class="p">:</span>
+        <span class="o">...</span>
+
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="fm">__matmul__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="o">...</span>
+
+<div class="viewcode-block" id="Transform.__matmul__"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.__matmul__">[docs]</a>    <span class="k">def</span> <span class="fm">__matmul__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">other</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
+            <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+        <span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Vec2d</span><span class="p">,</span> <span class="s2">&quot;Transform&quot;</span><span class="p">]:</span>
+
+        <span class="sd">&quot;&quot;&quot;Multiply this transform with a Transform, Vec2d or Tuple of size 2</span>
+<span class="sd">        or 6.</span>
+
+
+<span class="sd">        Examples (Transform @ Transform):</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform() @ Transform() == Transform.identity()</span>
+<span class="sd">        True</span>
+<span class="sd">        &gt;&gt;&gt; Transform.translation(2,3) @ Transform.translation(4,5)</span>
+<span class="sd">        Transform(a=1, b=0, c=0, d=1, tx=6, ty=8)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(2) @ Transform.scaling(3)</span>
+<span class="sd">        Transform(a=6, b=0, c=0, d=6, tx=0, ty=0)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(2) @ Transform.translation(3,4)</span>
+<span class="sd">        Transform(a=2, b=0, c=0, d=2, tx=6, ty=8)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.translation(3,4) @ Transform.scaling(2)</span>
+<span class="sd">        Transform(a=2, b=0, c=0, d=2, tx=3, ty=4)</span>
+
+
+<span class="sd">        Examples (Transform @ Vec2d):</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform.identity() @ Vec2d(1, 2)</span>
+<span class="sd">        Vec2d(1, 2)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(2) @ Vec2d(1, 2)</span>
+<span class="sd">        Vec2d(2, 4)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.translation(3,5) @ Vec2d(1, 2)</span>
+<span class="sd">        Vec2d(4, 7)</span>
+<span class="sd">        &gt;&gt;&gt; Transform.rotation(1) @ Vec2d(1, 2) == Vec2d(1, 2).rotated(1)</span>
+<span class="sd">        True</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+        <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">other</span><span class="si">}</span><span class="s2"> not supported. Only Vec2d, Transform and Sequence of length 2 or 6 are supported.&quot;</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">other</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Vec2d</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ty</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">tx</span><span class="p">,</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">other</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Transform</span><span class="p">(</span>
+                <span class="n">a</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ty</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">c</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">d</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ty</span> <span class="o">*</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">tx</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="n">ty</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tx</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="n">ty</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">tx</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">*</span> <span class="n">ty</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ty</span> <span class="o">*</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Transform.identity"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.identity">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">identity</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;The identity transform</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform.identity()</span>
+<span class="sd">        Transform(a=1, b=0, c=0, d=1, tx=0, ty=0)</span>
+
+<span class="sd">        Returns a Transform with this matrix:</span>
+
+<span class="sd">        = = =</span>
+<span class="sd">        1 0 0</span>
+<span class="sd">        0 1 0</span>
+<span class="sd">        0 0 1</span>
+<span class="sd">        = = =</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Transform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Transform.translated"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.translated">[docs]</a>    <span class="k">def</span> <span class="nf">translated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Translate this Transform and return the result.</span>
+
+<span class="sd">        Example:</span>
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(2).translated(3,4)</span>
+<span class="sd">        Transform(a=2, b=0, c=0, d=2, tx=6, ty=8)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">@</span> <span class="n">Transform</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Transform.scaled"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.scaled">[docs]</a>    <span class="k">def</span> <span class="nf">scaled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Scale this Transform and return the result.</span>
+
+<span class="sd">        Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform.translation(3,4).scaled(2)</span>
+<span class="sd">        Transform(a=2, b=0, c=0, d=2, tx=3, ty=4)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">@</span> <span class="n">Transform</span><span class="o">.</span><span class="n">scaling</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Transform.rotated"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.rotated">[docs]</a>    <span class="k">def</span> <span class="nf">rotated</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Rotate this Transform and return the result.</span>
+
+<span class="sd">        &gt;&gt;&gt; &#39;%.2f, %.2f, %.2f, %.2f, %.2f, %.2f&#39; % Transform.rotation(1).rotated(0.5)</span>
+<span class="sd">        &#39;0.07, 1.00, -1.00, 0.07, 0.00, 0.00&#39;</span>
+<span class="sd">        &gt;&gt;&gt; &#39;%.2f, %.2f, %.2f, %.2f, %.2f, %.2f&#39; % Transform.rotation(1.5)</span>
+<span class="sd">        &#39;0.07, 1.00, -1.00, 0.07, 0.00, 0.00&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span> <span class="o">@</span> <span class="n">Transform</span><span class="o">.</span><span class="n">rotation</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Transform.translation"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.translation">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">translation</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;A translation transform</span>
+
+<span class="sd">        Example to translate (move) by 3 on x and 5 in y axis:</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform.translation(3, 5)</span>
+<span class="sd">        Transform(a=1, b=0, c=0, d=1, tx=3, ty=5)</span>
+
+<span class="sd">        Returns a Transform with this matrix:</span>
+
+<span class="sd">        = = =</span>
+<span class="sd">        1 0 x</span>
+<span class="sd">        0 1 y</span>
+<span class="sd">        0 0 1</span>
+<span class="sd">        = = =</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Transform</span><span class="p">(</span><span class="n">tx</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">ty</span><span class="o">=</span><span class="n">y</span><span class="p">)</span></div>
+
+    <span class="c1"># split into scale and scale_non-uniform</span>
+<div class="viewcode-block" id="Transform.scaling"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.scaling">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">scaling</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;A scaling transform</span>
+
+<span class="sd">        Example to scale 4x:</span>
+
+<span class="sd">        &gt;&gt;&gt; Transform.scaling(4)</span>
+<span class="sd">        Transform(a=4, b=0, c=0, d=4, tx=0, ty=0)</span>
+
+<span class="sd">        Returns a Transform with this matrix:</span>
+
+<span class="sd">        = = =</span>
+<span class="sd">        s 0 0</span>
+<span class="sd">        0 s 0</span>
+<span class="sd">        0 0 1</span>
+<span class="sd">        = = =</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Transform</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">s</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Transform.rotation"><a class="viewcode-back" href="../../pymunk.html#pymunk.Transform.rotation">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">rotation</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Transform&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;A rotation transform</span>
+
+<span class="sd">        Example to rotate by 1 rad:</span>
+
+<span class="sd">        &gt;&gt;&gt; &#39;%.2f, %.2f, %.2f, %.2f, %.2f, %.2f&#39; % Transform.rotation(1)</span>
+<span class="sd">        &#39;0.54, 0.84, -0.84, 0.54, 0.00, 0.00&#39;</span>
+
+<span class="sd">        Returns a Transform with this matrix:</span>
+
+<span class="sd">        ====== ======= =</span>
+<span class="sd">        cos(t) -sin(t) 0</span>
+<span class="sd">        sin(t) cos(t)  0</span>
+<span class="sd">        0      0       1</span>
+<span class="sd">        ====== ======= =</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Transform</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">=-</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">c</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/pymunk_logo_sphinx.png" alt="Logo"/>
+            </a></p><div style="margin-left:10px;">
+	<p>
+		<iframe src="http://ghbtns.com/github-btn.html?user=viblo&repo=pymunk&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+	</p>
+	<p>
+		<a href="https://github.com/viblo/pymunk/actions/workflows/wheels.yml">
+			<img src="https://github.com/viblo/pymunk/actions/workflows/wheels.yml/badge.svg" alt="Workflow status badge" loading="lazy" height="20">
+	  	</a>
+	</p>
+</div>
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pymunk.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../showcase.html">Showcase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Advanced</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.python.org/pypi/pymunk/">Downloads</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/viblo/pymunk/issues">Issue Tracker</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/viblo/pymunk">Source Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  <li><a href="../pymunk.html">pymunk</a><ul>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2013-2022, Victor Blomqvist.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
