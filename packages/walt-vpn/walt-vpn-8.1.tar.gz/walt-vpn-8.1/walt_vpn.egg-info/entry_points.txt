@@ -1,0 +1,8 @@
+[console_scripts]
+walt-vpn-auth-tool = walt.vpn.authtool:run
+walt-vpn-client = walt.vpn.client:vpn_client
+walt-vpn-endpoint = walt.vpn.endpoint:run
+walt-vpn-server = walt.vpn.server:run
+walt-vpn-setup = walt.vpn.setup:run
+walt-vpn-setup-credentials = walt.vpn.client:setup_credentials
+walt-vpn-ssh-helper = walt.vpn.ssh:helper

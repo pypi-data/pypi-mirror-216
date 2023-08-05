@@ -1,0 +1,7 @@
+[Socket]
+ListenDatagram=/var/run/walt-vpn.sock
+SocketUser=walt-vpn
+SocketMode=0600
+
+[Install]
+WantedBy = sockets.target
