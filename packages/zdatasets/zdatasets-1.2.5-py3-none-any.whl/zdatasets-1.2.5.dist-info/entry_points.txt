@@ -1,0 +1,8 @@
+[zdatasets.executors]
+metaflow_executor=zdatasets.plugins:MetaflowExecutor
+
+[zdatasets.plugins]
+batch_dataset=zdatasets.plugins:BatchDataset
+flow_dataset=zdatasets.plugins:FlowDataset
+hive_dataset=zdatasets.plugins:HiveDataset
+
