@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pyhandytools
+Version: 0.0.2
+Summary: Python handy tools
+Home-page: https://github.com/JimouChen/py-handy
+Author: Jimou Chen
+Author-email: neaya1024@gmail.com
+Keywords: toolbox,kit,utils,tools
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# py-handy
+A practical and convenient python toolset
+
+## Usage
+
+```shell
+pip3 install pyhandytools
+```
