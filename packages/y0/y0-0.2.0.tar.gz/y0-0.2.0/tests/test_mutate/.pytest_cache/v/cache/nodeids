@@ -1,0 +1,14 @@
+[
+  "test_canonicalize.py::TestCanonicalize::test_atomic",
+  "test_canonicalize.py::TestCanonicalize::test_atomic_interventions",
+  "test_canonicalize.py::TestCanonicalize::test_derived_atomic",
+  "test_canonicalize.py::TestCanonicalize::test_errors",
+  "test_canonicalize.py::TestCanonicalize::test_invalid_ordering",
+  "test_canonicalize.py::TestCanonicalize::test_mixed",
+  "test_canonicalize.py::TestCanonicalize::test_non_markov",
+  "test_canonicalize.py::TestCanonicalizeEqual::test_expr_equal",
+  "test_chain.py::TestChain::test_bayes_expand",
+  "test_chain.py::TestChain::test_chain_expand_automatic_reordering",
+  "test_chain.py::TestChain::test_chain_expand_no_reordering",
+  "test_chain.py::TestChain::test_fraction_expand"
+]

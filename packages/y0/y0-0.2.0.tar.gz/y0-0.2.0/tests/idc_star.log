@@ -1,0 +1,272 @@
+2023-05-30 09:10:43,447 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [D, Z, Y]
+	 directed: [(D, Z), (Z, Y)]
+	 undirected []
+	 outcomes: {Y @ -D: -Y}
+	 and conditions: {Z @ -D: -Z, Z: +Z, D: -D}
+2023-05-30 09:10:43,447 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {Z @ -D: -Z, Z: +Z, D: -D}
+2023-05-30 09:10:43,449 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [D, Z, Y]
+	 directed: [(D, Z), (Z, Y)]
+	 undirected []
+	 outcomes: {Z @ -D: -Z}
+	 and conditions: {Z: +Z, D: -D}
+2023-05-30 09:10:43,449 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {Z: +Z, D: -D}
+2023-05-30 09:10:43,453 - idc_star - INFO - [0]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:10:43,453 - idc_star - INFO - [0]: line 2 IDC* algorithm: make counterfactual graph. Events: {Z @ -D: -Z, Z: +Z, D: -D}
+2023-05-30 09:10:43,455 - idc_star - INFO - [0]: IDC* returned from make_counterfactual_graph with New events: None
+	counterfactual graph:
+	 nodes: [D, Z, Y, Y @ -D]
+	 directed: [(D, Z), (Z, Y), (Z, Y @ -D)]
+	 undirected: [(Y, Y @ -D)]
+2023-05-30 09:10:43,455 - idc_star - INFO - [0]: line 3 IDC* algorithm: make_counterfactual_graph is inconsistent. Returning Zero.
+2023-05-30 09:10:43,455 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected [(X, Z)]
+	 outcomes: {Y @ -X: -Y}
+	 and conditions: {Z @ -X: -Z, X: +X}
+2023-05-30 09:10:43,455 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {Z @ -X: -Z, X: +X}
+2023-05-30 09:10:43,457 - idc_star - INFO - [0]: line 1 IDC* algorithm: ID* algorithm is not identifiable, but is also not  inconsistent.
+2023-05-30 09:10:43,457 - idc_star - INFO - [0]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ -X: -Y, Z @ -X: -Z, X: +X}
+2023-05-30 09:10:43,459 - idc_star - INFO - [0]: IDC* returned from make_counterfactual_graph with New events: {Y @ -X: -Y, Z @ -X: -Z, X: +X}
+	counterfactual graph:
+	 nodes: [Z @ -X, Y @ -X, X @ -X, X]
+	 directed: [(Z @ -X, Y @ -X), (X @ -X, Y @ -X), (X @ -X, Z @ -X)]
+	 undirected: [(Z @ -X, X)]
+2023-05-30 09:10:43,459 - idc_star - INFO - [0]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ -X: -Y}	New conditions: {Z @ -X: -Z, X: +X}
+
+2023-05-30 09:10:43,459 - idc_star - INFO - [0]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:10:43,460 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: rule 2 of do calculus applies:
+		{Y @ -X: -Y} is D-separated from Z @ -X in G' (Z @ -X_bar)
+2023-05-30 09:10:43,460 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: call IDC* algorithm on new outcomes {Y @ (-X, -Z): -Y} and new conditions {X: +X}
+2023-05-30 09:10:43,461 - idc_star - INFO - [1]: Calling IDC* algorithm with graph G with
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected [(X, Z)]
+	 outcomes: {Y @ (-X, -Z): -Y}
+	 and conditions: {X: +X}
+2023-05-30 09:10:43,461 - idc_star - INFO - [1]: line 1 IDC* algorithm: call ID* algorithm with events {X: +X}
+2023-05-30 09:10:43,462 - idc_star - INFO - [1]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:10:43,462 - idc_star - INFO - [1]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ (-X, -Z): -Y, X: +X}
+2023-05-30 09:10:43,464 - idc_star - INFO - [1]: IDC* returned from make_counterfactual_graph with New events: {Y @ (-X, -Z): -Y, X: +X}
+	counterfactual graph:
+	 nodes: [Y @ (-X, -Z), X @ (-X, -Z), Z @ (-X, -Z), X]
+	 directed: [(X @ (-X, -Z), Y @ (-X, -Z)), (Z @ (-X, -Z), Y @ (-X, -Z))]
+	 undirected: []
+2023-05-30 09:10:43,464 - idc_star - INFO - [1]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ (-X, -Z): -Y}	New conditions: {X: +X}
+
+2023-05-30 09:10:43,464 - idc_star - INFO - [1]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:10:43,465 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: rule 2 of do calculus applies:
+		{Y @ (-X, -Z): -Y} is D-separated from X in G'' (X_bar)
+2023-05-30 09:10:43,466 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: call IDC* algorithm on new outcomes {Y @ (-X, -Z): -Y} and new conditions {}
+2023-05-30 09:10:43,466 - idc_star - INFO - [2]: Calling IDC* algorithm with graph G with
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected [(X, Z)]
+	 outcomes: {Y @ (-X, -Z): -Y}
+	 and conditions: {}
+2023-05-30 09:10:43,466 - idc_star - INFO - [2]: line 1 IDC* algorithm: call ID* algorithm with events {}
+2023-05-30 09:10:43,466 - idc_star - INFO - [2]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:10:43,466 - idc_star - INFO - [2]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ (-X, -Z): -Y}
+2023-05-30 09:10:43,467 - idc_star - INFO - [2]: IDC* returned from make_counterfactual_graph with New events: {Y @ (-X, -Z): -Y}
+	counterfactual graph:
+	 nodes: [Y @ (-X, -Z), X @ (-X, -Z), Z @ (-X, -Z)]
+	 directed: [(X @ (-X, -Z), Y @ (-X, -Z)), (Z @ (-X, -Z), Y @ (-X, -Z))]
+	 undirected: []
+2023-05-30 09:10:43,468 - idc_star - INFO - [2]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ (-X, -Z): -Y}	New conditions: {}
+
+2023-05-30 09:10:43,468 - idc_star - INFO - [2]: line 5 IDC* algorithm: Call ID* algorithm on new events {Y @ (-X, -Z): -Y} | {} and old graph:
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected: [(X, Z)]
+2023-05-30 09:10:43,470 - idc_star - INFO - [2]: Returned from ID* with estimand P(Y @ (-X, -Z))
+2023-05-30 09:10:43,472 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [X, W, Y, D, Z]
+	 directed: [(X, W), (W, Y), (D, Z), (Z, Y)]
+	 undirected [(X, Y)]
+	 outcomes: {Y @ -X: -Y}
+	 and conditions: {X: +X, Z @ -D: -Z, D: -D}
+2023-05-30 09:10:43,472 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {X: +X, Z @ -D: -Z, D: -D}
+2023-05-30 09:10:43,483 - idc_star - INFO - [0]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:10:43,483 - idc_star - INFO - [0]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ -X: -Y, X: +X, Z @ -D: -Z, D: -D}
+2023-05-30 09:10:43,492 - idc_star - INFO - [0]: IDC* returned from make_counterfactual_graph with New events: {Y @ -X: -Y, X: +X, D: -D, Z: -Z}
+	counterfactual graph:
+	 nodes: [Y @ -X, W @ -X, D, X @ -X, Z, X]
+	 directed: [(W @ -X, Y @ -X), (D, Z), (X @ -X, W @ -X), (Z, Y @ -X)]
+	 undirected: [(Y @ -X, X)]
+2023-05-30 09:10:43,492 - idc_star - INFO - [0]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ -X: -Y}	New conditions: {X: +X, Z @ -D: -Z, D: -D}
+
+2023-05-30 09:10:43,492 - idc_star - INFO - [0]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:10:43,493 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: rule 2 of do calculus does not apply to condition X
+2023-05-30 09:10:43,494 - idc_star - INFO - [0]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:10:43,495 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: rule 2 of do calculus applies:
+		{Y @ -X: -Y} is D-separated from D in G' (D_bar)
+2023-05-30 09:10:43,495 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: call IDC* algorithm on new outcomes {Y @ (-D, -X): -Y} and new conditions {X: +X, Z: -Z}
+2023-05-30 09:10:43,496 - idc_star - INFO - [1]: Calling IDC* algorithm with graph G with
+	 nodes: [X, W, Y, D, Z]
+	 directed: [(X, W), (W, Y), (D, Z), (Z, Y)]
+	 undirected [(X, Y)]
+	 outcomes: {Y @ (-D, -X): -Y}
+	 and conditions: {X: +X, Z: -Z}
+2023-05-30 09:10:43,496 - idc_star - INFO - [1]: line 1 IDC* algorithm: call ID* algorithm with events {X: +X, Z: -Z}
+2023-05-30 09:10:43,503 - idc_star - INFO - [1]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:10:43,503 - idc_star - INFO - [1]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ (-D, -X): -Y, X: +X, Z: -Z}
+2023-05-30 09:10:43,505 - idc_star - INFO - [1]: IDC* returned from make_counterfactual_graph with New events: {Y @ (-D, -X): -Y, X: +X, Z: -Z}
+	counterfactual graph:
+	 nodes: [D, Z @ (-D, -X), D @ (-D, -X), X @ (-D, -X), W @ (-D, -X), Z, Y @ (-D, -X), X]
+	 directed: [(D, Z), (Z @ (-D, -X), Y @ (-D, -X)), (D @ (-D, -X), Z @ (-D, -X)), (X @ (-D, -X), W @ (-D, -X)), (W @ (-D, -X), Y @ (-D, -X))]
+	 undirected: [(Z @ (-D, -X), Z), (Y @ (-D, -X), X)]
+2023-05-30 09:10:43,505 - idc_star - INFO - [1]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ (-D, -X): -Y}	New conditions: {X: +X, Z: -Z}
+
+2023-05-30 09:10:43,505 - idc_star - INFO - [1]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:10:43,507 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: rule 2 of do calculus does not apply to condition X
+2023-05-30 09:10:43,507 - idc_star - INFO - [1]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:10:43,509 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: rule 2 of do calculus does not apply to condition Z
+2023-05-30 09:10:43,510 - idc_star - INFO - [1]: line 5 IDC* algorithm: Call ID* algorithm on new events {Y @ (-D, -X): -Y} | {X: +X, Z: -Z} and old graph:
+	 nodes: [X, W, Y, D, Z]
+	 directed: [(X, W), (W, Y), (D, Z), (Z, Y)]
+	 undirected: [(X, Y)]
+2023-05-30 09:10:43,526 - idc_star - INFO - [1]: Returned from ID* with estimand Sum[D, W](P(W @ -X) * P(D) * P(Z @ -D) * P(X @ (-W, -Z), Y @ (-W, -Z)))
+2023-05-30 09:10:43,526 - idc_star - INFO - [1]: Returning from IDC* with estimand ((Sum[D, W](P(W @ -X) * P(D) * P(Z @ -D) * P(X @ (-W, -Z), Y @ (-W, -Z))) / Sum[D, W, Y](Sum[D, W](P(W @ -X) * P(D) * P(Z @ -D) * P(X @ (-W, -Z), Y @ (-W, -Z))))))
+2023-05-30 09:11:18,446 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [D, Z, Y]
+	 directed: [(D, Z), (Z, Y)]
+	 undirected []
+	 outcomes: {Y @ -D: -Y}
+	 and conditions: {Z @ -D: -Z, Z: +Z, D: -D}
+2023-05-30 09:11:18,447 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {Z @ -D: -Z, Z: +Z, D: -D}
+2023-05-30 09:11:18,448 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [D, Z, Y]
+	 directed: [(D, Z), (Z, Y)]
+	 undirected []
+	 outcomes: {Z @ -D: -Z}
+	 and conditions: {Z: +Z, D: -D}
+2023-05-30 09:11:18,448 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {Z: +Z, D: -D}
+2023-05-30 09:11:18,452 - idc_star - INFO - [0]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:11:18,452 - idc_star - INFO - [0]: line 2 IDC* algorithm: make counterfactual graph. Events: {Z @ -D: -Z, Z: +Z, D: -D}
+2023-05-30 09:11:18,454 - idc_star - INFO - [0]: IDC* returned from make_counterfactual_graph with New events: None
+	counterfactual graph:
+	 nodes: [D, Z, Y, Y @ -D]
+	 directed: [(D, Z), (Z, Y), (Z, Y @ -D)]
+	 undirected: [(Y, Y @ -D)]
+2023-05-30 09:11:18,454 - idc_star - INFO - [0]: line 3 IDC* algorithm: make_counterfactual_graph is inconsistent. Returning Zero.
+2023-05-30 09:11:18,454 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected [(X, Z)]
+	 outcomes: {Y @ -X: -Y}
+	 and conditions: {Z @ -X: -Z, X: +X}
+2023-05-30 09:11:18,454 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {Z @ -X: -Z, X: +X}
+2023-05-30 09:11:18,456 - idc_star - INFO - [0]: line 1 IDC* algorithm: ID* algorithm is not identifiable, but is also not  inconsistent.
+2023-05-30 09:11:18,456 - idc_star - INFO - [0]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ -X: -Y, Z @ -X: -Z, X: +X}
+2023-05-30 09:11:18,458 - idc_star - INFO - [0]: IDC* returned from make_counterfactual_graph with New events: {Y @ -X: -Y, Z @ -X: -Z, X: +X}
+	counterfactual graph:
+	 nodes: [X, Y @ -X, Z @ -X, X @ -X]
+	 directed: [(Z @ -X, Y @ -X), (X @ -X, Z @ -X), (X @ -X, Y @ -X)]
+	 undirected: [(X, Z @ -X)]
+2023-05-30 09:11:18,458 - idc_star - INFO - [0]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ -X: -Y}	New conditions: {Z @ -X: -Z, X: +X}
+
+2023-05-30 09:11:18,459 - idc_star - INFO - [0]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:11:18,460 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: rule 2 of do calculus applies:
+		{Y @ -X: -Y} is D-separated from Z @ -X in G' (Z @ -X_bar)
+2023-05-30 09:11:18,460 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: call IDC* algorithm on new outcomes {Y @ (-X, -Z): -Y} and new conditions {X: +X}
+2023-05-30 09:11:18,460 - idc_star - INFO - [1]: Calling IDC* algorithm with graph G with
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected [(X, Z)]
+	 outcomes: {Y @ (-X, -Z): -Y}
+	 and conditions: {X: +X}
+2023-05-30 09:11:18,460 - idc_star - INFO - [1]: line 1 IDC* algorithm: call ID* algorithm with events {X: +X}
+2023-05-30 09:11:18,461 - idc_star - INFO - [1]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:11:18,461 - idc_star - INFO - [1]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ (-X, -Z): -Y, X: +X}
+2023-05-30 09:11:18,463 - idc_star - INFO - [1]: IDC* returned from make_counterfactual_graph with New events: {Y @ (-X, -Z): -Y, X: +X}
+	counterfactual graph:
+	 nodes: [X, Y @ (-X, -Z), Z @ (-X, -Z), X @ (-X, -Z)]
+	 directed: [(Z @ (-X, -Z), Y @ (-X, -Z)), (X @ (-X, -Z), Y @ (-X, -Z))]
+	 undirected: []
+2023-05-30 09:11:18,463 - idc_star - INFO - [1]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ (-X, -Z): -Y}	New conditions: {X: +X}
+
+2023-05-30 09:11:18,463 - idc_star - INFO - [1]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:11:18,464 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: rule 2 of do calculus applies:
+		{Y @ (-X, -Z): -Y} is D-separated from X in G'' (X_bar)
+2023-05-30 09:11:18,465 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: call IDC* algorithm on new outcomes {Y @ (-X, -Z): -Y} and new conditions {}
+2023-05-30 09:11:18,465 - idc_star - INFO - [2]: Calling IDC* algorithm with graph G with
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected [(X, Z)]
+	 outcomes: {Y @ (-X, -Z): -Y}
+	 and conditions: {}
+2023-05-30 09:11:18,465 - idc_star - INFO - [2]: line 1 IDC* algorithm: call ID* algorithm with events {}
+2023-05-30 09:11:18,465 - idc_star - INFO - [2]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:11:18,465 - idc_star - INFO - [2]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ (-X, -Z): -Y}
+2023-05-30 09:11:18,467 - idc_star - INFO - [2]: IDC* returned from make_counterfactual_graph with New events: {Y @ (-X, -Z): -Y}
+	counterfactual graph:
+	 nodes: [Y @ (-X, -Z), Z @ (-X, -Z), X @ (-X, -Z)]
+	 directed: [(Z @ (-X, -Z), Y @ (-X, -Z)), (X @ (-X, -Z), Y @ (-X, -Z))]
+	 undirected: []
+2023-05-30 09:11:18,467 - idc_star - INFO - [2]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ (-X, -Z): -Y}	New conditions: {}
+
+2023-05-30 09:11:18,467 - idc_star - INFO - [2]: line 5 IDC* algorithm: Call ID* algorithm on new events {Y @ (-X, -Z): -Y} | {} and old graph:
+	 nodes: [X, Z, Y]
+	 directed: [(X, Z), (X, Y), (Z, Y)]
+	 undirected: [(X, Z)]
+2023-05-30 09:11:18,469 - idc_star - INFO - [2]: Returned from ID* with estimand P(Y @ (-X, -Z))
+2023-05-30 09:11:18,471 - idc_star - INFO - [0]: Calling IDC* algorithm with graph G with
+	 nodes: [X, W, Y, D, Z]
+	 directed: [(X, W), (W, Y), (D, Z), (Z, Y)]
+	 undirected [(X, Y)]
+	 outcomes: {Y @ -X: -Y}
+	 and conditions: {X: +X, Z @ -D: -Z, D: -D}
+2023-05-30 09:11:18,471 - idc_star - INFO - [0]: line 1 IDC* algorithm: call ID* algorithm with events {X: +X, Z @ -D: -Z, D: -D}
+2023-05-30 09:11:18,482 - idc_star - INFO - [0]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:11:18,482 - idc_star - INFO - [0]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ -X: -Y, X: +X, Z @ -D: -Z, D: -D}
+2023-05-30 09:11:18,490 - idc_star - INFO - [0]: IDC* returned from make_counterfactual_graph with New events: {Y @ -X: -Y, X: +X, D: -D, Z: -Z}
+	counterfactual graph:
+	 nodes: [W @ -X, Y @ -X, Z, X, D, X @ -X]
+	 directed: [(W @ -X, Y @ -X), (Z, Y @ -X), (D, Z), (X @ -X, W @ -X)]
+	 undirected: [(Y @ -X, X)]
+2023-05-30 09:11:18,491 - idc_star - INFO - [0]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ -X: -Y}	New conditions: {X: +X, Z @ -D: -Z, D: -D}
+
+2023-05-30 09:11:18,491 - idc_star - INFO - [0]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:11:18,492 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: rule 2 of do calculus does not apply to condition X
+2023-05-30 09:11:18,493 - idc_star - INFO - [0]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:11:18,494 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: rule 2 of do calculus applies:
+		{Y @ -X: -Y} is D-separated from D in G' (D_bar)
+2023-05-30 09:11:18,494 - idc_star - INFO - 	[0]: line 4 IDC* algorithm: call IDC* algorithm on new outcomes {Y @ (-D, -X): -Y} and new conditions {X: +X, Z: -Z}
+2023-05-30 09:11:18,495 - idc_star - INFO - [1]: Calling IDC* algorithm with graph G with
+	 nodes: [X, W, Y, D, Z]
+	 directed: [(X, W), (W, Y), (D, Z), (Z, Y)]
+	 undirected [(X, Y)]
+	 outcomes: {Y @ (-D, -X): -Y}
+	 and conditions: {X: +X, Z: -Z}
+2023-05-30 09:11:18,495 - idc_star - INFO - [1]: line 1 IDC* algorithm: call ID* algorithm with events {X: +X, Z: -Z}
+2023-05-30 09:11:18,502 - idc_star - INFO - [1]: line 1 IDC* algorithm: ID* algorithm is not inconsistent
+2023-05-30 09:11:18,502 - idc_star - INFO - [1]: line 2 IDC* algorithm: make counterfactual graph. Events: {Y @ (-D, -X): -Y, X: +X, Z: -Z}
+2023-05-30 09:11:18,504 - idc_star - INFO - [1]: IDC* returned from make_counterfactual_graph with New events: {Y @ (-D, -X): -Y, X: +X, Z: -Z}
+	counterfactual graph:
+	 nodes: [Z @ (-D, -X), X, X @ (-D, -X), D, D @ (-D, -X), Z, W @ (-D, -X), Y @ (-D, -X)]
+	 directed: [(Z @ (-D, -X), Y @ (-D, -X)), (X @ (-D, -X), W @ (-D, -X)), (D, Z), (D @ (-D, -X), Z @ (-D, -X)), (W @ (-D, -X), Y @ (-D, -X))]
+	 undirected: [(Z @ (-D, -X), Z), (X, Y @ (-D, -X))]
+2023-05-30 09:11:18,505 - idc_star - INFO - [1]: line 3 IDC* algorithm: make_counterfactual_graph is not inconsistent.
+	New outcomes: {Y @ (-D, -X): -Y}	New conditions: {X: +X, Z: -Z}
+
+2023-05-30 09:11:18,505 - idc_star - INFO - [1]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:11:18,507 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: rule 2 of do calculus does not apply to condition X
+2023-05-30 09:11:18,507 - idc_star - INFO - [1]: line 4 IDC* algorithm: for each condition, check if rule 2 of do calculus applies
+2023-05-30 09:11:18,509 - idc_star - INFO - 	[1]: line 4 IDC* algorithm: rule 2 of do calculus does not apply to condition Z
+2023-05-30 09:11:18,509 - idc_star - INFO - [1]: line 5 IDC* algorithm: Call ID* algorithm on new events {Y @ (-D, -X): -Y} | {X: +X, Z: -Z} and old graph:
+	 nodes: [X, W, Y, D, Z]
+	 directed: [(X, W), (W, Y), (D, Z), (Z, Y)]
+	 undirected: [(X, Y)]
+2023-05-30 09:11:18,526 - idc_star - INFO - [1]: Returned from ID* with estimand Sum[D, W](P(Z @ -D) * P(W @ -X) * P(X @ (-W, -Z), Y @ (-W, -Z)) * P(D))
+2023-05-30 09:11:18,527 - idc_star - INFO - [1]: Returning from IDC* with estimand ((Sum[D, W](P(Z @ -D) * P(W @ -X) * P(X @ (-W, -Z), Y @ (-W, -Z)) * P(D)) / Sum[D, W, Y](Sum[D, W](P(Z @ -D) * P(W @ -X) * P(X @ (-W, -Z), Y @ (-W, -Z)) * P(D)))))

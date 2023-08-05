@@ -1,0 +1,9 @@
+{
+  "test_dsl.py::TestCounterfactual::test_default_dsl": true,
+  "test_dsl.py::TestCounterfactual::test_is_inconsistent_event": true,
+  "test_dsl.py::TestCounterfactual::test_is_tautological_event": true,
+  "test_graph.py::TestGraph::test_relabel_nodes": true,
+  "test_algorithm/test_id_star.py::TestIDStar::test_recursion": true,
+  "test_algorithm/test_id_star.py::TestIDStar::test_domain_of_counterfactual_values": true,
+  "test_algorithm/test_id_star.py::TestIDStar::test_get_district_domains": true
+}
