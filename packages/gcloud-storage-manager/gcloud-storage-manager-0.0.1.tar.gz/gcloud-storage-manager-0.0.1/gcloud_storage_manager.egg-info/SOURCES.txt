@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+gcloud_storage_manager/__init__.py
+gcloud_storage_manager/base.py
+gcloud_storage_manager/download.py
+gcloud_storage_manager/std_logging.py
+gcloud_storage_manager/upload.py
+gcloud_storage_manager.egg-info/PKG-INFO
+gcloud_storage_manager.egg-info/SOURCES.txt
+gcloud_storage_manager.egg-info/dependency_links.txt
+gcloud_storage_manager.egg-info/top_level.txt
+tests/__init__.py
+tests/test_download.py
+tests/test_upload.py
