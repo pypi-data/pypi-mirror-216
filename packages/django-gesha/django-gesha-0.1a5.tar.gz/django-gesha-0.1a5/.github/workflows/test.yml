@@ -1,0 +1,52 @@
+name: Test
+
+on: [push]
+
+jobs:
+  test_python:
+    name: Python tests
+
+    strategy:
+      matrix:
+        python: ["3.8", "3.9", "3.10", "3.11"]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Python ${{ matrix.python }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install tox
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox
+      - name: Run tests
+        run: tox -m ${{ matrix.python }}
+      - name: Upload coverage report
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ secrets.COV_ELYAS_TOKEN }}" \
+          -F file=@coverage.json \
+          https://cov.ely.as/github/${{ github.repository }}/${{ github.ref_name }}/
+        if: ${{ github.ref_name == 'main' }}
+
+  test_js:
+    name: JavaScript tests
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
