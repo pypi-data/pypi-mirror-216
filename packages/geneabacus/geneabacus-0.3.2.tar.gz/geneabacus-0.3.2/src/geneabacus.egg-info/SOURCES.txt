@@ -1,0 +1,13 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+.sourcehut/arch.yml
+src/geneabacus/__init__.py
+src/geneabacus/profileio.py
+src/geneabacus.egg-info/PKG-INFO
+src/geneabacus.egg-info/SOURCES.txt
+src/geneabacus.egg-info/dependency_links.txt
+src/geneabacus.egg-info/requires.txt
+src/geneabacus.egg-info/top_level.txt
