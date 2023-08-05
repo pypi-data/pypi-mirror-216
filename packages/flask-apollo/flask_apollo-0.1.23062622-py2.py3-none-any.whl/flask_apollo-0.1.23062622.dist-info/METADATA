@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: flask-apollo
+Version: 0.1.23062622
+Summary: flask apollo apply
+Home-page: https://github.com/BingerYang/Flask-Apollo
+Author: binger
+Author-email: <xuehen_521@126.com>
+Maintainer: binger
+Maintainer-email: <xuehen_521@126.com>
+Platform: all
+Requires-Python: >=3.4
+Description-Content-Type: text/x-rst
+
+Flask-Apollo
+============
+
+Documentation
+-------------
+
+The documentation is hosted at https://github.com/BingerYang/Flask-Apollo
+
+
+Installation
+------------
+
+.. code:: shell
+
+     pip install Flask-Apollo
+
+Usage
+-----
+
+example:
+
+
