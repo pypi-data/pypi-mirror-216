@@ -1,0 +1,271 @@
+Metadata-Version: 2.1
+Name: pydatawork
+Version: 0.1.30
+Summary: jk.zhou's datawork
+Home-page: https://github.com/jkjoker/datawork
+Author: jk.zhou
+Author-email: zhouqiling.bjfu@foxmail.com
+License: MIT
+Keywords: datawork
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+
+pydatawork功能建议收集表：
+https://docs.qq.com/form/page/DZVNabWlkRUtldWtJ
+
+
+# functions and description
+
+
+#### obsidian_bookmarks_merge_and_deduplicate() obsidian中surfing插件产生的书签整理：先合并，再去重 （v 0.1.30）
+
+###### Mon Jun 26 22:50:45 CST 2023
+
+```python
+def obsidian_bookmarks_merge_and_deduplicate(original_bookmarks_path,result_path):
+    """
+    函数设计：先合并多个bookmarks（只有1个也能正常使用），再对合并后的bookmarks去重，最后得到一个最全、不重复的bookmarks。
+    original_bookmarks_path:一个路径，路径下存放bookmarks文件，json格式，可以是1个或多个json文件。
+    result_path:一个路径，用于存放最终结果。
+    """
+```
+
+
+
+#### current_folder_name() 给定一个路径，返回当前文件夹名 (v 0.1.26)
+
+###### Mon Jun 26 24:23:48 CST 2023
+```python
+def current_folder_name(path):
+    """
+    path:一个路径，可以是文件夹路径，也可以是文件路径
+    结果：返回current_folder_name
+    """
+```
+
+
+
+#### current_folder_name() 给定一个路径，返回文件名  (v 0.1.26)
+
+###### Mon Jun 26 24:24:45 CST 2023
+```python
+def file_name(path):
+    """
+    path:一个路径，可以是文件夹路径，也可以是文件路径
+    结果：返回file_name,当path为文件夹路径值，返回的值为空值
+    """
+```
+
+
+
+#### copy_files() 复制当前文件夹中（不包括子文件夹）指定类型的文件 （v 0.1.23） 
+
+###### Sun Jun 25 06:19:50 CST 2023
+
+```python
+def copy_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要复制的文件类别的后缀类型，如[".jpg",".zip",".png",".gz",".whl",".md"]，注意，要带点“.”。其中“.gz”表示“.tar.gz”这一类
+    实现效果：将待整理文件夹中(注：不包括子文件夹)指定类型的文件复制到目标文件夹
+    """
+```
+
+
+
+#### move_files() 移动当前文件夹中（不包括子文件夹）指定类型的文件 （v 0.1.23） 
+
+###### Sun Jun 25 06:17:26 CST 2023
+
+```python
+def move_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要移动的文件类别的后缀类型，如[".jpg",".zip",".png",".gz",".whl",".md"]，注意，要带点“.”。其中“.gz”表示“.tar.gz”这一类
+    实现效果：将待整理文件夹中(注：不包括子文件夹)指定类型的文件移动到目标文件夹
+    """
+```
+
+
+
+#### copy_all_files() 复制文件夹及子文件夹下指定类型的全部文件 （v 0.1.22）
+
+###### Sun Jun 25 06:05:29 CST 2023
+
+```python
+def copy_all_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹，可包含多层级子文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要复制的文件类别的后缀类型，如[".jpg",".zip",".png",".gz",".whl",".md"]，注意，要带点“.”。其中“.gz”表示“.tar.gz”这一类
+    实现效果：将待整理文件夹及其子文件夹中指定类型的全部文件复制到目标文件夹
+    """
+```
+
+
+
+#### move_all_files() 移动文件夹及子文件夹下指定类型的全部文件 （v 0.1.22）
+
+###### Sun Jun 25 05:01:22 CST 2023
+
+```python
+def move_all_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹，可包含多层级子文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要移动的文件类别的后缀类型，如.ipg|.png|.gif|.zip|.rar|.md|.mp4|.xml|.gz(表示.tar.gz)|等，注意，要带点“.”
+    实现效果：将待整理文件夹及其子文件夹中指定类型的全部文件移动到目标文件夹
+    """
+```
+
+示例：
+```Python
+import pydatawork as dw 
+
+folder_path = "/home/jkzhou/Desktop/pydatawork/test_data/move_all_files/folder_path"
+target_folder = "/home/jkzhou/Desktop/pydatawork/test_data/move_all_files/target_folder"
+file_type_list = [".jpg",".zip",".png",".gz",".whl",".md"]
+
+dw.move_all_files(folder_path,target_folder,file_type_list)
+```
+
+
+
+#### obsidian_move_md_or_canvas_linked_images() 提取obsidian中.md文档、.canvas文档中链接的图片，实现附件管理、库空间管理、笔记归档 (v 0.1.24)
+
+###### Sat Jun 24 18:37:16 CST 2023
+
+```python
+def obsidian_move_md_or_canvas_linked_images(images_path,folder_path,target_folder):
+    """
+    提取obsidian中.md文档、.canvas文档中链接的图片，实现附件管理、库空间管理、笔记归档。
+    需要指定三个路径：
+    images_path:图片附件所在的文件夹。通常是笔记库的附件文件夹
+    folder_path:待整理的md、canvas文档所在文件夹（可包括多层级子文件夹，会遍历）。通常临时建立一个文件夹,将待整理的笔记存进去
+    target_folder:提前准备的文件夹，可以建在任意位置，用于存放提取出来的图片
+    执行结束后，可以将文档和对应的图片一起进行归档，实现笔记管理的目的。
+    """
+```
+
+示例及说明：在自己的代码中提前准备好三个路径，然后调用函数
+
+```python
+import pydatawork as dw 
+
+images_path = "/home/jkzhou/Desktop/手机笔记同步-附件"
+folder_path = "/home/jkzhou/Desktop/file"
+target_folder = "/home/jkzhou/Desktop/file/附件"
+
+dw.obsidian_move_md_or_canvas_linked_images(images_path,folder_path,target_folder)
+```
+
+
+
+#### rename_folder_numeric_serialize() 文件夹从左到右比较，按数值从小到大排序，再从1开始进行序列化重命名（v 0.1.6）
+
+###### Sun Jun 18 22:37:01 CST 2023
+
+```python
+def rename_folder_numeric_serialize(path):
+    """
+    path:文件夹路径。给定一个文件夹路径，获取其中子文件夹的名字，根据子文件夹的名字，从左到右进行比较，按数值从小到大对子文件夹排序，再从1开始对子文件夹进行序列化重命名。
+    """
+```
+
+
+
+#### get_weibo() 微博图片获取（v 0.1.2）
+
+###### Sun Jun 18 17:10:46 CST 2023
+
+```python
+def get_weibo(path,id,weibo_name):
+    """
+    path: 内容存放路径；
+    id: 微博id；
+    weibo_name: 内容存放路径下文件夹的名字。
+    """
+```
+
+示例：获取梅西的微博id，获取其微博内容
+
+```python
+import pydatawork as dw 
+
+path="/home/Desktop/pydatawork"
+id="5934019851" # 梅西的微博id。在网页版上能获得链接，链接中u后面的内容即为id ,梅西微博的id为 5934019851  https://weibo.com/u/5934019851
+weibo_name="mx"
+
+dw.get_weibo(path,id,weibo_name)
+```
+
+来源：非原创
+原作者：XYJISAW
+参考链接：https://www.omegaxyz.com/2018/02/13/python_weibo/
+
+
+
+# about pydatawork
+
+#### hello_jkzhou() 获得帮助（v 0.1.7）
+
+###### Sun Jun 18 23:34:45 CST 2023
+
+```python
+def hello_jkzhou():
+    """If you need help or have a better idea, send me an e-mail."""
+    print("My e-mail is: zhouqiling.bjfu@foxmail.com")
+```
+
+
+#### pypi维护指令
+
+```shell
+cd 到pydatawork文件夹
+python3 setup.py sdist bdist_wheel # 打包
+twine check dist/* # 检查
+twine upload dist/* # 上传，需要输入帐号密码
+
+```
+
+#### 查看pydatawork是否有更新
+
+```shell
+pip3 list --outdated
+```
+
+#### pydatawork升级方法（先卸载，再安装）
+
+```shell
+pip3 uninstall pydatawork # 卸载
+pip3 install pydatawork # 安装
+```
+
+#### pydatawork 导入方式
+```shell
+import pydatawork # 标准导入方式
+import pydatawork as dw # 推荐使用此方式，更简洁
+```
+
+#### pydatawork安装
+```shell
+pip3 install pydatawork # 安装指令
+```
+
+#### 关于pydatawork
+
+数据工作相关的分享、梳理，主要目的是辅助个人开展数据处理、数据分析工作。
+
+推荐始终使用最新版。
+
+要升级使用最新的安装包，比较稳定可靠的一种方式是，先卸载旧的，再重装。
+
+发布时间：Thu Jun 15 13:23:43 CST 2023
+
+
