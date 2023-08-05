@@ -1,0 +1,3 @@
+[console_scripts]
+kangtools_commit_version_to_git = kangtools.commit_version_to_git:main
+kangtools_version_control = kangtools.version_control:main
