@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+pyclamp/DataModel.py
+pyclamp/PyQtTreeModel.py
+pyclamp/__init__.py
+pyclamp/__main__.py
+pyclamp/heka_reader.py
+pyclamp/pyCLAMP.py
+pyclamp.egg-info/PKG-INFO
+pyclamp.egg-info/SOURCES.txt
+pyclamp.egg-info/dependency_links.txt
+pyclamp.egg-info/requires.txt
+pyclamp.egg-info/top_level.txt
