@@ -1,0 +1,199 @@
+===================
+idem-core-functions
+===================
+
+.. image:: https://img.shields.io/badge/made%20with-pop-teal
+   :alt: Made with pop, a Python implementation of Plugin Oriented Programming
+   :target: https://pop.readthedocs.io/
+
+.. image:: https://img.shields.io/badge/made%20with-python-yellow
+   :alt: Made with Python
+   :target: https://www.python.org/
+
+Idem plugin with built-in functions
+
+About
+=====
+
+An Idem plugin containing common functions that you can run with the ``exec.run`` state. You can use argument binding to pass the output of these common functions to other Idem plugin resource states, such as in ``idem-aws``, ``idem-k8s``, or other Idem plugins.
+
+What is POP?
+------------
+
+This project is built with `pop <https://pop.readthedocs.io/>`__, a Python-based implementation of *Plugin Oriented Programming (POP)*. POP seeks to bring together concepts and wisdom from the history of computing in new ways to solve modern computing problems.
+
+For more information:
+
+* `Intro to Plugin Oriented Programming (POP) <https://pop-book.readthedocs.io/en/latest/>`__
+* `pop-awesome <https://gitlab.com/saltstack/pop/pop-awesome>`__
+* `pop-create <https://gitlab.com/saltstack/pop/pop-create/>`__
+
+Getting Started
+===============
+
+Prerequisites
+-------------
+
+* Python 3.7+
+* git *(if installing from source or contributing to the project)*
+
+  To contribute to the project and set up your local development environment, see ``CONTRIBUTING.rst`` in the source repository for this project.
+
+Installation
+------------
+
+You can install ``idem-core-functions`` with the Python package installer (PyPI) or from source.
+
+Install from PyPI
++++++++++++++++++
+
+.. code-block:: bash
+
+      pip install idem-core-functions
+
+Install from Source
++++++++++++++++++++
+
+.. code-block:: bash
+
+   # clone repo
+   git clone git@<your-project-path>/idem-core-functions.git
+   cd idem-core-functions
+
+   # Setup venv
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -e .
+
+Usage
+=====
+
+Setup
+-----
+
+After installation, ``idem-core-functions`` execution modules are accessible to the pop *hub*.
+
+For more information:
+
+* `Intro to Plugin Oriented Programming (POP) <https://pop-book.readthedocs.io/en/latest/>`__
+* `pop hub <https://pop-book.readthedocs.io/en/latest/main/hub.html#>`__
+
+You are now ready to use idem-core-functions.
+
+Exec Module
+-----------
+
+An SLS file specifies the desired state of a resource. You can run an exec module within an SLS file using the ``exec.run`` state, where the exec module returns a new state that can be referenced with argument binding.
+
+* ``core.encoding.base64encode``
+
+  Apply Base64 encoding to a string.
+
+* ``core.encoding.base64decode``
+
+  Restore a Base64 encoded character string to the original string.
+
+* ``core.conversion.to_json``
+
+  Serialize an object to a string of JSON.
+
+* ``core.collection.distinct``
+
+  For a given list, return a new list with any duplicate elements removed.
+
+* ``core.collection.flatten``
+
+  For a given list, replace any elements that are lists with a flattened sequence of that list.
+
+* ``core.collection.element``
+
+  Retrieve a single element from a list.
+
+* ``core.collection.length``
+
+  Determine the length of a given list, map, or string.
+
+Syntax:
+
+..  code:: sls
+
+    [Idem-state-name]:
+      exec.run:
+        - path: core.encoder.base64.encode
+        - kwargs:
+            data: test-user-name:test-password
+
+    [Idem-state-name]:
+      exec.run:
+        - path: core.encoder.base64.decode
+        - kwargs:
+            encoded_data: dGVzdC11c2VyLW5hbWU6dGVzdC1wYXNzd29yZA==
+
+    [Idem-state-name]:
+      exec.run:
+        - path: core.conversion.to_json
+        - kwargs:
+            data: '{
+              "cluster_name":  "idem-eks-test",
+              "region": "ap-south-1",
+            }'
+
+    [Idem-state-name]:
+      exec.run:
+        - path: core.encryption.gpg.encrypt
+        - kwargs:
+            data: test-data-for-encryption
+
+Examples:
+
+..  code:: sls
+
+        vault_generic_secret.example-creds.search:
+          vault.secrets.kv_v1.secret.search:
+            - path: "example/projects.registry.example.com"
+
+        idem.core.encoder.base64.encode.test-2:
+          exec.run:
+            - path: core.encoder.base64.encode
+            - kwargs:
+                data: "${vault.secrets.kv_v1.secret:vault_generic_secret.example-creds.search:data:user}:${vault.secrets.kv_v1.secret:vault_generic_secret.example-creds.search:data:pass}"
+
+        kubernetes_secret.registry-secret-example:
+          k8s.core.v1.secret.present:
+            - resource_id: {{ params.get('kubernetes_secret.registry-secret-example') }}
+            - metadata:
+                name: "registrysecret-example"
+            - string_data:
+                ".dockerconfigjson": |+
+                                     {
+                                       "auths": {
+                                         "projects.registry.example.com": {
+                                           "auth": "${exec:idem.core.b64Encode.test-2:data}"
+                                         }
+                                       }
+                                     }
+            - type: "kubernetes.io/dockerconfigjson"
+
+        idem.core.encryption.gpg.encrypt.test-1:
+          exec.run:
+            - path: core.encryption.gpg.encrypt
+            - kwargs:
+                data: test-data-for-encryption
+
+Idem command line examples:
+
+.. code:: bash
+
+     idem exec exec.core.encoding.base64encode data=sample-data
+     idem exec exec.core.encoding.base64decode encoded_data=dGVzdC11c2VyLW5hbWU6dGVzdC1wYXNzd29yZA==
+
+Current Supported Exec Functions
+--------------------------------
+
+core
+++++
+
+* conversion
+* collection
+* encoder
+* encryption
