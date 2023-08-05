@@ -1,0 +1,5 @@
+[cms.djangoapp]
+tahoe_idp = tahoe_idp.apps:TahoeIdpConfig
+
+[lms.djangoapp]
+tahoe_idp = tahoe_idp.apps:TahoeIdpConfig
