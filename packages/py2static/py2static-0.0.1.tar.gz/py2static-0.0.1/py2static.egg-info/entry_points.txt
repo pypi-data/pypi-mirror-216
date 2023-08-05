@@ -1,0 +1,2 @@
+[console_scripts]
+py2static = py2static.__main__:app

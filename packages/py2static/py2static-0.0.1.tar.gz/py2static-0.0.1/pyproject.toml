@@ -1,0 +1,17 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=3.4"]
+
+[tool.setuptools_scm]
+write_to = "py2static/version.py"
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 120
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning",   # Silent PyInstaller DeprecationWarning
+]
