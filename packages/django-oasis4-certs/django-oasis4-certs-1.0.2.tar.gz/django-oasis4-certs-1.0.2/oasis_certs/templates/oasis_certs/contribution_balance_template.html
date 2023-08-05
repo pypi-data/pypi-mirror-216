@@ -1,0 +1,12 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict string_concat define_able %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    <div class="text-large text-justify">
+        {% string_concat certificate.body_text user.get_full_name user.profile.document_id doc_data.0.alpha_balance doc_data.0.contribution_balance as content_body %}
+        {{ content_body|safe }}
+    </div>
+{% endblock %}

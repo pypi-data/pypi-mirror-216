@@ -1,0 +1,177 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict string_concat define_able %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    <div class="text-center text-bold">
+        {{ certificate.body_text }}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    <tr>
+        <td>
+            <strong>{% translate "Location Name" %}</strong>
+        </td>
+        <td>
+            {{ doc_data.0.main_name }}
+        </td>
+        <td>
+            <strong>{% translate "Warehouse Name" %}</strong>
+        </td>
+        <td>
+            {{ doc_data.0.warehouse_name }}
+        </td>
+    </tr>
+    </table>
+    <hr>
+    <div style="font-size: x-small;">
+        <table>
+            <tr>
+                <th>
+                    {% translate "Date" %}
+                </th>
+                <th>
+                    {% translate "Delivery" %}
+                </th>
+                <th>
+                    {% translate "Expiration" %}
+                </th>
+                <th>
+                    {% translate "Contract" %}
+                </th>
+                <th>
+                    {% translate "Number" %}
+                </th>
+                <th style="width: 15%">
+                    {% translate "Product" %}
+                </th>
+                <th>
+                    {% translate "Price" %}
+                </th>
+                <th>
+                    {% translate "Quantity" %}
+                </th>
+                <th>
+                    {% translate "Total" %}
+                </th>
+                <th>
+                    {% translate "Received" %}
+                </th>
+                <th>
+                    {% translate "Adjustment" %}
+                </th>
+                <th>
+                    {% translate "Missing" %}
+                </th>
+                <th>
+                    {% translate "Missing Value" %}
+                </th>
+                <th>
+                    {% translate "Status" %}
+                </th>
+            </tr>
+            {% for data in doc_data %}
+                <tr>
+                    <td class="text-center">
+                        {{ data.contract_date|date:"d-m-Y" }}
+                    </td>
+                    <td>
+                        {{ data.delivery_date|date:"d-m-Y" }}
+                    </td>
+                    <td>
+                        {{ data.expiration_date|date:"d-m-Y" }}
+                    </td>
+                    <td>
+                        {{ data.document_id }}-{{ data.location_id }}-{{ data.number_id }}
+                    </td>
+                    <td>
+                        {{ data.row_id }}
+                    </td>
+                    <td>
+                        {{ data.product_name }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.price|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.quantity|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.total_ammount|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.received|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.adjustment_quantity|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.missing_quantity|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.missing_value|floatformat:"2g" }}
+                    </td>
+                    <td class="text-center">
+                        {{ data.status_name }}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="7" class="base-cell-right">
+                    <strong>{% translate "Totals" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "quantity" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "total_ammount" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "received" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "adjustment_quantity" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "missing_quantity" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "missing_value" ",.2f" %}</strong>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

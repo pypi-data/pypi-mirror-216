@@ -1,0 +1,563 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-16 10:29-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin_views.py:28
+msgid "Template data"
+msgstr "Plantilla para utilizar"
+
+#: api/services/oasis_certs.py:89 api/services/oasis_certs.py:143
+msgid "The user is not registered."
+msgstr "El usuario no se encuentra registrado."
+
+#: api/services/oasis_certs.py:119
+msgid "The 'category' parameter not found at request."
+msgstr "El parámetro 'category' no se encuentra."
+
+#: api/services/oasis_certs.py:157
+msgid "The period is not closed."
+msgstr "El usuario no se encuentra registrado."
+
+#: api/services/oasis_certs.py:187
+msgid "User does not have data for this document."
+msgstr "El usuario no posee información para este documento."
+
+#: api/services/oasis_certs.py:189
+msgid "Some json field required not found"
+msgstr "Los datos requeridos no se encuentran."
+
+#: api/services/oasis_certs.py:191 api/services/oasis_cycle.py:44
+msgid "Certificate key does not exist."
+msgstr "La llave del certificado no existe."
+
+#: api/services/oasis_certs.py:194
+msgid "Company does not found"
+msgstr "La compañía no ha sido definida."
+
+#: api/services/oasis_certs.py:226
+msgid "Field 'file_id' is required"
+msgstr "El campo 'file_id' es requerido."
+
+#: api/services/oasis_certs.py:228
+msgid "Data value error"
+msgstr "Error en el valor del dato."
+
+#: api/services/oasis_certs.py:231
+msgid "Data validation error"
+msgstr "Error de validación de datos."
+
+#: api/services/oasis_certs.py:234
+msgid "Document error"
+msgstr "Error en el documento."
+
+#: api/services/oasis_certs.py:237
+msgid "Document does not exists."
+msgstr "La llave del certificado no existe."
+
+#: api/services/oasis_cycle.py:42
+msgid "The 'key' parameter is required."
+msgstr "El parámetro 'key' es requerido."
+
+#: apps.py:22
+msgid "Oasis4 Certificates Generator"
+msgstr "Generador de Certificados Oasis 4"
+
+#: apps.py:25
+msgid "Sending of Certificate"
+msgstr "Envío de Certificado"
+
+#: lib/choices/category.py:19
+msgid "Taxes"
+msgstr "Tributarios"
+
+#: lib/choices/category.py:20
+msgid "Commercial"
+msgstr "Comerciales"
+
+#: lib/choices/category.py:21
+msgid "Partners"
+msgstr "Asociados"
+
+#: lib/choices/category.py:22
+msgid "Account Statements"
+msgstr "Estados de Cuenta"
+
+#: lib/choices/category.py:23
+msgid "Farms"
+msgstr "Fincas"
+
+#: lib/choices/cycle_type.py:19
+msgid "Annual"
+msgstr "Anual"
+
+#: lib/choices/cycle_type.py:20
+msgid "Biannual"
+msgstr "Semestral"
+
+#: lib/choices/cycle_type.py:21
+msgid "Quarterly"
+msgstr "Trimestral"
+
+#: lib/choices/cycle_type.py:22
+msgid "Bimonthly"
+msgstr "Bimestral"
+
+#: lib/choices/cycle_type.py:23
+msgid "Monthly"
+msgstr "Mensual"
+
+#: lib/choices/cycle_type.py:24
+msgid "None"
+msgstr "Ninguno"
+
+#: lib/cursors/cursor.py:29
+msgid "The arguments required for the query were not received."
+msgstr "Los argumentos requeridos para el query no han sido recibidos."
+
+#: lib/cursors/cursor.py:43
+msgid "The query text must be string type."
+msgstr "El texto del query debe ser de tipo cadena."
+
+#: lib/cursors/cursor.py:51
+msgid "The key of certificate does not exists."
+msgstr "La llave del certificado no existe."
+
+#: models.py:27
+msgid "Certificate name"
+msgstr "Nombre del certificado."
+
+#: models.py:28
+msgid "Name that appears as the title of the certificate"
+msgstr "Nombre que aparece como título del certificado"
+
+#: models.py:30
+msgid "Category"
+msgstr "Categoría"
+
+#: models.py:30
+msgid "Document category"
+msgstr "Categoría del Documento"
+
+#: models.py:31
+msgid "Certificate text"
+msgstr "Texto del certificado"
+
+#: models.py:32
+msgid "Text that goes inside the body of the certificate"
+msgstr "Texto que va dentro del cuerpo del certificado"
+
+#: models.py:33 templates/oasis_certs/certs_base_template.html:86
+msgid "Issue date"
+msgstr "Fecha de Expedición"
+
+#: models.py:35
+msgid "Customer type"
+msgstr "Tipo de Cliente"
+
+#: models.py:36
+msgid "Minimal customer type required for this document."
+msgstr "Tipo de cliente mínimo requerido para este documento."
+
+#: models.py:37
+msgid "Query text"
+msgstr "Texto del Query"
+
+#: models.py:38
+msgid "Text used to execute the query"
+msgstr "Texto usado para ejecutar el query"
+
+#: models.py:39
+msgid "Template to use"
+msgstr "Plantilla para utilizar"
+
+#: models.py:40
+msgid "Template used to generate the certificate"
+msgstr "Plantilla que se utiliza para generar el certificado"
+
+#: models.py:41 models.py:42
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: models.py:43
+msgid "Footer text"
+msgstr "Texto del pie"
+
+#: models.py:44
+msgid "Text that is located in the footer of the certificate"
+msgstr "Texto que es utilizado para el pie de página del certificado"
+
+#: models.py:46
+msgid "Period type"
+msgstr "Tipo de Periodo"
+
+#: models.py:47
+msgid "Type of periodicity of document."
+msgstr "Tipo de periodicidad del documento."
+
+#: models.py:48
+msgid "Closing required"
+msgstr "Cierre requerido"
+
+#: models.py:49
+msgid "The period must be closed."
+msgstr "El periodo debe estar cerrado."
+
+#: models.py:50
+msgid "Sign required"
+msgstr "Firma requerida"
+
+#: models.py:51
+msgid "The document require to be signed"
+msgstr "El documento requiere estar firmado"
+
+#: models.py:60 templates/mail/send_certificate.txt:6
+msgid "Certificate"
+msgstr "Certificado"
+
+#: models.py:61
+msgid "Certificates"
+msgstr "Certificados"
+
+#: templates/mail/send_certificate.txt:2
+msgid "Hello"
+msgstr "Hola"
+
+#: templates/mail/send_certificate.txt:4
+msgid ""
+"Thank you for use the CADEFIHUILA's transactional portal. Attached to this "
+"email you can find the requested certificate: "
+msgstr ""
+"Gracias por utilizar el portal transaccional de CADEFIHUIL. Adjunto a este "
+"correo podrá encontrar el certificado solicitado: "
+
+#: templates/mail/send_certificate.txt:7
+msgid "Generated at"
+msgstr "Generado el"
+
+#: templates/mail/send_certificate.txt:10
+#, python-format
+msgid ""
+"This email was generated automatically at %(email_datetime)s with id "
+"%(email_id)s. Please do not answer it."
+msgstr ""
+"Este correo fue generado automáticamente el %(email_datetime)s con el id "
+"%(email_id)s. Por favor no lo responda."
+
+#: templates/oasis_certs/certs_base_template.html:25
+#: templates/oasis_certs/coffee_sales_template.html:21
+#: templates/oasis_certs/credits_statement_template.html:21
+#: templates/oasis_certs/farms_template.html:21
+#: templates/oasis_certs/future_contracts_template.html:21
+#: templates/oasis_certs/hability_template.html:22
+#: templates/oasis_certs/wh_icr_template.html:23
+#: templates/oasis_certs/wh_ivr_template.html:22
+#: templates/oasis_certs/wh_source_template.html:22
+msgid "Tax Id"
+msgstr "NIT/CC"
+
+#: templates/oasis_certs/certs_base_template.html:33
+#: templates/oasis_certs/coffee_sales_template.html:29
+#: templates/oasis_certs/credits_statement_template.html:29
+#: templates/oasis_certs/farms_template.html:29
+#: templates/oasis_certs/farms_template.html:55
+#: templates/oasis_certs/future_contracts_template.html:29
+#: templates/oasis_certs/hability_template.html:30
+#: templates/oasis_certs/wh_icr_template.html:31
+#: templates/oasis_certs/wh_ivr_template.html:30
+#: templates/oasis_certs/wh_source_template.html:30
+msgid "Address"
+msgstr "Dirección"
+
+#: templates/oasis_certs/certs_base_template.html:41
+#: templates/oasis_certs/coffee_sales_template.html:35
+#: templates/oasis_certs/credits_statement_template.html:35
+#: templates/oasis_certs/farms_template.html:35
+#: templates/oasis_certs/future_contracts_template.html:35
+#: templates/oasis_certs/hability_template.html:36
+#: templates/oasis_certs/wh_icr_template.html:37
+#: templates/oasis_certs/wh_ivr_template.html:36
+#: templates/oasis_certs/wh_source_template.html:36
+msgid "Phone"
+msgstr "Teléfono"
+
+#: templates/oasis_certs/certs_base_template.html:66
+msgid "Taxable year"
+msgstr "Año gravable"
+
+#: templates/oasis_certs/certs_base_template.html:73
+#: templates/oasis_certs/coffee_sales_template.html:46
+#: templates/oasis_certs/wh_ivr_template.html:47
+msgid "Period"
+msgstr "Periodo"
+
+#: templates/oasis_certs/certs_base_template.html:80
+msgid "Place of issuance"
+msgstr "Lugar de expedición"
+
+#: templates/oasis_certs/certs_base_template.html:117
+msgid "Legal Representative"
+msgstr "Representante Legal"
+
+#: templates/oasis_certs/certs_base_template.html:127
+msgid "This certificate has been printed at "
+msgstr "Este certificado ha sido impreso el "
+
+#: templates/oasis_certs/certs_base_template.html:130
+msgid "Use this code to validate the authenticity of this document "
+msgstr "Use este código para validar la autenticidad de este documento "
+
+#: templates/oasis_certs/coffee_sales_template.html:15
+#: templates/oasis_certs/credits_statement_template.html:15
+#: templates/oasis_certs/farms_template.html:15
+#: templates/oasis_certs/future_contracts_template.html:15
+#: templates/oasis_certs/hability_template.html:16
+#: templates/oasis_certs/wh_icr_template.html:17
+#: templates/oasis_certs/wh_ivr_template.html:16
+#: templates/oasis_certs/wh_source_template.html:16
+msgid "Name"
+msgstr "Nombre"
+
+#: templates/oasis_certs/coffee_sales_template.html:49
+#: templates/oasis_certs/future_contracts_template.html:76
+#, fuzzy
+#| msgid "Production"
+msgid "Product"
+msgstr "Producción"
+
+#: templates/oasis_certs/coffee_sales_template.html:52
+msgid "Kg"
+msgstr ""
+
+#: templates/oasis_certs/coffee_sales_template.html:55
+#: templates/oasis_certs/credits_statement_template.html:59
+#, fuzzy
+#| msgid "Base Value"
+msgid "Value"
+msgstr "Valor Base"
+
+#: templates/oasis_certs/coffee_sales_template.html:76
+#: templates/oasis_certs/credits_statement_template.html:131
+#: templates/oasis_certs/future_contracts_template.html:151
+#: templates/oasis_certs/wh_icr_template.html:101
+#: templates/oasis_certs/wh_ivr_template.html:92
+#: templates/oasis_certs/wh_source_template.html:86
+msgid "Totals"
+msgstr "Totales"
+
+#: templates/oasis_certs/credits_statement_template.html:47
+msgid "Document Type"
+msgstr "Error en el documento."
+
+#: templates/oasis_certs/credits_statement_template.html:50
+#: templates/oasis_certs/future_contracts_template.html:73
+msgid "Number"
+msgstr "# Venc"
+
+#: templates/oasis_certs/credits_statement_template.html:53
+#: templates/oasis_certs/future_contracts_template.html:61
+msgid "Date"
+msgstr "Fecha"
+
+#: templates/oasis_certs/credits_statement_template.html:56
+#: templates/oasis_certs/future_contracts_template.html:67
+msgid "Expiration"
+msgstr "Vencimiento"
+
+#: templates/oasis_certs/credits_statement_template.html:62
+msgid "Balance"
+msgstr "Saldo"
+
+#: templates/oasis_certs/credits_statement_template.html:65
+msgid "Interest Balance"
+msgstr "Saldo de Intereses"
+
+#: templates/oasis_certs/credits_statement_template.html:68
+msgid "Interest Delay Balance"
+msgstr "Saldo Intereses de Mora"
+
+#: templates/oasis_certs/credits_statement_template.html:71
+msgid "Total Balance"
+msgstr "Total Saldo"
+
+#: templates/oasis_certs/credits_statement_template.html:74
+msgid "Current Int Days"
+msgstr "Días de Intereses"
+
+#: templates/oasis_certs/credits_statement_template.html:77
+msgid "Payment Date"
+msgstr "Fecha de Pago"
+
+#: templates/oasis_certs/credits_statement_template.html:80
+msgid "Days Delay"
+msgstr "Días de Mora"
+
+#: templates/oasis_certs/credits_statement_template.html:83
+msgid "Project"
+msgstr "Proyecto"
+
+#: templates/oasis_certs/farms_template.html:46
+msgid "Farm"
+msgstr "Finca"
+
+#: templates/oasis_certs/farms_template.html:49
+msgid "Farm Name"
+msgstr "Nombre Finca"
+
+#: templates/oasis_certs/farms_template.html:52
+msgid "City"
+msgstr "Municipio"
+
+#: templates/oasis_certs/farms_template.html:58
+msgid "SICA"
+msgstr "SICA"
+
+#: templates/oasis_certs/farms_template.html:61
+msgid "Area (Hectares)"
+msgstr "Área (Hectáreas)"
+
+#: templates/oasis_certs/farms_template.html:88
+#: templates/oasis_certs/future_contracts_template.html:85
+msgid "Total"
+msgstr "Total"
+
+#: templates/oasis_certs/future_contracts_template.html:43
+msgid "Location Name"
+msgstr "Nombre Ubicación"
+
+#: templates/oasis_certs/future_contracts_template.html:49
+msgid "Warehouse Name"
+msgstr "Nombre Bodega"
+
+#: templates/oasis_certs/future_contracts_template.html:64
+msgid "Delivery"
+msgstr "Entrega"
+
+#: templates/oasis_certs/future_contracts_template.html:70
+msgid "Contract"
+msgstr "Contrato"
+
+#: templates/oasis_certs/future_contracts_template.html:79
+msgid "Price"
+msgstr "Precio"
+
+#: templates/oasis_certs/future_contracts_template.html:82
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: templates/oasis_certs/future_contracts_template.html:88
+msgid "Received"
+msgstr "Recibido"
+
+#: templates/oasis_certs/future_contracts_template.html:91
+msgid "Adjustment"
+msgstr "Ajuste"
+
+#: templates/oasis_certs/future_contracts_template.html:94
+msgid "Missing"
+msgstr "Pendiente"
+
+#: templates/oasis_certs/future_contracts_template.html:97
+msgid "Missing Value"
+msgstr "Valor Pendiente"
+
+#: templates/oasis_certs/future_contracts_template.html:100
+msgid "Status"
+msgstr "Estado"
+
+#: templates/oasis_certs/hability_template.html:47
+msgid "Area"
+msgstr "Área"
+
+#: templates/oasis_certs/hability_template.html:50
+msgid "Production"
+msgstr "Producción"
+
+#: templates/oasis_certs/hability_template.html:53
+msgid "Coffe Sales"
+msgstr "Ventas Café"
+
+#: templates/oasis_certs/hability_template.html:56
+msgid "Expired Credits"
+msgstr "Cartera Vencida"
+
+#: templates/oasis_certs/hability_template.html:59
+msgid "Other Expired Accounts"
+msgstr "Otras CxC Vencidas"
+
+#: templates/oasis_certs/hability_template.html:62
+msgid "Expired Advances"
+msgstr "Avances Vencidos"
+
+#: templates/oasis_certs/hability_template.html:65
+msgid "Annual Contribution"
+msgstr "Pago Anual Aportes"
+
+#: templates/oasis_certs/hability_template.html:68
+msgid "Sales Compliance"
+msgstr "Cumplimiento Ventas"
+
+#: templates/oasis_certs/hability_template.html:71
+msgid "Expired Futures"
+msgstr "Futuros Vencidos"
+
+#: templates/oasis_certs/hability_template.html:74
+msgid "Expired Co-signer"
+msgstr "Obl. Vencidas Codeudor"
+
+#: templates/oasis_certs/wh_icr_template.html:48
+#: templates/oasis_certs/wh_ivr_template.html:50
+#: templates/oasis_certs/wh_source_template.html:47
+msgid "Account Id"
+msgstr "Cuenta No"
+
+#: templates/oasis_certs/wh_icr_template.html:51
+#: templates/oasis_certs/wh_ivr_template.html:53
+#: templates/oasis_certs/wh_source_template.html:50
+msgid "Account Name"
+msgstr "Nombre Cuenta"
+
+#: templates/oasis_certs/wh_icr_template.html:54
+#: templates/oasis_certs/wh_ivr_template.html:59
+#: templates/oasis_certs/wh_source_template.html:56
+msgid "Base Value"
+msgstr "Valor Base"
+
+#: templates/oasis_certs/wh_icr_template.html:57
+#: templates/oasis_certs/wh_ivr_template.html:62
+#: templates/oasis_certs/wh_source_template.html:59
+msgid "Withholding Value"
+msgstr "Valor Retenido"
+
+#: templates/oasis_certs/wh_icr_template.html:84
+msgid "Subtotals"
+msgstr "Subtotales"
+
+#: templates/oasis_certs/wh_ivr_template.html:56
+#: templates/oasis_certs/wh_source_template.html:53
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#: templatetags/define_able.py:22
+msgid "ABLE"
+msgstr "HÁBIL"
+
+#: templatetags/define_able.py:22
+msgid "NOT ABLE"
+msgstr "INHÁBIL"
+

@@ -1,0 +1,52 @@
+/*
+ * Developed by CQ Inversiones SAS. Copyright ©. 2019 - 2023. All rights reserved.
+ * Desarrollado por CQ Inversiones SAS. Copyright ©. 2019 - 2023. Todos los derechos reservado
+ */
+
+.base-certs-header-right {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+.base-certs-logo {
+    width: 150px;
+    margin-right: 0;
+}
+
+.base-certs-detail {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: auto auto;
+    row-gap: 15px;
+    margin: 0 10px 0 10px ;
+}
+
+.base-certs-footer {
+    text-align: justify-all;
+    font-style: italic;
+    font-size: smaller;
+    text-decoration-color: gray;
+}
+
+.base-cell-half {
+    width: 50%;
+}
+
+.base-sign {
+    margin-top: 50px;
+}
+
+.base-cell-right {
+    text-align: right;
+}
+
+.base-cell-sign {
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: medium;
+}
+

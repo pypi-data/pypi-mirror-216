@@ -1,0 +1,95 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict string_concat define_able %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    <div class="text-center text-bold">
+        {{ certificate.body_text }}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table style="font-size: small;">
+        <tr>
+            <th>
+                {% translate "Farm" %}
+            </th>
+            <th>
+                {% translate "Farm Name" %}
+            </th>
+            <th>
+                {% translate "City" %}
+            </th>
+            <th>
+                {% translate "Address" %}
+            </th>
+            <th>
+                {% translate "SICA" %}
+            </th>
+            <th>
+                {% translate "Area (Hectares)" %}
+            </th>
+        </tr>
+        {% for data in doc_data %}
+            <tr>
+                <td class="cell-short">
+                    {{ data.farm }}
+                </td>
+                <td>
+                    {{ data.farm_name }}
+                </td>
+                <td>
+                    {{ data.city }}
+                </td>
+                <td>
+                    {{ data.address }}
+                </td>
+                <td class="cell-numeric">
+                    {{ data.ean }}
+                </td>
+                <td class="cell-numeric">
+                    {{ data.area|floatformat:"-2" }}
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="5" class="base-cell-right">
+                <strong>{% translate "Total" %}</strong>
+            </td>
+            <td class="cell-numeric">
+                {% sum_dict doc_data "area" ",.2f" %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

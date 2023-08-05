@@ -1,0 +1,86 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict string_concat define_able %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    <div class="text-center text-bold">
+        {{ certificate.body_text }}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table style="font-size: small;">
+        <tr>
+            <th class="cell-short">
+                {% translate "Period" %}
+            </th>
+            <th>
+                {% translate "Product" %}
+            </th>
+            <th>
+                {% translate "Kg" %}
+            </th>
+            <th>
+                {% translate "Value" %}
+            </th>
+        </tr>
+        {% for data in doc_data %}
+            <tr>
+                <td class="text-center">
+                    {{ data.period }}
+                </td>
+                <td>
+                    {{ data.product_name }}
+                </td>
+                <td class="cell-numeric">
+                    {{ data.purchase_quantity|floatformat:"2g" }}
+                </td>
+                <td class="cell-numeric">
+                    {{ data.purchase_value|floatformat:"2g" }}
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2" class="base-cell-right">
+                <strong>{% translate "Totals" %}</strong>
+            </td>
+            <td class="cell-numeric">
+                <strong>{% sum_dict doc_data "purchase_quantity" ",.2f" %}</strong>
+            </td>
+            <td class="cell-numeric">
+                <strong>{% sum_dict doc_data "purchase_value" ",.2f" %}</strong>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

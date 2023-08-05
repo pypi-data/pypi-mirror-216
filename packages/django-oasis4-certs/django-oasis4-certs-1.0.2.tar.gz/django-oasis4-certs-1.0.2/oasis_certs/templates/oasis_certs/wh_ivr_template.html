@@ -1,0 +1,102 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict %}
+
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    <div class="text-center text-bold">
+        {{ certificate.body_text }}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th>
+                {% translate "Period" %}
+            </th>
+            <th>
+                {% translate "Account Id" %}
+            </th>
+            <th>
+                {% translate "Account Name" %}
+            </th>
+            <th>
+                {% translate "Percentage" %}
+            </th>
+            <th>
+                {% translate "Base Value" %}
+            </th>
+            <th>
+                {% translate "Withholding Value" %}
+            </th>
+        </tr>
+        {% for account in doc_data %}
+            <tr>
+                <td>
+                    {{ account.period }}
+                </td>
+                <td>
+                    {{ account.account }}
+                </td>
+                <td>
+                    {{ account.account_name|truncatechars:40 }}
+                </td>
+                <td class="cell-numeric">
+                    {{ account.percentage|floatformat:"2g" }}%
+                </td>
+                <td class="cell-numeric">
+                    {{ account.base_value|floatformat:"2g" }}
+                </td>
+                <td class="cell-numeric">
+                    {{ account.withholding_value|floatformat:"2g" }}
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="3">
+
+            </td>
+            <td class="cell-numeric cell-total">
+                {% translate "Totals" %}
+            </td>
+            <td class="cell-numeric cell-total">
+                {% sum_dict doc_data "base_value" ",.2f"  %}
+            </td>
+            <td class="cell-numeric cell-total">
+                {% sum_dict doc_data "withholding_value" ",.2f" %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

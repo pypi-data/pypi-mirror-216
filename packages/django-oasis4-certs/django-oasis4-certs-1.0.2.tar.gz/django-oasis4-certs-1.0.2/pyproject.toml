@@ -1,0 +1,40 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+]
+build-backend="setuptools.build_meta"
+
+[project]
+name = "django-oasis4-certs"
+version = "1.0.2"
+authors = [
+    {name="Mario Cerón", email="mario.ceron@cqinversiones.co"}
+]
+description = "Certificate generator for Django from OASIS4©"
+readme = "README.md"
+license = {file="LICENSE"}
+requires-python = ">=3.9"
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3.9",
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Framework :: Django :: 4.1",
+    "Environment :: Web Environment",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP"
+]
+dependencies = [
+    "Django>=4.1",
+    "djangorestframework",
+    "xhtml2pdf",
+    "zibanu-django",
+    "django-oasis4",
+    "django-oasis4-auth"
+]
+keywords = [
+    "django",
+    "zibanu",
+    "library"
+]

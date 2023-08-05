@@ -1,0 +1,139 @@
+{% load i18n static_uri %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_base_style.css' %}">
+    {% block more_css %}
+    {% endblock %}
+</head>
+<body>
+
+<!-- Header block -->
+<table style="width: 100%;">
+    <tr>
+        <td style="width: 50%;">
+            <table style="width: 100%">
+                <tr>
+                    <td colspan="2">
+                        <strong>
+                            {{ company.name }}
+                        </strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 30%;">
+                        <strong>{% translate "Tax Id" %}</strong>
+                    </td>
+                    <td>
+                        {{ company.tax_id }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {% translate "Address" %}
+                    </td>
+                    <td>
+                        {{ company.address }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {% translate "Phone" %}
+                    </td>
+                    <td>
+                        {{ company.phone }}
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width: 50%;">
+            <div class="base-certs-header-right">
+                <div>
+                    <img src="{% static_uri 'oasis_certs/img/logo.png' %}" class="base-certs-logo">
+                </div>
+                <div>
+                    <strong>{{ certificate.name }}</strong>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <hr>
+            <table style="font-size: small;">
+                <tr>
+                    <td style="width: 10%;">
+                        <strong>{% translate "Taxable year" %}</strong>
+                    </td>
+                    <td>
+                        {{ year }}
+                    </td>
+                    {% if period > 0 %}
+                        <td style="width: 10%;">
+                            <strong>{% translate "Period" %}</strong>
+                        </td>
+                        <td>
+                            {{ period }}
+                        </td>
+                    {% endif %}
+                    <td style="width: 10%;">
+                        <strong>{% translate "Place of issuance" %}</strong>
+                    </td>
+                    <td>
+                        {{ company.city }}
+                    </td>
+                    <td style="width: 10%;">
+                        <strong>{% translate "Issue date" %}</strong>
+                    </td>
+                    <td>
+                        {{ certificate.issue_date|date:"d M Y" }}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<hr>
+
+<!-- Block detail content -->
+<div id="detail" class="base-certs-detail">
+    {% block detail %}
+    {% endblock %}
+</div>
+
+<hr>
+
+<!-- Block footer content -->
+<div id="footer" class="base-certs-footer">
+    {{ certificate.footer_text.strip }}
+    {% if certificate.signed %}
+        <div class="base-sign">
+            <table>
+                <tr>
+                    <td class="base-cell-half">
+                    </td>
+                    <td class="base-cell-half base-cell-sign">
+                        {{ company.legal_representative }}<br>
+                        {% translate "Legal Representative" %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+    <div class="base-sign">
+        <table>
+            <tr>
+                <td class="base-cell-half">
+                    {% translate "This certificate has been printed at " %} {% now "d M Y H:i" %}
+                </td>
+                <td class="base-cell-half base-cell-right">
+                    {% translate "Use this code to validate the authenticity of this document " %}
+                    <strong>{{ code }}</strong>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
