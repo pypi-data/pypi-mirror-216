@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: gpfy
+Version: 0.0.1
+Summary: Gaussian process with spherical harmonic features in JAX
+Author-email: Stefanos Eleftheriadis <stelefth@gmail.com>
+License: Apache-2.0
+Keywords: gaussian process,spherical harmonics,jax
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: <=3.11,>=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jax
+Requires-Dist: jaxlib
+Requires-Dist: tensorflow-probability (>=0.19.0)
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: optax
+Requires-Dist: jaxtyping (>=0.2.15)
+Requires-Dist: tqdm
+Requires-Dist: datasets
+Provides-Extra: dev
+Requires-Dist: autoflake ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: isort (>=5.1) ; extra == 'dev'
+Requires-Dist: mypy (>=0.920) ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-random-order ; extra == 'dev'
+Requires-Dist: pytest-xdist ; extra == 'dev'
+Requires-Dist: pytest (>=3.5.0) ; extra == 'dev'
+Requires-Dist: ipykernel ; extra == 'dev'
+Requires-Dist: ipython ; extra == 'dev'
+Requires-Dist: jupyter-client ; extra == 'dev'
+Requires-Dist: notebook ; extra == 'dev'
+Requires-Dist: jupytext ; extra == 'dev'
+Requires-Dist: nbconvert ; extra == 'dev'
+Requires-Dist: nbformat ; extra == 'dev'
+Requires-Dist: matplotlib (>=3.7.1) ; extra == 'dev'
+
+# $GP \mathcal{f} Y_\ell^m$
+
+A lightweight library in JAX for Gaussian process with spherical kernels and sparse spherical harmonic inducing features.
+
+$GP \mathcal{f} Y_\ell^m$ is based on the simple [flax.struct](https://github.com/google/flax/blob/main/flax/struct.py) dataclass. It implements [(Eleftheriadis et al. 2023)](https://arxiv.org/abs/2303.15948), which revisits the Sparse Gaussian Process with Spherical Harmonic features from [Dutordoir et al.](http://proceedings.mlr.press/v119/dutordoir20a.html), and introduces:
+
+1. `PolynomialDecay` kernel with "continuous" depth.
+2. Sparse orthogonal basis derived from `SphericalHarmonics` features with phase truncation.
+
+## Installation
+
+### Latest (stable) release from PyPI
+
+```bash
+pip install gpfy
+```
+
+### Development version
+Alternatively, you can install the latest GitHub `develop` version.
+First create a virtual enviroment via conda:
+```bash
+conda create -n gpfy_env python=3.10.0
+conda activate gpjax_env
+```
+
+Then clone a copy of the repository to your local machine and run the setup configuration in development mode:
+```bash
+git clone https://github.com/stefanosele/GPfY.git
+cd GPfY
+make intall
+```
+This will automatically install all required dependencies.
+
+Finally you can check the installation via running the tests:
+```bash
+make test
+```
