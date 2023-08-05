@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperva API Diff Summary Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-top: 50px;
+    }
+
+    .container {
+      max-width: 800px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 16px;
+    }
+    .green-text {
+    color: green;
+    }
+    .red-text {
+    color: red;
+    }
+    .navbar-version {
+            float: right;
+            font-size: 14px;
+            color: #fff;
+        }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Imperva API Diff Summary Dashboard </a>
+    <span class="navbar-version">Version 0.1</span>
+  </nav>
+  <div class="container mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col text-left">
+          <p>SOURCE: <i>{{fs_type}}</i> <b>{{arg1}}</b>,  TARGET: <i>{{fs_type}}</i> <b>{{arg2}}</b></p>
+        </div>
+        <div class="col text-right">
+          <p><i>click </i><b>+</b> <i> to unfold/fold</i></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total  {{source_system}} files scanned</h5>
+            <p class="card-text">{{ count_src_files}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Total {{target_system}} files scanned</h5>
+            <p class="card-text">{{ count_tar_files}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">APIs found at "{{source_system}}"</h5>
+            <p class="card-text">{{ count_api_src_files}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">APIs found at "{{target_system}}"</h5>
+            <p class="card-text">{{ count_api_tar_files}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">APIs path with mismatching methods</h5>
+            <p class="card-text">{{ diff_paths_methods|length}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">APIs with mismatching parameters</h5>
+            <p class="card-text">{{ mismatch_param_list|length}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" data-toggle="collapse" data-target="#what_new"> + What's new?</h5>
+          <div id="what_new" class="collapse">
+            <p class="card-text"><b>{{ count_whats_new }}</b> APIs not found in {{target_system}}!</p>
+            <ul>
+                {% for new in paths_src_dict_transpose.items() %}
+                <b>{{new[1]|length}} </b> API(s)  -> <i><b>PRESENT  </b></i> in <b class="green-text">{{new[0]}}</b><br>
+    <pre>
+    {% for path in new[1] %}
+    <b>{{path}}</b>
+    {% endfor %}
+    </pre>                
+                {% endfor %}
+            </ul>
+            <div class="collapse-content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" data-toggle="collapse" data-target="#what_missing">+ What's missing?</h5>
+          <div id="what_missing" class="collapse">
+            <p class="card-text"><b>{{ count_whats_missing }}</b> APIs not found in {{source_system}}!</p>
+            <ul>
+                {% for new in paths_tar_dict_transpose.items() %}
+                <b>{{new[1]|length}} </b> API(s)  -> <i><b>PRESENT  </b></i> in <b class="red-text">{{new[0]}}</b><br>
+    <pre>
+    {% for path in new[1] %}
+    <b>{{path}}</b>
+    {% endfor %}
+    </pre>
+                 
+                
+                {% endfor %}
+            </ul>
+            <div class="collapse-content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title" data-toggle="collapse" data-target="#what_changed">+ What's changed?</h5>
+          <div id="what_changed" class="collapse">
+            <!-- <div id="methods_mismatch" class="collapse"> -->
+
+            <h5 class="card-text" data-toggle="collapse" data-target="#methods_mismatch">+ <b>{{diff_paths_methods|length}}</b> API Path’s in Source have different methods in Target!</h5>
+            <div id="methods_mismatch" class="collapse">
+            <!-- <p class="card-text"><b>{{diff_paths_methods|length}}</b> methods mismatched!</p> -->
+            <ul>
+                <!--  -->
+                {% for new in diff_paths_methods %}
+                <!-- <li><b>{{ new[3] }} of {{new[2]}} path </b></li> -> present in <p class="green-text"><b>{{new[0]}}</b></p>but not in <p class="red-text"><b>{{new[1]}}</b></p> -->
+<pre>
+<b>{{new[3][0]}}: {{ new[2] }}</b>
+</pre> 
+<p style="margin-left: 10px;"> -> <i><b>PRESENT  </b></i> in <b class="green-text">{{new[0]}}</b> <i><b>NOT PRESENT  </b></i> in <b class="red-text">{{new[1]}}</b></p>
+                
+                {% endfor %}
+            </ul>
+            </div>
+            <!-- </div> -->
+            <br>
+            <!-- {{src_methods_dict}} -->
+            <h5 class="card-text" data-toggle="collapse" data-target="#params_mismatch">+ <b>{{mismatch_param_list | length}}</b> APIs in Source have different number of parameters in Target!</h5>
+            <div id="params_mismatch" class="collapse">
+            <!-- <b>Total {{mismatch_param_list | length}} APIs  parameter mismatched.</b><br> -->
+            {% for new in mismatch_param_list %}
+  
+    <b>{{new[1]}} parameters mismatch between both systems for the API: {{new[0]}}  </b> 
+    <!-- {{ loop.index }} -->
+    <!-- var div_var = div_ -->
+    <!-- <div class="shadow-sm p-3 mb-5 bg-body rounded">{{source_system}} has <b>{{src_methods_metadata_dict.get(new[0]).param_count }}</b> parameters {{src_methods_metadata_dict.get(new[0]).data_types }}</div> -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h8 class="shadow-sm p-3 mb-5 bg-body rounded" data-toggle="collapse" data-target="#src_missing_{{loop.index}}">+ {{source_system}} has {{src_methods_metadata_dict.get(new[0]).param_count }} parameters </h8>
+            <div id="src_missing_{{loop.index}}" class="collapse">
+              <div class="collapse-content">
+              
+                  <!-- <div class="overflow-auto"> -->
+                    {% for key, value in src_methods_metadata_dict.get(new[0]).data_types.items() %}
+                    
+                  <tr>
+                    <br>
+                    <p class="text-muted">
+                      <td> {{ value[0] }} {{ key }}</td><br>
+                    </p>
+                    
+                    <p class="text-monospace" class="text-justify"><td>{{ value[1:] }}</td></p>
+                    
+                  </tr>
+                  {% endfor %}
+
+                  <!-- <pre>
+                    {{src_methods_metadata_dict.get(new[0]).data_types }} 
+                  </pre> -->
+                  <!-- </div> -->
+               
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h8 class="shadow-sm p-3 mb-5 bg-body rounded" data-toggle="collapse" data-target="#tar_missing_{{loop.index}}">+ {{target_system}} has {{tar_methods_metadata_dict.get(new[0]).param_count }} parameters </h8>
+            <div id="tar_missing_{{loop.index}}" class="collapse">
+              <div class="collapse-content">
+                <!-- <pre>
+                  <div class="overflow-auto">{{tar_methods_metadata_dict.get(new[0]).data_types }}</div>
+                  
+                </pre> -->
+                {% for key, value in tar_methods_metadata_dict.get(new[0]).data_types.items() %}
+                    
+                <tr>
+                  <br>
+                  <p class="text-muted">
+                    <td> {{ value[0] }} {{ key }}</td><br>
+                  </p>
+                  
+                  <p class="text-monospace" class="text-justify"><td>{{ value[1:] }}</td></p>
+                  
+                </tr>
+                {% endfor %}
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    <!-- <div class="shadow-sm p-3 mb-5 bg-body rounded">{{target_system}} has {{tar_methods_metadata_dict.get(new[0]).param_count }} parameters of type {{tar_methods_metadata_dict.get(new[0]).data_types }}</div> -->
+
+    <!-- {{source_system}} has {{src_methods_metadata_dict.get(new[0]).param_count }} parameters of type {{src_methods_metadata_dict.get(new[0]).data_types }} -->
+    <!-- {{target_system}} has {{tar_methods_metadata_dict.get(new[0]).param_count }} parameters of type {{tar_methods_metadata_dict.get(new[0]).data_types }} -->
+
+    <!-- {{tar_methods_metadata_dict.get(new[0])}} -->
+            
+            {% endfor %}
+            <!-- {{tar_methods_dict}} -->
+
+            <!-- <b>src_methods_metadata_list ................</b>
+            {{src_methods_metadata_list}}
+            <b>tar_methods_metadata_list ................</b>
+            {{tar_methods_metadata_list}} -->
+            <div class="collapse-content">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
