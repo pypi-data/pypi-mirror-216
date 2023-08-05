@@ -1,0 +1,4 @@
+include CMakeLists.txt
+include FindLAPACKE.cmake
+recursive-include src *
+
