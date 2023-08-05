@@ -1,0 +1,13 @@
+cartopy
+geopandas
+gdal
+numpy
+shapely>=2.0
+pandas
+tqdm
+
+[docs]
+jupyter
+
+[tests]
+pytest
