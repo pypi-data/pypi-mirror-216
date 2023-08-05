@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/pychame/__init__.py
+src/pychame/video.py
+src/pychame.egg-info/PKG-INFO
+src/pychame.egg-info/SOURCES.txt
+src/pychame.egg-info/dependency_links.txt
+src/pychame.egg-info/requires.txt
+src/pychame.egg-info/top_level.txt
+src/pychame/keys/cert.pem
+src/pychame/keys/key.pem
+src/pychame/page/index.html
