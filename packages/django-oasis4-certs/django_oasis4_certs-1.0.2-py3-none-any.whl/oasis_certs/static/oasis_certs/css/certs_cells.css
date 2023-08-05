@@ -1,0 +1,33 @@
+/*
+ * Developed by CQ Inversiones SAS. Copyright ©. 2019 - 2023. All rights reserved.
+ * Desarrollado por CQ Inversiones SAS. Copyright ©. 2019 - 2023. Todos los derechos reservado
+ */
+.cell-short {
+    width: 15%;
+}
+
+.cell-numeric {
+    text-align: right;
+}
+
+.cell-total {
+    border-style: solid;
+    border-top: black;
+    padding-top: 2px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-large {
+    font-size: large;
+}
+
+.text-justify {
+    text-align: justify;
+}

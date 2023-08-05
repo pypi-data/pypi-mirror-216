@@ -1,0 +1,111 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict subtotal_dict %}
+
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    {% subtotal_dict doc_data "location_name" "withholding" "base_withholding" as subtotal_data %}
+    <div class="text-center text-bold">
+        {{ certificate.body_text }}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th class="cell-short">
+                {% translate "Account Id" %}
+            </th>
+            <th>
+                {% translate "Account Name" %}
+            </th>
+            <th>
+                {% translate "Base Value" %}
+            </th>
+            <th>
+                {% translate "Withholding Value" %}
+            </th>
+        </tr>
+        {% for city in subtotal_data %}
+            <tr>
+                <td colspan="4" class="text-bold">
+                    {{ city.control }}
+                </td>
+            </tr>
+            {% for data in city.data %}
+                <tr>
+                    <td>
+                        {{ data.account_id }}
+                    </td>
+                    <td>
+                        {{ data.account_name }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.base_withholding|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.withholding|floatformat:"2g" }}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="2" class="text-bold base-cell-right">
+                    {% translate "Subtotals" %} - {{ city.control.capitalize }}
+                </td>
+                <td class="text-bold cell-numeric">
+                    {{ city.totals.base_withholding|floatformat:"2g" }}
+                </td>
+                <td class="text-bold cell-numeric">
+                    {{ city.totals.withholding|floatformat:"2g" }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <hr>
+                </td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2" class="base-cell-right text-bold">
+                {% translate "Totals" %}
+            </td>
+            <td class="cell-numeric text-bold">
+                {% sum_dict doc_data "base_withholding" ",.2f" %}
+            </td>
+            <td class="cell-numeric text-bold">
+                {% sum_dict doc_data "withholding" ",.2f" %}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

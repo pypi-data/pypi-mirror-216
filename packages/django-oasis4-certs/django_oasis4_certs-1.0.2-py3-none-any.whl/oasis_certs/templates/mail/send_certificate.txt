@@ -1,0 +1,11 @@
+{% load i18n %}
+{% translate "Hello" %}, {{customer_name}}
+
+{% blocktranslate %}Thank you for use the CADEFIHUILA's transactional portal. Attached to this email you can find the requested certificate: {% endblocktranslate %}
+
+{% translate "Certificate" %}: {{ description }}
+{% translate "Generated at" %}: {{generated_at }}
+
+******
+{% blocktranslate %}This email was generated automatically at {{ email_datetime }} with id {{ email_id }}. Please do not answer it.{% endblocktranslate %}
+******

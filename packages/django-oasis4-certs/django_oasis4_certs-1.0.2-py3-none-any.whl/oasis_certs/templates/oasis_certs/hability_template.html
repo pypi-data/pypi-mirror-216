@@ -1,0 +1,110 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict string_concat define_able %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    {% define_able doc_data.0.able as able %}
+    <div class="text-center text-bold">
+        {% string_concat certificate.body_text able %}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th>
+                {% translate "Area" %}
+            </th>
+            <th>
+                {% translate "Production" %}
+            </th>
+            <th>
+                {% translate "Coffe Sales" %}
+            </th>
+            <th>
+                {% translate "Expired Credits" %}
+            </th>
+            <th>
+                {% translate "Other Expired Accounts" %}
+            </th>
+            <th>
+                {% translate "Expired Advances" %}
+            </th>
+            <th>
+                {% translate "Annual Contribution" %}
+            </th>
+            <th>
+                {% translate "Sales Compliance" %}
+            </th>
+            <th>
+                {% translate "Expired Futures" %}
+            </th>
+            <th>
+                {% translate "Expired Co-signer" %}
+            </th>
+        </tr>
+        <tr>
+            <td class="cell-numeric">
+                {{ doc_data.0.area|floatformat:"-2" }}
+            </td>
+            <td class="cell-numeric">
+                {{ doc_data.0.productive_area|floatformat:"0" }}
+            </td>
+            <td class="cell-numeric">
+                {{ doc_data.0.sales_value|floatformat:"0" }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.expired_credits|yesno }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.expired_accounts|yesno }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.expired_advances|yesno }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.contribution_annual|yesno }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.sales_compliance|yesno }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.future|yesno }}
+            </td>
+            <td class="text-center">
+                {{ doc_data.0.co_signer|yesno }}
+            </td>
+        </tr>
+    </table>
+{% endblock %}

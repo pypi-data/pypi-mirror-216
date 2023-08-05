@@ -1,0 +1,154 @@
+{% extends "oasis_certs/certs_base_template.html" %}
+{% load i18n l10n static_uri sum_dict string_concat define_able %}
+{% block more_css %}
+    <link rel="stylesheet" href="{% static_uri 'oasis_certs/css/certs_cells.css' %}">
+{% endblock %}
+
+{% block detail %}
+    <div class="text-center text-bold">
+        {{ certificate.body_text }}
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Name" %}</strong>
+            </td>
+            <td>
+                {{ user.get_full_name|truncatechars:45 }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Tax Id" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.document_id|truncatechars:45 }}
+            </td>
+        </tr>
+        <tr>
+            <td class="cell-short">
+                <strong>{% translate "Address" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.address }}
+            </td>
+            <td class="cell-short">
+                <strong>{% translate "Phone" %}</strong>
+            </td>
+            <td>
+                {{ user.profile.phone }}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <div style="font-size: small;">
+        <table>
+            <tr>
+                <th>
+                    {% translate "Document Type" %}
+                </th>
+                <th>
+                    {% translate "Number" %}
+                </th>
+                <th>
+                    {% translate "Date" %}
+                </th>
+                <th>
+                    {% translate "Expiration" %}
+                </th>
+                <th>
+                    {% translate "Value" %}
+                </th>
+                <th>
+                    {% translate "Balance" %}
+                </th>
+                <th>
+                    {% translate "Interest Balance" %}
+                </th>
+                <th>
+                    {% translate "Interest Delay Balance" %}
+                </th>
+                <th>
+                    {% translate "Total Balance" %}
+                </th>
+                <th>
+                    {% translate "Current Int Days" %}
+                </th>
+                <th>
+                    {% translate "Payment Date" %}
+                </th>
+                <th>
+                    {% translate "Days Delay" %}
+                </th>
+                <th>
+                    {% translate "Project" %}
+                </th>
+            </tr>
+            {% for data in doc_data %}
+                <tr>
+                    <td class="text-center">
+                        {{ data.document_id }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.number_id }}
+                    </td>
+                    <td class="text-center">
+                        {{ data.date_initial|date:"d-m-Y" }}
+                    </td>
+                    <td class="text-center">
+                        {{ data.expiration_date|date:"d-m-Y" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.value|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.balance|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.balance_interest|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.balance_interest_delay|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.total_balance|floatformat:"2g" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.interest_days }}
+                    </td>
+                    <td class="text-center">
+                        {{ data.last_payment|date:"d-m-Y" }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.delay_days }}
+                    </td>
+                    <td class="cell-numeric">
+                        {{ data.project_id }}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" class="base-cell-right">
+                    <strong>{% translate "Totals" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "value" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "balance" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "balance_interest" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "balance_interest_delay" ",.2f" %}</strong>
+                </td>
+                <td class="cell-numeric">
+                    <strong>{% sum_dict doc_data "total_balance" ",.2f" %}</strong>
+                </td>
+                <td colspan="4">
+
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
