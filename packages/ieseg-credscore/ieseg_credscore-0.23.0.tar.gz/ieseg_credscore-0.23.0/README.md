@@ -1,0 +1,69 @@
+<!-- HEADER -->
+|  |  |
+|---|---|
+| <img src="https://www.ieseg.fr/wp-content/uploads/IESEG-Logo-2012-rgb.jpg" alt="drawing" width=100%/> | <span><br>Credit Scoring<br>Module<br>Class: 2022 & 2023</span> |
+
+<!-- CONTENT -->
+
+---
+
+## Overview
+
+- Odds based Grouping (OBG)
+    - OBGEncoder
+
+        - `pred_var`: Name of predictor variables to be binned in quotes. Values can be either continuous or factors.
+        - `target_var`: Name of dichotomous target variable in quotes. Only target variables with two distinct values (0 or 1).
+
+        .fit
+
+        - `df`: DataFrame containing pred_var and target_var to fit bins on.
+        - `max_delta`: max difference between odds for merging two levels
+        - `min_bins`: min number of resulting bins
+        - `q`: number of quantiles for conversion of continuous variable to catgorical
+
+        .transform
+
+        - `df`: Transform pred_var based on fitted bins
+
+        .fit_transform
+
+        - `df`: DataFrame containing pred_var and target_var to fit bins on. Transform pred_var based on fitted bins.
+
+        >.fit_dict: dictionary containing the matched category levels and fitted bins
+
+        >.lookup: dictionary containing cutoff values for continuous variable (empty if pred_var is categorical)
+
+
+
+- Weight of Evidence (WOE)
+
+    - WOEEncoder
+
+        - `pred_var`: Name of predictor variables to be binned in quotes. Values can be either continuous or factors.
+        - `target_var`: Name of dichotomous target variable in quotes. Only target variables with two distinct values (0 or 1).
+        - `target_value`: Value indicating event. default: 1.
+
+        .fit
+
+        - `df`: DataFrame containing pred_var and target_var to fit bins on.
+        - `stop_limit`: Stops WOE based merging of the predictor's classes/levels in case the resulting information value (IV) decreases more than (e.g. 0.05 = 5%) compared to the preceding binning step. stop_limit=0 will skip any WOE based merging. Increasing the stop_limit will simplify the binning solution and may avoid overfitting. Accepted range: 0-0.5; default: 0.1.
+        - `q`: number of quantiles for conversion of continuous variable to catgorical
+
+        .transform
+
+        - `df`: Transform pred_var based on fitted bins
+
+        .fit_transform
+
+        - `df`: DataFrame containing pred_var and target_var to fit bins on. Transform pred_var based on fitted bins.
+
+        .test_limit
+
+        - `df`: DataFrame containing pred_var and target_var to test stop limits at 1%, 2.5%, 5% and 10%.
+
+        > .fit_dict: dictionary containing the matched category levels and fitted bins
+
+        >.lookup: dictionary containing cutoff values for continuous variable (empty if pred_var is categorical)
+
+<br>
