@@ -1,0 +1,65 @@
+dataset:
+  path-ibm-sc-root: data/claim_stance_dataset_v1.csv
+experiment:
+  ibmsc:
+    path-training: experiment/ibmsc-train.csv
+    path-validation: experiment/ibmsc-validation.csv
+    path-test: experiment/ibmsc-test.csv
+    path-few-shots: experiment/ibmsc-few-shots.csv
+    path-logs: ibm-sc-validation.logs
+  vast:
+    path-training: experiment/vast-train.csv
+    path-validation: experiment/vast-validation.csv
+    path-test: experiment/vast-test.csv
+    path-few-shots: experiment/vast-few-shots.csv
+    path-logs: vast-validation.logs
+
+prompt-fine-tuning:
+  model-name : gpt2
+  model-type : gpt2
+  model-path: "/bigwork/nhwpajjy/pre-trained-models/gpt2"
+  few-shot-size: 16
+  params:
+    batch-size : [16]
+    learning-rate : [2e-5, 5e-5, 1e-3, 1e-5, 1e-6]
+    epochs: [1, 2, 3, 4, 5]
+
+  best-params:
+    batch-size: 16
+    learning-rate: 2e-5
+    epochs: 1
+
+prompt:
+  model-name: "gpt-2"
+  model-type : "gpt-2"
+  model-path: "/bigwork/nhwpajjy/pre-trained-models/gpt2-xl"
+  few-shot-size: 16
+  logs: "logs/prompt.log"
+
+pre-trained-models:
+  path: "/bigwork/nhwpajjy/pre-trained-models"
+  models : ["t5-base", "bert-base-uncased", "gpt2", "opt", "gpt2-xl"]
+  alpaca:
+    model-name: "wxjiao/alpaca-7b"
+    model-path: "/bigwork/nhwpajjy/pre-trained-models/wxjiao/alpaca-7b"
+  gpt-j:
+    model-name: "EleutherAI/gpt-j-6B"
+    model-path: "/bigwork/nhwpajjy/pre-trained-models/gptj"
+
+baseline:
+  model-path: "/bigwork/nhwpajjy/pre-trained-models/microsoft/deberta-base"
+  model-name: "microsoft/deberta-base"
+  api-key: "cc362e03e225e86476ac8d0a18460b40L05"
+
+  params:
+    batch-size: [16, 32]
+    learning-rate: [1e-5, 5e-5, 1e-6]
+    head-size: [30]
+    epochs: [1, 4, 5, 15]
+
+  best-params:
+    batch-size: 8
+    learning-rate: 1e-4
+    head-size: 30
+    epochs: 1
+
