@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0","art>=6.0","clang>=16.0.1.1","colorama>=0.4.4","libclang>=16.0.0","tqdm>=4.65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "c_custom_code_checker"
+version = "1.0.3"
+authors = [
+  { name="Yago Caetano", email="yago_caetano@outlook.com" },
+]
+description = "Syntax checker with custom rules for c language. Create rules with your team and consider using this tool to help verify the projects developed"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Yago-Caetano/c-custom-code-checker"
