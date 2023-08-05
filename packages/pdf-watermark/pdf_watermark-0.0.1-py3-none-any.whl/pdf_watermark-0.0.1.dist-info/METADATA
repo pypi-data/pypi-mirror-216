@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pdf-watermark
+Version: 0.0.1
+Summary: A python CLI tool to add watermarks to a PDF
+Home-page: https://github.com/bastienlc/watermark
+Author: Bastien Le Chenadec
+Author-email: bastien.lechenadec@gmail.com
+License: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pypdf (>=3.11)
+Requires-Dist: pillow (>=9.5.0)
+Requires-Dist: reportlab (>=4.0.4)
+Requires-Dist: numpy (>=1.25.0)
+Requires-Dist: click (>=8.1.3)
+
