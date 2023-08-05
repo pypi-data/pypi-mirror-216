@@ -1,0 +1,187 @@
+# region Poetry
+[tool.poetry]
+name = "py-asoc"
+version = "0.1.1"
+description = "Description"
+authors = ["Daniel Sullivan <daniel.j.sullivan@state.mn.us>"]
+license = "MIT"
+repository = "https://github.com/mumblepins/py-asoc/"
+documentation = "https://mumblepins.github.io/py-asoc/"
+readme = "README.md"
+packages = [{ include = "pyasoc", from = "src" }]
+
+[tool.poetry.scripts]
+asoc = "pyasoc.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+urllib3 = "*"
+certifi = "*"
+python-dateutil = "*"
+pytz = "*"
+javascript = "*"
+click = "^8.1.3"
+
+[tool.poetry.group.dev.dependencies]
+# region pre-commit hooks and linting
+pylint = "*"
+pytest = "*"
+coverage = { extras = ["toml"], version = "*" }
+Sphinx = "*"
+sphinx-immaterial = "*"
+pytest-cov = "*"
+gitchangelog = { version = ">=3.0" }
+pylint-pytest = "*"
+pytest-xdist = "*"
+pytest-rerunfailures = "*"
+pytest-randomly = "*"
+myst-parser = "*"
+bump2version = "*"
+pystache = "*"
+toml = "*"
+
+# endregion
+[tool.poetry.extras]
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
+
+# endregion
+# region pytest
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+#endregion
+# region Mypy
+[tool.mypy]
+files = '*.py,src/**/*.py'
+exclude = '''(?x)(
+      \.eggs
+    | \.git          # root of the project
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | \.cache
+  | env
+  | venv
+  | \.aws-sam
+  | _build
+  | buck-out
+  | build
+  | dist
+  | package_
+)'''
+#plugins = ["pydantic.mypy"]
+overrides = [
+    { module = 'awacs.*', ignore_missing_imports = true },
+    { module = 'inflection.*', ignore_missing_imports = true },
+    { module = 'troposphere.*', ignore_missing_imports = true },
+    { module = 'pystache.*', ignore_missing_imports = true },
+]
+#endregion
+
+# region ISort
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+line_length = 88
+indent = '    '
+multi_line_output = 3
+skip = 'env'
+include_trailing_comma = true
+combine_as_imports = true
+force_grid_wrap = 0
+known_first_party = ["py_asoc"]
+# endregion
+
+# region Black
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+target-version = ['py38', 'py39', 'py310', 'py311']
+exclude = '''
+/(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | \.cache
+  | env
+  | venv
+  | \.aws-sam
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+# endregion
+# region DepChecker
+[tool.dep_checker]
+namespace_packages = ["ruamel.yaml", "jaraco.docker"]
+
+[tool.dep_checker.name_mapping]
+GitPython = "git"
+PyYAML = "yaml"
+python-dateutil = "dateutil"
+python-dotenv = "dotenv"
+
+#endregion
+#region Coverage
+[tool.coverage.run]
+branch = true
+omit = ["*/contract/suite/*", "tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "if .*? == .DEBUG.",
+    "if .*? == .INFO.",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:"
+]
+
+#endregion
+# region Bandit
+[tool.bandit]
+skips = []
+
+[tool.bandit.assert_used]
+skips = ['*_test.py', '*test_*.py']
+
+# endregion
+# region Nitpick
+[tool.nitpick]
+style = ["https://raw.githubusercontent.com/mumblepins/style-repo/main/nitpick-python.toml"]
+
+# endregion
+# region Tox
+[tool.tox]
+# language=ini
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+min_version = 4.0
+envlist = py{38,39,310,311}
+
+[testenv]
+deps = pytest
+commands = pytest tests --import-mode importlib
+
+"""
+# endregion
