@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+mwsqlite/__init__.py
+mwsqlite/_types.py
+mwsqlite/mw_sql.py
+mwsqlite/sql_compile.py
+mwsqlite/utils.py
+mwsqlite.egg-info/PKG-INFO
+mwsqlite.egg-info/SOURCES.txt
+mwsqlite.egg-info/dependency_links.txt
+mwsqlite.egg-info/not-zip-safe
+mwsqlite.egg-info/top_level.txt
