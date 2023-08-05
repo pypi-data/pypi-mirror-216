@@ -1,0 +1,16 @@
+README.md
+setup.py
+impoasdiff/__init__.py
+impoasdiff/_version.py
+impoasdiff/args_manager.py
+impoasdiff/diff_handler.py
+impoasdiff/file_handler.py
+impoasdiff/generate_diff.py
+impoasdiff/utils.py
+impoasdiff.egg-info/PKG-INFO
+impoasdiff.egg-info/SOURCES.txt
+impoasdiff.egg-info/dependency_links.txt
+impoasdiff.egg-info/entry_points.txt
+impoasdiff.egg-info/requires.txt
+impoasdiff.egg-info/top_level.txt
+impoasdiff/templates/report_v3.html

@@ -1,0 +1,2 @@
+[console_scripts]
+impoasdiff = impoasdiff.generate_diff:main
