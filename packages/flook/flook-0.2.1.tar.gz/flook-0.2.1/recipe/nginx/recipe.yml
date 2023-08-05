@@ -1,0 +1,33 @@
+vars:
+  version: v1.0.0
+
+templates:
+  # id : local path
+  motd.j2: motd.j2
+
+handlers:
+  - name: restart nginx
+    service:
+      name: nginx
+      state: restarted
+
+tasks:
+  - name: check mandatory variables
+    assert:
+      that:
+        - version is defined
+    tags: [ common, flook ]
+
+  - name: set motd banner
+    template:
+      src: "motd.j2"
+      dest: "/etc/motd"
+      mode: 0700
+    notify: restart nginx
+    tags: [ common, flook ]
+
+  - name: install nginx
+    apt:
+      name: nginx
+      state: latest
+    tags: [ common, flook ]
