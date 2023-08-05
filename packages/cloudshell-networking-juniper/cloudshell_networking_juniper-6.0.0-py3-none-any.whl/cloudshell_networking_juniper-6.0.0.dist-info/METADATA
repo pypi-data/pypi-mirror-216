@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: cloudshell-networking-juniper
+Version: 6.0.0
+Summary: QualiSystems Juniper package
+Home-page: http://www.qualisystems.com/
+Author: QualiSystems
+Author-email: info@qualisystems.com
+Requires-Python: ~=3.9
+Description-Content-Type: text/x-rst
+Requires-Dist: cloudshell-shell-core (~=6.0)
+Requires-Dist: cloudshell-shell-standards (~=2.0)
+Requires-Dist: cloudshell-shell-flows (~=3.0)
+Requires-Dist: cloudshell-shell-connectivity-flow (~=4.0)
+Requires-Dist: cloudshell-cli (~=5.0)
+Requires-Dist: cloudshell-snmp (~=5.0)
+Requires-Dist: cloudshell-snmp-autoload (~=2.0)
+Requires-Dist: attrs (<24,>=22)
+Requires-Dist: xmltodict (~=0.12)
+Requires-Dist: typing-extensions (>=4.4)
+
+Juniper Shell operations
