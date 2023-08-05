@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <meta http-equiv="refresh" content="3" />
+  </head>
+  <body>
+    <div class="dashboard">
+      {% block dashboard %}{% endblock %}
+    </div>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

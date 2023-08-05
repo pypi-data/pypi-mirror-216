@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block dashboard %}
+  <table id="data" class="table table-striped">
+    <tr>
+      <td>event_horizon</td>
+      <td>{{ data.event_horizon }}</td>
+    </tr>
+  </table>
+
+  <h2>containers ({{data.containers|length}})</h1>
+  <hr>
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>short_id</th>
+        <th>name</th>
+        <th>usage</th>
+        <th>cmd</th>
+        <th>job</th>
+        <th>cpu</th>
+        <th>created_at</th>
+        <th>started_at</th>
+        <th>status</th>
+        <th>hints</th>
+        <th>pid</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for container in data.containers %}
+        <tr>
+          <td>{{ container.short_id }}</td>
+          <td>{{ container.name }}</td>
+          <td>{{ container.usage }}</td>
+          <td>{{ container.cmd }}</td>
+          <td>{{ container.job }}</td>
+          <td>{{ container.cpu }}</td>
+          <td>{{ container.created_at }}</td>
+          <td>{{ container.started_at }}</td>
+          <td>{{ container.status }}</td>
+          <td>{{ container.hints }}</td>
+          <td>{{ container.pid }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2>images ({{data.images|length}})</h1>
+  <hr>
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>short_id</th>
+        <th>tags</th>
+        <th>created_at</th>
+        <th>last_referenced</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for image in data.images %}
+        <tr>
+          <td>{{ image.short_id }}</td>
+          <td>{{ image.tags }}</td>
+          <td>{{ image.created_at }}</td>
+          <td>{{ image.last_referenced }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
+
