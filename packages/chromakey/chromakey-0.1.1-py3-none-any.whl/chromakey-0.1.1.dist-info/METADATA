@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: chromakey
+Version: 0.1.1
+Home-page: https://github.com/eugeneteoh/chromakey
+Author: Eugene Teoh
+Author-email: eugenetwc1@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pillow
+Requires-Dist: scipy
+Requires-Dist: numpy
+
+# chromakey
+
+A chroma key (green screen removal) package in Python, vectorised with numpy.
+
+Algorithm from http://gc-films.com/chromakey.html.
+
+## TODO
+
+- Add OBS chroma key algorithm
+    - https://github.com/obsproject/obs-studio/blob/master/plugins/obs-filters/data/chroma_key_filter.effect
