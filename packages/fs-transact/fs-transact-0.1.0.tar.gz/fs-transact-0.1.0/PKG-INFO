@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: fs-transact
+Version: 0.1.0
+Summary: Run a shell in an isolated filesystem transaction
+Home-page: https://git.sr.ht/~martijnbraam/transact
+Author: Martijn Braam
+Author-email: martijn@brixit.nl
+License: GPL3
+License-File: LICENSE
