@@ -1,0 +1,15 @@
+# Changes here will be overwritten by Copier
+_commit: v1.3.5
+_src_path: gh:lincc-frameworks/python-project-template
+author_email: name@you.com
+author_name: LINCC Frameworks
+create_example_module: false
+custom_install: true
+include_notebooks: false
+mypy_type_checking: none
+package_name: metric_emitter
+preferred_linter: black
+project_license: MIT
+project_name: lf-metric-emitter
+use_gitlfs: none
+use_isort: false
