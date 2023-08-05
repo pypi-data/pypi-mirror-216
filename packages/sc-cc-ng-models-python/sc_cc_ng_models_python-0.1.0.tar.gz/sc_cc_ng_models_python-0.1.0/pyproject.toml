@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sc-cc-ng-models-python"
+version = "0.1.0"
+description = ""
+authors = ["Rikard Olsson <rikard@thryselius.se>"]
+readme = "README.md"
+packages = [{include = "sc_cc_ng_models_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.25.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
