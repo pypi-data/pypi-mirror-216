@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: doc-spell
+Version: 0.1.0
+Summary: code documentation spell checker
+Author-email: Anatoly Asviyan <aanatoly@gmail.com>
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development
+Requires-Dist: identify
+Requires-Dist: pyaml
+Requires-Dist: pydevkit<4.0.0,>=3.1.2
+Requires-Dist: pygments
+Project-URL: Homepage, https://github.com/aanatoly/doc-spell
+Project-URL: Repository, https://github.com/aanatoly/doc-spell
+Description-Content-Type: text/markdown
+
+# doc spell
+
+Code documentation spell checker.
+
+Retrieve human text from the code and pipe it to spell checker
+
+The flow:
+ 1. collect all comments and doc strings
+ 2. strip technical text from comments
+    * fenced block - multi-line text between 3 back ticks, similar to
+      `<pre>` tag
+    * in-line code - text between back ticks, similar to `<code>`
+    * special comment - e.g. `noqa`, `pylint`
+ 3. feed it to spell checker
+
+## Installation
+
+```sh
+pip install doc-spell
+```
+

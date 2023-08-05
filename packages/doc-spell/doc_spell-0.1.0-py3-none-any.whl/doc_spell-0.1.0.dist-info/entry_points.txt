@@ -1,0 +1,3 @@
+[console_scripts]
+doc-spell=doc_spell.__main__:main
+
