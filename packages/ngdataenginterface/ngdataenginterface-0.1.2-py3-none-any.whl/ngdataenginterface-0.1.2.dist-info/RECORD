@@ -1,0 +1,15 @@
+ngdataenginterface/__init__.py,sha256=pp59rvrJWk2KVacLH7s4XKkm998PtNAEBtxGxcQeYX0,348
+ngdataenginterface/analytical.py,sha256=5vwJBif5qlUR1eXWLw_GkGMI3b0sd77rjRqz7cpfO1I,3778
+ngdataenginterface/aws_interface.py,sha256=8ifujtCyQOyv8QJSjkEndPddVlXmvQQoC-RS8I5EVPU,3392
+ngdataenginterface/process.py,sha256=qABf9GCQkv3CFEMUagFou5RfNGHquY-j4Bg44cyeNiA,2704
+ngdataenginterface/scripts/__init__.py,sha256=XmSoEZH8Z8JPR_cEfxzmelikj0J1Xqa7P79v0iZAkmA,517
+ngdataenginterface/scripts/create_analytical_tables.py,sha256=6X9KIxVoxJ8oITEUQVyy_kkakG3-75vX0USg6xC44f4,2124
+ngdataenginterface/scripts/landing_to_raw.py,sha256=b-fPlcvZEBs4zmo-sbKsHJUcNRajjB_c3_l_aUN_owI,1516
+ngdataenginterface/scripts/raw_to_trusted.py,sha256=9vk4UR8LB8gLvxedQl4ps7UiwSeJRvs9aDXLQeyv8xQ,2015
+ngdataenginterface/scripts/trusted_to_analytics.py,sha256=bevlaEamEc0MqnWKOZ5fn3X93iRCOEAA8zspt12EYdk,1508
+ngdataenginterface/spark_manager.py,sha256=kqO1kXtsmvqd2qU2jNd8IqD0qpjsRhiV--eul5_TUHo,1850
+ngdataenginterface/table.py,sha256=OZijvm37pEHhCC4mhzA8-saOOauiyy8FfRxa3_FU1N4,13389
+ngdataenginterface/utils.py,sha256=gXgf9toiYzTwDaD9ouEmefwEHiJiOeaANncIL_n-cKs,2720
+ngdataenginterface-0.1.2.dist-info/METADATA,sha256=Q0HeeXTS1uVXrjLTQn78fPjuHIDDPx7Ot7TsSRxDvTg,3599
+ngdataenginterface-0.1.2.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+ngdataenginterface-0.1.2.dist-info/RECORD,,
