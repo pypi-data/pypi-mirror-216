@@ -1,0 +1,6 @@
+exclude *.log
+include kangforecast/data/special_dates.csv
+exclude test_kangforecast.py
+exclude 0.command.md
+exclude upload_new_version.sh
+exclude renew_setup_version.py
