@@ -1,0 +1,23 @@
+MANIFEST.in
+README
+setup.py
+platformer1234/.DS_Store
+platformer1234/__init__.py
+platformer1234/__main__.py
+platformer1234/background.jpg
+platformer1234/death effect.jpg
+platformer1234/enemy.png
+platformer1234/enemy1.jpg
+platformer1234/ground.png
+platformer1234/gunfire.jpg
+platformer1234/platform1.jpg
+platformer1234/platform2.jpg
+platformer1234/platform3.jpg
+platformer1234/platformer.py
+platformer1234/player.jpg
+platformer1234.egg-info/PKG-INFO
+platformer1234.egg-info/SOURCES.txt
+platformer1234.egg-info/dependency_links.txt
+platformer1234.egg-info/requires.txt
+platformer1234.egg-info/top_level.txt
+platformer1234/__pycache__/platformer.cpython-39.pyc
