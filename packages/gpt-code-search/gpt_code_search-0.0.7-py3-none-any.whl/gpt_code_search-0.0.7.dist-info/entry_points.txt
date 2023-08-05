@@ -1,0 +1,4 @@
+[console_scripts]
+gcs=core.main:app
+gpt-code-search=core.main:app
+
