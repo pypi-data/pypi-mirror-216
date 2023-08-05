@@ -1,0 +1,92 @@
+[tool.poetry]
+name = "licensecheck"
+version = "2023.1.4"
+license = "mit"
+description = "Output the licenses used by dependencies and check if these are compatible with the project license"
+authors = ["FredHappyface"]
+classifiers = [
+	"Environment :: Console",
+	"Environment :: MacOS X",
+	"Environment :: Win32 (MS Windows)",
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"Natural Language :: English",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: Implementation :: CPython",
+	"Topic :: Security",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	"Topic :: Utilities"
+]
+homepage = "https://github.com/FHPythonUtils/LicenseCheck"
+repository = "https://github.com/FHPythonUtils/LicenseCheck"
+documentation = "https://github.com/FHPythonUtils/LicenseCheck/blob/master/README.md"
+readme = "README.md"
+
+[tool.poetry.scripts]
+licensecheck = 'licensecheck:cli'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requirements-parser = "<2,>=0.5.0"
+requests = "<3,>=2.31.0"
+fhconfparser = "<2024,>=2022"
+tomli = "<3,>=2.0.1"
+rich = "<14,>=13.4.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.1"
+pylint = "^2.13.5"
+handsdown = "^1.1.0"
+coverage = "^6.3.2"
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+indent = "Tab"
+
+[tool.pydocstyle]
+convention = "google"
+ignore = "D205,D415"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.basic]
+argument-naming-style = "camelCase"
+attr-naming-style = "camelCase"
+function-naming-style = "camelCase"
+method-naming-style = "camelCase"
+variable-naming-style = "camelCase"
+
+[tool.pylint.format]
+indent-string = "\t"
+
+[tool.pylint.master]
+ignore-paths = ["tests"]
+
+[tool.pylint.messages_control]
+enable = ["F", "E", "W", "R", "C"]
+disable = ["pointless-string-statement", "superfluous-parens"]
+
+[tool.licensecheck]
+# using = "requirements:requirements.txt;requirements_optional.txt"
+# format = "json"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+env_list =
+	py311
+	py310
+	py39
+	py38
+
+[testenv]
+deps = pytest
+commands = pytest tests
+"""
