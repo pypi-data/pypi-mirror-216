@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tcare_sbvalidator"
+version = "0.0.43"
+dependencies = [ "pydantic", "azure-identity", "azure-servicebus", "aiohttp"]
+authors = [
+  { name="TCARE", email="elijah.kennedy@tcare.ai" },
+]
+description = "Validate that servicebus messages are in the correct format"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/TCARE1/tcare_sbvalidator"
+"Bug Tracker" = "https://github.com/TCARE1/tcare_sbvalidator/issues"

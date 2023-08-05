@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: tcare_sbvalidator
+Version: 0.0.43
+Summary: Validate that servicebus messages are in the correct format
+Project-URL: Homepage, https://github.com/TCARE1/tcare_sbvalidator
+Project-URL: Bug Tracker, https://github.com/TCARE1/tcare_sbvalidator/issues
+Author-email: TCARE <elijah.kennedy@tcare.ai>
+License-File: LICENSE.txt
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: aiohttp
+Requires-Dist: azure-identity
+Requires-Dist: azure-servicebus
+Requires-Dist: pydantic
+Description-Content-Type: text/markdown
+
+# Tcare Servicebus Validotor (tcare-sbv)
+
+This package was developed to validate all messages passed to and received from azure service bus. This is achieved by a series of common schemas declared with Pydantic's class-based validation.
+
+# Publishing
+This package was published using [this guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/) provided by python.org
