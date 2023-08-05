@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: certora-cli-alpha-cnandi-morpho-equiv
+Version: 20230626.16.50.464604
+Summary: Runner for the Certora Prover
+Home-page: https://pypi.org/project/certora-cli-alpha-cnandi-morpho-equiv
+Author: Certora
+Author-email: support@certora.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Commit 4de781e. Build and Run scripts for executing the Certora Prover on Solidity smart contracts.
