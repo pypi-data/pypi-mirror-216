@@ -1,0 +1,12 @@
+banditcoot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+banditcoot/algorithms/__init__.py,sha256=Mk1rRfn2Eu4omSVNKNjyVc6WK_tiIr3dvys0189PMZA,210
+banditcoot/algorithms/_epsilon_greedy.py,sha256=eh5XtgBdBqhSON3F7B841-PdeSBW6glGPepcIHFLgVg,3466
+banditcoot/algorithms/_softmax.py,sha256=3qqqYVuxHokR2J6x7b179YCW_yXamFXxoIQTaCAlsXw,1834
+banditcoot/arms/__init__.py,sha256=wtdJwfQ0XX07yu-2zcaiWibQ11GeHkjc8QQfPtyVugA,68
+banditcoot/arms/_bernoulli.py,sha256=6YjBWrtnm0DdDyAXoYJ0V3VqtwbNq6eVbdraOw5l2kk,299
+banditcoot/utility/__init__.py,sha256=KYGq2sinwxZ6fEo7k8p3_Xe1zq790hXkC-qzllDjeF4,82
+banditcoot/utility/_batch_monte_carlo_sim.py,sha256=G1rFKnnWcFY_cCDrp8wxdh5g1mPQ4AhSKRWOYI101yA,1513
+banditcoot/utility/_monte_carlo_sim.py,sha256=zvDwQi16ALJik5hf__-FNlRfigza3DlUxxBZqX_vvmY,1514
+banditcoot-0.1.6.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+banditcoot-0.1.6.dist-info/METADATA,sha256=U61pSBw3MSX3pokon9e1L5hBgAGMt9lBKzoe1ZqECUE,1254
+banditcoot-0.1.6.dist-info/RECORD,,

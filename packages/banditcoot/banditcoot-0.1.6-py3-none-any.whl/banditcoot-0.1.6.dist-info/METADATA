@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: banditcoot
+Version: 0.1.6
+Summary: Python module for developing and testing multi-armed bandits
+License: MIT
+Author: dan-kwon
+Author-email: danielkwon02@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pandas (>=1.5.3,<2.0.0)
+Description-Content-Type: text/markdown
+
+Banditcoot
+====================
+
+<img align="left" width="75" src="https://github.com/dan-kwon/banditcoot/blob/master/resources/Banditcoot.png"/> 
+
+**banditcoot** is a Python module is intended for my own personal use when developing and testing multi-armed bandit algorithms. Forked from the accompanying [code repository](https://github.com/johnmyleswhite/BanditsBook) for [Bandit Algorithms for Website Optimization](https://www.oreilly.com/library/view/bandit-algorithms-for/9781449341565/).
+
+*Any use of this code is at your own risk.*
+</br>
+
+## Installation
+--------------------
+Recommended method of installation is to use pip 
+```
+pip install banditcoot
+```
+
+
+## Quickstart
+--------------------
+
