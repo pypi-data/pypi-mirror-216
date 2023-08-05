@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: provo
+Version: 1.1.0
+Summary: Construct  PROV-O compliant provenance graphs.
+Home-page: https://github.com/rue-a/provo
+Author: Arne Rümmler
+Author-email: arne.ruemmler@gmail.com
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.09
+License-File: LICENSE
