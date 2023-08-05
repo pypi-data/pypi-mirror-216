@@ -1,0 +1,17 @@
+affinity: {}
+fullnameOverride: ''
+image:
+  pullPolicy: IfNotPresent
+  repository: kodexa/base-resources
+  tag: 1.0.0
+imagePullSecrets: []
+nameOverride: ''
+nodeSelector: {}
+podAnnotations: {}
+podSecurityContext: {}
+replicaCount: 1
+resources: {}
+securityContext: {}
+tolerations: []
+service:
+  port: 80
