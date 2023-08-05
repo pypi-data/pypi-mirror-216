@@ -1,0 +1,3 @@
+include ignoreexceptions/requirements.txt
+include ignoreexceptions/thirdparty.json
+include ignoreexceptions/README.MD
