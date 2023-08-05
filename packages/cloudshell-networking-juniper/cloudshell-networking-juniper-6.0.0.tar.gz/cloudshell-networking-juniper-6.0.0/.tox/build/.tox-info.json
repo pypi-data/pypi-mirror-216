@@ -1,0 +1,30 @@
+{
+  "ToxEnv": {
+    "name": "build",
+    "type": "VirtualEnvRunner"
+  },
+  "Python": {
+    "version_info": [
+      3,
+      9,
+      17,
+      "final",
+      0
+    ],
+    "executable": "/opt/hostedtoolcache/Python/3.9.17/x64/bin/python3.9",
+    "virtualenv version": "20.23.1"
+  },
+  "PythonRun": {
+    "deps": {
+      "options": [],
+      "requirements": [
+        "build"
+      ],
+      "constraints": [],
+      "constraint_options": {
+        "constrain_package_deps": false,
+        "use_frozen_constraints": false
+      }
+    }
+  }
+}
