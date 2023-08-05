@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: xia-storer-gcs
+Version: 0.0.3
+Summary: X-I-A
+Home-page: https://develop.x-i-a.com/docs/xia-storer-gcs/0.0.3/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: gcsfs
+Requires-Dist: google-cloud-storage
+Requires-Dist: xia-storer
+
+.. image:: https://img.shields.io/pypi/v/xia-storer-gcs.svg?color=blue
+   :alt: PyPI-Server
+   :target: https://pypi.org/project/xia-storer-gcs/
+
+====================================
+X-I-A
+====================================
+
+
+
+Quick start
+=============================
+
+Install the package::
+
+    pip install xia-storer-gcs
+
+
