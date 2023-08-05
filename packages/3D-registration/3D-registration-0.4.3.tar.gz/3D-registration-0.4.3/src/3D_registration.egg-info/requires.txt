@@ -1,0 +1,14 @@
+numpy
+scipy
+statsmodels
+h5py
+tifffile
+importlib-resources
+matplotlib
+transforms3d
+ensure
+
+[testing]
+tox
+pytest
+pytest-cov
