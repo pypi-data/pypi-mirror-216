@@ -1,0 +1,16 @@
+{%- if config %}
+<table class="docutils align-default veldus-place-statblock">
+  <tbody>
+    {% for info, value in config.infos.items() %}
+    <tr>
+      <td>
+        <p><strong>{{ info|capitalize }}</strong></p>
+      </td>
+      <td>
+        <p>{{ value }}</p>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%- endif %}
