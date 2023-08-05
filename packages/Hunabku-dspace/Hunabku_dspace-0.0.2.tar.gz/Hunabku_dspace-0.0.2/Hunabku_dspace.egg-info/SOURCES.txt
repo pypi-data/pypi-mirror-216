@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+Hunabku_dspace.egg-info/PKG-INFO
+Hunabku_dspace.egg-info/SOURCES.txt
+Hunabku_dspace.egg-info/dependency_links.txt
+Hunabku_dspace.egg-info/requires.txt
+Hunabku_dspace.egg-info/top_level.txt
+hunabku_dspace/__init__.py
+hunabku_dspace/_version.py
+hunabku_dspace/endpoints/DSpace.py
