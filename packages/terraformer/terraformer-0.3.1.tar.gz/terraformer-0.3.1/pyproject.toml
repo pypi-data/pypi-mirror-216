@@ -1,0 +1,70 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.2"]
+
+[project]
+authors = [{"name" = "Robert Hafner", "email" = "robert@tedivm.com"}]
+dependencies = [
+  "pydantic"
+]
+description = "A python library"
+dynamic = ["version"]
+license = {"file" = "LICENSE"}
+name = "terraformer"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "build",
+  "dapperdata",
+  "glom",
+  "isort",
+  "mypy",
+  "pip-tools",
+  "pytest",
+  "pytest-cov",
+  "pytest-pretty",
+  "ruamel.yaml",
+  "toml-sort"
+]
+
+[tool.black]
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | \.env
+    | _build
+    | buck-out
+    | build
+    | dist
+    | terraformer/_version.py
+  )
+)
+'''
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+skip = [".venv"]
+src_paths = ["terraformer", "tests"]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
+
+[tool.setuptools.package-data]
+terraformer = ["py.typed"]
+
+[tool.setuptools.packages]
+find = {}
+
+[tool.setuptools_scm]
+write_to = "terraformer/_version.py"
