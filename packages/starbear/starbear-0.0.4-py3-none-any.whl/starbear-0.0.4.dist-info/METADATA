@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: starbear
+Version: 0.0.4
+Summary: Framework for easy small local web apps or programs
+License: MIT
+Author: Olivier Breuleux
+Author-email: breuleux@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: hrepr (>=0.5.0,<0.6.0)
+Requires-Dist: starlette (>=0.20.3,<0.21.0)
+Requires-Dist: uvicorn (>=0.17.6,<0.18.0)
+Requires-Dist: websockets (>=10.3,<11.0)
