@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: SpatialViewPy
+Version: 0.1.2
+Home-page: https://github.com/kendziorski-lab/SpatialViewPy
+Author: Chitrasen Mohanty
+Author-email: mohantychitraen@gmail.com
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: requests (>=2.0.0)
+Requires-Dist: numpy (>=1.23.0)
+Requires-Dist: pandas (>=2.0.0)
+Requires-Dist: scipy (>=1.10)
+Requires-Dist: scanpy (>=1.9)
+Requires-Dist: anndata (>=0.8)
+Requires-Dist: pandas (>=1.5)
+Requires-Dist: zipfile2 (>=0.0.12)
+Requires-Dist: seaborn (>=0.12.2)
+
+# SpatialViewPy
+
+## Installation
+
+Run the folling to install:
+
+```python
+pip install spatialviewpy
+```
+
+## Usage
+
+[SpatialView](https://github.com/kendziorski-lab/spatialview) is a browser-based interactive application to visualize 10x spatial transcriptomics data. [SpatialView](https://github.com/kendziorski-lab/spatialview) is highly interactive and capable of visualizing multiple samples simultaneously. It enables users to form groups by drag-and-drop samples.
+
+SpatialViewPy prepares data and runs SpatialView from ScanPy objects.
+
+Please check the [step by step tutorial](https://github.com/kendziorski-lab/SpatialViewPy/blob/main/notebooks/tutorial.ipynb).
