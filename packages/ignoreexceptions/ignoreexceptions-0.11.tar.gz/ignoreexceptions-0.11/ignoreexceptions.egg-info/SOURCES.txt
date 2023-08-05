@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+ignoreexceptions/README.MD
+ignoreexceptions/__init__.py
+ignoreexceptions/requirements.txt
+ignoreexceptions/thirdparty.json
+ignoreexceptions.egg-info/PKG-INFO
+ignoreexceptions.egg-info/SOURCES.txt
+ignoreexceptions.egg-info/dependency_links.txt
+ignoreexceptions.egg-info/requires.txt
+ignoreexceptions.egg-info/top_level.txt
