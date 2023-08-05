@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: xia-logger-gcp
+Version: 0.1.1
+Summary: X-I-A
+Home-page: https://develop.x-i-a.com/docs/xia-logger-gcp/0.1.1/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: google-cloud-logging
+Requires-Dist: xia-logger
+
+.. image:: https://img.shields.io/pypi/v/xia-logger-gcp.svg?color=blue
+   :alt: PyPI-Server
+   :target: https://pypi.org/project/xia-logger-gcp/
+
+====================================
+X-I-A
+====================================
+
+
+
+Quick start
+=============================
+
+Install the package::
+
+    pip install
+
+
