@@ -1,0 +1,128 @@
+# Copyright 2023 Ross J. Duff MSc 
+# The copyright holder licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+
+#   http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+option('variables', type: 'array', 
+    value: ['scm-version-snip', 'core-metadata', 'python',
+            'metadata-version', 'namespace', 'should-fail', 'unhashable', 'pytest-plugins',
+            'no-version', 'emoji-dist', 'emoji-docs', 'emoji-lint', 'emoji-test',
+            'emoji-no-version', 'emoji-metadata-version', 'dist-exclude-suites',
+            'docs-exclude-suites', 'lint-exclude-suites', 'test-exclude-suites'])
+option('bootstrap-url'  , type: 'string', value: 'https://bootstrap.pypa.io/get-pip.py')
+option('source-to-build', type: 'feature', value: 'auto')
+option('build-dir'      , description: 'variable', type: 'feature', value: 'auto')
+option('project-name'   , description: 'variable', type: 'feature', value: 'auto')
+option('docs-source'    , type: 'feature', value: 'auto')
+option('test-source'    , type: 'feature', value: 'auto')
+# TODO: -exclude-suites can be generated from core metadata
+option('dev' , description: 'default', type: 'feature', value: 'auto')
+option('namespace', type: 'array', value: ['dist', 'docs', 'lint', 'test'])
+option('dist', description: 'namespace', type: 'feature', value: 'auto')
+option('docs', description: 'namespace', type: 'feature', value: 'auto')
+option('lint', description: 'namespace', type: 'feature', value: 'auto')
+option('test', description: 'namespace', type: 'feature', value: 'auto')
+option('python-dependencies', type: 'array',
+    value: ['ensurepip', 'setuptools_scm', 'tomli'])
+# TODO: -suite can be generated from core metadata
+option('dist-priority', type: 'integer', value: 1)
+option('dist-suite' , type: 'array',
+    value: ['pyc_wheel',
+            'semantic-release',
+            'sigstore'])
+option('docs-priority', type: 'integer', value: 3)
+option('docs-suite' , type: 'array',
+    value: ['doc8',
+            'pydocstyle',
+            'sphinx-build',
+            'sphinxawesome-codelinter', 
+            'sphinxawesome-theme'])
+option('lint-priority', type: 'integer', value: 4)
+option('lint-suite' , type: 'array',
+    value: ['bandit', 
+            'black', 
+            'isort',
+            'pylint',
+            'pyright',
+            'restructuredtext-lint',
+            'flake8p',
+            'Flake8-pyproject'])
+option('test-priority', type: 'integer', value: 2)
+option('test-suite' , type: 'array',
+    value: ['coverage',
+            'hypothesis',
+            'pytest',
+            'pytest-asyncio',
+            'pytest-cov',
+            'pytest-randomly',
+            'pytest-tcpclient',
+            'pytest-xdist'])
+option('args-bandit',
+    description: 'application', type: 'array',
+    value: ['--configfile', 'pyproject.toml', '--ignore-nosec', '-r', '@project_name@'])
+option('args-black',
+    description: 'application', type: 'array', 
+    value: ['--verbose', '--check', '--diff', '--no-color', '--exclude', '.gitignore', '@project_name@'])
+option('args-isort',
+    description: 'application', type: 'array', 
+    value: ['-c', '@project_name@'])
+option('args-pylint',
+    description: 'application', type: 'array', 
+    value: ['@project_name@'])
+option('args-restructuredtext-lint',
+    description: 'application', type: 'array', 
+    value: ['--level=debug', 'README.rst'])
+option('args-pyright',
+    description: 'application', type: 'array', 
+    value: ['--stats', '--warnings', '--verbose', '@project_name@'])
+option('args-coverage',
+    description: 'application', type: 'array', 
+    value: ['debug', 'config'])
+option('args-hypothesis',
+    description: 'application', type: 'array', 
+    value: ['-h'])
+option('args-pyc_wheel',
+type: 'array',
+value: ['-h'])
+option('args-pytest',
+    description: 'application', type: 'array', 
+    value: ['--exitfirst', '-vvv', '--cov-config=pyproject.toml', '@opt_cov_eq_project_name@', 
+            '-n', 'auto', '-d', '@test_source@'])
+option('args-pytest-asyncio',
+    description: 'plugin', type: 'array', 
+    value: [])
+option('args-pytest-cov',
+    description: 'plugin', type: 'array', 
+    value: [])
+option('args-pytest-xdist',
+    description: 'plugin', type: 'array', 
+    value: [])
+option('args-sigstore',
+    description: 'application', type: 'array', 
+    value: ['--version'])
+option('args-semantic-release',
+    description: 'application', type: 'array', 
+    value: ['version', '--noop', '--verbosity=debug'])
+option('args-doc8',
+    description: 'application', type: 'array', 
+    value: ['--config', 'pyproject.toml', '@docs_source@'])
+option('args-pydocstyle',
+    description: 'application', type: 'array', 
+    value: ['-v', '-d', '--config=pyproject.toml', '@docs_source@'])
+option('args-sphinx-build',
+    description: 'application', type: 'array', 
+    value: ['--help'])
+option('args-flake8p', type: 'array',
+value: ['--benchmark', '--statistics', '--max-complexity', '5', '--show-source'])
+option('args-Flake8-pyproject', type: 'array', value: [])
+option('args-sphinxawesome-codelinter', type: 'array', value: [])
+option('args-sphinxawesome-theme', type: 'array', value: [])
