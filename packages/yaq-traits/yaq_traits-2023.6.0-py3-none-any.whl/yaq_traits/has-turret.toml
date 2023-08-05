@@ -1,0 +1,37 @@
+trait = "has-turret"
+doc = """
+Represents a device with an indexed turret that has a set of discrete positions, separate from the device's setpoint
+"""
+requires = []
+
+[state]
+
+[state.turret]
+doc = "Current turret index"
+type = ["null", "string"]
+default = "__null__"
+
+[messages]
+
+[messages.get_turret]
+doc = "Get current turret identifier."
+response = ["null", "string"]
+
+[messages.get_turret_options]
+doc = "Get current turret identifier."
+response = {type="array", items=["null", "string"]}
+
+[messages.set_turret]
+doc = "Set the turret to a given identifier."
+request = [
+  {"name"="turret", "type"="string"}
+]
+
+[properties]
+[properties.turret]
+getter = "get_turret"
+setter = "set_turret"
+options_getter = "get_turret_options"
+control_kind = "hinted"
+record_kind = "metadata"
+type = "string"
