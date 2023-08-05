@@ -1,0 +1,3 @@
+[console_scripts]
+walt-virtual-node = walt.virtual.node:run
+walt-virtual-setup-node = walt.virtual.setup.node:run
