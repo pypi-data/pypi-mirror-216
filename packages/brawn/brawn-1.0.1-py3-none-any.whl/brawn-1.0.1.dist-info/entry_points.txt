@@ -1,0 +1,3 @@
+[console_scripts]
+brawn = brawn.__main__:entrypoint
+
