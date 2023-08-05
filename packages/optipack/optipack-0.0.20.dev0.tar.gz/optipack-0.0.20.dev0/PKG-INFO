@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: optipack
+Version: 0.0.20.dev0
+Summary: The optimal ML package
+Author: indigoYoshimaru
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: Pillow (==9.4.0)
+Requires-Dist: fastcore (>=1.5,<2.0)
+Requires-Dist: fs-gcsfs (>=1.5.1,<2.0.0)
+Requires-Dist: matplotlib (>=3.7.1,<4.0.0)
+Requires-Dist: protobuf (>=3.20.2,<4.0.0)
+Requires-Dist: pyyaml (==6.0)
+Requires-Dist: rich (==13.3.1)
+Requires-Dist: typer (>=0.7.0,<0.8.0)
+Description-Content-Type: text/markdown
+
+![optipack](asset/image/logo.png)
+
+# What optipack do: 
+- Workspace management: 
+    - Generate folder structure for ML project 
+    - Generate files following the given environment in yaml format, including: 
+        - tool connection configuration 
+        - hyperparameter configuration 
+        - model run config
+-  Logging: 🔥 all-in-one logger
+    - Support console/file logger for users' log! 🔥 No more uggly print, no more terminal scrolling
+    - Support tensorboard metric log. 
+
+# Installation:  
+## 1. Installation from PYPI: 
+- Run `pip install optipack`
+## 2. Installation from source: 
+- Clone this repo 
+- Change directory to optipack
+- Run `pip install . `
+
+# How to use: 
+## 1. Use as CLI 
+- All you need is running `optipack` on terminal :) 
+
+## 2. Use as library
+- ... 

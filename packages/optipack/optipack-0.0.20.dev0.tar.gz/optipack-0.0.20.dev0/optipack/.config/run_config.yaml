@@ -1,0 +1,10 @@
+# for versioning
+root_dir: 'config'
+config: 
+  project_name: null
+  project_id: null
+  repo: null
+  run_info:
+    experiment_name: null
+    experiment_version: null
+    slack_webhook_key: null

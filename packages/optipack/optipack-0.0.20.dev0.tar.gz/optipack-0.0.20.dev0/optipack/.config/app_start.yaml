@@ -1,0 +1,10 @@
+app_start: 
+  OPTIPACK_PATH: ''
+  PROJECT_STRUCTURE: '.config/project_structure.yaml'
+  CONNECTION_CONFIG: '.config/connection_config.yaml'
+  HYPERPARAM_CONFIG: '.config/hyperparam_config.yaml' 
+  RUN_CONFIG: '.config/run_config.yaml'
+  LARGE_LOGO_PATH: 'asset/logo-large.png'
+  SMALL_LOGO_PATH: 'asset/logo-small.png'
+  MESSAGE_PATH: 'asset/message.txt'
+  TREE_VIS_PATH: 'asset/tree_vis.yaml'

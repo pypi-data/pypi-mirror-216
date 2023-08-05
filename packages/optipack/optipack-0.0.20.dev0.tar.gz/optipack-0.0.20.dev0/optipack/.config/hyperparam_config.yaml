@@ -1,0 +1,44 @@
+# model configuration
+root_dir: 'config'
+folder: 'hyperparams'
+config: 
+  experiments:
+    dataset_dir: null
+    epochs: 50
+    batch_size: 3
+    validation_steps: 80
+    val_split_ratio: 0.2
+    optimizer: 
+      loss_function: null
+      learning_rate: null
+      opt_algorithm: null
+    watch_metric: [loss, accuracy,f1, precision, recall]
+  training:
+    dremio_output_table: null
+    gcs_output_folder: null
+    tables: []
+    features_selection:
+      numeric_features: []
+      categorical_features: []
+      text_features: []
+    epochs: 50
+    batch_size: 3
+    validation_steps: 80
+    val_split_ratio: 0.2
+    optimizer: 
+      loss_function: null
+      learning_rate: null
+      opt_algorithm: null
+    watch_metric: [loss, accuracy,f1, precision, recall]
+  evaluation: 
+    dremio_output_table: null
+    gcs_output_folder: null
+    tables: []
+    features_selection:
+      numeric_features: []
+      categorical_features: []
+      text_features: []
+    watch_metric: [loss, accuracy,f1, precision, recall]
+  serving: 
+    framework: ''
+    watch_metric: [loss, accuracy,f1, precision, recall]

@@ -1,0 +1,51 @@
+root_dir: 'config'
+folder: 'connection'
+config: 
+  kubeflow: 
+    host: 
+      dev: https://kubeflow-dc.int.onemount.dev/
+      stag: https://kubeflow.iap.onemount.dev/
+      prod: https://kubeflow.iap.onemount.com/
+    credential: 
+      username: null
+      secret: null
+    schedule:
+      is_recurring: false
+      experiment_id: null
+      train_cron: null
+      serve_cron: null
+  mlflow: 
+    host: 
+      dev: https://mlflow.int.onemount.dev/
+      stag: https://mlflow.int.onemount.dev/
+      prod: https://mlflow.int.onemount.com/
+    credential: 
+      username: null
+      secret: null
+  splunk: 
+    host: 
+      dev: https://splunk.iap.vinid.dev/
+      stag: https://splunk.iap.vinid.dev/
+      prod: https://splunk.iap.vinid.net/
+    search_index: 
+      dev: index ~= onemg-dp
+      stag: index ~= onemg-dp
+      prod: index ~= kubeflow
+    credential: 
+      username: null
+      secret: null
+  git:
+    branch: 
+      dev: dev
+      stag: staging
+      prod: main
+    credential: 
+      username: null
+      secret: null
+  storage: 
+    name: null
+    connection_url: null 
+    credential: 
+      username: null
+      password: null
+
