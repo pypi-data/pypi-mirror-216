@@ -1,0 +1,14 @@
+anesthetic>=2.0.0b40
+
+[docs]
+sphinx
+sphinx_rtd_theme
+numpydoc
+
+[test]
+pytest
+pytest-cov
+flake8
+pydocstyle
+packaging
+pre-commit
