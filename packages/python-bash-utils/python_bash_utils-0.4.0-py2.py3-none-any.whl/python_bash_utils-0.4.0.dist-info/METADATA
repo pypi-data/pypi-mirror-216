@@ -1,0 +1,90 @@
+Metadata-Version: 2.1
+Name: python-bash-utils
+Version: 0.4.0
+Summary: A package which allows making bash style command line scripts easier.
+Author-email: Tim Santor <tsantor@xstudios.com>
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+
+# Python Bash Utils
+Author: Tim Santor <tsantor@xstudios.com>
+
+# Overview
+Bash color management and log system for Python users.
+
+
+# Requirements
+
+- Python 3.8.x
+# Installation
+
+You can install directly via pip:
+
+    pip install python-bash-utils
+
+# Usage
+
+## logmsg
+
+Import:
+
+    from bashutils import logmsg
+
+Functions:
+
+    logmsg.divline()             # ----------
+    logmsg.header('header')      # ==> header
+    logmsg.success('success')    # [OK] success
+    logmsg.error('error')        # [ERROR] error
+    logmsg.warning('warning')    # [WARNING] warning
+    logmsg.info('info')          # [INFO] info
+    logmsg.note('note')          # note
+
+    logmsg.prompt('What is your name?)  # [?] What is your name?
+    lomgsg.confirm('Confirm this')  # [?] Confirm this? (y/n)
+
+
+## bashutils
+
+Import:
+
+    from bashutils import bashutils
+
+Functions:
+
+    bashutils.get_os() # OSX, 'Fedora', 'CentOS', 'Debian', 'Ubuntu'
+
+    status, stdout, stderr = bashutils.exec_cmd('git -h')
+
+    bashutils.cmd_exists('git') # True or False
+
+# Issues
+
+If you experience any issues, please create an [issue](https://bitbucket.org/tsantor/python-bash-utils/issues) on Bitbucket.
+
+# Version History
+
+- **0.1.0** - Initial release
+- **0.1.1** - Added some new methods
+- **0.1.2** - Refactor
+- **0.1.3** - Added Python 3.4.x support
+- **0.1.4** - Added ability to pass logger instance to log message as well
+- **0.1.5** - Added Windows output workaround
+- **0.1.6** - Removed needless `declined` method, was being overly verbose in output
+- **0.2.0** - Updated for Python 3
+- **0.3.0** - Simplified code base and now rely on `colorama` for cross-platform terminal color support
+- **0.3.1** - Added cooler icons for success/error for Linux/Mac
+- **0.3.2** - Remove unicode chars that cause issues when writing to file
+- **0.3.3** - Updated packaging method, updated setup.py
