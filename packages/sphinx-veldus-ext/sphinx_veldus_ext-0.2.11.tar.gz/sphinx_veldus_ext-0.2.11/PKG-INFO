@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: sphinx_veldus_ext
+Version: 0.2.11
+Summary: A Sphinx Extension built for veldus.net
+Project-URL: Homepage, https://github.com/Veldus/sphinx_veldus_ext
+Project-URL: Bug Tracker, https://github.com/Veldus/sphinx_veldus_ext/issues
+Author-email: Adam DuQuette <duquetteadam@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Veldus
+
+View here: [http://veldus.net/](http://veldus.net/)
+
+[PyPi repository](https://pypi.org/project/sphinx-veldus-ext/)
