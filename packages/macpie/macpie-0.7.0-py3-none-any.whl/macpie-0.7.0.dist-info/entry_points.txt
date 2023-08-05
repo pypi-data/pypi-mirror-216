@@ -1,0 +1,4 @@
+[console_scripts]
+macpie = macpie.cli.macpie.main:main
+mppair = macpie.cli.mppair.main:main
+mpsql = macpie.cli.mpsql.main:main [mpsql]
