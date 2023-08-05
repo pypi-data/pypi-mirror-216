@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: fabman
+Version: 0.1.0
+Summary: Python wrappers for interacting with the Fabman API
+Author: Davin Lawrence
+Author-email: Davin Lawrence <davin.lawrence@utexas.edu>
+Project-URL: Homepage, https://github.com/utexas-engr-tiw/fabman-api
+Project-URL: Bug Tracker, https://github.com/utexas-engr-tiw/fabman-api/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Education
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests (>=2.31.0)
+Requires-Dist: arrow (>=1.2.3)
+Requires-Dist: pytz (==2023.3)
+
+[![Build Status](https://github.com/utexas-engr-tiw/fabman-api/actions/workflows/python-package.yml/badge.svg?branch=main)](https://github.com/utexas-engr-tiw/fabman-api/actions)
+[![Coverage](https://codecov.io/gh/utexas-engr-tiw/fabman-api/branch/main/graph/badge.svg?token=AGABZU5YOJ)](https://codecov.io/gh/utexas-engr-tiw/fabman-api)
+
+# fabman-api
+
+Library for interfacing with te Fabman API. Created for Texas Inventionworks as part of the Cockrell School of Engineering at the University of Texas at Austin.
+
+Official documentation for the Fabman API can be found [here](https://github.com/FabmanHQ/fabman-api). Live interaction and description of all endpoints can further be found [here](https://fabman.io/api/v1/documentation#/). This library is currently targeting version 2.3.1 of the Fabman API.
