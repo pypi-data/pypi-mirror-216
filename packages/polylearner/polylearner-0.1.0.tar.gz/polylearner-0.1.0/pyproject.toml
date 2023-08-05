@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+    "hatchling"
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "polylearner"
+version = "0.1.0"
+authors = [
+  { name="Mattia Setzu", email="mattia.setzu@unipi.it" },
+]
+description = "Learning from polyhedra: generalize multiple polyhedra into a parametric polyhedron."
+readme = "README.md"
+requires-python = ">3.10, <=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers"
+]
+dependencies = [
+    "numpy>=1.23.5",
+    "swiplserver>=1.0.2"
+]
+
+[project.urls]
+	"Homepage" = "https://github.com/msetzu/polylearner"
+	"Bug Tracker" = "https://github.com/msetzu/polylearner/issues"
