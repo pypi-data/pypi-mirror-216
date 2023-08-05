@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: vipes
+Version: 0.0.3
+Summary: The most reliable script manager for crossplatform projects
+Home-page: https://github.com/flobbun/vipes
+Author: Jhon
+Keywords: script,manager,crossplatform,configuration
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Vipes
+
+## What is Vipes?
+
+Vipes is a complete script manager, it helps you to manage your development workflow by providing you with the ability to add, remove and update custom scripts. Viper is crossplatform, that means you can use it on any operating system that supports python as long as you configure it to do so.
+
+## How to install Vipes?
+
+To install Vipes, you need to use the following command:
+
+```bash
+pip install vipes
+```
