@@ -1,0 +1,13 @@
+bagit >= 1.7.0
+bagit_profile >= 1.3.0
+click >=7
+requests
+lxml
+opencv-python-headless
+Flask
+jsonschema
+pyyaml
+Deprecated == 1.2.0
+memory-profiler >= 0.58.0
+sparklines >= 0.4.2
+gdown
