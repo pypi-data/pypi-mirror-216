@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: monopoly-simulator-test
+Version: 0.0.6
+Summary: USC/ISI monopoly simulator
+Home-page: https://github.com/mayankkejriwal/GNOME-p3/tree/phase3_simulator_v1
+Author: Min-Hsueh Chiu
+Author-email: minhsueh@isi.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ==3.7.6
+Requires-Dist: numpy (==1.18.4)
+Requires-Dist: xlsxwriter (==1.2.8)
+
+UNKNOWN
+
