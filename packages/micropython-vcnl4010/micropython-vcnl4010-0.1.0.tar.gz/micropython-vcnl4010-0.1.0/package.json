@@ -1,0 +1,8 @@
+{
+  "urls": [
+    ["micropython_vcnl4010/__init__.py", "github:jposada202020/MicroPython_VCNL4010/micropython_vcnl4010/__init__.py"],
+    ["micropython_vcnl4010/i2c_helpers.py", "github:jposada202020/MicroPython_VCNL4010/micropython_vcnl4010/i2c_helpers.py"],
+    ["micropython_vcnl4010/vcnl4010.py", "github:jposada202020/MicroPython_VCNL4010/micropython_vcnl4010/vcnl4010.py"]
+  ],
+  "version": "0.1"
+}
