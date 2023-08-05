@@ -1,0 +1,6 @@
+koji
+pygobject
+requests
+six
+jinja2
+futures;python_version<'3'
