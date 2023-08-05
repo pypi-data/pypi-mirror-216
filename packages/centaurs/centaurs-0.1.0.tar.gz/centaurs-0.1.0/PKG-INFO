@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: centaurs
+Version: 0.1.0
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+License-File: LICENSE
+Summary: An ASGI-compatible web server for Python, written in Rust
+Requires-Python: >=3.7
