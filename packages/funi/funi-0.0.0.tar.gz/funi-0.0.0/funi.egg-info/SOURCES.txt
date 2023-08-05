@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+funi.egg-info/PKG-INFO
+funi.egg-info/SOURCES.txt
+funi.egg-info/dependency_links.txt
+funi.egg-info/not-zip-safe
+funi.egg-info/requires.txt
+funi.egg-info/top_level.txt
+src/pyfuni.cpp
+tests/test_funi.py
