@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/milkstraw_client/__init__.py
+src/milkstraw_client/api_client.py
+src/milkstraw_client/generated_data.py
+src/milkstraw_client/model.py
+src/milkstraw_client/source_data.py
+src/milkstraw_client.egg-info/PKG-INFO
+src/milkstraw_client.egg-info/SOURCES.txt
+src/milkstraw_client.egg-info/dependency_links.txt
+src/milkstraw_client.egg-info/requires.txt
+src/milkstraw_client.egg-info/top_level.txt
