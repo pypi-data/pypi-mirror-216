@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: contextplot
+Version: 0.0.3
+Summary: Make Matplotlib plots in Jupyter notebooks using a context manager API
+Author: Josh Burkart
+Project-URL: Bug Tracker, https://gitlab.com/joshburkart/joshpyutil/-/issues
+Project-URL: Homepage, https://gitlab.com/joshburkart/joshpyutil
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: IPython
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+
+# Make Matplotlib plots in Jupyter notebooks using a context manager API
+
+See [`example.ipynb`](https://gitlab.com/joshburkart/joshpyutil/-/blob/main/example.ipynb).
