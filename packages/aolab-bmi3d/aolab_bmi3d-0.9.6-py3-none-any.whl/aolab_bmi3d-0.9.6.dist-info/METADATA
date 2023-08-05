@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: aolab-bmi3d
+Version: 0.9.6
+Summary: electrophysiology experimental rig library
+Author: Lots of people
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: django
+Requires-Dist: celery
+Requires-Dist: jinja2
+Requires-Dist: scipy
+Requires-Dist: traits
+Requires-Dist: pandas
+Requires-Dist: patsy
+Requires-Dist: statsmodels
+Requires-Dist: pygame
+Requires-Dist: PyOpenGL
+Requires-Dist: pylibftdi
+Requires-Dist: sphinx
+Requires-Dist: numpydoc
+Requires-Dist: tornado
+Requires-Dist: tables
+Requires-Dist: h5py
+Requires-Dist: pymysql
+
