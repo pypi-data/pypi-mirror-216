@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+BlitzChain.egg-info/PKG-INFO
+BlitzChain.egg-info/SOURCES.txt
+BlitzChain.egg-info/dependency_links.txt
+BlitzChain.egg-info/requires.txt
+BlitzChain.egg-info/top_level.txt
+blitzchain/__init__.py
+blitzchain/api.py
+blitzchain/utils.py
+tests/test_crud.py
+tests/test_pdf.py
+tests/test_qa.py
