@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pystrometry
+Version: 0.4.3
+Summary: Support for astrometry timeseries analysis
+Home-page: https://github.com/Johannes-Sahlmann/pystrometry
+Author: Johannes Sahlmann
+Author-email: jsahlmann@sciops.esa.int
+License: BSD 3-Clause
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.rst
+
+Support for astrometry timeseries analysis.
