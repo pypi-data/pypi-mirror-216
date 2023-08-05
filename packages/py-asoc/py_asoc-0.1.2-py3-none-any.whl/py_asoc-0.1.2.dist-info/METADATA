@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: py-asoc
+Version: 0.1.2
+Summary: Description
+Home-page: https://github.com/mumblepins/py-asoc/
+License: MIT
+Author: Daniel Sullivan
+Author-email: daniel.j.sullivan@state.mn.us
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: certifi
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: javascript
+Requires-Dist: python-dateutil
+Requires-Dist: pytz
+Requires-Dist: urllib3
+Project-URL: Documentation, https://mumblepins.github.io/py-asoc/
+Project-URL: Repository, https://github.com/mumblepins/py-asoc/
+Description-Content-Type: text/markdown
+
+# Py Asoc
+
+[![Checks][checks-shield]][checks-url]
+[![Codecov][codecov-shield]][codecov-url]
+
+[codecov-shield]: https://img.shields.io/codecov/c/github/mumblepins/py-asoc
+[codecov-url]: https://app.codecov.io/gh/mumblepins/py-asoc
+[checks-shield]: https://img.shields.io/github/actions/workflow/status/mumblepins/py-asoc/python-publish.yml?style=flat-square&branch=main
+[checks-url]: https://github.com/mumblepins/py-asoc/actions/workflows/python-publish.yml
+
