@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: xia-analytics
+Version: 0.0.2
+Summary: X-I-A
+Home-page: https://develop.x-i-a.com/docs/xia-analytics/0.0.2/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: xia-engine
+
+.. image:: https://img.shields.io/pypi/v/xia-analytics.svg?color=blue
+   :alt: PyPI-Server
+   :target: https://pypi.org/project/xia-analytics/
+
+====================================
+X-I-A
+====================================
+
+
+
+Quick start
+=============================
+
+Install the package::
+
+   pip install xia-analytics
+
+
