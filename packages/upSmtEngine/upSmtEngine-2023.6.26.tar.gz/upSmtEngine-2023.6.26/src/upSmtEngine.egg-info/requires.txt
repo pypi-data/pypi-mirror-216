@@ -1,0 +1,4 @@
+pre-commit
+black
+unified-planning>=0.4.2
+z3>=0.2.0

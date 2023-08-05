@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "upSmtEngine"
+version = "2023.06.26"
+description = "Engine for unified-planning, implementing a SMT solver."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE.txt"}
+authors = [{name = "Ben Pathak", email = "pathak.ban@gmail.com"},]
+dependencies = [
+    "pre-commit",
+    "black",
+    "unified-planning >= 0.4.2",
+    "z3 >= 0.2.0",
+]
+
+[project.urls]
+Repository = "https://gitlab.com/BPat123/up-smt-engine"
+
+[tool.setuptools.packages.find]
+where = ["src"]
