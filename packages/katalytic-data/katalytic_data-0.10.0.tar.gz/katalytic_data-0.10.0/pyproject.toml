@@ -1,0 +1,50 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "katalytic-data"
+version = "0.10.0"
+description = "This plugin adds utilities for working with data to the katalytic namespace"
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+keywords = [
+	"high-level",
+	"data conversion",
+]
+authors = [{name="Valentin Neagu", email="vali19th@protonmail.com"}]
+
+requires-python = ">=3.6"
+dependencies = [
+    "katalytic-pkg>=0.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-clarity",
+    "pytest-randomly",
+]
+
+[project.urls]
+homepage = "https://gitlab.com/katalytic/katalytic-data.git"
+repository = "https://gitlab.com/katalytic/katalytic-data.git"
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+
+[tool.flit.module]
+name = "katalytic.data"
