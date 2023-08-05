@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: rainbow-connection
+Version: 0.0.14
+Summary: Pedagogical tools for light and color in astronomy.
+Home-page: https://github.com/zkbt/rainbow-connection
+Author: Zach Berta-Thompson
+Author-email: zach.bertathompson@colorado.edu
+License: MIT
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Requires-Python: >=3.9
+Provides-Extra: develop
+License-File: LICENSE
+
+For detailed usage, please read the documentation at https://zkbt.github.io/rainbow-connection/.
