@@ -1,0 +1,4 @@
+include requirements.txt
+include README.md
+include resources/dependencies/dependencies.json
+recursive-include resources/tpl *.tpl
