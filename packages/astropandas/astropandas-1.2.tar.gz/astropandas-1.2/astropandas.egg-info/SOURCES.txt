@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+astropandas/__init__.py
+astropandas/io.py
+astropandas/match.py
+astropandas.egg-info/PKG-INFO
+astropandas.egg-info/SOURCES.txt
+astropandas.egg-info/dependency_links.txt
+astropandas.egg-info/requires.txt
+astropandas.egg-info/top_level.txt
