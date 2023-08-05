@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: zeroscratches
+Version: 1.0.2
+Summary: Old Photo Restoration
+Home-page: https://github.com/leonelhs/zeroscratches
+Author: leonel hernandez
+Author-email: leonelhs@gmail.com
+License: Apache
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.24.3)
+Requires-Dist: torch (>=2.0.0)
+Requires-Dist: torchvision
+Requires-Dist: pillow (>=9.5.0)
+Requires-Dist: huggingface-hub
+
+# Zero Scratches
+## Old Photo Restoration
+
+This is a lightweight implementation of [Microsoft Bringing Old Photos Back to Life](https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life)
+
+
+### Install
+```shell
+pip install zeroscatches
+```
+### Basic usage
+```python
+
+import PIL.Image
+from zeroscratches import EraseScratches
+
+
+image_path = "/path/to/image-scratched.jpg"
+eraser = EraseScratches()
+
+image = PIL.Image.open(image_path)
+new_img = eraser.erase(image)
+
+new_img = PIL.Image.fromarray(new_img)
+new_img.show()
+```
+
+Get the pretrained models at [Hugging Face Zero Scratches](https://huggingface.co/leonelhs/zeroscratches)
+
+## Some Apps using the library:
+
+### [Face Shine](https://github.com/leonelhs/face-shine) 
+Face Shine Is a backend server for photo enhancement and restoration.
+
+### [Super Face](https://github.com/leonelhs/SuperFace/)
+Super Face is a Python QT frontend for Face Shine server.
+
+<img src="https://drive.google.com/uc?export=view&id=1D7hpjQSlUkzfTba-E5Ul4Rb1c8lYkFj5"/>
+<img src="https://drive.google.com/uc?export=view&id=1oKpJe-Ff3SeEekhGVRP1Ap3eIFqt0c8u"/>
