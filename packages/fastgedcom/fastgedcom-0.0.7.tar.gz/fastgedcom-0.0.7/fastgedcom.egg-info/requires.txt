@@ -1,0 +1,8 @@
+ansel>=1.0.0
+
+[dev]
+mypy
+build
+twine
+sphinx-rtd-theme
+sphinx-autoapi
