@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: greyhorse-sqla
+Version: 0.3
+Summary: Greyhorse SqlAlchemy library
+Home-page: https://gitlab.com/max-plutonium/greyhorse
+License: MIT
+Author: Max Plutonium
+Author-email: plutonium.max@gmail.com
+Maintainer: Max Plutonium
+Maintainer-email: plutonium.max@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: mysql
+Provides-Extra: pg
+Provides-Extra: sqlite
+Requires-Dist: aiomysql (>=0.1,<0.2) ; extra == "mysql"
+Requires-Dist: aiosqlite (>=0.18,<0.19) ; extra == "sqlite"
+Requires-Dist: alembic (>=1.10,<2.0)
+Requires-Dist: asyncpg (>=0.27,<0.28) ; extra == "pg"
+Requires-Dist: greyhorse-core (==0.3)
+Requires-Dist: psycopg2 (>=2.9,<3.0) ; extra == "pg"
+Requires-Dist: pymysql[rsa] (>=1.0,<2.0) ; extra == "mysql"
+Requires-Dist: sqlalchemy-utils (>=0.41,<0.42)
+Requires-Dist: sqlalchemy[asyncio,mypy] (>=2.0,<3.0)
+Project-URL: Repository, https://gitlab.com/max-plutonium/greyhorse
