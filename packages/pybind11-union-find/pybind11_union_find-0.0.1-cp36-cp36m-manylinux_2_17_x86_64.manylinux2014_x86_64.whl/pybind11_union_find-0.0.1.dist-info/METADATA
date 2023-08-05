@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: pybind11-union-find
+Version: 0.0.1
+Summary: UnionFind in C++, with python binding
+Home-page: https://pybind11-union-find.readthedocs.io
+Author: tzx
+Author-email: dvorak4tzx@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Requires-Dist: pytest (>=6.0) ; extra == 'test'
+
+# pybind11-union-find
+
+Online document: **[readthedocs](http://pybind11-union-find.readthedocs.io/)**
+
+<!--intro-start-->
+
+## Usage
+
+Install:
+
+```bash
+python3 -m pip install pybind11-union-find # install from pypi
+```
+
+<!--intro-end-->
+
+---
+
+# Make a release
+
+(We now use Github Workflow to release to pypi. Skip the rest if you don't want to manually compile wheels.)
+
+## On linux
+
+Install docker then
+
+```
+make python_build_all_in_linux
+make upload_wheels
+```
+
+## On macOS
+
+Install c++ compiler and cmake.
+
+Install conda and envs:
+
+```
+# conda create -y -n py36 python=3.6
+# conda create -y -n py37 python=3.7
+conda create -y -n py38 python=3.8
+conda create -y -n py39 python=3.9
+conda create -y -n py310 python=3.10
+conda env list
+```
+
+Then
+
+```
+make python_build_all_in_macos
+make upload_wheels
+```
+
+## On windows
+
+Install visual studio and cmake, (also git for windows, maybe).
+
+Install conda and envs same as on macOS, then:
+
+```
+make python_build_all_in_windows
+make upload_wheels
+```
+
+
