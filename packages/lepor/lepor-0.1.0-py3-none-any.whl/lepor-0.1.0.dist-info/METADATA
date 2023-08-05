@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: lepor
+Version: 0.1.0
+Summary: Python implementation of Machine Translation Evaluation Metric LEPOR.
+Home-page: UNKNOWN
+Author: Ikram Ul Haq
+Author-email: ulhaqi12@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# LEPOR: A Robust Evaluation Metric for Machine Translation with Augmented Factors
+
+This repo contains code for a machine translation evaluation metric named LEPOR.
+
+
+
+**Note: The code for LEPOR is not available in python yet. The plan is to implement all the variations on LEPOR and publish it as a package. There is also possibility of intigrating it to NLTK or other NLP libraries.**
+
+
+
+If you have any suggestions or want to contribute. Create an issue and generate a PR.
+
+
+
+## References
+
+<div class="csl-entry">Han, A. L. F., Wong, D. F., &#38; Chao, L. S. (2012). <i>LEPOR: A Robust Evaluation Metric for Machine Translation with Augmented Factors</i> (pp. 441–450). https://aclanthology.org/C12-2044</div>
+
+
+
