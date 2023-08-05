@@ -1,0 +1,32 @@
+trait = "is-sensor"
+doc = """
+Daemons with the is-sensor trait are capable of measuring some unknown quantities.
+Sensor daemons may have multiple channels if a single measurement returns multiple values.
+"""
+requires = []
+
+[messages]
+
+[messages.get_measured]
+doc = "Returns map of channel_name to measured_value. Always returns additional key measurement_id."
+response.type = "map"
+response.values = ["int", "double", "ndarray"]
+
+[messages.get_measurement_id]
+doc = "Get current measurement_id. Clients are encouraged to watch for this to be updated before calling get_measured to get entire measurement."
+response.type = "int"
+
+[messages.get_channel_names]
+doc = "Get current channel names."
+response.type = "array"
+response.items = "string"
+
+[messages.get_channel_shapes]
+doc = "Get current channel shapes. If list is empty, channel is scalar."
+response.type = "map"
+response.values = {"type"="array", "items"="int"}
+
+[messages.get_channel_units]
+doc = "Get current channel units."
+response.type = "map"
+response.values = ["null", "string"]

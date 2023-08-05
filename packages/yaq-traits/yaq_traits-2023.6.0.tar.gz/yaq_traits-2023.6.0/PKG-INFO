@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: yaq-traits
+Version: 2023.6.0
+Summary: package defining yaq traits
+Home-page: https://traits.yaq.fyi
+Author: yaq Developers
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: fastavro>=1.4.0
+Requires-Dist: toml
+Requires-Dist: click
+Requires-Dist: prettytable
+Requires-Dist: colorama
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: pre-commit ; extra == "dev"
+Project-URL: Issues, https://github.com/yaq-project/yaq-traits/issues
+Project-URL: Source, https://github.com/yaq-project/yaq-traits
+Provides-Extra: dev
+
+# yaq-traits
+
+[![PyPI](https://img.shields.io/pypi/v/yaq-traits)](https://pypi.org/project/yaq-traits)
+[![Conda](https://img.shields.io/conda/vn/conda-forge/yaq-traits)](https://anaconda.org/conda-forge/yaq-traits)
+[![yaq](https://img.shields.io/badge/framework-yaq-orange)](https://yaq.fyi/)
+[![black](https://img.shields.io/badge/code--style-black-black)](https://black.readthedocs.io/)
+[![ver](https://img.shields.io/badge/calver-YYYY.M.MICRO-blue)](https://calver.org/)
+[![log](https://img.shields.io/badge/change-log-informational)](https://github.com/yaq-project/yaq-traits/blob/main/CHANGELOG.md)
+
+
+yaq-traits defines the standard traits of the yaq project.
+
+yaq-traits provids a CLI program to translate human-readable toml files into fully discriptive AVPR files and to validate AVPR files against current trait definitions.
+
+For more info and usage see https://traits.yaq.fyi
+
+
+Repository maintainers:
+- [Kyle Sunden](https://github.com/ksunden)
+- [Blaise Thompson](https://github.com/untzag)
+
