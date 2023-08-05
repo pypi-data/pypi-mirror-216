@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: xia-broadcast-fastapi
+Version: 0.1.0
+Summary: X-I-A Broadcast
+Home-page: https://develop.x-i-a.com/docs/xia-broadcast-fastapi/0.1.0/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: fastapi
+Requires-Dist: xia-broadcast
+Requires-Dist: xia-logger
+
+.. image:: https://img.shields.io/pypi/v/xia-broadcast-fastapi.svg?color=blue
+   :alt: PyPI-Server
+   :target: https://pypi.org/project/xia-broadcast-fastapi/
+
+====================================
+X-I-A Broadcast
+====================================
+
+
+Introduction
+=============================
+
+xia-broadcast aimed to transfer a subscription to a broadcasting by using web sockets.
+
+
+Quick start
+=============================
+
+Install the package::
+
+    pip install xia-broadcast
+
+
