@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: iblm
+Version: 0.1.45
+Summary: inductive bias learning
+License: MIT
+Author: toma tanaka
+Author-email: ulti4929@gmail.com
+Requires-Python: >=3.8.1,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: datasets (>=2.13.1,<3.0.0)
+Requires-Dist: jupyter (>=1.0.0,<2.0.0)
+Requires-Dist: langchain (>=0.0.208,<0.0.209)
+Requires-Dist: matplotlib (>=3.7.1,<4.0.0)
+Requires-Dist: numpy (>=1.21,<1.24)
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Requires-Dist: pandas (==1.4.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: scikit-learn (>=1.2.2,<2.0.0)
+Requires-Dist: tqdm (>=4.65.0,<5.0.0)
+Description-Content-Type: text/markdown
+
+# IBLM:Inductive Bias Learning Models
+
+
+- [What is IBLM](#what-is-iblm)
+- [How to Use](#how-to-use)
+    - [Setting](#setting)
+    - [Binary classificatin](#binary-classification)
+    - [Notebooks](#notebooks)
+- [Supported Models](#supported-models)
+- [Contributor](#contributor)
+- [Backstory](#backstory)
+
+
+
+## What is IBLM?
+IBLM (Inductive Bias Learning) is a new machine learning modeling method that uses LLM to infer the structure of the model itself from the data set and outputs it as Python code. The learned model (code model) can be used as a machine learning model to predict a new dataset.
+
+
+## How to Use
+
+### Setting
+
+* Installation
+```python
+pip install iblm
+```
+* OpenAI API key settings
+```python
+os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
+```
+
+### Binary classification
+
+* Model Definition
+```python
+from iblm import IBLMClassifier
+
+# Load LLM via LangChain. (GPT-4 recommended)
+llm_model = OpenAI(temperature=0, model_name = 'gpt-4')
+
+params = {'columns_name': True}
+
+iblm = IBLMClassifier(llm_model = llm_model, params=params)
+```
+
+* Model Learning
+```python
+file_path = 'Specify the directory to output python files.'
+
+model = iblm.fit(x_train, y_train, model_name = 'model_name', file_path=file_path)
+```
+
+* Model Predictions
+```python
+y_proba = iblm.predict(x_test)
+```
+
+### Notebooks
+Use the link below to try it out immediately on Google colab.
+- [Binary classification](https://github.com/fuyu-quant/IBLM/blob/release-maintenance/examples/iblmodel_halfmoon.ipynb)
+
+
+## Supported Models
+Currently, the recommended model is GPT-4
+
+
+## Contributor
+- [@t-ymbys](https://github.com/t-ymbys)
+- [@cn47](https://github.com/cn47)
+
+
+## Backstory
+This idea is based on [langchain-tools](https://github.com/fuyu-quant/langchain-tools), which was created in an attempt to make LLM learn LightGBM.
