@@ -1,0 +1,201 @@
+Metadata-Version: 2.1
+Name: idem-spotinst
+Version: 1.0.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Prerna
+Author-email: prjain@vmware.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+===============
+idem-spotinst
+===============
+
+.. image:: https://img.shields.io/badge/made%20with-pop-teal
+   :alt: Made with pop, a Python implementation of Plugin Oriented Programming
+   :target: https://pop.readthedocs.io/
+
+.. image:: https://img.shields.io/badge/made%20with-python-yellow
+   :alt: Made with Python
+   :target: https://www.python.org/
+
+The Idem spot instance provider
+
+About
+=====
+
+An Idem plugin to manage spot instance resources. A spot instance is an instance deployed at a discount on spare EC2 capacity.
+
+What is POP?
+------------
+
+This project is built with `pop <https://pop.readthedocs.io/>`__, a Python-based implementation of *Plugin Oriented Programming (POP)*. POP seeks to bring together concepts and wisdom from the history of computing in new ways to solve modern computing problems.
+
+For more information:
+
+* `Intro to Plugin Oriented Programming (POP) <https://pop-book.readthedocs.io/en/latest/>`__
+* `pop-awesome <https://gitlab.com/saltstack/pop/pop-awesome>`__
+* `pop-create <https://gitlab.com/saltstack/pop/pop-create/>`__
+
+Getting Started
+===============
+
+Prerequisites
+-------------
+
+* Python 3.7+
+* git *(if installing from source or contributing to the project)*
+
+  To contribute to the project and set up your local development environment, see ``CONTRIBUTING.rst`` in the source repository for this project.
+
+Installation
+------------
+
+You can install ``idem-spotinst`` with the Python package installer (PyPI) or from source.
+
+Install from PyPI
++++++++++++++++++
+
+.. code-block:: bash
+
+      pip install idem-spotinst
+
+Install from Source
++++++++++++++++++++
+
+.. code-block:: bash
+
+   # clone repo
+   git clone git@<your-project-path>/idem-spotinst.git
+   cd idem-spotinst
+
+   # Setup venv
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -e .
+
+Usage
+=====
+
+Setup
+-----
+
+After installation, ``idem-spotinst`` execution and state modules are accessible to the pop *hub*.
+
+For more information:
+
+* `Intro to Plugin Oriented Programming (POP) <https://pop-book.readthedocs.io/en/latest/>`__
+* `pop hub <https://pop-book.readthedocs.io/en/latest/main/hub.html#>`__
+
+To use ``idem-spotinst`` execution and state modules to manage spot instance resources, set up a credentials.yaml file for authentication. There are multiple authentication backends for ``idem-spotinst``, where each has its own unique set of parameters. For example:
+
+credentials.yaml:
+
+..  code:: sls
+
+    spotinst:
+      default:
+        account_id: act-11c833de
+        token: b5460afe3c29a30c28abd54d190d1aa923587574321e75925cfc8268b54b4562
+
+For more about Idem credentials files, including recommended steps for encryption and environment variables, see `Authenticating with Idem <https://docs.idemproject.io/getting-started/en/latest/topics/gettingstarted/authenticating.html>`__
+
+You are now ready to use idem-spotinst.
+
+States
+------
+
+Idem SLS files use states to ensure that resources are in a desired configuration. An idem-spotinst SLS file supports three state functions: *present*, *absent*, and *describe*.
+
+present
++++++++
+
+The *present* function ensures that a resource exists. If a resource doesn't exist, running *present* creates it. If the resource already exists, running *present* might leave it unchanged, or update it if there are any configuration changes.
+
+You can only update values that the spotinst REST API supports.
+
+absent
+++++++
+
+The *absent* function ensures that a resource does not exist. If the resource exists, running *absent* deletes it. If the resource doesn't exist, running *absent* has no effect.
+
+describe
+++++++++
+
+The *describe* function returns a list of all resources of the specified type under the spotinst account ID from your credentials.yaml profile.
+
+Accessing States
+----------------
+
+States can be accessed by their relative location in ``idem-spotinst/idem_spotinst/states``.
+
+For example, a spotinst launch specification state can be created with the *present* function as shown in the following SLS file.
+
+my_resource_launch_spec_state.sls:
+
+.. code:: sls
+
+    my_resource_launch_spec:
+        spotinst.ocean.aws.launch_spec.present:
+          - name: my_resource_launch_spec
+          - taints:
+            - effect: NoSchedule
+              key: taint1
+              value: taint-value-1
+          - tags:
+            - tagKey: Env
+              tagValue: test
+          - subnet_ids:
+            - subnet-06747be60363933d9
+            - subnet-03b6d0dfc57e1gbd6
+          - security_group_ids:
+            - sg-08dcdf4874a2f5g04
+            - sg-0844f76b69f16b8b8
+          - ocean_id: o-b78b1e79
+          - labels:
+            - key: tag1
+              value: value1
+            - key: tag2
+              value: value2
+          - instance_types:
+            - t2.micro
+          - image_id: ami-0c02fb55956c7d318
+
+The Idem command to create the preceding state is:
+
+.. code:: bash
+
+    idem state $PWD/my_resource_launch_spec_state.sls
+
+Your SLS should follow the resource parameter structure shown in the `Spotinst REST API <https://docs.spot.io/api/>`__.
+
+* Specify URI parameters in snake case with a leading dash and space "- ".
+
+* Specify all parameters of the API request body exactly as shown in the the `Spotinst REST API <https://docs.spot.io/api/>`__.
+
+Current Supported Resource States
+---------------------------------
+
+ocean_aws
++++++++++
+
+k8s_cluster
+
+launch_spec
+
+
