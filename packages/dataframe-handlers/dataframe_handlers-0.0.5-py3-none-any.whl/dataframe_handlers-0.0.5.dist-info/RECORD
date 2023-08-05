@@ -1,0 +1,16 @@
+dataframe_handlers/__init__.py,sha256=D2ilxkknGAv1e1fHLz5hIWVew5hIs-GniUbwuzFelAw,2344
+dataframe_handlers/base/__init__.py,sha256=frVPmRGeswXUOW3VnT_mYEaPdDgDxAdt2mR1C8N2hW0,78
+dataframe_handlers/base/base.py,sha256=j-M3lqF3XMCdczXE-azchnuRKsjpJbprGodqKI02y3A,3156
+dataframe_handlers/dask_handler/__init__.py,sha256=-xuyUjY4VccGKy8awBK_WbtgJC1bW-dn3ls0pVXigU8,86
+dataframe_handlers/dask_handler/dask_handler.py,sha256=794eY_Qjs8Uq-GmY6EGfTKHc3ELXfpDpEzBgCIOm58c,1529
+dataframe_handlers/pandas_handler/__init__.py,sha256=cg9jTJySDudZ5x7nIBVeKcN8UtiQlD3mlVluBDZuZf4,92
+dataframe_handlers/pandas_handler/pandas_handler.py,sha256=sPJkGZl_6edO4SAfLL3lEB0yLkFT66j0w87jKeoTk-g,2029
+dataframe_handlers/vaex_handler/__init__.py,sha256=l9SFH7BiUtf3gPc2bBhx5lpNWhEJTrbCaYbCOMsBYSA,90
+dataframe_handlers/vaex_handler/vaex_handler.py,sha256=pVP2YgAsAKz2bKDoq5ESBkCLu1JQd_DtffzRmQYWyqk,2219
+dataframe_handlers/xarray_handler/__init__.py,sha256=OFBkM3ASmYZ6CVmFCAlAsKuL1bIpQpeBBE5ol489zmM,92
+dataframe_handlers/xarray_handler/xarray_handler.py,sha256=5WbKAqkiQl1opsgL2ID1SHC-WLAqMBZgKW1sAya0R2I,2549
+dataframe_handlers-0.0.5.dist-info/LICENSE,sha256=M8UnSwsMpllkmaANwut1yWKKBQ9t4CZeG4Hh8HExwAQ,1100
+dataframe_handlers-0.0.5.dist-info/METADATA,sha256=58vbO1Q1f5eHYS42cBhGdEg1pFYtuTdterxS0GlbktA,5696
+dataframe_handlers-0.0.5.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+dataframe_handlers-0.0.5.dist-info/top_level.txt,sha256=5icY_xPsJQdQN1uiMDO4OmMrm_2d5XbACMe-6hdN9CU,19
+dataframe_handlers-0.0.5.dist-info/RECORD,,
