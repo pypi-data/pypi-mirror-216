@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sospice"
+authors = [
+  { name="SPICE consortium", email="spice-github.ias@universite-paris-saclay.fr" },
+]
+description = "Python data analysis tools for Solar Orbiter/SPICE"
+readme = "README.rst"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+dynamic = ["version", "dependencies"]
+
+[tool.setuptools.packages.find]
+exclude = ["local"]
+
+[tool.setuptools.dynamic]
+version = {attr = "sospice.__version__"}
+dependencies = {file = ["requirements.txt"]}
+
+#[project.optional-dependencies]
+#docs = ["sphinx"]
+
+[tool.setuptools_scm]
+write_to = "sospice/_version.py"
+
+[project.urls]
+"Homepage" = "https://github.com/solo-spice/sospice/"
+"Bug Tracker" = "https://github.com/solo-spice/sospice/issues"
+
+[tool.black]
+include = '\.pyi?$'
+exclude = '''
+/(
+  | \.git
+  | \.github
+  | \.idea
+  | \.pytest_cache
+  | build
+  | dist
+  | docs
+  | htmlcov
+  | venv
+)/
+'''
+
+[tool.coverage.run]
+omit = [
+    "*/tests/*",
+    "tests/*",
+    "__init__.py",
+]
