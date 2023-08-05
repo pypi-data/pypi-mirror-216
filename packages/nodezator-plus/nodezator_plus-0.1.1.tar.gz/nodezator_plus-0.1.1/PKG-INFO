@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: nodezator_plus
+Version: 0.1.1
+Summary: update for nodezator
+Author-email: bagd.artur@gmail.com
+License: Unlicense
+Project-URL: original Source code, https://github.com/IndiePython/nodezator
+Project-URL: addon Source code, https://github.com/IndiePython/nodezator
+Project-URL: Forum, https://github.com/IndiePython/nodezator/discussions
+Project-URL: User manual, https://manual.nodezator.com
+Project-URL: Bug Tracker, https://github.com/IndiePython/nodezator/issues
+Project-URL: Donate, https://indiepython.com/donate
+Keywords: gui,desktop,application,pygame,graph,graphs,nodes,node,editor
+Classifier: License :: OSI Approved :: The Unlicense (Unlicense)
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Topic :: Software Development :: Libraries :: pygame
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Artistic Software
+Classifier: Topic :: Desktop Environment
+Classifier: Topic :: Multimedia
+Classifier: Topic :: Office/Business
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.6

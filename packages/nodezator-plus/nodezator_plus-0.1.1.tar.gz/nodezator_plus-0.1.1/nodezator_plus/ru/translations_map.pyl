@@ -1,0 +1,287 @@
+{
+
+  'window_manager' : {
+    'status': "Статус",
+  },
+
+  'file_manager': {
+
+    'caption'            : "Файл менеджер",
+    'current'            : "Текущий",
+    'bookmarks'          : "Закладки для книжки?",
+    'directory_contents' : "Контент директории",
+    'selected'           : "Выделить",
+    'submit'             : "Открыть",
+    'cancel'             : "Отмена",
+    'select_path'        : "Выделить путь к файлу",
+    'dummy_text'         : "dummy text",
+
+    'new_path_form' : {
+
+      'caption'          : "Открыть путь к файлу",
+      'type_path_name'   : "Введите путь к файлу",
+      'create'           : "Создать",
+      'cancel'           : "Отмена",
+      'get_new_file'     : "Открыть новый файл",
+      'get_new_folder'   : "Открыть новую папку",
+      'type_file_name'   : "Введите имя для нового файла",
+      'type_folder_name' : "Введите имя для новой папки",
+
+    },
+
+  },
+
+  'menu' : {
+
+    'file'        : "Файл",
+    'new'         : "Создать",
+    'open'        : "Открыть",
+    'open_recent' : "Открыть недавние",
+    'save'        : "Сохранить",
+    'save_as'     : "Сохранить как...",
+
+    'export_as_image'  : "Экспортировать как изображение",
+    'export_as_python' : "Экспортировать как python код",
+
+    'quit_app' : "Выйти",
+
+    'edit'             : "Настройки",
+    'user_preferences' : "Настройки пользователя",
+
+    'help'               : "Помощь",
+    'show_splash_screen' : "Показать начальный экран",
+    'license'            : "Лицензия",
+    'about'              : "Об приложении",
+
+    'graph' : "Запуск",
+
+    'change_node_packs' : "Изменить пакет узлов",
+
+    'rename_node_packs' : "Переименовать пакет узлов",
+
+    'change_category_colors' : "Изменить цвет категории",
+    'load_nodes' : "Загрузка узлов",
+    'execute_graph'          : "Запуск графика",
+
+    'execute_with_custom_stdout' : "Запуск графика с консолью",
+
+    'new_text_block'    : "Новый блок текста",
+
+    # e.g.: "New creation node"
+    'new_category_node' : "{} категория",
+
+  },
+
+  'splash_screen' : {
+
+    'node_editor' : "Python Редактор Узлов",
+
+    'nodes_from_functions': "Python с графикой",
+
+    'powered_by': "Написано на",
+
+    'actions'           : "Действия",
+    'new_file'          : "Новый файл",
+    'open_file'         : "Открыть файл",
+    'open_recent_files' : "Открыть недавние файлы...",
+
+    'links': "Источники",
+
+    'application_website'      : "Сайт приложения",
+    'application_website_name' : "nodezator.com",
+    'application_website_url'  : "https://nodezator.com",
+
+    'project_website'      : "Сайт проэкта",
+    'project_website_name' : 'indiepython.com',
+    'project_website_url'  : 'https://indiepython.com',
+
+    'developer_website'      : "Сайт разработчика",
+    'developer_website_name' : "kennedyrichard.com",
+    'developer_website_url'  : "https://kennedyrichard.com",
+
+    'developer_twitter' : "Твиттер разработчика",
+
+    'license_declaration_text' : "Nodezator предназначен для общественного достояния без использования лицензий",
+
+  },
+
+  'graph_manager': {
+
+    'widget_picker': {
+       'caption' : "Форма выбора виджета",
+       'cancel': "Отмена",
+       'submit': "Подтвердить",
+    },
+
+  },
+
+  'editing': {
+
+    'objinsert': {
+      'new_text_block' : "Новый блок текста",
+    },
+
+    'data': {
+      'no_source_available' : "(источник или строка документации недоступны)",
+    },
+
+    'category_colors_form' : {
+
+      'caption' : "Форма выбора цвета категории",
+      'finish'  : "Подтвердить",
+      'cancel'  : "Отмена",
+
+    },
+
+    'change_node_packs_form' : {
+
+      'form_caption' : "Форма для изменения пакетов узлов в файле {}",
+      'file_manager_caption' : "Выберите файл {}, чтобы изменить его пакет узлов.",
+      'no_filepath_chosen' : "Путь к файлу не выбран",
+      'cancel'     : "Отмена",
+
+    },
+
+    'rename_node_packs_form' : {
+
+      'form_caption' : "Форма для переименования пакетов узлов в файле {}",
+      'file_manager_caption' : "Выберите файл {}, чтобы переименовать его пакет узлов",
+
+      'choose_filepath'    : "Путь к файлу",
+      'no_filepath_chosen' : "Путь к файлу не выбран",
+
+      'submit'     : "Подтвердить",
+      'cancel'     : "Отмена",
+
+    },
+
+    'python_export_form': {
+
+      # the app will automatically add '.py' at the end of
+      # the string
+      'default_filename': 'график',
+
+      'pick_new_path': "Выберите путь для нового файла Python",
+
+      'caption'           : "Экспорт .py",
+      'new_python_file'   : "Новый python файл",
+      'change'            : "Редактировать",
+      'additional_levels' : "Дополнительные уровни (необязательно)",
+
+      'submit': "Подтвердить",
+      'cancel': "Отмена",
+
+    },
+
+    'image_export_form': {
+
+      # the app will automatically add '.html' at the end of
+      # the string, though the user can change at will to
+      # either .svg or .png as well
+      'default_filename': 'exported_graph',
+
+      'pick_new_path': "Pick a path for new image file",
+
+      'caption'                : "Экспорт изображения",
+      'new_image'              : "Новое изображение",
+      'change'                 : "Редактировать",
+      'background_color'       : "Цвет фона",
+      'restore_default'        : "фон графика по умолчанию",
+      'horizontal_and_vertical': "Горизонтальное и вертикальное отступ",
+      'raster_for_preview' : "Растр для визуального предварительного просмотра медиа",
+
+      'submit': "Подтвердить",
+      'cancel': "Отмена",
+
+      # it's format method will receive dimensions of image
+      # to be exported
+      'final_image_size': "Окончательное изображение будет размером {}x{}, плюс отступ",
+
+    },
+
+  },
+
+  'user_preferences_form': {
+
+    'caption': "Настройки пользователя",
+    'language': "Язык",
+    'backup_files': "Резервные файлы",
+    'user_logger_lines': "User logger lines",
+    'custom_stdout_lines': "Строки в консоли",
+
+    'finish': "Подтвердить",
+    'cancel': "Отмена",
+
+  },
+
+  'colors_picker': {
+
+    'click_to_select': "Нажмите, чтобы выбрать/отменить выбор цвета",
+    'ok': "Подтвердить",
+    'cancel': "Отмена",
+    'hover_color': "Цвет при наведении для отображения информации",
+
+  },
+
+  'colors_viewer': {
+
+    'caption': "Просмотр цветов",
+    'mode': "Мод",
+    'go_back': "Вернуться",
+    'patterns': "Патерны",
+    'redraw': "Перерисовать",
+
+  },
+
+  'colors_editor': {
+
+    'caption': "Редактор цветов",
+    'current_colors': "Текущие цвета",
+
+    'html_colors': "HTML цвета",
+    'pygame_colors': "pygame цвета",
+    'import': "Импорт",
+    'export': "Экспорт",
+
+    'hue_lower': "hue",
+    'hue_title': "Hue",
+
+    'lightness_lower': "lightness",
+    'lightness_title': "Lightness",
+
+    'saturation_lower': "saturation",
+    'saturation_title': "Saturation",
+
+    'value_lower': "value",
+    'value_title': "Value",
+
+    'red_lower': "red",
+    'red_title': "Red",
+
+    'green_lower': "green",
+    'green_title': "Green",
+
+    'blue_lower': "blue",
+    'blue_title': "Blue",
+
+    'alpha_lower': "alpha",
+    'alpha_title': "Alpha",
+
+    'use_alpha': "Use alpha",
+
+    'hex': "Hex",
+    'html_name': "HTML name",
+    'pygame_name': "pygame name",
+
+  },
+
+  'widget_picker' : {
+
+    'caption': "Форма выбора виджета",
+    'chosen_widget': "Выбранный виджет",
+    'cancel': "Отмена",
+    'submit': "Подтвердить",
+
+  },
+
+}
