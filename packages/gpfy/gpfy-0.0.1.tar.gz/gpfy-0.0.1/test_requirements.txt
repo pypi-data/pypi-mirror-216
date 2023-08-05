@@ -1,0 +1,22 @@
+# For testing and linting
+autoflake
+black
+flake8
+isort>=5.1
+mypy>=0.920
+pytest-cov
+pytest-random-order
+pytest-xdist
+pytest>=3.5.0
+
+# Notebooks and documentation:
+ipykernel
+ipython
+jupyter_client
+notebook
+jupytext
+nbconvert
+nbformat
+
+matplotlib>=3.7.1
+# uci_datasets @ git+https://github.com/treforevans/uci_datasets.git
