@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: write-githubstat
+Version: 0.1.0
+Summary: write-githubstat makes it easy to collect, filter and save github statistics to csv files.
+License: Apache 2.0
+Author: David Vegh
+Author-email: david.andras.vegh+github@gmail.com
+Requires-Python: >=3.8
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pandas (>=1.5.0,<2.0.0)
+Project-URL: documentation, https://github.com/veghdev/write-githubstat
+Project-URL: homepage, https://github.com/veghdev/write-githubstat
+Project-URL: repository, https://github.com/veghdev/write-githubstat
