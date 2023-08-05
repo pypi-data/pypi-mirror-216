@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "hypehd"
+version = "0.1.9"
+description = "HYPEHD is a Python package that provides easy to use functions, designed to make the exploration of health data easier for people with various levels of python experience, but primarily for those who are less experienced. This package aims to be a tool for real-world and practical data analysis, assisting in reaching a quicker understanding of various health related data."
+authors = ["Jiayi Wang, Sarabandi Moghaddam Alieyeh"]
+license = "None"
+readme = "README.md"
+requires-python = ">=3.7"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+myst-nb = {version = "^0.17.1", python = "^3.7"}
+sphinx-autoapi = "^2.0.0"
+sphinx-rtd-theme = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
