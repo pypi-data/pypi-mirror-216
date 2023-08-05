@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sphinx_veldus_ext"
+version = "0.2.10"
+authors = [{ name = "Adam DuQuette", email = "duquetteadam@gmail.com" }]
+description = "A Sphinx Extension built for veldus.net"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Veldus/sphinx_veldus_ext"
+"Bug Tracker" = "https://github.com/Veldus/sphinx_veldus_ext/issues"
+
+# https://hatch.pypa.io/latest/config/build/#patterns
+[tool.hatch.build]
+include = [
+    "sphinx_veldus_ext/**/*.html",
+    "sphinx_veldus_ext/**/*.css",
+    "sphinx_veldus_ext/**/*.py",
+]
