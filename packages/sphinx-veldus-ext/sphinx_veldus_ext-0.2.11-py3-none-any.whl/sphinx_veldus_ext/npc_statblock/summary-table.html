@@ -1,0 +1,31 @@
+{%- if config %}
+<p>This table gives you a preview of some of the NPCs roaming Veldus!</p>
+<table class="docutils align-default veldus-npc-statblock">
+  <tbody>
+    <tr>
+      {% for header in config.headers %}
+        <td>
+          {%- if header == 'npc' %}
+            <p><strong>Name</strong></p>
+          {%- else %}
+            <p><strong>{{ header|capitalize }}</strong></p>
+          {%- endif %}
+        </td>
+      {% endfor %}
+    </tr>
+    {% for row in config.summary_rows %}
+      <tr>
+        {% set rowloop = loop %}
+        {% for cell in row %}
+          {%- if loop.index == 1 %}
+            {% set url = config.urls[rowloop.index - 1] %}
+            <td><a href="{{ '/%s'%url|e }}" class="reference internal"><span class="std std-ref">{{ cell }}</span></a></td>
+          {%- else %}
+            <td>{{ cell }}</td>
+          {%- endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%- endif %}
