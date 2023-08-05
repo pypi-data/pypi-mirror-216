@@ -1,0 +1,74 @@
+Metadata-Version: 2.1
+Name: eventstore-grpc
+Version: 0.1.0
+Summary: EventStoreDB gRPC client.
+Home-page: https://github.com/stefanondisponibile/eventstore_grpc
+License: MIT
+Author: Stefano Frassetto
+Author-email: frassetto.stefano@gmail.com
+Maintainer: Stefano Frassetto
+Maintainer-email: frassetto.stefano@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Database
+Classifier: Topic :: Internet
+Requires-Dist: grpcio (>=1.54.2,<2.0.0)
+Requires-Dist: grpcio-status (>=1.0.0,<2.0.0)
+Requires-Dist: protobuf (>=4.21.6,<5.0.0)
+Requires-Dist: urllib3 (>=1.26.9,<2.0.0)
+Project-URL: Documentation, https://stefanondisponibile.github.io/eventstore_grpc/
+Project-URL: Repository, https://github.com/stefanondisponibile/eventstore_grpc
+Description-Content-Type: text/markdown
+
+<div align="left">
+    <img src="https://github.com/stefanondisponibile/eventstore_grpc/actions/workflows/test.yaml/badge.svg?event=push" style="text-align: right" />
+    <a target="_blank" href="https://codecov.io/gh/stefanondisponibile/eventstore_grpc"><img src="https://codecov.io/gh/stefanondisponibile/eventstore_grpc/branch/develop/graph/badge.svg?token=O86CZ83P50" style="text-align: right" /></a>
+    <a target="_blank" href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" style="text-align: right" /></a>
+</div>
+<br>
+
+# EventStoreDB GRPC Client.
+
+Use this client to interact with [EventStoreDB](https://developers.eventstore.com/) via GRPC.
+
+[Documenation](https://stefanondisponibile.github.io/eventstore_grpc/).
+
+## Quickstart
+
+### Installation
+
+```bash
+pip install eventstore_grpc
+```
+
+Try it!
+
+```bash
+docker compose down \
+  && docker compose up -d \
+  && echo 'Wait for EventStoreDB to be ready...' \
+  && sleep 10 \
+  && poetry run python scripts/example.py \
+  && docker compose down
+```
+
+See [the example](scripts/example.py).
+
+### Tests
+
+To run the test locally start EventStore DB with `docker compose up`, then just run `pytest`.
+
+## Coverage
+
+![](https://codecov.io/gh/stefanondisponibile/eventstore_grpc/branch/develop/graphs/sunburst.svg?token=O86CZ83P50)
+
