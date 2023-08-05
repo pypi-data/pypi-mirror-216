@@ -1,0 +1,104 @@
+[build-system]
+requires = ["hatchling", "hatch-regex-commit"]
+build-backend = "hatchling.build"
+
+[project]
+name = "acondbs"
+dynamic = ["version"]
+description = "ProductDB back-end API"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    { name = "Simons Observatory", email = "so_software@simonsobservatory.org" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "a2wsgi>=1.4",
+    "cryptography>=3.2",
+    "Flask-Cors>=3.0",
+    "Flask-GraphQL>=2.0",
+    "Flask-Migrate>=4.0",
+    "Flask-SQLAlchemy>=3.0",
+    "Flask>=2.3",
+    "gitpython>=3.1",
+    "graphene-sqlalchemy-filter>=1.10",
+    "graphene-sqlalchemy>=2.3",
+    "requests>=2.24",
+    "SQLAlchemy-Utils>=0.41",
+    "SQLAlchemy[mypy]>=1.4,<2",
+]
+
+[project.optional-dependencies]
+dev = ["black", "isort", "flake8", "mypy", "tox", "twine"]
+tests = [
+    "async-asgi-testclient>=1.4.6",
+    "pytest-asyncio>=0.14",
+    "pytest-cov>=2.12",
+    "pytest>=6.2",
+    "snapshottest>=0.6",
+    "sqlparse",
+]
+
+[project.urls]
+Homepage = "https://github.com/simonsobs/acondbs"
+Issues = "https://github.com/simonsobs/acondbs/issues"
+Source = "https://github.com/simonsobs/acondbs"
+
+[tool.hatch.version]
+source = "regex_commit"
+path = "acondbs/__about__.py"
+tag_sign = false
+
+
+[tool.hatch.build.targets.sdist]
+include = ["/acondbs"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+timeout = 60
+addopts = "--doctest-modules"
+# doctest_optionflags = ["ELLIPSIS", "NORMALIZE_WHITESPACE",]
+doctest_optionflags = ["ELLIPSIS"]
+filterwarnings = [
+    "ignore::DeprecationWarning:graphene.*",
+    "ignore::DeprecationWarning:graphql.*",
+    "ignore::DeprecationWarning:singledispatch_helpers.*",
+]
+norecursedirs = "acondbs/migrations docker build tests/sample"
+log_cli = false
+log_cli_level = "INFO"
+
+
+[tool.black]
+skip-string-normalization = true
+target_version = ['py39', 'py310', 'py311']
+exclude = '''(?x)(
+   acondbs/migrations/versions/.*\.py$
+)'''
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+plugins = "sqlalchemy.ext.mypy.plugin"
+
+[[tool.mypy.overrides]]
+module = [
+    "graphene.*",
+    "sqlalchemy_utils.*",
+    "snapshottest",
+    "graphene_sqlalchemy.*",
+    "async_asgi_testclient",
+    "flask_graphql",
+    "graphene_sqlalchemy_filter",
+    "sqlparse",
+]
+ignore_missing_imports = true
