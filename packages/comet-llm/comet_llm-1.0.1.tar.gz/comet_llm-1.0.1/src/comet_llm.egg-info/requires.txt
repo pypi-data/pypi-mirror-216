@@ -1,0 +1,6 @@
+comet_ml
+flatten-dict
+types-requests
+
+[:python_version < "3.7.0"]
+dataclasses
