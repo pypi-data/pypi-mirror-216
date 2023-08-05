@@ -1,0 +1,43 @@
+[project]
+name = "wf-postgres-client"
+dynamic = ["version"]
+
+[tool.poetry]
+name = "wf-postgres-client"
+version = "0.1.0"
+description = "A client for communicating with PostgreSQL databases"
+authors = ["Theodore Quinn <ted.quinn@wildflowerschools.org>"]
+maintainers = ["Theodore Quinn <ted.quinn@wildflowerschools.org>"]
+readme = "README.md"
+keywords = []
+repository = "https://github.com/WildflowerSchools/wf-postgres-client"
+license = "MIT"
+packages = [{include = "postgres_client"}]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+toml = "^0.10.2"
+psycopg2 = "^2.9"
+pandas = "^1.5"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+pylint = "^2.15.0"
+pytest = "^7.2.0"
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+
+[tool.setuptools]
+py-modules = []
+
+[build-system]
+requires = ["poetry-core", "setuptools"]
+build-backend = "poetry.core.masonry.api"
