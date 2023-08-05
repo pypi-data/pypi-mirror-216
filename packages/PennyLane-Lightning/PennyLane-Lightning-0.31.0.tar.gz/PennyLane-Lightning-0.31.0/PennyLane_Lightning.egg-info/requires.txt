@@ -1,0 +1,4 @@
+pennylane>=0.30
+
+[gpu]
+pennylane-lightning-gpu
