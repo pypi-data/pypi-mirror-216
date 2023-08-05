@@ -1,0 +1,30 @@
+COPYING.LESSER.txt
+COPYING.txt
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/pytypedstream.egg-info/PKG-INFO
+src/pytypedstream.egg-info/SOURCES.txt
+src/pytypedstream.egg-info/dependency_links.txt
+src/pytypedstream.egg-info/entry_points.txt
+src/pytypedstream.egg-info/requires.txt
+src/pytypedstream.egg-info/top_level.txt
+src/typedstream/__init__.py
+src/typedstream/__main__.py
+src/typedstream/advanced_repr.py
+src/typedstream/archiving.py
+src/typedstream/encodings.py
+src/typedstream/old_binary_plist.py
+src/typedstream/stream.py
+src/typedstream/types/__init__.py
+src/typedstream/types/_common.py
+src/typedstream/types/appkit.py
+src/typedstream/types/core_graphics.py
+src/typedstream/types/foundation.py
+src/typedstream/types/nextstep.py
+tests/test_typedstream.py
+tests/data/Emacs.clr
+tests/data/Empty2D macOS 10.14.gcx
+tests/data/Empty2D macOS 13.gcx
