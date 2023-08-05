@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: sqlean-driver
+Version: 0.0.1a1
+Summary: SQLAlchemy dialect for the sqlean.py SQLite wrapper
+Project-URL: Documentation, https://github.com/edgarrmondragon/sqlean-driver#readme
+Project-URL: Issues, https://github.com/edgarrmondragon/sqlean-driver/issues
+Project-URL: Source, https://github.com/edgarrmondragon/sqlean-driver
+Author-email: Edgar Ramírez Mondragón <edgarrm358@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: sqlalchemy>=1.4.0
+Requires-Dist: sqlean-py>=0.21.5.1
+Provides-Extra: dev
+Requires-Dist: pytest; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# sqlean-driver
+
+[![PyPI - Version](https://img.shields.io/pypi/v/sqlean-driver.svg)](https://pypi.org/project/sqlean-driver)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sqlean-driver.svg)](https://pypi.org/project/sqlean-driver)
+
+A SQLAlchemy driver for [`sqlean.py`](https://github.com/nalgeon/sqlean.py).
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Extensions](#extensions)
+- [License](#license)
+
+## Installation
+
+```console
+pip install sqlean-driver
+```
+
+## Usage
+
+```python
+from sqlalchemy import create_engine, text
+
+engine = create_engine("sqlite+sqlean:///:memory:?extensions=all")
+
+with engine.connect() as conn:
+    result = conn.execute(text("SELECT ipfamily('192.168.1.1')"))
+    print(result.scalar())  # 4
+```
+
+### Extensions
+
+By default, `sqlean.py` disables all [SQLite extensions](https://github.com/nalgeon/sqlean.py#extensions). To enable all of them, pass `extensions=all` as a query parameter to the connection string. Or use a comma-separated list of extensions to enable only some of them, e.g. `extensions=ipaddr,crypto`.
+
+## License
+
+`sqlean-driver` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
