@@ -1,0 +1,2 @@
+[console_scripts]
+live_parquet = live_parquet.live_parquet_module:read_parquet
