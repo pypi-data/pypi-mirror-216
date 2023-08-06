@@ -1,0 +1,15 @@
+appdirs
+click
+rich
+pyarrow==12.0.0
+
+[dev]
+black==22.1.0
+flake8==4.0.1
+tbump
+
+[test]
+duckdb
+pytest>=7.0.0
+python-casacore>=3.5.0
+requests
