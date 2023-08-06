@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: beancount-sog
+Version: 0.1.1
+Summary: Beancount Importer for Société Générale CSV files
+Home-page: https://github.com/Eazhi/beancount-sog
+License: MIT
+Keywords: banking,beancount,cli-accounting,finance
+Author: Paul Khuat-Duy
+Author-email: paul@khuat-duy.org
+Requires-Python: >=3.8,<4.0
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: Office/Business :: Financial :: Accounting
+Requires-Dist: beancount (>=2.3.5,<3.0.0)
+Requires-Dist: black (>=22.1.0,<23.0.0)
+Requires-Dist: flake8 (>=4.0.1,<5.0.0)
+Requires-Dist: ipython (>=8.1.1,<9.0.0)
+Requires-Dist: isort (>=5.10.1,<6.0.0)
+Project-URL: Repository, https://github.com/Eazhi/beancount-sog
