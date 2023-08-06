@@ -1,0 +1,4 @@
+
+[test]
+flake8
+mypy>=1.4.1
