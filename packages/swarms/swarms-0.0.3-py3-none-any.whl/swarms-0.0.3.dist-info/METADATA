@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: swarms
+Version: 0.0.3
+Summary: Swarms - Pytorch
+Home-page: https://github.com/kyegomez/swarms
+Author: Kye Gomez
+Author-email: kye@apac.ai
+License: MIT
+Keywords: artificial intelligence,deep learning,optimizers,Prompt Engineering
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: guidance
+
