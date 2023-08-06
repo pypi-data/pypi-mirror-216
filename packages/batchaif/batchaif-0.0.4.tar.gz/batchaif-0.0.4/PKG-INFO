@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: batchaif
+Version: 0.0.4
+Summary: Package to correct batch effects in scRNA-seq data using Adversarial Information Factorization
+Home-page: https://gitlab-research.centralesupelec.fr/mics_biomathematics/biomaths/batchaif
+Author: Lily Monnier
+Author-email: lily.monnier@student.ecp.fr
+Project-URL: Bug Tracker, https://gitlab-research.centralesupelec.fr/mics_biomathematics/biomaths/batchaif/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+License-File: LICENSE
