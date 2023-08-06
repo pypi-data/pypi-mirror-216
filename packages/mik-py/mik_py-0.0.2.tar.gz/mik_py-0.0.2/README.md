@@ -1,0 +1,1 @@
+Python package with malware attached. The malware is the eicar file. While harmless it may trigger alerts from any anti-malware software you have monitoring your system.
