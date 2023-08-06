@@ -1,0 +1,45 @@
+[
+  {
+    "table_name": "left_table_name",
+    "constraints": "ASSUMED PRIMARY KEY (\"ids\")",
+    "columns": [
+      {
+        "name": "ids",
+        "sql_type": "INT"
+      },
+      {
+        "name": "text1",
+        "sql_type": "TEXT",
+        "nullable": true
+      },
+      {
+        "name": "text2",
+        "sql_type": "TEXT",
+        "nullable": true
+      }
+    ]
+  },
+  {
+    "table_name": "right_table_name",
+    "constraints": [
+      "ASSUMED FOREIGN KEY (\"ids\") REFERENCES left_table_name (\"ids\") MATCH FULL"
+    ],
+    "columns": [
+      {
+        "name": "ids",
+        "sql_type": "INT",
+        "nullable": true
+      },
+      {
+        "name": "text1",
+        "sql_type": "TEXT",
+        "nullable": true
+      },
+      {
+        "name": "text2",
+        "sql_type": "TEXT",
+        "nullable": true
+      }
+    ]
+  }
+]
