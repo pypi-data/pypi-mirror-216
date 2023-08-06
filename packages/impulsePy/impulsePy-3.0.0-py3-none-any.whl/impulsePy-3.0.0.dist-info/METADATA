@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: impulsePy
+Version: 3.0.0
+Summary: Library for controlling Impulse
+Home-page: 
+Author: DENSsolutions
+Author-email: merijn.pen@DENSsolutions.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: zmq
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+# impulsePy
+
+This python library is compatible with Impulse version 1.4 and earlier.
+The module offers real-time access to all data from Impulse controlled devices.
+It offers controls for:
+- Heat
+- Bias
+- Gas
+- Liquid
