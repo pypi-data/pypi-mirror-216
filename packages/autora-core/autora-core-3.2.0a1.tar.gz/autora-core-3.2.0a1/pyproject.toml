@@ -1,0 +1,72 @@
+[project]
+name = "autora-core"
+description = "Autonomous Research Assistant (AutoRA) is a framework for automating steps of the empirical research process. "
+authors = [
+    { name="Sebastian Musslick", email="sebastian_musslick@brown.edu" },
+    { name="John Gerrard Holland", email="john_holland1@brown.edu" },
+]
+readme = "README.md"
+requires-python = ">=3.8,<4"
+dynamic = ["version"]
+
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "scikit-learn"
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "autora-core[test]",
+    "autora-core[build]",
+    "autora-core[notebook]",
+    "autora-core[docs]",
+]
+test = [
+    "pytest",
+]
+build = [
+    "build",
+    "twine",
+    "flake8",
+    "pre-commit",
+]
+notebook = [
+    "jupyter",
+    "ipython",
+    "ipywidgets",
+]
+docs = [
+    "mkdocs-material",
+    "mkdocs-gen-files",
+    "mkdocs-literate-nav",
+    "mkdocs-section-index",
+    "mkdocs-multirepo-plugin",
+    "mkdocstrings-python",
+    "mkdocs-jupyter",
+    "pymdown-extensions",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+mypy_path="./src"
+
+[[tool.mypy.overrides]]
+module = ["matplotlib.*", "sklearn.*", "pandas.*", "numpy.*"]
+ignore_missing_imports=true
+
+[project.urls]
+homepage = "http://www.empiricalresearch.ai"
+repository = "https://github.com/AutoResearch/autora-core"
+documentation = "https://autoresearch.github.io/autora/"
+
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
