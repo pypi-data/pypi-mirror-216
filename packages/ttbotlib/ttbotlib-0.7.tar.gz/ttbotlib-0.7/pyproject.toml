@@ -1,0 +1,103 @@
+[build-system]
+requires = ['setuptools', 'setuptools-scm']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'ttbotlib'
+authors = [
+    {name = 'Tamtam team', email = 'support@tamtamteam.com'},
+]
+description = 'pararam.io bot framework'
+readme = 'README.md'
+requires-python = '>=3.10'
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Environment :: Plugins',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Framework :: AsyncIO'
+]
+license = {text = 'MIT License'}
+keywords = ['pararam.io', 'async', 'bot']
+dependencies = [
+    'httpx<1.0',
+    'uvicorn',
+    'ttutils',
+]
+dynamic = ['version']
+
+[project.optional-dependencies]
+dev = [
+    'pytest-runner',
+    'pytest',
+    'pytest-asyncio',
+    'pytest-cov==2.10',
+    'pytest-flake8',
+    'flake8<5.0',
+    'flake8-print',
+    'flake8-blind-except',
+    'flake8-builtins',
+    'flake8-isort',
+    'pycodestyle==2.8',
+    'coverage',
+    'mypy',
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "ttbot.__version__"}
+
+[tool.setuptools.packages.find]
+exclude=['tests.*', 'tests']
+
+[tool.setuptools.package-data]
+'ttbot' = ['py.typed']
+
+[tool.pytest.ini_options]
+addopts = "--verbose --cov=ttbot --cov-report=html --asyncio-mode=auto"
+testpaths = [
+    "tests",
+]
+
+[tool.mypy]
+show_error_codes = true
+warn_redundant_casts = true
+follow_imports = 'normal'
+strict_optional = true
+warn_unused_ignores = true
+warn_unreachable = true
+warn_no_return = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+ignore_missing_imports = true
+
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+omit = [
+    'tests/*',
+]
+
+[tool.flake8]
+max-line-length = 100
+ignore = ['E128', 'E124', 'E731']
+
+[tool.isort]
+skip_gitignore = true
+line_length = 100
+multi_line_output = 2
+lines_after_imports = 2
+lines_between_sections = 1
+lines_between_types = 1
+reverse_relative = false
+combine_as_imports = true
+
+sections = ['FUTURE', 'STDLIB', 'THIRDPARTY', 'FIRSTPARTY', 'PROJECT', 'LOCALFOLDER']
+default_section = 'THIRDPARTY'
+known_project = 'ttbot'
