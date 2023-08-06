@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/pagination/__init__.py
+src/pagination/pagination.py
+src/pagination/model/__init__.py
+src/pagination/model/page_model.py
+src/sqlalchemy_pagination_fastapi.egg-info/PKG-INFO
+src/sqlalchemy_pagination_fastapi.egg-info/SOURCES.txt
+src/sqlalchemy_pagination_fastapi.egg-info/dependency_links.txt
+src/sqlalchemy_pagination_fastapi.egg-info/requires.txt
+src/sqlalchemy_pagination_fastapi.egg-info/top_level.txt
