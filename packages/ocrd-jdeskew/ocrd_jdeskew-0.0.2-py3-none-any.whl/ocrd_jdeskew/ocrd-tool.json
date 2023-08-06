@@ -1,0 +1,37 @@
+{
+	"git_url": "https://github.com/bertsky/ocrd_jdeskew",
+	"version": "0.0.1",
+	"tools": {
+		"ocrd-jdeskew": {
+			"executable": "ocrd-jdeskew",
+			"categories": [
+				"Image preprocessing"
+			],
+			"steps": [
+				"preprocessing/optimization/deskewing"
+			],
+			"input_file_grp": [
+				"OCR-D-IMG",
+				"OCR-D-SEG-CROP",
+				"OCR-D-SEG-BLOCK"
+			],
+			"output_file_grp": [
+				"OCR-D-DESK"
+			],
+			"description": "Deskew pages / regions with jdeskew",
+			"parameters": {
+				"maxskew": {
+					"type": "number",
+					"format": "float",
+					"description": "modulus of maximum skewing angle (in degrees) to detect"
+				},
+				"level-of-operation": {
+					"type": "string",
+					"enum": ["page", "region"],
+					"description": "PAGE XML hierarchy level granularity to annotate orientation and images for",
+					"default": "page"
+				}
+			}
+		}
+	}
+}
