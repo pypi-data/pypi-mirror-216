@@ -1,0 +1,3 @@
+[console_scripts]
+funcoin_server = funcoin.server.script:funcoin_server
+funcoin_worker = funcoin.server.script:funcoin_worker
