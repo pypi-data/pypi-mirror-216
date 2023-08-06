@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "setuptools"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "receptive_field_calculation"
+authors = [{name = "Zhang Yi", email = "ease_zh@foxmail.com"}]
+description = "Calculate the receptive field for torch DNN models"
+requires-python = ">=3.10"
+readme = "ReadMe.md"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy>=1.24.3",
+    "torch>=1.13.0"
+]
+version = "0.0.0.dev1"
+license = {text = "MIT License"}
+
+[project.urls]
+Homepage = "https://gitee.com/ease_zh/rf_calc"
