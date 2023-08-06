@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+getpaper/__init__.py
+getpaper/clean.py
+getpaper/config.py
+getpaper/download.py
+getpaper/index.py
+getpaper/parse.py
+getpaper/splitting.py
+getpaper.egg-info/PKG-INFO
+getpaper.egg-info/SOURCES.txt
+getpaper.egg-info/dependency_links.txt
+getpaper.egg-info/entry_points.txt
+getpaper.egg-info/requires.txt
+getpaper.egg-info/top_level.txt
