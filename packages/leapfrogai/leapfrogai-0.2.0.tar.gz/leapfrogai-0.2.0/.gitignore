@@ -1,0 +1,9 @@
+data/*
+*.tar.zst
+__pycache__
+.venv
+.ipynb_checkpoints
+.vscode/
+venv
+.DS_Store
+dist/
