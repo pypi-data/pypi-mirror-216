@@ -1,0 +1,290 @@
+{
+    "swagger": "2.0",
+    "basePath": "/s/86dfc3c9ab5a7f4b2b1c7/p/42f0e9cb",
+    "paths": {
+        "/alation/metadata_excel_file_download/{schema_id}": {
+            "parameters": [
+                {
+                    "name": "schema_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Retrieves the Excel metadata file from Alation based on the schema_id",
+                "description": "Args:\n    schema_id (int): The ID of the schema associated with the metadata\n    Excel file.\n\nReturns:\n    dict: A dictionary containing the downloaded Excel metadata file.\n\nExample:\n    Use schema_id 106788 to test OCIO_PADE_DEV (DataBricks).",
+                "operationId": "get_metadata_excel_file_download",
+                "tags": [
+                    "alation"
+                ]
+            }
+        },
+        "/alation/metadata_excel_file_upload": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Uploads the Excel metadata file to Alation via direct upload based on",
+                "description": "the schema_id.\n\nArgs:\n    schema_id (int): The ID of the schema associated with the metadata\n    Excel file.\n\nReturns:\n    dict: A dictionary containing the response data.\n\nExample:\n    Use schema_id 106788 to test OCIO_PADE_DEV (DataBricks).",
+                "operationId": "post_metadata_excel_file_upload",
+                "tags": [
+                    "alation"
+                ]
+            }
+        },
+        "/alation/metadata_excel_file_upload_request/{schema_id}": {
+            "parameters": [
+                {
+                    "name": "schema_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Retrieves the Excel metadata file from SharePoint and uploads it to",
+                "description": "Alation based on the schema_id.\n\nArgs:\n    schema_id (int): The ID of the schema associated with the metadata\n    Excel file.\n\nReturns:\n    dict: A dictionary containing the response data.\n\nNote:\n    This method uploads the Excel metadata file from SharePoint to\n    Alation.\n\nExample:\n    Use schema_id 106788 to test OCIO_PADE_DEV (DataBricks).",
+                "operationId": "get_metadata_excel_file_upload_request",
+                "tags": [
+                    "alation"
+                ]
+            }
+        },
+        "/alation/metadata_json_file_download/{schema_id}": {
+            "parameters": [
+                {
+                    "name": "schema_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Retrieves the JSON metadata file from Alation based on the schema_id",
+                "description": "Args:\n    schema_id (int): The ID of the schema associated with the metadata\n    JSON file.\n\nReturns:\n    dict: A dictionary containing the downloaded JSON metadata file.\n\nExample:\n    Use schema_id 106788 to test OCIO_PADE_DEV (DataBricks).",
+                "operationId": "get_metadata_json_file_download",
+                "tags": [
+                    "alation"
+                ]
+            }
+        },
+        "/alation/metadata_json_file_upload": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Uploads JSON metadata file via direct upload to Alation",
+                "description": "based on schema_id.\nUse 106788 to test OCIO_PADE_DEV (DataBricks)",
+                "operationId": "post_metadata_json_file_upload",
+                "tags": [
+                    "alation"
+                ]
+            }
+        },
+        "/alation/metadata_json_file_upload_request/{schema_id}": {
+            "parameters": [
+                {
+                    "name": "schema_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Retrieves the JSON metadata file from SharePoint and uploads it to",
+                "description": "Alation based on the schema_id.\n\nArgs:\n    schema_id (int): The ID of the schema associated with the metadata\n    JSON file.\n\nReturns:\n    dict: A dictionary containing the response data.\n\nExample:\n    Use schema_id 106788 to test OCIO_PADE_DEV (DataBricks).",
+                "operationId": "get_metadata_json_file_upload_request",
+                "tags": [
+                    "alation"
+                ]
+            }
+        },
+        "/cdc_admin/display_html/{html}": {
+            "parameters": [
+                {
+                    "name": "html",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Display HTML content provided as a 'html' query parameter in the request URL",
+                "description": "Returns:\n    str: Rendered HTML content as a HTTP response. \n    If no 'html' parameter is provided, an empty string is returned.",
+                "operationId": "get_message_html",
+                "tags": [
+                    "cdc_admin"
+                ]
+            }
+        },
+        "/jira/tasks/{project}": {
+            "parameters": [
+                {
+                    "name": "project",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Retrieves tasks associated with a specific project from JIRA",
+                "description": "Args:\n    project (str, optional): The name or identifier of the project. If\n    not provided, retrieves tasks for all projects.\n\nReturns:\n    dict: A dictionary containing the retrieved tasks.\n\nNote:\n    This method communicates with JIRA to fetch the tasks.\n\nExample: DTEDS",
+                "operationId": "get_task",
+                "tags": [
+                    "jira"
+                ]
+            }
+        },
+        "/posit/connect_api_key_verification": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Verifies the key stored in key vault based on configuration setting: az_kv_posit_connect_secret_key",
+                "description": "Returns:\n    tuple: A tuple containing the status code and response from the server.\n    The response will be in JSON format if possible, otherwise it will be the raw text response.",
+                "operationId": "get_connect_api_key_verification",
+                "tags": [
+                    "posit"
+                ]
+            }
+        },
+        "/posit/generate_manifest": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Generates manifest JSON",
+                "description": "Returns:\n    tuple: A tuple containing the status code and response from the server.\n    The response will be in JSON format if possible, otherwise it will be the raw text response.",
+                "operationId": "get_generated_manifest",
+                "tags": [
+                    "posit"
+                ]
+            }
+        },
+        "/posit/python_information": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Generates python information about POSIT",
+                "description": "Returns:\n    tuple: A tuple containing the status code and response from the server.\n    The response will be in JSON format if possible, otherwise it will be the raw text response.",
+                "operationId": "get_python_information",
+                "tags": [
+                    "posit"
+                ]
+            }
+        },
+        "/welcome/": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Returns the Swagger API documentation",
+                "description": "Returns:\n    dict: The Swagger API documentation schema.",
+                "operationId": "get_welcome_swagger",
+                "tags": [
+                    "welcome"
+                ]
+            }
+        },
+        "/welcome/api/swagger": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Returns the Swagger API documentation",
+                "description": "Returns:\n    dict: The Swagger API documentation schema.",
+                "operationId": "get_welcome_swagger",
+                "tags": [
+                    "welcome"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "Data Ecosystem Flask API",
+        "version": "1.0",
+        "description": "The Program Agnostic Data Ecosystem (PADE) provides shared resources, practices and guardrails for analysts to discover, access, link, and use agency data in a consistent way. PADE improvements in standardized and streamlined workflows reduce the effort required to find, access, and trust data."
+    },
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "welcome",
+            "description": "Welcome to the CDC Data Ecosystem API"
+        },
+        {
+            "name": "cdc_admin",
+            "description": "The admin service manages and monitors data products and associated logs. This package contains datasets that provide critical information for ensuring the availability, performance, and quality of the data products and related services."
+        },
+        {
+            "name": "alation",
+            "description": "The Alation service manages and monitors Alation."
+        },
+        {
+            "name": "jira",
+            "description": "The JIRA service provides read-only reporting and query services for JIRA."
+        },
+        {
+            "name": "posit",
+            "description": "The POSIT service provides read-only reporting and query services for POSIT."
+        }
+    ],
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }
+    }
+}
