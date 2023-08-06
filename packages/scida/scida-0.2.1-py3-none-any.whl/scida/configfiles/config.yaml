@@ -1,0 +1,25 @@
+# example for scida config. copy to ~/.scida.yaml and modify accordingly
+---
+
+copied_default: True  # if this is set, a warning is printed as the default config has not been adjusted
+# adjust the config to your needs and remove above line to remove warning.
+cache_path: ~/cachedir
+testdata_path: /fastdata/public/testdata-scida  # should be replaced by 'datafolders' logic further below eventually
+nthreads: 8
+
+datafolders: ["/fastdata/public/testdata-scida", "/vera/ptmp/gc/byrohlc/scida-testdata", "/testdata",
+              "/virgotng/universe/IllustrisTNG", "/virgotng/mpia/TNG-Cluster/"]
+
+missing_units: "warn"  # "warn", "raise", "ignore"
+
+resources:
+  mpcdf:
+    TNG50:
+      path: /virgotng/universe/IllustrisTNG/TNG50-1
+    TNG100:
+      path: /virgotng/universe/IllustrisTNG/TNG100-1
+    TNG300:
+      path: /virgotng/universe/IllustrisTNG/TNG300-1
+  workstation:
+    TNG50-4_snapshot:
+      path: /data/public/testdata-scida/TNG50-4_snapshot
