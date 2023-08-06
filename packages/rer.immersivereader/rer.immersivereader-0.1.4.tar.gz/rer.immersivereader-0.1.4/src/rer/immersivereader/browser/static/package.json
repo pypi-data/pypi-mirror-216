@@ -1,0 +1,11 @@
+{
+  "//": "Put here only theme dependencies, devDependencies should stay outside of the theme folder in the package root.",
+  "name": "rer.immersivereader",
+  "version": "1.0.0",
+  "description": "Immersive reader resources dependencies",
+  "author": "RedTurtle",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@microsoft/immersive-reader-sdk": "^1.1.0"
+  }
+}

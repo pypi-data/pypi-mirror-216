@@ -1,0 +1,14 @@
+<div id="immersive-reader-wrapper"
+    i18n:domain="rer.immersivereader">
+    <a class="immersive-reader-link"
+       title="Immersive reader"
+       href="#"
+       role="button"
+       i18n:attributes="title immersive_reader_link_title;">
+        <tal:label i18n:translate="immersive_reader_label">Immersive reader</tal:label>
+        <img src="https://contentstorage.onenote.office.net/onenoteltir/permanent-static-resources/immersive-reader-icon.svg"
+             alt=""
+             aria-hidden="true"
+             style="width: 20px; height: 20px; vertical-align: middle; margin-top: -2px;">
+    </a>
+</div>

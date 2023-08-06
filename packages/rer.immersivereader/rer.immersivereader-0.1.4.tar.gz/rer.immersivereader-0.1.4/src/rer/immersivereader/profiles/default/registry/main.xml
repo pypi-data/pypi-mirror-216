@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<registry
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="rer.immersivereader">
+
+    <records interface="rer.immersivereader.interfaces.IImmersiveReaderSettings" prefix="rer.immersivereader" />
+
+    <records prefix="plone.resources/rer-immersive-reader"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+        <value key="js">++plone++rer.immersivereader/js/src/index.js</value>
+    </records>
+
+    <records prefix="plone.bundles/rer-immersive-reader-bundle"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="enabled">True</value>
+        <value key="resources" purge="false">
+        <element>rer-immersive-reader</element>
+        </value>
+        <value key="jscompilation">++plone++rer.immersivereader/js/dist/rer-immersive-reader-compiled.min.js</value>
+        <value key="last_compilation">2018-03-13 00:00:00</value>
+        <value key="compile">True</value>
+        <value key="depends">plone</value>
+    </records>
+</registry>

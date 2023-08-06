@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2021-11-27 18:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: rer.immersivereader\n"
+
+#: rer/immersivereader/browser/controlpanel.py:14
+#: rer/immersivereader/profiles/default/controlpanel.xml
+msgid "Immersive Reader Settings"
+msgstr "Impostazioni Immersive Reader"
+
+#: rer/immersivereader/configure.zcml:28
+msgid "Installs the rer.immersivereader add-on."
+msgstr "Installa rer.immersivereader."
+
+#: rer/immersivereader/configure.zcml:28
+msgid "RER: Immersive Reader"
+msgstr ""
+
+#: rer/immersivereader/configure.zcml:37
+msgid "RER: Immersive Reader (uninstall)"
+msgstr ""
+
+#: rer/immersivereader/configure.zcml:37
+msgid "Uninstalls the rer.immersivereader add-on."
+msgstr "Disinstalla rer.immersivereader"
+
+#. Default: "Select a list of portal types that will have Immersive Reader link enabled."
+#: rer/immersivereader/interfaces.py:17
+msgid "enabled_types_help"
+msgstr "Seleziona una lista di tipi di contenuto dove abilitare il link per Immersive Reader. Lascia vuoto per abilitarlo ovunque."
+
+#. Default: "Enabled portal types"
+#: rer/immersivereader/interfaces.py:16
+msgid "enabled_types_label"
+msgstr "Tipi di contenuto"
+
+#. Default: "Immersive reader"
+#: rer/immersivereader/browser/immersive_reader_viewlet.pt:8
+msgid "immersive_reader_label"
+msgstr "Lettura facilitata"
+
+#. Default: "Immersive reader"
+#: rer/immersivereader/browser/immersive_reader_viewlet.pt:3
+msgid "immersive_reader_link_title"
+msgstr "Traduzione e lettura ad alta voce"
