@@ -1,0 +1,6 @@
+django<4.3.0,>=3.2.7
+djangorestframework
+geddit
+PyYAML
+ucam-identitylib>=0.1.7
+django-ucamlookup~=3.0.5
