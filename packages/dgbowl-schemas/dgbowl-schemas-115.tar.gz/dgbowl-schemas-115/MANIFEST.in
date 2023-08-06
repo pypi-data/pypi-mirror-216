@@ -1,0 +1,2 @@
+include versioneer.py
+include src/dgbowl_schemas/_version.py

@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: dgbowl-schemas
+Version: 115
+Summary: schemas for the dgbowl suite of tools
+Home-page: https://github.com/dgbowl/dgbowl-schemas
+Author: Peter Kraus
+Author-email: peter@tondon.de
+Project-URL: Bug Tracker, https://github.com/dgbowl/dgbowl-schemas/issues
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Provides-Extra: docs
+
+# dgbowl-schemas
+## Schemas and validators for the `dgbowl` suite of tools.
+
+Currently implemented schemas are:
+- `Recipe` validator for **dgpost**, versions `{2.1, 1.0}`
+- `DataSchema` validator for **yadg**, versions `{5.0, 4.2, 4.1, 4.0}`
+- `Payload` validator for **tomato**,  at version `{0.2, 0.1}`
+
