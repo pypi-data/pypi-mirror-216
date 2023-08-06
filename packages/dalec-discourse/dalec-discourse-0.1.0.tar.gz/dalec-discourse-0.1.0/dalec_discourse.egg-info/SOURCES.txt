@@ -1,0 +1,16 @@
+AUTHORS
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+dalec_discourse/__init__.py
+dalec_discourse/apps.py
+dalec_discourse/proxy.py
+dalec_discourse.egg-info/PKG-INFO
+dalec_discourse.egg-info/SOURCES.txt
+dalec_discourse.egg-info/dependency_links.txt
+dalec_discourse.egg-info/not-zip-safe
+dalec_discourse.egg-info/requires.txt
+dalec_discourse.egg-info/top_level.txt
