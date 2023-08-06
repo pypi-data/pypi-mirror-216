@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "json_to_csv_filter"
+version = "1.1"
+requires-python = ">=3.7"
+description = "Convert list of json objects to csv with optional filters"
+authors = [
+    { name="Hylke Foeken", email="h.foeken@gmail.com" },
+]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/hylkefoeken/json-to-csv"
+"Bug Tracker" = "https://github.com/hylkefoeken/json-to-csv/issues"
+
+[project.scripts]
+json2csv = "json_to_csv.json_to_csv:main"
