@@ -1,0 +1,7 @@
+numpy
+scipy
+h5py>=2.9
+hdf5plugin
+
+[testing]
+pytest
