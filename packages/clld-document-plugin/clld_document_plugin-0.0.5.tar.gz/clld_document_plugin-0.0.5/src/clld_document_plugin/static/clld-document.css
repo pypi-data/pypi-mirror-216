@@ -1,0 +1,15 @@
+ol.example {
+  list-style-type: lower-alpha;
+}
+
+ol.subexample {
+  list-style-type: lower-alpha;
+}
+
+li.example::marker {
+    content: "(" attr(value) ") \a0"
+}
+
+.smallcaps {
+  font-variant: small-caps;
+}
