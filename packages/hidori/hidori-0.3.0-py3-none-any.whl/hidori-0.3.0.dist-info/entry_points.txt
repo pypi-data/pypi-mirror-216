@@ -1,0 +1,4 @@
+[console_scripts]
+hidori=hidori_cli.apps.hidori:main
+hidori-pipeline=hidori_cli.apps.pipeline:main
+
