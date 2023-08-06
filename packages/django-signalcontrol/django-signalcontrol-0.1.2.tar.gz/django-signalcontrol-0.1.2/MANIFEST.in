@@ -1,0 +1,20 @@
+recursive-exclude *
+include pyproject.toml
+
+# Include the src files
+recursive-include src/djangoaddicts/signalcontrol
+
+exclude src/__version__.py
+exclude src/djangoaddicts/manage.py
+
+recursive-exclude docs *
+recursive-exclude tests *
+recursive-exclude local_test *
+recursive-exclude .github *
+recursive-exclude src/*.egg-info
+recursive-exclude src/djangoaddicts/core *
+
+global-exclude */__pycache__/*
+global-exclude *.pyc
+global-exclude *.sqlite3
+
