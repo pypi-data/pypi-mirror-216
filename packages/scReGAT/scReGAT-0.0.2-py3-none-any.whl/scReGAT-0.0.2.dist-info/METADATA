@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: scReGAT
+Version: 0.0.2
+Summary: A GAT-based computational framework to predict long-range gene regulatory relationships
+Home-page: https://github.com/Drizzle-Zhang/scReGAT
+Author: Yu Zhang
+License: AGPL-3.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8.3
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: sklearn
+Requires-Dist: scipy
+Requires-Dist: statsmodels
+Requires-Dist: anndata
+Requires-Dist: scanpy
+Requires-Dist: episcanpy
+Requires-Dist: cosg
+Requires-Dist: torch
+Requires-Dist: torch-geometric
+Requires-Dist: captum
+Requires-Dist: audtorch
+Requires-Dist: torch-sparse
+
+UNKNOWN
+
