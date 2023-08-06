@@ -1,0 +1,26 @@
+import torch
+
+from weathon.base.trainer import NlpEpochBasedTrainer
+from weathon.registry import TRAINERS
+from weathon.utils.constants.metainfo import Trainers
+
+
+@TRAINERS.register_module(module_name=Trainers.text_generation_trainer)
+class TextGenerationTrainer(NlpEpochBasedTrainer):
+
+    def _decode(self, tokens):
+        return self.eval_preprocessor.decode(
+            tokens.tolist(), skip_special_tokens=True)
+
+    def evaluation_step(self, data):
+        model = self.model.module if self._dist else self.model
+        model.eval()
+
+        with torch.no_grad():
+            result = model.generate(data)
+
+        result['preds'] = [self._decode(seq) for seq in result['sequences']]
+        data['tgts'] = [self._decode(seq) for seq in data['labels']]
+        assert len(result['preds']) == len(data['tgts'])
+
+        return result
