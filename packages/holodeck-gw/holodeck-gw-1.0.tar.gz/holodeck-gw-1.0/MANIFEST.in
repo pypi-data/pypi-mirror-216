@@ -1,0 +1,10 @@
+include CHANGELOG.md
+include CONTRIBUTING.md
+include LICENSE
+include MANIFEST.in
+include README.md
+include requirements-dev.txt
+include requirements.txt
+include tox.ini
+
+graft holodeck

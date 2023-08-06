@@ -1,0 +1,8 @@
+flake8
+jupyter
+nbconvert
+pytest
+pytest-cov
+tox
+tox-conda
+memray
