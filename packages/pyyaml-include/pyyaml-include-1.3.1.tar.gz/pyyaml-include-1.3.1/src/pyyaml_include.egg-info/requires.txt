@@ -1,0 +1,6 @@
+PyYAML<7.0,>=5.1
+
+[toml]
+
+[toml:python_version <= "3.11"]
+toml

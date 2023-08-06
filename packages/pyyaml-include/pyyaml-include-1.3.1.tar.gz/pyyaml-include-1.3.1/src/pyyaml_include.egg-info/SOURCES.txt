@@ -1,0 +1,16 @@
+AUTHORS.md
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+dev.requirements.txt
+pyproject.toml
+src/pyyaml_include.egg-info/PKG-INFO
+src/pyyaml_include.egg-info/SOURCES.txt
+src/pyyaml_include.egg-info/dependency_links.txt
+src/pyyaml_include.egg-info/requires.txt
+src/pyyaml_include.egg-info/top_level.txt
+src/yamlinclude/__init__.py
+src/yamlinclude/constructor.py
+src/yamlinclude/readers.py
+src/yamlinclude/version.py
