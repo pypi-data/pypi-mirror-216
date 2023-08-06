@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+laningfaiss/__init__.py
+laningfaiss/exceptions.py
+laningfaiss/requester.py
+laningfaiss.egg-info/PKG-INFO
+laningfaiss.egg-info/SOURCES.txt
+laningfaiss.egg-info/dependency_links.txt
+laningfaiss.egg-info/top_level.txt
+laningfaiss.egg-info/zip-safe
