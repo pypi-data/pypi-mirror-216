@@ -1,0 +1,178 @@
+// Catalog type definitions.
+//
+// These are generally the types used for persisting catalogs to storage, as
+// well as RPC calls when fetching/mutating catalogs.
+//
+// Longer term our storage format may differ from our RPC format, but until
+// then, keeping them in sync allows for faster iteration.
+//
+// # External data sources
+//
+// External data sources can be hooked up to GlareDB to allow querying across
+// data sources. We currently support "external databases" and "externa tables".
+// Some data sources can be connected with either method, while others are
+// limited to a single method. For example, an S3 data source can only be added
+// as an external table.
+//
+// Support matrix:
+//
+// | Data source        | External Database? | External Table? |
+// |--------------------|--------------------|-----------------|
+// | Postgres           | yes                | yes             |
+// | BigQuery           | yes                | yes             |
+// | MySQL              | yes                | yes             |
+// | MongoDB            | yes                | yes             |
+// | Snowflake          | yes                | yes             |
+// | Local object store | no                 | yes             |
+// | GCS                | no                 | yes             |
+// | S3                 | no                 | yes             |
+
+syntax = "proto3";
+
+package metastore.catalog;
+
+import "options.proto";
+
+// The state of the catalog at some version.
+message CatalogState {
+  // Version of this catalog. Increments on every mutation.
+  uint64 version = 1;
+
+  // All entries in this catalog.
+  //
+  // ID -> Entry
+  map<uint32, CatalogEntry> entries = 2;
+
+  // next: 3
+}
+
+// Possible top-level catalog entries.
+message CatalogEntry {
+  oneof entry {
+    DatabaseEntry database = 1;
+    SchemaEntry schema = 2;
+    TableEntry table = 3;
+    ViewEntry view = 4;
+    TunnelEntry tunnel = 5;
+    FunctionEntry function = 6;
+    CredentialsEntry credentials = 7;
+  }
+}
+
+// Metadata for every entry in the catalog.
+message EntryMeta {
+  // Possible entry types in the catalog.
+  //
+  // Each entry of this type shares the same ID space.
+  enum EntryType {
+    // Unknown catalog entry. We should error if this is encountered.
+    UNKNOWN = 0;
+    // Internal or external database.
+    DATABASE = 1;
+    // Internal schema (eventually include external)
+    SCHEMA = 2;
+    // Internal or external table.
+    TABLE = 3;
+    // Internal view.
+    VIEW = 4;
+    // Tunnel to connect with datasources.
+    TUNNEL = 5;
+    // Function entry.
+    FUNCTION = 6;
+    // Credentials entry.
+    CREDENTIALS = 7;
+  }
+
+  // Type of the entry.
+  EntryType entry_type = 1;
+
+  // ID of the entry. This id must be unique within the database, and will act
+  // similarly to Postgres' OIDs.
+  //
+  // System entries have well-known IDs.
+  uint32 id = 2;
+
+  // ID of the parent entry.
+  //
+  // For tables and views, the parent id will be the schema id.
+  //
+  // For schemas, the parent will be the database id.
+  //
+  // Database entries will have a parent id of 0.
+  uint32 parent = 3;
+
+  // Name of this entry.
+  string name = 4;
+
+  // Whether or not this entry is builtin. Builtin entries cannot be dropped.
+  bool builtin = 5;
+
+  // If this entry is backed by an external system or resource (e.g. external
+  // database or external table).
+  bool external = 6;
+
+  // next: 7
+}
+
+message DatabaseEntry {
+  EntryMeta meta = 1;
+  options.DatabaseOptions options = 2;
+  optional uint32 tunnel_id = 3;
+  // next: 4
+}
+
+message SchemaEntry {
+  EntryMeta meta = 1;
+  // next: 2
+}
+
+message TableEntry {
+  EntryMeta meta = 1;
+
+  reserved 2; // Column fields
+
+  options.TableOptions options = 3;
+  optional uint32 tunnel_id = 4;
+  // next: 5
+}
+
+message ViewEntry {
+  EntryMeta meta = 1;
+
+  // The sql statement for materializing the view.
+  string sql = 2;
+
+  // Output column aliases. If length of zero, no aliases have been defined.
+  repeated string columns = 3;
+
+  // next: 4
+}
+
+message TunnelEntry {
+  EntryMeta meta = 1;
+  options.TunnelOptions options = 2;
+  // next: 3
+}
+
+// Function entries are not currently persisted since the only functions
+// available are builtins. We can change this however we need and not have to
+// worry about backwards compatability.
+message FunctionEntry {
+  enum FunctionType {
+    // Unknown catalog entry. We should error if this is encountered.
+    UNKNOWN = 0;
+    AGGREGATE = 1;
+    SCALAR = 2;
+    TABLE_RETURNING = 3;
+  }
+
+  EntryMeta meta = 1;
+  FunctionType func_type = 2;
+}
+
+message CredentialsEntry {
+  EntryMeta meta = 1;
+  options.CredentialsOptions options = 2;
+  string comment = 3;
+  // next: 4
+}

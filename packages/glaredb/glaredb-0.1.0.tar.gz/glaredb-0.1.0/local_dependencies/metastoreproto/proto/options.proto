@@ -1,0 +1,208 @@
+// Connection options when connecting to external systems.
+//
+// These message are used when hooking up external databases or tables to
+// GlareDB.
+//
+// Databases and tables that are not associated with an external system will use
+// the `DatabaseOptionsInternal` or `TableOptionsInternal` options respectively.
+
+// TODO: Breakup "connection strings" to individual components.
+
+syntax = "proto3";
+
+package metastore.options;
+
+import "arrow.proto";
+
+// Some options allow us to know the columns in tables upfront (particularly the
+// internal table options).
+message InternalColumnDefinition {
+  // Name of the column in the table.
+  string name = 1;
+
+  // Field is nullable.
+  bool nullable = 2;
+
+  // Arrow type for the field.
+  //
+  // Note this will likely need to be expanded for complex types.
+  arrow.ArrowType arrow_type = 3;
+
+  // next: 4
+}
+
+// Database options
+
+message DatabaseOptions {
+  oneof options {
+    DatabaseOptionsInternal internal = 1;
+    DatabaseOptionsDebug debug = 2;
+    DatabaseOptionsPostgres postgres = 3;
+    DatabaseOptionsBigQuery bigquery = 4;
+    DatabaseOptionsMysql mysql = 5;
+    DatabaseOptionsMongo mongo = 6;
+    DatabaseOptionsSnowflake snowflake = 7;
+    DatabaseOptionsDeltaLake delta = 8;
+  }
+  // next: 9
+}
+
+message DatabaseOptionsInternal {}
+
+message DatabaseOptionsDebug {}
+
+message DatabaseOptionsPostgres { string connection_string = 1; }
+
+message DatabaseOptionsBigQuery {
+  string service_account_key = 1;
+  string project_id = 2;
+}
+
+message DatabaseOptionsMysql { string connection_string = 1; }
+
+message DatabaseOptionsMongo { string connection_string = 1; }
+
+message DatabaseOptionsSnowflake {
+  string account_name = 1;
+  string login_name = 2;
+  string password = 3;
+  string database_name = 4;
+  string warehouse = 5;
+  string role_name = 6;
+}
+
+message DatabaseOptionsDeltaLake {
+  oneof catalog { DeltaLakeUnityCatalog unity = 1; }
+
+  // TODO: Move these out into a separate "bucket auth" type. That could be
+  // shared with the other object storage stuff.
+  string access_key_id = 2;
+  string secret_access_key = 3;
+  string region = 4;
+}
+
+// Parameters specific to the unity catalog.
+message DeltaLakeUnityCatalog {
+  string catalog_id = 1;
+  string databricks_access_token = 2;
+  string workspace_url = 3;
+}
+
+// Table options
+
+message TableOptions {
+  oneof options {
+    TableOptionsInternal internal = 1;
+    TableOptionsDebug debug = 2;
+    TableOptionsPostgres postgres = 3;
+    TableOptionsBigQuery bigquery = 4;
+    TableOptionsLocal local = 5;
+    TableOptionsGcs gcs = 6;
+    TableOptionsS3 s3 = 7;
+    TableOptionsMysql mysql = 8;
+    TableOptionsMongo mongo = 9;
+    TableOptionsSnowflake snowflake = 10;
+  }
+  // next: 11
+}
+
+message TableOptionsInternal {
+  // Columns in the table.
+  repeated InternalColumnDefinition columns = 1;
+}
+
+message TableOptionsDebug { string table_type = 1; }
+
+message TableOptionsPostgres {
+  string connection_string = 1;
+  string schema = 2;
+  string table = 3;
+}
+
+message TableOptionsBigQuery {
+  string service_account_key = 1;
+  string project_id = 2;
+  string dataset_id = 3;
+  string table_id = 4;
+}
+
+message TableOptionsMysql {
+  string connection_string = 1;
+  string schema = 2;
+  string table = 3;
+}
+
+message TableOptionsLocal { string location = 1; }
+
+message TableOptionsGcs {
+  optional string service_account_key = 1;
+  string bucket = 2;
+  string location = 3;
+}
+
+message TableOptionsS3 {
+  optional string access_key_id = 1;
+  optional string secret_access_key = 2;
+  string region = 3;
+  string bucket = 4;
+  string location = 5;
+}
+
+message TableOptionsMongo {
+  string connection_string = 1;
+  string database = 2;
+  string collection = 3;
+}
+
+message TableOptionsSnowflake {
+  string account_name = 1;
+  string login_name = 2;
+  string password = 3;
+  string database_name = 4;
+  string warehouse = 5;
+  string role_name = 6;
+  string schema_name = 7;
+  string table_name = 8;
+}
+
+// Tunnel options
+
+message TunnelOptions {
+  oneof options {
+    TunnelOptionsInternal internal = 1;
+    TunnelOptionsDebug debug = 2;
+    TunnelOptionsSsh ssh = 3;
+  }
+}
+
+message TunnelOptionsInternal {}
+
+message TunnelOptionsDebug {}
+
+message TunnelOptionsSsh {
+  string connection_string = 1;
+  bytes ssh_key = 2;
+}
+
+// Credentials options
+
+message CredentialsOptions {
+  oneof options {
+    CredentialsOptionsDebug debug = 1;
+    CredentialsOptionsGcp gcp = 2;
+    CredentialsOptionsAws aws = 3;
+  }
+}
+
+message CredentialsOptionsDebug {
+  string table_type = 1;
+}
+
+message CredentialsOptionsGcp {
+  string service_account_key = 1;
+}
+
+message CredentialsOptionsAws {
+  string access_key_id = 1;
+  string secret_access_key = 2;
+}
