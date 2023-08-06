@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: django-restraint
+Version: 2.3.0
+Summary: A dynamic object-level permission system for Django
+Home-page: https://github.com/ambitioninc/django-restraint
+Author: Wes Kendall
+Author-email: opensource@ambition.com
+License: MIT
+Keywords: Django,Permission
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+License-File: LICENSE
+
+Full documentation is available at http://django-restraint.readthedocs.org
