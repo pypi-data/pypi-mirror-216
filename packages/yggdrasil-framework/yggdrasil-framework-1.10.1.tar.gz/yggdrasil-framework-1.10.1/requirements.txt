@@ -1,0 +1,17 @@
+GitPython
+chevron
+deprecation
+flask
+matplotlib       # [pip]
+numpy>=1.13.0
+pandas
+psutil
+pyperf
+pyyaml
+pyzmq
+requests
+scipy
+six
+sysv_ipc; platform_system != 'Windows'
+toml
+unyt

@@ -1,0 +1,11 @@
+name: CiS2021-hackathon-environment
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - yggdrasil=1.6.3
+  - trimesh
+  - networkx
+  - pygments
+  - notebook
+  - ipykernel
