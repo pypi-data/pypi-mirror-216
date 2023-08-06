@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: resbaz
+Version: 0.0.5
+Summary: ResBaz example package
+Project-URL: Homepage, https://resbaz.auckland.ac.nz/
+Author-email: Victor Gambarini <victor.gambarini@auckland.ac.nz>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# ResBaz Example Package
+
+This package is an example utilised in the tutorials.
