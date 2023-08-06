@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: aequilibrium
+Version: 1.0.1
+Summary: Python package for classification of imbalanced data.
+Home-page: https://github.com/cvs-health/aequilibrium
+Author: Luke Beasley
+Author-email: beasleyl2@aetna.com
+Maintainer: Luke Beasley
+Maintainer-email: beasleyl2@aetna.com
+Requires-Python: >=3.7.1,<3.8
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: imbalanced-learn (<0.9)
+Requires-Dist: matplotlib (<3.6)
+Requires-Dist: numpy (>=1.21,<2.0)
+Requires-Dist: pandas (>=1.3,<2.0)
+Requires-Dist: scikit-learn (<1.1)
+Requires-Dist: seaborn (<0.12)
+Project-URL: Repository, https://github.com/cvs-health/aequilibrium
