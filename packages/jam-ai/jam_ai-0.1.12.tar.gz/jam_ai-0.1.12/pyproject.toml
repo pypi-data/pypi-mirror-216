@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jam-ai"
+version = "0.1.12"
+version_pattern = "MAJOR.MINOR.PATCH"
+authors = [
+  { name="Abhishta Gatya", email="abhishtagatya@yahoo.com" },
+]
+description = "Engaging with Multiple AI Agents with Jam."
+keywords = ["openai", "multi agent", "chat engine", "collaboration", "machine learning", "data science"]
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+    'openai',
+    'Pillow',
+    'requests',
+    'SQLAlchemy',
+    'rich',
+]
+classifiers = [
+    'License :: OSI Approved :: Apache Software License',
+    'Development Status :: 3 - Alpha',
+    # 'Development Status :: 4 - Beta',
+    # 'Development Status :: 5 - Production/Stable',
+
+    'Operating System :: OS Independent',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Education',
+    'Intended Audience :: Information Technology',
+
+    'Topic :: Adaptive Technologies',
+    'Topic :: Communications :: Chat',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Topic :: Software Development :: Libraries',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+
+    'Natural Language :: English',
+]
+
+[tool.hatch.build]
+include = [
+  "jam/*",
+  "/jam/*/*",
+  "/tests/*",
+  "/example/*",
+  "/cmd/*",
+]
+
+[tool.hatch.extras]
+database = [
+    'pymysql',
+    'psycopg2',
+]
+
+function = [
+    'stability-sdk',
+]
+
+[project.urls]
+homepage = "https://github.com/abhishtagatya/jam"
+documentation = "https://github.com/abhishtagatya/jam"
+changelog = "https://github.com/abhishtagatya/jam/blob/master/CHANGELOG.md"
