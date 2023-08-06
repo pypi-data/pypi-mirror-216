@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: QtFusion
+Version: 0.2
+Summary: QtFusion is a Python library created by Seasal Wesley (seasalwesley@gmail.com) for the convenient creation of PySide6 applications that interact with deep learning models. It provides user interface management and beautification, database management, image/video/camera processing, model interface definition, and event handling. This makes it easy for users to create deep learning applications.
+Author: Seasal Wesley
+Author-email: seasalwesley@gmail.com
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: numpy
+Requires-Dist: opencv-python (>=4.5.5.64)
+Requires-Dist: Pillow (>=9.0.1)
+Requires-Dist: PySide6 (>=6.4.2)
+Requires-Dist: PyYAML (>=6.0)
+Requires-Dist: captcha (>=0.4)
+
