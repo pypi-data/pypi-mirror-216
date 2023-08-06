@@ -1,0 +1,44 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "pyxrk"
+requires-python = ">=3.7"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ['pyarrow']
+
+[project.optional-dependencies]
+test = [
+    'black',
+    'isort',
+    'mypy',
+    'ruff',
+    'pytest',
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "pyxrk.pyxrk_raw"
+
+[tool.black]
+line-length = 88
+target-version = ["py37"]
+include = ".pyi?$"
+
+[tool.ruff]
+line-length = 88
+target-version = "py37"
+
+ignore = [
+    "E501", # line too long
+    "F601", # Dictionary key literal ... repeated
+]
+
+[tool.mypy]
+python_version = "3.7"
