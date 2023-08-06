@@ -1,0 +1,108 @@
+CHANGES
+=======
+
+0.5.5
+-----
+
+* setup.cfg: universal=0 (only python3 packages supported now)
+* update CHANGELOG.md, remove fragments
+* document latest changes for proclamation
+* update set of supported python version
+* fix versions in requirements.txt and test\_requirements.txt
+* remove import from \_\_future\_\_
+* Replaced hyphened variables by underscode in \`setup.cfg\`
+
+0.5.4
+-----
+
+* Fix CHANGELOG (move changes to docs)
+* CHANGLOG for 0.5.4 updated
+* fragmets for issue 12 and 13
+* s3getvers - fix piece of docstring
+* README.rst updated for s3getvers docstring
+* s3getvers docstring simplified
+* README.rst updated for shortened s3lsvers
+* s3lsvers help string shortened
+
+0.5.3
+-----
+
+* build universal wheels
+* Start using proclamation to generate CHANGELOG.md
+* Fix #8 s3lsvers fails with -version-id
+* test using pendulum
+* skip py34,py35 add py38,py39
+
+0.5.2
+-----
+
+* Updated NEWS.txt
+* Fixed test failing due to new pytest features
+* Fixed line termination on Windows and UTF-8
+
+0.5.1
+-----
+
+* cleanup .gitignore, add pylintrc
+* remove support for python 2.6, 3.3, add support for python 3.7
+* Fix plac version to 0.9.6 to fix parsing error
+* Fixed sample .s3lsversrc
+
+0.5.0
+-----
+
+* Updated NEWS.txt, bumped version to 0.5
+* Added support for python 3.3..3.6
+* fixed lsvers (invalid import)
+* Fixed broken getvers (invalid import of package)
+* Added tests for FnameFactory
+* ttr.aws.utils.s3.saver module properly commented
+* CLI commands moved to ttr.aws.utils.s3.cli package
+* Updated tox.ini and NEWS.txt
+
+0.4.5
+-----
+
+* Rewritten to boto3
+* Rewritten to pbr. getlsvers rewritten to boto3
+* s3lsvers fixed to list proper key and parse time properly. Tests
+* s3lsvers rewriten to boto3, docstring simplified
+* s3tmpgen allows -http flag to generate http urls (instead of https)
+* Version bumbped to 4.3
+* Resolves bug #2 - s3tmpgen generating shifted expiration time in url
+* Updated repo url, bumpbed version to 0.4.2.2
+* Bumped version to 0.4.2.1
+* Corrected README.rst and NEWS.txt (was breaking rendering RST)
+* Version bumped to 0.4.2
+* Reformatted tmpgen.py
+* Reformatted setup.py
+* Removed obsolete references from MANIFEST.in
+* s3tmpgen now serves url for latest version without specific VersionId
+
+v0.4.0
+------
+
+* Version changed to 0.4.0
+* Removed obsolete files
+* Removed buildout install, README explains key aliases definition in .s3lsvers
+* s3tmpget strongly simplified and finally it works
+* s3lsvers and s3getvers allows explicit id and secret key or boto profile
+* TODO added
+* chart.html template added into packaging
+* refactoring
+* added aliases for bucket/key\_name
+* Optimized creation of html chart - calculating datetime from epoch in milis
+* added command s3tmpgen, version 0.3.0 released
+* checking, if txt ext of readme works or not
+* Correctint copyright substitution in rst
+* continue experiments with formating readme
+* experimenting with readme format
+* ver 2.3, corrected doc, released to PyPi
+* Adding copyright notices before releasing to PyPi
+* cleaning up version 0.2.1
+* debugged - scripts now starting as they should
+* lsvers.py now uses plac and not directly argparse. Unused option -period removed
+* added command s3getvers, fetching versions according to csv file
+* before reinstalling notebook
+* repaired dependencies
+* Initial commit

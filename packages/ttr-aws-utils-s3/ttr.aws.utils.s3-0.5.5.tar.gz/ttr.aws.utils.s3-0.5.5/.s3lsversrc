@@ -1,0 +1,45 @@
+#.s3lsversrc - definition of some preconfigured bucket/key values
+[DEFAULT]
+pl-base: pl-base.dp.ce-traffic.com
+cz-base: cz-base.dp.ce-traffic.com
+sk-base: sk-base.dp.ce-traffic.com
+a-base: a-base.dp.ce-traffic.com
+pl-maps: pl-maps.dp.ce-traffic.com
+cz-maps: cz-maps.dp.ce-traffic.com
+sk-maps: sk-maps.dp.ce-traffic.com
+a-maps: a-maps.dp.ce-traffic.com
+pl-support: pl-support.dp.ce-traffic.com
+cz-support: cz-support.dp.ce-traffic.com
+sk-support: sk-support.dp.ce-traffic.com
+a-support: a-support.dp.ce-traffic.com
+[aliases]
+plcsr: %(pl-base)s/region/pl/ConsumerServiceReady.xml
+pldfs: %(pl-base)s/region/pl/DataFusionService.xml
+ples: %(pl-base)s/region/pl/EventService.xml
+plsr: %(pl-base)s/region/pl/SummaryReports.xml
+plttes: %(pl-base)s/region/pl/TomTom-EventService-OpenLR-xml.xml
+plttcs: %(pl-base)s/region/pl/TomTom-FlowCS-OpenLR-xml.xml
+plttdf: %(pl-base)s/region/pl/TomTom-FlowDF-OpenLR-binary.xml
+plttdfhr: %(pl-base)s/region/pl/HR/TomTom-FlowDF-OpenLR-binary.xml
+plttmrdf: %(pl-base)s/region/pl/MainRoads/DataFusionCompact.xml
+czcsr: %(cz-base)s/region/cz/ConsumerServiceReady.xml
+czdfs: %(cz-base)s/region/cz/DataFusionService.xml
+czes: %(cz-base)s/region/cz/EventService.xml
+czsr: %(cz-base)s/region/cz/SummaryReports.xml
+czttes: %(cz-base)s/region/cz/TomTom-EventService-Tmc.xml
+czttcs: %(cz-base)s/region/cz/TomTom-FlowCS-Tmc.xml
+czttdf: %(cz-base)s/region/cz/TomTom-FlowDF-Tmc.xml
+czpraguetskdf3: %(cz-base)s/region/cz/Prague-TSK/DataFusionService.xml
+czpraguedf: %(cz-base)s/region/cz/Prague/DataFusionCompact.xml
+czpraguesr: %(cz-base)s/region/cz/Prague/SummaryReports.xml
+skcsr: %(sk-base)s/region/sk/ConsumerServiceReady.xml
+skdfs: %(sk-base)s/region/sk/DataFusionService.xml
+skes: %(sk-base)s/region/sk/EventService.xml
+sksr: %(sk-base)s/region/sk/SummaryReports.xml
+skttdf: %(sk-base)s/region/sk/TomTom-FlowDF-Tmc.xml
+acsr: %(a-base)s/region/a/ConsumerServiceReady.xml
+adfs: %(a-base)s/region/a/DataFusionService.xml
+agifaustria: %(a-maps)s/region/a/Austria.gif
+agifwien: %(a-maps)s/region/a/Wien.gif
+a:gifwien_city_center: %(a-maps)s/region/a/Wien_city_center.gif
+ageorss: %(a-support)s/region/a/GeoRSS/All.xml

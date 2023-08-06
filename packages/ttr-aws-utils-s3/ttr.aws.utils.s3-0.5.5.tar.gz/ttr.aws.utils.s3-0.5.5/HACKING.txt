@@ -1,0 +1,19 @@
+Development setup
+=================
+
+Use virtualenv
+  $ mkvirtualenv <env-name>
+  $ pip -e .
+
+Release HOWTO
+=============
+
+To make a release, 
+
+  1) Use proclamation tool to build CHANGELOG.md
+  2) Run 'python setup.py sdist'
+  3) Test the generated source distribution in dist/
+  4) Tag the commit with proper version and rebuild
+  4) Upload to PyPI: 'python setup.py sdist register upload'
+  5) Increase version in setup.py (for next release)
+

@@ -1,0 +1,23 @@
+{
+    "#": "This is a config file for ttr.aws.utils.s3, the changelog combiner: https://gitlab.com/ryanpavlik/proclamation",
+    "SPDX-License-Identifier: CC0-1.0": "",
+    "SPDX-FileCopyrightText: 2020 Collabora, Ltd. and the Proclamation contributors": "",
+    "$schema": "https://ryanpavlik.gitlab.io/proclamation/proclamation.schema.json",
+    "project_name": "ttr.aws.utils.s3",
+    "base_url": "https://gitlab.com/tamtamresearch-public/pypi/ttr.aws.utils.s3",
+    "news_filename": "CHANGELOG.md",
+    "sections": {
+        "Bugfixes": {
+            "directory": "changes/bugfixes"
+        },
+        "Features": {
+            "directory": "changes/features"
+        },
+        "Docs": {
+            "directory": "changes/docs"
+        },
+        "Internals": {
+            "directory": "changes/internals"
+        }
+    }
+}
