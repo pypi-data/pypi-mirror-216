@@ -1,0 +1,17 @@
+pydantic
+astropy
+
+[docs]
+sphinx
+sphinx-astropy
+sphinx-changelog
+sphinx-autoapi
+pytest
+towncrier
+dkist-sphinx-theme
+
+[test]
+pytest
+pytest-cov
+pytest-mock
+towncrier
