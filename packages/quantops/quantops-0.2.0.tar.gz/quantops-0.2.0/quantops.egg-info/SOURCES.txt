@@ -1,0 +1,12 @@
+pyproject.toml
+quantops/__init__.py
+quantops/__main__.py
+quantops/core.py
+quantops/generate.py
+quantops/parser.py
+quantops/registry.toml
+quantops.egg-info/PKG-INFO
+quantops.egg-info/SOURCES.txt
+quantops.egg-info/dependency_links.txt
+quantops.egg-info/requires.txt
+quantops.egg-info/top_level.txt
