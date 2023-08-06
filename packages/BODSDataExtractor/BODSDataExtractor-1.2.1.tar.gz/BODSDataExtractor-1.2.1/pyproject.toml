@@ -1,0 +1,39 @@
+[build-system]
+requires = [
+    "setuptools>=42"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "BODSDataExtractor"
+version = "1.2.1"
+authors = [
+  { name="Ali Partner, Spencer Brittain", email="bodshelpdesk@kpmg.co.uk" }
+]
+description = "This project was created to lower the barrier to entry for analysis of UK Bus Open Data. It facilitates the fetching and extraction of clean data, currently focussed on Timetables, into tables to be used for analysis or your own projects."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "pandas>=1.4.2"
+    ,"bods-client>=0.11.0"
+    ,"protobuf==3.20"
+    ,"lxml==4.9.1"
+    ,"xmltodict==0.13.0"
+    ,"shapely>=1.8.5"
+    ,"geopandas>=0.12.1"
+    ,"plotly<=5.13.1"
+    ,"dacite>=1.8.1"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/department-for-transport-BODS/bods-data-extractor"
+
+
