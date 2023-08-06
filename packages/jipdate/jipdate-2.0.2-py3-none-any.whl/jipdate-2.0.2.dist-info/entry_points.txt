@@ -1,0 +1,7 @@
+[console_scripts]
+jipcreate=jipdate.jipcreate:main
+jipdate=jipdate.jipdate:main
+jipfp=jipdate.jipfp:main
+jipsearch=jipdate.jipsearch:main
+jipstatus=jipdate.jipstatus:main
+
