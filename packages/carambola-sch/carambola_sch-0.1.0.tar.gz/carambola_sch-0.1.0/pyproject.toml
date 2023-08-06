@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "carambola-sch"
+version = "0.1.0"
+description = ""
+authors = ["Marcelo Schneider <schenider.fei@gmail.com>"]
+readme = "README.md"
+packages = [{include = "carambola_sch"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+authlib = "^1.2.1"
+requests = "^2.31.0"
+
+[[tool.poetry.source]]
+name = "test"
+url = "https://test.pypi.org/simple/"
+secondary = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
