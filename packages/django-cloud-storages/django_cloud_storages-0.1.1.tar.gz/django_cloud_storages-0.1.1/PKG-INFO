@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: django-cloud-storages
+Version: 0.1.1
+Summary: Cloud file storages for django.
+Project-URL: Homepage, https://github.com/Samiddha99/django-cloud-storages
+Project-URL: Bug Tracker, https://github.com/Samiddha99/django-cloud-storages/issues
+Author-email: Samiddha Chakrabarti <samiddha99@protonmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
