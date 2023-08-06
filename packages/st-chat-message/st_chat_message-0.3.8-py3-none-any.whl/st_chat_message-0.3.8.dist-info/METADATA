@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: st-chat-message
+Version: 0.3.8
+Summary: A Streamlit component to display chat messages
+License: MIT
+Author: Manolo Santos
+Author-email: manolo.santos@gmail.com
+Requires-Python: >=3.8, !=2.7.*, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*, !=3.6.*, !=3.7.*
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: streamlit (>=0.63)
+Description-Content-Type: text/markdown
+
+# st-chat-message
+
+## Description
+
+This is a simple chat message component for streamlit. It is based on the [streamlit-chat](https://github.com/AI-Yash/st-chat) component, trying to be as compatible as possible, but it adding a few features:
+
+- Markdown support
+- LaTeX support
+- Tables
+
+## Installation
+
+```bash
+pip install st-chat-message
+```
+
+or
+
+```bash
+poetry add st-chat-message
+```
+## Usage
+
+```python
+import streamlit as st
+from st_chat_message import message
+
+message("Hello world!", is_user=True)
+message("Hi")
+```
+
+![img.png](docs/img.png)
+
+## Buiding from source
+
+### Prerequisites
+
+- nodejs >= 18.x
+- yarn >= 1.22.x
+- poetry >= 1.2.x
+- python >= 3.8.x
+
+### Building
+
+```bash
+./build.sh
+```
+
+### Publishing
+
+```bash
+poetry publish 
+```
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
