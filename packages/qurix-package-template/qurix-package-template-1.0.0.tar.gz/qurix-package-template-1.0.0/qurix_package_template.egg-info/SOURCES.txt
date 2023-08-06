@@ -1,0 +1,12 @@
+README.md
+setup.py
+qurix/template/catalog/__init__.py
+qurix/template/catalog/__version__.py
+qurix/template/catalog/client.py
+qurix_package_template.egg-info/PKG-INFO
+qurix_package_template.egg-info/SOURCES.txt
+qurix_package_template.egg-info/dependency_links.txt
+qurix_package_template.egg-info/requires.txt
+qurix_package_template.egg-info/top_level.txt
+tests/__init__.py
+tests/test_client.py
