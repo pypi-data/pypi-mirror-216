@@ -1,0 +1,16 @@
+Change Log
+===========
+0.0.6 (June 29, 2023)
+-------------------------
+- Sixth Release
+
+Notes:
+------
+Added a class called linear_std_curve
+
+The class can be used to fit a linear model to data. The class goes beyond standard coefficient determination, as it also
+determines estimation limits for inverse regression. Information such as smoothing, baseline subtraction, calibration procedures 
+employed to process the data prior to fitting can also be stored.
+
+The prediction band edges of the standard curve are also callable as methods within the object. See documentation for full list of methods
+and attributes. 
