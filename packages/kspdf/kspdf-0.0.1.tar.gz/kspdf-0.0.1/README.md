@@ -1,0 +1,1 @@
+This is the homepage of our project. It contains the description of the project, the team members, and the link to the project website. It also contains the link to the project report and the link to the project presentation.
