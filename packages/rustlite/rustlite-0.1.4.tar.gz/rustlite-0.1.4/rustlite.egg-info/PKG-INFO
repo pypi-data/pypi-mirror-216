@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: rustlite
+Version: 0.1.4
+Summary: rust like iterators for python
+Home-page: https://github.com/peturparkur/python-rustlite
+Author: Peter Nagymathe
+Author-email: peter@nagymathe.xyz
+License: AGPLv3+
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Description-Content-Type: text/markdown
+
+# Better iterators for python (all typed)
+
+## Examples
+
+### simple
+
+```python
+## create iterator for even integers squared
+even_integers = Iter[int](range(100)) \
+    .filter(lambda x: x % 2 == 0) \
+    .map(lambda x: x ** 2)
+
+## to evaluate into a list use
+basic_list = even_integers.collect(list)
+smart_list = even_integers.to_list()
+
+## The smart list will allow the usage of iterator notation again by
+times2_iter = smart_list.iter() \
+    .map(lambda x: x * 2)
+```
