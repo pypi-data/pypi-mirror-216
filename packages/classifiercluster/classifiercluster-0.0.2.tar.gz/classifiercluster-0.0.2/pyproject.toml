@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "classifiercluster"
+version = "0.0.2"
+description = "Python classifier cluster."
+authors = ["GaoangLau <GaoangLau@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+codefast = "23.5.5.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
