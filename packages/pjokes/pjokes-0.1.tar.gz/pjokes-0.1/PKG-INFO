@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pjokes
+Version: 0.1
+Summary: Joke of the day
+Author: K
+Author-email: k@Gmail.com
+License: MIT
+
+PJOKES
+--------
+
+To use (package), simply do::
+
+    >>> import pjoke
+    >>> print pjoke.joke()

@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+pjokes/__init__.py
+pjokes/command_line.py
+pjokes/pjokes.py
+pjokes.egg-info/PKG-INFO
+pjokes.egg-info/SOURCES.txt
+pjokes.egg-info/dependency_links.txt
+pjokes.egg-info/entry_points.txt
+pjokes.egg-info/requires.txt
+pjokes.egg-info/top_level.txt
