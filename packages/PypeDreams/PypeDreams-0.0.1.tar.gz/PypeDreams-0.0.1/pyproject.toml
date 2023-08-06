@@ -1,0 +1,28 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PypeDreams"
+version = "0.0.1"
+description = "PypeDreams generates easy to remember animal-based hash digests"
+readme = "README.md"
+authors = [{ name = "Huth S0lo", email = "john@themorphium.io" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["python", "cardano", "naming", "hash"]
+
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/themorphium/pype_dreams"
+
+[project.scripts]
+realpython = "reader.__main__:main"
