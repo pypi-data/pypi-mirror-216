@@ -1,0 +1,4 @@
+[console_scripts]
+IAMActionHunter=IAMActionHunter.IAMActionHunter:main
+iamactionhunter=IAMActionHunter.IAMActionHunter:main
+
