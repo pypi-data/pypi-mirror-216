@@ -1,0 +1,48 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+nics/__main__.py
+nics.egg-info/PKG-INFO
+nics.egg-info/SOURCES.txt
+nics.egg-info/dependency_links.txt
+nics.egg-info/entry_points.txt
+nics.egg-info/requires.txt
+nics.egg-info/top_level.txt
+nics/main/__init__.py
+nics/main/constants.py
+nics/main/_template/docs/404.md
+nics/main/_template/docs/favicon.png
+nics/main/_template/docs/tree/1 -- THIS-IS-TITLE -- THIS-IS-URL.md
+nics/main/_template/docs/tree/4 -- About -- about.md
+nics/main/_template/docs/tree/5 -- This is a demo -- This-Is-A-Demo.md
+nics/main/_template/docs/tree/index.md
+nics/main/_template/docs/tree/nics-logo500.jpg
+nics/main/_template/docs/tree/2 -- Bar -- bar/Hello -- world.md
+nics/main/_template/docs/tree/2 -- Bar -- bar/Without Numbering -- Without-Numbering.md
+nics/main/_template/docs/tree/2 -- Bar -- bar/index.md
+nics/main/_template/docs/tree/2 -- Bar -- bar/nics-logo500.jpg
+nics/main/_template/docs/tree/3 -- Foo Bar Baz -- foo-bar-baz/02 -- bar -- bar.md
+nics/main/_template/docs/tree/3 -- Foo Bar Baz -- foo-bar-baz/index.md
+nics/main/_template/docs/tree/3 -- Foo Bar Baz -- foo-bar-baz/01 -- Nested -- nested/Without index.md -- without-index-md.md
+nics/main/_template/web/_layouts/main.html
+nics/main/_template/web/_sass/footer.scss
+nics/main/_template/web/_sass/header.scss
+nics/main/_template/web/_sass/main.scss
+nics/main/_template/web/scripts/header.js
+nics/main/compile/__init__.py
+nics/main/compile/copying_template.py
+nics/main/compile/inspect.py
+nics/main/compile/update_404_and_favicon.py
+nics/main/compile/update_docs_tree.py
+nics/main/compile/update_footer.py
+nics/main/compile/update_header.py
+nics/main/compile/update_jekyll_config.py
+nics/main/compile/update_sass_constants.py
+nics/main/upgrade/__init__.py
+nics/main/wizard/__init__.py
+nics/main/wizard/inspect.py
+nics/main/wizard/settings_writer.py
+nics/main/wizard/workflow_writer.py
