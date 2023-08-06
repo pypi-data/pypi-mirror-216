@@ -1,0 +1,24 @@
+LICENSE.txt
+README.md
+TODO.md
+pyproject.toml
+docs/Makefile
+docs/Notes.md
+docs/Registry Demo.ipynb
+docs/SCR-registry-spec-0.3.md
+docs/conf.py
+docs/index.rst
+docs/make.bat
+src/__init__.py
+src/scregistry.py
+src/data/README.rst
+src/scregistry.egg-info/PKG-INFO
+src/scregistry.egg-info/SOURCES.txt
+src/scregistry.egg-info/dependency_links.txt
+src/scregistry.egg-info/requires.txt
+src/scregistry.egg-info/top_level.txt
+tests/Validation Demo.ipynb
+tests/__init__.py
+tests/test_catalog_registry.py
+tests/test_entire_catalog_search.py
+tests/test_file_registry.py
