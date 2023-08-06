@@ -1,0 +1,16 @@
+marlin_pytorch/__init__.py,sha256=LGjWuyJqj7ZhoLM-o03FTOUtzFhk4iqy3PjEjDYxtJ4,182
+marlin_pytorch/config.py,sha256=vesF3pRCboZp9-vw4SG6WbJTYgE301yRCCj_aWnqy-Q,4048
+marlin_pytorch/face_detector.py,sha256=XdFOFq2nXqHgJDAYcXn4jcoj_cI2epOmOzdctxpx1DE,6062
+marlin_pytorch/util.py,sha256=eUUMNSPFKksyJUCVXsk81mcbR3I7Ku1n2RPr0YHSb7I,3514
+marlin_pytorch/version.txt,sha256=giXQHGeBBStERbperahWKQwkLBGaPw1l2AuhZu25msw,5
+marlin_pytorch/model/__init__.py,sha256=ASSppEkjZGmqrQVTZr6E5q6pRa8lwgfMtGoNdcMqH0w,49
+marlin_pytorch/model/decoder.py,sha256=aYPFTvZldB4d-VKJs-C4DanKiyBPVEUzeUe3tqO1GBA,3420
+marlin_pytorch/model/encoder.py,sha256=w4Qyasd4GUkQF0DuxkH0OUX-GESDF0-YHH6gRhl8j58,2807
+marlin_pytorch/model/marlin.py,sha256=nq8zmFhEOZKkXMNxM2RdPUpQ5ugjZt8iMY5kOtivOfA,10094
+marlin_pytorch/model/modules.py,sha256=wcynoyp0p7cJcmDSIm4vrureaWc7nLeYF7hLSn38GiY,8329
+marlin_pytorch/model/positional_embedding.py,sha256=3FGfXVFR7QEa0RXYAoPrb6h0FyBCeezuRuGSCKRUIHk,1675
+marlin_pytorch-0.3.2.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+marlin_pytorch-0.3.2.dist-info/METADATA,sha256=1v_MzlmBXVxnwhNkosyweHKXiXK8pZzoHPvcDZ5u0fM,10341
+marlin_pytorch-0.3.2.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+marlin_pytorch-0.3.2.dist-info/top_level.txt,sha256=_depPnLIKNFiO7yb-ZWO25f79akXsuvhrUI9b_LvUXk,15
+marlin_pytorch-0.3.2.dist-info/RECORD,,
