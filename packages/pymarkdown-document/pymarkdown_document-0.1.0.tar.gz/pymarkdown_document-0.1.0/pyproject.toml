@@ -1,0 +1,93 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+# code quality and style
+ruff = {cmd = "ruff src/ tests/", help = "Lints the project, fixing errors."}
+black = {cmd = "black src/ tests/", help = "Formats the code."}
+toml-sort = {cmd = "toml-sort pyproject.toml", help = "Sorts pyproject.toml file."}
+test = {cmd = "pytest --markdown-docs -s -x -vvv src/pymarkdown_document/ tests/ docs/ README.md", help = "Run tests against the package."}
+cov = {cmd = "coverage html", help = "Generate coverage report."}
+format = {sequence = ["toml-sort", "ruff", "black"], help = "Formats the package with toml-sort, ruff, and black."}
+docs = {sequence = [{ref = "ruff"}, {cmd = "mkdocs serve"}], help = "Starts mkdocs development server."}
+publish = {script = "scripts.publish:main", help = "Builds the package and publishes to PyPI."}
+
+[tool.poetry]
+name = "pymarkdown-document"
+version = "0.1.0"
+description = "Write markdown documents with a fluent API."
+authors = ["Demetrius Panovitch <demetrius.mp789@gmail.com>"]
+license = "GPL-3.0-only"
+readme = "README.md"
+packages = [{include = "pymarkdown_document", from = "src"}]
+classifiers = [
+  "Programming Language :: Python :: 3.10"
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typing-extensions = "^4.7.0"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.20.0"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.1.17"
+mkdocstrings = "^0.22.0"
+mkdocstrings-python = "^1.1.2"
+mkdocs-gen-files = "^0.5.0"
+mkdocs-literate-nav = "^0.6.0"
+mkdocs-section-index = "^0.3.5"
+mkdocs = "^1.4.3"
+
+[tool.poetry.group.lint.dependencies]
+black = "^23.3.0"
+ruff = "^0.0.275"
+toml-sort = "^0.23.1"
+
+[tool.poetry.group.local.dependencies]
+python-dotenv = "^1.0.0"
+pre-commit = "^3.3.3"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pytest-markdown-docs = "^0.4.3"
+
+[tool.poetry.urls]
+Documentation = "https://pymarkdown-document.readthedocs.io/en/latest/"
+"Source Code" = "https://github.com/demetrius-mp/pymarkdown-document"
+"Issue Tracker" = "https://github.com/demetrius-mp/pymarkdown-document/issues"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules --cov=pymarkdown_document --cov-report=xml"
+
+[tool.ruff]
+extend-select = [
+  # isort
+  "I001",
+  # https://www.pydocstyle.org/en/stable/error_codes.html
+  "D",
+  "C"
+]
+unfixable = ["F841"]
+extend-exclude = [".venv", "~/.pyenv/"]
+ignore-init-module-imports = true
+fix = true
+
+[tool.ruff.isort]
+lines-after-imports = 2
+
+[tool.ruff.per-file-ignores]
+"scripts/*" = ["D"]
+"examples/*" = ["D"]
+"tests/*" = ["D", "E501", "F811", "F401"]
+"docs/scripts/*" = ["D"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.tomlsort]
+in_place = true
