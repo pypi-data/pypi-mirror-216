@@ -1,0 +1,3 @@
+[console_scripts]
+codespeak=codespeak.cli.main:main
+
