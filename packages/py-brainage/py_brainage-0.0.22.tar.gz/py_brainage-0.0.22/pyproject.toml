@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "pandas==1.5.3", "scikit-learn==1.2.2","numpy==1.24.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_brainage"
+version = "0.0.12"
+authors = [
+  { name="Ayodeji Ijishakin", email="ayodeji.ijishakin.21@ucl.ac.uk" },
+  { name="Francesca Biondo", email="f.biondo@ucl.ac.uk"}
+]
+description = "A python package for brain-age prediction on T1w MRI scans using various machine learnig methods."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
