@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: djangocms-photo-gallery
+Version: 0.0.2
+Project-URL: Documentation, https://github.com/MacLake/djangocms-photo-gallery#readme
+Project-URL: Issues, https://github.com/MacLake/djangocms-photo-gallery/issues
+Project-URL: Source, https://github.com/MacLake/djangocms-photo-gallery
+Author-email: Jens-Erik Weber <Jens-Erik.Weber@passiv.de>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Requires-Dist: django
+Requires-Dist: django-cms
+Requires-Dist: easy-thumbnails
+Description-Content-Type: text/markdown
+
+# djangocms-photo-gallery
+
+[![PyPI - Version](https://img.shields.io/pypi/v/djangocms-photo-gallery.svg)](https://pypi.org/project/djangocms-photo-gallery)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/djangocms-photo-gallery.svg)](https://pypi.org/project/djangocms-photo-gallery)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install djangocms-photo-gallery
+```
+
+Settings:
+
+```python
+INSTALLED_APPS: list[str] = [
+    # …
+    'easy_thumbnails',
+    'djangocms_photo_gallery',
+]
+
+THUMBNAIL_ALIASES: dict[str, dict[str, dict[str, any]]] = {
+    # …
+    'djangocms_photo_gallery':
+        {
+            'overview': {
+                'size': (300, 200),
+                'crop': 'smart',
+                'upscale': True
+            },
+            'popup':
+                {
+                    'size': (1400, 1400),
+                    'crop': False,
+                    'upscale': False
+                },
+        },
+}
+```
+The following CSS and JS libraries should be included in you base template, which should be named
+`base.html`:
+
+* [jQuery](https://jquery.com/)
+* [Fomantic-UI](https://fomantic-ui.com/)
+* [Colorbox - a jQuery lightbox](https://www.jacklmoore.com/colorbox/)
+
+Alternatively you can change the templates and use libraries of your choice.
+
+## License
+
+`djangocms-photo-gallery` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

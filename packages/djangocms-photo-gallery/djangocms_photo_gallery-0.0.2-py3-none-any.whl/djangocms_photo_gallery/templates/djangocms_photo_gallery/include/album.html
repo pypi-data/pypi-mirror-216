@@ -1,0 +1,40 @@
+{% load static i18n thumbnail sekizai_tags %}
+
+{% addtoblock "css" strip %}
+<link href="{% static 'js/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css">
+{% endaddtoblock %}
+
+<h2>{{ album }}</h2>
+<div class="ui stackable relaxed grid">
+	{% for album_picture in album.albumpicture_set.all %}
+	<div class="four wide column">
+		<h3>{{ album_picture.title }}</h3>
+		<a class="cb" href="{{ album_picture.picture.popup.url }}">
+			<img src="{{ album_picture.picture.overview.url }}">
+		</a>
+		{{ album_picture.caption }}
+		<p>
+			{% if album_picture.copyright_notice %}
+			&copy; {{ album_picture.copyright_notice }}<br/>
+			{% endif %}
+			<a href="{{ album_picture.picture.url }}">{% translate "Download" %}</a>
+		</p>
+	</div>
+	{% endfor %}
+</div>
+
+{% addtoblock "js" strip %}
+<script src="{% static 'js/colorbox/jquery.colorbox-min.js' %}"></script>
+{% endaddtoblock %}
+
+{% addtoblock "js" strip %}
+<script>
+    $(".cb").colorbox({
+        maxWidth: '100%',
+        maxHeight: '100%',
+        slideshow: true,
+        slideshowAuto: false,
+        rel: 'slideshow',
+    });
+</script>
+{% endaddtoblock %}
