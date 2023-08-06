@@ -1,0 +1,10 @@
+glueviz>=0.15
+pandas
+py_expression_eval
+scikit-image
+scikit-learn
+numba
+
+[jointBilateral]
+opencv-python
+opencv-contrib-python
