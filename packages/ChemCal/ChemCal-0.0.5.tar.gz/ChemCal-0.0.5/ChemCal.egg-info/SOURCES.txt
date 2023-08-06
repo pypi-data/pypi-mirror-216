@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+ChemCal/__init__.py
+ChemCal/_modidx.py
+ChemCal/core.py
+ChemCal.egg-info/PKG-INFO
+ChemCal.egg-info/SOURCES.txt
+ChemCal.egg-info/dependency_links.txt
+ChemCal.egg-info/entry_points.txt
+ChemCal.egg-info/not-zip-safe
+ChemCal.egg-info/requires.txt
+ChemCal.egg-info/top_level.txt
