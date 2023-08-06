@@ -1,0 +1,19 @@
+---
+# A pre-commit hook for testing unreleased changes
+# Run from tox with: tox -e py310-hook
+repos:
+  - repo: local
+    hooks:
+      - id: mdformat
+        name: mdformat-from-tox
+        entry: mdformat
+        files: tests/pre-commit-test.md
+        types: [markdown]
+        language: system
+      - id: mdformat-with-args
+        name: mdformat-with-args
+        entry: mdformat
+        args: [--align-semantic-breaks-in-numbered-lists]
+        files: tests/pre-commit-test-align_semantic_breaks_in_numbered_lists.md
+        types: [markdown]
+        language: system
