@@ -1,0 +1,13 @@
+numpy
+scipy>=1.6
+
+[docs]
+sphinx
+matplotlib
+
+[io]
+h5py
+
+[test]
+pytest
+pytest-cov
