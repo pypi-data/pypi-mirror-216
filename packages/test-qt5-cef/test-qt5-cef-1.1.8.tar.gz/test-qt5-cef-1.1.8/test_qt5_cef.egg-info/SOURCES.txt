@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+test_qt5_cef.egg-info/PKG-INFO
+test_qt5_cef.egg-info/SOURCES.txt
+test_qt5_cef.egg-info/dependency_links.txt
+test_qt5_cef.egg-info/top_level.txt
+webview/__init__.py
+webview/constant.py
+webview/qt.py
