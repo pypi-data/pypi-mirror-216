@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "diffant"
+version = "1.0.1"
+description = "tool to compare structured files like json, ini , yaml"
+authors = ["omacneil <dan@omacneil.org>"]
+license = "GNU General Public License v3.0"
+readme  = "README.md"
+homepage = "https://github.com/omacneil/diffant"
+repository = "https://github.com/omacneil/diffant"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+pyyaml = "6.0"
+types-pyyaml = "6.0.12.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "23.3.0"
+coverage = "7.2.5"
+flake8 = "6.0.0"
+isort = "5.12.0"
+mypy = "1.3.0"
+pylint = "2.17.2"
+pytest = "7.3.1"
+pytest-mock = "3.10.0"
+radon = "6.0.1"
+sourcery-cli = "^1.2.0"
+tox = "4.6.0"
+
+[tool.poetry.scripts]
+diffant = "diffant.main:main"
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.main]
+#    "ip"  : because it is as easy as ip_address or ip_num and briefer
+#    "fh"  : because it is a well known variable meaning 'file handle'
+good-names= [
+           "fh",
+           "i",
+           "ip",
+           "j",
+           "k",
+           "Run",
+           "v",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
