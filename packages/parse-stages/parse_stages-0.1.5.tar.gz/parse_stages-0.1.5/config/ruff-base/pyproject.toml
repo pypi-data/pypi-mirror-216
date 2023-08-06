@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+select = []
+ignore = [
+  # We know what "self" is... I hope
+  "ANN101",
+
+  # We leave most of the formatting to the `black` tool
+  "COM812",
+
+  # No blank lines before the class docstring, TYVM
+  "D203",
+
+  # The multi-line docstring summary starts on the same line
+  "D213",
+
+  # The Tagged and TaggedFrozen classes need to be typedload-compatible
+  "TCH",
+]
+
+[tool.ruff.isort]
+force-single-line = true
+known-first-party = ["parse_stages"]
+lines-after-imports = 2
+single-line-exclusions = ["typing"]
+
+[tool.ruff.per-file-ignores]
+# This is a test suite
+"unit_tests/**.py" = ["S101"]
