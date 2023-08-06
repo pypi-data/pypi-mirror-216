@@ -1,0 +1,2 @@
+[console_scripts]
+slib-sorter = src.__main__:sort_files
