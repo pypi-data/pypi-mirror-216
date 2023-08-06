@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: snaketool-utils
+Version: 0.0.3
+Summary: Utility functions for Snaketool CLI
+Home-page: https://github.com/beardymcjohnface/snaketool-utils
+Author: Michael Roach
+Author-email: beardymcjohnface@gmail.com
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyyaml (>=6.0)
+Requires-Dist: click (>=8.1.3)
+
+# Snaketool-utils
+Utils for Snaketool CLI
