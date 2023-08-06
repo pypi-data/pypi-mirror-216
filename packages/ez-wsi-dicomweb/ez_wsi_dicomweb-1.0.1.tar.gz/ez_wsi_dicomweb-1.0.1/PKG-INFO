@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: ez_wsi_dicomweb
+Version: 1.0.1
+Summary: A library that provides the ability to extract an image patch from a pathology DICOM whole slide image.
+Home-page: https://github.com/GoogleCloudPlatform/ez-wsi-dicomweb
+Author: Google LLC.
+Author-email: no-reply@google.com
+License: Apache 2.0
+License-File: LICENSE

@@ -1,0 +1,7 @@
+numpy
+absl-py
+cachetools
+opencv-python
+mock
+pillow
+hcls_imaging_ml_toolkit@ git+https://github.com/GoogleCloudPlatform/healthcare.git#subdirectory=imaging/ml/toolkit
