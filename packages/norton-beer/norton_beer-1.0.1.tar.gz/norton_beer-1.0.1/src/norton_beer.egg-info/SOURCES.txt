@@ -1,0 +1,16 @@
+AUTHORS
+LICENSE
+README.md
+pyproject.toml
+src/norton_beer/__init__.py
+src/norton_beer/apodization.py
+src/norton_beer/ils.py
+src/norton_beer/optimize.py
+src/norton_beer.egg-info/PKG-INFO
+src/norton_beer.egg-info/SOURCES.txt
+src/norton_beer.egg-info/dependency_links.txt
+src/norton_beer.egg-info/requires.txt
+src/norton_beer.egg-info/top_level.txt
+tests/test_apodization.py
+tests/test_ils.py
+tests/test_optimize.py
