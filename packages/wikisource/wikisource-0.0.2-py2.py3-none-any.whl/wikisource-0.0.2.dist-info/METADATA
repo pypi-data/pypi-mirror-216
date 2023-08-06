@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: wikisource
+Version: 0.0.2
+Summary: A wrapper around wikisource to search in books and books collections available on wikisource.org
+Project-URL: Homepage, https://github.com/mathieu6700417/wikisource
+Project-URL: Bug Tracker, https://github.com/mathieu6700417/wikisource/issues
+Author-email: "Mathieu G." <mathieu6700417@gmail.com>
+License-File: LICENSE
+Requires-Dist: bs4
+Requires-Dist: requests
