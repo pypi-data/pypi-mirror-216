@@ -1,0 +1,15 @@
+rozetka/entities/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rozetka/entities/category.py,sha256=OX58kA161cKbxSL3JF-5wVxwdNW6E2bqPtThzgS7bQQ,10557
+rozetka/entities/item.py,sha256=g_Ii92zhWFpy7LqIbg1LS6sykBKVYYYkxJ_S3g8WPTI,11903
+rozetka/entities/point.py,sha256=YbLtxGZFQXjSGfGqdyV6jDMeCqxxjFTtZO12J_c-GOU,555
+rozetka/entities/supercategory.py,sha256=hU2qupEJ_v6fManK5oTRWz3_w-6xG8T9r_a975gUDI0,8485
+rozetka/examples/example_category.py,sha256=LWirlHlMVcd0Nh1QGY3F7EEPrJlw-Z3FKY4xzBdMlNc,821
+rozetka/examples/example_item.py,sha256=pst6Vs8azx0wkg5J1qHbkggokrTm2-M3mMyhBlchcZ4,108
+rozetka/runners/parse_api.py,sha256=wFQzK-azoGlIhExTL9nj2WgRfIQJRNos7MmOWuVrQ40,3390
+rozetka/tools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rozetka/tools/constants.py,sha256=-1HIxfqYYn8y8XHclYe2-Uyt_FkgezdJJDxWKzk8yRE,1821
+rozetka/tools/db.py,sha256=SGz8GocubudaktKSC_XhncHiKGq9jONTd7DxjLOjqhA,6494
+rozetka/tools/tools.py,sha256=m7mccx8O7skWcVP11i3a25zvh_adF2pCGu5PhzlnR1o,3582
+rozetka_api-1.1.dist-info/METADATA,sha256=h3sxf7H80Mf-79qpcaFTxI3krflAhjYy7eV7pFg0N_c,1072
+rozetka_api-1.1.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+rozetka_api-1.1.dist-info/RECORD,,
