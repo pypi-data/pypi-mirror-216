@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "gacha"
+version = "1.0.1"
+description = "🔮 Gacha"
+license = "MIT"
+authors = ["elaresai <elaresai@gmail.com>"]
+maintainers = ["elaresai <elaresai@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/elaresai/gacha"
+repository = "https://github.com/elaresai/gacha"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+
+    "Topic :: Software Development :: Libraries",
+]
+packages = [{ include = "gacha", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.8.0,<3.12"
+attrs = "^23.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
