@@ -1,0 +1,12 @@
+pyvista>=0.39
+vtk
+PyOpenGL
+
+[:python_version > "3.8"]
+importlib-metadata
+
+[imgui]
+imgui[glfw]
+
+[imgui-bundle]
+imgui-bundle
