@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: localmd
+Version: 0.0.4
+Summary: Method for compressing neuroimaging data using spatially localized low-rank matrix decompositions
+Author: Amol Pasarkar
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: tifffile
+Requires-Dist: torch
+Requires-Dist: scipy
+Requires-Dist: jupyterlab
+Requires-Dist: tqdm
+Requires-Dist: jax (>=0.3.25)
+Requires-Dist: jaxlib (>=0.3.25)
+
