@@ -1,0 +1,1 @@
+export const id=2280;export const ids=[2280];export const modules={42280:(o,t,d)=>{d.r(t),d.d(t,{dump:()=>r.$w});var r=d(77426)}};
