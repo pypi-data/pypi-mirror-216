@@ -1,0 +1,16 @@
+click
+rich
+python-dotenv
+ratelimit
+openai
+anthropic
+google-cloud-aiplatform[pipelines]
+torch>=1.13.0
+transformers>=4.30.2
+sentencepiece
+accelerate
+
+[dev]
+pytest
+ruff
+mypy
