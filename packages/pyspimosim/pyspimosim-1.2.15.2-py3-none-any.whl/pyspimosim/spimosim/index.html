@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="lib/spimosimUi/css/spimosim.css" />
+  <link rel="stylesheet" href="lib/spimosimUi/css/spimosim-dark.css" />
+  <link rel="icon" href="lib/spimosimUi/icon/favicon.svg" />
+  <title>SpiMoSim – A modular javascript library for interactive physical models</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    
+    h1 {
+      display: block;
+      text-align: center;
+      font-size: 3rem;
+    }
+    #spimosim {
+      margin: -.5rem -.5rem 0 -.5rem;
+      border: 0;
+    }
+    #spimosim>header {
+      display: none;
+    }
+    #spimosim>header:last-child {
+      width: 100%;
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      font-weight: bold;
+      font-size: 5rem;
+      text-align: center;
+      height: 8rem;
+    }
+    .abstract {
+      font-weight: bold;
+    }
+    .footnote {
+      font-size: small;
+    }
+    .footnotes {
+      border-top: 2px solid;
+      margin-top: 8rem;
+    }
+    sup a:link {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="spimosim"><header>SpiMoSim</header></div>
+  <div class="main">
+  <section class="main-info">
+    <h1>About the library</h1>
+    <p class="abstract">A modular javascript library by Pascal Grafe to create user interfaces for simulations</p>
+    
+    <p>SpiMoSim was originally created with simple models for physical, economic and social systems on a lattice of interacting spins, agents or similar in mind. Think of the Ising model or Conway's Game of Life.</p>
+    <p>The library is highly modular which makes it useful for a much broader range of applications. In principle it can function as a GUI for any program that has some settings chosen by the user and produces data in time steps. The settings might be a couple of numbers. The user sees plots of time series and an image visuaizes the state at each step.</p>
+    <p>A design goal of SpiMoSim is to minimize the amount of code necessary to build an application. For agent based models a JSON configuration file and two javascript functions can be enough.</p>
+    <p><i>(By the way, if you see an animated SpiMoSim logo on top of this page, SpiMoSim is running right now in your browser.<sup><a href="#footnote1">1</a></sup>)</i></p>
+
+    <h2>How to build applications with SpiMoSim?</h2>
+    <p>SpiMoSim is build with web technologies in Javascript, HTML and CSS. But you do not need to be a web developer to use it for creating applications. You can try out the <a href="spimosimCreator">SpiMoSim Creator</a> directly in your browser. It might be helpful if you know a <i>little</i> <a href="https://www.w3schools.com/js/">Javascript</a>. Or <a href="https://github.com/pasgra/spimosim/releases">download the latest version of SpiMoSim</a> including some example applications (Ising model) and give it a try!</p>
+    <p>Due to the modularity of SpiMoSim the application/simulation does not need to run directly in the browser. It can communicate with an application running on some server or your local computer via a Websocket connection. You can write the application/simulation core in any language with a websocket library and let SpiMoSim provide the GUI. An implementation in Python is available in the <a href="https://github.com/pasgra/spimosim/tree/master/lib/modules/SimulationBackend/Readme_Ising_model.md">Github repository</a>.</p>
+    
+    <h2>License</h2>
+    <p>SpiMoSim is free software under the terms and conditions of the <a href="LICENSE.txt">MIT-LICENSE</a>.</p>
+    <div class="footnotes">
+      <div id="footnote1" class="footnote">
+        <p>
+          <sup>1</sup>What you see is the Multiple Epidemics Model by K. Sneppen et al. run on a 2D lattice (no connections between the <i>text</i> and the <i>background</i>):<br/>
+        </p>
+        <p class="paper">
+            Sneppen K, Trusina A, Jensen MH, Bornholdt S (2010) A Minimal Model for Multiple Epidemics and Immunity Spreading. PLoS ONE 5(10): e13326.
+            <a href="http://doi.org/doi:10.1371/journal.pone.0013326">doi:10.1371/journal.pone.0013326</a>
+        </p>
+      </div>
+      <div id="footnote2" class="footnote">
+        <p><sup>2</sup>Please report errors or submit suggestions on <a href="https://github.com/pasgra/spimosim/issues">Github</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="main-info">
+    <h1>Demonstrations</h1>
+    <ul>
+      <li>
+        <a href="ising">Ising Model</a>
+        <p>A simple demonstration of the Ising model. This is the version included in the download.</p>
+      </li>
+      <li>
+        <a href="http://www.pascalgrafe.net/spimosim/models#model=Bornholdt">The Bornholdt Model with strategy spins</a>
+        <p>A fully featured version of the market model by S. Bornholdt <sup><a href="#footnote3">3</a></sup></p>
+      </li>
+      <li>
+        <a href="dsmc">Direct Simulation Monte Carlo</a>
+        <p>A particle simulator for low density gases. This demonstration with 3D graphics is also included in the download.</p>
+      </li>
+      <li>
+        <p>A collection of different models at <a href="http://www.itp.uni-bremen.de/complex/interactive-models">Complex Systems Lab.</a></p>
+      </li>
+      <li>
+        <p>Different models implemented by Pascal Grafe available at <a href="http://www.pascalgrafe.net/spimosim/models/">pascalgrafe.net</a>
+      </li>
+    </ul>
+    
+    <div class="footnotes">
+      <div id="footnote3" class="footnote">
+        <p class="paper"><sup>3</sup>S. Bornholdt, Expectation bubbles in a spin model of markets: Intermittency from frustration across scales, Int. J. Mod. Phys. C, Vol. 12, No. 5 (2001) 667-674.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<footer>
+  <div>
+    <div class="author">
+      Powered by 
+      <a href="http://spimosim.pascalgrafe.net">SpiMoSim</a> by Pascal Grafe
+    </div>
+  </div>
+</footer>
+<script src="ext_lib/lib/modernizr/modernizr-custom.js"></script>
+<script src="ext_lib/lib/dygraph/dygraph.min.js"></script>
+<script src="ext_lib/lib/gif.js/gif.js"></script>
+<script src="ext_lib/lib/numeric/numeric-1.2.8-2.min.js"></script>
+<script src="ext_lib/lib/vis.js/vis-network.min.js"></script>
+
+<script src="lib/spimosimCore/polyfill.js"></script>
+<script src="lib/spimosimCore/tools.js"></script>
+<script src="lib/spimosimCore/spimosimCore.js"></script>
+
+<script src="lib/spimosimUi/polyfill.js"></script>
+<script src="lib/spimosimUi/graphic-tools.js"></script>
+<script src="lib/spimosimUi/spimosimUi.js"></script>
+
+<script src="lib/spimosimNetwork/networkCore.js"></script>
+<script src="lib/spimosimNetwork/networkUi.js"></script>
+
+<script src="lib/modules/SimulationBackend/webworker.js"></script>
+<script src="lib/modules/Network/2d-lattice.js"></script>
+<script src="lib/modules/NetworkUi/2d-lattice.js"></script>
+<script src="lib/modules/Network/spimosim.js"></script>
+<script src="lib/modules/NetworkUi/spimosim.js"></script>
+<script src="lib/modules/Video/2d-lattice.js"></script>
+
+<script src="lib/modules/ProtocolVar/typed-array.js"></script>
+<script src="lib/modules/ProtocolVar/typed.js"></script>
+
+<script src="lib/modules/createDrawModes/int-map.js"></script>
+<script src="lib/modules/ControlsAddOn/update-algorithms.js"></script>
+
+<script type="text/js-worker" id="model-code">
+'use strict';
+
+var EpidemicsModel = (function() {
+  var sum = tools.sum,
+    fisherYatesShuffle = tools.fisherYatesShuffle,
+    createSeries = tools.createSeries;
+
+  function EpidemicsModel(settings) {
+    this.changeSettings(settings, true);
+  }
+
+  EpidemicsModel.prototype.changeSettings = function (settings, restart) {
+    if (this.adjacencyLists === undefined || !settings.network.settingsUnchanged) {
+      this.adjacencyLists = spimosimNetwork.networkRegister.generateAdjacencyLists(settings.network);
+      
+      //Get the number of agents
+      this.n = this.adjacencyLists.length;
+    }
+    
+    //parameters
+    this.alpha = settings.parameters.alpha;
+    var differentOpinions = settings.parameters.differentOpinions;
+
+    if (restart) {
+      //The state of every agent
+      this.s = new Int32Array(this.n);
+      for (var i = 0; i < this.n; i++) {
+        this.s[i] = Math.floor(Math.random() * differentOpinions);
+      }
+
+      //How often an opinion appears
+      this.count = new Uint16Array(this.n);
+      for (var i = 0; i < this.n; i++) {
+        this.count[this.s[i]]++;
+      }
+
+      this.known = [];
+      var len = (this.n + 7) >> 3;//1 bit agent rounded to next whole byte
+      this.zeros = new Uint8Array(len);
+      for (var i = 0; i < this.n; i++) {
+        this.known[i] = new Uint8Array(len);
+      }
+      
+      for (var i = 0; i < this.n; i++) {
+        this.known[this.s[i]][i >> 3] |= (1 << (i % 8));
+      }
+      
+      this.lastOpinion = differentOpinions; 
+    }
+
+    switch (settings.updateAlgorithms) {
+      case 'random-sequential-update':
+        this.step = randomSequentialStep;
+
+        this.series = createSeries(this.n);
+        break;
+      case 'random-serial-update':
+        this.step = randomSerialStep;
+
+        break;
+      default:
+        throw 'Unknown update algorithm.';
+    }
+  };
+
+  //Returns the smallest unused integer or j if everything is in use.
+  EpidemicsModel.prototype.getUnusedOpinion = function (j) {
+    var count = this.count,
+      n = this.n;
+    var stop = this.lastOpinion;
+    this.lastOpinion = (this.lastOpinion + 1) % this.n;
+    for (; this.lastOpinion !== stop; this.lastOpinion = (this.lastOpinion + 1) % this.n) {
+      if (count[this.lastOpinion] === 0) {
+        return this.lastOpinion;
+      }
+    }
+    return j;
+  }
+
+  //Returns a randomly choosen new s value for agent i
+  EpidemicsModel.prototype.updateSI = function (i) {
+    var n = this.n;
+    
+    var neighbors = this.adjacencyLists[i];
+    var opinion = this.s[neighbors[~~(Math.random() * neighbors.length)]];//opinion of a random neighbor agent
+
+    if (!this.hadOpinion(i, opinion)) {
+      this.setOpinion(i, opinion);
+    }
+   
+    if (Math.random() < this.alpha) {
+      var k = ~~(Math.random() * this.n);//a random agent
+      var newOpinion = this.getUnusedOpinion(this.s[k]);
+      this.setOpinion(k, newOpinion);
+    }
+  };
+
+  EpidemicsModel.prototype.setOpinion = function (i, newOpinion) {
+    var oldOpinion = this.s[i];
+    if (--this.count[oldOpinion] === 0) {
+      this.known[oldOpinion].set(this.zeros);
+    }
+    this.s[i] = newOpinion;
+    ++this.count[newOpinion];
+    this.known[newOpinion][i >> 3] |= (1 << (i % 8));
+  }
+
+  EpidemicsModel.prototype.hadOpinion = function (i, newOpinion) {
+    return (this.known[newOpinion][i >> 3] >> (i % 8)) & 1 === 1;
+  }
+
+  /*
+   * Functions to replace those in EpidemicsModel
+   */
+
+  /*
+   * Updates all agents s spins in a random order.
+   */
+  function randomSequentialStep() {
+    var n = this.n,//number of spins
+      series = this.series,//All agents indizes. They might be ordered or shuffled from the last step.
+      k;//new s spin for agent i
+
+    fisherYatesShuffle(series);//Shuffle the array
+
+    //Update in the order defined in series
+    for (k = 0; k < n; k++) {
+      this.updateSI(series[k]);
+    }
+  };
+
+  /*
+   * Updates s spins of n random agents.
+   */
+  function randomSerialStep() {
+    var n = this.n,//number of spins
+      k;
+
+    //Update in the order defined in series
+    for (k = 0; k < n; k++) {
+      this.updateSI(Math.floor(n * Math.random()));
+    }
+  };
+
+  return EpidemicsModel;
+})();
+
+spimosimCore.modules.add('Model', 'epidemics', EpidemicsModel);//register model as 'epidemics'
+</script>
+<script>
+  var blob = new Blob([document.getElementById('model-code').textContent], { type: 'application/javascript' });
+spimosimCore.modules.add('ModelConfig', 'Spimosim Epidemic', {
+  info: {
+    title: 'Epidemics Model',
+  },
+  clock: {
+    fps: {
+      value: 50
+    }
+  },
+  controls: {
+    network: {
+      types: [
+        'spimosim'
+      ]
+    },
+    stateVariables: {
+      s: {
+        type: 'Uint16Array',
+        name: 'opinion',
+      },
+    },
+    parameters: {
+      differentOpinions: {
+        labelText: 'Maximum number of deseases',
+        key: 'o',
+        min: 1,
+        value: 1,
+        max: 256 * 256 - 1,
+        type: 'number'
+      },
+      alpha: {
+        labelText: 'Mutation rate α',
+        key: 'a',
+        min: 0,
+        value: 15e-6,
+        max: 1,
+        step: '5e-7',
+        type: 'number'
+      }
+    },
+    updateAlgorithms: {
+      'random-sequential-update': 'Random sequential update',
+      //'random-serial-update': 'Random serial update',
+    }
+  },
+  simulation: {
+    backend: {
+      type: 'webworker',
+      workerUrl: 'lib/modules/SimulationBackend/webworker.worker.js',
+      urls: [
+        '../../spimosimNetwork/networkCore.js',
+        '../../modules/Network/2d-lattice.js',
+        '../../modules/Network/spimosim.js',
+        '../../modules/ProtocolVar/typed-array.js',
+        URL.createObjectURL(blob)
+      ],
+      name: 'epidemics'
+    }
+  },
+  video: {
+    gifWorkerUrl: 'ext_lib/lib/gif.js/gif.worker.js',
+    drawModes: {
+      type: 'int map',
+      names: [ 's' ],
+      minValues: [ 0 ]
+    }
+  }
+});
+var initializer;
+onload = function () {
+  initializer = new spimosimUi.Initializer({
+    video: [document.getElementById('spimosim')]
+  });
+  initializer.changeModel(spimosimCore.modules.get('ModelConfig', 'Spimosim Epidemic'));
+}
+</script>
+</body>
+</html>

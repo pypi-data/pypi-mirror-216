@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../ext_lib/lib/dygraph/dygraph.min.css" />
+  <link rel="stylesheet" href="../ext_lib/css/radio-checkbox.css" />
+  <link rel="stylesheet" href="../ext_lib/css/sliders.css" />
+  <link rel="stylesheet" href="../ext_lib/lib/codemirror/codemirror.min.css" />
+  <link rel="stylesheet" href="../ext_lib/lib/codemirror/ambiance.min.css" />
+  <link rel="stylesheet" href="../lib/spimosimUi/css/spimosim.css" />
+  <link rel="stylesheet" href="../lib/spimosimUi/css/spimosim-dark.css" />
+  <link rel="stylesheet" href="creator.css" />
+
+  <link rel="icon" href="../lib/spimosimUi/icon/favicon.svg" />
+
+  <title>SpiMoSim Creator</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="spimosim-dark has-header-image">
+  <div id="creator" class="creator">
+    <div id="intro" class="creator-intro">
+      <h1>SpiMoSim Creator</h1>
+      <p>Creating simulations with SpiMoSim is easy. Try it out! SpiMoSim works as follows:</p>
+      <img class="data-flow" src="../spimosimCreator/spimosim-data-flow.svg" />
+      <p>The blue boxes depend on your model and have to be defined below. Download your simulation. Unzip the file and upload it to a webserver. The simulation is in the folder <i>model</i>.</p>
+      <p><i>Hint: If you have python3 installed you can start a webserver with the following command: </i><pre>python3 -m http.server 8080</pre></p>
+    </div>
+    <div id="config" class="creator-config"></div>
+    <div id="preview" class="creator-preview"></div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="used-libs">
+        Used libraries:
+        <ul>
+          <li class="used-lib"><a href="http://spimosim.pascalgrafe.net">SpiMoSim</a><a class="lib-license" href="../LICENSE.md">(License)</a></li>,
+          <li class="used-lib"><a href="https://modernizr.com/">Modernizr</a><a class="lib-license" href="../ext_lib/lib/modernizr/modernizr-custom.js">(License)</a></li>,
+          <li class="used-lib"><a href="https://stuk.github.io/jszip/">JSZip</a><a class="lib-license" href="../ext_lib/lib/jszip/LICENSE.markdown">(License)</a></li>,
+          <li class="used-lib"><a href="https://codemirror.net/">CodeMirror</a><a class="lib-license" href="../ext_lib/lib/codemirror/LICENSE">(License)</a></li>,
+          <li class="used-lib"><a href="http://dygraphs.com/">Dygraph</a><a class="lib-license" href="../ext_lib/lib/dygraph/dygraph.min.js">(License)</a></li>,
+          <li class="used-lib"><a href="https://jnordberg.github.io/gif.js/">gif.js</a><a class="lib-license" href="../ext_lib/lib/gif.js/LICENSE">(License)</a></li>,
+          <li class="used-lib"><a href="http://visjs.org/">vis.js</a><a class="lib-license" href="../ext_lib/lib/vis.js/vis-network.min.js">(License)</a></li>,
+          <li class="used-lib"><a href="http://www.numericjs.com/">numeric.js</a><a class="lib-license" href="../ext_lib/lib/numeric/license.txt">(License)</a></li>
+        </ul>
+      </div>
+      <div class="used-libs">
+        – Settings:
+        <ul>
+          <li class="used-lib">Codemirror keymap
+              <a class="lib-license" href="javascript:graphicTools.setCodeMirrorKeyMap('default')">default</a>
+              <a class="lib-license" href="javascript:graphicTools.setCodeMirrorKeyMap('vim')">vim</a>
+              <a class="lib-license" href="javascript:graphicTools.setCodeMirrorKeyMap('emacs')">emacs</a>
+              <a class="lib-license" href="javascript:graphicTools.setCodeMirrorKeyMap('sublime')">sublime</a>
+          </li>
+        </ul>
+      </div>
+      <div class="author">
+        Powered by
+        <a href="http://spimosim.pascalgrafe.net">SpiMoSim</a> by Pascal Grafe
+      </div>
+    </div>
+  </footer>
+  <script src="../ext_lib/lib/modernizr/modernizr-custom.js"></script>
+
+  <script>
+var isingModelHash = "#2d-lattice=true&" +
+  "beta=0.442&" +
+  "changeSettingsFunction=%2F%2F%20Generate%20adjacency%20lists%20but%20only%20if%20necessary%20(no%20reuse%20from%20last%0A%2F%2F%20simulation%20possible)%0Aif%20(%0A%20%20%2F%2F%20no%20adjacency%20lists%20saved%20-or-%0A%20%20this.adjacencyLists%20%3D%3D%3D%20undefined%20%7C%7C%20%0A%20%20%2F%2F%20different%20network%20settings%20than%20before%0A%20%20!settings.network.settingsUnchanged%0A)%20%7B%0A%0A%20%20%2F%2F%20Generate%20adjacency%20lists%0A%20%20this.adjacencyLists%20%3D%20spimosimNetwork.networkRegister.generateAdjacencyLists(settings.network)%3B" +
+    "%0A%0A%20%20%2F%2F%20Number%20of%20nodes%0A%20%20this.n%20%3D%20this.adjacencyLists.length%3B" +
+    "%0A%0A%7D%0A%0A%2F%2F%20Save%20settings%0Athis.j%20%3D%20settings.parameters.j%3B" +
+    "%0Athis.beta%20%3D%20settings.parameters.beta%3B" +
+    "%0A%0A%2F%2F%20Recreate%20sigma%20on%20restart%0Aif%20(restart)%20%7B%0A%20%20%2F%2F%20The%20state%20of%20every%20agent%0A%20%20this.sigma%20%3D%20new%20Int8Array(this.n)%3B" +
+    "%0A%20%20%2F%2F%20Initialize%20randomly%0A%20%20for%20(var%20i%20%3D%200%3B" +
+    "%20i%20%3C%20this.n%3B" +
+    "%20i%2B%2B)%20%7B%0A%20%20%20%20if%20(Math.random()%20%3C%20.5)%20%7B%0A%20%20%20%20%20%20this.sigma%5Bi%5D%20%3D%201%3B" +
+    "%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.sigma%5Bi%5D%20%3D%20-1%3B" +
+    "%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%2F%2F%20Uncomment%20to%20calculate%20the%20magnetisation%0A%2F*this.magnetisation%20%3D%200%3B" +
+    "%0A%20%20for%20(var%20i%20%3D%200%3B" +
+    "%20i%20%3C%20this.n%3B" +
+    "%20i%2B%2B)%20%7B%0A%20%20%20%20this.magnetisation%20%2B%3D%20this.sigma%5Bi%5D%20%2F%20this.n%3B" +
+    "%0A%20%20%7D*%2F%0A%0A%2F%2Fconsole.log(settings)%3B" +
+    "%20%2F%2F%20Log%20settings%20to%20web%20console%0A&" +
+  "colorSet=%7B%0AUP%3A%5B'%23AA2222'%5D%2C%0ADOWN%3A%5B'%2322AA22'%5D%0A%7D&" +
+  "createDrawModes=spins%20and%20flips&" +
+  "description=%3Ch2%3EAbout%20the%20model%3C%2Fh2%3E%0A%3Cp%3EYou%20probably%20know%20the%20Ising%20Model.%3C%2Fp%3E%0A%3Cp%3EHere%20the%20original%20(German)%20paper%3A%3C%2Fp%3E%0A%3Cp%20class%3D%22paper%22%3EErnst%20Ising.%20%E2%80%9EBeitrag%20zur%20Theorie%20des%20Ferromagnetismus%E2%80%9C.%20In%3A%20Zeitschrift%20f%C3%BCr%20Physik%0A31.1%20(1925)%2C%20S.%20253%E2%80%93258.%20issn%3A%200044-3328.%3C%2Fp%3E&" +
+  "enableNetworkLib=true&" +
+  "labelTextP0=inverse%20Temperature%20%CE%B2&" +
+  "labelTextP1=coupling%20j&" +
+  "maxP0=10&" +
+  "maxP1=10&" +
+  "maxValues=1&" +
+  "minP0=0&" +
+  "minP1=-10&" +
+  "minValues=-1&" +
+  "modelCode='use%20strict'%3B" +
+    "%0A%0Afunction%20Model(settings)%20%7B%0A%20%20this.changeSettings(settings%2C%20true)%3B" +
+    "%0A%7D%3B" +
+    "%0A%0AModel.prototype.changeSettings%20%3D%20function%20(settings%2C%20restart)%20%7B%0A%2F%2F%20Generate%20adjacency%20lists%20but%20only%20if%20necessary%20(no%20reuse%20from%20last%0A%2F%2F%20simulation%20possible)%0Aif%20(%0A%20%20%2F%2F%20no%20adjacency%20lists%20saved%20-or-%0A%20%20this.adjacencyLists%20%3D%3D%3D%20undefined%20%7C%7C%20%0A%20%20%2F%2F%20different%20network%20settings%20than%20before%0A%20%20!settings.network.settingsUnchanged%0A)%20%7B%0A%0A%20%20%2F%2F%20Generate%20adjacency%20lists%0A%20%20this.adjacencyLists%20%3D%20spimosimNetwork.networkRegister.generateAdjacencyLists(settings.network)%3B" +
+    "%0A%0A%20%20%2F%2F%20Number%20of%20nodes%0A%20%20this.n%20%3D%20this.adjacencyLists.length%3B" +
+    "%0A%0A%7D%0A%0A%2F%2F%20Save%20settings%0Athis.j%20%3D%20settings.parameters.j%3B" +
+    "%0Athis.beta%20%3D%20settings.parameters.beta%3B" +
+    "%0A%0A%2F%2F%20Recreate%20sigma%20on%20restart%0Aif%20(restart)%20%7B%0A%20%20%2F%2F%20The%20state%20of%20every%20agent%0A%20%20this.sigma%20%3D%20new%20Int8Array(this.n)%3B" +
+    "%0A%20%20%2F%2F%20Initialize%20randomly%0A%20%20for%20(var%20i%20%3D%200%3B" +
+    "%20i%20%3C%20this.n%3B" +
+    "%20i%2B%2B)%20%7B%0A%20%20%20%20if%20(Math.random()%20%3C%20.5)%20%7B%0A%20%20%20%20%20%20this.sigma%5Bi%5D%20%3D%201%3B" +
+    "%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20this.sigma%5Bi%5D%20%3D%20-1%3B" +
+    "%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A%2F%2F%20Uncomment%20to%20calculate%20the%20magnetisation%0A%2F*this.magnetisation%20%3D%200%3B" +
+    "%0A%20%20for%20(var%20i%20%3D%200%3B" +
+    "%20i%20%3C%20this.n%3B" +
+    "%20i%2B%2B)%20%7B%0A%20%20%20%20this.magnetisation%20%2B%3D%20this.sigma%5Bi%5D%20%2F%20this.n%3B" +
+    "%0A%20%20%7D*%2F%0A%0A%2F%2Fconsole.log(settings)%3B" +
+    "%20%2F%2F%20Log%20settings%20to%20web%20console%0A%0A%7D%3B" +
+    "%0A%0AModel.prototype.step%20%3D%20function%20(varsToSave%2C%20time)%20%7B%0Afor%20(var%20k%20%3D%200%3B" +
+    "%20k%20%3C%20this.n%3B" +
+    "%20k%2B%2B)%20%7B%0A%20%20var%20i%20%3D%20Math.floor(this.n%20*%20Math.random())%3B" +
+    "%20%2F%2F%20A%20random%20agent%0A%0A%20%20%2F%2F%20sum%20up%20neighbor%20spins%0A%20%20var%20neighbors%20%3D%20this.adjacencyLists%5Bi%5D%3B" +
+    "%20%2F%2F%20The%20neighbors%20of%20i%0A%20%20var%20sum%20%3D%200%3B" +
+    "%0A%20%20for%20(var%20j%20%3D%200%3B" +
+    "%20j%20%3C%20neighbors.length%3B" +
+    "%20j%2B%2B)%20%7B%0A%20%20%20%20sum%20%2B%3D%20this.sigma%5Bneighbors%5Bj%5D%5D%3B" +
+    "%0A%20%20%7D%0A%0A%20%20var%20energy%20%3D%20this.j%20*%20sum%3B" +
+    "%20%2F%2F%20Energy%20of%20all%20connections%20to%20spin%20i%0A%0A%20%20%2F%2F%20New%20value%20via%20heat%20bath%20algorithm%0A%20%20var%20probability%20%3D%201%20%2F%20(1%20%2B%20Math.exp(-2%20*%20this.beta%20*%20energy))%3B" +
+    "%0A%20%20if%20(Math.random()%20%3C%20probability)%20%7B%0A%20%20%20%20this.sigma%5Bi%5D%20%3D%201%3B" +
+    "%0A%20%20%7D%20else%20%7B%0A%20%20%20%20this.sigma%5Bi%5D%20%3D%20-1%3B" +
+    "%0A%20%20%7D%0A%7D%0A%0A%2F%2F%20Uncomment%20to%20calculate%20the%20magnetisation%0A%2F*%0A%20%20this.magnetisation%20%3D%200%3B" +
+    "%0A%20%20for%20(var%20i%20%3D%200%3B" +
+    "%20i%20%3C%20this.n%3B" +
+    "%20i%2B%2B)%20%7B%0A%20%20%20%20this.magnetisation%20%2B%3D%20this.sigma%5Bi%5D%20%2F%20this.n%3B" +
+    "%0A%20%20%7D%0A%20%20*%2F%0A%0A%7D%3B" +
+    "%0A%0AspimosimCore.modules.add('Model'%2C%20'Ising'%2C%20Model)%3B" +
+    "%0A&" +
+  "modelObjectName=Model&" +
+  "network-type=quadratic&" +
+  "numberOfParameters=2&" +
+  "numberOfStateVars=1&" +
+  "quadratic=true&" +
+  "rowsP0=3&" +
+  "rowsP1=3&" +
+  "simulationBackendType=webworker&" +
+  "spimosim=true&" +
+  "stepFunction=for%20(var%20k%20%3D%200%3B" +
+    "%20k%20%3C%20this.n%3B" +
+    "%20k%2B%2B)%20%7B%0A%20%20var%20i%20%3D%20Math.floor(this.n%20*%20Math.random())%3B" +
+    "%20%2F%2F%20A%20random%20agent%0A%0A%20%20%2F%2F%20sum%20up%20neighbor%20spins%0A%20%20var%20neighbors%20%3D%20this.adjacencyLists%5Bi%5D%3B" +
+    "%20%2F%2F%20The%20neighbors%20of%20i%0A%20%20var%20sum%20%3D%200%3B" +
+    "%0A%20%20for%20(var%20j%20%3D%200%3B" +
+    "%20j%20%3C%20neighbors.length%3B" +
+    "%20j%2B%2B)%20%7B%0A%20%20%20%20sum%20%2B%3D%20this.sigma%5Bneighbors%5Bj%5D%5D%3B" +
+    "%0A%20%20%7D%0A%0A%20%20var%20energy%20%3D%20this.j%20*%20sum%3B" +
+    "%20%2F%2F%20Energy%20of%20all%20connections%20to%20spin%20i%0A%0A%20%20%2F%2F%20New%20value%20via%20heat%20bath%20algorithm%0A%20%20var%20probability%20%3D%201%20%2F%20(1%20%2B%20Math.exp(-2%20*%20this.beta%20*%20energy))%3B" +
+    "%0A%20%20if%20(Math.random()%20%3C%20probability)%20%7B%0A%20%20%20%20this.sigma%5Bi%5D%20%3D%201%3B" +
+    "%0A%20%20%7D%20else%20%7B%0A%20%20%20%20this.sigma%5Bi%5D%20%3D%20-1%3B" +
+    "%0A%20%20%7D%0A%7D%0A%0A%2F%2F%20Uncomment%20to%20calculate%20the%20magnetisation%0A%2F*%0A%20%20this.magnetisation%20%3D%200%3B" +
+    "%0A%20%20for%20(var%20i%20%3D%200%3B" +
+    "%20i%20%3C%20this.n%3B" +
+    "%20i%2B%2B)%20%7B%0A%20%20%20%20this.magnetisation%20%2B%3D%20this.sigma%5Bi%5D%20%2F%20this.n%3B" +
+    "%0A%20%20%7D%0A%20%20*%2F%0A&" +
+  "stepP0=0.001&" +
+  "stepP1=0.01&" +
+  "title=Ising&" +
+  "typeSV0=SpinArray&" +
+  "valueP0=0.442&" +
+  "valueP1=1&" +
+  "varNameP0=beta&" +
+  "varNameP1=j&" +
+  "varNameSV0=sigma&" +
+  "varNames=sigma";
+if (location.hash.length <= 1 &&
+    confirm("Do you want to load the Ising model to get started?")) {
+  location.hash = isingModelHash;
+}
+  </script>
+  
+  <script src="../lib/spimosimCore/polyfill.js"></script>
+  <script src="../lib/spimosimCore/tools.js"></script>
+  <script src="../lib/spimosimCore/spimosimCore.js"></script>
+  
+  <script src="../lib/spimosimUi/polyfill.js"></script>
+  <script src="../lib/spimosimUi/graphic-tools.js"></script>
+  <script src="../lib/spimosimUi/spimosimUi.js"></script>
+  <script src="../lib/spimosimCreator/spimosimCreator.js"></script>
+  <script src="../lib/spimosimCreator/lib-info.js"></script>
+  <script src="../lib/spimosimCreator/ext-lib-info.js"></script>
+  <script src="../lib/spimosimUi/lib-info.js"></script>
+
+  <script>
+(function () {
+  var BASIC_SCRIPT_COUNT = document.scripts.length - 1;
+  var divConfig = document.getElementById('config');
+  var divPreview = document.getElementById('preview');
+  document.addEventListener('readystatechange', function () {
+    if (document.readyState !== 'interactive') return;
+    
+    var p = document.createElement('p');
+    p.innerText = 'Loading SpiMoSim modules...';
+    var progress = document.createElement('progress');
+    var s = Object.values(document.scripts);
+    var max = s.length - BASIC_SCRIPT_COUNT - 1;
+    progress.max = max;
+    progress.style.float = 'right';
+    
+    var i = 0;
+    function increaseProgress() {
+      progress.value = ++i;
+      if (i === max) {
+        p.remove();
+        for (var j = BASIC_SCRIPT_COUNT + 1; j < s.length; j++) {
+          s[j].onload = undefined;
+        }
+        divConfig.style.visibility = 'unset';
+        divPreview.style.visibility = 'unset';
+        window.creator = new spimosimCreator(divConfig, divPreview);
+        creator.loadModel();
+      }
+    }
+    for (var j = BASIC_SCRIPT_COUNT + 1; j < s.length; j++) {
+      s[j].onload = increaseProgress;
+    }
+    p.appendChild(progress);
+    divConfig.parentElement.insertBefore(p, divConfig);
+    
+    divConfig.style.visibility = 'hidden';
+    divPreview.style.visibility = 'hidden';
+  });
+}());
+  </script>
+  
+  <script defer src="../ext_lib/lib/jszip/jszip.js"></script>
+  <script defer src="../ext_lib/lib/dygraph/dygraph.min.js"></script>
+  <script defer src="../ext_lib/lib/gif.js/gif.js"></script>
+  <script defer src="../ext_lib/lib/numeric/numeric-1.2.8-2.min.js"></script>
+  <script defer src="../ext_lib/lib/vis.js/vis-network.min.js"></script>
+  <script defer src="../ext_lib/lib/codemirror/codemirror.min.js"></script>
+  <script defer src="../ext_lib/lib/codemirror/javascript.min.js"></script>
+  <script defer src="../ext_lib/lib/codemirror/vim.min.js"></script>
+  <script defer src="../ext_lib/lib/codemirror/emacs.min.js"></script>
+  <script defer src="../ext_lib/lib/codemirror/sublime.min.js"></script>
+        
+  <script defer src="../lib/spimosimNetwork/lib-info.js"></script>
+  <script defer src="../lib/spimosimNetwork/networkCore.js"></script>
+  <script defer src="../lib/spimosimNetwork/networkUi.js"></script>
+  
+  <script defer src="../lib/spimosimUi/dark-theme-switch.js"></script>
+  
+
+  <script defer src="../lib/modules/Network/templates.js"></script>
+  <script defer src="../lib/modules/Network/1d-lattice.js"></script>
+  <script defer src="../lib/modules/Network/dynamic-directed.js"></script>
+  <script defer src="../lib/modules/Network/random-undirected.js"></script>
+  <script defer src="../lib/modules/Network/nd-lattice.js"></script>
+  <script defer src="../lib/modules/Network/moore2d-lattice.js"></script>
+  <script defer src="../lib/modules/Network/2d-lattice.js"></script>
+  <script defer src="../lib/modules/Network/quadratic.js"></script>
+  <script defer src="../lib/modules/Network/barabasi-albert.js"></script>
+  <script defer src="../lib/modules/Network/barabasi-albert-lattice-vis.js"></script>
+  <script defer src="../lib/modules/Network/moore-quadratic.js"></script>
+  <script defer src="../lib/modules/Network/spimosim.js"></script>
+  
+  <script defer src="../lib/modules/NetworkUi/templates.js"></script>
+  <script defer src="../lib/modules/NetworkUi/1d-lattice.js"></script>
+  <script defer src="../lib/modules/NetworkUi/dynamic-directed.js"></script>
+  <script defer src="../lib/modules/NetworkUi/random-undirected.js"></script>
+  <script defer src="../lib/modules/NetworkUi/nd-lattice.js"></script>
+  <script defer src="../lib/modules/NetworkUi/moore2d-lattice.js"></script>
+  <script defer src="../lib/modules/NetworkUi/2d-lattice.js"></script>
+  <script defer src="../lib/modules/NetworkUi/quadratic.js"></script>
+  <script defer src="../lib/modules/NetworkUi/barabasi-albert.js"></script>
+  <script defer src="../lib/modules/NetworkUi/barabasi-albert-lattice-vis.js"></script>
+  <script defer src="../lib/modules/NetworkUi/moore-quadratic.js"></script>
+  <script defer src="../lib/modules/NetworkUi/spimosim.js"></script>
+  
+  <script defer src="../lib/modules/Video/templates.js"></script>
+  <script defer src="../lib/modules/Video/canvas.js"></script>
+  <script defer src="../lib/modules/Video/dummy.js"></script>
+  <script defer src="../lib/modules/Video/1d-lattice.js"></script>
+  <script defer src="../lib/modules/Video/2d-lattice.js"></script>
+  <script defer src="../lib/modules/Video/nd-lattice.js"></script>
+  <script defer src="../lib/modules/Video/webgl-video.js"></script>
+  <script defer src="../lib/modules/Video/network.js"></script>
+  <script defer src="../lib/modules/Video/dynamic-directed-network.js"></script>
+  
+  <script defer src="../lib/modules/DataAggregator/templates.js"></script>
+  <script defer src="../lib/modules/DataAggregator/cumulated.js"></script>
+  <script defer src="../lib/modules/DataAggregator/multi-series-cumulated.js"></script>
+  <script defer src="../lib/modules/DataAggregator/distribution.js"></script>
+  <script defer src="../lib/modules/DataAggregator/multi-series-distribution.js"></script>
+  <script defer src="../lib/modules/DataAggregator/protocol.js"></script>
+  <script defer src="../lib/modules/DataAggregator/auto-correlation.js"></script>
+  <script defer src="../lib/modules/DataAggregator/multi-series-auto-correlation.js"></script>
+  <script defer src="../lib/modules/DataAggregator/mean-value.js"></script>
+  <script defer src="../lib/modules/DataAggregator/multi-series-mean-value.js"></script>
+  <script defer src="../lib/modules/DataAggregator/energy.js"></script>
+  <script defer src="../lib/modules/DataAggregator/protocol-function.js"></script>
+  
+  <script defer src="../lib/modules/PlotDisplay/templates.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/cumulated.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/multi-series-cumulated.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/distribution.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/multi-series-distribution.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/auto-correlation.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/multi-series-auto-correlation.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/mean-value.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/multi-series-mean-value.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/energy.js"></script>
+  <script defer src="../lib/modules/PlotDisplay/protocol-function.js"></script>
+  
+  <script defer src="../lib/modules/PlotBackend/webworker.worker.js"></script>
+  <script defer src="../lib/modules/PlotComputer/templates.js"></script>
+  <script defer src="../lib/modules/PlotComputer/cumulated.js"></script>
+  <script defer src="../lib/modules/PlotComputer/distribution.js"></script>
+  <script defer src="../lib/modules/PlotComputer/auto-correlation.js"></script>
+  <script defer src="../lib/modules/PlotComputer/mean-value.js"></script>
+
+  <script defer src="../lib/modules/ProtocolVar/templates.js"></script>
+  <script defer src="../lib/modules/ProtocolVar/string.js"></script>
+  <script defer src="../lib/modules/ProtocolVar/typed.js"></script>
+  <script defer src="../lib/modules/ProtocolVar/typed-array.js"></script>
+  <script defer src="../lib/modules/ProtocolVar/spin-array.js"></script>
+  
+  <script defer src="../lib/modules/VarInitializer/templates.js"></script>
+  <script defer src="../lib/modules/VarInitializer/spin-image.js"></script>
+  <script defer src="../lib/modules/VarInitializer/spin-expectation-value.js"></script>
+  <script defer src="../lib/modules/VarInitializer/copy.js"></script>
+  <script defer src="../lib/modules/VarInitializer/int-range.js"></script>
+  <script defer src="../lib/modules/VarInitializer/float-expectation-value.js"></script>
+  
+  <script defer src="../lib/modules/ControlsAddOn/templates.js"></script>
+  <script defer src="../lib/modules/ControlsAddOn/update-algorithms.js"></script>
+  
+  <script defer src="../lib/modules/HelpTextGenerator/templates.js"></script>
+  <script defer src="../lib/modules/HelpTextGenerator/ResearchGroupShort.js"></script>
+  
+  <script defer src="../lib/modules/createDrawModes/templates.js"></script>
+  <script defer src="../lib/modules/createDrawModes/spins-and-flips.js"></script>
+  <script defer src="../lib/modules/createDrawModes/int-map.js"></script>
+  <script defer src="../lib/modules/createDrawModes/custom-canvas.js"></script>
+  <script defer src="../lib/modules/createDrawModes/grey-scale-spins.js"></script>
+  <script defer src="../lib/modules/createDrawModes/weighted-spins.js"></script>
+  
+  <script defer src="../lib/modules/SimulationBackend/templates.js"></script>
+  <script defer src="../lib/modules/SimulationBackend/server.js"></script>
+  <script defer src="../lib/modules/SimulationBackend/webworker.js"></script>
+  <script defer src="../lib/modules/SimulationBackend/synchronous.js"></script>
+  <script defer src="../lib/modules/FitBackend/templates.js"></script>
+  <script defer src="../lib/modules/FitBackend/webworker.js"></script>
+  <script defer src="../lib/modules/FitBackend/synchronous.js"></script>
+  <script defer src="../lib/modules/PlotBackend/templates.js"></script>
+  <script defer src="../lib/modules/PlotBackend/webworker.js"></script>
+  <script defer src="../lib/modules/PlotBackend/synchronous.js"></script>
+</body>
+</html>
