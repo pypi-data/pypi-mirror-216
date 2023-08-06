@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-06-25 17:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:17
+msgid "Monday"
+msgstr "Monday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:18
+msgid "Tuesday"
+msgstr "Tuesday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:19
+msgid "Wednesday"
+msgstr "Wednesday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:20
+msgid "Thursday"
+msgstr "Thursday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:21
+msgid "Friday"
+msgstr "Friday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:22
+msgid "Saturday"
+msgstr "Saturday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:23
+msgid "Sunday"
+msgstr "Sunday"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:42
+msgid "Favorite"
+msgstr "Favorite"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:61
+msgid "Repeat"
+msgstr "Repeat"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:69
+msgid "Name"
+msgstr "Name"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:82
+msgid "Enable"
+msgstr "Enable"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/AlarmWidget.py:98
+msgid "Additional Settings"
+msgstr "Additional Settings"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/TimeWidget.py:13
+msgid "Time"
+msgstr "Time"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/UI.py:43
+msgid "Name forbidden"
+msgstr "Name forbidden"
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/UI.py:81
+msgid "Alarm "
+msgstr "Alarm "
+
+#: ../OpenRadio/OpenRadio//modules/Alarm/UI.py:110
+msgid "Metric time:"
+msgstr "Metric time:"

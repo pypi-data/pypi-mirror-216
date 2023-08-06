@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-06-25 16:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ../OpenRadio/OpenRadio//modules/DAB/const.py:10
+msgid "Finished scanning DAB Channels"
+msgstr "Finished scanning DAB Channels"
+
+#: ../OpenRadio/OpenRadio//modules/DAB/const.py:11
+msgid "Scanning channel: {}"
+msgstr "Scanning channel: {}"
+
+#: ../OpenRadio/OpenRadio//modules/DAB/const.py:12
+msgid "Station is unusable"
+msgstr "Station is unusable"
+
+#: ../OpenRadio/OpenRadio//modules/DAB/const.py:13
+msgid "Waiting for signal please be patient"
+msgstr "Waiting for signal please be patient"
+
+#: ../OpenRadio/OpenRadio//modules/DAB/const.py:14
+msgid "Playing:"
+msgstr "Playing:"
+
+#: ../OpenRadio/OpenRadio//modules/DAB/const.py:15
+msgid "An error occurred inside pysimpledab: {}: {}"
+msgstr "An error occurred inside pysimpledab: {}: {}"
+
+#: ../OpenRadio/OpenRadio//modules/DAB/player.py:142
+msgid "Rescan"
+msgstr "Rescan"
