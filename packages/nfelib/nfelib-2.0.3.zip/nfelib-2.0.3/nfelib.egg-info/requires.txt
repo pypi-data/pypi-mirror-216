@@ -1,0 +1,10 @@
+six
+xsdata
+
+[test]
+beautifulsoup4
+pytest
+pytest-cov
+requests
+tox
+xmldiff
