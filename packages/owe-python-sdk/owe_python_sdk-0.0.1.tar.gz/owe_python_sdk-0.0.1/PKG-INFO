@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: owe-python-sdk
+Version: 0.0.1
+Summary: 
+Home-page: https://github.com/tapis-project/tapis-workflows
+Author: Nathan Freeman
+Author-email: nfreeman@tacc.utexas.edu.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Project-URL: Repository, https://github.com/tapis-project/tapis-workflows
