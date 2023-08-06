@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hatch-my-plugin"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "warise", email = "example@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Framework :: Hatch",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/unknown/hatch-my-plugin#readme"
+Issues = "https://github.com/unknown/hatch-my-plugin/issues"
+Source = "https://github.com/unknown/hatch-my-plugin"
+
+[tool.hatch.version]
+path = "hatch_my_plugin/__about__.py"
+
+[project.entry-points.hatch]
+myplug = "hatch_my_plugin.hooks"
