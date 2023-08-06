@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: xsskiller
+Version: 1.1.0
+Summary: Automated tool scans URLS parameters to check if reflected XSS is vulnerable
+Home-page: https://github.com/abeljm/XSSKiller
+Author: Avelino Navarro
+Author-email: abeljm2017@gmail.com
+License: UNKNOWN
+Description: # XSSKiller
+        Herramienta automatizada escanea los parametros de las URLS para verificar si es vulnerable XSS
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Description-Content-Type: text/markdown
