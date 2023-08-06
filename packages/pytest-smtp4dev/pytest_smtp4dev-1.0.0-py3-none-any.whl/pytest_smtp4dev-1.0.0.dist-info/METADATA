@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pytest-smtp4dev
+Version: 1.0.0
+Summary: Plugin for smtp4dev API
+Author-email: Kirill Matveev <matveevkirill@internet.ru>
+Maintainer-email: Kirill Matveev <matveevkirill@internet.ru>
+Keywords: pytest-smtp4dev
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.9.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pytest-smtp4dev
+Smtp4dev adapter
