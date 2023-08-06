@@ -1,0 +1,7 @@
+requests~=2.31.0
+
+[dev]
+black
+flake8
+isort
+python-dotenv
