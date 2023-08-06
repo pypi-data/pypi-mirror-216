@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+sscred/__init__.py
+sscred/acl.py
+sscred/blind_pedersen.py
+sscred/blind_signature.py
+sscred/commitment.py
+sscred/config.py
+sscred/pack.py
+sscred_fork.egg-info/PKG-INFO
+sscred_fork.egg-info/SOURCES.txt
+sscred_fork.egg-info/dependency_links.txt
+sscred_fork.egg-info/requires.txt
+sscred_fork.egg-info/top_level.txt
+test/test_sscred.py
