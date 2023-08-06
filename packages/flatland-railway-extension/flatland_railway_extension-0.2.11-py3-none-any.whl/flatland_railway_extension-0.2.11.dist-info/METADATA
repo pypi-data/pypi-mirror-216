@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: flatland-railway-extension
+Version: 0.2.11
+Summary: Extends Flatland Railway Simulator with helpful features.
+Home-page: https://github.com/aiAdrian/flatland_railway_extension
+Author: Adrian Egli
+Author-email: 3dhelp@gmail.com
+Keywords: flatland,railway,extension,dynamics,simulation,multi-agent,reinforcement learning
+Requires-Python: >=3.6, <4
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: flatland-rl-optimised-code
+
