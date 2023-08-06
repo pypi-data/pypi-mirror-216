@@ -1,0 +1,14 @@
+title = "TimeManager"
+
+[owner]
+name = "Abhiram M Krishnakumar"
+dob = "2023-06-26T9:56" # First class dates
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+version = "1.0.3"
+name = "TimeManager"
+description = "A python module which helps you manage time related tasks."
+readme = "README.md"
