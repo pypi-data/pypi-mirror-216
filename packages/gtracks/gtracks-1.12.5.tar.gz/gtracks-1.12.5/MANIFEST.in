@@ -1,0 +1,7 @@
+include src/gtracks/hg19.bed12.bed.gz
+include src/gtracks/hg38.bed12.bed.gz
+include src/gtracks/pancreatic_islet_atac_seq_ins_igf2.bw
+include src/gtracks/sp9512.a02u1.bed12.bed.gz
+include src/gtracks/sp9512_frond_turion_dmr.bed
+include src/gtracks/sp9512_frond_example.bw
+include src/gtracks/sp9512_turion_example.bw
