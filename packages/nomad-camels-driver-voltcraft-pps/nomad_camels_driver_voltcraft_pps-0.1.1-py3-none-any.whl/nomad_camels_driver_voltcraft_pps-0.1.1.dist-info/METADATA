@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: nomad-camels-driver-voltcraft-pps
+Version: 0.1.1
+Summary: Driver for communicating with a Voltcraft PPS power supply.
+Author-email: FAIRmat - HU Berlin <nomad-camels@fau.de>
+Project-URL: GitHub Page, https://github.com/FAU-LAP/NOMAD-CAMELS
+Project-URL: Documentation, https://fau-lap.github.io/NOMAD-CAMELS/doc/instruments/instruments.html
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Requires-Python: >=3.9.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pyvisa
+Requires-Dist: pyvisa-py
+
+# NOMAD-CAMELS Driver for Voltcraft PPS
+
+Driver for communicating with a Voltcraft PPS power supply written for the measurement software [NOMAD-CAMELS](https://fau-lap.github.io/NOMAD-CAMELS/).
+
+Implements the `VISA_Device`, `VISA_Signal_RO`, and `VISA_Signal` classes used in many device drivers.
+
+## Documentation
+
+For more information and documentation visit [this page](https://fau-lap.github.io/NOMAD-CAMELS/doc/instruments/instruments.html).
