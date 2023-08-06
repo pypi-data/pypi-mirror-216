@@ -1,0 +1,15 @@
+fortitudo/tech/__init__.py,sha256=kcjTKoYAAXds3pnOoSH5vVIlRN5WbPU3etzFKkxFYOA,1210
+fortitudo/tech/data/parameters.csv,sha256=YrofLTutaUl5rhjBLhKzG8mB9agSnSpKOgC8TzEIjDY,636
+fortitudo/tech/data/pnl.csv,sha256=tr8drcEE2bwLRFdrQOX4Nvunz5rMICDXrU8jRHdQNPc,2056742
+fortitudo/tech/data/risk_factors.csv,sha256=rbSTW_pco3cFSXZFQBu17hsdqOvRC8c0u9-2OlHJZpI,8127147
+fortitudo/tech/data/time_series.csv,sha256=7avss30969lE19JOH5bd0Oeb7a9JjZeIC9w5uXNvqXs,3725592
+fortitudo/tech/data.py,sha256=d5V89XHqri39r6Kc-KVoIy0CBAGZjuGK_hYvd1iZkD4,3626
+fortitudo/tech/entropy_pooling.py,sha256=CkYt2AyrpuJoy9fTYV1sKf8RzFqwPdJUDWxuUkMsuZM,3122
+fortitudo/tech/functions.py,sha256=_H3vBRFYFRzdnSbawEPjahY71DKzmmN6mJmWziphylU,7333
+fortitudo/tech/optimization.py,sha256=a3FmvzyM1nwZJKOmVVfFmU3I_TmFHLaxXjqBOopAbMI,13161
+fortitudo/tech/option_pricing.py,sha256=fNZUpeKGKKqwiTkTfik0B1gtKNmjPIuRnXt2HM5yI0g,2406
+fortitudo/tech/simulation.py,sha256=9czor-LBr5_rXBTiKWh70AdZYktH_7veJROK49uA7fw,2083
+fortitudo_tech-0.10.2.dist-info/METADATA,sha256=hJOcASwSb54SeeYTMSRBu57NdpWeG6xwkb6xk53QI-M,4886
+fortitudo_tech-0.10.2.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+fortitudo_tech-0.10.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+fortitudo_tech-0.10.2.dist-info/RECORD,,
