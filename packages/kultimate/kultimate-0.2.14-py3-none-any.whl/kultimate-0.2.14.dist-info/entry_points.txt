@@ -1,0 +1,3 @@
+[console_scripts]
+kultimate=kultimate.utils.app_config:run
+
