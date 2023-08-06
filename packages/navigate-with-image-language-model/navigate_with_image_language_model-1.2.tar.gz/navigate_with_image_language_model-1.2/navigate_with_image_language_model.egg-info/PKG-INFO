@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: navigate-with-image-language-model
+Version: 1.2
+Summary: The package provides a pipeline that utilizes models like ClipSeg and StableDiffusion or ClipSeg and SegmentAnything to prompt an image for a path.
+Requires-Python: >=3.9
