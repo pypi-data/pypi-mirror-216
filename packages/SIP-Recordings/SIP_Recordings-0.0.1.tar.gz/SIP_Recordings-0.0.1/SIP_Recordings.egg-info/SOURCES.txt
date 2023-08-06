@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+SIP_Recordings.egg-info/PKG-INFO
+SIP_Recordings.egg-info/SOURCES.txt
+SIP_Recordings.egg-info/dependency_links.txt
+SIP_Recordings.egg-info/top_level.txt
+src/SIP_Recordings/Start_SIP_recordings.py
+src/SIP_Recordings/Stop_SIP_recordings.py
+src/SIP_Recordings/__init__.py

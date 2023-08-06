@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "SIP_Recordings"
+version = "0.0.1"
+authors = [
+  { name="Alex McIntosh", email="alex.mcintosh@vbrick.com" },
+]
+description = "Scripts to start and stop multiple SIP recordings at the same time using Vbrick Rev."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[tool.setuptools.packages]
+find = {}
