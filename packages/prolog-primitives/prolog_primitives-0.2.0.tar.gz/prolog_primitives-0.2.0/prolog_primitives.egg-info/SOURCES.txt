@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+prolog_primitives/__init__.py
+prolog_primitives/__main__.py
+prolog_primitives.egg-info/PKG-INFO
+prolog_primitives.egg-info/SOURCES.txt
+prolog_primitives.egg-info/dependency_links.txt
+prolog_primitives.egg-info/not-zip-safe
+prolog_primitives.egg-info/requires.txt
+prolog_primitives.egg-info/top_level.txt
