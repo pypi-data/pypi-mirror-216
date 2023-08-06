@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: bqemulatormanager
+Version: 0.2.1
+Summary: bqemulatormanager is a wrapper of bigquery-emulator which provides us BigQuery mock working in local machine.
+Author: gyuta
+Author-email: kuroshiba0408@gmail.com
+Requires-Python: >=3.8,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: db-dtypes (>=1.0.0,<2.0.0)
+Requires-Dist: google-auth (>=2.17.2,<3.0.0)
+Requires-Dist: google-cloud-bigquery (>=2.34.4)
+Requires-Dist: psutil (>=5.0.0,<6.0.0)
+Requires-Dist: pyyaml
+Description-Content-Type: text/markdown
+
+# BiqQueryEmulator Manager
+
+
+this package is wrapper of [bigquery-emulator](https://github.com/goccy/bigquery-emulator) which provides us BigQuery mock working in local machine.
+
+using this package, you can
+
+- do unit test of your sql
+- download the schema of big query, and use it to make test data
+
+## usage
+1. following [instruction](https://github.com/goccy/bigquery-emulator#install),  download `bigquery-emulator` command.
+
+2. install this package. 
+```
+pip install bqemulatormanager
+```
+
+3. test your sql.
+```python
+import bqemulatormanager as bqem
+import pandas as pd
+
+manager = bqem.Manager(project='test', schema_path='resources/schema_example.yaml')
+
+with manager:
+    data = pd.DataFrame([
+        {'id': 1, 'name': 'sato'},
+        {'id': 2, 'name': 'yamada'}
+    ])
+
+    manager.load(data, 'dataset1.table_a')
+
+    sql = 'SELECT id, name FROM `dataset1.table_a`'
+
+    df = manager.query(sql)
+print(df)
+```
+
+unit test example is [here](https://github.com/gyuta/bqemulatormanager/blob/main/examples/testing.py).
+
+### automatically detect schema
+When called `Manager.load`, `SchemaManager` search correspond table schema from `schema_path` (default is `bqem_master_schema.yaml`).
+
+If schema definition cannot be found, `SchemaManager` request it from BigQuery in production environment and update master schema file.

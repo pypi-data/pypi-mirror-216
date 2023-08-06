@@ -1,0 +1,52 @@
+[tool.poetry]
+name = "bqemulatormanager"
+version = "0.2.1"  # using poetry-dynamic-versioning
+description = "bqemulatormanager is a wrapper of bigquery-emulator which provides us BigQuery mock working in local machine."
+authors = ["gyuta <kuroshiba0408@gmail.com>", "M3, Inc."]
+readme = "README.md"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+style = "pep440"
+pattern = "^(?P<base>\\d+\\.\\d+\\.\\d+)"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"
+pyyaml = "*"
+google-cloud-bigquery = ">=2.34.4"
+db-dtypes = "^1.0.0"
+psutil = "^5.0.0"
+google-auth = "^2.17.2"
+
+[tool.poetry.group.dev.dependencies]
+pyproject-flake8 = "*"
+tox = "*"
+coverage = "*"
+isort = "*"
+black = "*"
+mypy = "*"
+pandas-stubs = "*"
+flake8-unused-arguments = "^0.0.13"
+
+[tool.flake8]
+per-file-ignores = """
+  __init__.py: F401
+"""
+max-line-length = 160
+exclude = "venv/*,tox/*"
+# ignore methods like __enter__, __exit__
+unused-arguments-ignore-dunder = true
+
+[tool.black]
+target-version = ['py38', 'py39', 'py310', 'py311']
+line-length = 160
+
+[tool.isort]
+line_length = 160
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
