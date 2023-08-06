@@ -1,0 +1,13 @@
+#
+# Tools for locan development
+#
+-r ./requirements
+coverage
+build
+twine
+black
+pre-commit
+asv
+ruff
+mypy
+-r docs/requirements
