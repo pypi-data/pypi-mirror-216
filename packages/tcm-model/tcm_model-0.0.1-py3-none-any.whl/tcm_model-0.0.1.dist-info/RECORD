@@ -1,0 +1,17 @@
+classification_model/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+classification_model/config.yml,sha256=cLtGXxq7l3eqNXLAC1EAAAwZyiGjK33FOKsdyuGps38,826
+classification_model/pipeline.py,sha256=vgXrGIMZrXOBP7-xfPvqgzC5IEPGUNASU553snoQlxE,1869
+classification_model/predict.py,sha256=cIECaqL585qqOsehg_d44VyQLbAsSPfR_f7Ki9rpfBI,1083
+classification_model/train_pipeline.py,sha256=AdupMa_BSX1OyJ7JmNhIv6Q1-UK1Lni4iexJo6jyfLk,974
+classification_model/datasets/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+classification_model/datasets/test.csv,sha256=_XPCafw5xdcxh_t65_L-X8BNxbbQzKMCgMODroooJec,73449
+classification_model/preprocessing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+classification_model/preprocessing/data_manager.py,sha256=fZqaS97xpnsGATIqHxLlnDH8J1CAyIwOQ7xwtDOd2Pg,1734
+classification_model/preprocessing/features.py,sha256=eQJbwwSalS-jHV6kU-VRiDMAayetYMJYN_CVhH1LhW0,1888
+classification_model/preprocessing/validation.py,sha256=-iMbX1r8GAjGCPX9IB_gcbgWPXCgIMJjFIWjHcEOJQ4,1731
+classification_model/trained_models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+classification_model/trained_models/titanic_classification_model_output_v0.0.1.pkl,sha256=boj7JKf7Uu4yVIb7Ge30-LhfZ1-JHGz-muM9edYcZcM,4846
+tcm_model-0.0.1.dist-info/METADATA,sha256=YE9JOIdMPH19fQc20xOqN-nCNXBgJe36EbQqY8I8fV8,1354
+tcm_model-0.0.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+tcm_model-0.0.1.dist-info/top_level.txt,sha256=VmH6pvgPC8wm0j78xquIgbVbxaqmh34ZTHhYhLSNQ0M,21
+tcm_model-0.0.1.dist-info/RECORD,,
