@@ -1,0 +1,5 @@
+# Add here external Python modules dependencies, one per line. Module names
+# should match https://pypi.python.org/pypi names. For the full spec or
+# dependency lines, see https://pip.readthedocs.org/en/1.1/requirements.html
+
+breezy != 3.3.0 # version 3.3.0 cannoted be compiled on Debian <= 11 (requires new rustc, and does not provide wheels)
