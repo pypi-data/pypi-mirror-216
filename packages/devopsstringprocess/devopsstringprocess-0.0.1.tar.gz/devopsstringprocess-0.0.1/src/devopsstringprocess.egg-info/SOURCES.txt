@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+src/devopsstringprocess.egg-info/PKG-INFO
+src/devopsstringprocess.egg-info/SOURCES.txt
+src/devopsstringprocess.egg-info/dependency_links.txt
+src/devopsstringprocess.egg-info/requires.txt
+src/devopsstringprocess.egg-info/top_level.txt
+src/stringstandardization/__init__.py
+src/stringstandardization/stringstd.py
+test/test_stringstd.py
