@@ -1,0 +1,9 @@
+archive/
+build/
+dist/
+mycotools.egg-info/
+prepUpdate.py
+*.swp
+*.pyc
+include.txt
+build.sh
