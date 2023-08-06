@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: modular_cli_sdk
+Version: 1.1.0
+Summary: Core component for CLI tools built atop of Modular Framework
+License: Apache-2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Provides-Extra: hvac
+License-File: LICENSE
