@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: pytest-group-by-class
+Version: 0.1.3
+Summary: A Pytest plugin for running a subset of your tests by splitting them in to groups of classes.
+Home-page: https://github.com/marco-mn/pytest-group-by-class
+Author: marco-mn
+Author-email: snoopy@peanuts.com
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pytest (>=2.5)
+
+Welcome to pytest-group-by-class!
+=============================
+
+_pytest-group-by-class allows you to split your test runs into groups of tests that belongs to the same class
+to make it easier to split up your test runs._
+
+
+Usage
+--
+
+    # Install pytest-group-by-class
+    pip install pytest-group-by-class
+
+    # Split the tests into groups based on class and run the second group
+    py.test --test-group-class --test-group-class-id 2
+
+    # Split the tests into groups based on class and run the tests belonging ot class NameOfTheClassToBeExecuted
+    py.test --test-group-class --test-group-class-name NameOfTheClassToBeExecuted
+
+
+
+Why would I use this?
+--
+
+Sometimes you may have some long running test jobs that take a
+while to complete. This can be a major headache when trying to
+run tests quickly. pytest-group-by-class allows you to easily say
+"split my tests into groups of classes and run the second group".
+This is primarily useful in the context of CI builds.
