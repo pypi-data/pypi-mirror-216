@@ -1,0 +1,159 @@
+Metadata-Version: 2.1
+Name: miniagent
+Version: 0.0.9
+Summary: Multi-adaptable and lightweight server framework based on Flask
+Home-page: https://github.com/tanminkwan/local-agent
+Author: tanminkwan
+Author-email: tanminkwan@gmail.com
+License: MIT
+Keywords: flask,sqlalchemy,scheduler,zipkin,kafka
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aniso8601 (>=9.0.1)
+Requires-Dist: APScheduler (>=3.10.1)
+Requires-Dist: blinker (>=1.6.2)
+Requires-Dist: certifi (>=2022.12.7)
+Requires-Dist: charset-normalizer (>=3.1.0)
+Requires-Dist: click (>=8.1.3)
+Requires-Dist: Flask (>=2.3.1)
+Requires-Dist: Flask-API (>=3.0.post1)
+Requires-Dist: Flask-APScheduler (>=1.12.4)
+Requires-Dist: Flask-Cors (>=3.0.10)
+Requires-Dist: Flask-RESTful (>=0.3.9)
+Requires-Dist: Flask-SQLAlchemy (>=3.0.3)
+Requires-Dist: greenlet (>=2.0.2)
+Requires-Dist: idna (>=3.4)
+Requires-Dist: itsdangerous (>=2.1.2)
+Requires-Dist: Jinja2 (>=3.1.2)
+Requires-Dist: kafka-python (>=2.0.2)
+Requires-Dist: MarkupSafe (>=2.1.2)
+Requires-Dist: polling2 (>=0.5.0)
+Requires-Dist: python-dateutil (>=2.8.2)
+Requires-Dist: pytz (>=2023.3)
+Requires-Dist: pytz-deprecation-shim (>=0.1.0.post0)
+Requires-Dist: requests (>=2.29.0)
+Requires-Dist: six (>=1.16.0)
+Requires-Dist: SQLAlchemy (>=2.0.11)
+Requires-Dist: typing-extensions (>=4.5.0)
+Requires-Dist: tzdata (>=2023.3)
+Requires-Dist: tzlocal (>=4.3)
+Requires-Dist: urllib3 (>=1.26.15)
+Requires-Dist: Werkzeug (>=2.3.2)
+Requires-Dist: PyGithub (>=1.58.1)
+Requires-Dist: py-zipkin (>=1.2.8)
+
+# Miniagent
+
+Miniagent is a multi-adaptable and lightweight server framework based on **Flask**.
+
+## Installing
+
+Install and update using **pip**:
+```
+$ pip install -U miniagent
+```
+
+## Advised Virtual Environment Install
+
+Virtual env is highly advisable because the more projects you have, the more likely it is that you will be working with different versions of Python itself, or at least different versions of Python libraries.
+
+```
+$ pip install virtualenv
+```
+Next create a virtualenv:
+```
+$ virtualenv venv
+New python executable in venv/bin/python
+Installing distribute............done.
+$ . venv/bin/activate
+(venv)$
+```
+Now install miniagent on the virtual env, it will install all the dependencies and these will be isolated from your system’s python packages
+
+```
+(venv)$ pip install miniagent
+```
+
+## Example code download
+
+Create an example project after installing miniagent
+
+`$ mini-project tanminkwan/local-agent test_project`
+
+Then test_project directory and files are created like the tree below.
+```
+└── test_project
+    ├── run.py
+    ├── config.py
+    └── myapp
+        ├── __init__.py
+        ├── adaptee.py
+        ├── adapter.py
+        ├── dbquery.py
+        ├── executer.py
+        └── model
+            ├── __init__.py
+            └── mymodels.py
+```
+
+## A Simple Example
+
+There must be two files config.py and run.py in the base directory.
+```
+# this is a sample config.py
+import os
+from datetime import datetime, timedelta
+
+AGENT_NAME = 'BLUE_SKULL_NO13'
+
+ZIPKIN_ADDRESS = ('localhost',9411)
+
+COMMANDER_SERVER_URL = 'http://localhost:8809'
+
+base_dir = os.path.abspath(os.path.dirname(__file__))
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(base_dir, 'app.db')
+
+CUSTOM_MODELS_PATH = "myapp.model"
+
+KAFKA_BOOTSTRAP_SERVERS = ['localhost:9092']
+
+EXECUTERS_BY_TOPIC =\
+{
+    "TEST_TOPIC":
+    "example.executer.say_hello.PrintParam",
+    "TEST2_TOPIC":
+    "example.executer.say_hello.PrintParam",
+}
+
+DEFAULT_ADAPTEES =\
+{
+    "myapp.adapter.printer_adapters.PrinterAdapter":
+    "myapp.adaptee.tadaptees.CardPrinterAdaptee",
+    "myapp.adapter.payment_adapters.PaymentAdapter":
+    "myapp.adaptee.tadaptees.CreditCardPaymentAdaptee",
+}
+SCHEDULED_JOBS =\
+[
+    {
+        "executer":"myapp.executer.scheduler.DeviceHealth",
+        "trigger":"interval",
+        "id":"DeviceHealth",
+        "name":"Devices Health Check",
+        "minutes":5,
+        "start_date":datetime.now()+timedelta(minutes=1)
+    }
+]
+```
+```
+# save this as run.py
+from miniagent import app
+
+app.run(host="0.0.0.0", port=17080, use_reloader=False, debug=True)
+```
+```
+$ python run.py
+  * Running on http://127.0.0.1:17080/ (Press CTRL+C to quit)
+```
