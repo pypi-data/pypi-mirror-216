@@ -1,0 +1,9 @@
+[project]
+name = "edcrypt"
+authors = [
+    {name = "Jams Peter", email = "jams-peter@outlook.com"},
+]
+readme = "README.md"
+requires-python = ">=3.9"
+version = "2023.6.30"
+dependencies = []
