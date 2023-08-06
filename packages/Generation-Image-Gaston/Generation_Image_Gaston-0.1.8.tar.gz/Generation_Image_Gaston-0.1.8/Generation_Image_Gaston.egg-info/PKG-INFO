@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: Generation-Image-Gaston
+Version: 0.1.8
+Author: Gaston Robé
+Author-email: gaston01.robe@gmail.com
+License: MIT
+Keywords: GASTON PROCESSING COMPUTER VISION
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+# GÃ©nÃ©ration-image_Gaston
+## Description
+GÃ©nÃ©ration-image_Gaston est un package Python qui permet de gÃ©nÃ©rer des images Ã  partir d'un prompt donnÃ© en utilisant le site craiyon.com. Ce package utilise Selenium pour automatiser le processus de gÃ©nÃ©ration et de tÃ©lÃ©chargement des images.
+
+## Installation
+Vous pouvez installer le package GÃ©nÃ©ration-image_Gaston en utilisant pip :
+
+pip install GÃ©nÃ©ration-image_Gaston
+Assurez-vous d'avoir les dÃ©pendances suivantes installÃ©es :
+
+undetected_chromedriver
+selenium
+Elle s'installe toute seul normalement
+## Utilisation
+Voici un exemple d'utilisation du package :
+
+
+from Generation_Image_Gaston import SelectStyle
+
+SelectStyle("Trois Chat qui pleure...", "PHOTO")
+La fonction SelectStyle prend deux paramÃ¨tres :
+
+Prompt : Le texte Ã  utiliser comme prompt pour gÃ©nÃ©rer l'image.
+Style : Le style d'image souhaitÃ©. Les options disponibles sont "PHOTO", "DESSIN" et "ART".
+La fonction effectue les Ã©tapes suivantes :
+
+Ouvre le site craiyon.com.
+Accepte les cookies (si nÃ©cessaire).
+SÃ©lectionne le style d'image spÃ©cifiÃ©.
+Saisit le prompt donnÃ©.
+GÃ©nÃ¨re l'image.
+TÃ©lÃ©charge l'image sur votre ordinateur.
+Veuillez noter que le processus de gÃ©nÃ©ration peut prendre du temps. Une fois le tÃ©lÃ©chargement terminÃ©, le message "Le tÃ©lÃ©chargement est fini" sera affichÃ©.
+
+Assurez-vous d'avoir Chrome installÃ© sur votre systÃ¨me, car le package utilise Chrome pour interagir avec le site web.
+
+Change Log
+==========
+
+0.0.1 (26/06/2023)
+-------------------
+- First Release
