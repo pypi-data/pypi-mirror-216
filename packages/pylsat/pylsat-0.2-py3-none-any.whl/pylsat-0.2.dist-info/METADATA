@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pylsat
+Version: 0.2
+Summary: A Python library for validating Lightning Service Authentication Tokens (LSAT) in a FastAPI application.
+Home-page: https://github.com/plebos/pylsat
+Author: Tal Shmueli
+Author-email: tal@shmueli.org
+License: MIT
+License-File: LICENSE
+Requires-Dist: fastapi
+Requires-Dist: starlette
+Requires-Dist: pymacaroons
+Requires-Dist: datetime
+Requires-Dist: hashlib
+Requires-Dist: uuid
+
