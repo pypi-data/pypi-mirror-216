@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2023 CERN.
+#
+# Invenio-RDM-Migrator is free software; you can redistribute it and/or modify
+# it under the terms of the MIT License; see LICENSE file for more details.
+
+"""Identifiers generators module."""
+
+from uuid import uuid4
+
+from ..state import GLOBAL
+
+
+def generate_uuid(data):
+    """Generate a UUID."""
+    return str(uuid4())
+
+
+def pid_pk():
+    """Generate an autoincrementing numeric primary key."""
+    state = GLOBAL.STATE
+    state_value = state.get("max_pid_pk")
+    if not state_value:
+        value = 1000000
+        state.add("max_pid_pk", {"value": 1000000})
+    else:
+        value = state_value["value"] + 1
+        state.update("max_pid_pk", {"value": value})
+
+    return str(value)
+
+
+def generate_recid(data, status="R"):
+    """Generate a record id object."""
+    # pk is not the pid_value, that comes from rec.json.id in the tg
+    return {
+        "pk": pid_pk(),
+        "obj_type": "rec",
+        "pid_type": "recid",
+        "status": status,
+    }
