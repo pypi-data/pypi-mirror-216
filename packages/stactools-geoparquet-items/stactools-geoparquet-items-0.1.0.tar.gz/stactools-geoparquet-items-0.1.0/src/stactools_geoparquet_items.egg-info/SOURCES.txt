@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/stactools/geoparquet_items/__init__.py
+src/stactools/geoparquet_items/commands.py
+src/stactools_geoparquet_items.egg-info/PKG-INFO
+src/stactools_geoparquet_items.egg-info/SOURCES.txt
+src/stactools_geoparquet_items.egg-info/dependency_links.txt
+src/stactools_geoparquet_items.egg-info/requires.txt
+src/stactools_geoparquet_items.egg-info/top_level.txt
