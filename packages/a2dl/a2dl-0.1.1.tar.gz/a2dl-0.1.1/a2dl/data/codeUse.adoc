@@ -1,0 +1,71 @@
+:toc:
+:icon_image_rel_path: images/3.png
+:icon_name: byCode
+:read_more: #sec-byCode
+
+[[sec-byCode]]
+== Use by Code
+
+image::{icon_image_rel_path}[The Icon 3s Alternative Text,160,160,float="right"]
+
+=== a2dl as Module
+:variable_name: short_description
+
+The script comes as a python module and thus can be used in own programmes. It consists of Module a2dl with classes Diagicon and Diaglibrary.
+
+WARNING:: Please note, that the module uses a logger "a2dl".
+
+=== Examples
+
+----
+
+# Create new Icon from a adoc file
+my_icon = Diagicon(name='tigabeatz')
+x = my_icon.from_adoc('./data/example.adoc')
+
+# Create new Library, add the Icon and export as file
+my_library = Diaglibrary()
+my_library.icons.append(my_icon)
+my_library.write('./data/test-generated-library.xml')
+
+# Create a Library from a folder structure full of asciidoc files and write as file
+my_library2 = Diaglibrary()
+my_library2.from_folder('./data')
+my_library2.write('./data/test-generated-library.xml')
+
+----
+
+=== Static Configuration
+
+Overwrite to your own liking
+
+----
+
+# The following string determines the file search pattern:
+GLOB_STRING = '**/*.adoc'  # Search for all adoc files recursively
+
+# Detecting relevant lines in files can be customized with the following strings:
+ADOC_VARIABLE_IDENTIFIER = [["==", "===", "====", "====="],
+                            ":variable_name:"]  # Extract content afer each identifier until the next occurrence of i in [0]
+ADOC_ICON_IDENTIFIER = ":icon_image_rel_path:"
+ADOC_ICON_TITLE_IDENTIFIER = ":icon_name:"
+ADOC_ICON_MORE_IDENTIFIER = ":read_more:"
+LINES2SKIP = ['[quote', 'image::']  # skips lines starting with
+
+# Formatting of the Tooltip can be customized with the following strings:
+HTML_TOOLTIP = '<h1 class="dio_tooltip" >%name%</h1>'  # The HTML for each section will get appended to this string
+HTML_SECTION = '<h2 class="dio_tooltip" >{}</h2>%{}%'  # variable['title'], variable['name']
+HTML_WARNING = '<b class="dio_tooltip" >{}</b>'
+
+# "read more" will be the last line in the html tooltip
+HTML_MORE_BASEURL = '{}'  # 'or: use a base ur like https://example.com/{}
+                          #      if articles details page share the same base url'
+HTML_MORE = '<br> <a href="{}" target="_more">Image generated with Stable Diffusion</a>'
+
+# Icon styling
+ICON_STYLE = "rounded=1;whiteSpace=wrap;html=1;"
+
+# If sections include images as .png, these will be encoded and included. The image styling can be modified:
+IMAGE_STYLE = 'fillColor=none;rounded=1;shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/{},{};'  # The type and image data are set from the file
+
+----
