@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: adaboost-model
+Version: 0.2.2
+Summary: Academic Performance Prediction
+Author-email: Queency Koh <queencykoh@gmail.com>
+Project-URL: Homepage, https://github.com/queency-koh/sis-model
+Project-URL: Bug Tracker, https://github.com/queency-koh/sis-model/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Academic Performance Prediction using Adaboost Model

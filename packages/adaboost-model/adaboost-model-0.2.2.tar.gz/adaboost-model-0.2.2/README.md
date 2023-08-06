@@ -1,0 +1,1 @@
+# Academic Performance Prediction using Adaboost Model

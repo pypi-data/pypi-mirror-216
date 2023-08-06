@@ -1,0 +1,22 @@
+[build-system]
+requires = ["numpy>=1.18.1,<1.19.2","pandas>=0.25.3,<1.3.5","scikit-learn>=0.22.1,<1.1.2","joblib>=0.14.1,<1.0.0","setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaboost-model"
+version = "0.2.2"
+authors = [
+  { name="Queency Koh", email="queencykoh@gmail.com" },
+]
+description = "Academic Performance Prediction"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/queency-koh/sis-model"
+"Bug Tracker" = "https://github.com/queency-koh/sis-model/issues"
