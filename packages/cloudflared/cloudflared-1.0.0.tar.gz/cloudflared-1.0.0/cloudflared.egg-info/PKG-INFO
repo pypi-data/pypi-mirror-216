@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: cloudflared
+Version: 1.0.0
+Summary: A Python package to interact with cloudflared
+Home-page: https://github.com/SigireddyBalaSai/cloudflared.py
+Author: Sigireddy BalaSai
+Author-email: sigireddybalasai@gmail.com
+License: Apache-2.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# A Cloudflare Api Wrapper for Python
+
+
+## Installation
+
+```bash
+pip install cloudflared
+```
