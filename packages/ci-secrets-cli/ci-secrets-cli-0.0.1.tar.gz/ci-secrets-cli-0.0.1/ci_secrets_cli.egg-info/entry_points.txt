@@ -1,0 +1,2 @@
+[console_scripts]
+ci-secrets-cli = ci_secrets_cli.cli:cli
