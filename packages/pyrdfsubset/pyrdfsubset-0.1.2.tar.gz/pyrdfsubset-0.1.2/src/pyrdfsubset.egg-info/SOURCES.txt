@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/pyrdfsubset/__init__.py
+src/pyrdfsubset/__main__.py
+src/pyrdfsubset/rdfsubset.py
+src/pyrdfsubset/sparqlsubset.py
+src/pyrdfsubset.egg-info/PKG-INFO
+src/pyrdfsubset.egg-info/SOURCES.txt
+src/pyrdfsubset.egg-info/dependency_links.txt
+src/pyrdfsubset.egg-info/entry_points.txt
+src/pyrdfsubset.egg-info/requires.txt
+src/pyrdfsubset.egg-info/top_level.txt
