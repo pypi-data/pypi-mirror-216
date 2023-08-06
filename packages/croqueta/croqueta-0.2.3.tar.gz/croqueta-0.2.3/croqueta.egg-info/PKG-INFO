@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: croqueta
+Version: 0.2.3
+Summary: A bunch of utilities to code even faster.
+Home-page: https://github.com/juanluisrto/croqueta
+Author: juanluisrto
+Author-email: juanluis.rto@gmail.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Croqueta <img src="img/croqueta.png" alt="Croqueta Logo" width="60" height="60" style="vertical-align: middle;">
+
+
+
+A library with all sorts of utils and handy functions for non-production code.
+
+
+
+Installation
+------------
+```pip install croqueta```
+
