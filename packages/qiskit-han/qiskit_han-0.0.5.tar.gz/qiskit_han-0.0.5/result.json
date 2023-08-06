@@ -1,0 +1,48 @@
+{
+  "backend_name": "ibmq_lima",
+  "backend_version": "1.0.49",
+  "date": "06/29/2023, 13:48:05",
+  "header": {
+    "backend_name": "ibmq_lima",
+    "backend_version": "1.0.49",
+    "_ibm_tracing_": {
+      "uber-trace-id": "a80d436b2a75be57a572c430833e856d:7e03ae4a284e62df:87b59361b2f0ebaa:1" //Hardware
+    }
+  },
+  "qobj_id": "2bb1c798-3542-4686-9c6e-2ecd9268c5c4",
+  "job_id": "circuit-runner_ciefoha07eh21g5dep2g_7cbb_0",
+  "status": "Successful completion",
+  "success": true,
+  "results": [
+    {
+      "shots": 1024,
+      "success": true,
+      "data": { "counts": { "0x0": 1, "0x1": 27, "0x2": 38, "0x3": 958 } }, //Hardware
+      "meas_level": 2,
+      "header": {
+        "qubit_labels": [
+          ["q", 0],
+          ["q", 1],
+          ["q", 2],
+          ["q", 3],
+          ["q", 4]
+        ],
+        "n_qubits": 5,
+        "qreg_sizes": [["q", 5]],
+        "clbit_labels": [
+          ["c", 0],
+          ["c", 1]
+        ],
+        "memory_slots": 2,
+        "creg_sizes": [["c", 2]],
+        "name": "circuit-121",
+        "global_phase": 0.0,
+        "metadata": {}
+      },
+      "status": "done"
+    }
+  ],
+  "execution_id": "83560382-1640-11ee-b762-b02628f7f59e", //Hardware
+  "time_taken": 1.946047773, //Hardware
+  "error": null
+}
