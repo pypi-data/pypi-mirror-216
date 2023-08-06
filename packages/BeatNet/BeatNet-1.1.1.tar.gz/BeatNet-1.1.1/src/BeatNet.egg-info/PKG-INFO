@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: BeatNet
+Version: 1.1.1
+Summary: A package for online and offline music beat, downbeat tempo and meter tracking using BeatNet AI
+Home-page: https://github.com/mjhydri/BeatNet
+Author: Mojtaba Heydari
+Author-email: mhydari@ur.rochester.edu
+Keywords: Beat tracking,Downbeat tracking,meter detection,tempo tracking,particle filtering,real-time beat,real-time tempo
+License-File: LICENSE
