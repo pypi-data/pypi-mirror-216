@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: cryptul
+Version: 0.0.1
+Summary: A set of tools for crypto CTFs and more
+Author-email: Frollo <fral01@protonmail.com>
+Project-URL: Homepage, https://github.com/Frollamma/cryptul/
+Project-URL: Bug Tracker, https://github.com/Frollamma/cryptul/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+A set of tools for crypto CTFs and more
