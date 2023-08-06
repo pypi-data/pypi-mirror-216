@@ -1,0 +1,5 @@
+[console_scripts]
+aliby-annotate=aliby.bin.annotate:annotate
+aliby-run=aliby.bin.run:run
+aliby-visualise=aliby.bin.visualise:napari_overlay
+
