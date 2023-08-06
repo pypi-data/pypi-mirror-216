@@ -1,0 +1,15 @@
+gemseo>=5
+matplotlib
+numpy
+sphinx<8
+
+[doc]
+sphinx<8
+furo
+sphinx_gallery
+
+[test]
+covdefaults
+pytest
+pytest-cov
+pytest-xdist
