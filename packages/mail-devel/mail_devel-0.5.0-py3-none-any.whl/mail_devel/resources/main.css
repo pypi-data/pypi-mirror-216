@@ -1,0 +1,186 @@
+:root {
+  --back: #333;
+  --border: gray;
+  --primary: #ccc;
+  --secondary: #999;
+  --highlight: #555;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --back: white;
+    --border: gray;
+    --primary: black;
+    --secondary: #333;
+    --highlight: lightgray;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body, input, select, textarea, table, #editor {
+  background-color: var(--back);
+  color: var(--primary);
+}
+
+button {
+  text-transform: capitalize;
+}
+
+#wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-areas: "nav mailbox" "nav header" "nav content";
+  grid-template-columns: 200px auto;
+  grid-template-rows: 30% 150px auto;
+}
+
+*:focus-visible {outline: none}
+.hidden {display: none !important}
+.highlight {color: #469}
+.selected {background-color: var(--highlight)}
+.unseen {font-weight: bold}
+
+#content {grid-area: content}
+#mailbox {grid-area: mailbox}
+#nav {
+  display: flex;
+  flex-direction: column;
+  grid-area: nav;
+}
+
+#mailboxes {
+  display: block;
+  flex: 1;
+  font-size: 15pt;
+  height: 80%;
+  width: 100%;
+}
+#mailboxes option {padding: 5px}
+
+#mailbox table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+#mailbox table tr:hover {background-color: var(--highlight)}
+#mailbox table th, #mailbox table td {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#mailbox #mailbox-from, #mailbox #mailbox-to {max-width: 150px; width: 15%}
+#mailbox #mailbox-date {width: 170px}
+#mailbox #mailbox-flags {width: 10%}
+
+#mailbox table th {
+  border: 1px solid gray;
+  background-color: var(--highlight);
+}
+
+#mailbox table td {border: 1px solid var(--border)}
+
+#logo {
+  font-family: monospace;
+  font-size: 20pt;
+  padding: 5% 0;
+  text-align: center;
+}
+
+.header {
+  background-color: var(--highlight);
+  border-bottom: 2px solid var(--border);
+  border-top: 2px solid var(--border);
+}
+.header th {
+  text-align: right;
+  width: 100px;
+}
+.header .buttons td {text-align: right}
+.header input {
+  box-sizing: border-box;
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+}
+
+.buttons button {margin-right: 5px}
+
+.container {height: 100%; overflow: hidden}
+.container textarea, .container iframe {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  resize: none;
+  width: 100%;
+}
+.container textarea {box-sizing: border-box; padding: 5px}
+
+#btn-dropdown button {
+  cursor: pointer;
+}
+#btn-dropdown {
+  position: relative;
+  display: inline-block;
+}
+#btn-dropdown div {
+  background-color: var(--secondary);
+  display: none;
+  min-width: 150px;
+  position: absolute;
+  right: 5px;
+}
+#btn-dropdown a {
+  display: block;
+  margin: 3px;
+  text-align: center;
+}
+#btn-dropdown:hover div {display: block}
+#btn-dropdown a:hover {background: var(--highlight)}
+
+#editor {
+  display: grid;
+  z-index: 1000;
+  position: fixed;
+  border: 2px solid var(--border);
+  top: 150px;
+  left: 150px;
+  bottom: 150px;
+  right: 150px;
+  grid-template-rows: max-content max-content auto;
+}
+
+#editor-content {
+  display: block;
+  height: 100%;
+}
+#editor-header {
+  display: block;
+  max-height: 200px;
+  overflow-y: scroll;
+  padding: 3px;
+}
+#editor-header th {
+  position: relative;
+  min-width: 150px;
+}
+#editor-header .delete {
+  content: "&#128465;";
+}
+#editor-buttons {
+  background-color: var(--highlight);
+  text-align: right;
+  padding: 3px;
+}
+#editor-header td {width: 100%}
+#editor-header .control {
+  min-width: 20px;
+}
+
+
