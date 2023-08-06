@@ -1,0 +1,5 @@
+[console_scripts]
+G5compare = GooseHDF5:_G5compare_cli
+G5list = GooseHDF5:_G5list_cli
+G5modify = GooseHDF5:_G5modify_cli
+G5print = GooseHDF5:_G5print_cli
