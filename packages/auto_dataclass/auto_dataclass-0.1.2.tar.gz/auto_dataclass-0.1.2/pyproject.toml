@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "auto_dataclass"
+version = "0.1.1"
+description = ""
+authors = ["AlexandrZhydyk <zhydykalex@ukr.net>"]
+readme = "README.md"
+packages = [{include = "auto_dataclass"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.2"
+flake8 = "^6.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[project]
+name = "auto_dataclass"
+authors = [{name = "Oleksandr Zhydyk", email = "zhydykalex@ukr.net"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+
+[project.urls]
+Home = "https://github.com/OleksandrZhydyk/Auto-Dataclass.git"
