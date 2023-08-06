@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=67.8.0", "wheel>=0.40.0"]  # build requirements (don't include build or twine)
+build-backend = "setuptools.build_meta"
+
+
+[project]
+version = "0.4.7"                       # increment version number before pushing to pypi
+name = "propeller_design_tools"
+authors = [{ name = "Jacob Bronson", email = "bronsoneering@gmail.com" }]
+description = "Python 3.7 package that provides exactly what it sounds like by automating usage of MIT professor Mark Drela's GNU-licensed CLI-utilities XFOIL and XROTOR."
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ['propeller', 'design', 'tools', 'computational', 'fluid', 'dynamics', 'CFD', 'STL', 'prop', 'rotor',
+    'xrotor', 'xfoil', 'MIT', 'Drela', 'Youngren', 'engineering', 'aero', 'dynamic', 'aerodynamic',
+    'hydrodynamic']
+license = { file = "LICENSE" }
+
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Scientific/Engineering",
+    "Development Status :: 3 - Alpha",
+]
+
+dependencies = [
+    "numpy>=1.21.2",
+    "matplotlib>=3.4.3",
+    "scipy>=1.7.1",
+    "pyqtgraph>=0.12.4",
+    "pyopengl>=3.1.6",
+    "numpy-stl>=2.16.3",
+]
+
+
+[project.optional-dependencies]
+gui = ["PyQt5>=5.15.9"]
+
+
+[project.urls]
+Homepage = "https://github.com/helloDestroyerOfWorlds/propeller_design_tools.git"
+Documentation = "https://github.com/helloDestroyerOfWorlds/propeller_design_tools.git"
+Repository = "https://github.com/helloDestroyerOfWorlds/propeller_design_tools.git"
+Changelog = "https://github.com/helloDestroyerOfWorlds/propeller_design_tools.git"
+
+
+# ... other project metadata fields as specified in:
+#     https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
