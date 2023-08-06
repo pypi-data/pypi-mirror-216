@@ -1,0 +1,31 @@
+_type: prompt
+template_format: f-string
+input_variables: ["diff_context"]
+template: |
+    You are an expert software engineer. I need you to generate a commit message for a change in a git repository.
+    Here's the diff context:
+
+    BEGIN DIFF
+    {diff_context}
+    END DIFF
+
+    Remember:
+    - Lines starting with "-" are being removed.
+    - Lines starting with "+" are being added.
+    - Lines starting with " " are unchanged.
+
+    Consider the file names for context (e.g., "README.md" is a markdown file, "*.py" is a Python file).
+    Understand the difference between code and comments. Comment lines start with ##, #, or //.
+
+    The commit message should:
+    - Start with a short summary (<72 characters).
+    - Follow with a blank line and detailed text, but only if necessary.
+    - Use imperative mood (e.g., "Add feature").
+    - Be in GitHub-flavored markdown format.
+    - Include contextually appropriate emojis (optional).
+
+    If the commit message does not follow these guidelines, then the commit will be rejected. If you are not confident
+    that you can generate a commit message that follows these guidelines, then just respond with "I don't know" and I
+    will handle it.
+
+    Start your response with the commit message. No prefix or introduction. Your entire response will be the commit message.
