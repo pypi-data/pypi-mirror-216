@@ -1,0 +1,48 @@
+[project]
+name = "pygensvd"
+description = "Python and NumPy extension module implementing the generalized signular value decomposition (GSVD)."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { text = "GNU License" }
+authors = [{ name = "Andrew Van", email = "vanandrew@wustl.edu" }]
+keywords = ["GSVD"]
+classifiers = ["Programming Language :: Python :: 3"]
+urls = { github = "https://github.com/vanandrew/pygensvd" }
+version = "0.1.0"
+dependencies = ["numpy >= 1.1"]
+
+[build-system]
+requires = ["setuptools", "wheel", "cmake", "cmake-setuptools-ext", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.black]
+line-length = 120
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+
+[tool.cibuildwheel]
+archs = ['x86_64']
+build = [
+  "cp37-manylinux*",
+  "cp38-manylinux*",
+  "cp39-manylinux*",
+  "cp310-manylinux*",
+  "cp311-manylinux*",
+  "cp37-macosx*",
+  "cp38-macosx*",
+  "cp39-macosx*",
+  "cp310-macosx*",
+  "cp311-macosx*",
+]
+build-frontend = "build"
+before-test = ["python -m pip install pytest"]
+test-command = ["python -m pytest {project}/tests"]
+
+[tool.cibuildwheel.linux]
+before-all = ["yum -y install openblas-devel lapack-devel"]
+
+[tool.cibuildwheel.macos]
+before-all = ["brew install openblas"]
+environment = { CMAKE_ARGS = "-DCMAKE_PREFIX_PATH=/usr/local/opt/openblas" }

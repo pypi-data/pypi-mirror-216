@@ -1,0 +1,15 @@
+CMakeLists.txt
+FindLAPACKE.cmake
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+pygensvd/__init__.py
+pygensvd.egg-info/PKG-INFO
+pygensvd.egg-info/SOURCES.txt
+pygensvd.egg-info/dependency_links.txt
+pygensvd.egg-info/requires.txt
+pygensvd.egg-info/top_level.txt
+src/_gsvd.c
+tests/test_gsvd.py
