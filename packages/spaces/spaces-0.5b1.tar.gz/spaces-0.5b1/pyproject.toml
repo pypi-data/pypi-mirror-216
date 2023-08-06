@@ -1,0 +1,68 @@
+[tool.poetry]
+name = "spaces"
+version = "0.5b1"
+description = "Utilities for Hugging Face Spaces"
+authors = ["Charles Bensimon <charles@huggingface.co>"]
+readme = "README.md"
+homepage = "https://huggingface.co"
+repository = "https://github.com/huggingface/huggingface_hub"
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+psutil = "^5.9.5"
+typing-extensions = "^4.5.0"
+requests = "^2.29.0"
+pydantic = "^1.10.8"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-dotenv = "^0.5.2"
+pytest-mock = "^3.10.0"
+requests-mock = "^1.10.0"
+pytest-timeout = "^2.1.0"
+poethepoet = "^0.20.0"
+coverage = "^7.2.6"
+pyright = "^1.1.311"
+pytest-order = "^1.1.0"
+
+[tool.poetry.group.test.dependencies]
+diffusers = "^0.16.1"
+transformers = "^4.29.1"
+accelerate = "^0.19.0"
+xformers = "^0.0.19"
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["tests"]
+env_files = ["tests/.env"]
+
+[tool.coverage.run]
+source = ["spaces"]
+concurrency = ["thread", "multiprocessing"]
+
+[tool.coverage.report]
+fail_under = 100
+exclude_also = [
+    "^\\s*if TYPE_CHECKING:\\s*$",
+    "^\\s*\\.\\.\\.\\s*$",
+]
+
+[tool.poe.tasks.test]
+shell = """set -e
+    pyright
+    coverage run -m pytest tests/cpu
+    coverage run -m pytest tests/gpu
+    coverage combine -q
+    coverage xml  || true
+    coverage html || true
+    coverage report
+"""
+
+[tool.pyright]
+include = ["spaces", "tests"]
+pythonVersion = "3.9"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
