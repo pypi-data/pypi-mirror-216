@@ -1,0 +1,33 @@
+[project]
+name = "email_to_soup"
+version = "0.0.10"
+authors = [
+  { name="Dev Tanna", email="dev.tanna@gmail.com" },
+]
+dependencies = [
+    "beautifulsoup4==4.11.1",
+    "lxml==4.9.1",
+    "html2text==2020.1.16",
+]
+description = "Email to HTML-Soup & Soup-Text"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["html-soup", "soup-text", "email-to-soup", "email-to-text"]
+
+[project.urls]
+"Homepage" = "https://github.com/devtanna/soup-to-email"
+"Bug Tracker" = "https://github.com/devtanna/soup-to-email/issues"
+
+[build-system]
+requires = [
+    "setuptools>=45",
+    "setuptools_scm[toml]>=6.2",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]

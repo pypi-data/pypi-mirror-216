@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+src/email_to_soup/__init__.py
+src/email_to_soup/main.py
+src/email_to_soup.egg-info/PKG-INFO
+src/email_to_soup.egg-info/SOURCES.txt
+src/email_to_soup.egg-info/dependency_links.txt
+src/email_to_soup.egg-info/requires.txt
+src/email_to_soup.egg-info/top_level.txt
+src/tests/__init__.py
+src/tests/test_email_to_soup.py
+src/tests/fixtures/__init__.py
+src/tests/fixtures/test_email.eml
