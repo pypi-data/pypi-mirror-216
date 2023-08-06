@@ -1,0 +1,12 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+.github/workflows/test_and_deploy.yaml
+amadeusgpt/__init__.py
+amadeusgpt.egg-info/PKG-INFO
+amadeusgpt.egg-info/SOURCES.txt
+amadeusgpt.egg-info/dependency_links.txt
+amadeusgpt.egg-info/requires.txt
+amadeusgpt.egg-info/top_level.txt
