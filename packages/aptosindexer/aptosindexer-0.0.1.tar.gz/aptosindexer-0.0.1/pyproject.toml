@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aptosindexer"
+version = "0.0.1"
+authors = [
+  { name="Stephen Maldonado", email="PyAptosIndexer@StephenMaldonado.com" },
+]
+description = "Aptos Indexer"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"github" = "https://github.com/StephenMal/PyAptosIndexer"
+"github-issues" = "https://github.com/StephenMal/PyAptosIndexer/issues"
+"author" = "https://stephenmaldonado.com"
