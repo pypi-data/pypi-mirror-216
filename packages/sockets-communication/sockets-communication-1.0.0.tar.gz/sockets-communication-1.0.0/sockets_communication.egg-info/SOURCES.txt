@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+build.py
+pyproject.toml
+requirements.txt
+setup.py
+sockets_communication/base.py
+sockets_communication/document.py
+sockets_communication/exceptions.py
+sockets_communication/process.py
+sockets_communication/sockets.py
+sockets_communication.egg-info/PKG-INFO
+sockets_communication.egg-info/SOURCES.txt
+sockets_communication.egg-info/dependency_links.txt
+sockets_communication.egg-info/requires.txt
+sockets_communication.egg-info/top_level.txt
