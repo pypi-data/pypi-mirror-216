@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: consultapmuxm
+Version: 0.2
+Summary: tool to query pmu data from phasor point
+Home-page: https://github.com/jdpinzon/XM_consultapmu
+Author: Jaime Dwaigth Pinzon Casallas
+Author-email: jpinzon@xm.com.co
+License: MIT
+Download-URL: https://raw.githubusercontent.com/jdpinzon/XM_consultapmu/main/consultapmuxm.py?token=GHSAT0AAAAAAB4MF6UXPFEJSZKTG2MLGLK2Y4Z3QQA
+Keywords: PMU,PHASORPOINT,XM
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests
+Requires-Dist: pandas
+Requires-Dist: pyodbc
+Requires-Dist: pytz
+
+UNKNOWN
+
