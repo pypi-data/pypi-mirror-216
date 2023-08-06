@@ -1,0 +1,68 @@
+/*
+ * Copyright 2020-2021 Exactpro (Exactpro Systems Limited)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+syntax = "proto3";
+
+package th2.ssh;
+
+import "th2_grpc_common/common.proto";
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.exactpro.th2.act.ssh.grpc";
+
+service ActSsh {
+  rpc execute (ExecutionRequest) returns (ExecutionResponse) {
+  }
+}
+
+message ExecutionRequest {
+  EventInfo event_info = 1;
+  // The alias of the script or command described in the act-ssh settings
+  string execution_alias = 2;
+
+  // The parameters that should be passed to the script
+  map<string, string> parameters = 3;
+
+  // The alias for the endpoint to connect. If it is empty and the only one endpoint is define for the act that endpoint will be used
+  string endpoint_alias = 4;
+}
+
+message ExecutionResponse {
+  // The script or command exit code
+  // It will be set if the script or command completed itself
+  // If the script or command was interrupted the execution result will have no value
+  oneof exit_code_value {
+    int32 exit_code = 1;
+    google.protobuf.Empty unknown_exit_code = 5;
+  }
+
+  // The script or command output.
+  // It will be attached to the response if it is enabled for the `execution_alias` in the request.
+  // If the output is disabled for the command the response will have not output
+  oneof result {
+    string output = 2;
+    google.protobuf.Empty empty = 3;
+  }
+
+  bool interupted = 6;
+  RequestStatus status = 4;
+}
+
+message EventInfo {
+  EventID parent_event_id = 1;
+  string description = 2;
+}
