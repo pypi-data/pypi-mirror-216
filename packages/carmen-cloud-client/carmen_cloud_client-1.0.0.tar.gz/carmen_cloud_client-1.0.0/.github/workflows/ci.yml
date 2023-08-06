@@ -1,0 +1,40 @@
+name: Python project CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  TEST_DEV_API_KEY: ${{ secrets.API_TEST_EU_API_KEY_DEV }}
+  TEST_EU_PROD_API_KEY: ${{ secrets.API_TEST_EU_API_KEY_PROD }}
+  TEST_US_PROD_API_KEY: ${{ secrets.API_TEST_US_API_KEY_PROD }}
+  TEST_DEV_ENDPOINT_URL: ${{ secrets.TEST_DEV_ENDPOINT_URL }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        miniconda-version: "latest"
+        activate-environment: myenv
+        environment-file: environment.yml
+        mamba-version: "*"
+        auto-activate-base: false
+
+    # - name: Install dependencies
+    #   run: |
+    #     echo "Installing dependencies"
+    #     mamba install --file environment.yml
+
+    - name: Run tests
+      shell: bash -l {0}
+      run: |
+        echo "Running tests"
+        pytest
