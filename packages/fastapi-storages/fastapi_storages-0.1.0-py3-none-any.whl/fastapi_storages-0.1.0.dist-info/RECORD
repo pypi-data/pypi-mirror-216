@@ -1,0 +1,12 @@
+fastapi_storages/__init__.py,sha256=bHQWV5dxDnNoNZXCYMcaEMaX0mGwW5CDunsG4lfZbJw,230
+fastapi_storages/base.py,sha256=8_FtFVXPt0iarnzCmlz-ox4kpRYoH_TPz4Vf0ONAyHs,2257
+fastapi_storages/exceptions.py,sha256=FRcGUNFWgWLHRMr6j9w80ykBJPAjMDH0D9CfVbXx2Wk,46
+fastapi_storages/filesystem.py,sha256=wNXXvNd1ksvkSybki5YiVRBrH1AtpSOdxX9O7z21mxg,1654
+fastapi_storages/s3.py,sha256=YGjUVkq1WpU1uQnSQLdOzBe8EbY4DVEOKB8zzDwJois,2672
+fastapi_storages/utils.py,sha256=RNqqC2XGNmUC-yUR1RsErdqOZhnM8SiMPJ8u-0p3gls,446
+fastapi_storages/integrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastapi_storages/integrations/sqlalchemy.py,sha256=lGaSbejmtb4_yBYkAGAFEAFGE2Z3J36KtwFBdk6T5dg,3484
+fastapi_storages-0.1.0.dist-info/METADATA,sha256=neOuP9IFtRmfQGgHbuoWG34D11pBZBkaBdbdbRBMuQo,3847
+fastapi_storages-0.1.0.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+fastapi_storages-0.1.0.dist-info/licenses/LICENSE.txt,sha256=ig7CIum0m_vBWJIln-cIRSpPfSuX-vq0iyCgW5vt3_o,1094
+fastapi_storages-0.1.0.dist-info/RECORD,,
