@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: conjecture-sdk
+Version: 0.0.1
+Summary: A Python package for conversational AI.
+License: MIT
+Author: Conjecture
+Author-email: support@conjecture.dev
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
+Requires-Dist: requests (>=2.25.1,<3.0.0)
+Requires-Dist: requests_mock (>=1.9.3,<2.0.0)
+Requires-Dist: typing (>=3.7.4.3,<4.0.0.0)
