@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+watermark.py
+app/__init__.py
+app/objects.py
+app/utils.py
+pdf_watermark.egg-info/PKG-INFO
+pdf_watermark.egg-info/SOURCES.txt
+pdf_watermark.egg-info/dependency_links.txt
+pdf_watermark.egg-info/entry_points.txt
+pdf_watermark.egg-info/requires.txt
+pdf_watermark.egg-info/top_level.txt
