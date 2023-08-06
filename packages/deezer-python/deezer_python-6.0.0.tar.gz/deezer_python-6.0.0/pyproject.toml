@@ -1,0 +1,91 @@
+[tool.poetry]
+name = "deezer-python"
+version = "6.0.0"
+description = "A friendly wrapper library for the Deezer API"
+authors = ["Bruno Alla <alla.brunoo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["deezer", "sdk", "client", "requests"]
+repository = "https://github.com/browniebroke/deezer-python"
+documentation = "https://deezer-python.readthedocs.io"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+packages = [
+    { include = "deezer", from = "src" },
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/browniebroke/deezer-python/issues"
+"Changelog" = "https://deezer-python.readthedocs.io/en/latest/changelog.html"
+"Twitter" = "https://twitter.com/_BrunoAlla"
+"Mastodon" = "https://fosstodon.org/@browniebroke"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = ">=2.18"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+myst-parser = ">=0.16"
+sphinx = ">=4.0"
+sphinx-autobuild = ">=2021.0"
+sphinx-rtd-theme = ">=1.0"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.0"
+environs = "^9.3"
+pytest = "^7.0"
+pytest-cov = "^4.0"
+pytest-mock = "^3.6"
+pytest-vcr = "^1.0"
+vcrpy = "^5.0.0"
+deezer-oauth-cli = "^1.0.0"
+
+[tool.semantic_release]
+version_toml = "pyproject.toml:tool.poetry.version"
+version_variable = "src/deezer/__init__.py:__version__"
+branch = "main"
+build_command = "pip install poetry && poetry build"
+
+[tool.pytest.ini_options]
+addopts = "-v -Wdefault --cov=deezer"
+pythonpath = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["deezer"]
+
+[tool.coverage.report]
+ignore_errors = true
+exclude_lines = [
+    "pragma: no cover",
+    "@overload",
+    "if TYPE_CHECKING",
+    "raise NotImplementedError",
+]
+
+[tool.isort]
+profile = "black"
+known_first_party = "deezer"
+
+[tool.mypy]
+# suppress errors about unsatisfied imports
+ignore_missing_imports = true
+
+no_implicit_optional = true
+
+# ensure all execution paths are returning
+warn_no_return = true
+
+show_error_codes = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
