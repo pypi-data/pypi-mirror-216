@@ -1,0 +1,9 @@
+include src/intercode/assets/datasets/sql_queries.csv
+include src/intercode/assets/datasets/bash_queries.json
+include src/intercode/assets/datasets/spider_dev.sql
+
+include src/intercode/assets/docker/bash.Dockerfile
+include src/intercode/assets/docker/sql.Dockerfile
+include src/intercode/assets/docker/docker.gitignore
+include src/intercode/assets/docker/setup_fs.sh
+include src/intercode/assets/docker/sql-docker-compose.yml
