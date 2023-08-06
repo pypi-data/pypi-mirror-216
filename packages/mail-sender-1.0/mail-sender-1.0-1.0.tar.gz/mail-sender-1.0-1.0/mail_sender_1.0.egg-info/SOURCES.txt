@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+mail_sender_1.0.egg-info/PKG-INFO
+mail_sender_1.0.egg-info/SOURCES.txt
+mail_sender_1.0.egg-info/dependency_links.txt
+mail_sender_1.0.egg-info/top_level.txt
+send_mail/__init__.py
+send_mail/common/__init__.py
+send_mail/errors/__init__.py
