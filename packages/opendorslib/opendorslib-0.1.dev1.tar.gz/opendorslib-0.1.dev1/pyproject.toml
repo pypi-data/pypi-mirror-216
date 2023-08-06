@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2023 German Aerospace Center
+#
+# SPDX-License-Identifier: CC0-1.0
+
+[tool.poetry]
+name = "opendorslib"
+version = "0.1.dev1"
+description = "Library for creating the OpenDORS dataset."
+authors = ["Druskat, Stephan <stephan.druskat@dlr.de>"]
+maintainers = ["Druskat, Stephan <stephan.druskat@dlr.de>"]
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: 1 - Planning"
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+reuse = "^1.1.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

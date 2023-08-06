@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: opendorslib
+Version: 0.1.dev1
+Summary: Library for creating the OpenDORS dataset.
+License: MIT
+Author: Druskat, Stephan
+Author-email: stephan.druskat@dlr.de
+Maintainer: Druskat, Stephan
+Maintainer-email: stephan.druskat@dlr.de
+Requires-Python: >=3.11,<4.0
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+
+<!--
+SPDX-FileCopyrightText: 2023 German Aerospace Center
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+# opendorslib
+
+Library for creating the OpenDORS dataset.
+
