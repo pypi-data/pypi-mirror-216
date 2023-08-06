@@ -1,0 +1,544 @@
+Metadata-Version: 2.1
+Name: py-concodese
+Version: 1.0.0a10
+Summary: Python implementation of the original Tezcan project
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+
+![Pytests](https://github.com/5uperdan/Py-ConCodeSe/actions/workflows/pytests.yml/badge.svg)
+
+![Preproduction](https://github.com/5uperdan/Py-ConCodeSe/actions/workflows/preproduction.yml/badge.svg)
+
+# Py-ConCodeSe
+
+The philosophy of this document is that it's better to have disorganised information than none at all.
+
+## Index
+
+1. Running the application
+   1. Installation
+   2. Building the docker container
+2. Local Development
+   1. Requirements
+   2. Preparing the environment
+   3. Configuration
+   4. Generating Ranks on the command line version
+   5. React front end
+   6. Docker
+3. Notes on development
+   1. Running Tests
+   2. Debugging and writing tests
+   3. Structure
+   4. Code Style
+   5. Imports
+   6. Maintaining the pip requirements file
+   7. Using and developing the rest framework
+   8. Datasets
+   9. Profiling
+4. Documentation
+   1. Docs folder
+   2. Data flow
+
+## 1. Running the application
+
+### 1.1. Installation
+
+Py-ConCodeSe is an application designed to run in a Docker container. To run the application locally, you will need to install Docker in your computer.
+
+* Windows: https://docs.docker.com/desktop/install/windows-install/
+* Mac: https://docs.docker.com/desktop/install/mac-install/
+* Linux: https://docs.docker.com/desktop/install/linux-install/
+
+First download or clone the repository. In Windows, for git, the default maximum characters for a file path is 260, and some files of the project exceed this number. Use the following command to remove the default limit in git if you have not done that already:
+
+```bash
+git config --system core.longpaths true
+```
+
+### 1.2 Building the docker container
+
+For instructions on building the docker container, see .\CI_Docker
+
+Py-ConCodeSe is an application meant to run in a Docker container. It is composed of several bits (a React front-end, a restfull API, a command line app), and the following sections on this guide will explain how they work, how to configure and run them individually in your local environment, and how to develop them.
+
+### 2. Local development
+
+#### 2.1 Requirements
+
+* Python 3.8+
+* Java 8
+* Redis
+* Visual Studio C/C++ tools (Windows only)
+
+#### 2.2 Preparing the environment
+
+This is a Python 3 application. Developed with 3.8, and it is the preferable version to run it. It should work with more recent versions, 3.8+, but is not currently fully tested in newer versions.
+
+First download or clone the repository.
+
+Install dependencies by creating a python virtual environment (optional), and then running the python file to handle package installation. You must do so from the root of the repository to guarantee that relative paths are resolved correctly.
+
+```bash
+python install_pip_requirements.py
+```
+
+This installs packages available through PyPI but also editable packages in this repository.
+
+As well as python dependencies, Java 8 must be installed on your machine. It should be found automatically but if it's not your default java version then Py-ConCodeSe may not run correctly. If this is the case following testing then the Java path will have to be added to the config file in the future. In case Py-ConCodeSe application has difficulties, check that the JAVA_HOME and JDK_HOME environment variables are correctly configured and added to the path variable too.
+
+A redis server is used to manage long running tasks that are started by the django rest framework. If you want to use the django UI or the restful API then you will need to install a redis server. If you only want to use the command line interface with PyConCodeSe then you do not need to install the redis server. Installation on a debian based OS is just:
+
+```bash
+sudo add-apt-repository ppa:redislabs/redis
+sudo apt-get update
+sudo apt-get install redis
+sudo apt update
+sudo apt install redis-server
+```
+
+An explanation of redis configuration and setting up redis with systemd control can be found at https://citizix.com/how-to-install-and-configure-redis-6-on-ubuntu-20-04/
+
+For Windows users this might not be as straight forward. Check https://redis.io/docs/getting-started/installation/install-redis-on-windows/ for more detail instructions.
+
+It should be setup to run on the (default) port 6379. Depending on your OS, you might get stuck with an old version by using regular package managers. The default redis.conf should work fine.
+
+### 2.3. Configuration
+
+In the pyconcodese directory, create a file named _config.toml_ that contains the fields from _config\_example.toml_ but points to the datasets you wish to use. (There are some in the test directory if you wish to use them to test the application works correctly).
+
+The test helpers package contains it's own config.toml that is used in combination with the TestBase class to setup all tests.
+
+"fixedFiles" paths from bug repository datasets may not use namespace paths, and instead use a file path (relative to the root of the src directory). It's very important that your config src path matches precisely with the file path that the bug repository uses. For example, the bug reports in aspectJ give files in relative paths: org.aspectj/modules/weaver/src/org/aspectj/weaver/AjcMemberMaker.java. So the path specified by the config must be the parent of the org.aspectj folder.
+
+For Windows: absolute paths to the bug repository and source repository work just fine, but remember to escape the backlslash with double backslash. (e.g. "C:\\Users\\Someone\\Projects\\swt\\swt-3.1\\")
+
+```xml
+  <bug id="28974" opendate="2003-1-3 10:28:00" fixdate="2003-1-14 14:30:00">
+    <buginformation>
+      <summary>"Compiler error when introducing a ""final"" field"</summary>
+      <description>The aspect below fails to compile with 1.1b2, producing the compilation error: -------------------- $ ajc com/ibm/amc/*.java com/ibm/amc/ejb/*.java d:/eclipse/runtime-workspace-ajsamples/Mock EJBs/com/ibm/amc/DemoBeanEJB.java:1: Cannot assign a value to the final field com.ibm.amc.DemoBean.ajc$interField$co m_ibm_amc$verbose !! no source information available !! 1 error --------------------------- package com.ibm.amc; import com.ibm.amc.ejb.SessionBean; /** * @author colyer * * To change this generated comment edit the template variable "typecomment": * Window&gt;Preferences&gt;Java&gt;Templates. * To enable and disable the creation of type comments go to * Window&gt;Preferences&gt;Java&gt;Code Generation. */ public aspect DemoBeanEJB { declare parents: DemoBean implements SessionBean; // THIS NEXT LINE IS THE CULPRIT static final boolean DemoBean.verbose = true; private transient String DemoBean.ctx; public void DemoBean.ejbActivate( ) { if ( verbose ) { System.out.println( "ejbActivate Called" ); } } } ------------------- Making the inter-type declaration non-final solves the problem...</description>
+    </buginformation>
+    <fixedFiles>
+      <file>org.aspectj/modules/weaver/src/org/aspectj/weaver/AjcMemberMaker.java</file>
+    </fixedFiles>
+  </bug>
+```
+
+### 2.4. Generating Ranks on the command line version
+
+The file _main.py_ will run the 'full' process from reading bug reports and outputting src file scores (and everything inbetween).
+
+```bash
+python main.py
+```
+
+The output should follow the following format but will differ depending on your dataset:
+
+```
+started at: 2021-09-26 14:43:42.006829
+Picked up JAVA_TOOL_OPTIONS: -Xmx1879m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+1619: Application is terminated...
+#1      DistributionConstraintLibrary   (org.pillarone.riskanalytics.domain.utils.validation)   [1, 1, 1, 1]    [1, 1, 1, 2]
+#2      DistributionType        (org.pillarone.riskanalytics.domain.utils.math.distribution)    [6, 2, 9, 2]    [4, 2, 6, 1]
+#3      DistributionTypeValidator       (org.pillarone.riskanalytics.domain.utils.validation)   [2, 3, 3, 5]    [2, 5, 2, 9]
+#4      DeterministicApplicationParameters      (models.deterministicApplication)       [14, 14, 2, 4]  [202, 178, 241, 217]
+#5      FrequencyDistributionType       (org.pillarone.riskanalytics.domain.utils.math.distribution)    [8, 4, 12, 3]   [5, 3, 5, 3]
+#6      FrequencyDistributionTypeValidator      (org.pillarone.riskanalytics.domain.utils.validation)   [3, 5, 4, 6]    [3, 8, 3, 13]
+#7      VaryingParametersDistributionType       (org.pillarone.riskanalytics.domain.utils.math.distribution.varyingparams)      [4, 6, 6, 8]    [6, 7, 4, 7]
+#8      RandomNumberGenerator   (org.pillarone.riskanalytics.domain.utils.math.generator)       [18, 21, 30, 35]        [7, 4, 7, 4]
+#9      ParameterizationTableTreeNode   (org.pillarone.riskanalytics.application.ui.parameterization.model)     [9, 9, 5, 7]    [11, 11, 9, 5]
+#10     AbstractParameterizationValidator       (org.pillarone.riskanalytics.domain.utils.validation)   [5, 7, 7, 9]    [10, 13, 11, 18]
+Not all fixed files were found in the src
+top 1: False
+top 5: True
+top 10: True
+map: 0.36507936507936506
+mrr: 0.21428571428571427
+ended at: 2021-09-26 14:45:50.528705
+```
+
+### 2.5. React front end
+
+The features of ConCodeSe can be accessed through a react frontend run locally on your machine.
+The frontend folder contains the react code.
+It was developed with node v16.14.0 (npm v8.5.0).
+
+First navigate to the "frontend" folder on root directory and install the node dependencies:
+
+```bash
+npm install
+```
+
+Start the react app by running
+
+```bash
+npm start
+```
+
+The frontend folder also contains a separate README that was autogenerated by react. It contains some usage and development details.
+
+The react front end connects to a django rest framework API, uses django Q (and redis) to manage background tasks, and django channels (and redis) to send live updates to the web front end. All of which are explained below.
+
+The design uses bulma for lightweight styling.
+
+
+### 2.6. Docker
+
+For information on how to create and run the docker container, see .\CI_Docker
+
+This section contains information about testing the docker container is working correctly and providing alternative running options.
+
+You can test the docker container is functioning correctly by creating a config with the source directory:
+
+/Py-ConCodeSe/Tests/datasets/swt_partial
+
+This is a dataset that is internal to the container and should always tokenize correctly.
+
+#### Upload to docker hub
+
+This may vary person to person, and needs to be standardized.
+
+Build the container locally
+
+```bash
+docker build -t pyconcodese-alpha:latest .
+```
+
+Test it runs as expected, for example
+
+```bash
+docker run -d -p 8001:80 -p 8000:8000 -t pyconcodese-alpha
+```
+
+Tag it correctly, e.g.
+
+```bash
+docker tag pyconcodese-alpha:latest 5uperdan/pyconcodese-alpha:latest
+```
+
+Then push to docker hub, e.g.
+
+```bash
+docker push 5uperdan/pyconcodese-alpha
+```
+
+## 3. Notes on Development
+
+### 3.1. Running Tests
+
+There are three groups of tests in the code:
+- Regular unit tests for each module, including system-wide tests
+- Django Rest Framework specific tests
+- WebApp frontend tests using Selenium framework
+
+Run all the test groups from a single command with:
+
+```bash
+./run_all_tests.sh
+Which tests do you want to run? (p)ytests, (d)rf tests, (s)elenium tests, (a)ll
+
+```
+You will be asked if you want to run all the groups or just a specific one.
+
+If tests are reported as skipped, this just means those tests are not relevant to the current build. If tests fail, this may indicate a problem.
+
+For the last group of tests you need to do some extra steps explained in section 3.1.3
+
+#### 3.1.1 Running regular unit tests manually
+
+The first group of tests are located in the folder `Tests/py_concodese_test/` which itself contains a dataset folder with a small amount of data necessary to run the tests.
+
+To run individual test files you can use slash (not dot) notation, this is to reduce the number of init files litering the test (and root) folders.
+e.g.
+
+```bash
+  python -m pytest Tests/py_concodese_test/scoring/test_vsm.py
+```
+
+#### 3.1.2 Running DRF tests manually
+
+For the second group of tests it's necessary to start up all the Django libraries/settings/models, and the easiest way to do it is through the manage.py script
+
+```bash
+  cd Drf ; ./manage.py test
+```
+
+The tests are located in `Drf/Api/tests.py`, and because the tests use a temporary database file, the objects created during the tests are destroyed at the end without affecting the real databse objects.
+
+#### 3.1.3 Running Selenium tests manually
+
+The last group of tests use the Selenium framework to automatically open your browser and fake user input (such as scrolling up/down, filling forms, clicking buttons, etc)
+As such, the selenium tests need several extra steps to work properly.
+
+The tests can be used with Chrome or Firefox, but they use Chrome by default.
+To change browser you need to change the file `Tests/py_concodese_test/system_test/selenium_tests.py` to `start_chrome=False` 
+
+```python
+
+start_chrome = False  # (This will be added as an argument option later)
+protocol = "http"
+server = "localhost"
+port = 3000
+full_server_path = f"{protocol}://{server}:{port}"
+headless = True
+```
+
+Depending on the browser you are using for the tests, you need to install a specific Selenium driver:
+- Chromedriver (for Chrome)  https://chromedriver.chromium.org/downloads
+- Geckodriver (for Firefox) https://github.com/mozilla/geckodriver/releases
+
+Before running the tests, you need to start the servers either by starting up the docker-compose yml, or by manually starting up all the development servers yourself.
+If you choose to start the servers yourself, here is the list of commands you need:
+
+```bash
+# Start Django services:
+cd Drf
+./manage.py runserver 0.0.0.0:8000 
+./manage.py qcluster 
+
+# Start frontend
+cd frontend
+npm install
+npm start
+
+# Make sure you have Redis service started and listening
+```
+
+These tests are run on the database from the service you started, that is, the objects are not created in a temporary database like in the other 2 groups of tests, but in a real database.
+
+There is a cleanup method that is run at the end that will send a requests to the Drf endpoint to delete every object that was created during the tests, leaving the database (almost) as it was before.
+```python
+    @classmethod
+    def tearDownClass(cls):
+        # Delete items created during the tests with the ID stored in the list config_element_ids_to_cleanup
+        print(f'To tear down tests we need to delete the following test PKs  {cls.config_element_ids_to_cleanup}')
+
+        for pk in cls.config_element_ids_to_cleanup:
+            print(f'Deleting PK: {pk}')
+            result = requests.delete(f'http://localhost:8000/config/{pk}/')
+            print(result)
+
+```
+
+Unfortunately you have to manually add the new items to the object so they can be cleaned up at the end
+The test method `test_config_item_created` has a good example of how to add a menu item to the Frontend and then add the id to the cleanup list
+
+```python
+
+    self.create_config_file(config_name_text, src_dir_path)
+    new_config_item = WebDriverWait(self.selenium, 10, 1).until(EC.presence_of_element_located((By.ID, config_name_text)))
+    self.config_element_ids_to_cleanup.append(new_config_item.get_attribute('data-pk'))
+
+```
+The object `new_config_item` is an HTML object returned by the Selenium driver which is the object in the page with the element ID that matches the config name we created.
+
+That HTML object has the Public Key in the attribute `data-pk` which is ultimately the Public Key we need to send the Drf request to delete the item from the database
+
+
+### 3.2. Debugging and writing tests
+
+To debug tests you'll need to configure vscode first: https://code.visualstudio.com/docs/python/testing
+You can use vscode's test extension to run/ debug individual tests.
+
+VScode will need to be configured to use pytest as the runner.
+
+All tests from group 1 should subclass TestBase which has a class setup method which handles the starting of the JVM and reading of cfg files. This means that individual test classes do not need to handle the jvm or config reading themselves.
+
+Tests from group 2 should be put in the corresponding tests.py file explained in section 3.1.2
+
+Tests currently have greater scope than a normal unit test, this is a by product of the way the application was written to mimic original concodese's design structure.
+
+If a test does not show up in the vscode test suite, running pytest will usually give more information about why the tests are not added or check the output python test log window in vscode (or your ide).
+
+### 3.3 Structure
+
+This repo contains 2 python packages which are structured as follows:
+
+```dir
+Py-ConCodeSe/  <-- repository root
+  Src/
+    main.py  <-- main entry point of application
+    PyConcodeSe/
+      setup.py <-- contains package info
+      py_concodese/
+        __init__.py
+        scoring/
+  ...
+  Tests/
+    setup.py <-- contains package info
+    py_concodese_test/
+      __init__.py
+      scoring/
+  RestFramework/
+  ...
+```
+
+The setup.py file contains the package info, e.g.
+
+```python
+from setuptools import setup, find_packages
+
+setup(name="py_concodese", packages=find_packages())
+```
+
+This means that each package needs to be added to pip when it's first created. From the root dir, this looks like:
+
+```cmd
+pip install -e src/
+```
+
+(If you create a new package, the name directory of the new packace should also be added to install_pip_requirements.py file)
+
+This will make each package available by it's package name from within the python environment it is installed.
+
+For more info, see https://docs.pytest.org/en/latest/explanation/goodpractices.html
+
+It is structured in this way because it allows all of the following features:
+
+1. Easy imports from anywhere in the application using the package names rather than relative imports (since the packages are installed through pip).
+2. Similarly easy imports for tests.
+3. Test files can be run in many different ways:
+   - run/ debug as individual scripts
+   - python -m pytest
+   - python -m pytest tests/test_scoring/test_vsm.py
+   - run by vscode's testing extension
+
+#### 3.3.1 Where to write the tests
+Tests from group 1, such as Py-ConcodeSe backend unit tests which require no connection to the Django Rest framework can be put in the folder `Tests/py_concodese_test`
+
+Tests from group 2 which require Django libraries/models should be put in `Drf/Api/tests.py` and run as explained in section 3.1.2
+
+Tests from group 3 which require the Selenium framework can be put in the `Tests/py_concodese_test` folder, but they have to be run as explained in 3.1.3
+
+
+### 3.4. Code Style
+
+Code in this application follows accepted code standards similar to those explained at https://google.github.io/styleguide/pyguide.html
+Type hints should be used to specify the return type of a function, some collections and custom classes will require an import
+
+```python
+from __future__ import annotations
+
+def create_frequency_dict(tokens) -> dict[str, int]
+```
+
+This import must be the first import in a file, though it can be ignored for tests.
+
+### 3.5. Imports
+
+Relative imports from the same folder can be made with
+
+```python
+from .file_in_same_folder import function
+```
+
+For imports from a different folder, please do not use relative paths, instead use the full module path, e.g.
+
+```python
+from py_concodese.folder_b.filename import function
+```
+
+### 3.6. Using and developing the rest framework
+
+Not necessary for everyone, as Py-ConCodeSe also has a "cli" of sorts available by running the main.py file.
+
+Build the database (and upgrade following changes) with:
+
+```bash
+python Drf/manage.py makemigrations
+python Drf/manage.py migrate
+```
+
+Setup local super user, though it may not be required because no endpoints actually require auth
+
+```bash
+python Drf/manage.py createsuperuser --email admin@example.com --username admin
+```
+
+If you need ssl for some reason start app with (pems are in the Drf folder). But this also requires installing these certificates to your local browser so they are accepted.
+
+```bash
+python manage.py runserver_plus --cert-file cert.pem --key-file key.pem
+```
+
+Instead, it's recommended to start without ssl support:
+
+```bash
+python Drf/manage.py runserver
+```
+
+(runserver should actually start the ASGI channels back end, as per settings.py)
+
+You also need to start the django Q server which manages long running tasks (like tokenization)
+
+```bash
+python Drf/manage.py qcluster
+```
+
+You can monitor the status of Django Q with
+
+```bash
+python Drf/manage.py qmonitor
+```
+
+CAUTION: Django Q does some kind of method caching. So if you change a method, you have to restart the django Q manager too. Otherwise functions which have previously executed will continue to run the 'old' versions.
+
+The restframework is very much a work in progress and its structure is likely to change drastically and frequently in the coming weeks/ months.
+
+Some browsers/ plugins will force ssl requests. The django development server doesn't support ssl by default so a certificate may need to be generated for your local machine. The development PEM has already been generated and should just 'work' but you do need to run mkcert -install to enable the certificate acceptance in your browser. There are some mac based instructions here https://timonweb.com/django/https-django-development-server-ssl-certificate/
+
+It will expire at some point in the future and would need to be regenerated. It would be preferable to not use a certificate.
+
+### 3.7. Maintaining the pip requirements file
+
+To get around pip's insistence on using repository relative paths for editable packages. Save changes to pip's state by excluding the editable packages contained in this repo:
+
+```bash
+pip freeze --exclude-editable > requirements.txt
+```
+
+Editable modules need to be added to the install_pip_requirements.py file.
+
+### 3.8. Datasets
+
+Some of the datasets are git repositories but we don't want them to be sub repositories, just files that aren't going to change or attempt to pull updates. If you ever move the datasets and readd them to the repository with 'git add -A', they'll be readded as sub repositories. In which case, to remove them again you'll need to:
+
+```bash
+git rm -rf --cached Tests/datasets/Groovy_pillar1_test
+```
+
+and readd them individually *with* the final backslash in the path (this ensures they're added as files and not as a submodule).
+
+```bash
+git add Tests/datasets/Groovy_pillar1_test/src_v1.6/pillarone-ulc-extensions/
+```
+
+### 3.9. Profiling
+
+The application can be profiled by passing a profile argument at call time
+
+```bash
+python run.py profile
+```
+
+This will generate a profile_results.prof file which can be opened with snakeviz
+
+```bash
+snakeviz profile_results.prof
+```
+
+snakeviz is installable through pip and is included in the requirements.txt file of this application.
+
+## 4. Documentation
+
+### 4.1. Docs folder
+
+In the docs folder are a some notes from the prototyping phase of development.
+
+### 4.2. Data Flow
+
+A high level overview diagram can be generated from data_flow.wsd

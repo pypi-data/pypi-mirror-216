@@ -1,0 +1,64 @@
+[build-system]
+requires      = ["setuptools>=65.5.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_concodese"
+version = "1.1.2"
+description = "Given a bug report, suggests code files that may need to be fixed"
+readme = "README_pip.md"
+##authors = [{ name = "", email = "" }]
+license = { file = "LICENSE.md" }
+classifiers = [
+#    "Framework :: Django :: 4.0",  # This is only for the GUi version
+    "Topic :: Software Development :: Bug Tracking",
+
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Java",
+    "Programming Language :: Python :: 3.8",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+]
+keywords = ["bug localisation", "recommender system"]
+dependencies = [
+    # Versionless dependencies for now so it can be installed through test pypi
+#    "JPype1",
+#    "toml",
+#    "nltk",
+#    "spacy",
+#    "SQLAlchemy",
+#    "tree-sitter",
+#    "GitPython",
+#    "dicttoxml",
+#    "deepl"
+
+    # Real dependencies for the main pypi instance
+    "JPype1 >= 1.4.1",
+    "toml >= 0.10.2",
+    "nltk >= 3.8.1",
+    "spacy >= 3.5.1",
+    "SQLAlchemy >= 1.4.42",
+    "tree-sitter >= 0.20.1",
+    "GitPython >= 3.1.31",
+    "dicttoxml==1.7.16",
+    "deepl==1.14.0"
+]
+requires-python = ">=3.8"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["Src/PyConcodeSe"]
+
+#[tool.setuptools.package-data]
+#mypkg = ["*.jar"]
+
+##[project.optional-dependencies]
+##dev = []
+#
+#[project.urls]
+#Homepage = "https://github.com/5uperdan/Py-ConCodeSe"
+
+[project.scripts]
+pyconcodese = "py_concodese.main:main_pip_runner"

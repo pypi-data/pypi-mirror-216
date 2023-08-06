@@ -1,0 +1,7 @@
+graft Src/PyConcodeSe/py_concodese/jars
+graft Src/PyConcodeSe/py_concodese/jars_other
+include Src/PyConcodeSe/py_concodese/git_utils/grammar_repositories.json
+
+#graft grammars/tree-sitter*
+#prune grammars/build
+#prune grammars/.*

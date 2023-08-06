@@ -1,0 +1,9 @@
+JPype1>=1.4.1
+toml>=0.10.2
+nltk>=3.8.1
+spacy>=3.5.1
+SQLAlchemy>=1.4.42
+tree-sitter>=0.20.1
+GitPython>=3.1.31
+dicttoxml==1.7.16
+deepl==1.14.0
