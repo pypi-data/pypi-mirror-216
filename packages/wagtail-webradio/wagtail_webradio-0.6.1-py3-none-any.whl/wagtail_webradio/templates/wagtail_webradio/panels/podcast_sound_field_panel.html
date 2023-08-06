@@ -1,0 +1,9 @@
+{% load i18n %}
+
+{% for child in self.visible_children %}
+  {% include "wagtailadmin/panels/multi_field_panel_child.html" %}
+
+  {% if not forloop.last %}
+    <div class="sound-field-separator" role="separator">{% translate "Or" %}</div>
+  {% endif %}
+{% endfor %}
