@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: xtor
+Version: 0.3.0
+Summary: Manage Tor instances
+Home-page: https://github.com/khalidelborai/xtor
+License: GNU Version 3
+Keywords: tor,torrc,torrc manager,tor manager,tor instance,proxy
+Author: khalidelborai
+Author-email: elboraikhalid@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: httpx[socks] (>=0.24.1,<0.25.0)
+Requires-Dist: stem (>=1.8.2,<2.0.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Requires-Dist: where (>=1.0.2,<2.0.0)
+Project-URL: Repository, https://github.com/khalidelborai/xtor
+Description-Content-Type: text/markdown
+
+xtor
+===============================
+
+xtor is a simple tool for managing Tor instances.
+
+## Installation
+
+- Linux
+  - `sudo apt-get install tor`
+  - `sudo apt-get install obfs4proxy`
+
+- Windows
+  - Download and install Tor Expert Bundle
+    - `https://archive.torproject.org/tor-package-archive/torbrowser/12.5a6/tor-expert-bundle-12.5a6-windows-x86_64.tar.gz`
+    - `https://archive.torproject.org/tor-package-archive/torbrowser/12.5a6/tor-expert-bundle-12.5a6-windows-i686.tar.gz`
+
+Then install the python package:
+
+`pip install xtor`
+
+## Usage
+
+```python
+from xtor import Tor
+
+tor = Tor.startTor(
+    port=9052,
+    control_port=9053,
+    host="127.0.0.1",
+    password="passw0rd",
+    init_msg_handler=print,
+    path="/usr/bin/tor", # optional, primarily for windows
+)
+
+with tor:
+  print(tor.ip)
+  print(tor.client.get("https://api.ipify.org").text)
+
+
+# connect to an existing tor instance
+
+tor = Tor(
+    port=9052,
+    control_port=9053,
+    host="127.0.0.1",
+    password="passw0rd",
+)
+
+with tor:
+  print(tor.ip)
+  print(tor.client.get("https://api.ipify.org").text)
+```
+

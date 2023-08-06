@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "xtor"
+version = "0.3.0"
+description = "Manage Tor instances"
+authors = ["khalidelborai <elboraikhalid@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/khalidelborai/xtor"
+license = "GNU Version 3"
+keywords = [
+    "tor",
+    "torrc",
+    "torrc manager",
+    "tor manager",
+    "tor instance",
+    "proxy",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+stem = "^1.8.2"
+httpx = { extras = ["socks"], version = "^0.24.1" }
+where = "^1.0.2"
+typer = "^0.9.0"
+
+
+[tool.poetry.group.dev.dependencies]
+lazydocs = "^0.4.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+xtor = "xtor.cli:main"
