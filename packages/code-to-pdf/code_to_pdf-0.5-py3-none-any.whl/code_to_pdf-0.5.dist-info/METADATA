@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: code-to-pdf
+Version: 0.5
+Summary: This convert a software proyect to a pdf book
+Author-email: Isidro Arias <isidroariass@hotmail.es>
+Project-URL: Homepage, https://github.com/isidroas/code_to_pdf
+Project-URL: Bug Tracker, https://github.com/isidroas/code_to_pdf/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygments
+Requires-Dist: pdfkit
+Requires-Dist: PyPDF2
+Requires-Dist: reportlab
+Requires-Dist: jinja2
+Requires-Dist: art
+Requires-Dist: gitpython
+Requires-Dist: pyyaml
+Provides-Extra: dev
+Requires-Dist: mypy ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: pylint ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: types-PyYAML ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+
+[![codecov](https://codecov.io/gh/isidroas/code_to_pdf/branch/main/graph/badge.svg)](https://codecov.io/gh/isidroas/code_to_pdf)
+[![example workflow](https://github.com/isidroas/code_to_pdf/actions/workflows/github-actions-test.yaml/badge.svg)](https://github.com/isidroas/code_to_pdf/actions/workflows/github-actions-test.yaml)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+
+
+# PDF code proyect generator
+
+Spending many hours in front of a screen can be tiring. Sometimes we need to analyze libraries that are used in our application and to give our eyes a break, this program could be usefull. Its input is a folder that contains files of code, and the output is a pdf document of highlighted source. Also, at the beginning an index is added, which indicates the page number per each file of code.
+
+![Image conversion](conversion.svg)
+
+## Installation
+```bash
+pip install code_to_pdf
+```
+
+You will also need [wkhtmltopdf](https://github.com/JazzCore/python-pdfkit#installation). In Ubuntu:
+```
+sudo apt install wkhtmltopdf
+```
+
+## Usage
+```
+code_to_pdf --title output_document  path/to/project/dir/
+```
+It will generate a file named "ouptut_document.pdf"
