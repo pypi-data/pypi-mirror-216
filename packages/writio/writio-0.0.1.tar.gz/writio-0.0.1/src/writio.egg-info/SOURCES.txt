@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/writio/__init__.py
+src/writio.egg-info/PKG-INFO
+src/writio.egg-info/SOURCES.txt
+src/writio.egg-info/dependency_links.txt
+src/writio.egg-info/not-zip-safe
+src/writio.egg-info/requires.txt
+src/writio.egg-info/top_level.txt
+tests/test_loading.py
