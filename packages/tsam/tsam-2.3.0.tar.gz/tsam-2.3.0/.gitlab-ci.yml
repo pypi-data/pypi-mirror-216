@@ -1,0 +1,11 @@
+conda:
+  image: continuumio/miniconda:latest
+  tags: 
+  - linux
+
+  script:
+    - conda env update -q --file=requirements.yml
+    - conda env update -q --file=requirements_dev.yml
+    - source activate tsam
+    - pip install -e .
+    - pytest --cov=tsam test/
