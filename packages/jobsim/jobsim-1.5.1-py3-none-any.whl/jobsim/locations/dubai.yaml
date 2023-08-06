@@ -1,0 +1,9 @@
+---
+flag: "\U0001F1E6\U0001F1EA"
+rooms:
+  - name: abu_dhabi
+    availability:
+      Mon: 9-17
+      Tue: 8-17
+      Wed: 8-19
+    capacity: 8

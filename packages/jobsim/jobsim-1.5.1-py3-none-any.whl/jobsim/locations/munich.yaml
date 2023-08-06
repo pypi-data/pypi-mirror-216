@@ -1,0 +1,20 @@
+---
+flag: "\U0001F1E9\U0001F1EA"
+rooms:
+  - name: berlin
+    availability:
+      Mon: 10-16
+      Wed: 10-18
+      Fri: 11-19
+    capacity: 3
+  - name: stuttgart
+    availability:
+      Mon: 9-11
+      Wed: 9-17
+    capacity: 10
+  - name: lipsk
+    availability:
+      Mon: 10-16
+      Wed: 10-18
+      Fri: 11-19
+    capacity: 6

@@ -1,0 +1,18 @@
+---
+flag: "\U0001f1e6\U0001f1fa"
+rooms:
+  - name: perth
+    availability:
+      Mon: 10-16
+      Wed: 10-18
+      Fri: 11-19
+    capacity: 3
+  - name: melbourne
+    availability:
+      Mon: 9-11
+      Wed: 9-17
+    capacity: 10
+  - name: canberra
+    availability:
+      Thur: 7-9
+    capacity: 2
