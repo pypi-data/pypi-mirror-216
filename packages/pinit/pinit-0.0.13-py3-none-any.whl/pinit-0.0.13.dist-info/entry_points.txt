@@ -1,0 +1,4 @@
+[console_scripts]
+pin=pinit.main:create
+pinit=pinit.main:main
+
