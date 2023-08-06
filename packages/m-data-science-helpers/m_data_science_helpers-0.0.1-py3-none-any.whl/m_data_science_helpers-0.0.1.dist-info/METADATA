@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: m-data-science-helpers
+Version: 0.0.1
+Summary: Helpers for AWS most common operations. Includes clipboard auth
+Author: Esteban Elia
+Author-email: esteban.elia@modo.com.ar
+Requires-Python: >=3.7.1,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: awswrangler (>=2.20.1,<3.0.0)
+Requires-Dist: boto3 (>=1.26.111,<2.0.0)
+Requires-Dist: clipboard (>=0.0.4,<0.0.5)
+Requires-Dist: pandas (>=1.3.5,<2.0.0)
+Requires-Dist: regex (>=2022.10.31,<2023.0.0)
+Description-Content-Type: text/markdown
+
+# MODO Data Science Helpers
+
+## AWS utils
+## AWSHandler
+
+AWSHandler es un wrapper para funcionalidades de aws. Autentica automaticamente tomando las credenciales desde el clipboard (solo tienen que copiarlas desde Get credentials --> Command Line or Programatic Access --> Copy Credentials) y luego borra el clipboard
+
+## Instalacion (local)
+
+```python
+!pip install modo-data-science-helpers
+```
+
+## Ejemplo de uso
+
+```python
+from modo-data-science-helpers.aws_utils import AWSHandler
+
+# Crear una instancia de AWSHandler (las credenciales se obtendrán del portapapeles, copiarlas desde Command Line or Programatic Access)
+aws_handler = AWSHandler()
+```
+### Consultar datos usando Athena
+```python
+sql = "SELECT * FROM mi_base_de_datos.mi_tabla LIMIT 10"
+database = "mi_base_de_datos"
+result_df = aws_handler.query(sql, database)
+print(result_df)
+```
+### Listar tablas y vistas en una base de datos
+```python
+database_info = aws_handler.list_tables("mi_base_de_datos")
+print(database_info)
+```
+### Listar todas las bases de datos
+```python
+databases = aws_handler.list_data_sources()
+print(databases)
+```
+### Guardar un DataFrame en S3
+```python
+aws_handler.save_df(df, 'mi_bucket', 'filename.parquet', file_format='parquet')
+```
+### Cargar un DataFrame desde S3
+```python
+loaded_df = aws_handler.load_df('mi_bucket', 'filename.parquet')
+print(loaded_df)
+```
+### Listar todos los buckets disponibles
+```python
+aws_handler.list_all_buckets()
+```
+### Listar objetos en una carpeta específica de un bucket de S3
+```python
+aws_handler.list_bucket("mi_bucket", "prefijo_carpeta/")
+```
+
