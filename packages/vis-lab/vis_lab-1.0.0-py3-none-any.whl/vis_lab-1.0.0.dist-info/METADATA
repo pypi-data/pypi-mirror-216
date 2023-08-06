@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: vis-lab
+Version: 1.0.0
+Summary: a system reinforcement learning
+Home-page: 
+Author: Ngo Xuan Phong
+Author-email: phong@vis-laboratory.com
+License: MIT
+Keywords: vis_game
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+License-File: LICENCE.txt
+Requires-Dist: numpy
+Requires-Dist: numba
+
