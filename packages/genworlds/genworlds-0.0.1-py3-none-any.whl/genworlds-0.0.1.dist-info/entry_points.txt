@@ -1,0 +1,3 @@
+[console_scripts]
+genworlds-cli = genworlds.interfaces.cli.run:start
+genworlds-socket-server = genworlds.sockets.world_socket_server:start_from_command_line
