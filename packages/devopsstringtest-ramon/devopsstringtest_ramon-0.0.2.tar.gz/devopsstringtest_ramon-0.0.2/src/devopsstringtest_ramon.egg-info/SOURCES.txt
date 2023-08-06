@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+src/devopsstringtest_ramon.egg-info/PKG-INFO
+src/devopsstringtest_ramon.egg-info/SOURCES.txt
+src/devopsstringtest_ramon.egg-info/dependency_links.txt
+src/devopsstringtest_ramon.egg-info/requires.txt
+src/devopsstringtest_ramon.egg-info/top_level.txt
+src/stringstandardization/__init__.py
+src/stringstandardization/stringstd.py
+test/test_stringstd.py
