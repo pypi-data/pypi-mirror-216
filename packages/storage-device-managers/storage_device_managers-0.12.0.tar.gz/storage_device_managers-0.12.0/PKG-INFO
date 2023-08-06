@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: storage-device-managers
+Version: 0.12.0
+Summary: Helpful context managers for managing decryption and mounts of storage devices
+License: GPL-3.0-or-later
+Author: Max Görner
+Author-email: max@familie-goerner.eu
+Requires-Python: >=3.8.1,<3.12
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: loguru (>=0.7.0,<0.8.0)
+Requires-Dist: shell-interface (>=0.10.0,<0.11.0)
