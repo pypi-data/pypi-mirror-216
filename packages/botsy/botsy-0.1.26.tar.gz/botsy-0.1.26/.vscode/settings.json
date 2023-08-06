@@ -1,0 +1,28 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=88",
+        "--select=E,W,F,C90",
+        "--ignore=E203,E501,W503",
+        "--exclude=__init__.py"
+    ],
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "88"
+    ],
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.extraPaths": [],
+    "python.analysis.extraPaths": []
+}
