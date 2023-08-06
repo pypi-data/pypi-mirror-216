@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: psilon
+Version: 0.0.1
+Summary: The PSILON project
+Project-URL: Documentation, https://github.com/unknown/psilon#readme
+Project-URL: Issues, https://github.com/unknown/psilon/issues
+Project-URL: Source, https://github.com/unknown/psilon
+Author-email: Clemens Lange <clemens.lange@cern.ch>
+License-Expression: GPL-3.0-or-later
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# psilon
+
+[![PyPI - Version](https://img.shields.io/pypi/v/psilon.svg)](https://pypi.org/project/psilon)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/psilon.svg)](https://pypi.org/project/psilon)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install psilon
+```
+
+## License
+
+`psilon` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
