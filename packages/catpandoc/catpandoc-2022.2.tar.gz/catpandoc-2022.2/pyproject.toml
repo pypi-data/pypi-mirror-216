@@ -1,0 +1,86 @@
+[tool.poetry]
+name = "catpandoc"
+version = "2022.2"
+license = "mit"
+description = "Cat multiple document files to the terminal"
+authors = ["FredHappyface"]
+classifiers = [
+	"Environment :: Console",
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"Natural Language :: English",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: Implementation :: CPython",
+	"Topic :: Text Processing",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	"Topic :: Utilities"
+]
+homepage = "https://github.com/FHPythonUtils/CatPandoc"
+repository = "https://github.com/FHPythonUtils/CatPandoc"
+documentation = "https://github.com/FHPythonUtils/CatPandoc/blob/master/README.md"
+readme = "README.md"
+
+[tool.poetry.scripts]
+catpandoc = 'catpandoc.application:cli'
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pypandoc = "<2,>=1.11"
+rich = "<14,>=13.4.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+tox = "^4.6.3"
+coverage = "^7.2.7"
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+indent = "Tab"
+
+[tool.pydocstyle]
+convention = "google"
+ignore = "D205,D415"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.basic]
+argument-naming-style = "camelCase"
+attr-naming-style = "camelCase"
+function-naming-style = "camelCase"
+method-naming-style = "camelCase"
+variable-naming-style = "camelCase"
+
+[tool.pylint.format]
+indent-string = "\t"
+
+[tool.pylint.master]
+ignore-paths = ["tests"]
+
+[tool.pylint.messages_control]
+enable = ["F", "E", "W", "R", "C"]
+disable = ["pointless-string-statement", "superfluous-parens"]
+
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+env_list =
+	py311
+	py310
+	py39
+	py38
+
+[testenv]
+allowlist_externals = poetry
+commands =
+  poetry install -v
+  poetry run pytest
+"""
