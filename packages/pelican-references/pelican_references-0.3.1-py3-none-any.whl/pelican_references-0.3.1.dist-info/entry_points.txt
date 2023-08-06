@@ -1,0 +1,3 @@
+[pybtex.style.labels]
+pybtex.style.labels.number_brackets=pelican.plugins.references.labels.number_brackets:LabelStyle
+
