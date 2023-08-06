@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: aioarp
+Version: 0.0.9
+Summary: Aioarp is a ARP protocol implementation that provides synchronous and asynchronous interfaces and gives you complete control over how ARP packets are sent.
+Project-URL: Source, https://github.com/karosis88/aioarp
+Project-URL: Documentation, https://karosis88.github.io/aioarp/
+Project-URL: Changelog, https://github.com/karosis88/aioarp/blob/master/CHANGELOG.md
+Project-URL: Issues, https://github.com/karosis88/aioarp/issues
+Author-email: Karen Petrosyan <kar.petrosyanpy@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Requires-Dist: anyio==3.6.2
+Requires-Dist: typing-extensions==4.6.3
+Provides-Extra: cli
+Requires-Dist: typer==0.9.0; extra == 'cli'
+Description-Content-Type: text/markdown
+
+# aioarp
+
+[![PyPI - Version](https://img.shields.io/pypi/v/aioarp.svg)](https://pypi.org/project/aioarp)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aioarp.svg)](https://pypi.org/project/aioarp)
+[![coverage](https://img.shields.io/codecov/c/github/karosis88/aioarp/master)](https://app.codecov.io/gh/karosis88/aioarp)
+![license](https://img.shields.io/github/license/karosis88/aioarp)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [ARP requests](#how-to-send-arp-requests)
+- [License](#license)
+
+## Installation
+
+```console
+pip install aioarp
+```
+
+## Documentation
+[Click here](https://karosis88.github.io/aioarp/)
+
+## How to send ARP requests
+
+### Sync
+```py
+import aioarp
+response = aioarp.request('10.0.2.2', 'enp0s3')
+print(response.sender_mac)
+# ee:xx:aa:mm:pp:le mac address
+```
+
+### Async [trio or asyncio]
+```py
+import trio
+import aioarp
+response = trio.run(aioarp.arequest, '10.0.2.2', 'enp0s3')
+```
+
+```py
+import asyncio
+import aioarp
+response = asyncio.run(aioarp.arequest('10.0.2.2', 'enp0s3'))
+```
+
+Or without specifying an interface parameter
+
+```
+response = aioarp.request('10.0.2.2')
+```
+
+## License
+
+`aioarp` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+
