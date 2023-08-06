@@ -1,0 +1,2 @@
+[console_scripts]
+blacksheep = blacksheepcli.cli.main:main
