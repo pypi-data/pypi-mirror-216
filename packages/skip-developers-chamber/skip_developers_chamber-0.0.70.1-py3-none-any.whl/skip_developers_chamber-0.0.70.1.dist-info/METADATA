@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: skip-developers-chamber
+Version: 0.0.70.1
+Summary: A small plugin which help with development, deployment, git
+Home-page: https://github.com/skip-pay/developers-chamber
+Author: Druids team
+Author-email: matllubos@gmail.com
+License: MIT
+Keywords: django,skripts,easy live,git,bitbucket,Jira
+License-File: LICENSE
+Requires-Dist: oauthlib (==3.1.0)
+Requires-Dist: gitpython (==3.1.30)
+Requires-Dist: click (==7.0)
+Requires-Dist: requests (>=2.23.0)
+Requires-Dist: python-dotenv (==0.14.0)
+Requires-Dist: boto3 (<2)
+Requires-Dist: python-hosts (==0.4.6)
+Requires-Dist: isort (==5.12.0)
+Requires-Dist: coloredlogs (==10.0)
+Requires-Dist: click-completion (==0.5.2)
+Requires-Dist: jira (==2.0.0)
+Requires-Dist: unidecode (==1.1.1)
+Requires-Dist: TogglPy (==0.1.2)
+Requires-Dist: flake8 (==4.0.1)
+Requires-Dist: slack-sdk (==3.21.3)
+
