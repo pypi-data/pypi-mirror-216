@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/iolocker/__init__.py
+src/iolocker/constants.py
+src/iolocker/core.py
+src/iolocker/exceptions.py
+src/iolocker/handlers.py
+src/iolocker.egg-info/PKG-INFO
+src/iolocker.egg-info/SOURCES.txt
+src/iolocker.egg-info/dependency_links.txt
+src/iolocker.egg-info/not-zip-safe
+src/iolocker.egg-info/requires.txt
+src/iolocker.egg-info/top_level.txt
