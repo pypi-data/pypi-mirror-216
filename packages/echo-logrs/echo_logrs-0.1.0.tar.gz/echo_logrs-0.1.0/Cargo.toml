@@ -1,0 +1,13 @@
+[package]
+name = "echo_logrs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "echo_logrs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.19.0"
+echo_log = "0.1.1"
