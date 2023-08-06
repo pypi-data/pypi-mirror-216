@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "title": "IGlueSession",
+  "required": ["contents", "tabs"],
+  "additionalProperties": false,
+  "properties": {
+    "contents": {
+      "type": "object"
+    },
+    "attributes": {
+      "$ref": "#/definitions/attributes"
+    },
+    "dataset": {
+      "$ref": "#/definitions/dataset"
+    },
+    "links": {
+      "$ref": "#/definitions/links"
+    },
+    "tabs": {
+      "$ref": "#/definitions/tabs"
+    }
+  },
+  "definitions": {
+    "attributes": {
+      "title": "IGlueSessionAttributes",
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "./data/attributes.schema.json"
+        }
+      }
+    },
+    "dataset": {
+      "title": "IGlueSessionDataset",
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "./data/dataset.schema.json"
+        }
+      }
+    },
+    "links": {
+      "title": "IGlueSessionLinks",
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "$ref": "./link.schema.json"
+        }
+      }
+    },
+    "tabs": {
+      "title": "IGlueSessionTabs",
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "object",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "./viewers/scatter.schema.json"
+              },
+              {
+                "$ref": "./viewers/histogram.schema.json"
+              },
+              {
+                "$ref": "./viewers/image.schema.json"
+              }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

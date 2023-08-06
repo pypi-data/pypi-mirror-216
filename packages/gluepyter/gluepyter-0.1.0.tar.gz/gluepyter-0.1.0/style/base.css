@@ -1,0 +1,502 @@
+/*
+    See the JupyterLab Developer Guide for useful CSS Patterns:
+
+    https://jupyterlab.readthedocs.io/en/stable/developer/css.html
+*/
+
+.glue-Panel-tabBar ul.lm-TabBar-content {
+  flex-grow: 1;
+}
+
+.glue-Panel-tabBar li.lm-TabBar-tab {
+  flex-grow: 1;
+}
+
+.glue-Control-datasets-container {
+  padding: 0;
+  margin: 0;
+}
+
+.glue-Control-datasets-item {
+  display: flex;
+  flex-direction: row;
+  color: var(--jp-ui-font-color1);
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.glue-Control-datasets-item:hover {
+  background-color: var(--jp-layout-color2);
+}
+
+.glue-Control-datasets-item-selected {
+  background-color: var(--jp-brand-color1);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+.glue-Control-datasets-item-selected:hover {
+  background-color: var(--jp-brand-color1);
+}
+
+.glue-Session-tabBar {
+  z-index: -1;
+  background-color: var(--jp-layout-color2);
+  overflow: visible;
+  color: var(--jp-ui-font-color1);
+  font-size: var(--jp-ui-font-size1);
+}
+
+.glue-Session-tabBar > .lm-TabBar-content,
+.lm-TabPanel-tabBar > .lm-TabBar-content {
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 0;
+}
+
+.glue-Session-tabBar .lm-TabBar-content {
+  flex: unset;
+}
+
+.glue-Session-tabBar[data-orientation='horizontal'] {
+  min-height: 20px;
+  flex: 1 1 auto;
+}
+
+.glue-Session-tabBar .lm-TabBar-addButton {
+  padding-bottom: 2px !important;
+}
+
+.glue-Session-tabBar .lm-TabBar-tab {
+  flex: 0 1 var(--jp-private-horizontal-tab-width);
+  align-items: center;
+  min-height: 20px;
+  min-width: 0;
+  margin-left: calc(-1 * var(--jp-border-width));
+  line-height: 20px;
+  padding: 0 8px;
+  background: var(--jp-layout-color2);
+  border: var(--jp-border-width) solid var(--jp-border-color1);
+  border-bottom: none;
+  position: relative;
+}
+
+.glue-Session-tabBar .lm-TabBar-tab.lm-mod-current {
+  background: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+}
+
+.glue-Session-tabBar .lm-TabBar-tab:hover {
+  background: var(--jp-layout-color1);
+  color: var(--jp-ui-font-color1);
+  cursor: pointer;
+}
+
+.glue-Session-tabBar .lm-TabBar-tab:first-child {
+  margin-left: 0;
+}
+
+.glue-Session-tabBar .lm-TabBar-tab.glue-LinkEditor-tab {
+  flex: none;
+  color: var(--jp-ui-inverse-font-color0);
+  background-color: var(--jp-brand-color1);
+}
+
+.glue-Session-tabBar .lm-TabBar-tab.glue-LinkEditor-tab:hover {
+  background-color: var(--jp-brand-color2);
+  cursor: pointer;
+}
+
+.glue-Session-tabBar .lm-TabBar-tab.lm-mod-current.glue-LinkEditor-tab {
+  color: var(--jp-ui-font-color0);
+  background: var(--jp-brand-color3);
+}
+
+.glue-Session-tabBar .lm-TabBar-tab.lm-mod-current::before {
+  position: absolute;
+  top: calc(-1 * var(--jp-border-width) + 1px);
+  left: calc(-1 * var(--jp-border-width));
+  content: '';
+  height: var(--jp-private-horizontal-tab-active-top-border);
+  width: calc(100% + 2 * var(--jp-border-width));
+  background: var(--jp-brand-color1);
+}
+
+.grid-panel {
+  padding: 0;
+}
+
+.grid-editor {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--jp-layout-color2);
+}
+
+.glue-Session-gridhost {
+  background: var(--jp-layout-color3);
+  background-image: unset !important;
+  background-position: unset !important;
+  box-sizing: border-box;
+  border: 4px solid var(--jp-layout-color2);
+  min-height: calc(100% - 8px);
+}
+
+.glue-Session-gridhost::before {
+  content: 'Drag Data To Plot';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.glue-sidepanel-widget *::-webkit-scrollbar,
+.glue-Session-gridhost *::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.glue-sidepanel-widget *::-webkit-scrollbar-track,
+.glue-Session-gridhost *::-webkit-scrollbar-track {
+  border: solid 3px transparent;
+}
+
+.glue-sidepanel-widget *::-webkit-scrollbar-thumb,
+.glue-Session-panel *::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px 10px var(--jp-layout-color3);
+  border: 3px solid transparent;
+}
+
+.grid-stack-item-content {
+  color: var(--jp-content-font-color1);
+  background-color: var(--jp-layout-color1);
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item-widget {
+  height: 100%;
+}
+
+.grid-item-widget > .jp-OutputArea-output {
+  display: block;
+}
+
+.grid-stack .grid-stack-item .grid-stack-item-content {
+  /* padding: 4px; */
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.glue-item .ui-resizable-handle.ui-resizable-e {
+  width: 5px !important;
+  right: -2px !important;
+}
+
+.grid-item-toolbar-spacer {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.glue-Session-tab-toolbar {
+  background: var(--jp-layout-color2);
+  flex-direction: row-reverse;
+}
+
+.glue-LinkEditor-deleteButton:hover {
+  background-color: none !important;
+}
+
+.glue-LinkEditor-linking .advanced-link-description {
+  font-style: italic;
+}
+
+.glue-LinkEditor-linking table.advanced-link-attributes {
+  width: 100%;
+}
+
+.glue-LinkEditor-linking table.advanced-link-attributes tr td:first-child {
+  width: 30%;
+  padding-left: 1em;
+}
+
+.glue-LinkEditor-linking table.advanced-link-attributes select {
+  font-size: var(--jp-ui-font-size1);
+}
+
+.glue-LinkEditor-linkingItem {
+  padding: 0.5em;
+}
+
+.glue-LinkEditor-linkingItem:hover {
+  cursor: pointer;
+}
+
+.glue-LinkEditor-linkingItem:not(.selected):hover {
+  background-color: var(--jp-layout-color2);
+}
+
+.glue-LinkEditor-linkingItem.selected {
+  color: var(--jp-ui-inverse-font-color1);
+  background-color: var(--jp-brand-color1);
+}
+
+.glue-LinkEditor-summary table {
+  width: 100%;
+}
+
+.glue-LinkEditor-summary table tr td:not(:last-child) {
+  width: 40%;
+}
+
+.glue-LinkEditor-identity table tr td:last-child {
+  text-align: right;
+}
+
+.glue-LinkEditor-advancedLinkItem {
+  padding-top: 0.4em;
+}
+
+.glue-LinkEditor-advancedLinkItem:not(:first-child) {
+  border-top: solid 1px;
+}
+
+.glue-LinkEditor-advancedLinkItem table td:not(:last-child) {
+  vertical-align: top;
+}
+
+.glue-LinkEditor-advanced table tr td:last-child {
+  text-align: right;
+}
+
+.glue-LinkEditor-widget {
+  display: flex;
+  flex-direction: column;
+}
+
+.glue-LinkEditor-widget:first-child {
+  border-right: solid 2px var(--jp-layout-color2);
+}
+
+.glue-LinkEditor-widget:last-child {
+  border-left: solid 2px var(--jp-layout-color2);
+}
+
+.glue-LinkEditor-widget > :last-child {
+  flex-grow: 1;
+}
+
+.glue-LinkEditor-header {
+  width: 100%;
+  background-color: var(--jp-layout-color3);
+  display: flex;
+  align-items: center;
+}
+
+.glue-LinkEditor-linkingHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.glue-LinkEditor-linkingHeaderDatasets {
+  width: 30%;
+  padding: 0.5em;
+}
+
+.glue-LinkEditor-linkingHeaderAttributes {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.glue-LinkEditor-linkingGlueButton {
+  height: 30px;
+  background-color: var(--jp-brand-color1);
+  color: var(--jp-ui-inverse-font-color1);
+}
+
+.glue-LinkEditor-content {
+  width: 100%;
+}
+
+.glue-LinkEditor-linkingContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.glue-LinkEditor-linkingDatasetsPanel {
+  width: 30%;
+}
+
+.glue-LinkEditor-linkingAttributesPanel {
+  width: 20%;
+  background-color: var(--jp-layout-color2);
+}
+
+.glue-LinkEditor-linkingAttributesPanel.firstAttributePanel {
+  border-right: solid var(--jp-toolbar-border-color);
+}
+
+.glue-LinkEditor-linkingAttributesPanel.secondAttributePanel {
+  border-left: solid var(--jp-toolbar-border-color);
+}
+
+.glue-LinkEditor-summaryHeader {
+  padding-left: 5px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.glue-LinkEditor-accordionTitle {
+  font-weight: bold;
+  border-bottom: 2px solid var(--jp-toolbar-border-color);
+}
+
+.glue-LinkEditor-accordionTitle,
+.glue-LinkEditor-summaryIdentity {
+  display: flex;
+  align-items: center;
+}
+
+.glue-LinkEditor-accordionTitle > :first-child,
+.glue-LinkEditor-accordionTitle > :nth-child(2),
+.glue-LinkEditor-summaryIdentity > :not(:last-child) {
+  width: 40%;
+}
+
+.glue-LinkEditor-accordionTitle > :last-child,
+.glue-LinkEditor-summaryIdentity > :last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.glue-LinkEditor-accordionCollapser svg {
+  width: 24px;
+}
+
+.glue-LinkEditor-accordionTitle.lm-mod-expanded
+  .glue-LinkEditor-accordionCollapser
+  svg {
+  transform: rotate(90deg);
+}
+
+.glue-Spinner {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: var(--jp-layout-color1);
+}
+
+.glue-SpinnerContent {
+  border: solid var(--jp-jupyter-icon-color);
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  position: relative;
+  animation:
+    load3 1s infinite linear,
+    fadeIn 1s;
+}
+
+.glue-SpinnerContent::before {
+  width: 50%;
+  height: 50%;
+  background: #f3762605;
+  border-radius: 100% 0;
+  box-shadow: inset 6px 5px 0 1px var(--jp-jupyter-icon-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+.glue-SpinnerContent::after {
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.grid-item-widget .glue-Spinner:not(:only-child) {
+  display: none;
+}
+
+.glue-LeftPanel-configWidget {
+  padding: 10px;
+  padding-right: 2px;
+  background: var(--jp-layout-color0);
+}
+
+.glue-LeftPanel-configWidget .jp-OutputArea {
+  height: 100%;
+}
+
+.glue-LeftPanel-configWidget .jp-OutputArea-output {
+  display: block;
+}
+
+.glue-LeftPanel-configWidget .vuetify-styles {
+  overflow: hidden;
+}
+
+.grid-stack-item-content .vuetify-styles {
+  overflow: hidden;
+}
+
+.glue-LeftPanel-configWidget .vuetify-styles * {
+  font-size: 0.8rem !important;
+}
+
+.glue-item div.v-toolbar__items > button:last-child {
+  display: none;
+}
+
+.grid-selected {
+  box-shadow: var(--jp-elevation-z20);
+}
+
+.grid-selected .glue-Session-tab-toolbar {
+  background: var(--jp-brand-color1);
+  color: var(--jp-ui-inverse-font-color0);
+}
+
+.grid-selected
+  .glue-Session-tab-toolbar
+  .jp-ToolbarButtonComponent
+  .jp-icon3[fill] {
+  fill: var(--jp-ui-inverse-font-color0);
+}
+
+.grid-selected .glue-Session-tab-toolbar .jp-Button.jp-mod-minimal:hover {
+  background-color: var(--jp-brand-color1) !important;
+}
