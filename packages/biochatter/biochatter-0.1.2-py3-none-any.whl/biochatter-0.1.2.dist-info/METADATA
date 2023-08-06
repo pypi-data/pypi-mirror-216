@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: biochatter
+Version: 0.1.2
+Summary: Backend library for conversational AI in biomedicine
+License: MIT
+Author: Sebastian Lobentanzer
+Author-email: sebastian.lobentanzer@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: streamlit
+Requires-Dist: langchain (>=0.0.146,<0.0.147)
+Requires-Dist: nltk (>=3.8.1,<4.0.0)
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Requires-Dist: pymilvus (==2.2.8)
+Requires-Dist: pymupdf (>=1.22.3,<2.0.0)
+Requires-Dist: redis (>=4.5.5,<5.0.0)
+Requires-Dist: retry (>=0.9.2,<0.10.0)
+Requires-Dist: streamlit (>=1.23.1,<2.0.0); extra == "streamlit"
+Requires-Dist: tiktoken (>=0.4.0,<0.5.0)
+Description-Content-Type: text/markdown
+
+# biochatter
+This repository contains the `biochatter` Python package, a generic backend library for the connection of biomedical applications to conversational AI. Used in [ChatGSE](https://chat.biocypher.org), which is being developed at https://github.com/biocypher/ChatGSE. More to come, so stay tuned!
+
+## Installation
+To use the package, install it from PyPI, for instance using pip (`pip install biochatter`) or Poetry (`poetry add biochatter`).
+
