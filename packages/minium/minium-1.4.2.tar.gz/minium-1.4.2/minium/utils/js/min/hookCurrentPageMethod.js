@@ -1,0 +1,1 @@
+function hookCurrentPageMethod(){var _=getCurrentPages().pop();if(_.$_method_$){if(_.$_method_$.__hooked__)return;var e=_.$_method_$;_.$_method_$=function(..._){"undefined"!=typeof $_callback_$&&$_callback_$(..._),e.call(this,..._)}.bind(_),_.$_method_$.__hooked__=!0}}
