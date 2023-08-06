@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: timeout-executor
+Version: 0.1.13
+Summary: execute with timeout
+Home-page: https://github.com/phi-friday/timeout-executor
+License: MIT
+Author: phi
+Author-email: phi.friday@gmail.com
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: all
+Provides-Extra: billiard
+Provides-Extra: cloudpickle
+Provides-Extra: dill
+Provides-Extra: loky
+Requires-Dist: anyio (>=3.7.0)
+Requires-Dist: billiard (>=4.0.0) ; extra == "all" or extra == "billiard"
+Requires-Dist: cloudpickle (>=2.2.1) ; extra == "all" or extra == "loky" or extra == "cloudpickle"
+Requires-Dist: dill (>=0.3.6) ; extra == "all" or extra == "billiard" or extra == "dill"
+Requires-Dist: loky (>=3.4.0,<4.0.0) ; extra == "all" or extra == "loky"
+Requires-Dist: psutil (>=5.9.5,<6.0.0) ; extra == "all" or extra == "loky"
+Requires-Dist: typing-extensions (>=4.6.3)
+Project-URL: Repository, https://github.com/phi-friday/timeout-executor
+Description-Content-Type: text/markdown
+
+# timeout-executor
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![github action](https://github.com/phi-friday/timeout-executor/actions/workflows/check.yaml/badge.svg?event=push&branch=dev)](#)
+[![PyPI version](https://badge.fury.io/py/timeout-executor.svg)](https://badge.fury.io/py/timeout-executor)
+[![python version](https://img.shields.io/pypi/pyversions/timeout_executor.svg)](#)
+
+## how to install
+```shell
+$ pip install timeout_executor
+# or
+$ pip install "timeout_executor[all]"
+# or
+$ pip install "timeout_executor[billiard]"
+# or
+$ pip install "timeout_executor[loky]"
+# or
+$ pip install "timeout_executor[dill]"
+# or
+$ pip install "timeout_executor[cloudpickle]"
+```
+
+## how to use
+```python
+import time
+
+from timeout_executor import TimeoutExecutor
+
+
+def sample_func() -> None:
+    time.sleep(10)
+
+
+executor = TimeoutExecutor(1)
+try:
+    executor.apply(sample_func)
+except Exception as exc:
+    assert isinstance(exc, TimeoutError)
+
+executor = TimeoutExecutor(1, pickler="dill")  # or cloudpickle
+result = executor.apply(lambda: "done")
+assert result == "done"
+```
+
+## License
+
+MIT, see [LICENSE](https://github.com/phi-friday/timeout-executor/blob/main/LICENSE).
