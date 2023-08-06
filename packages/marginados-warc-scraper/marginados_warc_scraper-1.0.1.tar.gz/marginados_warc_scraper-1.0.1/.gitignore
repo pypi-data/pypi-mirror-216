@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Leiden University Libraries <beheer@library.leidenuniv.nl>
+# SPDX-License-Identifier: CC0-1.0
+dist/
+.DS_Store
+__pycache__
+*.tsv
+.coverage
