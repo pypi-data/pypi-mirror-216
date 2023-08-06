@@ -1,0 +1,1 @@
+Based on this reflog message, Answer what the last git action which took place in details and which command will revert it.\n{format_instructions}.\n{reflog}
