@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: parsevasp
+Version: 3.2.1
+Summary: A general parser for VASP
+Keywords: vasp,parser
+Author-email: Espen Flage-Larsen	 <espen.flage-larsen@sigma2.no>
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Requires-Dist: numpy
+Requires-Dist: lxml
+Requires-Dist: pyyaml
+Requires-Dist: tox>=3.23.0 ; extra == "pre-commit"
+Requires-Dist: virtualenv>20 ; extra == "pre-commit"
+Requires-Dist: pre-commit~=2.2 ; extra == "pre-commit"
+Requires-Dist: pylint~=2.15.0 ; extra == "pre-commit"
+Requires-Dist: tox>=3.23.0 ; extra == "tests"
+Requires-Dist: virtualenv>20 ; extra == "tests"
+Requires-Dist: pytest~=7.0 ; extra == "tests"
+Requires-Dist: pytest-cov~=2.7,<2.11 ; extra == "tests"
+Requires-Dist: coverage~=6.0 ; extra == "tests"
+Project-URL: Source, https://github.com/aiida-vasp/parsevasp
+Provides-Extra: pre-commit
+Provides-Extra: tests
+
+=============================
+Parsevasp - a parser for VASP
+=============================
+
+.. image:: https://img.shields.io/pypi/v/parsevasp
+
+.. image:: https://img.shields.io/pypi/pyversions/parsevasp
+
+.. image:: https://github.com/aiida-vasp/parsevasp/workflows/parsevasp/badge.svg
+  :target: https://github.com/aiida-vasp/parsevasp/actions
+
+.. image:: https://codecov.io/gh/espenfl/aiida-vasp/branch/develop/graph/badge.svg
+  :target: https://codecov.io/gh/espenfl/aiida-vasp
+
+
+A parser for VASP using lxml or fallback elementTree.
+
