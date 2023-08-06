@@ -1,0 +1,11 @@
+[project]
+name = "wikisource"
+version = "0.0.1"
+dependencies = [
+    "requests",
+    "bs4"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
