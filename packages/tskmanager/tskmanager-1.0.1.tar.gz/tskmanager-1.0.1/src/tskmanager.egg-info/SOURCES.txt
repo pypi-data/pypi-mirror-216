@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/tasker/__init__.py
+src/tasker/attached_stream.py
+src/tasker/instance.py
+src/tasker/manager.py
+src/tasker/task.py
+src/tskmanager.egg-info/PKG-INFO
+src/tskmanager.egg-info/SOURCES.txt
+src/tskmanager.egg-info/dependency_links.txt
+src/tskmanager.egg-info/top_level.txt
