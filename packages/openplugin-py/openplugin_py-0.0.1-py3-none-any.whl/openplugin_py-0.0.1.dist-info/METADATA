@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: openplugin-py
+Version: 0.0.1
+Summary: Toolkit and Collection for Plugins of Large Language Models
+Home-page: https://github.com/OpenRL-Lab/openplugin
+Author: openrl contributors
+Author-email: huangsy1314@163.com
+Project-URL: Code, https://github.com/OpenRL-Lab/openplugin
+Project-URL: Documentation, https://openplugin.readthedocs.io/
+Keywords: LLM plugin toolkit
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools (>=67.0)
+Requires-Dist: psutil
+Requires-Dist: wheel
+Requires-Dist: click
+Requires-Dist: termcolor
+Requires-Dist: tabulate
+Requires-Dist: lz4
+Requires-Dist: six
+Requires-Dist: tqdm
+Requires-Dist: quart
+Requires-Dist: quart-cors
+Requires-Dist: ifaddr
+Provides-Extra: dev
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: mypy ; extra == 'test'
+Requires-Dist: isort ; extra == 'test'
+Requires-Dist: black ; extra == 'test'
+Requires-Dist: ruff ; extra == 'test'
+Requires-Dist: gpustat ; extra == 'test'
+
+# OpenPlugin
+
+Plugins for Large Language Model (LLM).
+
+## Installation
+
+- `pip install openplugin` (or clone this repo and `pip install -e .`).
+
+## Usage
+
+- Check OpenPlugin's version with: `op --version`
+- Check system information: `op --system_info`
+- Install a plugin: `op install <plugin_name>`
+- Uninstall a plugin: `op install <plugin_name>`
+- Start a plugin: `op run <plugin_name>`
+
+## Citing OpenPlugin
+
+If our work has been helpful to you, please feel free to cite us:
+```latex
+@misc{openplugin2023,
+    title={OpenRL},
+    author={OpenRL Contributors},
+    publisher = {GitHub},
+    howpublished = {\url{https://github.com/OpenRL-Lab/openplugin}},
+    year={2023},
+}
+```
