@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: screen_cls
+Version: 1.0.6
+Summary: Python script for clearing screen for any OS's: Windows, MAC, Linux
+Home-page: https://github.com/IgorMan2005/screen_cls
+Author: IgorMan (IgorMan2005)
+Author-email: igorman2005@gmail.com
+License: UNKNOWN
+Project-URL: Documentation, https://best-itpro.ru/news/screen_cls/
+Keywords: python screen cls
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Screen_CLS
+
+<img src="https://igorman2005.github.io/images/screen_cls.jpg" alt="screen_cls">
+
+Python script for clearing screen for any OS's: Windows, MAC, Linux
+
+## Setup
+https://pypi.org/project/screen-cls/
+
+**pip install screen-cls**
+
+## Example:
+```
+import screen_cls
+
+screen_cls.cls()
+```
+
+<img src="https://igorman2005.github.io/images/screen_cls_code.jpg" alt="screen_cls">
+
+### Documentation
+
+https://best-itpro.ru/news/screen_cls/
+
+
