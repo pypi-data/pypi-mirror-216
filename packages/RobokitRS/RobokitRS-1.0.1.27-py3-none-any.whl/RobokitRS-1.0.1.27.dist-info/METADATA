@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: RobokitRS
+Version: 1.0.1.27
+Home-page: https://eng.roborobo.co.kr/main
+Download-URL: https://github.com/RoboroboLab/RobokitRS/archive/master.tar.gz
+Author: Roborobo
+Author-email: roborobolab@gmail.com
+License: MIT
+Keywords: RobokitRS,roborobo
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Requires-Dist: pyserial
+
+Python library for RobokitRS
