@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "django-classy-settings"
+version = "3.0.3"
+description = "Simple class-based settings for Django"
+license = "BSD-2-Clause"
+authors = ["Curtis Maloney <curtis@tinbrain.net>"]
+readme = "README.md"
+homepage = "https://django-classy-settings.readthedocs.io/en/latest/"
+repository = "https://github.com/funkybob/django-classy-settings"
+documentation = "https://django-classy-settings.readthedocs.io/en/latest/"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Intended Audience :: Developers",
+]
+packages = [
+    { include = "cbs" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = "*"
+
+[tool.poetry.dev-dependencies]
+coverage = {extras = ["toml"], version = "^6.4.4"}
+flake8 = "^5.0.4"
+isort = "^5.10.1"
+Sphinx = "^4"
+black = "^22.8.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+command_line = "-m unittest"
+branch = true
