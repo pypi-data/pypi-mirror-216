@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "openla-feature-representation"
+version = "0.1.0a3"
+description = "A Python module that adds features to OpenLA data to make it easier to use for ML"
+authors = ["LIMU <repository@limu.ait.kyushu-u.ac.jp>"]
+readme = "README.md"
+packages = [{include = "openla_feature_representation"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+openla = "^0.2.8"
+fasttext-wheel = "^0.9.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
