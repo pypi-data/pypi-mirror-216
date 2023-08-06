@@ -1,0 +1,17 @@
+# PyCharm
+.idea
+# VirtualEnv
+venv
+# PyInstaller
+build
+dist
+__pycache__
+.buildozer
+# Build version
+src/denonremote/__build__.py
+# Nuitka
+denonremote.cmd
+denonremote.exe
+denonremote.build
+denonremote.dist
+denonremote.onefile-build

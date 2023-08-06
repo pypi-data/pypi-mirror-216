@@ -1,0 +1,150 @@
+# This Python file uses the following encoding: utf-8
+#
+# SPDX-FileCopyrightText: 2023 Raphaël Doursenaud <rdoursenaud@free.fr>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# https://packaging.python.org
+
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[project]  # https://packaging.python.org/en/latest/specifications/declaring-project-metadata
+name = "denonremote"  # https://peps.python.org/pep-0503/
+description = "A desktop GUI remote for the Denon DN-500 AV receiver."
+readme = 'README.md'
+requires-python = '~=3.10'
+# https://peps.python.org/pep-0508
+# https://peps.python.org/pep-0440/#version-specifiers
+dependencies = [
+    'kivy[sdl2]==2.2.1', # Remember to also update kivy.require() in gui.py
+    'pystray==0.19.4',
+    'twisted==22.10.0',
+    'KivyOnTop==1.4',
+    'Pillow~=9.5.0',
+]
+license = { file = 'LICENSE' }
+authors = [
+    { name = "Raphaël Doursenaud", email = 'rdoursenaud@free.fr' }
+]
+keywords = [
+    "Remote control",
+    "Denon",
+    "DN-500AV",
+]
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+    'Environment :: Win32 (MS Windows)',
+    'Environment :: MacOS X',
+    'Environment :: X11 Applications',
+    'Framework :: Twisted',
+    'Intended Audience :: End Users/Desktop',
+    'Natural Language :: English',
+    # 'Operating System :: Microsoft :: Windows :: Windows 8.1',  # TODO: test
+    'Operating System :: Microsoft :: Windows :: Windows 10',
+    'Operating System :: Microsoft :: Windows :: Windows 11',
+    'Operating System :: MacOS :: MacOS X',
+    'Operating System :: POSIX :: Linux',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    # 'Topic :: Documentation :: Sphinx',  # TODO
+    'Topic :: Home Automation',
+    # 'Topic :: Internet',  # TODO: implement RTP-MIDI support
+    'Topic :: Multimedia :: Sound/Audio',
+    'Topic :: Scientific/Engineering :: Human Machine Interfaces',
+    'Topic :: Utilities',
+    'Typing :: Typed',
+]  # https://pypi.org/classifiers/
+dynamic = [
+    'version',
+]
+
+[project.urls]
+Homepage = 'https://github.com/ematech/denonremote'
+Issues = 'https://github.com/ematech/denonremote/issues'
+
+[project.gui-scripts]
+denonremote = "denonremote.__main__:main"
+
+[tool.hatch.version]
+path = 'src/denonremote/__about__.py'
+
+[tool.hatch.envs.default]
+python = '3.11'
+dependencies = [
+    'hatchling', # Required for the custom hook
+]
+
+[[tool.hatch.envs.test.matrix]]
+python = [
+    '3.10',
+    '3.11',
+]
+
+[tool.hatch.envs.test]
+dependencies = [
+    'pylint',
+    'darglint2',
+    'pytest',
+    'pytest-cov',
+]
+
+[tool.hatch.envs.test.scripts]
+srclint = 'pylint src/'
+doclint = 'darglint2 -s sphinx src/'
+lint = 'srclint && doclint'
+cov = 'pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=hatch_demo --cov=tests'
+no-cov = 'cov --no-cov'
+
+[tool.hatch.envs.docs]
+dependencies = [
+    'sphinx',
+]
+
+[tool.hatch.envs.build]
+dependencies = [
+    'hatchling',
+    'PyInstaller',
+    'nuitka',
+    #'buildozer',
+]
+
+[tool.hatch.envs.build.scripts]
+pyinstaller = 'PyInstaller --clean --upx-dir=c:\upx-3.96-win64 denonremote.spec'
+nuitka = 'python -m nuitka --jobs=32 --onefile src/denonremote --include-package=denonremote --include-package-data=denonremote --include-package=kivy --include-package=pystray --include-package=twisted --include-package=KivyOnTop --include-package=pygments --disable-console --windows-icon-from-ico=icon.ico'
+
+[tool.coverage.run]
+branch = true
+parallel = true
+omit = [
+    'src/denonremote/__about__.py',
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    'no cov',
+    'if __name__ == .__main__.:',
+    'if TYPE_CHECKING:',
+]
+
+[tool.hatch.build.hooks.custom]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    '/.github',
+    '/.gitignore',
+    '/.buildozer',
+    '/build',
+    '/data',
+    '/dist',
+    '/docs',
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    'src/denonremote',
+]
