@@ -1,0 +1,15 @@
+README.md
+setup.py
+sourceshot.egg-info/PKG-INFO
+sourceshot.egg-info/SOURCES.txt
+sourceshot.egg-info/dependency_links.txt
+sourceshot.egg-info/entry_points.txt
+sourceshot.egg-info/requires.txt
+sourceshot.egg-info/top_level.txt
+sshot/__init__.py
+sshot/background.py
+sshot/config.py
+sshot/debug.py
+sshot/easy.py
+sshot/imageproc.py
+sshot/tokenproc.py
