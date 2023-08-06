@@ -1,0 +1,13 @@
+transformers==4.25
+torch
+numpy
+autodistill
+supervision
+
+[dev]
+flake8
+black==22.3.0
+isort
+twine
+pytest
+wheel
