@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: shapflow
+Version: 0.0.1
+Summary: a python package to explain ml pipelines
+Author-email: Jiaxuan Wang <jiaxuan@umich.edu>
+Project-URL: Homepage, https://github.com/nathanwang000/Shapley-Flow.git
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: xgboost
+Requires-Dist: tqdm
+Requires-Dist: joblib
+Requires-Dist: dill
+Requires-Dist: scikit-learn
+
+This repository contains implementation for the AISTATS 2021 paper 
+["Shapley Flow: A Graph-based Approach to Interpreting Model Predictions"](https://arxiv.org/pdf/2010.14592.pdf)
+
+Tutorials can be found in the source repo located at https://github.com/nathanwang000/Shapley-Flow
