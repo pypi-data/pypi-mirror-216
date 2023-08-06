@@ -1,0 +1,7 @@
+allennlp==2.9.3
+nltk
+tabulate
+xmltodict
+networkx>=2.8.1
+py_heideltime
+cached-path==1.1.2
