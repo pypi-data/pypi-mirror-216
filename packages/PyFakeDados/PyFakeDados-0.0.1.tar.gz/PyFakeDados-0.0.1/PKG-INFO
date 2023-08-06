@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: PyFakeDados
+Version: 0.0.1
+Summary: Generic generator fake data for application and api development.
+Home-page: https://github.com/juliansantosinfo/PyFakeDados
+Author: Julian de Almeida Santos
+Author-email: julian.santos.info@gmail.com
+License: GPLv3
+Project-URL: Source, https://github.com/juliansantosinfo/PyFakeDados
+Keywords: fakedados,fake,dados,gerador,pessoa,empresa,documento
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# projectname
+
+## Features
+
+- List of Features.
+
+## Installation
+
+- Run `pip install projectname`
+
+## Exxemple
+
+```python
+# Your python exxemple.
+```
+
+## Upgrade
+
+- Run `pip install projectname --upgrade`
