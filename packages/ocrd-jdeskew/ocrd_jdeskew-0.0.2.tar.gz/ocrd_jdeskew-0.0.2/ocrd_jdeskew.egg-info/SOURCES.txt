@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+Makefile
+README.md
+ocrd-tool.json
+pyproject.toml
+setup.py
+ocrd_jdeskew/__init__.py
+ocrd_jdeskew/deskew.py
+ocrd_jdeskew/ocrd-tool.json
+ocrd_jdeskew.egg-info/PKG-INFO
+ocrd_jdeskew.egg-info/SOURCES.txt
+ocrd_jdeskew.egg-info/dependency_links.txt
+ocrd_jdeskew.egg-info/entry_points.txt
+ocrd_jdeskew.egg-info/requires.txt
+ocrd_jdeskew.egg-info/top_level.txt

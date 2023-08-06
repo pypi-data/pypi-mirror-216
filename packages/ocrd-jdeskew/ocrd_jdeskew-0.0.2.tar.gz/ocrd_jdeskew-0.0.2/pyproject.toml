@@ -1,0 +1,40 @@
+[build-system]
+requires = [
+         "setuptools>=42",
+         "setuptools_scm[toml]",
+         "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocrd_jdeskew"
+description = "OCR-D wrapper for Document Image Skew Estimation using Adaptive Radial Projection"
+authors = [{name = "Robert Sachunsky", email = "sachunsky@informatik.uni-leipzig.de"}]
+license = {file = "LICENSE"}
+dependencies = [
+    "jdeskew",
+    "ocrd"
+]
+dynamic = ["version"]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Repository = "https://github.com/bertsky/ocrd_jdeskew"
+
+[project.scripts]
+ocrd-jdeskew = "ocrd_jdeskew.deskew:ocrd_jdeskew"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["*.json"]
+
+[tool.setuptools.packages.find]
+namespaces = false
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
