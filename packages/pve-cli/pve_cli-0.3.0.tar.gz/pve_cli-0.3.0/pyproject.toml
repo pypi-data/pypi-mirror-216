@@ -1,0 +1,66 @@
+[tool.poetry]
+name = "pve-cli"
+version = "0.3.0"
+description = "CLI Tool to manage VMs and more on proxmox clusters"
+authors = ["Dominik Rimpf <dev@drimpf.de>"]
+readme = "README.md"
+packages = [{include = "pve_cli"}]
+
+[tool.poetry.scripts]
+pve-cli = "pve_cli.main:cli"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+proxmoxer = "^2.0.1"
+requests = "^2.31.0"
+typer = {extras = ["all"], version = "^0.9.0"}
+toml = "^0.10.2"
+requests-toolbelt = "^1.0.0"
+pip = "^23.1.2"
+
+[tool.poetry.group.lint.dependencies]
+bandit = {extras = ["toml"], version = "^1.7.4"}
+flake8 = "^6.0.0"
+flake8-annotations = "^3.0.0"
+flake8-pep585 = "^0.1.6"
+flake8-pyproject = "^1.2.2" # until flake8 gets its shit together...
+flake8-pytest = "^1.4"
+flake8-pytest-style = "^1.6.0"
+flake8-quotes = "^3.3.2"
+flake8-use-pathlib = "^0.3.0"
+mypy = "^0.991"
+pep8-naming = "^0.13.3"
+types-toml = "^0.10.8.1"
+types-requests = "^2.28.11.7"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+
+[tool.flake8]
+# ANN101,ANN102: flake8-annotations, anotations for self and cls
+ignore = ["ANN101", "ANN102"]
+# Ignore build and venv directory
+exclude = ["build", ".venv"]
+# 80 chars aren't enough in 21 century
+max_line_length = 128
+# Ignore opinionated flake8-annotation rule
+suppress-none-returning = true
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "proxmoxer.*",
+]
+ignore_missing_imports = true
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
