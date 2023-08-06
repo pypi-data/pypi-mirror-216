@@ -1,0 +1,15 @@
+LICENSE.APACHE
+LICENSE.BSD
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/build_fastpbkdf2.py
+src/fastpbkdf2.tar.gz
+src/msfastpbkdf2/__init__.py
+src/msfastpbkdf2.egg-info/PKG-INFO
+src/msfastpbkdf2.egg-info/SOURCES.txt
+src/msfastpbkdf2.egg-info/dependency_links.txt
+src/msfastpbkdf2.egg-info/not-zip-safe
+src/msfastpbkdf2.egg-info/requires.txt
+src/msfastpbkdf2.egg-info/top_level.txt
