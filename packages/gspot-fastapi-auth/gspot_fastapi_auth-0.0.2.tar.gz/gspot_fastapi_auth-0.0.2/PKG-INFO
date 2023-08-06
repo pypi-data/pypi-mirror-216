@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: gspot_fastapi_auth
+Version: 0.0.2
+Summary: GSpot authentication package for FastApi
+Project-URL: Homepage, https://github.com/gravity48/gspot_fastapi_auth
+Project-URL: Bug Tracker, https://github.com/gravity48/gspot_fastapi_auth/issues
+Author-email: gravity48 <gravity4849@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: factory-boy>=3.2.1
+Requires-Dist: faker>=18.11.1
+Requires-Dist: fastapi>=0.98.0
+Requires-Dist: httpx>=0.24.1
+Requires-Dist: redis>=4.6.0
+Description-Content-Type: text/markdown
+
+# GSpot authentication package
+
+This package allows you to authorize users through a shared redis
+
+## Install package
+```shell
+pip install gspot-fastapi-auth
+```
+
