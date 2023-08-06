@@ -1,0 +1,2 @@
+[console_scripts]
+corpus-replicator = corpus_replicator.core:main
