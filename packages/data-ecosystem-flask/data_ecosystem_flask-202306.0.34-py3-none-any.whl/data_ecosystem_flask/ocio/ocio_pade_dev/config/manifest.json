@@ -1,0 +1,17 @@
+{
+    "name": "data_ecoystem_flask",
+    "description": "Data Ecosystem Flask API.",
+    "manifest_version": 1,
+    "entrypoint": "app.py",
+    "dependencies": ["flask", "requests"],
+    "environment": {
+      "PORT": "5000"
+    },
+    "endpoints": [
+      {
+        "path": "/",
+        "method": "GET",
+        "description": "This is the root endpoint."
+      }
+    ]
+  }
