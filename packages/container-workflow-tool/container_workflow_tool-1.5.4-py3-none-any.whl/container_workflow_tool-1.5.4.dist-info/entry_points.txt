@@ -1,0 +1,2 @@
+[console_scripts]
+cwt = container_workflow_tool.cli:run
