@@ -1,0 +1,9 @@
+datetime
+pandas
+seaborn
+
+[dev]
+check-manifest
+
+[test]
+coverage

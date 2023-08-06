@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: nmdb
+Version: 0.1.2
+Summary: Python examples to access data from the Neutron Monitor database
+Author-email: "Christian T. Steigies" <steigies@nmdb.eu>
+Maintainer-email: "Christian T. Steigies" <steigies@nmdb.eu>
+License: Copyright (C) 2008-2023 Christian T. Steigies <steigies@nmdb.eu>
+        
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <http://www.gnu.org/licenses/>.
+        
+Project-URL: Homepage, https://nmdb.eu
+Project-URL: Source, https://github.com/steigies/nmdb/
+Keywords: cosmic rays,database
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test
+License-File: LICENSE.txt
+
+# Access the Neutron Monitor database with python
+
+![NMDB Logo](https://www.nmdb.eu/img/nmdb-6.png "NMDB")
+
+This package provides python functions to access data from the
+[Neutron Monitor database][nmdb].
+
+# Installation
+
+You can install directly from PyPI using
+```
+pip install nmdb
+```
+
+# Usage
+
+- `nmdb_realtime` is an example to access realtime data,
+as presented in a [tutorial][realtime] at the [NMDB hybrid conference in 2022][conf2022].
+
+- `nmdb_nest_single` and `nmdb_nest_multi` are examples to get data from the
+[NEST][nest] interface into a pandas dataframe.
+These examples use the nest module from the nmdb package to generate html strings to query NEST.
+
+- `nmdb_conf2022` is the script that creates the coverpage plot for the 2022 NMDB conference.
+The plot shows GLE70 data as downloaded from NMDB 
+(with the data header manually edited so that the data can be read easily with pandas). 
+The plots are created using seaborn.
+
+--- 
+
+[nmdb]: https://nmdb.eu
+[realtime]: https://conf2022.nmdb.eu/abstract/s6/steigies/
+[conf2022]: https://conf2022.nmdb.eu
+[nest]: https://www.nmdb.eu/nest/
+
