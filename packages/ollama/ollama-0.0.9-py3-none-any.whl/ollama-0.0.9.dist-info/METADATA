@@ -1,0 +1,124 @@
+Metadata-Version: 2.1
+Name: ollama
+Version: 0.0.9
+Summary: Run ai models locally
+Author: ollama team
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: aiohttp (>=3.8.4,<4.0.0)
+Requires-Dist: aiohttp-cors (>=0.7.0,<0.8.0)
+Requires-Dist: ctransformers (>=0.2.10,<0.3.0)
+Requires-Dist: fuzzywuzzy[speedup] (>=0.18.0,<0.19.0)
+Requires-Dist: jinja2 (>=3.1.2,<4.0.0)
+Requires-Dist: llama-cpp-python (>=0.1.67,<0.2.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: tqdm (>=4.65.0,<5.0.0)
+Requires-Dist: validators (>=0.20.0,<0.21.0)
+Requires-Dist: yaspin (>=2.3.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Ollama
+
+Ollama is a tool for running any large language model on any machine. It's designed to be easy to use and fast, supporting the largest number of models possible by using the fastest loader available for your platform and model.
+
+> _Note: this project is a work in progress. Certain models that can be run with `ollama` are intended for research and/or non-commercial use only._
+
+## Install
+
+Using `pip`:
+
+```
+pip install ollama
+```
+
+Using `docker`:
+
+```
+docker run ollama/ollama
+```
+
+## Quickstart
+
+To run a model, use `ollama run`:
+
+```
+ollama run orca-mini-3b
+```
+
+You can also run models from hugging face:
+
+```
+ollama run huggingface.co/TheBloke/orca_mini_3B-GGML
+```
+
+Or directly via downloaded model files:
+
+```
+ollama run ~/Downloads/orca-mini-13b.ggmlv3.q4_0.bin
+```
+
+## Python SDK
+
+### Example
+
+```python
+import ollama
+ollama.generate("orca-mini-3b", "hi")
+```
+
+### `ollama.generate(model, message)`
+
+Generate a completion
+
+```python
+ollama.generate("./llama-7b-ggml.bin", "hi")
+```
+
+### `ollama.models()`
+
+List available local models
+
+```python
+models = ollama.models()
+```
+
+### `ollama.load(model)`
+
+Manually a model for generation
+
+```python
+ollama.load("model")
+```
+
+### `ollama.unload(model)`
+
+Unload a model
+
+```python
+ollama.unload("model")
+```
+
+### `ollama.pull(model)`
+
+Download a model
+
+```python
+ollama.pull("huggingface.co/thebloke/llama-7b-ggml")
+```
+
+### `ollama.search("query")`
+
+Search for compatible models that Ollama can run
+
+```python
+ollama.search("llama-7b")
+```
+
+## Documentation
+
+- [Development](docs/development.md)
+
