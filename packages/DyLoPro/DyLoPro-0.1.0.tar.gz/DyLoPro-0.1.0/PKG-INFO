@@ -1,0 +1,74 @@
+Metadata-Version: 2.1
+Name: DyLoPro
+Version: 0.1.0
+Summary: Dynamic Log Profiling package
+Home-page: https://github.com/BrechtWts/DyLoPro
+Author: Brecht Wuyts 
+Author-email: brecht.wuyts@kuleuven.be
+License: GNU General Public License v3
+Keywords: DyLoPro
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.md
+
+# DyLoPro
+"The DyLoPro Python Library is a visual analytics tool that allows Process Mining (PM) practitioners to efficiently and comprehensively explore the dynamics in event logs over time, prior to applying PM techniques. These comprehensive exploration capabilities are provided by extensive set of plotting functionalities, visualizing the dynamics over time from different process perspectives."
+
+
+## Features 
+...
+
+## Documentation
+You can consult the documentation of DyLoPro [__here__](https://DyLoPro.readthedocs.io). __COMING SOON__
+...
+
+## Installation
+You can install DyLoPro using:
+```bash
+pip install DyLoPro
+```
+
+## Usage Examples
+```python
+import DyLoPro as dlp
+...
+```
+
+## Citing DyLoPro
+...
+
+## Contributing 
+...
+
+## Release Notes
+Please consult HISTORY.md for the release notes. 
+
+## License
+Free software: GNU General Public License v3
+
+
+## Credits 
+
+This package was created with Cookiecutter and the `audreyr/cookiecutter-pypackage` project template.
+- Cookiecutter: https://github.com/audreyr/cookiecutter
+- `audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+# History
+
+
+## 0.1.0 (2023-06-21)
+- First release on PyPI.
