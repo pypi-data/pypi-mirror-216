@@ -1,0 +1,2 @@
+[console_scripts]
+print = pyquokka.utils:print_hello
