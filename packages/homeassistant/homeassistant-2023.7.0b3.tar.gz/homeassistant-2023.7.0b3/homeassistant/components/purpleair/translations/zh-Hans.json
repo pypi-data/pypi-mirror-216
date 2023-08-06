@@ -1,0 +1,38 @@
+{
+    "options": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86"
+        },
+        "error": {
+            "invalid_api_key": "API \u5bc6\u94a5\u65e0\u6548",
+            "unknown": "\u975e\u9884\u671f\u7684\u9519\u8bef"
+        },
+        "step": {
+            "add_sensor": {
+                "data": {
+                    "latitude": "\u7eac\u5ea6",
+                    "longitude": "\u7ecf\u5ea6"
+                },
+                "title": "\u6dfb\u52a0\u4f20\u611f\u5668"
+            },
+            "choose_sensor": {
+                "title": "\u9009\u62e9\u8981\u6dfb\u52a0\u7684\u4f20\u611f\u5668"
+            },
+            "init": {
+                "menu_options": {
+                    "add_sensor": "\u6dfb\u52a0\u4f20\u611f\u5668",
+                    "remove_sensor": "\u79fb\u9664\u4f20\u611f\u5668"
+                }
+            },
+            "remove_sensor": {
+                "data": {
+                    "sensor_device_id": "\u4f20\u611f\u5668\u540d\u79f0"
+                },
+                "data_description": {
+                    "sensor_device_id": "\u8981\u79fb\u9664\u7684\u4f20\u611f\u5668"
+                },
+                "title": "\u79fb\u9664\u4f20\u611f\u5668"
+            }
+        }
+    }
+}

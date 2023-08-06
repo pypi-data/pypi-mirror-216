@@ -1,0 +1,23 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Es kann keine Verbindung zum Host hergestellt werden",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "unknown": "Unbekannter Fehler"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Hostname",
+                    "password": "Passwort",
+                    "port": "Port",
+                    "ssl": "SSL aktivieren",
+                    "username": "Benutzername",
+                    "verify_ssl": "SSL \u00fcberpr\u00fcfen"
+                },
+                "description": "Mit diesem QNAP-Sensor k\u00f6nnen Sie verschiedene Statistiken von Ihrem QNAP NAS abrufen.",
+                "title": "Verbinden mit QNAP-Ger\u00e4t"
+            }
+        }
+    }
+}

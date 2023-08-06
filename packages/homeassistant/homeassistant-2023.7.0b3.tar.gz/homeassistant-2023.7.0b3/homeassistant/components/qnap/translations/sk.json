@@ -1,0 +1,23 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Ned\u00e1 sa pripoji\u0165 k hostite\u013eovi",
+            "invalid_auth": "Chybn\u00e9 overenie",
+            "unknown": "Nezn\u00e1ma chyba"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Meno hostite\u013ea",
+                    "password": "Heslo",
+                    "port": "Port",
+                    "ssl": "Povoli\u0165 SSL",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno",
+                    "verify_ssl": "Overenie SSL"
+                },
+                "description": "Tento sn\u00edma\u010d qnap umo\u017e\u0148uje z\u00edska\u0165 r\u00f4zne \u0161tatistiky z v\u00e1\u0161ho QNAP NAS.",
+                "title": "Pripojte sa k zariadeniu QNAP"
+            }
+        }
+    }
+}

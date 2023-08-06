@@ -1,0 +1,93 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "already_in_progress": "Konfigur\u00e1cia u\u017e prebieha",
+            "no_devices_found": "V sieti sa nena\u0161li \u017eiadne zariadenia"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165"
+        },
+        "flow_title": "{model} {id} ({ipaddr})",
+        "step": {
+            "discovery_confirm": {
+                "description": "Chcete nastavi\u0165 {model} {id} ({ipaddr})?"
+            },
+            "user": {
+                "data": {
+                    "host": "Hostite\u013e"
+                },
+                "description": "Ak nech\u00e1te hostite\u013ea pr\u00e1zdneho, na vyh\u013ead\u00e1vanie zariaden\u00ed sa pou\u017eije zis\u0165ovanie."
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "unpair_remotes": {
+                "name": "Zru\u0161enie p\u00e1rovania dia\u013ekov\u00fdch ovl\u00e1da\u010dov"
+            }
+        },
+        "number": {
+            "effect_speed": {
+                "name": "R\u00fdchlos\u0165 \u00fa\u010dinku"
+            },
+            "music_pixels_per_segment": {
+                "name": "Hudobn\u00e9 pixely na segment"
+            },
+            "music_segments": {
+                "name": "Hudobn\u00e9 segmenty"
+            },
+            "pixels_per_segment": {
+                "name": "Pixely na segment"
+            },
+            "segments": {
+                "name": "Segmenty"
+            }
+        },
+        "select": {
+            "ic_type": {
+                "name": "Typ IC"
+            },
+            "operating_mode": {
+                "name": "Prev\u00e1dzkov\u00fd re\u017eim"
+            },
+            "power_restored": {
+                "name": "Obnovenie nap\u00e1jania"
+            },
+            "remote_config": {
+                "name": "Vzdialen\u00e1 konfigur\u00e1cia"
+            },
+            "white_channel": {
+                "name": "Biely kan\u00e1l"
+            },
+            "wiring": {
+                "name": "Zapojenie"
+            }
+        },
+        "sensor": {
+            "paired_remotes": {
+                "name": "Sp\u00e1rovan\u00e9 dia\u013ekov\u00e9 ovl\u00e1da\u010de"
+            }
+        },
+        "switch": {
+            "music": {
+                "name": "Hudba"
+            },
+            "remote_access": {
+                "name": "Vzdialen\u00fd pr\u00edstup"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "custom_effect_colors": "Vlastn\u00fd efekt: Zoznam 1 a\u017e 16 farieb [R,G,B]. Pr\u00edklad: [255,0,255],[60,128,0]",
+                    "custom_effect_speed_pct": "Vlastn\u00fd efekt: R\u00fdchlos\u0165 v percent\u00e1ch pre efekt, ktor\u00fd prep\u00edna farby.",
+                    "custom_effect_transition": "Vlastn\u00fd efekt: Typ prechodu medzi farbami.",
+                    "mode": "Zvolen\u00fd re\u017eim jasu."
+                }
+            }
+        }
+    }
+}
