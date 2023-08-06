@@ -1,0 +1,47 @@
+<p><span><span style="font-family:Verdana, Arial, Helvetica, sans-serif;line-height:19px;text-indent:26px;"><span style="font-size:14px;"><span style="font-family:Arial;line-height:26px;"><br></span></span></span></span></p>
+
+### This is a very fast brainfuck "compiler".
+
+When used, it builds brainfuck code into Python extension modules, and imports it.
+
+Requires:
+1. Python>=3.6
+2. C++ Compiler available
+3. pybind11
+
+#### Running brainfuck
+
+Use the 'brainfuck_to_function' function to convert brainfuck into function.
+It will take several seconds for the C++ compiler to build the module, but after build, you can call it anytime without building, which will be faster, and about 3x faster than directly using a brainfuck **interpreter** implemented in C++.
+```python
+from fastbf import brainfuck_to_function
+code='--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+.'
+func=brainfuck_to_function(code)
+func() # Hello World!
+```
+
+#### Freezing brainfuck into executables
+
+fast-brainfuck is not supposed to be frozen into executables (e.g. using PyInstaller).
+But fortunately, you can use the 'dist_brainfuck' function to convert brainfuck into Python modules.
+You can write setup.py like this:
+
+```python
+from fastbf import dist_brainfuck
+code='--<-<<+[+[<+>--->->->-<<<]>]<<--.<++++++.<<-..<<.<+.>>.>>.<<<.+++.>>.>>-.<<<+.'
+dist_brainfuck(
+    code,'hello'
+)
+```
+Then run **python setup.py build_ext --inplace**, the files hello.py and hello.xxx.pyd (hello.xxx.so) will be created, you can now use
+```python
+import hello
+hello.run()
+```
+to run the brainfuck in your script (which **CAN** be frozen into executables).
+
+Note that fast-brainfuck does **NOT** clean up the temporary files it creates. You have to manually delete them if you want.
+
+fast-brainfuck can run on **CPython** or **PyPy**.
+
+PS: This package consists of only one Python file less than 4KB.
