@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: PyProcessingPipeline
+Version: 0.0.1.dev0
+Summary: Package for defining processing pipelines.
+Author-email: Christian Teichert <christian.teichert@lse.thm.de>, Urs Hackstein <urs.hackstein@lse.thm.de>
+Project-URL: homepage, https://gitlab.com/agbernhard.lse.thm/py-processing-pipeline
+Keywords: processing,signal,physiological signal
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: dev-jupyter
+Provides-Extra: testing
+Provides-Extra: docs
+Provides-Extra: build
+
+# PyProcessingPipeline
+
+PyProcessingPipeline is a package for processing sets of timeseries data using a sequential API.
+
+# Getting Started
+
+## Installing via PyPi
+
+Simply run
+```
+pip install PyProcessingPipeline
+```
+
+## Installing from source
+To install the PyProcessingPipeline from source, clone this repository via
+```
+git clone https://gitlab.com/agbernhard.lse.thm/py-processing-pipeline.git
+```
+and then simply run pip install:
+```
+cd py-processing-pipeline
+pip install
+```
