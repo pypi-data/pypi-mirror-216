@@ -1,0 +1,2 @@
+from djangounittest.mainunittest import *
+
