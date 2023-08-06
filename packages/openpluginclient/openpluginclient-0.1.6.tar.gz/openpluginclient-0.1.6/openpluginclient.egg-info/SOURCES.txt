@@ -1,0 +1,12 @@
+setup.py
+openpluginclient/__init__.py
+openpluginclient/openpluginclient.py
+openpluginclient/plugins.json
+openpluginclient/types.py
+openpluginclient.egg-info/PKG-INFO
+openpluginclient.egg-info/SOURCES.txt
+openpluginclient.egg-info/dependency_links.txt
+openpluginclient.egg-info/requires.txt
+openpluginclient.egg-info/top_level.txt
+tests/__init__.py
+tests/test_completion.py
