@@ -1,0 +1,13 @@
+onnx_clip/__init__.py,sha256=nEq94--YDf1hTNqJb18pq8dU46H1UrZIcMpavzzeyqw,393
+onnx_clip/data/.gitattributes,sha256=rgGDiAfT5tRPD-dzDWixuYrN2ztd099kDcSueRhimq4,43
+onnx_clip/data/CLIP.png,sha256=MIo8pFA_HHoHgDkWw2nXjE71AeWrf8cn2pteHS-eyFs,252444
+onnx_clip/data/bpe_simple_vocab_16e6.txt.gz,sha256=kkaRrCiOVECSNhFWUq1KolD0ggPeUKnkcipuzUjWgEo,1356917
+onnx_clip/data/expected_preprocessed_image.npy,sha256=JZ9C6S2RiLbTEuXcwqSMmg-OXUnOOXzT903NaWCG5BI,602240
+onnx_clip/data/franz-kafka.jpg,sha256=nMLY2riWFZkSFhXTN4VvPMYMQqzLZkYf19KaG6ikSAc,80530
+onnx_clip/model.py,sha256=NmVwLl3gyhCIPdglkeMIGTV52PsUYBpZBcX5c5z0fnw,11467
+onnx_clip/preprocessor.py,sha256=-ggtmgJN3qiGPI_08GXCJYgfEFbjEK9uBr4K0lrEWoU,6955
+onnx_clip/tokenizer.py,sha256=45nKqzMx_Ci9AJD0gr313gqasF_EyXuJdi-0idi69js,7659
+onnx_clip-3.1.1.dist-info/LICENSE,sha256=831wrhoxYEnJuGNCSw7RU_XSdXKanjB5xgezeeSGpl8,1068
+onnx_clip-3.1.1.dist-info/METADATA,sha256=HZBqxHxLLuUMMFiLeA1x3xL700sqz-0fodJwVo-J03Y,4466
+onnx_clip-3.1.1.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+onnx_clip-3.1.1.dist-info/RECORD,,
