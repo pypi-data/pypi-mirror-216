@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: hotpot-zzy
+Version: 0.3.0.6
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: thermo
+Requires-Dist: cclib
+Requires-Dist: tqdm
+Requires-Dist: rdkit
+Requires-Dist: periodictable
+Requires-Dist: psutil
+
