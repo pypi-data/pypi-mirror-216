@@ -1,0 +1,15 @@
+
+[all]
+segment_anything
+torch
+torchvision
+opencv-python
+onnx
+onnxruntime
+timm
+
+[dev]
+flake8
+isort
+black
+pre-commit
