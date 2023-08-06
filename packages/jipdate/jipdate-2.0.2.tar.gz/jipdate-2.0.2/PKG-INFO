@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: jipdate
+Version: 2.0.2
+Summary: Command line tool for Jira
+Author-email: Joakim Bech <joakim.bech@linaro.org>
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: jinja2
+Requires-Dist: jira
+Requires-Dist: PyYAML
+Requires-Dist: python-dateutil
+Project-URL: Documentation, https://jipdate.readthedocs.io/en/latest/
+
+# Jipdate - Jira comment and status update tool
+
+Jipdate is a tool used at Linaro that makes it possible in one go to:
+
+* Update all tickets belonging to a certain user using command line and your
+  favorite editor.
+* Create (and save) a status report.
+* Move Jira tickets into different states (To Do, In Progess etc.).
+* Send status reports using email.
+
+For all instructions (install, how to use, examples etc), please visit
+https://jipdate.readthedocs.io.
+
