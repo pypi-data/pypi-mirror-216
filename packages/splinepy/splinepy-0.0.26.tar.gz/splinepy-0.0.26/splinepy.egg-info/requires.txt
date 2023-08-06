@@ -1,0 +1,5 @@
+numpy
+gustaf>=0.0.12
+
+[test]
+pytest>=6.0
