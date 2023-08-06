@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: ragbooster
+Version: 0.1.0
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: tldextract==3.4.0
+Requires-Dist: manifest-ml==0.1.8
+Requires-Dist: pandas==1.5.3
+Requires-Dist: scikit-learn==1.2.2
+Requires-Dist: tqdm==4.65.0
+Requires-Dist: transformers[torch]==4.30.2
+Requires-Dist: torch==2.0.1
+Requires-Dist: maturin==0.14.8; extra == 'dev'
+Requires-Dist: jupyter==1.0.0; extra == 'dev'
+Requires-Dist: pytest==6.2.5; extra == 'dev'
+Requires-Dist: flake8==6.0.0; extra == 'dev'
+Provides-Extra: dev
+License-File: LICENSE
+Requires-Python: >=3.9
