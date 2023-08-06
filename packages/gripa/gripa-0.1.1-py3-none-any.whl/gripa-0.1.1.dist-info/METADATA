@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: gripa
+Version: 0.1.1
+Summary: Time series anomaly detection
+Home-page: https://github.com/hamiddimyati/gripa
+License: MIT
+Author: hamiddimyati
+Author-email: hamid.dimyati@outlook.com
+Requires-Python: >=3.9,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: numpy (>=1.25.0,<2.0.0)
+Requires-Dist: pandas (>=2.0.2,<3.0.0)
+Requires-Dist: scikit-learn (>=1.2.2,<2.0.0)
+Requires-Dist: scipy (>=1.10.1,<2.0.0)
+Project-URL: Repository, https://github.com/hamiddimyati/gripa
