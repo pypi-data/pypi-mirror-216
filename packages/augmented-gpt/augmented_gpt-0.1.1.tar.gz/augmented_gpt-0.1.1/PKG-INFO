@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: augmented-gpt
+Version: 0.1.1
+Summary: ChatGPT API wrapper, argumented with functions
+Home-page: https://github.com/wenyuzhao/augmented-gpt
+License: MIT
+Keywords: chatgpt,gpt
+Author: Wenyu Zhao
+Author-email: wenyu.zhao@anu.edu.au
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: matplotlib (>=3.7.1,<4.0.0)
+Requires-Dist: numpy (>=1.24.3,<2.0.0)
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Requires-Dist: pandas (>=2.0.2,<3.0.0)
+Requires-Dist: plotly (>=5.15.0,<6.0.0)
+Requires-Dist: pytest (>=7.3.2,<8.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: scikit-learn (>=1.2.2,<2.0.0)
+Requires-Dist: scipy (>=1.10.1,<2.0.0)
+Project-URL: Repository, https://github.com/wenyuzhao/augmented-gpt
+Description-Content-Type: text/markdown
+
+# AugmentedGPT: Simple ChatGPT api wrapper with function calls
+
+Example: See [test.ipynb](test.ipynb)
+
+Install: `pip3 install augmented-gpt`
+
