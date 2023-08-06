@@ -1,0 +1,35 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwertyPOOL"
+version = "1.0.0"
+description = "Python Operating Other Languages"
+readme = "README.md"
+authors = [{ name = "pi-this" },{ name = "qwerty-pi"}]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Java",
+]
+
+keywords = ["python", "operating", "java", "run"]
+dependencies = ["time"]
+requires-python = ">=3.7"
+
+    [project.optional-dependencies]
+    build = ["build", "twine"]
+    dev   = ["black", "bumpver", "isort", "mypy", "pytest"]
+
+    [project.scripts]
+    realpython = "reader.__main__:main"
+
+    [project.urls]
+    repository    = "https://github.com/pi-this/POOL"
+    documentation = "https://pi-this.github.io/qwertyPOOL/"
+
