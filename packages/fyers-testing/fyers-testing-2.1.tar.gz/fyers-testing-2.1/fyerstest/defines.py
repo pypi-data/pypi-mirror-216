@@ -1,0 +1,29 @@
+AUTH_ERROR_CODE = 11001
+SUBS_ERROR_CODE = 11011
+UNSUBS_ERROR_CODE = 11012
+RESUME_ERROR_CODE = 11031
+RESUME_ERROR_CODE = 11032
+MODE_ERROR_CODE = 12001
+SUCCESS_CODE = 200
+INVALID_CODE = -300
+LIMIT_EXCEED_CODE = -99
+LIMIT_EXCEED_MSG = "Please provide less than 200 symbols"
+WRONG_CHANNEL_MSG = (
+    "Please provide valid channel , channel does not contain this symbol"
+)
+SUCCESS = "Ok"
+ERROR = "error"
+AUTH_SUCCESS = "Authentication done"
+AUTH_FAIL = "Authentication failed"
+SUBSCRIBE_SUCCESS = "Subscribed"
+SUBSCRIBE_FAIL = "subscription failed"
+UNSUBSCRIBE_SUCCESS = "Unsubscribed"
+UNSUBSCRIBE_FAIL = "unsubscription failed"
+LITE_MODE = "Lite Mode On"
+FULL_MODE = "Full Mode On"
+MODE_CHANGE_ERROR = "Mode change failed"
+CHANNEL_PAUSED = "Channel Paused"
+CHANNEL_RESUMED = "Channel Resumed"
+CHANNEL_CHANGE_FAIL = "Mode change failed"
+INVALID_SYMBOLS = "Please provide a valid symbol"
+CONNECTION_CLOSED = "Connection Closed"
