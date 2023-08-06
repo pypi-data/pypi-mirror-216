@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+oswrapper/__init__.py
+oswrapper.egg-info/PKG-INFO
+oswrapper.egg-info/SOURCES.txt
+oswrapper.egg-info/dependency_links.txt
+oswrapper.egg-info/requires.txt
+oswrapper.egg-info/top_level.txt
