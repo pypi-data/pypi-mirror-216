@@ -1,0 +1,10 @@
+
+[dev]
+docutils
+ipython
+pytest
+black==19.10b0
+click==8.0.4
+
+[ipython]
+ipython
