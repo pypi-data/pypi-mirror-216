@@ -1,0 +1,16 @@
+future
+pip>=9.0.0
+cython
+numpy
+rdflib>=6.0.0
+pandas>=0.23.0
+requests
+toposort
+beautifulsoup4
+jinja2
+lxml
+six
+xlrd
+ijson
+requests-testadapter
+python-slugify
