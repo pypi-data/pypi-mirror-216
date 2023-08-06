@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: desy-mento
+Version: 0.0.0
+Home-page: https://gitlab.desy.de/fs-sc/mento/
+Author: Vijay Kartik
+Author-email: vijay.kartik@desy.de
+License: GPLv3
+Keywords: photon science data processing analysis
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: ~=3.7
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-cov ; extra == 'tests'
+Requires-Dist: flake8 ; extra == 'tests'
+
