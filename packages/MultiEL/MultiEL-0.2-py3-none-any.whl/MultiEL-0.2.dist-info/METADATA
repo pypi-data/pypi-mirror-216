@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: MultiEL
+Version: 0.2
+Summary: Multilingual Entity Linking model by BELA model
+Home-page: https://github.com/wannaphong/MultiEL
+Author: Wannaphong
+Author-email: wannaphong@yahoo.com
+License: MIT License
+Project-URL: Source, https://github.com/wannaphong/MultiEL
+Project-URL: Bug Reports, https://github.com/wannaphong/MultiEL/issues
+Keywords: NLP,natural language processing,text analytics,text processing,localization,computational linguistics
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: General
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: faiss-gpu
+Requires-Dist: fairscale
+Requires-Dist: hydra-core
+Requires-Dist: hydra-submitit-launcher
+Requires-Dist: pyyaml
+Requires-Dist: pytorch-lightning
+Requires-Dist: transformers
+Requires-Dist: tqdm
+Requires-Dist: sentencepiece
+Requires-Dist: h5py
+Requires-Dist: protobuf (==3.20)
+Requires-Dist: ujson
+Requires-Dist: huggingface-hub
+
+# MultiEL
+Multilingual Entity Linking model by BELA model
+
+This project want to create easy-to-use Multilingual Entity Linking model by BELA model.
+
+**Origin Project**
+
+- Bi-encoder Entity Linking Architecture (BELA): [https://github.com/facebookresearch/BELA](https://github.com/facebookresearch/BELA)
+
+
+## Install
+
+> pip install multiel
+
+## Usage
+
+```python
+from multiel import BELA
+
+bela_run = BELA(device="cuda")
+
+print(bela_run.process_batch(["นายกประยุทธ์ประกาศจัดการเลือกตั้ง"]))
+```
