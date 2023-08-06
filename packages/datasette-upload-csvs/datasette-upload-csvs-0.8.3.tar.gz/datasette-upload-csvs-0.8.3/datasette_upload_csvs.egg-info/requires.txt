@@ -1,0 +1,14 @@
+datasette>=0.61
+asgi-csrf>=0.7
+starlette
+aiofiles
+python-multipart
+charset-normalizer
+sqlite-utils
+
+[test]
+pytest
+pytest-asyncio
+asgiref
+httpx
+asgi-lifespan
