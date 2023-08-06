@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "evaluation-metrics"
+version = "0.1.0"
+description = "This Package contains methods to evaluate the ML Model metrics."
+authors = ["KS Tarun <kstarun27@gmail.com>"]
+readme = "README.md"
+packages = [{include = "evaluation_metrics"}]
+license = "MIT"
+repository = "https://github.com/KSTarun/evaluation-metrics/"
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pandas = "^1.5.3"
+matplotlib = "^3.7.0"
+scikit-learn = "^1.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
