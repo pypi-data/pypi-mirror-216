@@ -1,0 +1,3 @@
+[console_scripts]
+flood=flood.cli.cli_run:run_cli
+
