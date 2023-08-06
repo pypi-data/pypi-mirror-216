@@ -1,0 +1,27 @@
+librosa>=0.8.0
+mir_eval>=0.6
+numpy<1.24,>=1.18
+pretty_midi>=0.2.9
+resampy>=0.2.2
+scipy>=1.4.1
+typing_extensions
+
+[:platform_machine != "arm64"]
+tensorflow>=2.4.1
+
+[:platform_machine == "arm64"]
+tensorflow-macos>=2.4.1
+
+[dev]
+basic_pitch[docs,test]
+bump2version>=1.0.1
+mypy
+tox
+
+[docs]
+mkdocs>=1.0.4
+
+[test]
+coverage>=5.0.2
+pytest>=6.1.1
+pytest-mock
