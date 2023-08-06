@@ -1,0 +1,3 @@
+[console_scripts]
+ee=express_env.cli:main
+
