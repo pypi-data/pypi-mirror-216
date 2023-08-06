@@ -1,0 +1,4 @@
+[console_scripts]
+geotest=tools.test:main
+geotrain=tools.train:main
+
