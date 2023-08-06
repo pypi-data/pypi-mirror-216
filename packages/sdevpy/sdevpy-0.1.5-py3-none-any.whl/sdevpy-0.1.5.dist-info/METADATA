@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: sdevpy
+Version: 0.1.5
+Summary: Python package for Machine Learning in Finance
+Author-email: Sebastien Gurrieri <sebgur@gmail.com>
+Project-URL: Git page, https://github.com/sebgur/SDev.Python
+Project-URL: SDev Finance, http://sdev-finance.com/
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: pyperclip
+Requires-Dist: py-vollib
+Requires-Dist: numpy
+Requires-Dist: tensorflow
+Requires-Dist: scikit-learn
+
+# SDev.Python
+
+Python repository for various tools and projects in Machine Learning for Quantitative Finance. In the current release,
+we mostly work on stochastic volatility surfaces and their calibration through Machine Learning methods.
+
+See other work on our main website [SDev-Finance](http://sdev-finance.com/).
+
+## Stochastic volatility calibration
+
+In this project we intend to use Neural Networks to improve the calibration speed for stochastic volatility models. For now
+we consider only the direct map, i.e. the calculation from model parameters to implied volatilities.
+
+We first generate datasets of parameters (inputs) and vanilla option prices (outputs) and then train the network to replicate the prices.
+In this manner, the machine learning model is used as a pricing function to replace costly closed-forms or PDE/MC price calculations.
+
+Our models can be saved to files for later usage, and can also be re-trained from a saved state. We cover (Hagan) SABR, Free-Boundary
+SABR, ZABR and Heston models.
+
+
+## Other Tools
+
+The package contains various other tools including Black-Scholes/Bachelier formulas, Monte-Carlo simulation of vanilla prices and 
+other utilities.
