@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: zein
+Version: 0.0.4
+Summary: A python library for ensuring the safety and security of ML models
+Author: Mohamed Elsayed
+Author-email: <mohamedelsayed3487@gmail.com>
+Keywords: python,arabic filtering,text filtering,profanity check
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+A python library for ensuring the safety and security of ML models and their outputs for the Arabic and Islamic community
