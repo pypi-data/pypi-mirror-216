@@ -1,0 +1,9 @@
+[console_scripts]
+kernel-autodoc = linuxdoc.deprecated:cmd_kernel_autodoc
+kernel-doc = linuxdoc.deprecated:cmd_kernel_doc
+kernel-grepdoc = linuxdoc.deprecated:cmd_kernel_grepdoc
+kernel-lintdoc = linuxdoc.deprecated:cmd_kernel_lintdoc
+linuxdoc.autodoc = linuxdoc.autodoc:main
+linuxdoc.grepdoc = linuxdoc.grepdoc:main
+linuxdoc.lintdoc = linuxdoc.lint:main
+linuxdoc.rest = linuxdoc.rest:main
