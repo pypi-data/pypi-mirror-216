@@ -1,0 +1,9 @@
+matplotlib
+networkx
+numpy
+scipy
+setuptools
+sympy
+
+[:python_version < "3.9"]
+importlib_resources>=1.4
