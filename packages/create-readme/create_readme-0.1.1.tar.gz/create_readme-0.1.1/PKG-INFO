@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: create-readme
+Version: 0.1.1
+Summary: 
+Author: rizerphe
+Author-email: 44440399+rizerphe@users.noreply.github.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Description-Content-Type: text/markdown
+
+# create-readme
+
+create-readme is a tool that allows users to quickly and easily create README files with ChatGPT. By asking users a set of questions, create-readme generates a README based on the answers, eliminating the need to manually open OpenAI's website and type the prompt.
+
+## Key Features
+
+- Simple command-based interface for generating README files
+- Efficient and time-saving solution compared to manually typing prompts
+- Effortless use - the tool asks you questions, you don't have to worry about describing everything in detail to it
+
+## Installation
+
+To install create-readme, run the following command:
+
+```shell
+pipx install create-readme
+```
+
+## Usage
+
+To use create-readme, follow these steps:
+
+1. Open your terminal.
+2. Run the command:
+
+```shell
+create-readme my-awesome-project
+```
+
+3. Answer the prompted questions to provide the necessary information for the README file generation.
+4. Once you have answered all the questions, create-readme will generate a README file based on your inputs.
+
+## Example
+
+An example of a generated README is the file you're reading right now - it was manually cleaned up, but most of it is generated.
+
