@@ -1,0 +1,17 @@
+{
+    "config": {
+        "step": {
+            "manual": {
+                "data": {
+                    "url": "\u7f51\u5740"
+                }
+            },
+            "on_supervisor": {
+                "title": "\u9009\u62e9\u8fde\u63a5\u65b9\u5f0f"
+            },
+            "start_addon": {
+                "title": "\u542f\u52a8\u52a0\u8f7d\u9879\u3002"
+            }
+        }
+    }
+}
