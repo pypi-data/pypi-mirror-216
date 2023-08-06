@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: bkbit
+Version: 0.0.2
+Summary: A library for atlaskb data models
+Author: atlaskb developers
+License: Apache 2.0
+Project-URL: Homepage, https://github.com/atlaskb/bkbit
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: linkml (>=1.5)
+Requires-Dist: pandas
+Provides-Extra: docs
+Requires-Dist: mkdocs-material ; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+# bkbit
+
+Brain Knowledge Base Interaction Toolkit
