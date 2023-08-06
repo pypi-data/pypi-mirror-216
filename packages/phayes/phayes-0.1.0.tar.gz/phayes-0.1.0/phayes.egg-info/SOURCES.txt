@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+phayes/__init__.py
+phayes/adaptive.py
+phayes/fourier.py
+phayes/maximise.py
+phayes/sympy_solve_negative_variance.py
+phayes/version.py
+phayes/von_mises.py
+phayes.egg-info/PKG-INFO
+phayes.egg-info/SOURCES.txt
+phayes.egg-info/dependency_links.txt
+phayes.egg-info/requires.txt
+phayes.egg-info/top_level.txt
