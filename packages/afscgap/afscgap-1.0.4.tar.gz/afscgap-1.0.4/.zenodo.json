@@ -1,0 +1,55 @@
+{
+  "license": "BSD-3-Clause", 
+  "contributors": [
+      {
+          "orcid": "0000-0002-0458-4985", 
+          "affiliation": "UC Berkeley", 
+          "type": "ProjectLeader", 
+          "name": "Pottinger, A Samuel"
+      }, 
+      {
+          "orcid": "0000-0002-9122-4709", 
+          "affiliation": "UC Berkeley",
+          "type": "ProjectMember", 
+          "name": "Zarpellon, Giulia"
+      }
+  ], 
+  "language": "eng", 
+  "title": "Pyafscgap.org: Open source multi-modal Python-based tools for NOAA AFSC RACE GAP", 
+  "related_identifiers": [
+      {
+          "scheme": "url", 
+          "identifier": "https://github.com/SchmidtDSE/afscgap/tree/1.0.2", 
+          "relation": "isSupplementTo"
+      }, 
+      {
+          "scheme": "doi", 
+          "identifier": "10.5281/zenodo.7991875", 
+          "relation": "isNewVersionOf"
+      }
+  ], 
+  "version": "1.0.4", 
+  "upload_type": "software", 
+  "keywords": [
+      "ocean", 
+      "fish", 
+      "python", 
+      "NOAA", 
+      "AFSC", 
+      "GAP", 
+      "Alaska"
+  ], 
+  "publication_date": "2023-06-02", 
+  "creators": [
+      {
+          "affiliation": "University of California, Berkeley, California, United States of America", 
+          "name": "A Samuel Pottinger"
+      }, 
+      {
+          "affiliation": "University of California, Berkeley, California, United States of America",
+          "name": "Giulia Zarpellon"
+      }
+  ], 
+  "access_right": "open", 
+  "description": "<p>Python-based tool chain (&quot;Pyafscgap.org&quot;) for working with the public bottom trawl surveys data from the <a href=\"https://www.fisheries.noaa.gov/contact/groundfish-assessment-program\">NOAA AFSC GAP</a>. This provides information about where certain species were seen and when under what conditions, information useful for research in ocean health.</p>\n\n<p>See <a href=\"https://pyafscgap.org\">webpage</a>, <a href=\"https://github.com/SchmidtDSE/afscgap\">project Github</a>, and <a href=\"https://mybinder.org/v2/gh/SchmidtDSE/afscgap/main?urlpath=/tree/index.ipynb\">example notebook</a>.</p>"
+}
