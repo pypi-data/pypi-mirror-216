@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+capture_it/__init__.py
+capture_it/_captures.py
+capture_it/_clp.py
+capture_it/_command.py
+capture_it/_conn.py
+capture_it/_detection.py
+capture_it/_exec_device.py
+capture_it/common.py
+capture_it/executions.py
+capture_it.egg-info/PKG-INFO
+capture_it.egg-info/SOURCES.txt
+capture_it.egg-info/dependency_links.txt
+capture_it.egg-info/requires.txt
+capture_it.egg-info/top_level.txt
