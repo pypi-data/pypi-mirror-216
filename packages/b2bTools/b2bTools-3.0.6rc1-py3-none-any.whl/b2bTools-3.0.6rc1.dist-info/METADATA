@@ -1,0 +1,876 @@
+Metadata-Version: 2.1
+Name: b2bTools
+Version: 3.0.6rc1
+Summary: bio2Byte software suite to predict protein biophysical properties from their amino-acid sequences
+Home-page: https://bio2byte.be
+Author: Wim Vranken
+Author-email: Wim.Vranken@vub.be
+Maintainer: Jose Gavalda-Garcia, Adrian Diaz, Wim Vranken
+Maintainer-email: jose.gavalda.garcia@vub.be, adrian.diaz@vub.be, wim.vranken@vub.be
+License: OSI Approved :: GNU General Public License v3 (GPLv3)
+Project-URL: Documentation, https://bio2byte.be/b2btools/package-documentation
+Project-URL: HTML interface, https://bio2byte.be/b2btools
+Keywords: b2bTools,biology,bioinformatics,bio-informatics,fasta,proteins,protein-folding
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.7, <3.10
+Description-Content-Type: text/markdown
+Requires-Dist: biopython (==1.81)
+Requires-Dist: certifi (==2023.5.7)
+Requires-Dist: charset-normalizer (==3.1.0)
+Requires-Dist: cycler (==0.11.0)
+Requires-Dist: exceptiongroup (==1.1.1)
+Requires-Dist: fonttools (==4.38.0)
+Requires-Dist: idna (==3.4)
+Requires-Dist: importlib-metadata (==6.7.0)
+Requires-Dist: iniconfig (==2.0.0)
+Requires-Dist: joblib (==1.2.0)
+Requires-Dist: kiwisolver (==1.4.4)
+Requires-Dist: matplotlib (==3.5.3)
+Requires-Dist: networkx (==2.6.3)
+Requires-Dist: numpy (>=1.21)
+Requires-Dist: packaging (==23.1)
+Requires-Dist: pandas (==1.1.5)
+Requires-Dist: Pillow (==9.5.0)
+Requires-Dist: pluggy (==1.2.0)
+Requires-Dist: pomegranate (==0.14.8)
+Requires-Dist: pyparsing (==3.1.0)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: pytz (==2023.3)
+Requires-Dist: PyYAML (==6.0)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: scikit-learn (==1.0.1)
+Requires-Dist: scipy (==1.7.3)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: threadpoolctl (==3.1.0)
+Requires-Dist: tomli (==2.0.1)
+Requires-Dist: torch (==1.13.1)
+Requires-Dist: torchvision (==0.14.1)
+Requires-Dist: tqdm (==4.65.0)
+Requires-Dist: typing-extensions (==4.6.3)
+Requires-Dist: urllib3 (==1.26.6)
+Requires-Dist: zipp (==3.15.0)
+
+<h1 align="center">
+  <a href="bio2byte.be/b2btools" target="_blank" ref="noreferrer noopener">
+  <img src="https://pbs.twimg.com/profile_images/1247824923546079232/B9b_Yg7n_400x400.jpg" width="224px"/>
+  </a>
+  <br/>
+  Bio2Byte Tools
+</h1>
+<p align="center">This package provides you structural predictions for protein sequences made by Bio2Byte group.</p>
+<p align="center">
+  <a href="https://anaconda.org/Bio2Byte/b2bTools"> <img src="https://anaconda.org/Bio2Byte/b2bTools/badges/version.svg" /></a>&nbsp;
+  <a href="https://anaconda.org/Bio2Byte/b2bTools"> <img src="https://anaconda.org/Bio2Byte/b2bTools/badges/latest_release_relative_date.svg" /></a>&nbsp;
+  <a href="https://anaconda.org/Bio2Byte/b2bTools"> <img src="https://anaconda.org/Bio2Byte/b2bTools/badges/platforms.svg" /></a>&nbsp;
+  <a href="https://anaconda.org/Bio2Byte/b2bTools"> <img src="https://anaconda.org/Bio2Byte/b2bTools/badges/downloads.svg" /></a>&nbsp;
+</p>
+
+## 🧪 About this Python package
+
+This package, called `b2bTools`, offers biophysical feature predictors for protein sequences as well as different file parses and other utilities to help you with your protein data analysis.
+If your input data consists on one or more sequences not aligned, we provide you with the Single Sequence mode. On the other hand, if your input is a Multiple Sequence Alignment (MSA), we provide the MSA mode. For NMR data, we have the predictor ShiftCrypt.
+
+About the available predictors:
+
+| Predictor | Usage | Bio.Tools | Online predictor |
+| --------- | --------- | ----  | ----  |
+| DynaMine  | Fast predictor of protein backbone dynamics using only sequence information as input. The version here also predicts side-chain dynamics and secondary structure predictors using the same principle. | [Link](https://bio.tools/Dynamine) | [Start predicting online ▶️](https://bio2byte.be/b2btools/dynamine/)|
+| DisoMine  | Predicts protein disorder with recurrent neural networks not directly from the amino acid sequence, but instead from more generic predictions of key biophysical properties, here protein dynamics, secondary structure and early folding. | [Link](https://bio.tools/Disomine) | [Start predicting online ▶️](https://bio2byte.be/b2btools/disomine/)|
+| EfoldMine | Predicts from the primary amino acid sequence of a protein, which amino acids are likely involved in early folding events. | [Link](https://bio.tools/b2btools) | [Start predicting online ▶️](https://bio2byte.be/b2btools/efoldmine) |
+| AgMata    | Single-sequence based predictor of protein regions that are likely to cause beta-aggregation. | [Link](https://bio.tools/agmata) | [Start predicting online ▶️](https://bio2byte.be/b2btools/agmata/) |
+| PSPer    | PSP (Phase Separating Protein) predicts whether a protein is likely to phase-separate with a particular mechanism involving RNA interacts (FUS-like proteins). It will highlight the regions in your protein that are involved mechanistically, and provide an overall score. | [Link](https://bio.tools/PSPer) | [Start predicting online ▶️](https://bio2byte.be/b2btools/psp/) |
+| ShiftCrypt    | Auto-encoding NMR chemical shifts from their native vector space to a residue-level biophysical index | [Link](https://bio.tools/ShiftCrypt) | [Start predicting online ▶️](https://bio2byte.be/b2btools/shiftcrypt/) |
+
+**🔗 Related link:**
+
+- These tools are described on the Bio2Byte website inside the [Tools section](https://bio2byte.be/tool/).
+- [Galaxy](https://usegalaxy.org) is an open source, web-based platform for data intensive biomedical research. There is an available version of the Single Sequence predictors on Galaxy Europe. Start predicting online using Galaxy from [this link](https://usegalaxy.eu/root?tool_id=toolshed.g2.bx.psu.edu/repos/iuc/b2btools_single_sequence/b2btools_single_sequence/3.0.5+galaxy0).
+
+## Usage and examples
+
+To install the latest version of this package:
+
+```console
+$ pip install b2bTools
+```
+
+**⚠️ Important notes:** [Hmmer](http://hmmer.org) and [T-Coffee](https://tcoffee.crg.eu) are required to run several features. Please install them following their official guidelines.
+
+### Single Sequence predictions
+
+Use this example as an entry point when you have a FASTA file containing one or more sequences. There is a live demo available on [Google Colab](https://colab.research.google.com/github/Bio2Byte/public_notebooks/blob/main/Bio2ByteTools_v3_singleseq_pypi.ipynb).
+
+#### Predicting biophysical features in JSON format
+
+```python
+import json
+from b2bTools import SingleSeq, constants
+
+input_fasta = "/path/to/example.fasta"
+
+single_seq = SingleSeq(input_fasta)
+
+# Predict features using 'dynamine', 'disomine', 'efoldmine', 'agmata', 'psper'
+single_seq.predict(tools=constants.PREDICTOR_NAMES)
+
+predictions = single_seq.get_all_predictions()
+
+for sequence_id, prediction_values in predictions.items():
+    with open(f"{input_fasta}_{sequence_id}.json", "w") as fp:
+        json.dump(prediction_values, fp, indent=4)
+```
+
+#### Predicting biophysical features in tabular formats (CSV, TSV)
+
+```python
+import json
+from b2bTools import SingleSeq, constants
+
+input_fasta = "/path/to/example.fasta"
+
+single_seq = SingleSeq(input_fasta)
+
+# Predict features using 'dynamine', 'disomine', 'efoldmine', 'agmata', 'psper'
+single_seq.predict(tools=constants.PREDICTOR_NAMES)
+
+single_seq.get_all_predictions_tabular(f"{input_fasta}_residues.csv", sep=",")
+single_seq.get_all_predictions_tabular(f"{input_fasta}_residues.tsv", sep="\t")
+```
+
+The output contains these columns:
+
+| Predictor | Value | Data type |
+| --------- | ----- | --------- |
+| None      | `sequence_id` | `String` |
+| None      | `residue`     | `Char` |
+| None      | `residue_index` | `Integer` |
+| PSPer     | `RRM` | `Float` |
+| AgMata     | `agmata` | `Float` |
+| PSPer     | `arg` | `Float` |
+| DynaMine     | `backbone` | `Float` |
+| DynaMine     | `coil` | `Float` |
+| PSPer     | `complexity` | `Float` |
+| DisoMine     | `disoMine` | `Float` |
+| PSPer     | `disorder` | `Float` |
+| EFoldMine     | `earlyFolding` | `Float` |
+| DynaMine     | `helix` | `Float` |
+| DynaMine     | `ppII` | `Float` |
+| DynaMine     | `sheet` | `Float` |
+| DynaMine     | `sidechain` | `Float` |
+| PSPer     | `tyr` | `Float` |
+
+#### Plotting biophysical features
+In case you need to plot the prediction values:
+
+```python
+import json
+
+from b2bTools import SingleSeq, constants
+from matplotlib import pyplot as plt
+
+input_fasta = "/path/to/example.fasta"
+
+single_seq = SingleSeq(input_fasta)
+sequence_id = "SEQ001"
+
+# Predict features using 'dynamine'
+single_seq.predict(tools=constants.TOOL_DYNAMINE)
+
+predictions = single_seq.get_all_predictions()
+
+backbone_pred = predictions[sequence_id]['backbone']
+sidechain_pred = predictions[sequence_id]['sidechain']
+
+plt.plot(range(len(backbone_pred)), backbone_pred, label = "Backbone")
+plt.plot(range(len(backbone_pred)), sidechain_pred, label = "Sidechain")
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+#### Extracting metadata
+
+For extracting metadata from the prediction values in tabular format when analyzing Single Sequence input:
+
+```python
+from b2bTools import SingleSeq, constants
+
+input_fasta = "/path/to/example.fasta"
+
+single_seq = SingleSeq(input_fasta)
+
+# Predict features using 'dynamine', 'disomine', 'efoldmine', 'agmata', 'psper'
+single_seq.predict(tools=constants.PREDICTOR_NAMES)
+
+predictions = single_seq.get_all_predictions()
+single_seq.get_metadata(f"{input_fasta}.csv")
+```
+
+The output will include these columns:
+
+- sequence_id
+- length
+- Execution times:
+  - dynamine_execution_time
+  - disomine_execution_time
+  - efoldmine_execution_time
+  - agmata_execution_time
+  - psper_execution_time
+- DynaMine:
+  - Backbone:
+    - backbone_mean
+    - backbone_median
+    - backbone_variance
+    - backbone_stdev
+    - backbone_pvariance
+    - backbone_pstdev
+    - backbone_min
+    - backbone_max
+  - Side chain:
+    - sidechain_mean
+    - sidechain_median
+    - sidechain_variance
+    - sidechain_stdev
+    - sidechain_pvariance
+    - sidechain_pstdev
+    - sidechain_min
+    - sidechain_max
+  - ppII:
+    - ppII_mean
+    - ppII_median
+    - ppII_variance
+    - ppII_stdev
+    - ppII_pvariance
+    - ppII_pstdev
+    - ppII_min
+    - ppII_max
+  - Coil:
+    - coil_mean
+    - coil_median
+    - coil_variance
+    - coil_stdev
+    - coil_pvariance
+    - coil_pstdev
+    - coil_min
+    - coil_max
+  - Sheet:
+    - sheet_mean
+    - sheet_median
+    - sheet_variance
+    - sheet_stdev
+    - sheet_pvariance
+    - sheet_pstdev
+    - sheet_min
+    - sheet_max
+  - Helix:
+    - helix_mean
+    - helix_median
+    - helix_variance
+    - helix_stdev
+    - helix_pvariance
+    - helix_pstdev
+    - helix_min
+    - helix_max
+- EFoldMine:
+  - earlyFolding_mean
+  - earlyFolding_median
+  - earlyFolding_variance
+  - earlyFolding_stdev
+  - earlyFolding_pvariance
+  - earlyFolding_pstdev
+  - earlyFolding_min
+  - earlyFolding_max
+- AgMata:
+  - agmata_mean
+  - agmata_median
+  - agmata_variance
+  - agmata_stdev
+  - agmata_pvariance
+  - agmata_pstdev
+  - agmata_min
+  - agmata_max
+- DisoMine:
+  - disoMine_mean
+  - disoMine_median
+  - disoMine_variance
+  - disoMine_stdev
+  - disoMine_pvariance
+  - disoMine_pstdev
+  - disoMine_min
+  - disoMine_max
+- PSPer:
+  - Protein Score:
+    - protein_score
+  - Complexity:
+    - complexity_mean
+    - complexity_median
+    - complexity_variance
+    - complexity_stdev
+    - complexity_pvariance
+    - complexity_pstdev
+    - complexity_min
+    - complexity_max
+  - ARG:
+    - arg_mean
+    - arg_median
+    - arg_variance
+    - arg_stdev
+    - arg_pvariance
+    - arg_pstdev
+    - arg_min
+    - arg_max
+  - TYR:
+    - tyr_mean
+    - tyr_median
+    - tyr_variance
+    - tyr_stdev
+    - tyr_pvariance
+    - tyr_pstdev
+    - tyr_min
+    - tyr_max
+  - RRM:
+    - RRM_mean
+    - RRM_median
+    - RRM_variance
+    - RRM_stdev
+    - RRM_pvariance
+    - RRM_pstdev
+    - RRM_min
+    - RRM_max
+  - Disorder:
+    - disorder_mean
+    - disorder_median
+    - disorder_variance
+    - disorder_stdev
+    - disorder_pvariance
+    - disorder_pstdev
+    - disorder_min
+    - disorder_max
+
+### Multiple Sequences Alignment predictions
+
+Use the following example as an entry point when you have a MSA file input. There is a live demo available on Google Colab: [link](https://colab.research.google.com/github/Bio2Byte/public_notebooks/blob/main/Bio2ByteTools_v3_multipleseq_pypi.ipynb)
+
+#### Predicting biophysical features in JSON format
+
+```python
+import json
+from b2bTools import MultipleSeq, constants
+
+input_msa = "/path/to/example.afa"
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_aligned_file(input_msa, tools=constants.PREDICTOR_NAMES)
+
+predictions = multiple_seq.get_all_predictions_msa()
+
+for sequence_id, prediction_values in predictions.items():
+    with open(f"{input_msa}_{sequence_id}.json", "w") as fp:
+        json.dump(prediction_values, fp, indent=4)
+
+distributions_dict = multiple_seq.get_all_predictions_msa_distrib()
+distributions = distributions_dict['results']
+
+with open(f"{input_msa}_distributions.json", "w") as fp:
+    json.dump(distributions, fp, indent=4)
+
+```
+
+#### Predicting biophysical features in tabular formats (CSV, TSV)
+
+```python
+from b2bTools import MultipleSeq, constants
+
+input_msa = "/path/to/example.afa"
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_aligned_file(input_msa, tools=constants.PREDICTOR_NAMES)
+
+multiple_seq.get_all_predictions_tabular(f"{input_msa}_residues.csv", sep=",")
+multiple_seq.get_all_predictions_tabular(f"{input_msa}_residues.tsv", sep="\t")
+```
+
+The output contains these columns:
+
+| Predictor | Value | Data type |
+| ----------| ----- | --------- |
+| None | sequence_id | String |
+| None | residue | Char |
+| None | residue_index | Integer |
+| PSPer | RRM | Float |
+| AgMata | agmata | Float |
+| PSPer | arg | Float |
+| DynaMine | backbone | Float |
+| DynaMine | coil | Float |
+| PSPer | complexity | Float |
+| DisoMine | disoMine | Float |
+| PSPer | disorder | Float |
+| EFoldMine | earlyFolding | Float |
+| DynaMine | helix | Float |
+| DynaMine | ppII | Float |
+| DynaMine | sheet | Float |
+| DynaMine | sidechain | Float |
+| PSPer | tyr | Float |
+
+#### Extracting metadata
+For extracting metadata from the prediction values in tabular format when analyzing MSA input:
+
+```python
+from b2bTools import MultipleSeq, constants
+
+input_msa = "/path/to/example.afa"
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_aligned_file(input_msa, tools=constants.PREDICTOR_NAMES)
+
+multiple_seq.get_metadata(f"{input_msa}.csv")
+```
+
+
+
+## 💻 Installation
+
+From the official documentation:
+
+> [`pip`](https://pypi.org/) is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes.
+
+
+To install the b2bTools package in your local environment:
+
+```console
+$ pip install b2bTools
+```
+
+**💡 Notes:** If you are using [Jupyter Notebook](https://jupyter.org) or [Google Colab](https://colab.research.google.com), install the package directly from `pip` inside a _code block_ cell:
+
+```python
+!pip install b2bTools
+```
+
+## 📦  Package content
+
+### 🔍 General Tools
+
+Besides the prediction tools, this package includes general bioinformatics tools useful to manipulate files.
+
+#### 📄 Single Sequences files (FASTA format)
+
+The class `FastaIO` provides the following static methods:
+
+- `read_fasta_from_file`
+- `read_fasta_from_string`
+- `write_fasta`
+
+Usage:
+
+```python
+from b2bTools.general.parsers.fasta import FastaIO
+```
+
+#### 📄 Multiple Sequences Alignments files
+
+The class `AlignmentsIO` provides the following static methods:
+
+- `read_alignments`
+- `read_alignments_fasta`
+- `read_alignments_A3M`
+- `read_alignments_blast`
+- `read_alignments_balibase`
+- `read_alignments_clustal`
+- `read_alignments_psi`
+- `read_alignments_phylip`
+- `read_alignments_stockholm`
+- `write_fasta_from_alignment`
+- `write_fasta_from_seq_alignment_dict`
+- `json_preds_to_csv_singleseq`
+- `json_preds_to_csv_msa`
+
+Usage:
+
+```python
+from b2bTools.general.parsers.alignments import AlignmentsIO
+```
+
+#### 📄 NEF files
+
+The class `NefIO` provides the following static methods:
+
+- `read_nef_file`
+- `read_nef_file_sequence_shifts`
+
+Usage:
+
+```python
+from b2bTools.general.parsers.alignments import AlignmentsIO
+```
+
+#### 📄 NMR-STAR files
+
+The class `NMRStarIO` provides the following static methods:
+
+- `read_nmr_star_project`
+- `read_nmr_star_sequence_shifts`
+
+Usage:
+
+```python
+from b2bTools.general.parsers.nmr_star import NMRStarIO
+```
+
+### 🔍 Biophysical features predictors
+
+Given a predictor might be built on top of other, it is usual to get more output predictions than the expected:
+
+| Predictor | Depends on            |
+| --------- | --------------------- |
+| Dynamine  | -                     |
+| EfoldMine | Dynamine              |
+| Disomine  | EfoldMine, Dynamine   |
+| AgMata    | EfoldMine, Dynamine   |
+
+These are all the available options to use inside the tools array parameter:
+
+| Predictor | constant value              | literal value |
+| --------- | ----------------------------| ------------- |
+| Dynamine  | `constants.TOOL_DYNAMINE`   | `"dynamine"`  |
+| EfoldMine | `constants.TOOL_EFOLDMINE`  | `"efoldmine"` |
+| Disomine  | `constants.TOOL_DISOMINE`   | `"disomine"`  |
+| AgMata    | `constants.TOOL_AGMATA`     | `"agmata"`    |
+| PSPer     | `constants.TOOL_PSP`        | `"psper"`     |
+
+The next table shows all the available predictor values by predictor:
+
+| Predictor | Output key       | Output values (type) |
+| --------- | ---------------- | -------------------- |
+| Dynamine  | `"backbone"`     | `[Float]`            |
+| Dynamine  | `"sidechain"`    | `[Float]`            |
+| Dynamine  | `"helix"`        | `[Float]`            |
+| Dynamine  | `"ppII"`         | `[Float]`            |
+| Dynamine  | `"coil"`         | `[Float]`            |
+| Dynamine  | `"sheet"`        | `[Float]`            |
+| EfoldMine | `"earlyFolding"` | `[Float]`            |
+| Disomine  | `"disoMine"`     | `[Float]`            |
+| AgMata    | `"agmata"`       | `[Float]`            |
+| PSPer     | `"viterbi"`      | `[Float]`            |
+| PSPer     | `"complexity"`   | `[Float]`            |
+| PSPer     | `"tyr"`          | `[Float]`            |
+| PSPer     | `"arg"`          | `[Float]`            |
+| PSPer     | `"RRM"`          | `[Float]`            |
+| PSPer     | `"disorder"`     | `[Float]`            |
+
+For MSA input files, the distribution dictionary and/or JSON will include:
+
+```python
+multiple_seq.get_all_predictions_msa_distrib()['results']
+```
+
+| Predictor | Output key       | Output values (type) |
+| --------- | ---------------- | -------------------- |
+| Dynamine  | `"backbone"`     | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| Dynamine  | `"sidechain"`    | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| Dynamine  | `"helix"`        | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| Dynamine  | `"ppII"`         | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| Dynamine  | `"coil"`         | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| Dynamine  | `"sheet"`        | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| EfoldMine | `"earlyFolding"` | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| Disomine  | `"disoMine"`     | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| AgMata    | `"agmata"`       | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| PSPer     | `"viterbi"`      | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| PSPer     | `"complexity"`   | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| PSPer     | `"tyr"`          | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| PSPer     | `"arg"`          | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| PSPer     | `"RRM"`          | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+| PSPer     | `"disorder"`     | `['median', 'thirdQuartile', 'firstQuartile', 'topOutlier', 'bottomOutlier']`            |
+
+The method `get_all_predictions` will return a dictionary with the following structure:
+
+```python
+{
+  "SEQUENCE_ID_000": {
+    "seq": "the input sequence 0",
+    "result001": [0.001, 0.002, ..., 0.00],
+    "result002": [0.001, 0.002, ..., 0.00],
+    "...": [...],
+    "resultN": [0.001, 0.002, ..., 0.00]
+  },
+  "SEQUENCE_ID_001": {
+    "seq": "the input sequence 1",
+    "result001": [0.001, 0.002, ..., 0.00],
+    "result002": [0.001, 0.002, ..., 0.00],
+    "...": [...],
+    "resultN": [0.001, 0.002, ..., 0.00]
+  },
+  "...": { ... },
+  "SEQUENCE_ID_N": {
+    "seq": "the input sequence N",
+    "result001": [0.001, 0.002, ..., 0.00],
+    "result002": [0.001, 0.002, ..., 0.00],
+    "...": [...],
+    "resultN": [0.001, 0.002, ..., 0.00]
+  },
+}
+```
+
+You are ready to use the sequence and predictions to work with them. Here is an example of plotting the data.
+
+```python
+backbone_pred = predictions['SEQ001']['backbone']
+sidechain_pred = predictions['SEQ001']['sidechain']
+
+plt.plot(range(len(backbone_pred)), backbone_pred, label = "Backbone")
+plt.plot(range(len(sidechain_pred)), sidechain_pred, label = "Sidechain")
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+#### Running as Python module (no Python code involved)
+
+You are able to use this package directly from your console session with no Python code involved. Further details available on [the official Python documentation site](https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts)
+
+The available parameters after `b2b-tools` are:
+
+| Parameter    | Purpose                                                | Example                                |
+| ------------ | ------------------------------------------------------ | -------------------------------------- |
+| `-file`      | Path to the input file                                 | `-input /path/to/input/file.fasta`     |
+| `-output`    | Path to the output file (a JSON file with the results) | `-output /path/to/output/results.json` |
+| `-dynamine`  | Run Dynamine predictor                                 | `-dynamine`                            |
+| `-disomine`  | Run Disomine predictor                                 | `-disomine`                            |
+| `-efoldmine` | Run EfoldMine predictor                                | `-efoldmine`                           |
+| `-agmata`    | Run AgMata predictor                                   | `-agmata`                              |
+| `-psp`       | Run PSPer predictor                                    | `-psp`                              |
+
+Example:
+
+```console
+$ python -m b2bTools \
+    -file /path/to/input/example.fasta \
+    -dynamine \
+    -disomine \
+    -identifier test \
+    -output /path/to/output/results.json
+```
+
+##### From an aligned file
+
+```python
+import matplotlib.pyplot as plt
+from b2bTools import MultipleSeq
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_aligned_file("/path/to/example.fasta")
+
+predictions = multiple_seq.get_all_predictions_msa("SEQ001")
+backbone_pred = predictions['backbone']
+sidechain_pred = predictions['sidechain']
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+##### From two MSA files
+
+```python
+import matplotlib.pyplot as plt
+from b2bTools import MultipleSeq
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_two_msa("/path/to/example_a.fasta", "/path/to/example_b.fasta")
+
+predictions = multiple_seq.get_all_predictions_msa("SEQ001")
+backbone_pred = predictions['backbone']
+sidechain_pred = predictions['sidechain']
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+##### From a JSON with variations file
+
+In this case, we support a JSON format to introduce variants in a sequence. For instance:
+
+```json
+{
+  "metadata": { "name": "target_fasta_file" },
+  "WT": "MAKSTILALLALVLVAHASAMRRERGRQGDSSSCERQVDRVNLKPCEQHIMQRIMGEQEQYDSYDIRSTRSSDQQQRCCDELNEMENTQRCMCEALQQIMENQCDRLQDRQMVQQFKRELMNLPQQCNFRAPQRCDLDVSGGRC",
+  "Variants": {
+    "Var1": ["A3S", "A11G"],
+    "Var2": ["A2G", "K3_S4insPH", "T5del"]
+  }
+}
+```
+
+Where WT is the wild-type sequence, and the Variants key includes a dictionary of different variations. Each of them are handled by an array of replacements:
+
+- <Target Residue><New Residue> (For example: Replace the A at the position 3 with a S would be `"A3S"`)
+
+Regarding the input fasta file, the `metadata` key contains the name of the input, remember it should stored in the same directory than the json file.
+
+The code snippet is:
+
+```python
+import matplotlib.pyplot as plt
+from b2bTools import MultipleSeq
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_json("/path/to/example.json")
+
+predictions = multiple_seq.get_all_predictions_msa("SEQ001")
+backbone_pred = predictions['backbone']
+sidechain_pred = predictions['sidechain']
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+##### From a sequence performing a BLAST before running the predictions
+
+In case you want to perform a mutation of a residue at one specific position, you have the parameters `mut_position`, `mut_residue` and the value of `mut_option` must be `"y"`.
+
+```python
+import matplotlib.pyplot as plt
+from b2bTools import MultipleSeq
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_blast("path/to/example.fasta", mut_option="y", mut_position=1, mut_residue="A")
+
+predictions = multiple_seq.get_all_predictions_msa("SEQ001")
+backbone_pred = predictions['backbone']
+sidechain_pred = predictions['sidechain']
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+##### From an UniRef ID performing a BLAST before running the predictions
+
+```python
+import matplotlib.pyplot as plt
+from b2bTools import MultipleSeq
+
+multiple_seq = MultipleSeq()
+multiple_seq.from_uniref("A2R2V4")
+
+predictions = multiple_seq.get_all_predictions_msa("SEQ001")
+backbone_pred = predictions['backbone']
+sidechain_pred = predictions['sidechain']
+
+plt.legend()
+plt.xlabel('aa_position')
+plt.ylabel('pred_values')
+plt.show()
+```
+
+**⚠️ Note**: the query using the UniRef ID was limited to 25 results to increase the time performance.
+
+### 🔍 ShiftCrypt predictor (NMR data)
+
+```python
+import json
+from b2bTools.nmr.shiftCrypt.Predictor import ShiftCrypt
+from b2bTools.nmr.shiftCrypt.shiftcrypt_pkg import shiftcrypt_parser as parser
+
+shiftcrypt_instance = ShiftCrypt()
+path_to_input = '/path/to/example.nef'
+
+allProteinShifts = parser.parse_official(path_to_input)
+result_list = shiftcrypt_instance.predictShifts(
+    allProteinShifts,
+    modelClass='1'
+)
+
+with open(f"{path_to_input}.json", "w") as fp:
+    json.dump(result_list, fp, indent=4)
+```
+
+Regarding the `modelClass` parameter of method `predictShifts`:
+
+- `modelClass='1'`: the method with the full set of Cs. this may retur a lot of -10 (missing values) because of the scarcity of cs data for some residues
+- `modelClass='2'`: the method with just the most common Cs values
+- `modelClass='3'`: the method with only N and H CS. Used for dimers
+
+
+The next table shows all the available predictor values from `shiftcrypt_instance.predictShifts`. Please remind that the returning value is a list of dictionaries with these values:
+
+| Predictor   | Output key       | Output values (type) |
+| ---------   | ---------------- | -------------------- |
+| ShiftCrypt  | `"ID_file"`      | `String`             |
+| ShiftCrypt  | `"sequence"`     | `[Char]`             |
+| ShiftCrypt  | `"seqCodes"`     | `[Integer]`          |
+| ShiftCrypt  | `"shiftCrypt"`   | `[Float]`            |
+| ShiftCrypt  | `"chainCode"`    | `String`             |
+
+## 📚 Documentation: classes & methods
+
+If you are interested in further details, please read the full documentation on [the Bio2Byte website](https://bio2byte.be/b2btools/package-documentation).
+
+To generate locally the documentation you can follow the next steps described in this section.
+
+1. Download the source code of the Bio2Byte Tools in your local environment:
+
+```console
+$ git clone git@bitbucket.org:bio2byte/b2btools.git && cd b2btools
+```
+
+2. Run the following command:
+
+```console
+$ make generate-docs
+```
+
+3. And then open folder `./wrapped_documentation`
+
+**💡 Notes:** At any moment, you can read the docs of a method invoking the `__doc__` method (e.g. `print(SingleSeq.predict.__doc__)`).
+
+## 📖 How to cite
+
+If you use this package or data in this package, please cite:
+
+| Predictor | Authors | Cite | Digital Object Identifier (DOI) |
+| --------- | --------- | --------- | --------- |
+| Dynamine  | Elisa Cilia, Rita Pancsa, Peter Tompa, Tom Lenaerts, and Wim Vranken | _Elisa Cilia, Rita Pancsa, Peter Tompa, Tom Lenaerts, and Wim Vranken._ From protein sequence to dynamics and disorder with DynaMine **Nature Communications 4:2741 (2013)** | https://www.nature.com/articles/ncomms3741 |
+| Disomine  | Gabriele Orlando, Daniele Raimondi, Francesco Codice, Francesco Tabaro, Wim Vranken | _Gabriele Orlando, Daniele Raimondi, Francesco Codice, Francesco Tabaro, Wim Vranken._ Prediction of disordered regions in proteins with recurrent Neural Networks and protein dynamics. **bioRxiv 2020.05.25.115253 (2020)** | https://www.biorxiv.org/content/10.1101/2020.05.25.115253v1 |
+| EfoldMine | Raimondi, D., Orlando, G., Pancsa, R. et al |  _Raimondi, D., Orlando, G., Pancsa, R. et al._ Exploring the Sequence-based Prediction of Folding Initiation Sites in Proteins. **Sci Rep 7, 8826 (2017)** | https://doi.org/10.1038/s41598-017-08366-3 |
+| AgMata    | Gabriele Orlando, Alexandra Silva, Sandra Macedo-Ribeiro, Daniele Raimondi, Wim Vranken | _Gabriele Orlando, Alexandra Silva, Sandra Macedo-Ribeiro, Daniele Raimondi, Wim Vranken._ Accurate prediction of protein beta-aggregation with generalized statistical potentials **Bioinformatics , Volume 36, Issue 7, 1 April 2020, Pages 2076–2081 (2020)** | https://academic.oup.com/bioinformatics/article/36/7/2076/5670527 |
+| PSPer    | Gabriele Orlando,  Daniele Raimondi,  Francesco Tabaro,  Francesco Codicè,  Yves Moreau, Wim F Vranken  | _Gabriele Orlando and others_, Computational identification of prion-like RNA-binding proteins that form liquid phase-separated condensates, **Bioinformatics, Volume 35, Issue 22, November 2019, Pages 4617–4623** | https://doi.org/10.1093/bioinformatics/btz274 |
+| ShiftCrypt    | Gabriele Orlando,  Daniele Raimondi,  Luciano Porto Kagami,  Wim F Vranken | _Gabriele Orlando and others_. ShiftCrypt: a web server to understand and biophysically align proteins through their NMR chemical shift values, **Nucleic Acids Research, Volume 48, Issue W1, 02 July 2020, Pages W36–W40** | https://doi.org/10.1093/nar/gkaa391 |
+
+<!--
+## 📝 License
+Bio2Byte Tools is free and open-source software licensed under the Apache 2.0 License.
+-->
+
+## 📝 Terms of use
+
+1. The Bio2Byte group aims to promote open science by providing freely available online services, database and software relating to the life sciences, with focus on proteins. Where we present scientific data generated by others we impose no additional restriction on the use of the contributed data than those provided by the data owner.
+1. The Bio2Byte group expects attribution (e.g. in publications, services or products) for any of its online services, databases or software in accordance with good scientific practice. The expected attribution will be indicated in 'How to cite' sections (or equivalent).
+1. The Bio2Byte group is not liable to you or third parties claiming through you, for any loss or damage.
+1. Any questions or comments concerning these Terms of Use can be addressed to [Wim Vranken](mailto:wim.vranken@vub.be).
+
+<hr/>
+<p align="center">© Wim Vranken, Bio2Byte group, VUB, Belgium</p>
+<p align="center"><a href="https://bio2byte.be/" target="_blank" ref="noreferrer noopener">https://bio2byte.be/</a></p>
