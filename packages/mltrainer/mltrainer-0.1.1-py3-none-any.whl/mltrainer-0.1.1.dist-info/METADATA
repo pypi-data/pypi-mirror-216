@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: mltrainer
+Version: 0.1.1
+Summary: toolkit for training pytorch models
+Author-Email: R.Grouls <Raoul.Grouls@han.nl>
+License: MIT
+Requires-Python: >=3.10
+Provides-Extra: lint
+Provides-Extra: tuning
+Requires-Dist: Flake8-pyproject>=1.2.3; extra == "lint"
+Requires-Dist: pep8-naming>=0.13.3; extra == "lint"
+Requires-Dist: flake8-annotations>=3.0.1; extra == "lint"
+Requires-Dist: black>=23.3.0; extra == "lint"
+Requires-Dist: flake8>=6.0.0; extra == "lint"
+Requires-Dist: isort>=5.12.0; extra == "lint"
+Requires-Dist: mypy>=1.4.1; extra == "lint"
+Requires-Dist: mlflow>=2.4.1; extra == "tuning"
+Requires-Dist: bayesian-optimization>=1.4.3; extra == "tuning"
+Requires-Dist: hpbandster>=0.7.4; extra == "tuning"
+Requires-Dist: configspace>=0.7.1; extra == "tuning"
+Description-Content-Type: text/markdown
+
+# ml-trainer
+
+toolkit for training pytorch models
