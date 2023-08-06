@@ -1,0 +1,62 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "already_in_progress": "Konfigur\u00e1cia u\u017e prebieha",
+            "cannot_connect": "Nepodarilo sa pripoji\u0165"
+        },
+        "step": {
+            "discovery_confirm": {
+                "description": "Chcete nastavi\u0165 toto zariadenie Guardian?"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP adresa",
+                    "port": "Port"
+                },
+                "description": "Nakonfigurujte miestne zariadenie Elexa Guardian."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "leak": {
+                "name": "Zisten\u00fd \u00fanik"
+            },
+            "moved": {
+                "name": "Ned\u00e1vno presunut\u00e9"
+            }
+        },
+        "button": {
+            "reset_diagnostics": {
+                "name": "Resetujte diagnostiku ventilu"
+            }
+        },
+        "sensor": {
+            "uptime": {
+                "name": "Uptime"
+            }
+        },
+        "switch": {
+            "onboard_access_point": {
+                "name": "Palubn\u00fd pr\u00edstupov\u00fd bod"
+            },
+            "valve_controller": {
+                "name": "Ovl\u00e1da\u010d ventilov"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Aktualizujte v\u0161etky automatiz\u00e1cie alebo skripty, ktor\u00e9 pou\u017e\u00edvaj\u00fa t\u00fato slu\u017ebu, aby namiesto nej pou\u017e\u00edvali slu\u017ebu `{alternate_service}` s ID cie\u013eovej entity `{alternate_target}`.",
+                        "title": "Slu\u017eba {deprecated_service} bude odstr\u00e1nen\u00e1"
+                    }
+                }
+            },
+            "title": "Slu\u017eba {deprecated_service} bude odstr\u00e1nen\u00e1"
+        }
+    }
+}
