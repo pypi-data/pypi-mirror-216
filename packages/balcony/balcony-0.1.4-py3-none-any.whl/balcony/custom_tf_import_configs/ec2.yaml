@@ -1,0 +1,27 @@
+maintainers:
+  - name: "Oguzhan Yilmaz"
+    github: "oguzhan_yilmaz"
+import_configurations:
+  - service: ec2
+    resource_node: Instances
+    operation_name: DescribeInstances
+    to_resource_type: aws_instance
+    jmespath_query: "[].Reservations[].Instances[]"
+    to_resource_name_jinja2_template: "{{ tag_Name or InstanceId }}"
+    id_generator_jinja2_template: "{{ InstanceId }}"
+ 
+  - service: ec2
+    resource_node: Volumes
+    operation_name: DescribeVolumes
+    to_resource_type: aws_ebs_volume
+    jmespath_query: "[].Volumes[]"
+    to_resource_name_jinja2_template: "{{ VolumeId }}"
+    id_generator_jinja2_template: "{{ VolumeId }}"
+ 
+  - id_generator_jinja2_template: '{{ VpcId }}'
+    jmespath_query: '[].Vpcs[]'
+    operation_name: DescribeVpcs
+    resource_node: Vpcs
+    service: ec2
+    to_resource_name_jinja2_template: '{{ tag_Name or VpcId }}'
+    to_resource_type: aws_vpc
