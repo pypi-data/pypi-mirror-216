@@ -1,0 +1,5 @@
+========================
+collective.gridlisting
+========================
+
+User documentation

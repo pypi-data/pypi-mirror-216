@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-06-28 07:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Additional masonry options"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "CSS class(es) for preview image in column content"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "CSS class(es) for title/description/link in column content"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Column"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Column content"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Column content image"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Column content text"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Container row"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Define grid listing properties. For further information see https://getbootstrap.com/docs/5.3/layout/grid/"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Enable masonry layout"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+#: collective/gridlisting/browser/configure.zcml
+msgid "Grid listing"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "If you want borders or backgrounds inside the column define it here."
+msgstr ""
+
+#: collective/gridlisting/configure.zcml
+msgid "Installs the collective.gridlisting add-on."
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Listing item title tag"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Options for \"pat-masonry\" see https://patternslib.com/demos/masonry."
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Preview image scale"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "See masonry documentation."
+msgstr ""
+
+#: collective/gridlisting/configure.zcml
+msgid "Uninstalls the collective.gridlisting add-on."
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "Use grid css class combinations for column. Example: 'col-12 col-md-6 col-xl-3'"
+msgstr ""
+
+#: collective/gridlisting/configure.zcml
+msgid "collective.gridlisting"
+msgstr ""
+
+#: collective/gridlisting/configure.zcml
+msgid "collective.gridlisting (uninstall)"
+msgstr ""
+
+#: collective/gridlisting/behaviors/grid_listing.py
+msgid "eg. if you want to set gutter between columns define here."
+msgstr ""
