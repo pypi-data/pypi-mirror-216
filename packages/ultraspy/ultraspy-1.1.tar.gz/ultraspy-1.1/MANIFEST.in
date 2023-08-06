@@ -1,0 +1,15 @@
+graft docs
+graft src
+graft tests
+
+include tox.ini
+include .readthedocs.yml
+include AUTHORS.rst
+include CHANGELOG.rst
+include CONTRIBUTING.rst
+include LICENSE
+include README.rst
+
+global-include *.cu
+global-include *.ini
+global-exclude *.py[cod] __pycache__/* *.so
