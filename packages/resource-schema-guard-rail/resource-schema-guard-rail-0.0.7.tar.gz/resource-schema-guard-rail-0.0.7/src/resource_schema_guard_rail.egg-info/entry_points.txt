@@ -1,0 +1,4 @@
+[console_scripts]
+guard-rail = cli:main
+guard-rail-cli = cli:main
+
