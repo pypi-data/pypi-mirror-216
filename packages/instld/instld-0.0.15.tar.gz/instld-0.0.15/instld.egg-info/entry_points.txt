@@ -1,0 +1,3 @@
+[console_scripts]
+instld = installed.cli.main:start
+
