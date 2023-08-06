@@ -1,0 +1,16 @@
+Plone
+setuptools
+collective.eeafaceted.z3ctable>=2.0
+imio.helpers
+plone.formwidget.masterselect<2.0.0
+
+[develop]
+zest.releaser
+
+[test]
+plone.app.dexterity
+plone.app.testing
+plone.app.relationfield
+plone.app.robotframework
+collective.contact.core
+ftw.labels>1.3.1
