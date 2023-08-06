@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "json-lisfy"
+version = "0.1.0"
+description = ""
+authors = ["Naoya Yamashita <conao3@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+more-itertools = "^9.1.0"
+pydantic = "^1.10.9"
+
+[tool.poetry.scripts]
+json-lisfy = "json_lisfy.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
