@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: CNUfof_utils
+Version: 1.0.3
+Summary: Python package for Galaxy Group finding algorithm using Mutliprocessing package
+Home-page: https://github.com/Dong-yunkwak/KDY.git
+Author: Dong Yun Kwak
+Author-email: 98ehddbs@naver.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Free for non-commercial use
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text
+
+### Welcome to using Parallelizing Friends Of Friends. 
+I'm an undergraduate at the Exo-galaxy Lab in Chungnam National University. 
+If you have any questions or feedback about PFOF code, Place contact us at the email address below.
+I want your opinions and thoughts about the code. Please feel free to contact me! 
+<Email : 98ehddbs@naver.com>
+
+-------------------------------------------------------------------------------------------------
+## Required Packages 
+* Numpy
+* Pydl
+* Ray (Multiprocessing Package)
+* astropy
+* Pandas 
+
+
+
+Version 1.0.3 2023.06.30
+Version of packages used. (Please check these versions)
+python  3.10.3
+numpy   1.21.4
+astropy 5.1.1
+pandas  1.3.5
+pydl    1.0.0
+ray     2.2.9
+
+*** Based on observing data Parallelizing Friends of Friends algorithm *** 
+ra (0~360[degree]), dec (-90~90[degree]), redshift (>=10^(-3))
+
+Cautions)  Before importing, You should install some of packages 
+- ray package (Parallelizing pack) 
+- pydl package (gcirc function pack) 
+
+Note) 
+- Set linking length [Physical Distance [kpc] | velocity [km/s]] , nmin(minimum number of particles(galaxies)) 
+
+- The group name you run as whole at once may be different from the group you run in parallel. But, The particles found for each group will be the same 
+
+- When setting the variables, you should follow the example.
+
+More detail usage methods are explained in "example" and "Explanations file for each code"  file 
+
+Thank you. 
+
