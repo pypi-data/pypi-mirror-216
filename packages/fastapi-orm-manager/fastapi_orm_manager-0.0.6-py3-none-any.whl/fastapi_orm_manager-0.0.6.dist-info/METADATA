@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: fastapi-orm-manager
+Version: 0.0.6
+Summary: A base manager class to handle CRUD on SQLAlchemy models. Suitable to use in FastAPI projects.
+Project-URL: Homepage, https://github.com/nakeeon/FastAPI-ORM-Manager
+Project-URL: Bug Tracker, https://github.com/nakeeon/FastAPI-ORM-Manager/issues
+Author-email: Nazar Kaliuzhnyi <kaluzghnyy@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: pydantic>=1.10.9
+Requires-Dist: sqlalchemy>=1.4
+Description-Content-Type: text/markdown
+
+# FastAPI ORM Manager
+
+A base manager class to easily create managers for SQLAlchemy models. Suitable to use in FastAPI projects.
