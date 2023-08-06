@@ -1,0 +1,9 @@
+datetime
+mysqlclient
+pandas
+
+[dev]
+check-manifest
+
+[test]
+coverage
