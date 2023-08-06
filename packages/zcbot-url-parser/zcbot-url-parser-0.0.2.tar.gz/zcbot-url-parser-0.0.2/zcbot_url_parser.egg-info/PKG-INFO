@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: zcbot-url-parser
+Version: 0.0.2
+Summary: zcbot url parser for zsodata
+Home-page: http://www.zsodata.com
+Author: zsodata
+Author-email: team@zso.io
+License: BSD License
+Platform: all
+Requires-Python: >=3.7
+
+pip uninstall zcbot-url-parser
+
+pip install --upgrade zcbot-url-parser -i https://pypi.python.org/simple
+pip show zcbot-url-parser
