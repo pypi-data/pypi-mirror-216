@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: croncaster
+Version: 0.2.0
+Summary: cached shell command caster based on rotating state machine
+License: MIT
+Keywords: cron,crontab,timer
+Author: lightmanLP
+Author-email: liteman1000@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pydantic (>=1.10.2,<2.0.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: yamt (>=0.1.3.1,<0.2.0.0)
+Project-URL: Github, https://github.com/lightmanLP/croncaster
+Description-Content-Type: text/markdown
+
+# croncaster
+[![PyPI version](https://badge.fury.io/py/croncaster.svg)](https://badge.fury.io/py/croncaster)
+![PyPI downloads per mounth](https://img.shields.io/pypi/dm/croncaster)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/lightmanLP/croncaster)
+
+Simple tool for periodic events based on timeout. Cron is supposed to be used as runtime base.
+
+## How to use
+Just add cron that runs croncaster every `n`.
+```crontab
+@hourly python3 -m croncaster
+```
+Then use `n` as one step in config. Pretty simple.
+
