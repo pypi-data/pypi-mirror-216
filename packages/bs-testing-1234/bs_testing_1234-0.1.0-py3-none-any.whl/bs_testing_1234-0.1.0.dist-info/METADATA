@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: bs-testing-1234
+Version: 0.1.0
+Summary: 
+Author: alec
+Author-email: fkalec@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: docker (>=6.1.3,<7.0.0)
+Requires-Dist: fastapi (>=0.98.0,<0.99.0)
+Requires-Dist: kubernetes (>=26.1.0,<27.0.0)
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: redis (>=4.6.0,<5.0.0)
+Requires-Dist: tenacity (>=8.2.2,<9.0.0)
+Requires-Dist: uvicorn (>=0.22.0,<0.23.0)
+Description-Content-Type: text/markdown
+
+hello
