@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+genworlds/__init__.py
+genworlds.egg-info/PKG-INFO
+genworlds.egg-info/SOURCES.txt
+genworlds.egg-info/dependency_links.txt
+genworlds.egg-info/entry_points.txt
+genworlds.egg-info/requires.txt
+genworlds.egg-info/top_level.txt
+genworlds/sockets/__init__.py
+genworlds/sockets/test_client.py
+genworlds/sockets/world_socket_client.py
+genworlds/sockets/world_socket_server.py
