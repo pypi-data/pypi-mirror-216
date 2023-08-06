@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+pypdtools/__init__.py
+pypdtools.egg-info/PKG-INFO
+pypdtools.egg-info/SOURCES.txt
+pypdtools.egg-info/dependency_links.txt
+pypdtools.egg-info/requires.txt
+pypdtools.egg-info/top_level.txt
+pypdtools/abc/__init__.py
+pypdtools/abc/dataframe.py
+pypdtools/abc/scripts.py
+pypdtools/core/__init__.py
+pypdtools/core/dataframe.py
+pypdtools/core/scripts.py
+pypdtools/utils/__init__.py
+pypdtools/utils/asyncs.py
