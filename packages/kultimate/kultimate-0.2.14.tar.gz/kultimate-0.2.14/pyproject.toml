@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "kultimate"
+version = "0.2.14"
+description = "Aplicación para manejar tableros kanban con markdown desde la línea de comandos"
+authors = ["Felipe <104157442+justafewwords4@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+textual = { extras = ["dev"], version = "^0.27.0" }
+pyyaml = "^6.0"
+typer = { extras = ["all"], version = "^0.9.0" }
+beautifulsoup4 = "^4.12.2"
+markdown = "^3.4.3"
+html2text = "^2020.1.16"
+pyperclip = "^1.8.2"
+
+[tool.poetry.scripts]
+kultimate = "kultimate.utils.app_config:run"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,161 @@
+Directory {
+  dock: left;
+  display: none;
+  offset-x: -100%;
+  max-width: 40;
+  height: 100%;
+  border: tall $primary-darken-1;
+}
+
+Directory._visible {
+  offset-x: 0;
+  display: block;
+}
+
+Stage {
+  min-width: 30;
+  max-width: 40;
+  height: 100%;
+  border: panel $primary;
+  color: $secondary;
+  border-title-align: center;
+
+  border-title-color: black;
+  border-title-background: white;
+  border-title-style: bold;
+}
+
+Stage._actual {
+  border: panel $secondary;
+  color: $primary;
+}
+
+StagesContainer {
+  height: 100%;
+}
+
+Task {
+  width: 100%;
+  height: auto;
+  border: tall $success;
+  margin: 1;
+  padding: 1;
+  color: $background-darken-3; /* ya no mover */
+  background: $success-darken-1;
+}
+
+Task.is_important {
+  border: tall $error-darken-3;
+  background: $error-lighten-3;
+}
+
+/* DONE: Cambiar colores de tareas seleccionadas */
+/* DONE: Cambiar colores de la tarea que está seleccionada actualmente*/
+._actual > Task {
+  color: $background-darken-3;
+  border: tall $warning;
+  background: $warning-lighten-1;
+}
+
+._actual > Task._active {
+  color: $background-darken-3;
+  border: inner $error-lighten-2;
+  background: $warning-lighten-1;
+}
+
+Stage > Task._is_important {
+  color: $background-darken-3;
+  border: inner $boost-lighten-3;
+  background: $error-lighten-3;
+}
+
+._actual > Task._active._is_important {
+  color: $background-darken-3;
+  border: inner $warning-lighten-1;
+  background: $error-lighten-3;
+}
+
+._actual > Task._is_important {
+  color: $background-darken-3;
+  border: inner $boost-lighten-3;
+  background: $error-lighten-3;
+}
+
+DeleteTask,
+AddTask,
+SelectAFile,
+EditTask,
+CreateFile {
+  align: center middle;
+}
+
+#add_task,
+#edit_task,
+#add_file {
+  grid-size: 2;
+  grid-gutter: 1 2;
+  grid-rows: 1fr 3;
+  padding: 0 1;
+  width: 60;
+  height: 5;
+  border: thick $error-lighten-2 80%;
+  background: $surface;
+}
+
+#add_file {
+  grid-size: 2;
+  grid-gutter: 1 2;
+  grid-rows: 1fr 3;
+  padding: 0 1;
+  width: 60;
+  height: 15;
+  border: thick $error-lighten-2 80%;
+  background: $surface;
+}
+
+#the_new_file {
+  grid-size: 2;
+  grid-gutter: 1 2;
+  grid-rows: 1fr 3;
+  padding: 0 1;
+  width: 60;
+  height: 10;
+  border: thick $error-lighten-2 80%;
+  background: $surface;
+}
+
+#dialog {
+  grid-size: 2;
+  grid-gutter: 1 2;
+  grid-rows: 1fr 3;
+  padding: 0 1;
+  width: 60;
+  height: 11;
+  border: thick $error-lighten-2 80%;
+  background: $surface;
+}
+
+#question,
+#the_vertical {
+  column-span: 2;
+  height: 1fr;
+  width: 100%;
+  content-align: center middle;
+}
+
+RadioSet {
+  width: 50%;
+}
+
+#question-1 {
+  column-span: 2;
+  height: 3;
+  width: 100%;
+  content-align: center middle;
+}
+
+Button {
+  width: 100%;
+  align: center middle;
+  content-align: center middle;
+}
