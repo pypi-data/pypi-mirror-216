@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbt-graph-builder"
+description = "DBT Graph Builder"
+authors = [
+    {name = "Piotr Tutak", email = "piotr.tutak@getindata.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11"
+]
+dependencies = [
+    "networkx>=2.6,<3",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {file = "LICENSE"}
+dynamic = ["version"]
+
+[tool.bandit]
+exclude_dirs = ["build","dist","tests","scripts"]
+number = 4
+recursive = true
+targets = "src"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 120
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = [
+    "E203",
+    "D100",  # public module
+    "D104",  # public package
+    "D105",  # magic methods
+    "DCO010", # duplicate of public method
+    "DCO060", # public attributes - they're already documented if it is a property.
+]
+exclude = ["build", "tests"]
+convention = "google"
+
+[tool.mypy]
+packages = ["src"]
+exclude = ["tests"]
+ignore_missing_imports = true
+strict = true
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 85
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-vv", "-s"]
+markers = [
+    "integration: marks as integration test",
+    "notebooks: marks as notebook test",
+    "gpu: marks as gpu test",
+    "spark: marks tests which need Spark",
+    "slow: marks tests as slow",
+    "unit: fast offline tests",
+]
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit",
+    "pytest",
+    "pytest-cov",
+    "pytest-xdist",
+    "pytest-github-actions-annotate-failures",
+]
