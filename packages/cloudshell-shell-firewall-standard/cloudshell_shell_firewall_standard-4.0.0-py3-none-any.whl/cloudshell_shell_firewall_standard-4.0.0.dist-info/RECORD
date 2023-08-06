@@ -1,0 +1,20 @@
+cloudshell/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+cloudshell/shell/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+cloudshell/shell/standards/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+cloudshell/shell/standards/firewall/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+cloudshell/shell/standards/firewall/autoload_model.py,sha256=weUymSmNAsFbdn2DoZh1-DX9PiZdR3SZ46aD-ds9-h4,904
+cloudshell/shell/standards/firewall/driver_interface.py,sha256=QjpgRbVz7FD1mmuEthCpUfQx9vQcXXhN9XUoK6RHZNI,1057
+cloudshell/shell/standards/firewall/resource_config.py,sha256=DQWuGjF8PUiTQfkFOc0IPH6fSgt-ehYkD5JXjP7QKYE,402
+tests/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+tests/cloudshell/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+tests/cloudshell/conftest.py,sha256=97ZKExAIWF1gElc51nEpGZ3Iv2QoPI-xA5rgYkjIP3w,1938
+tests/cloudshell/shell/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+tests/cloudshell/shell/standards/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+tests/cloudshell/shell/standards/firewall/__init__.py,sha256=qEFeq3yuf3lQKVseALmL8aPM8fpCS54B_5pry00M3hk,76
+tests/cloudshell/shell/standards/firewall/test_autoload_model.py,sha256=Hv4eayn67PM3h1U7TWTVY6vzbrZFBmC37lPfv9lS0R4,1261
+tests/cloudshell/shell/standards/firewall/test_driver_interface.py,sha256=jir4-UUhZli9dSmzH8iH9hpSyFx8hHim4Ju5zLshwGI,3695
+tests/cloudshell/shell/standards/firewall/test_resource_ config.py,sha256=ee9_3LcHzJ6msjoS269hb2KgQo6h8JR1KWdvAefOgIk,3918
+cloudshell_shell_firewall_standard-4.0.0.dist-info/METADATA,sha256=YWY2VDJiIRFi835ZRMCEoopBBE61WPqP0qL-Hw4WwRM,358
+cloudshell_shell_firewall_standard-4.0.0.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+cloudshell_shell_firewall_standard-4.0.0.dist-info/top_level.txt,sha256=L6C4-nnYVKqlsqCQ3HQ98myc8tI977N4Jxb-DHJSECc,17
+cloudshell_shell_firewall_standard-4.0.0.dist-info/RECORD,,
