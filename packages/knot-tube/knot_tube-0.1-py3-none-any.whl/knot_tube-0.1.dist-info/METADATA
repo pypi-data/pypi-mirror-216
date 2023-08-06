@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: knot-tube
+Version: 0.1
+Summary: A simple python library
+Author: yjianzhu
+Author-email: yjianzhu@mail.ustc.edu.cn
+Requires-Dist: numpy
+Requires-Dist: scipy
+
