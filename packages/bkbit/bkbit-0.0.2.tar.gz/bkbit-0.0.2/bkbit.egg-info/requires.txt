@@ -1,0 +1,8 @@
+linkml>=1.5
+pandas
+
+[docs]
+mkdocs-material
+
+[test]
+pytest
