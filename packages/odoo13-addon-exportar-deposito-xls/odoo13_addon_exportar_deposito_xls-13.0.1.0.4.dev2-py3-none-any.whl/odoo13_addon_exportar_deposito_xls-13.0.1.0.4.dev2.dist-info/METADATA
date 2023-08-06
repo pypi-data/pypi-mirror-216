@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: odoo13-addon-exportar-deposito-xls
+Version: 13.0.1.0.4.dev2
+Summary: Muestra el stock actual por deposito.
+Home-page: https://framagit.org/devcontrol
+Author: Colectivo DEVCONTROL
+License: AGPL-3
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 13.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Requires-Python: >=3.5
+Requires-Dist: odoo (<13.1dev,>=13.0a)
+
+Muestra el stock actual por deposito, utilizado para el conjunto de módulos de Gestión editorial.
