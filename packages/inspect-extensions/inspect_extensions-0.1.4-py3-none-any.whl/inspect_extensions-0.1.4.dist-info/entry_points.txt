@@ -1,0 +1,3 @@
+[console_scripts]
+insp-ext = inspect_extensions:main
+inspect-extensions = inspect_extensions:main
