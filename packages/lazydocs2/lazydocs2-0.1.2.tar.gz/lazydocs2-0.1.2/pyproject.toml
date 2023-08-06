@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "lazydocs2"
+version = "0.1.2"
+description = "A fork of lazydocs for additional features"
+authors = ["khalidelborai <elboraikhalid@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+typer = "^0.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# scripts
+[tool.poetry.scripts]
+lazydocs2 = "lazydocs2.__main__:app"
