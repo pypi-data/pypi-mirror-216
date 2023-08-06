@@ -1,0 +1,23 @@
+[kiara.cli_subcommands]
+streamlit = kiara_plugin.streamlit.interfaces.cli.streamlit:streamlit
+
+[kiara.data_types]
+streamlit = kiara_plugin.streamlit:find_data_types
+
+[kiara.model_classes]
+streamlit = kiara_plugin.streamlit:find_model_classes
+
+[kiara.modules]
+streamlit = kiara_plugin.streamlit:find_modules
+
+[kiara.pipelines]
+streamlit = kiara_plugin.streamlit:find_pipelines
+
+[kiara.plugin]
+streamlit = kiara_plugin.streamlit
+
+[kiara.renderers]
+jupyter = kiara_plugin.streamlit:find_renderer_classes
+
+[kiara.streamlit_components]
+streamlit = kiara_plugin.streamlit:find_kiara_streamlit_components
