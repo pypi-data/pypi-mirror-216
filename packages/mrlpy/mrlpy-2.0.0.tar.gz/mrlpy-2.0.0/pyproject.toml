@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mrlpy"
+version = "2.0.0"
+description = "Python API to MyRobotLab"
+readme = "README.md"
+authors = [
+    { name = "AutonomicPerfectionist", email = "bwtbutler@hotmail.com" },
+]
+dependencies = [
+    "requests",
+    "websocket-client",
+]
+
+[project.urls]
+Homepage = "http://github.com/AutonomicPerfection/mrlpy"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/docs",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mrlpy"]
