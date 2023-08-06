@@ -1,0 +1,11 @@
+numpy>=1.21.0
+pillow
+matplotlib>=1.5.3
+gensim>=4.0.0
+pandas
+pythainlp>=3.1.0
+k-means-constrained
+scikit-learn
+
+[embedfont]
+fonttools
