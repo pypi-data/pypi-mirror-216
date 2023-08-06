@@ -1,0 +1,2 @@
+[console_scripts]
+dbnomics-solr = dbnomics_solr.cli:app
