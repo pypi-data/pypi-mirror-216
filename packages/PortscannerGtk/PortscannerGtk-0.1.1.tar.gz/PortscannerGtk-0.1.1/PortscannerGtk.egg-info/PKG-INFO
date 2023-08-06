@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: PortscannerGtk
+Version: 0.1.1
+Summary: This is a multithreading Portscanner with Gtk4 GUI.
+Author-email: Lennart Martens <monkeynator78@gmail.com>
+License: BSD-3-Clause
+Project-URL: Repository, https://github.com/Lennart1978/Multithreading_PortscannerGtk
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+Multithreading PortscannerGtk
+
+a multithreading portscanner with Gtk4 GUI
+
+2023 by Lennart Martens
+monkeynator78@gmail.com

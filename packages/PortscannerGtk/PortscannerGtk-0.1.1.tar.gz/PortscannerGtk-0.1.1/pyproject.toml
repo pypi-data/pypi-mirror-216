@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "PortscannerGtk"
+version = "0.1.1"
+dependencies = ['PyGObject==3.44.1; python_version<"3.8"']
+authors = [
+    {name = "Lennart Martens", email = "monkeynator78@gmail.com"},
+]
+description = "This is a multithreading Portscanner with Gtk4 GUI."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "BSD-3-Clause"}
+[project.urls]
+Repository = "https://github.com/Lennart1978/Multithreading_PortscannerGtk"
+
