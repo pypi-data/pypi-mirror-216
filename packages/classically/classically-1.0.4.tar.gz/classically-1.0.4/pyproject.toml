@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "classically"
+version = "1.0.4"
+description = "Classifier Comparison and Feature Analysis Tools in Python"
+authors = ["alienkrieg <alienkrieg@gmail.com>"]
+keywords = ["machine learning", "classification", "analysis"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/alienkrieg/classically"
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.10"
+scipy = "^1.8.0"
+matplotlib = "^3.5.1"
+numpy = "^1.22.2"
+networkx = "^2.6.3"
+scikit-learn = "^1.1.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
