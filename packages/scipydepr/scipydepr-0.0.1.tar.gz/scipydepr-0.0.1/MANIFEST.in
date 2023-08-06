@@ -1,0 +1,6 @@
+include scipydepr/special/special.py
+include scipydepr/special/special.c
+include scipydepr/special/cython_special.pyx
+include scipydepr/special/version.py
+include scipydepr/special/__init__.py
+include scipydepr/__init__.py
