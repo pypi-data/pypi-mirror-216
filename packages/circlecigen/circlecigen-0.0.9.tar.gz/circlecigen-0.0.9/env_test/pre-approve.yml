@@ -1,0 +1,10 @@
+      - terraform/plan:
+          name: {{instance_name}} change plan
+          context: *context
+          workspace: {{instance_name}}
+          var-file: {{envpath}}/{{instance_name}}.tfvars.json
+          before-terraform:
+            - set-environment
+          filters: {{filters}}{{priorapprovalrequired}}
+
+

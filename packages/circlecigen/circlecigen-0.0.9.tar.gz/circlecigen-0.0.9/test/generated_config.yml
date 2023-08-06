@@ -1,0 +1,210 @@
+---
+version: 2.1
+
+
+orbs:
+  terraform: twdps/terraform@0.6.0
+
+# =================== global config
+
+globals:
+ - &context di-DR-lab
+
+on-push-main: &on-push-main
+  branches:
+    only: /main/
+  tags:
+    ignore: /.*/
+
+# ===================================
+
+commands:
+
+  set-environment:
+    description: generate environment credentials and configuration from templates
+    parameters:
+      cluster:
+        description: cluster name to use for configuration
+        type: string
+      source-env:
+        description: .env file to source into BASH_ENV
+        type: string
+    steps:
+      - op/env:
+          env-file: << parameters.source-env >>
+      - run:
+          name: set ~/.terraformrc
+          command: op inject -i tpl/terraformrc.tpl -o ~/.terraformrc
+      - run:
+          name: set << parameters.cluster >> environment variables
+          command: |
+            op inject -i environments/<< parameters.cluster >>.auto.tfvars.json.tpl -o << parameters.cluster >>.auto.tfvars.json
+
+  store-system-credentials:
+    parameters:
+      region:
+        type: string
+    steps:
+      - run:
+          name: install teller
+          command: |
+            wget https://github.com/tellerops/teller/releases/download/v1.5.6/teller_1.5.6_Linux_x86_64.tar.gz
+            sudo tar -xvf teller_1.5.6_Linux_x86_64.tar.gz
+            sudo mv teller /usr/local/bin/.
+      - run:
+          name: write cluster kubeconfig to secrets store
+          command: bash scripts/write_cluster_credentials.sh << parameters.region >>
+
+
+jobs:
+
+  launch-dynamic-pipeline:
+    parameters:
+      workflow-name:
+        description: Custom name for the resulting workflow within the generated_config.yml
+        type: string
+      multi-config:
+        description: name of the multi-environment definition/configuration file to use
+        type: string
+        default: multi.json
+    executor: continuation/default
+    steps:
+      - checkout
+      - run:
+          name: generate continuation pipeline
+          command: circlecigen --workflow << parameters.workflow-name >>
+      - continuation/continue:
+          configuration_path: .circleci/generated_config.yml
+
+
+workflows:
+  version: 2
+
+  continuation-generated-workflow:
+    jobs:
+      - terraform/plan:
+          name: nonprod-us-west-2 change plan
+          context: *context
+          workspace: nonprod-us-west-2
+          var-file: env_test/nonprod-us-west-2.tfvars.json
+          before-terraform:
+            - set-environment
+          filters: *on-tag-main
+
+      - terraform/plan:
+          name: nonprod-us-east-2 change plan
+          context: *context
+          workspace: nonprod-us-east-2
+          var-file: env_test/nonprod-us-east-2.tfvars.json
+          before-terraform:
+            - set-environment
+          filters: *on-tag-main
+
+      - approve nonprod changes:
+          type: approval
+          requires:
+            - plan nonprod-us-west-2 change
+            - plan nonprod-us-east-2 change
+          filters: *on-tag-main
+
+      - terraform/apply:
+          name: apply nonprod-us-west-2 change plan
+          context: *context
+          workspace: nonprod-us-west-2
+          var-file: env_test/nonprod-us-west-2.tfvars.json
+          before-terraform:
+            - set-environment
+          after-terraform:
+            - store-system-credentials:
+                region: nonprod-us-west-2
+            - create-storage-class:
+                region-file: nonprod-us-west-2
+                workspace: nonprod-us-west-2
+          requires:
+            - approve nonprod changes
+          filters: *on-tag-main
+
+      - terraform/apply:
+          name: apply nonprod-us-east-2 change plan
+          context: *context
+          workspace: nonprod-us-east-2
+          var-file: env_test/nonprod-us-east-2.tfvars.json
+          before-terraform:
+            - set-environment
+          after-terraform:
+            - store-system-credentials:
+                region: nonprod-us-east-2
+            - create-storage-class:
+                region-file: nonprod-us-east-2
+                workspace: nonprod-us-east-2
+          requires:
+            - approve nonprod changes
+          filters: *on-tag-main
+
+      - terraform/plan:
+          name: prod-us-west-2 change plan
+          context: *context
+          workspace: prod-us-west-2
+          var-file: env_test/prod-us-west-2.tfvars.json
+          before-terraform:
+            - set-environment
+          filters: *on-tag-main
+          requires:
+            - approve nonprod changes
+
+
+      - terraform/plan:
+          name: prod-us-east-2 change plan
+          context: *context
+          workspace: prod-us-east-2
+          var-file: env_test/prod-us-east-2.tfvars.json
+          before-terraform:
+            - set-environment
+          filters: *on-tag-main
+          requires:
+            - approve nonprod changes
+
+
+      - approve prod changes:
+          type: approval
+          requires:
+            - plan prod-us-west-2 change
+            - plan prod-us-east-2 change
+            - apply nonprod-us-west-2 change plan
+            - apply nonprod-us-east-2 change plan
+          filters: *on-tag-main
+
+      - terraform/apply:
+          name: apply prod-us-west-2 change plan
+          context: *context
+          workspace: prod-us-west-2
+          var-file: env_test/prod-us-west-2.tfvars.json
+          before-terraform:
+            - set-environment
+          after-terraform:
+            - store-system-credentials:
+                region: prod-us-west-2
+            - create-storage-class:
+                region-file: prod-us-west-2
+                workspace: prod-us-west-2
+          requires:
+            - approve prod changes
+          filters: *on-tag-main
+
+      - terraform/apply:
+          name: apply prod-us-east-2 change plan
+          context: *context
+          workspace: prod-us-east-2
+          var-file: env_test/prod-us-east-2.tfvars.json
+          before-terraform:
+            - set-environment
+          after-terraform:
+            - store-system-credentials:
+                region: prod-us-east-2
+            - create-storage-class:
+                region-file: prod-us-east-2
+                workspace: prod-us-east-2
+          requires:
+            - approve prod changes
+          filters: *on-tag-main
+
