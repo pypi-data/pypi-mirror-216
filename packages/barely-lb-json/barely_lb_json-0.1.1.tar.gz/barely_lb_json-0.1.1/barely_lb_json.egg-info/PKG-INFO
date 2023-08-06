@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: barely-lb-json
+Version: 0.1.1
+Summary: Parse invalid, malformed and barely JSON-esque data
+Home-page: https://github.com/torfsen/barely_json
+Author: Florian Brucker
+Author-email: mail@florianbrucker.de
+License: MIT
+Keywords: json
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+A lot of data is encoded in a format that is similar to JSON but not quite valid JSON. This module tries to be as forgiving as possible while parsing such data.
