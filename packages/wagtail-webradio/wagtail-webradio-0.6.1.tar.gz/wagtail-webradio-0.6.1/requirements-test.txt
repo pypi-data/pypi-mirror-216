@@ -1,0 +1,8 @@
+django-webtest
+factory-boy
+freezegun
+pytest
+pytest-cov
+pytest-django
+pytest-snapshot
+wagtail-factories >=4.1

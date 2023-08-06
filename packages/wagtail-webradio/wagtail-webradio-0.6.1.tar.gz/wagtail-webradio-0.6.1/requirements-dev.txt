@@ -1,0 +1,4 @@
+-e .[components]
+-r requirements-test.txt
+
+pre-commit

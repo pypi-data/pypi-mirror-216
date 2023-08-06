@@ -1,0 +1,79 @@
+from django.urls import path
+
+from .views import admin
+
+app_name = 'wagtail_webradio'
+
+urlpatterns = [
+    path(
+        'radioshow/',
+        admin.RadioShowIndexView.as_view(
+            index_url_name='wagtail_webradio:radioshow_index',
+            add_url_name='wagtail_webradio:radioshow_add',
+            edit_url_name='wagtail_webradio:radioshow_edit',
+            podcasts_index_url_name='wagtail_webradio:radioshow_podcast_index',
+        ),
+        name='radioshow_index',
+    ),
+    path(
+        'radioshow/add/',
+        admin.RadioShowCreateView.as_view(
+            index_url_name='wagtail_webradio:radioshow_index',
+            add_url_name='wagtail_webradio:radioshow_add',
+            edit_url_name='wagtail_webradio:radioshow_edit',
+        ),
+        name='radioshow_add',
+    ),
+    path(
+        'radioshow/<int:pk>/',
+        admin.RadioShowEditView.as_view(
+            index_url_name='wagtail_webradio:radioshow_index',
+            edit_url_name='wagtail_webradio:radioshow_edit',
+            delete_url_name='wagtail_webradio:radioshow_delete',
+        ),
+        name='radioshow_edit',
+    ),
+    path(
+        'radioshow/<int:pk>/delete/',
+        admin.RadioShowDeleteView.as_view(
+            index_url_name='wagtail_webradio:radioshow_index',
+            delete_url_name='wagtail_webradio:radioshow_delete',
+        ),
+        name='radioshow_delete',
+    ),
+    path(
+        'radioshow/<int:radioshow_id>/podcast/',
+        admin.RadioShowPodcastIndexView.as_view(
+            index_url_name='wagtail_webradio:radioshow_podcast_index',
+            add_url_name='wagtail_webradio:radioshow_podcast_add',
+            edit_url_name='wagtail_webradio:podcast_edit',
+        ),
+        name='radioshow_podcast_index',
+    ),
+    path(
+        'radioshow/<int:radioshow_id>/podcast/add/',
+        admin.RadioShowPodcastCreateView.as_view(
+            index_url_name='wagtail_webradio:radioshow_podcast_index',
+            add_url_name='wagtail_webradio:radioshow_podcast_add',
+            edit_url_name='wagtail_webradio:podcast_edit',
+        ),
+        name='radioshow_podcast_add',
+    ),
+    path(
+        'podcast/<int:pk>/',
+        admin.PodcastEditView.as_view(
+            index_url_name='wagtail_webradio:radioshow_podcast_index',
+            edit_url_name='wagtail_webradio:podcast_edit',
+            delete_url_name='wagtail_webradio:podcast_delete',
+        ),
+        name='podcast_edit',
+    ),
+    path(
+        'podcast/<int:pk>/delete/',
+        admin.PodcastDeleteView.as_view(
+            index_url_name='wagtail_webradio:radioshow_podcast_index',
+            delete_url_name='wagtail_webradio:podcast_delete',
+        ),
+        name='podcast_delete',
+    ),
+]

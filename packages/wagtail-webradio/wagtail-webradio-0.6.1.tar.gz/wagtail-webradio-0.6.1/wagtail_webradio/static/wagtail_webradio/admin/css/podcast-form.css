@@ -1,0 +1,17 @@
+.sound-field-separator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 2rem 1.25rem 0;
+  color: var(--w-color-grey-200);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sound-field-separator::before,
+.sound-field-separator::after {
+  content: '';
+  display: block;
+  flex: 1 0 0%;
+  border-bottom: 1px solid var(--w-color-grey-150);
+}

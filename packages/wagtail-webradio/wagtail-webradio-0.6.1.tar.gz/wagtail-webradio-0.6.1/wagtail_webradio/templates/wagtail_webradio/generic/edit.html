@@ -1,0 +1,8 @@
+{% extends "wagtail_webradio/generic/form.html" %}
+
+{% block actions %}
+  {{ block.super }}
+  {% if delete_url %}
+    <a href="{{ delete_url }}" class="button no">{{ delete_item_label }}</a>
+  {% endif %}
+{% endblock %}

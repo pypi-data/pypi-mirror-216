@@ -1,0 +1,36 @@
+{% extends "wagtailadmin/generic/base.html" %}
+{% load i18n %}
+
+{% block main_content %}
+  <form action="{{ view.get_delete_url }}" method="POST">
+    {% csrf_token %}
+
+    {% if protected_objects %}
+      <p>
+        {% translate "One or more references to this object prevent it from being deleted:" %}
+      </p>
+      <ul class="listing">
+        {% for obj, edit_url in protected_objects %}
+          <li>
+            <div class="title">
+              <div class="title-wrapper">
+                {% if edit_url %}
+                  <a href="{{ edit_url }}">{{ obj }}</a>
+                {% else %}
+                  {{ obj }}
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <button type="submit" class="button serious">{% translate "Try again" %}</button>
+    {% else %}
+      <p>{{ view.confirmation_message }}</p>
+      <button type="submit" class="button serious">{% translate "Yes, delete" %}</button>
+    {% endif %}
+
+    <a href="{{ view.get_success_url }}" class="button button-secondary">{% translate "No, don't delete" %}</a>
+  </form>
+{% endblock %}
