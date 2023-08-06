@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: beepy-web
+Version: 0.6.5
+Summary: The modern frontend web framework for Python
+Project-URL: Homepage, https://bit.ly/beepy
+Project-URL: Repository, https://github.com/kor0p/BeePy
+Project-URL: Docs, https://bee-py.readthedocs.io/en/latest/
+Author-email: kor0p <3.kor0p@gmail.com>
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10.10
+Provides-Extra: dev
+Requires-Dist: micropip; extra == 'dev'
+Requires-Dist: pyodide==0.19.0a1; extra == 'dev'
+Requires-Dist: requests; extra == 'dev'
+Requires-Dist: watchdog; extra == 'dev'
+Requires-Dist: websockets; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# 🐝 BeePy
+
+## The _frontend_ web framework for python 
+### Thanks for [Pyodide](https://pyodide.org/) - port of Python to [Emscripten](https://emscripten.org/), based on [WASM](https://webassembly.org/).
+### Use Python in browser to build modern frontend via BeePy!
+
+## Try it out! [CodeSandBox](https://codesandbox.io/s/beepy-two-synced-counters-k5sm9j) and [BeePy Sandbox](https://kor0p.github.io/BeePy/examples/sandbox/)
+
+## Join our community at [Telegram chat](https://t.me/bee_py/)
+
+## Local development:
+### Firstly, install BeePy
+### `pip install -U beepy-web[dev]`
+### Then, add `index.html` and `__init__.py` to root of project
+### and start local server at same directory
+### `python -m beepy.dev`
+### That's it!
+### Now, click on link in console to visit your server
+### and change code to see updates in browser in no time!
+
+Code (custom_url.py from examples):
+```python
+from beepy import Tag, mount, state, on
+
+class IncrementButton(Tag, name='button'):
+    count = state(0)
+
+    @on
+    def click(self, event):
+        self.count += 1
+
+    def content(self):
+        return f'Count: {self.count}'
+
+mount(IncrementButton(), '#root')
+```
+will render html as below, and will react on buttons click like native JS
+```html
+<body>
+    <div id="root">
+        <button>
+            <div>Count: 5</div>
+        </button>
+    </div>
+</body>
+```
+
+## Examples:
+- [List of examples (with Tabs)](https://beepy.herokuapp.com/e/)
+- [Admin panel](https://beepy.herokuapp.com/e/admin)
+- [Dynamic plot](https://beepy.herokuapp.com/e/plot)
+- [First try](https://beepy.herokuapp.com/e/buttons)
+- [Todo List](https://beepy.herokuapp.com/e/todos)
+- [Modal](https://beepy.herokuapp.com/e/modal)
+- [Context Menu](https://beepy.herokuapp.com/e/context-menu)
+- [Dynamic URL](https://beepy.herokuapp.com/e/dynamic-url)
+- [Timer](https://beepy.herokuapp.com/e/timer)
+- [Input's model](https://beepy.herokuapp.com/e/text-sync)
+- [Multiple apps on one page](https://beepy.herokuapp.com/multiple-apps)
+- [Just the other one example](https://beepy.herokuapp.com/e/custom_url)
+- [BeePy Sandbox](https://kor0p.github.io/BeePy/examples/sandbox/)
