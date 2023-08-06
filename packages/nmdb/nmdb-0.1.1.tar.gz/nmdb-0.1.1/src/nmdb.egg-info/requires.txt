@@ -1,0 +1,8 @@
+datetime
+pandas
+
+[dev]
+check-manifest
+
+[test]
+coverage
