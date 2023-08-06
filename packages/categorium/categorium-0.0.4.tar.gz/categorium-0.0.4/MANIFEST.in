@@ -1,0 +1,7 @@
+include categorium/modelos/*
+include categorium/modelos/en/en_hultig_model/*
+include categorium/modelos/es/es_hultig_model/*
+include categorium/modelos/de/de_hultig_model/*
+include categorium/modelos/pt/pt_hultig_model/*
+include categorium/modelos/fr/fr_hultig_model/*
+include categorium/modelos/it/it_hultig_model/*

@@ -1,0 +1,1 @@
+A package that contains trained models for text classification in six diferent languages.

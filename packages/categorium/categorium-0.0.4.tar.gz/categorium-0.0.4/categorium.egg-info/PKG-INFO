@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: categorium
+Version: 0.0.4
+Summary: Package with trained language models in 6 differente languages.
+Author: Luís Silva
+Author-email: <aluisgonalo022@gmail.com>
+Keywords: python,classification,text,Categorization,textCategorization,textclassification
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+
+A package that contains trained models for text classification in six diferent languages.
