@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+osc_sdk/__init__.py
+osc_sdk/osc-cli-completion.bash
+osc_sdk/sdk.py
+osc_sdk/test_auth.py
+osc_sdk/test_errors.py
+osc_sdk/test_noauth.py
+osc_sdk.egg-info/PKG-INFO
+osc_sdk.egg-info/SOURCES.txt
+osc_sdk.egg-info/dependency_links.txt
+osc_sdk.egg-info/entry_points.txt
+osc_sdk.egg-info/requires.txt
+osc_sdk.egg-info/top_level.txt
