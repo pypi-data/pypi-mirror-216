@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: alignments
+Version: 0.0.17
+Home-page: https://github.com/MiniXC/alignments
+Author: 
+Author-email: Christoph Minixhofer <christoph.minixhofer@gmail.com>
+License: MIT
+Requires-Python: >=3.6
+Requires-Dist: click (>=8.0.4)
+Requires-Dist: rich (>=10.11.0)
+Requires-Dist: torch (>=1.4.0)
+Requires-Dist: numpy (>=1.19.5)
+Requires-Dist: tqdm (>=4.64.0)
+Requires-Dist: textgrid (>=1.5)
+
