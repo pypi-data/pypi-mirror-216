@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: rustlite
+Version: 0.1.2
+Summary: rust like iterators for python
+Home-page: https://github.com/peturparkur/python-rustlite
+Author: Peter Nagymathe
+Author-email: peter@nagymathe.xyz
+License: AGPLv3+
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
