@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+tap_intacct/__init__.py
+tap_intacct/conversion.py
+tap_intacct/discover.py
+tap_intacct/s3.py
+tap_intacct/sync.py
+tap_intacct.egg-info/PKG-INFO
+tap_intacct.egg-info/SOURCES.txt
+tap_intacct.egg-info/dependency_links.txt
+tap_intacct.egg-info/entry_points.txt
+tap_intacct.egg-info/requires.txt
+tap_intacct.egg-info/top_level.txt
