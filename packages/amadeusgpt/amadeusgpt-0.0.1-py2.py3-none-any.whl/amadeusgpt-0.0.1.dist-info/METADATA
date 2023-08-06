@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: amadeusgpt
+Version: 0.0.1
+Summary: AmadeusGPT🎻: We turn natural language descriptions of behaviors into machine-executable code
+Home-page: https://github.com/AdaptiveMotorControlLab/AmadeusGPT
+Author: Shaokai Ye, Jessy Lauer, Mu Zhou, Alexander Mathis, Mackenzie Mathis
+Author-email: mackenzie@post.harvard.edu
+Project-URL: Bug Tracker, https://github.com/AdaptiveMotorControlLab/AmadeusGPT/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: deeplabcut
+Requires-Dist: segment-anything
+Requires-Dist: dlc2kinematics (==0.0.7)
+Requires-Dist: cebra
+Requires-Dist: moviepy
+Requires-Dist: pycocotools
+Requires-Dist: msgpack
+Requires-Dist: umap
+Requires-Dist: google-cloud-firestore (==2.11.1)
+Requires-Dist: streamlit (==1.23.1)
+Requires-Dist: streamlit-drawable-canvas (==0.9.2)
+Requires-Dist: openai (==0.27.4)
+Requires-Dist: torch (==1.12.0)
+Requires-Dist: torchvision (==0.13)
+Provides-Extra: dev
+Requires-Dist: pylint ; extra == 'dev'
+Requires-Dist: toml ; extra == 'dev'
+Requires-Dist: yapf ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Provides-Extra: streamlit
+Requires-Dist: python3-tk ; extra == 'streamlit'
+Requires-Dist: libgtk2.0-dev ; extra == 'streamlit'
+Requires-Dist: pkg-config ; extra == 'streamlit'
+
+<p align="center">
+<img src="https://images.squarespace-cdn.com/content/v1/57f6d51c9f74566f55ecf271/733ec9c2-52bc-4fcb-aefb-1516d0a50c19/amadeuslogo.png?format=1500w" width="95%">
+</p>
+
+🪄 **We turn natural language descriptions of behaviors into machine-executable code.**
+
+- We use ChatGPT's API to bridge natural language and behavior analysis code.
+- For more details, check out our arXiv preprint **AmadeusGPT: a natural language interface for interactive animal behavioral analysis** by [Shaokai Ye](https://github.com/yeshaokai), [Jessy Lauer](https://github.com/jeylau), [Mu Zhou](https://github.com/zhoumu53), [Alexander Mathis](https://github.com/AlexEMG) & [Mackenzie W. Mathis](https://github.com/MMathisLab).
+
+- 🧙‍♀️ *Code coming soon!*
+
+## Demo AmadeusGPT🎻
+
+  - WIP [Click here]() to launch our hosted Streamlit App!
+  - Please note you need an [openAPI key](https://platform.openai.com/account/api-keys), which you can easily create [here](https://platform.openai.com/account/api-keys).
+
+## License 
+
+  AmadeusGPT is license under the Apache-2.0 license.
+  -  Please note several key dependencies have their own licensing. Please carefully check the license information for DeepLabCut (LGPL-3.0 license), SAM (Apache-2.0 license), CEBRA (Non-Commercial), etc...
+
+## Citation
+
+  If you use ideas or code from this project in your work, please cite us  using the following BibTeX entry. 🙏
+
+ - AmadeusGPT
+
+ ```
+@article{ye2023amadeusGPT,
+      title={AmadeusGPT: a natural language interface for interactive animal behavioral analysis}, 
+      author={Shaokai Ye and Jessy Lauer and Mu Zhou and Alexander Mathis and Mackenzie Weygandt Mathis},
+      journal={arXiv:WIP},
+      year={2023}}
+```
+
+## Questions?
+
+- [Contact us](http://www.mackenziemathislab.org/)
