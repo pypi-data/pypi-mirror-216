@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: mini-rec-sys
+Version: 0.1.0
+Summary: Toolkit to train and evaluate models for search and recommendations.
+License: MIT
+Author: Charles Low
+Author-email: charleslow88@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: diskcache (>=5.6.1,<6.0.0)
+Requires-Dist: faiss-cpu (>=1.7.4,<2.0.0)
+Requires-Dist: lxml (>=4.9.2,<5.0.0)
+Requires-Dist: nltk (>=3.8.1,<4.0.0)
+Requires-Dist: numpy (>=1.16.5,<1.23.0)
+Requires-Dist: pandas (>=1.0.5)
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Requires-Dist: pysos (>=1.3.0,<2.0.0)
+Requires-Dist: pytorch-lightning (>=2.0.4,<3.0.0)
+Requires-Dist: torch (<2.0.0)
+Requires-Dist: transformers (>=4.26.1,<5.0.0)
+Description-Content-Type: text/markdown
+
+# mini-rec-sys
+Tools for training and evaluating search and recommender models.
+
