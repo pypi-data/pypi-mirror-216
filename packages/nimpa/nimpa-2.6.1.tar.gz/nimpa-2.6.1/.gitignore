@@ -1,0 +1,18 @@
+*.py[cod]
+__pycache__/
+
+# build
+/MANIFEST.in
+/*.egg*/
+*.so
+/niftypet/nimpa/cmake/
+/niftypet/nimpa/_dist_ver.py
+/build/
+/dist/
+/_skbuild/
+/_cmake_test_compile/
+
+# Unit test / coverage reports
+/.coverage*
+/coverage.xml
+/.pytest_cache/
