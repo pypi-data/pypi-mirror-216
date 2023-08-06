@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openai-pricing"
+version = "1.1"
+requires-python = ">=3.8"
+authors = [
+  {name = "Pedro Dupim", email = "pedrodupim@icloud.com"},
+]
+maintainers = [
+  {name = "Pedro Dupim", email = "pedrodupim@icloud.com"},
+]
+keywords = ["openai", "chat gpt", "pricing"]
+dependencies = [
+  "requests",
+  "pandas",
+  "tabulate",
+]
+dynamic = ["description", "optional-dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/Alo-mundo/openai-pricing"
+Documentation = "https://github.com/Alo-mundo/openai-pricing/blob/main/README.md"
+Repository = "https://github.com/Alo-mundo/openai-pricing.git"
+

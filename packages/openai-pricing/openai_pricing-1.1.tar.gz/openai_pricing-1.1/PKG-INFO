@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: openai-pricing
+Version: 1.1
+Project-URL: Homepage, https://github.com/Alo-mundo/openai-pricing
+Project-URL: Documentation, https://github.com/Alo-mundo/openai-pricing/blob/main/README.md
+Project-URL: Repository, https://github.com/Alo-mundo/openai-pricing.git
+Author-email: Pedro Dupim <pedrodupim@icloud.com>
+Maintainer-email: Pedro Dupim <pedrodupim@icloud.com>
+Keywords: chat gpt,openai,pricing
+Requires-Python: >=3.8
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: tabulate
