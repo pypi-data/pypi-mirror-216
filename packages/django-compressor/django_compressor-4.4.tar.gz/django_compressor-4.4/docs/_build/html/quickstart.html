@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Quickstart &#8212; Django Compressor 4.3.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Django Compressor" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Install Django Compressor with your favorite Python package manager:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">django_compressor</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">'compressor'</span></code> to your <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code> setting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># other apps</span>
+    <span class="s2">&quot;compressor&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>See the list of <a class="reference internal" href="settings.html#settings"><span class="std std-ref">Settings</span></a> to modify Django Compressor’s
+default behaviour and make adjustments for your website.</p></li>
+<li><p>In case you use Django’s <a class="reference external" href="http://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/">staticfiles</a> contrib app you have to add Django
+Compressor’s file finder to the <code class="docutils literal notranslate"><span class="pre">STATICFILES_FINDERS</span></code> setting, like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STATICFILES_FINDERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;django.contrib.staticfiles.finders.FileSystemFinder&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles.finders.AppDirectoriesFinder&#39;</span><span class="p">,</span>
+    <span class="c1"># other finders..</span>
+    <span class="s1">&#39;compressor.finders.CompressorFinder&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Define <a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_ROOT" title="django.conf.settings.COMPRESS_ROOT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_ROOT</span></code></a> in settings
+if you don’t have already <code class="docutils literal notranslate"><span class="pre">STATIC_ROOT</span></code> or if you want it in a different
+folder.</p></li>
+</ul>
+</section>
+<section id="optional-dependencies">
+<span id="dependencies"></span><h2>Optional Dependencies<a class="headerlink" href="#optional-dependencies" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a></p>
+<p>For the <a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PARSER" title="django.conf.settings.COMPRESS_PARSER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parser</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">compressor.parser.BeautifulSoupParser</span></code> and
+<code class="docutils literal notranslate"><span class="pre">compressor.parser.LxmlParser</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="http://lxml.de/">lxml</a></p>
+<p>For the <a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PARSER" title="django.conf.settings.COMPRESS_PARSER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parser</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">compressor.parser.LxmlParser</span></code>, also requires <a class="reference external" href="http://xmlsoft.org/">libxml2</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC_DEPS</span><span class="o">=</span><span class="n">true</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">lxml</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://github.com/html5lib/html5lib-python">html5lib</a></p>
+<p>For the <a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PARSER" title="django.conf.settings.COMPRESS_PARSER"><code class="xref py py-attr docutils literal notranslate"><span class="pre">parser</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">compressor.parser.Html5LibParser</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">html5lib</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://github.com/calmjs/calmjs.parse">Calmjs</a></p>
+<p>For the <a class="reference internal" href="settings.html#calmjs-filter"><span class="std std-ref">Calmjs filter</span></a>
+<code class="docutils literal notranslate"><span class="pre">compressor.filters.jsmin.CalmjsFilter</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">calmjs</span><span class="o">.</span><span class="n">parse</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://pypi.org/project/csscompressor/">csscompressor</a></p>
+<p>For the <a class="reference internal" href="settings.html#csscompressor-filter"><span class="std std-ref">csscompressor filter</span></a>
+<code class="docutils literal notranslate"><span class="pre">compressor.filters.cssmin.CSSCompressorFilter</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">csscompressor</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/brotli">brotli</a></p>
+<p>For brotli file compressor <cite>compressor.storage.BrotliCompressorFileStorage</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">brotli</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Django Compressor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-dependencies">Optional Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Common Deployment Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote-storages.html">Remote Storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behind-the-scenes.html">Behind the Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jinja2.html">Jinja2 Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django-sekizai.html">django-sekizai Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactjs.html">Facebook React Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Django Compressor</a></li>
+      <li>Next: <a href="usage.html" title="next chapter">Usage</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Django Compressor authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/quickstart.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

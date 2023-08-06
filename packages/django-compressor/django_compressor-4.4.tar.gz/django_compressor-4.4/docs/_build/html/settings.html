@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Settings &#8212; Django Compressor 4.3.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Remote Storages" href="remote-storages.html" />
+    <link rel="prev" title="Common Deployment Scenarios" href="scenarios.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="settings">
+<span id="id1"></span><h1>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h1>
+<p>Django Compressor has a number of settings that control its behavior.
+They’ve been given sensible defaults.</p>
+<section id="base-settings">
+<h2>Base settings<a class="headerlink" href="#base-settings" title="Permalink to this headline">¶</a></h2>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_ENABLED">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_ENABLED</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_ENABLED" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>the opposite of <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></p>
+</dd>
+</dl>
+<p>Boolean that decides if compression will happen. To test compression
+when <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> <code class="docutils literal notranslate"><span class="pre">COMPRESS_ENABLED</span></code> must also be set to
+<code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">COMPRESS_ENABLED</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> the input will be rendered without
+any compression except for code with a mimetype matching one listed in the
+<a class="reference internal" href="#django.conf.settings.COMPRESS_PRECOMPILERS" title="django.conf.settings.COMPRESS_PRECOMPILERS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_PRECOMPILERS</span></code></a> setting. These
+matching files are still passed to the precompiler before rendering.</p>
+<p>An example for some javascript and coffeescript.</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">compress</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">compress</span> <span class="nv">js</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;script type=&quot;text/javascript&quot; src=&quot;/static/js/site-base.js&quot; /&gt;</span>
+<span class="x">&lt;script type=&quot;text/coffeescript&quot; charset=&quot;utf-8&quot; src=&quot;/static/js/awesome.coffee&quot; /&gt;</span>
+<span class="cp">{%</span> <span class="k">endcompress</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">COMPRESS_ENABLED</span></code> set to <code class="docutils literal notranslate"><span class="pre">False</span></code> this would give you something
+like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/static/js/site-base.js&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/static/CACHE/js/awesome.8dd1a2872443.js&quot;</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_URL">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_URL</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_URL" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">STATIC_URL</span></code></p>
+</dd>
+</dl>
+<p>Controls the URL that linked files will be read from and compressed files
+will be written to.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_ROOT">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_ROOT</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_ROOT" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">STATIC_ROOT</span></code></p>
+</dd>
+</dl>
+<p>Controls the absolute file path that linked static will be read from and
+compressed static will be written to when using the default
+<a class="reference internal" href="#django.conf.settings.COMPRESS_STORAGE" title="django.conf.settings.COMPRESS_STORAGE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_STORAGE</span></code></a>
+<code class="docutils literal notranslate"><span class="pre">compressor.storage.CompressorFileStorage</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_OUTPUT_DIR">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_OUTPUT_DIR</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_OUTPUT_DIR" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'CACHE'</span></code></p>
+</dd>
+</dl>
+<p>Controls the directory inside <a class="reference internal" href="#django.conf.settings.COMPRESS_ROOT" title="django.conf.settings.COMPRESS_ROOT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_ROOT</span></code></a>
+that compressed files will be written to.</p>
+</dd></dl>
+
+</section>
+<section id="backend-settings">
+<h2>Backend settings<a class="headerlink" href="#backend-settings" title="Permalink to this headline">¶</a></h2>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_FILTERS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_FILTERS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_FILTERS" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">{'css':</span> <span class="pre">['compressor.filters.css_default.CssAbsoluteFilter',</span> <span class="pre">'compressor.filters.cssmin.rCSSMinFilter'],</span> <span class="pre">'js':</span> <span class="pre">['compressor.filters.jsmin.rJSMinFilter']}</span></code></p>
+</dd>
+</dl>
+<p>A mapping of resource kinds to the list of filters to apply.
+The key is used to refer to this resource type in templates
+when using the <cite>{% compress [resource_kind] %}</cite> template tag.
+The value is a list of filters to apply in the given order
+for that resource.</p>
+<p>This library currently includes filters for CSS and Javascript.</p>
+<ul>
+<li><p>CSS Filters</p>
+<dl class="field-list simple" id="compress-css-filters">
+<dt class="field-odd">default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">['compressor.filters.css_default.CssAbsoluteFilter',</span> <span class="pre">'compressor.filters.cssmin.rCSSMinFilter']</span></code></p>
+</dd>
+</dl>
+<p>A list of filters that will be applied to CSS.</p>
+<p>Possible options for CSS filters are (including their settings):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.css_default.CssAbsoluteFilter</span></code></p>
+<p>A filter that normalizes the URLs used in <code class="docutils literal notranslate"><span class="pre">url()</span></code> CSS statements. This
+is necessary since the output css files produced by Django Compressor
+are in a different location than the source files and relative paths
+might have become invalid. The filter also appends a hash as query string
+to the normalized URLs to help with cache busting.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CSS_HASHING_METHOD">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CSS_HASHING_METHOD</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CSS_HASHING_METHOD" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method to use when calculating the query string.  Either <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'mtime'</span></code> (default) or <code class="docutils literal notranslate"><span class="pre">'content'</span></code>. Use the <code class="docutils literal notranslate"><span class="pre">None</span></code> if you want
+to completely disable that feature, and the <code class="docutils literal notranslate"><span class="pre">'content'</span></code> in case
+you’re using multiple servers to serve your content.</p>
+</dd></dl>
+
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.css_default.CssRelativeFilter</span></code></p>
+<p>An alternative to <code class="docutils literal notranslate"><span class="pre">CssAbsoluteFilter</span></code>. It uses a relative instead of an
+absolute path to prefix URLs. Specifically, the prefix will be  <code class="docutils literal notranslate"><span class="pre">'../'</span> <span class="pre">*</span> <span class="pre">(N</span> <span class="pre">+</span> <span class="pre">1)</span></code>
+where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the <em>depth</em> of <code class="docutils literal notranslate"><span class="pre">settings.COMPRESS_OUTPUT_DIR</span></code> folder
+(i.e. <code class="docutils literal notranslate"><span class="pre">1</span></code> for <code class="docutils literal notranslate"><span class="pre">'CACHE'</span></code>, or <code class="docutils literal notranslate"><span class="pre">2``for</span> <span class="pre">``CACHE/data</span></code> etc). This can be
+useful if you don’t want to hard-code <a class="reference internal" href="#django.conf.settings.COMPRESS_URL" title="django.conf.settings.COMPRESS_URL"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_URL</span></code></a>
+into CSS code.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.datauri.CssDataUriFilter</span></code></p>
+<p>A filter for embedding media as <a class="reference external" href="http://en.wikipedia.org/wiki/Data_URI_scheme">data: URIs</a> in the CSS.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_DATA_URI_MAX_SIZE">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_DATA_URI_MAX_SIZE</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_DATA_URI_MAX_SIZE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only files that are smaller than this in bytes value will be embedded.</p>
+</dd></dl>
+
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.yui.YUICSSFilter</span></code></p>
+<p>A filter that passes the CSS content to the <a class="reference external" href="http://developer.yahoo.com/yui/compressor/">YUI compressor</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_YUI_BINARY">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUI_BINARY</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_YUI_BINARY" title="Permalink to this definition">¶</a></dt>
+<dd><p>The YUI compressor filesystem path. Make sure to also prepend this
+setting with <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span></code> if you use that kind of distribution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_YUI_CSS_ARGUMENTS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUI_CSS_ARGUMENTS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_YUI_CSS_ARGUMENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The arguments passed to the compressor.</p>
+</dd></dl>
+
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.yuglify.YUglifyCSSFilter</span></code></p>
+<p>A filter that passes the CSS content to the <a class="reference external" href="https://github.com/yui/yuglify">yUglify compressor</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_YUGLIFY_BINARY">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUGLIFY_BINARY</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_YUGLIFY_BINARY" title="Permalink to this definition">¶</a></dt>
+<dd><p>The yUglify compressor filesystem path.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_YUGLIFY_CSS_ARGUMENTS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUGLIFY_CSS_ARGUMENTS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_YUGLIFY_CSS_ARGUMENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The arguments passed to the compressor. Defaults to –terminal.</p>
+</dd></dl>
+
+</li>
+</ul>
+<ul id="csscompressor-filter">
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.cssmin.CSSCompressorFilter</span></code></p>
+<p>A filter that uses Yury Selivanov’s Python port of the YUI CSS compression
+algorithm <a class="reference external" href="http://pypi.python.org/pypi/csscompressor/">csscompressor</a>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.cssmin.rCSSMinFilter</span></code></p>
+<p>A filter that uses the cssmin implementation <a class="reference external" href="http://opensource.perlig.de/rcssmin/">rCSSmin</a> to compress CSS
+(installed by default).</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.cleancss.CleanCSSFilter</span></code></p>
+<p>A filter that passes the CSS content to the <a class="reference external" href="https://github.com/GoalSmashers/clean-css/">clean-css</a> tool.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CLEAN_CSS_BINARY">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CLEAN_CSS_BINARY</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CLEAN_CSS_BINARY" title="Permalink to this definition">¶</a></dt>
+<dd><p>The clean-css binary filesystem path.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CLEAN_CSS_ARGUMENTS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CLEAN_CSS_ARGUMENTS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CLEAN_CSS_ARGUMENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The arguments passed to clean-css.</p>
+</dd></dl>
+
+</li>
+</ul>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.template.TemplateFilter</span></code></p>
+<p>A filter that renders the CSS content with Django templating system.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_TEMPLATE_FILTER_CONTEXT">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_TEMPLATE_FILTER_CONTEXT</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_TEMPLATE_FILTER_CONTEXT" title="Permalink to this definition">¶</a></dt>
+<dd><p>The context to render your css files with.</p>
+</dd></dl>
+
+</li>
+</ul>
+</li>
+<li><p>Javascript Filters</p>
+<dl class="field-list simple" id="compress-js-filters">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">['compressor.filters.jsmin.rJSMinFilter']</span></code></p>
+</dd>
+</dl>
+<p>A list of filters that will be applied to javascript.</p>
+<p>Possible options are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.jsmin.rJSMinFilter</span></code></p>
+<p>A filter that uses the jsmin implementation <a class="reference external" href="http://opensource.perlig.de/rjsmin/">rJSmin</a> to compress
+JavaScript code (installed by default).</p>
+</li>
+</ul>
+<ul id="calmjs-filter">
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.jsmin.CalmjsFilter</span></code></p>
+<p>A filter that uses the jsmin implementation <a class="reference external" href="https://github.com/calmjs/calmjs.parse">Calmjs</a> to compress
+JavaScript code.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.closure.ClosureCompilerFilter</span></code></p>
+<p>A filter that uses <a class="reference external" href="http://code.google.com/closure/compiler/">Google Closure compiler</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CLOSURE_COMPILER_BINARY">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CLOSURE_COMPILER_BINARY</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CLOSURE_COMPILER_BINARY" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Closure compiler filesystem path. Make sure to also prepend
+this setting with <code class="docutils literal notranslate"><span class="pre">java</span> <span class="pre">-jar</span></code> if you use that kind of distribution.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CLOSURE_COMPILER_ARGUMENTS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CLOSURE_COMPILER_ARGUMENTS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CLOSURE_COMPILER_ARGUMENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>The arguments passed to the compiler.</p>
+</dd></dl>
+
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.yui.YUIJSFilter</span></code></p>
+<p>A filter that passes the JavaScript code to the <a class="reference external" href="http://developer.yahoo.com/yui/compressor/">YUI compressor</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUI_BINARY</span></span></dt>
+<dd><blockquote>
+<div><p>The YUI compressor filesystem path.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUI_JS_ARGUMENTS</span></span></dt>
+<dd><blockquote>
+<div><p>The arguments passed to the compressor.</p>
+</div></blockquote>
+</dd></dl>
+
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.yuglify.YUglifyJSFilter</span></code></p>
+<p>A filter that passes the JavaScript code to the <a class="reference external" href="https://github.com/yui/yuglify">yUglify compressor</a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUGLIFY_BINARY</span></span></dt>
+<dd><blockquote>
+<div><p>The yUglify compressor filesystem path.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_YUGLIFY_JS_ARGUMENTS</span></span></dt>
+<dd><blockquote>
+<div><p>The arguments passed to the compressor.</p>
+</div></blockquote>
+</dd></dl>
+
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.filters.template.TemplateFilter</span></code></p>
+<p>A filter that renders the JavaScript code with Django templating system.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_TEMPLATE_FILTER_CONTEXT</span></span></dt>
+<dd><blockquote>
+<div><p>The context to render your JavaScript code with.</p>
+</div></blockquote>
+</dd></dl>
+
+</li>
+</ul>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_PRECOMPILERS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_PRECOMPILERS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_PRECOMPILERS" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">()</span></code></p>
+</dd>
+</dl>
+<p>An iterable of two-tuples whose first item is the mimetype of the files or
+hunks you want to compile with the command or filter specified as the second
+item:</p>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>mimetype</dt><dd><p>The mimetype of the file or inline code that should be compiled.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>command_or_filter</dt><dd><p>The command to call on each of the files. Modern Python string
+formatting will be provided for the two placeholders <code class="docutils literal notranslate"><span class="pre">{infile}</span></code> and
+<code class="docutils literal notranslate"><span class="pre">{outfile}</span></code> whose existence in the command string also triggers the
+actual creation of those temporary files. If not given in the command
+string, Django Compressor will use <code class="docutils literal notranslate"><span class="pre">stdin</span></code> and <code class="docutils literal notranslate"><span class="pre">stdout</span></code> respectively
+instead.</p>
+<p>Alternatively, you may provide the fully qualified class name of a
+filter you wish to use as a precompiler.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMPRESS_PRECOMPILERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;text/coffeescript&#39;</span><span class="p">,</span> <span class="s1">&#39;coffee --compile --stdio&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;text/less&#39;</span><span class="p">,</span> <span class="s1">&#39;lessc </span><span class="si">{infile}</span><span class="s1"> </span><span class="si">{outfile}</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;text/x-sass&#39;</span><span class="p">,</span> <span class="s1">&#39;sass </span><span class="si">{infile}</span><span class="s1"> </span><span class="si">{outfile}</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;text/x-scss&#39;</span><span class="p">,</span> <span class="s1">&#39;sass --scss </span><span class="si">{infile}</span><span class="s1"> </span><span class="si">{outfile}</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;text/stylus&#39;</span><span class="p">,</span> <span class="s1">&#39;stylus &lt; </span><span class="si">{infile}</span><span class="s1"> &gt; </span><span class="si">{outfile}</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;text/foobar&#39;</span><span class="p">,</span> <span class="s1">&#39;path.to.MyPrecompilerFilter&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Depending on the implementation, some precompilers might not support
+outputting to something else than <code class="docutils literal notranslate"><span class="pre">stdout</span></code>, so you’ll need to omit the
+<code class="docutils literal notranslate"><span class="pre">{outfile}</span></code> parameter when working with those. For instance, if you
+are using the Ruby version of lessc, you’ll need to set up the
+precompiler like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;text/less&#39;</span><span class="p">,</span> <span class="s1">&#39;lessc </span><span class="si">{infile}</span><span class="s1">&#39;</span><span class="p">),</span>
+</pre></div>
+</div>
+</div>
+<p>With that setting (and <a class="reference external" href="http://coffeescript.org/">CoffeeScript</a> installed), you could add the following
+code to your templates:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">compress</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">compress</span> <span class="nv">js</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;script type=&quot;text/coffeescript&quot; charset=&quot;utf-8&quot; src=&quot;/static/js/awesome.coffee&quot; /&gt;</span>
+<span class="x">&lt;script type=&quot;text/coffeescript&quot; charset=&quot;utf-8&quot;&gt;</span>
+<span class="x"># Functions:</span>
+<span class="x">square = (x) -&gt; x * x</span>
+<span class="x">&lt;/script&gt;</span>
+<span class="cp">{%</span> <span class="k">endcompress</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+<p>This would give you something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/static/CACHE/js/output.8dd1a2872443.js&quot;</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The same works for <a class="reference external" href="http://lesscss.org/">less</a>, too:</p>
+<div class="highlight-django notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">load</span> <span class="nv">compress</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">compress</span> <span class="nv">css</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;link type=&quot;text/less&quot; rel=&quot;stylesheet&quot; href=&quot;/static/css/styles.less&quot; charset=&quot;utf-8&quot;&gt;</span>
+<span class="x">&lt;style type=&quot;text/less&quot;&gt;</span>
+<span class="x">@color: #4D926F;</span>
+
+<span class="x">#header {</span>
+<span class="x">  color: @color;</span>
+<span class="x">}</span>
+<span class="x">&lt;/style&gt;</span>
+<span class="cp">{%</span> <span class="k">endcompress</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Which would be rendered something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;stylesheet&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/static/CACHE/css/output.8ccf8d877f18.css&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/css&quot;</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_STORAGE">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_STORAGE</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_STORAGE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'compressor.storage.CompressorFileStorage'</span></code></p>
+</dd>
+</dl>
+<p>The dotted path to a Django Storage backend to be used to save the
+compressed files.</p>
+<p>Django Compressor ships with some additional storage backends:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'compressor.storage.GzipCompressorFileStorage'</span></code></p>
+<p>A subclass of the default storage backend, which will additionally
+create <code class="docutils literal notranslate"><span class="pre">*.gz</span></code> files of each of the compressed files.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'compressor.storage.BrotliCompressorFileStorage'</span></code></p>
+<p>A subclass of the default storage backend, which will additionally
+create <code class="docutils literal notranslate"><span class="pre">*.br</span></code> files of each of the compressed files. It is using
+the maximum level of compression (11) so compression speed will be low.</p>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_PARSER">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_PARSER</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_PARSER" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'compressor.parser.AutoSelectParser'</span></code></p>
+</dd>
+</dl>
+<p>The backend to use when parsing the JavaScript or Stylesheet files. The
+<code class="docutils literal notranslate"><span class="pre">AutoSelectParser</span></code> picks the <code class="docutils literal notranslate"><span class="pre">lxml</span></code> based parser when available, and falls
+back to <code class="docutils literal notranslate"><span class="pre">HtmlParser</span></code> if <code class="docutils literal notranslate"><span class="pre">lxml</span></code> is not available.</p>
+<p><code class="docutils literal notranslate"><span class="pre">LxmlParser</span></code> is the fastest available parser, but <code class="docutils literal notranslate"><span class="pre">HtmlParser</span></code> is not much
+slower. <code class="docutils literal notranslate"><span class="pre">AutoSelectParser</span></code> adds a slight overhead, but in most cases it
+won’t be necessary to change the default parser.</p>
+<p>The other two included parsers are considerably slower and should only be
+used if absolutely necessary.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In some cases the <code class="docutils literal notranslate"><span class="pre">compressor.parser.HtmlParser</span></code> parser isn’t able to
+parse invalid HTML in JavaScript or CSS content. As a workaround you
+should use one of the more forgiving parsers, e.g. the
+<code class="docutils literal notranslate"><span class="pre">BeautifulSoupParser</span></code>.</p>
+</div>
+<p>The backends included in Django Compressor:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.parser.AutoSelectParser</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.parser.LxmlParser</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.parser.HtmlParser</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.parser.BeautifulSoupParser</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor.parser.Html5LibParser</span></code></p></li>
+</ul>
+<p>See <a class="reference internal" href="quickstart.html#dependencies"><span class="std std-ref">Optional Dependencies</span></a> for more info about the packages you need
+for each parser.</p>
+</dd></dl>
+
+</section>
+<section id="caching-settings">
+<h2>Caching settings<a class="headerlink" href="#caching-settings" title="Permalink to this headline">¶</a></h2>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CACHE_BACKEND">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CACHE_BACKEND</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CACHE_BACKEND" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">&quot;default&quot;</span></code></p>
+</dd>
+</dl>
+<p>The cache to use by Django Compressor. Must be a cache alias specified in
+your <code class="docutils literal notranslate"><span class="pre">CACHES</span></code> setting.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_REBUILD_TIMEOUT">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_REBUILD_TIMEOUT</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_REBUILD_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">2592000</span></code> (30 days in seconds)</p>
+</dd>
+</dl>
+<p>The period of time after which the compressed files are rebuilt even if
+no file changes are detected.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_MINT_DELAY">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_MINT_DELAY</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_MINT_DELAY" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">30</span></code> (seconds)</p>
+</dd>
+</dl>
+<p>The upper bound on how long any compression should take to run. Prevents
+dog piling, should be a lot smaller than
+<a class="reference internal" href="#django.conf.settings.COMPRESS_REBUILD_TIMEOUT" title="django.conf.settings.COMPRESS_REBUILD_TIMEOUT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_REBUILD_TIMEOUT</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_MTIME_DELAY">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_MTIME_DELAY</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_MTIME_DELAY" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p>
+</dd>
+</dl>
+<p>The amount of time (in seconds) to cache the modification timestamp of a
+file. Should be smaller than
+<a class="reference internal" href="#django.conf.settings.COMPRESS_REBUILD_TIMEOUT" title="django.conf.settings.COMPRESS_REBUILD_TIMEOUT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_REBUILD_TIMEOUT</span></code></a> and
+<a class="reference internal" href="#django.conf.settings.COMPRESS_MINT_DELAY" title="django.conf.settings.COMPRESS_MINT_DELAY"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_MINT_DELAY</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CACHEABLE_PRECOMPILERS">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CACHEABLE_PRECOMPILERS</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CACHEABLE_PRECOMPILERS" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">()</span></code></p>
+</dd>
+</dl>
+<p>An iterable of precompiler mimetypes as defined in <a class="reference internal" href="#django.conf.settings.COMPRESS_PRECOMPILERS" title="django.conf.settings.COMPRESS_PRECOMPILERS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_PRECOMPILERS</span></code></a>
+for which the compiler output can be cached based solely on the contents
+of the input file. This lets Django Compressor avoid recompiling unchanged
+files. Caching is appropriate for compilers such as CoffeeScript where files
+are compiled one-to-one, but not for compilers such as SASS that have an
+<code class="docutils literal notranslate"><span class="pre">import</span></code> mechanism for including one file from another. If caching is enabled
+for such a compiler, Django Compressor will not know to recompile files when a file
+they import is modified.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_DEBUG_TOGGLE">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_DEBUG_TOGGLE</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_DEBUG_TOGGLE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+<p>The name of the GET variable that toggles the debug mode and prevents Django
+Compressor from performing the actual compression. Only useful for debugging.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t use this option in production!</p>
+<p>An easy convention is to only set it depending on the <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> setting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span>
+    <span class="n">COMPRESS_DEBUG_TOGGLE</span> <span class="o">=</span> <span class="s1">&#39;whatever&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This only works for pages that are rendered using the <a class="reference external" href="http://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.RequestContext">RequestContext</a>
+and the <code class="docutils literal notranslate"><span class="pre">django.core.context_processors.request</span></code> context processor.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_CACHE_KEY_FUNCTION">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_CACHE_KEY_FUNCTION</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_CACHE_KEY_FUNCTION" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">'compressor.cache.simple_cachekey'</span></code></p>
+</dd>
+</dl>
+<p>The function to use when generating the cache key. The function must take
+one argument which is the partial key based on the source’s hex digest.
+It must return the full key as a string.</p>
+</dd></dl>
+
+</section>
+<section id="offline-settings">
+<h2>Offline settings<a class="headerlink" href="#offline-settings" title="Permalink to this headline">¶</a></h2>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_OFFLINE">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_OFFLINE</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_OFFLINE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</dd>
+</dl>
+<p>Boolean that decides if compression should be done outside of the
+request/response loop. See <a class="reference internal" href="usage.html#offline-compression"><span class="std std-ref">Offline Compression</span></a> for details.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_OFFLINE_TIMEOUT">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_OFFLINE_TIMEOUT</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_OFFLINE_TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">31536000</span></code> (1 year in seconds)</p>
+</dd>
+</dl>
+<p>The period of time with which the <code class="docutils literal notranslate"><span class="pre">compress</span></code> management command stores
+the pre-compressed the contents of <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">compress</span> <span class="pre">%}</span></code> template tags in
+the cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_OFFLINE_CONTEXT">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_OFFLINE_CONTEXT</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_OFFLINE_CONTEXT" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">{'STATIC_URL':</span> <span class="pre">settings.STATIC_URL}</span></code></p>
+</dd>
+</dl>
+<p>The context to be used by the <code class="docutils literal notranslate"><span class="pre">compress</span></code> management command when rendering
+the contents of <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">compress</span> <span class="pre">%}</span></code> template tags and saving the result in the
+offline cache.</p>
+<p>If available, the <code class="docutils literal notranslate"><span class="pre">STATIC_URL</span></code> setting is also added to the context.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also possible to perform offline compression for multiple
+contexts by providing a list or tuple of dictionaries, or by providing
+a dotted string pointing to a generator function.</p>
+<p>This makes it easier to generate contexts dynamically for situations
+where a user might be able to select a different theme in their user
+profile, or be served different stylesheets based on other criteria.</p>
+<p>An example of multiple offline contexts by providing a list or tuple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># project/settings.py:</span>
+<span class="n">COMPRESS_OFFLINE_CONTEXT</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;THEME&#39;</span><span class="p">:</span> <span class="s1">&#39;plain&#39;</span><span class="p">,</span> <span class="s1">&#39;STATIC_URL&#39;</span><span class="p">:</span> <span class="n">STATIC_URL</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;THEME&#39;</span><span class="p">:</span> <span class="s1">&#39;fancy&#39;</span><span class="p">,</span> <span class="s1">&#39;STATIC_URL&#39;</span><span class="p">:</span> <span class="n">STATIC_URL</span><span class="p">},</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>An example of multiple offline contexts generated dynamically:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># project/settings.py:</span>
+<span class="n">COMPRESS_OFFLINE_CONTEXT</span> <span class="o">=</span> <span class="s1">&#39;project.module.offline_context&#39;</span>
+
+<span class="c1"># project/module.py:</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="k">def</span> <span class="nf">offline_context</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">project.models</span> <span class="kn">import</span> <span class="n">Company</span>
+    <span class="k">for</span> <span class="n">theme</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">Company</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;theme&#39;</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span>
+        <span class="k">yield</span> <span class="p">{</span><span class="s1">&#39;THEME&#39;</span><span class="p">:</span> <span class="n">theme</span><span class="p">,</span> <span class="s1">&#39;STATIC_URL&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">STATIC_URL</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_OFFLINE_MANIFEST">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_OFFLINE_MANIFEST</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_OFFLINE_MANIFEST" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">manifest.json</span></code></p>
+</dd>
+</dl>
+<p>The name of the file to be used for saving the names of the files
+compressed offline.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="django.conf.settings.COMPRESS_OFFLINE_MANIFEST_STORAGE">
+<span class="sig-prename descclassname"><span class="pre">django.conf.settings.</span></span><span class="sig-name descname"><span class="pre">COMPRESS_OFFLINE_MANIFEST_STORAGE</span></span><a class="headerlink" href="#django.conf.settings.COMPRESS_OFFLINE_MANIFEST_STORAGE" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Default</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">compressor.storage.OfflineManifestFileStorage</span></code></p>
+</dd>
+</dl>
+<p>The dotted path to a Django Storage backend to be used to save the
+offline manifest.</p>
+<p>By default, the file configured with
+<a class="reference internal" href="#django.conf.settings.COMPRESS_OFFLINE_MANIFEST" title="django.conf.settings.COMPRESS_OFFLINE_MANIFEST"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_OFFLINE_MANIFEST</span></code></a> will be stored
+into <a class="reference internal" href="#django.conf.settings.COMPRESS_OUTPUT_DIR" title="django.conf.settings.COMPRESS_OUTPUT_DIR"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_OUTPUT_DIR</span></code></a>.</p>
+<p>An example to output the manifest into the project’s root directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># project/settings.py:</span>
+<span class="n">COMPRESS_OFFLINE_MANIFEST_STORAGE</span> <span class="o">=</span> <span class="s1">&#39;project.module.PrivateOfflineManifestFileStorage&#39;</span>
+
+<span class="c1"># project/module.py:</span>
+<span class="kn">from</span> <span class="nn">compressor.storage</span> <span class="kn">import</span> <span class="n">OfflineManifestFileStorage</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="k">class</span> <span class="nc">PrivateOfflineManifestFileStorage</span><span class="p">(</span><span class="n">OfflineManifestFileStorage</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Django Compressor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Common Deployment Scenarios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-settings">Base settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backend-settings">Backend settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caching-settings">Caching settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#offline-settings">Offline settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="remote-storages.html">Remote Storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behind-the-scenes.html">Behind the Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jinja2.html">Jinja2 Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django-sekizai.html">django-sekizai Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactjs.html">Facebook React Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="scenarios.html" title="previous chapter">Common Deployment Scenarios</a></li>
+      <li>Next: <a href="remote-storages.html" title="next chapter">Remote Storages</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Django Compressor authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/settings.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

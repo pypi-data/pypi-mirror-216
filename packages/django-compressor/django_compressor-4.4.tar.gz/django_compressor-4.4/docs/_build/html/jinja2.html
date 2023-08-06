@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Jinja2 Support &#8212; Django Compressor 4.3.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="django-sekizai Support" href="django-sekizai.html" />
+    <link rel="prev" title="Behind the Scenes" href="behind-the-scenes.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="jinja2-support">
+<h1>Jinja2 Support<a class="headerlink" href="#jinja2-support" title="Permalink to this headline">¶</a></h1>
+<p>Django Compressor comes with support for <a class="reference external" href="http://jinja.pocoo.org/docs/">Jinja2</a> via an extension.</p>
+<section id="in-request-compression">
+<h2>In-Request Compression<a class="headerlink" href="#in-request-compression" title="Permalink to this headline">¶</a></h2>
+<p>In order to use Django Compressor’s Jinja2 extension we would need to pass
+<code class="docutils literal notranslate"><span class="pre">compressor.contrib.jinja2ext.CompressorExtension</span></code> into environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jinja2</span>
+<span class="kn">from</span> <span class="nn">compressor.contrib.jinja2ext</span> <span class="kn">import</span> <span class="n">CompressorExtension</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span><span class="n">extensions</span><span class="o">=</span><span class="p">[</span><span class="n">CompressorExtension</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>From now on, you can use same code you’d normally use within Django templates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+    <span class="s1">&#39;{</span><span class="si">% c</span><span class="s1">ompress css %}&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;&lt;link rel=&quot;stylesheet&quot; href=&quot;{{ STATIC_URL }}css/one.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot;&gt;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;{</span><span class="si">% e</span><span class="s1">ndcompress %}&#39;</span><span class="p">,</span>
+<span class="p">]))</span>
+<span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">({</span><span class="s1">&#39;STATIC_URL&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">STATIC_URL</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="offline-compression">
+<h2>Offline Compression<a class="headerlink" href="#offline-compression" title="Permalink to this headline">¶</a></h2>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>First, you will need to configure <code class="docutils literal notranslate"><span class="pre">COMPRESS_JINJA2_GET_ENVIRONMENT</span></code> so that
+Compressor can retrieve the Jinja2 environment for rendering.
+This can be a lambda or function that returns a Jinja2 environment.</p>
+<p>Then, run the following compress command along with an <code class="docutils literal notranslate"><span class="pre">--engine</span></code> parameter.
+The parameter can be either jinja2 or django (default). For example,
+<code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">compress</span> <span class="pre">--engine</span> <span class="pre">jinja2</span></code>.</p>
+</section>
+<section id="using-both-django-and-jinja2-templates">
+<h3>Using both Django and Jinja2 templates<a class="headerlink" href="#using-both-django-and-jinja2-templates" title="Permalink to this headline">¶</a></h3>
+<p>There may be a chance that the Jinja2 parser is used to parse Django templates
+if you have a mixture of Django and Jinja2 templates in the same location(s).
+This should not be a problem since the Jinja2 parser will likely raise a
+template syntax error, causing Compressor to skip the errorneous
+template safely. (Vice versa for Django parser).</p>
+<p>Templates of both engines can be compressed like this:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">compress</span> <span class="pre">--engine</span> <span class="pre">django</span> <span class="pre">--engine</span> <span class="pre">jinja2</span></code></p></li>
+</ul>
+<p>However, it is still recommended that you do not mix Django and Jinja2
+templates in the same project.</p>
+</section>
+<section id="limitations">
+<h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Does not support <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">import</span> <span class="pre">%}</span></code> and similar blocks within
+<code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">compress</span> <span class="pre">%}</span></code>  blocks.</p></li>
+<li><p>Does not support <code class="docutils literal notranslate"><span class="pre">{{super()}}</span></code>.</p></li>
+<li><p>All other filters, globals and language constructs such as
+<code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code>, <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">with</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">%}</span></code> are tested and
+should run fine.</p></li>
+</ul>
+</section>
+<section id="jinja2-templates-location">
+<h3>Jinja2 templates location<a class="headerlink" href="#jinja2-templates-location" title="Permalink to this headline">¶</a></h3>
+<p>IMPORTANT: For Compressor to discover the templates for offline compression,
+there must be a template loader that implements the <code class="docutils literal notranslate"><span class="pre">get_template_sources</span></code>
+method, and is in the <code class="docutils literal notranslate"><span class="pre">TEMPLATE_LOADERS</span></code> setting.</p>
+<p>If you’re using Jinja2, you’re likely to have a Jinja2 template loader in the
+<code class="docutils literal notranslate"><span class="pre">TEMPLATE_LOADERS</span></code> setting, otherwise Django won’t know how to load Jinja2
+templates.</p>
+<p>By default, if you don’t override the <code class="docutils literal notranslate"><span class="pre">TEMPLATE_LOADERS</span></code> setting,
+it will include the app directories loader that searches for templates under
+the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory in each app. If the app directories loader is in use
+and your Jinja2 templates are in the <code class="docutils literal notranslate"><span class="pre">&lt;app&gt;/templates</span></code> directories,
+Compressor will be able to find the Jinja2 templates.</p>
+<p>However, if you have Jinja2 templates in other location(s), you could include
+the filesystem loader (<code class="docutils literal notranslate"><span class="pre">django.template.loaders.filesystem.Loader</span></code>) in the
+<code class="docutils literal notranslate"><span class="pre">TEMPLATE_LOADERS</span></code> setting and specify the custom location in the
+<code class="docutils literal notranslate"><span class="pre">TEMPLATE_DIRS</span></code> setting.</p>
+</section>
+<section id="using-your-custom-loader">
+<h3>Using your custom loader<a class="headerlink" href="#using-your-custom-loader" title="Permalink to this headline">¶</a></h3>
+<p>You should configure <code class="docutils literal notranslate"><span class="pre">TEMPLATE_LOADERS</span></code> as such:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TEMPLATE_LOADERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;your_app.Loader&#39;</span><span class="p">,</span>
+    <span class="o">...</span> <span class="n">other</span> <span class="n">loaders</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span> <span class="o">...</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You could implement the <cite>get_template_sources</cite> method in your loader or make
+use of the Django’s builtin loaders to report the Jinja2 template location(s).</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Django Compressor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Common Deployment Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote-storages.html">Remote Storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behind-the-scenes.html">Behind the Scenes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jinja2 Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#in-request-compression">In-Request Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#offline-compression">Offline Compression</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="django-sekizai.html">django-sekizai Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactjs.html">Facebook React Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="behind-the-scenes.html" title="previous chapter">Behind the Scenes</a></li>
+      <li>Next: <a href="django-sekizai.html" title="next chapter">django-sekizai Support</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Django Compressor authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/jinja2.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

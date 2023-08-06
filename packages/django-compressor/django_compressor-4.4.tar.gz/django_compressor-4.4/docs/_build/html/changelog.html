@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Changelog &#8212; Django Compressor 4.3.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Contributing" href="contributing.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<section id="v4-3-1-2023-01-22">
+<h2>v4.3.1 (2023-01-22)<a class="headerlink" href="#v4-3-1-2023-01-22" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/4.3...4.3.1">Full list of changes from v4.3</a></p>
+<ul class="simple">
+<li><p>Documentation fixes only</p></li>
+</ul>
+</section>
+<section id="v4-3-2023-01-06">
+<h2>v4.3 (2023-01-06)<a class="headerlink" href="#v4-3-2023-01-06" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/4.2...4.3">Full list of changes from v4.2</a></p>
+<ul class="simple">
+<li><p>Officially support Python 3.11</p></li>
+</ul>
+</section>
+<section id="v4-2-2023-01-06">
+<h2>v4.2 (2023-01-06)<a class="headerlink" href="#v4-2-2023-01-06" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/4.1...4.2">Full list of changes from v4.1</a></p>
+<ul class="simple">
+<li><p>Drop Python 3.6 and 3.7 support</p></li>
+<li><p>Drop Django 2.2 and 3.1 support</p></li>
+<li><p>Drop SlimItFilter</p></li>
+<li><p>Update the <cite>CachedS3Boto3Storage</cite> example storage subclass in “Remote Storages”
+to work properly after the v4.0 change to how duplicate file names are handled
+by <cite>CompressorFileStorage</cite></p></li>
+<li><p>Update rsmin and jsmin versions</p></li>
+</ul>
+</section>
+<section id="v4-1-2022-08-03">
+<h2>v4.1 (2022-08-03)<a class="headerlink" href="#v4-1-2022-08-03" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/4.0...4.1">Full list of changes from v4.0</a></p>
+<ul>
+<li><p>Add Django 4.1 compatibility</p></li>
+<li><p>New setting <code class="docutils literal notranslate"><span class="pre">COMPRESS_OFFLINE_MANIFEST_STORAGE</span></code> to customize the offline manifest’s file storage (#1112)</p>
+<p>With this change the function <code class="docutils literal notranslate"><span class="pre">compressor.cache.get_offline_manifest_filename()</span></code> has been removed.
+You can now use the new file storage <code class="docutils literal notranslate"><span class="pre">compressor.storage.default_offline_manifest_storage</span></code> to access the
+location of the manifest.</p>
+</li>
+</ul>
+</section>
+<section id="v4-0-2022-03-23">
+<h2>v4.0 (2022-03-23)<a class="headerlink" href="#v4-0-2022-03-23" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/3.1...4.0">Full list of changes from v3.1</a></p>
+<ul>
+<li><p>Fix intermittent No such file or directory errors by changing strategy to
+deal with duplicate filenames in CompressorFileStorage</p>
+<p>Note: if your project has a custom storage backend following the example of
+<cite>CachedS3Boto3Storage</cite> from the “Remote Storages” documentation, it will need
+to be updated to call <cite>save</cite> instead of <cite>_save</cite> to work properly after this
+change to <cite>CompressorFileStorage</cite>.</p>
+</li>
+<li><p>Deprecate SlimItFilter, stop testing it with Python 3.7 or higher</p></li>
+</ul>
+</section>
+<section id="v3-1-2021-12-18">
+<h2>v3.1 (2021-12-18)<a class="headerlink" href="#v3-1-2021-12-18" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/3.0...3.1">Full list of changes from v3.0</a></p>
+<ul class="simple">
+<li><p>Fix error with verbose offline compression when COMPRESS_OFFLINE_CONTEXT is a generator</p></li>
+</ul>
+</section>
+<section id="v3-0-2021-12-12">
+<h2>v3.0 (2021-12-12)<a class="headerlink" href="#v3-0-2021-12-12" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.4.1...3.0">Full list of changes from v2.4.1</a></p>
+<ul class="simple">
+<li><p>Officially support Python 3.9 and 3.10 as well as Django 3.1, 3.2 and 4.0</p></li>
+<li><p>Drop support for Django 1.11, 2.1 and 3.0</p></li>
+<li><p>Drop support for Python 2.x and 3.4</p></li>
+<li><p>Fix compatibility with Jinja 3.x</p></li>
+<li><p>Require django-sekizai 2.0 for django-sekizai extension</p></li>
+<li><p>Make template compression in compress command threaded to improve performance</p></li>
+<li><p>Correctly handle relative paths in <code class="docutils literal notranslate"><span class="pre">extends</span></code> tags (#979)</p></li>
+<li><p>Enable <code class="docutils literal notranslate"><span class="pre">rCSSMinFilter</span></code> by default (#888)</p></li>
+<li><p>Fix various deprecation warnings</p></li>
+<li><p>Add ability to pass a logger to various classes &amp; methods</p></li>
+<li><p>Removed deprecated <code class="docutils literal notranslate"><span class="pre">COMPRESS_JS_FILTERS</span></code> and <code class="docutils literal notranslate"><span class="pre">COMPRESS_CSS_FILTERS</span></code> settings</p></li>
+<li><p>Fix offline compression race condition, which could result in incomplete manifest</p></li>
+</ul>
+</section>
+<section id="v2-4-1-2021-04-17">
+<h2>v2.4.1 (2021-04-17)<a class="headerlink" href="#v2-4-1-2021-04-17" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.4...2.4.1">Full list of changes from v2.4</a></p>
+<ul class="simple">
+<li><p>Raise proper <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> for <code class="docutils literal notranslate"><span class="pre">COMPRESS_JS_FILTERS</span></code> and <code class="docutils literal notranslate"><span class="pre">COMPRESS_CSS_FILTERS</span></code></p></li>
+</ul>
+</section>
+<section id="v2-4-2019-12-31">
+<h2>v2.4 (2019-12-31)<a class="headerlink" href="#v2-4-2019-12-31" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.3...2.4">Full list of changes from v2.3</a></p>
+<ul class="simple">
+<li><p>Add support for Django 3.0 (#950, #967)</p></li>
+<li><p>Officially support Python 3.8 (#967)</p></li>
+<li><p>Add better support for JS strict mode and validation (#952)</p></li>
+<li><p>Add support for rel=preload (#951)</p></li>
+<li><p>Add support for Calmjs (#957)</p></li>
+</ul>
+<p>Note: in 2.3, a new setting <code class="docutils literal notranslate"><span class="pre">COMPRESS_FILTERS</span></code> has been introduced that combines the existing <code class="docutils literal notranslate"><span class="pre">COMPRESS_CSS_FILTERS</span></code> and <code class="docutils literal notranslate"><span class="pre">COMPRESS_JS_FILTERS</span></code>. The latter are now deprecated. See <a class="reference external" href="https://django-compressor.readthedocs.io/en/stable/settings/#django.conf.settings.COMPRESS_FILTERS">the docs</a> on how to use the new setting, the conversion is straightforward.</p>
+</section>
+<section id="v2-3-2019-05-31">
+<h2>v2.3 (2019-05-31)<a class="headerlink" href="#v2-3-2019-05-31" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.2...2.3">Full list of changes from v2.2</a></p>
+<ul class="simple">
+<li><p>Drop support for Django 1.8, 1.9 and 1.10</p></li>
+<li><p>Add support for Django 2.1 and 2.2, as well as Python 3.7</p></li>
+<li><p>Update all dependencies. This required minor code changes, you might need to update some optional dependencies if you use any</p></li>
+<li><p>Allow the mixed use of JS/CSS in Sekizai’s templatetags <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">addtoblock</span> <span class="pre">&quot;js&quot;</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">addtoblock</span> <span class="pre">&quot;css&quot;</span> <span class="pre">%}</span></code> (#891)</p></li>
+<li><p>Allow the implementation of new types other than css and js. (#900)</p></li>
+<li><p>Update jinja2 extension to behave similar to the django tag (#899)</p></li>
+<li><p>Fix crash in offline compression when child nodelist is None, again (#605)</p></li>
+<li><p>Support STATIC_URL and COMPRESS_URL being string-like objects</p></li>
+<li><p>Improve compress command memory usage (#870)</p></li>
+<li><p>Ensure generated file always contains a base name (#775)</p></li>
+<li><p>Add BrotliCompressorFileStorage (#867)</p></li>
+</ul>
+</section>
+<section id="v2-2-2017-08-16">
+<h2>v2.2 (2017-08-16)<a class="headerlink" href="#v2-2-2017-08-16" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.1.1...2.2">Full list of changes from v2.1.1</a></p>
+<ul class="simple">
+<li><p>Switch from MD5 to SHA256 for hashes generation.</p></li>
+<li><p>Add Django 1.11 compatibility</p></li>
+<li><p>Various compatibility fixes for Python 3.6 and Django 1.8</p></li>
+<li><p>Made OfflineGenerationError easier to debug</p></li>
+<li><p>Drop support for Python 3.2</p></li>
+<li><p>Add new CssRelativeFilter which works like CssAbsoluteFilter but outputs relative URLs.</p></li>
+<li><p>Fix URL CssAbsoluteFilter URL detection</p></li>
+</ul>
+</section>
+<section id="v2-1-1-2017-02-02">
+<h2>v2.1.1 (2017-02-02)<a class="headerlink" href="#v2-1-1-2017-02-02" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.1...2.1.1">Full list of changes from v2.1</a></p>
+<ul class="simple">
+<li><p>Fix to file permissions issue with packaging.</p></li>
+</ul>
+</section>
+<section id="v2-1-2016-08-09">
+<h2>v2.1 (2016-08-09)<a class="headerlink" href="#v2-1-2016-08-09" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/2.0...2.1">Full list of changes from v2.0</a></p>
+<ul class="simple">
+<li><p>Add Django 1.10 compatibility</p></li>
+<li><p>Add support for inheritance using a variable in offline compression</p></li>
+<li><p>Fix recursion error with offline compression when extending templates with the same name</p></li>
+<li><p>Fix UnicodeDecodeError when using CompilerFilter and caching</p></li>
+<li><p>Fix CssAbsoluteFilter changing double quotes to single quotes, breaking SVG</p></li>
+</ul>
+</section>
+<section id="v2-0-2016-01-07">
+<h2>v2.0 (2016-01-07)<a class="headerlink" href="#v2-0-2016-01-07" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/1.6...2.0">Full list of changes from v1.6</a></p>
+<ul class="simple">
+<li><p>Add Django 1.9 compatibility</p></li>
+<li><p>Remove official support for Django 1.4 and 1.7</p></li>
+<li><p>Add official support for Python 3.5</p></li>
+<li><p>Remove official support for Python 2.6</p></li>
+<li><p>Remove support for coffin and jingo</p></li>
+<li><p>Fix Jinja2 compatibility for Django 1.8+</p></li>
+<li><p>Stop bundling vendored versions of rcssmin and rjsmin, make them proper dependencies</p></li>
+<li><p>Remove support for CSSTidy</p></li>
+<li><p>Remove support for beautifulsoup 3.</p></li>
+<li><p>Replace cssmin by csscompressor (cssmin is still available for backwards-compatibility but points to rcssmin)</p></li>
+</ul>
+</section>
+<section id="v1-6-2015-11-19">
+<h2>v1.6 (2015-11-19)<a class="headerlink" href="#v1-6-2015-11-19" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/1.5...1.6">Full list of changes from v1.5</a></p>
+<ul class="simple">
+<li><p>Upgrade rcssmin and rjsmin</p></li>
+<li><p>Apply CssAbsoluteFilter to precompiled css even when compression is disabled</p></li>
+<li><p>Add optional caching to CompilerFilter to avoid re-compiling unchanged files</p></li>
+<li><p>Fix various deprecation warnings on Django 1.7 / 1.8</p></li>
+<li><p>Fix TemplateFilter</p></li>
+<li><p>Fix double-rendering bug with sekizai extension</p></li>
+<li><p>Fix debug mode using destination directory instead of staticfiles finders first</p></li>
+<li><p>Removed some silent exception catching in compress command</p></li>
+</ul>
+</section>
+<section id="v1-5-2015-03-27">
+<h2>v1.5 (2015-03-27)<a class="headerlink" href="#v1-5-2015-03-27" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/django-compressor/django-compressor/compare/1.4...1.5">Full list of changes from v1.4</a></p>
+<ul class="simple">
+<li><p>Fix compress command and run automated tests for Django 1.8</p></li>
+<li><p>Fix Django 1.8 warnings</p></li>
+<li><p>Handle TypeError from import_module</p></li>
+<li><p>Fix reading UTF-8 files which have BOM</p></li>
+<li><p>Fix incompatibility with Windows (shell_quote is not supported)</p></li>
+<li><p>Run automated tests on Django 1.7</p></li>
+<li><p>Ignore non-existent {{ block.super }} in offline compression instead of raising AttributeError</p></li>
+<li><p>Support for clean-css</p></li>
+<li><p>Fix link markup</p></li>
+<li><p>Add support for COMPRESS_CSS_HASHING_METHOD = None</p></li>
+<li><p>Remove compatibility with old ‘staticfiles’ app</p></li>
+<li><p>In compress command, use get_template() instead of opening template files manually, fixing compatibility issues with custom template loaders</p></li>
+<li><p>Fix FilterBase so that does not override self.type for subclasses if filter_type is not specified at init</p></li>
+<li><p>Remove unnecessary filename and existence checks in CssAbsoluteFilter</p></li>
+</ul>
+</section>
+<section id="v1-4-2014-06-20">
+<h2>v1.4 (2014-06-20)<a class="headerlink" href="#v1-4-2014-06-20" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added Python 3 compatibility.</p></li>
+<li><p>Added compatibility with Django 1.6.x and dropped support for Django 1.3.X.</p></li>
+<li><p>Fixed compatibility with html5lib 1.0.</p></li>
+<li><p>Added offline compression for Jinja2 with Jingo and Coffin integration.</p></li>
+<li><p>Improved support for template inheritance in offline compression.</p></li>
+<li><p>Made offline compression avoid compressing the same block multiple times.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">testenv</span></code> target in the Makefile to make it easier to set up the
+test environment.</p></li>
+<li><p>Allowed data-uri filter to handle external/protocol-relative references.</p></li>
+<li><p>Made <code class="docutils literal notranslate"><span class="pre">CssCompressor</span></code> class easier to extend.</p></li>
+<li><p>Added support for explicitly stating the block being ended.</p></li>
+<li><p>Added rcssmin and updated rjsmin.</p></li>
+<li><p>Removed implicit requirement on BeautifulSoup.</p></li>
+<li><p>Made GzipCompressorFileStorage set access and modified times to the same time
+as the corresponding base file.</p></li>
+<li><p>Defaulted to using django’s simplejson, if present.</p></li>
+<li><p>Fixed CompilerFilter to always output Unicode strings.</p></li>
+<li><p>Fixed windows line endings in offline compression.</p></li>
+</ul>
+</section>
+<section id="v1-3-2013-03-18">
+<h2>v1.3 (2013-03-18)<a class="headerlink" href="#v1-3-2013-03-18" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><em>Backward incompatible changes</em></p>
+<ul>
+<li><p>Dropped support for Python 2.5. Removed <code class="docutils literal notranslate"><span class="pre">any</span></code> and <code class="docutils literal notranslate"><span class="pre">walk</span></code> compatibility
+functions in <code class="docutils literal notranslate"><span class="pre">compressor.utils</span></code>.</p></li>
+<li><p>Removed compatibility with some old django setttings:</p>
+<ul>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_ROOT</span></code> no longer uses <code class="docutils literal notranslate"><span class="pre">MEDIA_ROOT</span></code> if <code class="docutils literal notranslate"><span class="pre">STATIC_ROOT</span></code> is
+not defined. It expects <code class="docutils literal notranslate"><span class="pre">STATIC_ROOT</span></code> to be defined instead.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_URL</span></code> no longer uses <code class="docutils literal notranslate"><span class="pre">MEDIA_URL</span></code> if <code class="docutils literal notranslate"><span class="pre">STATIC_URL</span></code> is
+not defined. It expects <code class="docutils literal notranslate"><span class="pre">STATIC_URL</span></code> to be defined instead.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_CACHE_BACKEND</span></code> no longer uses <code class="docutils literal notranslate"><span class="pre">CACHE_BACKEND</span></code> and simply
+defaults to <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Added precompiler class support. This enables you to write custom precompilers
+with Python logic in them instead of just relying on executables.</p></li>
+<li><p>Made CssAbsoluteFilter smarter: it now handles URLs with hash fragments or
+querystring correctly. In addition, it now leaves alone fragment-only URLs.</p></li>
+<li><p>Removed a <code class="docutils literal notranslate"><span class="pre">fsync()</span></code> call in <code class="docutils literal notranslate"><span class="pre">CompilerFilter</span></code> to improve performance.
+We already called <code class="docutils literal notranslate"><span class="pre">self.infile.flush()</span></code> so that call was not necessary.</p></li>
+<li><p>Added an extension to provide django-sekizai support.
+See <a class="reference internal" href="django-sekizai.html#django-sekizai-support"><span class="std std-ref">django-sekizai Support</span></a> for more
+information.</p></li>
+<li><p>Fixed a <code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code> regarding the use of <code class="docutils literal notranslate"><span class="pre">django.utils.hashcompat</span></code></p></li>
+<li><p>Updated bundled <code class="docutils literal notranslate"><span class="pre">rjsmin.py</span></code> to fix some JavaScript compression errors.</p></li>
+</ul>
+</section>
+<section id="v1-2">
+<h2>v1.2<a class="headerlink" href="#v1-2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Added compatibility with Django 1.4 and dropped support for Django 1.2.X.</p></li>
+<li><p>Added contributing docs. Be sure to check them out and start contributing!</p></li>
+<li><p>Moved CI to Travis: <a class="reference external" href="http://travis-ci.org/django-compressor/django-compressor">http://travis-ci.org/django-compressor/django-compressor</a></p></li>
+<li><p>Introduced a new <code class="docutils literal notranslate"><span class="pre">compressed</span></code> context dictionary that is passed to
+the templates that are responsible for rendering the compressed snippets.</p>
+<p>This is a <strong>backwards-incompatible change</strong> if you’ve overridden any of
+the included templates:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor/css_file.html</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor/css_inline.html</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor/js_file.html</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compressor/js_inline.html</span></code></p></li>
+</ul>
+<p>The variables passed to those templates have been namespaced in a
+dictionary, so it’s easy to fix your own templates.</p>
+<p>For example, the old <code class="docutils literal notranslate"><span class="pre">compressor/js_file.html</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;{{ url }}&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The new <code class="docutils literal notranslate"><span class="pre">compressor/js_file.html</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;{{ compressed.url }}&quot;</span><span class="o">&gt;&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Removed old templates named <code class="docutils literal notranslate"><span class="pre">compressor/css.html</span></code> and
+<code class="docutils literal notranslate"><span class="pre">compressor/js.html</span></code> that were originally left for backwards
+compatibility. If you’ve overridden them, just rename them to
+<code class="docutils literal notranslate"><span class="pre">compressor/css_file.html</span></code> or <code class="docutils literal notranslate"><span class="pre">compressor/js_file.html</span></code> and
+make sure you’ve accounted for the backwards incompatible change
+of the template context mentioned above.</p></li>
+<li><p>Reverted an unfortunate change to the YUI filter that prepended
+<code class="docutils literal notranslate"><span class="pre">'java</span> <span class="pre">-jar'</span></code> to the binary name, which doesn’t alway work, e.g.
+if the YUI compressor is shipped as a script like
+<code class="docutils literal notranslate"><span class="pre">/usr/bin/yui-compressor</span></code>.</p></li>
+<li><p>Changed the sender parameter of the <a class="reference internal" href="usage.html#compressor.signals.post_compress" title="compressor.signals.post_compress"><code class="xref py py-func docutils literal notranslate"><span class="pre">post_compress()</span></code></a>
+signal to be either <code class="xref py py-class docutils literal notranslate"><span class="pre">compressor.css.CssCompressor</span></code> or
+<code class="xref py py-class docutils literal notranslate"><span class="pre">compressor.js.JsCompressor</span></code> for easier customization.</p></li>
+<li><p>Correctly handle offline compressing files that are found in <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code>
+template blocks.</p></li>
+<li><p>Renamed the second option for the <code class="docutils literal notranslate"><span class="pre">COMPRESS_CSS_HASHING_METHOD</span></code> setting
+from <code class="docutils literal notranslate"><span class="pre">'hash'</span></code> to <code class="docutils literal notranslate"><span class="pre">'content'</span></code> to better describe what it does. The old
+name is also supported, as well as the default being <code class="docutils literal notranslate"><span class="pre">'mtime'</span></code>.</p></li>
+<li><p>Fixed CssAbsoluteFilter, <code class="docutils literal notranslate"><span class="pre">src</span></code> attributes in includes now get transformed.</p></li>
+<li><p>Added a new hook to allow developers to completely bypass offline
+compression in CompressorNode subclasses: <code class="docutils literal notranslate"><span class="pre">is_offline_compression_enabled</span></code>.</p></li>
+<li><p>Dropped versiontools from required dependencies again.</p></li>
+</ul>
+</section>
+<section id="v1-1-2">
+<h2>v1.1.2<a class="headerlink" href="#v1-1-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed an installation issue related to versiontools.</p></li>
+</ul>
+</section>
+<section id="v1-1-1">
+<h2>v1.1.1<a class="headerlink" href="#v1-1-1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Fixed a stupid ImportError bug introduced in 1.1.</p></li>
+<li><p>Fixed Jinja2 docs of since <code class="docutils literal notranslate"><span class="pre">JINJA2_EXTENSIONS</span></code> expects
+a class, not a module.</p></li>
+<li><p>Fixed a Windows bug with regard to file resolving with
+staticfiles finders.</p></li>
+<li><p>Stopped a potential memory leak when memoizing the rendered
+output.</p></li>
+<li><p>Fixed the integration between staticfiles (e.g. in Django &lt;= 1.3.1)
+and compressor which prevents the collectstatic management command
+to work.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to <strong>remove</strong> the <code class="docutils literal notranslate"><span class="pre">path</span></code> method of your custom
+<a class="reference internal" href="remote-storages.html#remote-storages"><span class="std std-ref">remote storage</span></a> class!</p>
+</div>
+</li>
+</ul>
+</section>
+<section id="v1-1">
+<h2>v1.1<a class="headerlink" href="#v1-1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Made offline compression completely independent from cache (by writing a
+manifest.json file).</p>
+<p>You can now easily run the <code class="docutils literal notranslate"><span class="pre">compress</span></code> management command locally and
+transfer the <a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_ROOT" title="django.conf.settings.COMPRESS_ROOT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_ROOT</span></code></a> dir to your server.</p>
+</li>
+<li><p>Updated installation instructions to properly mention all dependencies,
+even those internally used.</p></li>
+<li><p>Fixed a bug introduced in 1.0 which would prevent the proper deactivation
+of the compression in production.</p></li>
+<li><p>Added a <a class="reference external" href="http://jinja.pocoo.org/2/">Jinja2</a> <a class="reference internal" href="jinja2.html"><span class="doc">contrib extension</span></a>.</p></li>
+<li><p>Made sure the rel attribute of link tags can be mixed case.</p></li>
+<li><p>Avoid overwriting context variables needed for compressor to work.</p></li>
+<li><p>Stopped the compress management command to require model validation.</p></li>
+<li><p>Added missing imports and fixed a few <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0008"><strong>PEP 8</strong></a> issues.</p></li>
+</ul>
+</section>
+<section id="v1-0-1">
+<h2>v1.0.1<a class="headerlink" href="#v1-0-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed regression in <code class="docutils literal notranslate"><span class="pre">compressor.utils.staticfiles</span></code> compatibility
+module.</p></li>
+</ul>
+</section>
+<section id="v1-0">
+<h2>v1.0<a class="headerlink" href="#v1-0" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><strong>BACKWARDS-INCOMPATIBLE</strong> Stopped swallowing exceptions raised by
+rendering the template tag in production (<code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">=</span> <span class="pre">False</span></code>). This
+has the potential to breaking lots of apps but on the other hand
+will help find bugs.</p></li>
+<li><p><strong>BACKWARDS-INCOMPATIBLE</strong> The default function to create the cache
+key stopped containing the server hostname. Instead the cache key
+now only has the form <code class="docutils literal notranslate"><span class="pre">'django_compressor.&lt;KEY&gt;'</span></code>.</p>
+<p>To revert to the previous way simply set the <code class="docutils literal notranslate"><span class="pre">COMPRESS_CACHE_KEY_FUNCTION</span></code>
+to <code class="docutils literal notranslate"><span class="pre">'compressor.cache.socket_cachekey'</span></code>.</p>
+</li>
+<li><p><strong>BACKWARDS-INCOMPATIBLE</strong> Renamed ambigously named
+<code class="docutils literal notranslate"><span class="pre">COMPRESS_DATA_URI_MAX_SIZE</span></code> setting to <code class="docutils literal notranslate"><span class="pre">COMPRESS_DATA_URI_MAX_SIZE</span></code>.
+It’s the maximum size the <code class="docutils literal notranslate"><span class="pre">compressor.filters.datauri.DataUriFilter</span></code>
+filter will embed files as data: URIs.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">COMPRESS_CSS_HASHING_METHOD</span></code> setting with the options <code class="docutils literal notranslate"><span class="pre">'mtime'</span></code>
+(default) and <code class="docutils literal notranslate"><span class="pre">'hash'</span></code> for the <code class="docutils literal notranslate"><span class="pre">CssAbsoluteFilter</span></code> filter. The latter
+uses the content of the file to calculate the cache-busting hash.</p></li>
+<li><p>Added support for <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">block.super</span> <span class="pre">}}</span></code> to <code class="docutils literal notranslate"><span class="pre">compress</span></code> management command.</p></li>
+<li><p>Dropped Django 1.1.X support.</p></li>
+<li><p>Fixed compiler filters on Windows.</p></li>
+<li><p>Handle new-style cached template loaders in the compress management command.</p></li>
+<li><p>Documented included filters.</p></li>
+<li><p>Added <a class="reference external" href="http://slimit.org/">Slim It</a> filter.</p></li>
+<li><p>Added new CallbackOutputFilter to ease the implementation of Python-based
+callback filters that only need to pass the content to a callable.</p></li>
+<li><p>Make use of <a class="reference external" href="https://django-appconf.readthedocs.io/">django-appconf</a> for settings handling and <a class="reference external" href="http://pypi.python.org/pypi/versiontools">versiontools</a>
+for versions.</p></li>
+<li><p>Uses the current context when rendering the render templates.</p></li>
+<li><p>Added <a class="reference internal" href="usage.html#compressor.signals.post_compress" title="compressor.signals.post_compress"><code class="xref py py-func docutils literal notranslate"><span class="pre">post_compress</span></code></a> signal.</p></li>
+</ul>
+</section>
+<section id="v0-9-2">
+<h2>v0.9.2<a class="headerlink" href="#v0-9-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed stdin handling of precompiler filter.</p></li>
+</ul>
+</section>
+<section id="v0-9-1">
+<h2>v0.9.1<a class="headerlink" href="#v0-9-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed encoding related issue.</p></li>
+<li><p>Minor cleanups.</p></li>
+</ul>
+</section>
+<section id="v0-9">
+<h2>v0.9<a class="headerlink" href="#v0-9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed the precompiler support to also use the full file path instead of a
+temporarily created file.</p></li>
+<li><p>Enabled test coverage.</p></li>
+<li><p>Refactored caching and other utility code.</p></li>
+<li><p>Switched from SHA1 to MD5 for hash generation to lower the computational impact.</p></li>
+</ul>
+</section>
+<section id="v0-8">
+<h2>v0.8<a class="headerlink" href="#v0-8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Replace naive jsmin.py with rJSmin (<a class="reference external" href="http://opensource.perlig.de/rjsmin/">http://opensource.perlig.de/rjsmin/</a>)
+and fixed a few problems with JavaScript comments.</p></li>
+<li><p>Fixed converting relative URLs in CSS files when running in debug mode.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you relied on the <code class="docutils literal notranslate"><span class="pre">split_contents</span></code> method of <code class="docutils literal notranslate"><span class="pre">Compressor</span></code> classes,
+please make sure a fourth item is returned in the iterable that denotes
+the base name of the file that is compressed.</p>
+</div>
+</section>
+<section id="v0-7-1">
+<h2>v0.7.1<a class="headerlink" href="#v0-7-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed import error when using the standalone django-staticfiles app.</p></li>
+</ul>
+</section>
+<section id="v0-7">
+<h2>v0.7<a class="headerlink" href="#v0-7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Created new parser, HtmlParser, based on the stdlib HTMLParser module.</p></li>
+<li><p>Added a new default AutoSelectParser, which picks the LxmlParser if lxml
+is available and falls back to HtmlParser.</p></li>
+<li><p>Use unittest2 for testing goodness.</p></li>
+<li><p>Fixed YUI JavaScript filter argument handling.</p></li>
+<li><p>Updated bundled jsmin to use version by Dave St.Germain that was refactored for speed.</p></li>
+</ul>
+</section>
+<section id="v0-6-4">
+<h2>v0.6.4<a class="headerlink" href="#v0-6-4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed Closure filter argument handling.</p></li>
+</ul>
+</section>
+<section id="v0-6-3">
+<h2>v0.6.3<a class="headerlink" href="#v0-6-3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed options mangling in CompilerFilter initialization.</p></li>
+<li><p>Fixed tox configuration.</p></li>
+<li><p>Extended documentation and README.</p></li>
+<li><p>In the compress command ignore hidden files when looking for templates.</p></li>
+<li><p>Restructured utilities and added staticfiles compat layer.</p></li>
+<li><p>Restructered parsers and added a html5lib based parser.</p></li>
+</ul>
+</section>
+<section id="v0-6-2">
+<h2>v0.6.2<a class="headerlink" href="#v0-6-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Minor bugfixes that caused the compression not working reliably in
+development mode (e.g. updated files didn’t trigger a new compression).</p></li>
+</ul>
+</section>
+<section id="v0-6-1">
+<h2>v0.6.1<a class="headerlink" href="#v0-6-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed staticfiles support to also use its finder API to find files during
+development – when the static files haven’t been collected in
+<code class="docutils literal notranslate"><span class="pre">STATIC_ROOT</span></code>.</p></li>
+<li><p>Fixed regression with the <code class="docutils literal notranslate"><span class="pre">COMPRESS</span></code> setting, pre-compilation and
+staticfiles.</p></li>
+</ul>
+</section>
+<section id="v0-6">
+<h2>v0.6<a class="headerlink" href="#v0-6" title="Permalink to this headline">¶</a></h2>
+<p>Major improvements and a lot of bugfixes, some of which are:</p>
+<ul>
+<li><p>New precompilation support, which allows compilation of files and
+hunks with easily configurable compilers before calling the actual
+output filters. See the
+<a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PRECOMPILERS" title="django.conf.settings.COMPRESS_PRECOMPILERS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_PRECOMPILERS</span></code></a> for more details.</p></li>
+<li><p>New staticfiles support. With the introduction of the staticfiles app
+to Django 1.3, compressor officially supports finding the files to
+compress using the app’s finder API. Have a look at the documentation
+about <a class="reference internal" href="remote-storages.html#remote-storages"><span class="std std-ref">remote storages</span></a> in case you want to use
+those together with compressor.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">compress</span></code> management command which allows pre-running of what the
+compress template tag does.</p></li>
+<li><p>Various performance improvements by better caching and mtime cheking.</p></li>
+<li><p>Deprecated <code class="docutils literal notranslate"><span class="pre">COMPRESS_LESSC_BINARY</span></code> setting because it’s now
+superseded by the <a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PRECOMPILERS" title="django.conf.settings.COMPRESS_PRECOMPILERS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_PRECOMPILERS</span></code></a>
+setting. Just make sure to use the correct mimetype when linking to less
+files or adding inline code and add the following to your settings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">COMPRESS_PRECOMPILERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s1">&#39;text/less&#39;</span><span class="p">,</span> <span class="s1">&#39;lessc </span><span class="si">{infile}</span><span class="s1"> </span><span class="si">{outfile}</span><span class="s1">&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Added <a class="reference external" href="http://pypi.python.org/pypi/cssmin/">cssmin</a> filter (<code class="docutils literal notranslate"><span class="pre">compressor.filters.CSSMinFilter</span></code>) based on
+Zachary Voase’s Python port of the YUI CSS compression algorithm.</p></li>
+<li><p>Reimplemented the dog-piling prevention.</p></li>
+<li><p>Make sure the CssAbsoluteFilter works for relative paths.</p></li>
+<li><p>Added inline render mode. See <a class="reference internal" href="usage.html#usage"><span class="std std-ref">usage</span></a> docs.</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">mtime_cache</span></code> management command to add and/or remove all mtimes
+from the cache.</p></li>
+<li><p>Moved docs to Read The Docs: <a class="reference external" href="https://django-compressor.readthedocs.io/en/latest/">https://django-compressor.readthedocs.io/en/latest/</a></p></li>
+<li><p>Added optional <code class="docutils literal notranslate"><span class="pre">compressor.storage.GzipCompressorFileStorage</span></code> storage
+backend that gzips of the saved files automatically for easier deployment.</p></li>
+<li><p>Reimplemented a few filters on top of the new
+<code class="docutils literal notranslate"><span class="pre">compressor.filters.base.CompilerFilter</span></code> to be a bit more DRY.</p></li>
+<li><p>Added tox based test configuration, testing on Django 1.1-1.3 and Python
+2.5-2.7.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Django Compressor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenarios.html">Common Deployment Scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote-storages.html">Remote Storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behind-the-scenes.html">Behind the Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jinja2.html">Jinja2 Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django-sekizai.html">django-sekizai Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactjs.html">Facebook React Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v4-3-1-2023-01-22">v4.3.1 (2023-01-22)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v4-3-2023-01-06">v4.3 (2023-01-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v4-2-2023-01-06">v4.2 (2023-01-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v4-1-2022-08-03">v4.1 (2022-08-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v4-0-2022-03-23">v4.0 (2022-03-23)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v3-1-2021-12-18">v3.1 (2021-12-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v3-0-2021-12-12">v3.0 (2021-12-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-4-1-2021-04-17">v2.4.1 (2021-04-17)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-4-2019-12-31">v2.4 (2019-12-31)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-3-2019-05-31">v2.3 (2019-05-31)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-2-2017-08-16">v2.2 (2017-08-16)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-1-1-2017-02-02">v2.1.1 (2017-02-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-1-2016-08-09">v2.1 (2016-08-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v2-0-2016-01-07">v2.0 (2016-01-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-6-2015-11-19">v1.6 (2015-11-19)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-5-2015-03-27">v1.5 (2015-03-27)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-4-2014-06-20">v1.4 (2014-06-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-3-2013-03-18">v1.3 (2013-03-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-2">v1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-2">v1.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1-1">v1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-1">v1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-0-1">v1.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v1-0">v1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-9-2">v0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-9-1">v0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-9">v0.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-8">v0.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-7-1">v0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-7">v0.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-6-4">v0.6.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-6-3">v0.6.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-6-2">v0.6.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-6-1">v0.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v0-6">v0.6</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="contributing.html" title="previous chapter">Contributing</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Django Compressor authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/changelog.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

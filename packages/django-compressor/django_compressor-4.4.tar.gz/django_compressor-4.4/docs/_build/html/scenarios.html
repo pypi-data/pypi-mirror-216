@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Common Deployment Scenarios &#8212; Django Compressor 4.3.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Settings" href="settings.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="common-deployment-scenarios">
+<span id="scenarios"></span><h1>Common Deployment Scenarios<a class="headerlink" href="#common-deployment-scenarios" title="Permalink to this headline">¶</a></h1>
+<p>This document presents the most typical scenarios in which Django Compressor
+can be configured, and should help you decide which method you may want to
+use for your stack.</p>
+<section id="in-request-compression">
+<h2>In-Request Compression<a class="headerlink" href="#in-request-compression" title="Permalink to this headline">¶</a></h2>
+<p>This is the default method of compression. Where-in Django Compressor will
+go through the steps outlined in <a class="reference internal" href="behind-the-scenes.html#behind-the-scenes"><span class="std std-ref">Behind the Scenes</span></a>. You will find
+in-request compression beneficial if:</p>
+<ul class="simple">
+<li><p>Using a single server setup, where the application and static files are on
+the same machine.</p></li>
+<li><p>Prefer a simple configuration. By default, there is no configuration
+required.</p></li>
+</ul>
+</section>
+<section id="caveats">
+<h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If deploying to a multi-server setup and using
+<a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PRECOMPILERS" title="django.conf.settings.COMPRESS_PRECOMPILERS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_PRECOMPILERS</span></code></a>, each binary is
+required to be installed on each application server.</p></li>
+<li><p>Application servers may not have permissions to write to your static
+directories. For example, if deploying to a CDN (e.g. Amazon S3)</p></li>
+</ul>
+</section>
+<section id="offline-compression">
+<h2>Offline Compression<a class="headerlink" href="#offline-compression" title="Permalink to this headline">¶</a></h2>
+<p>This method decouples the compression outside of the request
+(see <a class="reference internal" href="behind-the-scenes.html#behind-the-scenes"><span class="std std-ref">Behind the Scenes</span></a>) and can prove beneficial in the speed,
+and in many scenarios, the maintainability of your deployment.
+You will find offline compression beneficial if:</p>
+<ul class="simple">
+<li><p>Using a multi-server setup. A common scenario for this may be multiple
+application servers and a single static file server (CDN included).
+With offline compression, you typically run <code class="docutils literal notranslate"><span class="pre">manage.py</span> <span class="pre">compress</span></code>
+on a single utility server, meaning you only maintain
+<a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_PRECOMPILERS" title="django.conf.settings.COMPRESS_PRECOMPILERS"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_PRECOMPILERS</span></code></a> binaries in one
+location.</p></li>
+<li><p>You store compressed files on a CDN.</p></li>
+<li><p>You want the best possible performance.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Caveats<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If your templates have complex logic in how template inheritance is done
+(e.g. <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">extends</span> <span class="pre">context_variable</span> <span class="pre">%}</span></code>), then this becomes a problem,
+as offline compression will not have the context, unless you set it in
+<a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_OFFLINE_CONTEXT" title="django.conf.settings.COMPRESS_OFFLINE_CONTEXT"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_OFFLINE_CONTEXT</span></code></a></p></li>
+<li><p>Due to the way the manifest file is used, while deploying across a
+multi-server setup, your application may use old templates with a new
+manifest, possibly rendering your pages incoherent. The current suggested
+solution for this is to change the
+<a class="reference internal" href="settings.html#django.conf.settings.COMPRESS_OFFLINE_MANIFEST" title="django.conf.settings.COMPRESS_OFFLINE_MANIFEST"><code class="xref py py-attr docutils literal notranslate"><span class="pre">COMPRESS_OFFLINE_MANIFEST</span></code></a> path for each new
+version of your code. This will ensure that the old code uses old
+compressed output, and the new one appropriately as well.</p></li>
+</ul>
+<p>Every setup is unique, and your scenario may differ slightly. Choose what
+is the most sane to maintain for your situation.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Django Compressor</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Common Deployment Scenarios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#in-request-compression">In-Request Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#caveats">Caveats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#offline-compression">Offline Compression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Caveats</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote-storages.html">Remote Storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behind-the-scenes.html">Behind the Scenes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jinja2.html">Jinja2 Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django-sekizai.html">django-sekizai Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactjs.html">Facebook React Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="usage.html" title="previous chapter">Usage</a></li>
+      <li>Next: <a href="settings.html" title="next chapter">Settings</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Django Compressor authors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/scenarios.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
