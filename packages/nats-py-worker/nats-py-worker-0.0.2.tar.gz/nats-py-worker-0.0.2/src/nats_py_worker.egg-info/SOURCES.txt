@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/nats_py_worker.egg-info/PKG-INFO
+src/nats_py_worker.egg-info/SOURCES.txt
+src/nats_py_worker.egg-info/dependency_links.txt
+src/nats_py_worker.egg-info/requires.txt
+src/nats_py_worker.egg-info/top_level.txt
+src/nats_worker/__init__.py
+src/nats_worker/core.py
+tests/test_nats_worker.py

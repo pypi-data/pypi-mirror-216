@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nats-py-worker"
+description = "An opinionated utility for using NATS as a worker queue with NATS.py"
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+dependencies = [
+    "nats-py",
+]
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: POSIX :: Linux',
+    "Programming Language :: Python :: 3",
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    "Programming Language :: Python :: 3 :: Only",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=nats_worker"
+testpaths = [
+    "tests",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["nats_worker"]
+
+[tool.setuptools.dynamic]
+version = {attr = "nats_worker.__version__"}
