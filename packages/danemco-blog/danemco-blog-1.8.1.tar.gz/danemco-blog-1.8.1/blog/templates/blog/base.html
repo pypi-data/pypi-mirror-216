@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load blog_tags %}
+{% load compress %}
+{% load static %}
+
+{% block title %}Blog{% endblock title %}
+{% block bloghead %}{% insert_blog_feeds %}{% endblock bloghead %}
+
+{% block extra_styles %}
+    {% compress css %}
+        <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
+    {% endcompress %}
+{% endblock extra_styles %}
+
+{% block extra_scripts %}
+    {% compress js %}
+        <script src="{% static 'blog/js/blog.js' %}"></script>
+    {% endcompress %}
+{% endblock extra_scripts %}
+
+{% block navbar %}{% endblock navbar %}
+{% block pagetitle %}Blog{% endblock pagetitle %}
+
+{% block content %}
+    <div class="{% block blog_content_classes %}blog-content col-md-8 col-sm-12 col-xs-12{% endblock blog_content_classes %}">
+        {% block blog_content %}
+            <h1>Articles in {{ month|date:"F Y" }}</h1>
+
+            {% with object_list as articles %}
+                {% include 'blog/article_list.html' %}
+            {% endwith %}
+        {% endblock blog_content %}
+    </div>
+
+    <div class="{% block blog_sidebar_classes %}blog-sidebar col-md-4 col-sm-12 col-xs-12{% endblock blog_sidebar_classes %}">
+        {% block subscribe_link %}
+            <a href="{% url 'blog-rss' %}" class="blog-subscribe-link btn btn-primary">Subscribe to Our Blog</a>
+        {% endblock subscribe_link %}
+
+        <div class="blog-search-form">
+            {% blog_search_form %}
+        </div>
+
+        <div class="blog-article-tree">
+            <h4>Article Archive</h4>
+            {% if year %}
+                {% with year|date:"Y" as blog_year %}
+                    {% blog_nav_tree blog_year %}
+                {% endwith %}
+            {% else %}
+                {% if month %}
+                    {% with month|date:"Y" as blog_year %}
+                        {% with month|date:"m" as blog_month %}
+                            {% blog_nav_tree blog_year blog_month %}
+                        {% endwith %}
+                    {% endwith %}
+                {% else %}
+                    {% if object %}
+                        {% with object.pub_date|date:"Y" as blog_year %}
+                            {% with object.pub_date|date:"m" as blog_month %}
+                                {% blog_nav_tree blog_year blog_month object %}
+                            {% endwith %}
+                        {% endwith %}
+                    {% else %}
+                        {% blog_nav_tree %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <div class="blog-tag-cloud">
+            <h4>Tag Cloud</h4>
+            {% tag_cloud %}
+        </div>
+
+        <div class="blog-category-tree">
+            <h4>Categories</h4>
+            {% get_blog_category_list %}
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,7 @@
+<ul class="blog-category-list">
+    {% for cat in b_categories %}
+        <li class="{% if forloop.first %}blog-cat-first{% endif %}{% if forloop.last %}blog-cat-last{% endif %}">
+            <a href="{% url 'blog-category-entries' cat.slug %}">{{ cat }}</a>
+        </li>
+    {% endfor %}
+</ul>

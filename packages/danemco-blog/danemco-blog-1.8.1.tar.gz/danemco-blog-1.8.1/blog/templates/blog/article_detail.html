@@ -1,0 +1,89 @@
+{% extends 'blog/base.html' %}
+
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+
+{% block title %}{{ object.title }}{% endblock title %}
+{% block pagetitle %}{{ object.title }}{% endblock pagetitle %}
+{% block meta_description %}{{ object.description }}{% endblock meta_description %}
+
+{% block blog_content %}
+    <div class="blog-post">
+        <h1 class="blog-title">{{ object.title }}</h1>
+
+        <div class="blog-date-and-author well well-sm">
+            {{ object.pub_date|date:"F jS, Y" }}
+            at {{ object.pub_date|date:"P" }}
+            · By {{ object.author.get_full_name|default:object.author }}
+        </div>
+
+        {% if article.photo %}
+            <div class="blog-article-photo">
+                {% thumbnail article.photo "740x740" as article_photo %}
+                <img class="img-responsive img-thumbnail" src="{{ article_photo.url }}" alt>
+            </div>
+        {% endif %}
+
+        <div class="blog-entry">
+            {{ object.content|safe }}
+        </div>
+
+        {% if object.categories.count %}
+            <div class="blog-article-categories">
+                <hr>
+
+                Categor{{ object.categories.count|pluralize:"y,ies" }}:
+
+                {% for cat in object.categories.all %}
+                    <a href="{% url 'blog-category-entries' cat.the_slug %}" class="label label-default">{{ cat.name }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if object.enable_comments or object.approved_comments %}
+            <div class="blog-comments" id="comments">
+                <hr>
+
+                <h2>Comments</h2>
+
+                {% if object.enable_comments %}
+                    <p>
+                        {% if login_requirement_met %}
+                            <a href="#leave-comment" class="blog-post-comment-link btn btn-primary">Post a Comment</a>
+                        {% else %}
+                            You must be logged in to post a comment.
+                        {% endif %}
+                    </p>
+                {% else %}
+                    <p class="alert alert-info">
+                        Comments are now closed for this article.
+                    </p>
+                {% endif %}
+
+                {% with object.comment_set.get_approved as comments %}
+                    {% include 'blog/comments_list.html' %}
+                {% endwith %}
+            </div>
+
+            {% if object.enable_comments and login_requirement_met %}
+                <div class="blog-comment-form" id="leave-comment">
+                    <h3>
+                        Post a Comment
+                    </h3>
+
+                    {% if form %}
+                        <form action="{{ object.get_absolute_url }}comment/" method="post">
+                            {% csrf_token %}
+
+                            {{ form|crispy }}
+
+                            <div class="form-group">
+                                <button type="submit" class="blog-post-comment-button btn btn-primary">Post Comment</button>
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock blog_content %}

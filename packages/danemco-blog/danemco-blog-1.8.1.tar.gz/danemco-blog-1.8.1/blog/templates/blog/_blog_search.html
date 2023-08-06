@@ -1,0 +1,14 @@
+<form class="form-inline" action="{% url 'blog-search' %}" method="get">
+    {% for field in form %}
+        <div class="form-group">
+            <label for="id_{{ field.name|slugify }}" class="sr-only">
+                {{ field.label }}
+            </label>
+            {% include 'bootstrap3/field.html' %}
+        </div>
+    {% endfor %}
+
+    <div class="form-group">
+        <button type="submit" class="blog-search-button btn btn-default">Search</button>
+    </div>
+</form>

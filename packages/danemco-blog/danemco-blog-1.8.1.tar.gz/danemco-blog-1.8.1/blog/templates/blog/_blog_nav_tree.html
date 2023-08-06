@@ -1,0 +1,39 @@
+{% load blog_tags %}
+
+{% for dates in articles %}
+    {% with dates.pub_date|date:"Y" as year %}
+        {% ifchanged year %}
+            {% if not forloop.first %}</div>{% endif %}
+            <div id="blog_nav_year_{{ year }}">
+                <div class="blog_nav_year_title">
+                    <a href="javascript:blog_article_archive_show_hide_div('blog_nav_year_{{ year }}','month')" class="blog-article-archive-expand-collapse" id="blog_nav_year_{{ year }}_open_close">{% is_cur_year blog_year dates "&#x25BC;,&#x25B6;" %}</a>&nbsp;
+                    <a href="{% url 'show-articles-in-year' year %}">{{ year }}</a>
+                    ({% get_articles_count_for_year dates.pub_date %})
+                </div>
+                {% if not forloop.first %}</div>{% endif %}
+                <div id="blog_nav_year_{{ year }}_month" style="display:{% is_cur_year blog_year dates "block,none" %};">
+        {% endifchanged %}
+        {% with dates.pub_date|date:"F" as month %}
+            {% ifchanged year month %}
+                <div class="blog-article-archive-month">
+                    <a href="javascript:blog_article_archive_show_hide_div('blog_nav_year_{{ year }}_month_{{ month}}','day')" class="blog-article-archive-expand-collapse" id="blog_nav_year_{{ year }}_month_{{ month}}_open_close">{% is_cur_month blog_year blog_month dates "&#x25BC;,&#x25B6;" %}</a>&nbsp;
+                    <a href="{% url 'show-articles-in-month' year dates.pub_date|date:"m" %}">{{ month }}</a>
+                    ({% get_articles_count_for_month dates.pub_date %})
+                </div>
+                <div id="blog_nav_year_{{ year }}_month_{{ month}}_day" style="display:{% is_cur_month blog_year blog_month dates "block,none" %};">
+                {% get_articles_for_month dates.pub_date as articles_list %}
+                {% for article in articles_list %}
+                    <div class="blog-article-archive-blog-title">
+                        <a href="{% url 'show-article' article.pub_date|date:"Y" article.pub_date|date:"m" article.pub_date|date:"d" article.slug %}">
+                            {% if blog_article == article %}<b>{% endif %}
+                                {{ article }}
+                            {% if blog_article == article %}</b>{% endif %}
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+            {% endifchanged %}
+        {% endwith %}
+    {% endwith %}
+    {% if forloop.last %}</div></div>{% endif %}
+{% endfor %}

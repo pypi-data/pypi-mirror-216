@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Blog Search{% endblock title %}
+{% block pagetitle %}Blog Search{% endblock pagetitle %}
+
+{% block blog_content %}
+    {% if query %}
+        <h1>Results for "{{ query }}"</h1>
+
+        {% with articles|length as total_articles %}
+            <p>
+                {{ total_articles }} match{{ total_articles|pluralize:"es" }}
+                found
+            </p>
+
+            {% if total_articles %}
+                {% include 'blog/article_list.html' %}
+            {% endif %}
+        {% endwith %}
+    {% else %}
+        {% block h1_no_query %}
+            <h1>Search the Blog</h1>
+        {% endblock h1_no_query %}
+    {% endif %}
+
+    <form action="{% url 'blog-search' %}" method="get">
+        {{ form|crispy }}
+
+        <button type="submit" class="blog-search-button btn btn-primary">Search</button>
+    </form>
+{% endblock blog_content %}

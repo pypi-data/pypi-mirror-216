@@ -1,0 +1,60 @@
+{% load bootstrap_pagination %}
+{% load thumbnail %}
+
+{% if object_list|length %}
+    {% for article in object_list %}
+        <h2 class="blog-title">
+            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+        </h2>
+
+        {% with article.pub_date as d %}
+            <div class="blog-date-and-author well well-sm">
+                <a href="{% url 'show-articles-in-month' d.year article.month %}">{{ d|date:"F" }}</a>
+                <a href="{% url 'show-articles-on-day' d.year article.month article.day %}">{{ d|date:"jS" }}</a>,
+                <a href="{% url 'show-articles-in-year' d.year %}">{{ d|date:"Y" }}</a>
+                at {{ d|date:"P" }}
+                · By {{ article.author.get_full_name|default:article.author }}
+                {% if article.enable_comments or article.approved_comments %}
+                    · <a href="{{ article.get_absolute_url }}#comments">{% block blog_comments_link_content %}<span class="glyphicon glyphicon-comment"></span> {% if article.approved_comments %}{{ article.approved_comments }}{% endif %}{% endblock blog_comments_link_content %}</a>
+                {% endif %}
+            </div>
+        {% endwith %}
+
+        {% if article.photo %}
+            <div class="blog-article-photo">
+                {% thumbnail article.photo "740x740" as article_photo %}
+                <img class="img-responsive img-thumbnail" src="{{ article_photo.url }}" alt>
+            </div>
+        {% endif %}
+
+        <div class="blog-entry">
+            {{ article.content|safe|truncatewords_html:50 }}
+        </div>
+
+        <p>
+            <a class="blog-read-more-link" href="{{ article.get_absolute_url }}">Read More &raquo;</a>
+        </p>
+
+        <div class="blog-article-categories">
+            {% if article.categories.count %}
+                Categor{{ article.categories.count|pluralize:"y,ies" }}:
+
+                {% for cat in article.categories.all %}
+                    <a href="{% url 'blog-category-entries' cat.the_slug %}" class="label label-default">{{ cat.name }}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {% if not forloop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+
+    {% if is_paginated %}
+        {% bootstrap_paginate page_obj %}
+    {% endif %}
+{% else %}
+    <p class="alert alert-info">
+        There are no articles at this time. Please check back later.
+    </p>
+{% endif %}

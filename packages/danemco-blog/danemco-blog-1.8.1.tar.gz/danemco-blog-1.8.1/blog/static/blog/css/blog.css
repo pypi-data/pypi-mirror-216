@@ -1,0 +1,53 @@
+.blog-subscribe-link {
+    margin: 20px 0 10px;
+}
+
+.blog-search-form .form-control {
+    width: 120px;
+}
+
+.blog-article-archive-expand-collapse {
+    visibility: hidden;
+    display: inline-block;
+    width: 1em;
+}
+
+.blog-article-archive-month {
+    margin-left: 1em;
+}
+
+.blog-article-archive-blog-title {
+    margin-left: 4em;
+    text-indent: -1em;
+    word-wrap: break-word;
+}
+
+.blog-category-heading,
+.blog-category-list,
+.blog-date-and-author,
+.blog-entry,
+.blog-tags,
+.blog-title {
+    word-wrap: break-word;
+}
+
+.blog-article-categories {
+    overflow: hidden; /* Prevent super long category names without spaces from escaping the div */
+    padding-bottom: 5px; /* Prevent the bottom of the labels from being cut off */
+}
+
+.blog-tag1 {
+    font-size: 127%;
+}
+
+.blog-tag2 {
+    font-size: 169%;
+}
+
+.blog-tag3 {
+    font-size: 225%;
+}
+
+.blog-tag4 {
+    font-size: 300%;
+}

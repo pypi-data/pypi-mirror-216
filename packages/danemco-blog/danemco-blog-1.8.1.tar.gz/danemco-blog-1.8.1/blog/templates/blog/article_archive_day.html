@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Articles on {{ day|date:"F jS, Y" }}{% endblock title %}
+{% block pagetitle %}Articles on {{ day|date:"F jS, Y" }}{% endblock pagetitle %}
+
+{% block blog_content %}
+    {% with day|date:"F jS, Y" as formatted_date %}
+        {% include 'blog/article_list.html' with articles=object_list article_list_title="Articles on "|add:formatted_date %}
+    {% endwith %}
+{% endblock blog_content %}

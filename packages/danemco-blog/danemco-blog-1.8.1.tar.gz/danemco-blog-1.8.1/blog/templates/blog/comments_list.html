@@ -1,0 +1,26 @@
+{% for comment in comments %}
+    {% if forloop.first %}
+        <ul class="blog-comment-list list-unstyled">
+    {% endif %}
+
+    <li class="blog-comment-li well well-sm">
+        <div class="blog-comment-author-and-date">
+            <p>
+                Posted by <strong>{{ comment.name }}</strong> on
+                {{ comment.date_posted|date:"F jS, Y \a\t P" }}
+            </p>
+        </div>
+
+        <div class="blog-comment-post">
+            {{ comment.comments|escape }}
+        </div>
+    </li>
+
+    {% if forloop.last %}
+        </ul>
+    {% endif %}
+{% empty %}
+    {% if login_requirement_met %}
+        Be the first to leave a comment!
+    {% endif %}
+{% endfor %}

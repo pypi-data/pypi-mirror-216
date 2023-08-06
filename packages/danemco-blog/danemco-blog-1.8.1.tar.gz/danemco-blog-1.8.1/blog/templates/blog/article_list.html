@@ -1,0 +1,49 @@
+{% load thumbnail %}
+
+{% if article_list_title %}
+    <h1>{{ article_list_title }}</h1>
+{% endif %}
+
+{% if articles.count %}
+    <div class="blog-articles">
+        {% for article in articles %}
+            <h2 class="blog-title">
+                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+            </h2>
+
+            {% with article.pub_date as d %}
+                <div class="blog-date-and-author well well-sm">
+                    <a href="{% url 'show-articles-in-month' d.year article.month %}">{{ d|date:"F" }}</a>
+                    <a href="{% url 'show-articles-on-day' d.year article.month article.day %}">{{ d|date:"jS" }}</a>,
+                    <a href="{% url 'show-articles-in-year' d.year %}">{{ d|date:"Y" }}</a>
+                    at {{ d|date:"P" }}
+                    · By {{ article.author.get_full_name|default:article.author }}
+                    {% if article.enable_comments or article.approved_comments %}
+                        · <a href="{{ article.get_absolute_url }}#comments">{% block blog_comments_link_content %}<span class="glyphicon glyphicon-comment"></span> {% if article.approved_comments %}{{ article.approved_comments }}{% endif %}{% endblock blog_comments_link_content %}</a>
+                    {% endif %}
+                </div>
+
+                {% if article.photo %}
+                    <div class="blog-article-photo">
+                        {% thumbnail article.photo "740x740" as article_photo %}
+                        <img class="img-responsive img-thumbnail" src="{{ article_photo.url }}" alt>
+                    </div>
+                {% endif %}
+
+                <div class="blog-entry">
+                    {{ article.content|safe|truncatewords_html:50 }}
+                </div>
+
+                <p>
+                    <a class="blog-read-more-link" href="{{ article.get_absolute_url }}">Read More &raquo;</a>
+                </p>
+            {% endwith %}
+
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No articles to display</p>
+{% endif %}

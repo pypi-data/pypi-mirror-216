@@ -1,0 +1,5 @@
+<div class="blog-tags">
+    {% for cat, size in tags %}
+        <a href="{{cat.get_absolute_url }}" class="blog-tag{{size}}">{{ cat}}</a>
+    {% endfor %}
+</div>
