@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: zcb_dbutils
+Version: 0.0.3
+Summary: db utils with pymysql by chzcb
+Home-page: https://github.com/chzcb/dbutils
+Author: chzcb
+Author-email: chzcb.04@163.com
+License: MIT
+Keywords: python,pymysql,zcb_dbutils
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
+# dbutils
+
+使用方法
+```python
+from zcb_dbutils import DBConnection
+dbconn = DBConnection(host='localhost', port=3306, user='root', password='', database='mysql')
+
+# 查询单条数据
+row = dbconn.fetch_one('select * from table limit 1')
+# 查询多条数据
+rows = dbconn.fetch_rows('select * from table')
+```
