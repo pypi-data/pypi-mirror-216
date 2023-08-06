@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8E18BD4D-A900-420F-8E14-B3E5136FC8F5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Terminal Notifier</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1248FE46-581E-4245-A915-F87E980A87F0</key>
+		<string>https://github.com/catkin/catkin_tools.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>catkin_tools/notifications/resources/osx/catkin_build_notifier_src/Terminal Notifier.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1248FE46-581E-4245-A915-F87E980A87F0</key>
+		<string>../../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/catkin/catkin_tools.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1248FE46-581E-4245-A915-F87E980A87F0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1248FE46-581E-4245-A915-F87E980A87F0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>catkin_tools</string>
+		</dict>
+	</array>
+</dict>
+</plist>
