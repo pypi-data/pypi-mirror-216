@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: oidc-drf
+Version: 1.0.4
+Summary: Django DRF OIDC Auth library
+Home-page: https://github.com/halmogbl/oidc_drf
+Author: Hamad Almogbl
+Author-email: hamad.almogbl@gmail.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+
+Django DRF OIDC Auth library: Securely authenticate users using OIDC in Django DRF. Supports Code Flow and Code Flow With PKCE. Easy integration with React Js or any front-end framework.
