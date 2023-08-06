@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "mh-z19>=3.1.3", "Adafruit-DHT>=1.4.0", "adafruit-circuitpython-ads1x15>=2.2.22"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raspberry-sensors"
+version = "0.2.1"
+authors = [
+  { name="Develper", email="testerlzt@mail.ru" },
+]
+description = "This package for getting values from sensors mh_z19, DHT, ads1015"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
