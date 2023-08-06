@@ -1,0 +1,88 @@
+[tool.poetry]
+name = "checkpasswords"
+version = "2023"
+license = "GPL-3.0-or-later"
+description = "CheckPasswords uses pass_import to read a password manager source file to check for duplicate passwords; check for weak passwords; identify http sites; list available 2fa options; list emails"
+authors = ["FredHappyface"]
+classifiers = [
+	"Environment :: Console",
+	"Environment :: MacOS X",
+	"Environment :: Win32 (MS Windows)",
+	"Development Status :: 5 - Production/Stable",
+	"Intended Audience :: Developers",
+	"Intended Audience :: Education",
+	"Natural Language :: English",
+	"Operating System :: OS Independent",
+	"Programming Language :: Python :: Implementation :: CPython",
+	"Topic :: Security",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+	"Topic :: Utilities"
+]
+homepage = "https://github.com/FHPythonUtils/CheckPasswords"
+repository = "https://github.com/FHPythonUtils/CheckPasswords"
+documentation = "https://github.com/FHPythonUtils/CheckPasswords/blob/master/README.md"
+readme = "README.md"
+
+[tool.poetry.scripts]
+CheckPasswords = 'checkpasswords:cli'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+rich = "<14,>=13.4.2"
+zxcvbn-python = "<5,>=4.4.24"
+pass-import = "<4,>=3.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.1"
+pylint = "^2.13.5"
+handsdown = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+gitpython = "^3.1.31"
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+indent = "Tab"
+
+[tool.pydocstyle]
+convention = "google"
+ignore = "D205,D415"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.basic]
+argument-naming-style = "camelCase"
+attr-naming-style = "camelCase"
+function-naming-style = "camelCase"
+method-naming-style = "camelCase"
+variable-naming-style = "camelCase"
+
+[tool.pylint.format]
+indent-string = "\t"
+
+[tool.pylint.master]
+ignore-paths = ["tests"]
+
+[tool.pylint.messages_control]
+enable = ["F", "E", "W", "R", "C"]
+disable = ["pointless-string-statement", "superfluous-parens"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+env_list =
+	py311
+	py310
+	py39
+	py38
+
+[testenv]
+deps = pytest
+commands = pytest tests
+"""
