@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "speech-bot-helpers"
+version = "0.2.4"
+description = ""
+authors = ["Eugene Shcherba"]
+readme = "README.md"
+packages = [{include = "speech_bot_helpers"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiobotocore = "^2.5.0"
+wrapt = "^1.15.0"
+
+
+[tool.poetry.group.test.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
