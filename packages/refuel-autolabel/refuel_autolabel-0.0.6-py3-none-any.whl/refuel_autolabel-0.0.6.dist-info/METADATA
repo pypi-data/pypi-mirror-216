@@ -1,0 +1,272 @@
+Metadata-Version: 2.1
+Name: refuel-autolabel
+Version: 0.0.6
+Summary: Label, clean and enrich text datasets with LLMs
+Author-email: "Refuel.ai" <support@refuel.ai>
+License: MIT License
+        
+        Copyright (c) 2023 refuel-ai
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/refuel-ai/autolabel
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: loguru (>=0.5.0)
+Requires-Dist: numpy (>=1.23.0)
+Requires-Dist: requests (>=2.27.0)
+Requires-Dist: datasets (>=2.7.0)
+Requires-Dist: langchain (==0.0.210)
+Requires-Dist: nervaluate (>=0.1.8)
+Requires-Dist: pandas (>=1.3.0)
+Requires-Dist: scikit-learn (>=1.0.0)
+Requires-Dist: tenacity (>=8.2.2)
+Requires-Dist: SQLAlchemy (==1.4.47)
+Requires-Dist: regex (>=2023.6.3)
+Requires-Dist: rich (>=13.3.5)
+Requires-Dist: scipy (>=1.10.1)
+Requires-Dist: pydantic (>=1.10.9)
+Requires-Dist: torch (>=1.10.0)
+Requires-Dist: matplotlib (>=3.5.0)
+Requires-Dist: wget (>=3.2)
+Requires-Dist: ipywidgets (==8.0.6)
+Requires-Dist: jsonschema (>=4.17.3)
+Provides-Extra: all
+Requires-Dist: black ; extra == 'all'
+Requires-Dist: bumpver ; extra == 'all'
+Requires-Dist: pip-tools ; extra == 'all'
+Requires-Dist: pytest ; extra == 'all'
+Requires-Dist: pytest-mock ; extra == 'all'
+Requires-Dist: pre-commit ; extra == 'all'
+Requires-Dist: openai (>=0.27.4) ; extra == 'all'
+Requires-Dist: tiktoken (>=0.3.3) ; extra == 'all'
+Requires-Dist: anthropic (==0.2.6) ; extra == 'all'
+Requires-Dist: transformers (>=4.25.0) ; extra == 'all'
+Requires-Dist: google-cloud-aiplatform (>=1.25.0) ; extra == 'all'
+Requires-Dist: sentence-transformers ; extra == 'all'
+Provides-Extra: anthropic
+Requires-Dist: anthropic (==0.2.6) ; extra == 'anthropic'
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: bumpver ; extra == 'dev'
+Requires-Dist: mkdocs ; extra == 'dev'
+Requires-Dist: mkdocs-autorefs ; extra == 'dev'
+Requires-Dist: mkdocs-jupyter ; extra == 'dev'
+Requires-Dist: mkdocs-material ; extra == 'dev'
+Requires-Dist: mkdocs-material-extensions ; extra == 'dev'
+Requires-Dist: mkdocs-table-reader-plugin ; extra == 'dev'
+Requires-Dist: mkdocstrings ; extra == 'dev'
+Requires-Dist: mkdocstrings-python ; extra == 'dev'
+Requires-Dist: pip-tools ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-mock ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Provides-Extra: google
+Requires-Dist: google-cloud-aiplatform (>=1.25.0) ; extra == 'google'
+Provides-Extra: huggingface
+Requires-Dist: transformers (>=4.25.0) ; extra == 'huggingface'
+Requires-Dist: sentence-transformers ; extra == 'huggingface'
+Provides-Extra: openai
+Requires-Dist: openai (>=0.27.4) ; extra == 'openai'
+Requires-Dist: tiktoken (>=0.3.3) ; extra == 'openai'
+
+<img alt="Refuel logo" src="https://raw.githubusercontent.com/refuel-ai/autolabel/main/docs/assets/Autolabel_blk_w_background.png">
+
+
+<h4 align="center">
+  <a href="https://discord.gg/fweVnRx6CU">Discord</a> |
+  <a href="https://twitter.com/RefuelAI">Twitter</a> |
+  <a href="https://www.refuel.ai/">Website</a> |
+  <a href="https://www.refuel.ai/blog-posts/llm-labeling-technical-report">Benchmark</a>
+</h4>
+
+<div align="center" style="width:800px">
+
+[![lint](https://github.com/refuel-ai/autolabel/actions/workflows/black.yaml/badge.svg)](https://github.com/refuel-ai/autolabel/actions/workflows/black.yaml/badge.svg) ![Tests](https://github.com/refuel-ai/autolabel/actions/workflows/test.yaml/badge.svg) ![Commit Activity](https://img.shields.io/github/commit-activity/m/refuel-ai/autolabel) [![Discord](https://img.shields.io/discord/1098746693152931901)](https://discord.gg/fweVnRx6CU) [![open in colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1t-9vNLkyoyySAG_0w3eR98biBOXlMO-E?usp=sharing)
+</div>
+
+## ⚡ Quick Install
+
+`pip install refuel-autolabel`
+
+## 📖 Documentation
+
+[https://docs.refuel.ai/](https://docs.refuel.ai/)
+
+## 🏷 What is Autolabel
+
+Access to [large, clean and diverse](https://twitter.com/karpathy/status/1528443124577513472?lang=en) labeled datasets is a critical component for any machine learning effort to be successful. State-of-the-art LLMs like GPT-4 are able to [automatically label data](https://arxiv.org/abs/2303.15056) with [high accuracy](https://arxiv.org/abs/2303.16854), and at a fraction of the cost and time compared to manual labeling.
+
+Autolabel is a Python library to label, clean and enrich text datasets with any Large Language Models (LLM) of your choice.
+
+## 🚀 Getting started
+
+Autolabel provides a simple 3-step process for labeling data:
+
+1. Specify the labeling guidelines and LLM model to use in a JSON config.
+2. Dry-run to make sure the final prompt looks good.
+3. Kick off a labeling run for your dataset!
+
+Let's imagine we are building an ML model to analyze sentiment analysis of movie review. We have a dataset of movie reviews that we'd like to get labeled first. For this case, here's what the example dataset and configs will look like:
+
+```python
+{
+    "task_name": "MovieSentimentReview",
+    "task_type": "classification",
+    "model": {
+        "provider": "openai",
+        "name": "gpt-3.5-turbo"
+    },
+    "dataset": {
+        "label_column": "label",
+        "delimiter": ","
+    },
+    "prompt": {
+        "task_guidelines": "You are an expert at analyzing the sentiment of movie reviews. Your job is to classify the provided movie review into one of the following labels: {labels}",
+        "labels": [
+            "positive",
+            "negative",
+            "neutral",
+        ],
+        "few_shot_examples": [
+            {
+                "example": "I got a fairly uninspired stupid film about how human industry is bad for nature.",
+                "label": "negative"
+            },
+            {
+                "example": "I loved this movie. I found it very heart warming to see Adam West, Burt Ward, Frank Gorshin, and Julie Newmar together again.",
+                "label": "positive"
+            },
+            {
+                "example": "This movie will be played next week at the Chinese theater.",
+                "label": "neutral"
+            }
+        ],
+        "example_template": "Input: {example}\nOutput: {label}"
+    }
+}
+```
+
+Initialize the labeling agent and pass it the config:
+
+```python
+
+from autolabel import LabelingAgent
+
+agent = LabelingAgent(config='config.json')
+```
+
+Preview an example prompt that will be sent to the LLM:
+
+```python
+agent.plan('dataset.csv')
+```
+
+This prints:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100/100 0:00:00 0:00:00
+┌──────────────────────────┬─────────┐
+│ Total Estimated Cost     │ $0.538  │
+│ Number of Examples       │ 200     │
+│ Average cost per example │ 0.00269 │
+└──────────────────────────┴─────────┘
+─────────────────────────────────────────
+
+Prompt Example:
+You are an expert at analyzing the sentiment of movie reviews. Your job is to classify the provided movie review into one of the following labels: [positive, negative, neutral]
+
+Some examples with their output answers are provided below:
+
+Example: I got a fairly uninspired stupid film about how human industry is bad for nature.
+Output:
+negative
+
+Example: I loved this movie. I found it very heart warming to see Adam West, Burt Ward, Frank Gorshin, and Julie Newmar together again.
+Output:
+positive
+
+Example: This movie will be played next week at the Chinese theater.
+Output:
+neutral
+
+Now I want you to label the following example:
+Input: A rare exception to the rule that great literature makes disappointing films.
+Output:
+
+─────────────────────────────────────────────────────────────────────────────────────────
+
+```
+
+Finally, we can run the labeling on a subset or entirety of the dataset:
+
+```python
+labels, output_df, metrics = agent.run('dataset.csv')
+```
+
+The output dataframe contains the label column:
+
+```python
+output_df.head()
+                                                text  ... MovieSentimentReview_llm_label
+0  I was very excited about seeing this film, ant...  ...                       negative
+1  Serum is about a crazy doctor that finds a ser...  ...                       negative
+4  I loved this movie. I knew it would be chocked...  ...                       positive
+...
+```
+
+## Features
+
+1. Label data for [NLP tasks](https://docs.refuel.ai/guide/tasks/classification_task/) such as classification, question-answering and named entity-recognition, entity matching and more.
+2. Use commercial or open source [LLMs](https://docs.refuel.ai/guide/llms/llms/) from providers such as OpenAI, Anthropic, HuggingFace, Google and more.
+3. Support for research-proven LLM techniques to boost label quality, such as few-shot learning and chain-of-thought prompting.
+4. [Confidence estimation](https://docs.refuel.ai/guide/accuracy/confidence/) and explanations out of the box for every single output label
+5. [Caching and state management](https://docs.refuel.ai/guide/reliability/state-management/) to minimize costs and experimentation time
+
+## Access to Refuel hosted LLMs
+
+Refuel provides access to hosted open source LLMs for labeling, and for estimating confidence This is helpful, because you can calibrate a confidence threshold for your labeling task, and then route less confident labels to humans, while you still get the benefits of auto-labeling for the confident examples.
+
+In order to use Refuel hosted LLMs, you can [request access here](https://refuel-ai.typeform.com/llm-access).
+
+## Benchmark
+
+Check out our [technical report](https://www.refuel.ai/blog-posts/llm-labeling-technical-report) to learn more about the performance of various LLMs, and human annoators, on label quality, turnaround time and cost.
+
+## 🛠️ Roadmap
+
+Check out our [public roadmap](https://github.com/orgs/refuel-ai/projects/15) to learn more about ongoing and planned improvements to the Autolabel library.
+
+We are always looking for suggestions and contributions from the community. Join the discussion on [Discord](https://discord.gg/fweVnRx6CU) or open a [Github issue](https://github.com/refuel-ai/autolabel/issues) to report bugs and request features.
+
+
+## 🙌 Contributing
+
+Autolabel is a rapidly developing project. We welcome contributions in all forms - bug reports, pull requests and ideas for improving the library.
+
+1. Join the conversation on [Discord](https://discord.gg/fweVnRx6CU)
+2. Open an [issue](https://github.com/refuel-ai/autolabel/issues) on Github for bugs and request features.
+3. Grab an open issue, and submit a [pull request](https://github.com/refuel-ai/autolabel/blob/main/CONTRIBUTING.md).
