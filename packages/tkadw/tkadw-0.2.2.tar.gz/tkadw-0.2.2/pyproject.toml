@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "tkadw"
+version = "0.2.2"
+description = "extra for tkinter"
+authors = ["XiangQinxi <1379773753@qq.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
