@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: swarms
+Version: 0.0.4
+Summary: Swarms - Pytorch
+Home-page: https://github.com/kyegomez/swarms
+Author: Kye Gomez
+Author-email: kye@apac.ai
+License: MIT
+Keywords: artificial intelligence,deep learning,optimizers,Prompt Engineering
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: transformers
+Requires-Dist: openai
+Requires-Dist: langchain (==0.0.101)
+Requires-Dist: torch (==1.13.1)
+Requires-Dist: torchvision (==0.14.1)
+Requires-Dist: asyncio
+Requires-Dist: nest-asyncio
+Requires-Dist: bs4
+Requires-Dist: playwright
+Requires-Dist: duckduckgo-search
+Requires-Dist: faiss-cpu
+Requires-Dist: wget (==3.2)
+Requires-Dist: accelerate
+Requires-Dist: addict
+Requires-Dist: albumentations
+Requires-Dist: basicsr
+Requires-Dist: controlnet-aux
+Requires-Dist: diffusers
+Requires-Dist: einops
+Requires-Dist: gradio
+Requires-Dist: imageio
+Requires-Dist: imageio-ffmpeg
+Requires-Dist: invisible-watermark
+Requires-Dist: kornia
+Requires-Dist: numpy
+Requires-Dist: omegaconf
+Requires-Dist: open-clip-torch
+Requires-Dist: opencv-python
+Requires-Dist: prettytable
+Requires-Dist: safetensors
+Requires-Dist: streamlit
+Requires-Dist: test-tube
+Requires-Dist: timm
+Requires-Dist: torchmetrics
+Requires-Dist: webdataset
+Requires-Dist: yapf
+Requires-Dist: wolframalpha
+Requires-Dist: wikipedia
+Requires-Dist: httpx
+Requires-Dist: ggl
+Requires-Dist: gradio-tools
+Requires-Dist: arxiv
+Requires-Dist: google-api-python-client
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: google-auth-httplib2
+Requires-Dist: beautifulsoup4
+Requires-Dist: O365
+Requires-Dist: pytube
+Requires-Dist: pydub
+
