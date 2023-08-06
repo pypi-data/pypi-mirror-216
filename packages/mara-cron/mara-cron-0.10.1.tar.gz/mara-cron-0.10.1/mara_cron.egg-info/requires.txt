@@ -1,0 +1,7 @@
+mara-page>=1.5.2
+python-crontab>=2.5.1
+click>=7.1.2
+
+[test]
+pytest
+mara_app>=2.2.0
