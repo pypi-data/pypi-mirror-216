@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: neulab
+Version: 0.1.1
+Summary: Tool for data preprocess in ML.
+Home-page: https://github.com/kndahl/neulab
+Author: Roman Fitzjalen
+Author-email: romaactor@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: networkx
+Requires-Dist: matplotlib
+Requires-Dist: jinja2
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+
+# neulab
+Tool for data preprocess in ML.
+
+[![Downloads](https://pepy.tech/badge/neulab)](https://pepy.tech/project/neulab)
+# Installation
+```
+pip install neulab
+```
+# Description
+The library contains several blocks: data analysis, data recovery methods, data normalization, outlier detection, clustering. A detailed description and instructions can be found on Github: https://github.com/kndahl/neulab
+
