@@ -1,0 +1,2 @@
+[unito.streamflow.plugin]
+unito.postgresql = postgresql.plugin:PostgreSQLStreamFlowPlugin
