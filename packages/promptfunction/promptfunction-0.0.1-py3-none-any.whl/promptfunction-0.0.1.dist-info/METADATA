@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: promptfunction
+Version: 0.0.1
+Summary: Integrated organization Prompt function structure. Functional AI lib developed based on langchain
+Home-page: https://github.com/NINTING/PromptFunction.git
+License: MIT
+Author: NINTING
+Author-email: 1075364860@qq.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: langchain (>=0.0.217,<0.0.218)
+Project-URL: Repository, https://github.com/NINTING/PromptFunction
+Description-Content-Type: text/markdown
+
+Integrated organization Prompt function structure. Functional AI lib developed based on langchain
