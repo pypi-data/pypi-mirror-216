@@ -1,0 +1,18 @@
+[project]
+name = "wikisource"
+version = "0.0.7"
+authors = [ 
+    { name = "Mathieu G.", email = "mathieu6700417@gmail.com" }
+]
+description = "A python package to search in books available on wikisource.org"
+dependencies = [
+    "requests",
+    "bs4"
+]
+readme = "README.md"
+
+[project.urls]
+"Homepage" = "https://github.com/mathieu6700417/wikisource"
+"Bug Tracker" = "https://github.com/mathieu6700417/wikisource/issues"
+
+
