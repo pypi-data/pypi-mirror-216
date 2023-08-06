@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/bs_db_migration/__init__.py
+src/bs_db_migration/config.py
+src/bs_db_migration/domain_dictionary.py
+src/bs_db_migration/ms2postgres.py
+src/bs_db_migration/ms2postgres_type_mapping.py
+src/bs_db_migration.egg-info/PKG-INFO
+src/bs_db_migration.egg-info/SOURCES.txt
+src/bs_db_migration.egg-info/dependency_links.txt
+src/bs_db_migration.egg-info/requires.txt
+src/bs_db_migration.egg-info/top_level.txt
