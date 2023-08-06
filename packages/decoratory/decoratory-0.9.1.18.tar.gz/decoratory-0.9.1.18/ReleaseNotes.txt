@@ -1,0 +1,52 @@
+**Version: 0.9.1.*, Build: 2023-06-27**
+
+- Switch from PSF License to MIT License
+
+**Version: 0.9.0.*, Build: 2023-06-23**
+
+- Unit test integration for Windows, Linux (and probably MacOS - feedback?)
+- Pre production state, version 0.9.* for module
+    - observer [ ``python -m decoratory.observer --version`` ]
+- Pre production state, version 0.9.* for package
+    - decoratory [ ``python -m decoratory --version`` ]
+
+**Version: 0.1.5.*, Build: 2023-06-21**
+
+- Pre production state, version 0.9.* for module
+    - wrapper [ ``python -m decoratory.wrapper --version`` ]
+
+**Version: 0.1.4.*, Build: 2023-06-21**
+
+- A new subclass SemiSingleton for a resettable singleton
+- Accessible parameter for singleton and multiton removed
+- Additional test and documentation
+- Pre production state, version 0.9.* for modules
+    - singleton [ ``python -m decoratory.singleton --version`` ]
+    - multiton  [ ``python -m decoratory.multiton  --version`` ]
+
+**Version: 0.1.3.*, Build: 2023-06-19**
+
+- Extensions and improvements for module observer: test and documentation
+
+**Version: 0.1.2.*, Build: 2023-06-18**
+
+- Intergration of unit tests for modules singleton, multiton and wrapper
+- An overall unit test for the package decoratory
+- Documentation enhancements for module observer, t.b.c.
+
+**Version: 0.1.1.*, Build: 2023-06-16**
+
+- Initial version of the observer, incl. documentation
+
+**Version: 0.1.0.3, Build: 2023-06-15**
+
+- Accessible parameter for singleton and multiton, incl. documentation
+- Resettable parameter for singleton and multiton, incl. documentation
+
+**Version: 0.1.0.2, Build: 2023-06-13**
+
+- Documentation enhancements for for singleton, multiton and wrapper
+
+**Version: 0.1.0.1, Build: 2023-06-12**
+
+- Initial version with singleton, multiton and wrapper
