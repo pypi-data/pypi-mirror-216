@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: audio_separator
+Version: 0.1.0
+Summary: Easy to use vocal separation on CLI or as a python package, using the amazing MDX-Net models from UVR trained by @Anjok07
+Home-page: https://github.com/karaokenerds/python-audio-separator
+Author: Andrew Beveridge
+Author-email: andrew@beveridge.uk
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# vocal-separator
+Easy to use vocal separation on CLI or as a python package, using the amazing MDX-Net models from UVR trained by @Anjok07
