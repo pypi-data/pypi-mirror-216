@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: cldf_ldd
+Version: 0.0.6
+Summary: CLDF schemata for language description and documentation.
+Home-page: https://github.com/fmatter/cldf-ldd
+Author: Florian Matter
+Author-email: fmatter@mailbox.org
+Project-URL: Bug Tracker, https://github.com/fmatter/cldf-ldd/issues
+Keywords: cldf,descriptive linguistics
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: publishing
+License-File: LICENSE
+
+# cldf-ldd
+
+CLDF schemata for language description and documentation.
+
+![License](https://img.shields.io/github/license/fmatter/cldf-ldd)
+[![PyPI](https://img.shields.io/pypi/v/cldf-ldd.svg)](https://pypi.org/project/cldf-ldd)
+![Versions](https://img.shields.io/pypi/pyversions/cldf-ldd)
+
+Details are found in [components](src/cldf_ldd/components).
+
+
+* Adding components to a CLDF dataset:
+
+```python
+from cldf_ldd.components import StemTable
+...
+args.writer.cldf.add_component(StemTable)
+...
+args.writer.objects[StemTable["url"]].append({...})
+```
+
+* Adding [foreign keys](etc/foreignkeys.csv):
+
+```python
+from cldf_ldd import add_keys
+...
+add_keys(args.writer.cldf)
+```
+
+* Adding [additional columns](https://github.com/fmatter/cldf-ldd/blob/main/src/cldf_ldd/components/columns.json) to native tables:
+```python
+from cldf_ldd import add_columns
+...
+add_columns(args.writer.cldf)
+```

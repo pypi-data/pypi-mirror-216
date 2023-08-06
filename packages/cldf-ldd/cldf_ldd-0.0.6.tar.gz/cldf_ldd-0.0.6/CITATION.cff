@@ -1,0 +1,16 @@
+# YAML 1.2
+---
+cff-version: "1.1.0"
+title: "cldf-ldd"
+authors:
+  - family-names: Matter
+    given-names: Florian
+    orcid: "https://orcid.org/0000-0002-2545-5154"
+date-released: 2023-06-27
+version: "0.0.6"
+repository-code: "https://github.com/fmatter/cldf-ldd"
+keywords:
+  - cldf
+  - descriptive linguistics
+message: "If you use this software, please cite it using these metadata."
+license: MIT

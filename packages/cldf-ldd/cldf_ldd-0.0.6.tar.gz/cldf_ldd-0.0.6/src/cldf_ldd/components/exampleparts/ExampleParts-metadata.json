@@ -1,0 +1,46 @@
+{
+    "url": "exampleparts.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": false,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Wordform_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "datatype": "string"
+            },
+            {
+                "name": "Example_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "datatype": "string"
+            },
+            {
+                "name": "Index",
+                "required": true,
+                "dc:description": "Specifies the position of a form in a sentence.",
+                "dc:extent": "singlevalued",
+                "datatype": {
+                    "base": "string",
+                    "format": "\\d+(:\\d+)?"
+                }
+            },
+            {
+                "name": "Parameter_ID",
+                "required": false,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#parameterReference",
+                "dc:description": "A reference to the meaning denoted by the form",
+                "dc:extent": "singlevalued",
+                "datatype": "string"
+            }
+        ]
+    }
+}

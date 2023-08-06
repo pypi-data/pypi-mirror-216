@@ -1,0 +1,45 @@
+{
+    "url": "inflections.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Stem_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The stem this wordform is an inflected form of.",
+                "datatype": "string"
+            },
+            {
+                "name": "Value_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The inflectional value being expressed.",
+                "datatype": "string"
+            },
+            {
+                "name": "Wordformpart_ID",
+                "required": false,
+                "dc:extent": "multivalued",
+                "separator": ",",
+                "dc:description": "The part of the wordform expressing this value.",
+                "datatype": "string"
+            },
+            {
+                "name": "Form_ID",
+                "required": false,
+                "dc:extent": "singlevalued",
+                "dc:description": "The multi-word form this inflection references.",
+                "datatype": "string"
+            }
+        ]
+    }
+}

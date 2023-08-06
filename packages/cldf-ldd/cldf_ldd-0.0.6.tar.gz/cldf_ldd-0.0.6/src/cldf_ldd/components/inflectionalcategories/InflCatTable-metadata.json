@@ -1,0 +1,38 @@
+{
+    "url": "inflectionalcategories.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Name",
+                "dc:extent": "singlevalued",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                "datatype": "string"
+            },
+            {
+                "name": "Description",
+                "dc:extent": "singlevalued",
+                "required": false,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#description",
+                "datatype": "string"
+            },
+            {
+                "name": "Value_Order",
+                "dc:extent": "multivalued",
+                "required": false,
+                "datatype": "string",
+                "separator": ",",
+                "dc:description": "The order in which the values of this category should be ordered (contains inflectionalvalue IDs)."
+            }
+        ]
+    }
+}

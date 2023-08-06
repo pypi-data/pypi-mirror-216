@@ -1,0 +1,32 @@
+{
+    "ExampleTable": [
+        {
+            "name": "Text_ID",
+            "required": false,
+            "dc:description": "The larger discourse context in which this record was uttered.",
+            "datatype": "string"
+        },
+        {
+            "name": "Record_Number",
+            "required": false,
+            "dc:description": "The positions of this record in the text.",
+            "datatype": "integer"
+        },
+        {
+            "name": "Speaker_ID",
+            "required": false,
+            "dc:description": "The speaker who uttered this record.",
+            "datatype": "string"
+        }
+    ],
+    "FormTable": [
+        {
+            "name": "Morpho_Segments",
+            "required": false,
+            "dc:description": "The form, segmented into morphological segments.",
+            "dc:extent": "multivalued",
+            "datatype": "string",
+            "separator": " "
+        }
+    ]
+}
