@@ -1,0 +1,3 @@
+[console_scripts]
+rls = trenchrun.__main__:rls
+trenchrun = trenchrun.__main__:trenchrun
