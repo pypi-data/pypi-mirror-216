@@ -1,0 +1,26 @@
+display_name: Was PsExec executed from a host?
+description:
+  summary:
+  details: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+  references:
+    -
+type: approach
+id: Q1003.01
+tags:
+ - windows
+view:
+  data:
+    - type: artifact
+      value: WindowsEventLogs
+  processors:
+    - name: plaso
+      options:
+        - type: parsers
+          value: winevtx
+      analysis:
+        timesketch:
+          - description: Was PsExec executed from a host?
+            type: searchtemplate
+            value: 807c0c52-6031-4a3a-be94-c565ecdcd0f2

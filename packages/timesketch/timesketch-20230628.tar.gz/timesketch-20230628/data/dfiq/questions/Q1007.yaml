@@ -1,0 +1,7 @@
+display_name: Were there any remote PowerShell executions?
+description: Was PowerShell used to execute commands remotely?
+type: question
+id: Q1007
+tags:
+parent_ids:
+  - F1001

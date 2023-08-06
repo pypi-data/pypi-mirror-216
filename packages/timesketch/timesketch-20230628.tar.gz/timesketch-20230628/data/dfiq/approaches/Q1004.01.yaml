@@ -1,0 +1,26 @@
+display_name: Were any scheduled tasks installed?
+description:
+  summary:
+  details: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+  references:
+    -
+type: approach
+id: Q1004.01
+tags:
+ - windows
+view:
+  data:
+    - type: artifact
+      value: WindowsEventLogs
+  processors:
+    - name: plaso
+      options:
+        - type: parsers
+          value: winevtx
+      analysis:
+        timesketch:
+          - description: Were any scheduled tasks installed?
+            type: searchtemplate
+            value: 2da1737e-002b-4bec-9350-cc28842a31ec

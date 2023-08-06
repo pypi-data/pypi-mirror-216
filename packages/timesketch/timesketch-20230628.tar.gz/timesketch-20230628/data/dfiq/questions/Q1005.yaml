@@ -1,0 +1,7 @@
+display_name: Which system services were installed?
+description: List of system services installed on the host.
+type: question
+id: Q1005
+tags:
+parent_ids:
+  - F1001

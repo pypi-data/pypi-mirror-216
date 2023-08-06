@@ -1,0 +1,7 @@
+display_name: Were there any executions via WMI/WMIC?
+description: List of WMI/WMIC executions on the host.
+type: question
+id: Q1006
+tags:
+parent_ids:
+  - F1001

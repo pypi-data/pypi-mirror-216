@@ -1,0 +1,28 @@
+display_name: Remote Desktop Logon
+description:
+  summary:
+  details: Was Remote Desktop (RDP) used?
+  references:
+    -
+type: approach
+id: Q1001.01
+tags:
+ - windows
+view:
+  data:
+    - type: artifact
+      value: WindowsEventLogs
+  processors:
+    - name: plaso
+      options:
+        - type: parsers
+          value: winevtx
+      analysis:
+        timesketch:
+          - description: Remote Desktop Logons
+            type: searchtemplate
+            value: 08b0384b-92d8-46bb-b260-f87676afcf64
+          - description: This is a query test
+            type: opensearch-query
+            value: foo AND bar
+

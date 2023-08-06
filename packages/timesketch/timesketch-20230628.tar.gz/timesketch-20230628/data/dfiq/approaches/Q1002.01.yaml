@@ -1,0 +1,26 @@
+display_name: Network Shares
+description:
+  summary:
+  details: >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+  references:
+    -
+type: approach
+id: Q1002.01
+tags:
+ - windows
+view:
+  data:
+    - type: artifact
+      value: WindowsEventLogs
+  processors:
+    - name: plaso
+      options:
+        - type: parsers
+          value: winevtx
+      analysis:
+        timesketch:
+          - description: Was any Network Shares mapped?
+            type: searchtemplate
+            value: da73490f-0219-4c51-820d-3b527074cec2

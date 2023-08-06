@@ -1,0 +1,7 @@
+display_name: Was PsExec executed?
+description: Was PsExec executed from a host or installed as a service?
+type: question
+id: Q1003
+tags:
+parent_ids:
+  - F1002

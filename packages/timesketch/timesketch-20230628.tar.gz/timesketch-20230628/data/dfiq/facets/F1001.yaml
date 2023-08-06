@@ -1,0 +1,8 @@
+display_name: Remote Access
+description: Signs of remote access can indicate lateral movements.
+type: facet
+id: F1001
+tags:
+  - windows
+parent_ids:
+ - S1001

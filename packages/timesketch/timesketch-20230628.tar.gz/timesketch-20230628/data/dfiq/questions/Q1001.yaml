@@ -1,0 +1,7 @@
+display_name: Was Remote Desktop used?
+description: Was Remote Desktop used?
+type: question
+id: Q1001
+tags:
+parent_ids:
+  - F1001

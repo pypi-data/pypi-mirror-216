@@ -1,0 +1,6 @@
+display_name: Lateral Movement
+description: Given one or more systems, assess if there has been lateral movement.
+type: scenario
+id: S1001
+tags:
+  - windows
