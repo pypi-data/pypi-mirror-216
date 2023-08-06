@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.py
+fuzzy_hash/__init__.py
+fuzzy_hash.egg-info/PKG-INFO
+fuzzy_hash.egg-info/SOURCES.txt
+fuzzy_hash.egg-info/dependency_links.txt
+fuzzy_hash.egg-info/top_level.txt
+fuzzy_hash/lib/__init__.py
+fuzzy_hash/lib/edit_dist.c
+fuzzy_hash/lib/edit_dist.h
+fuzzy_hash/lib/fuzzy.c
+fuzzy_hash/lib/fuzzy.h
+fuzzy_hash/lib/setup.py
+fuzzy_hash/lib/sum_table.h
