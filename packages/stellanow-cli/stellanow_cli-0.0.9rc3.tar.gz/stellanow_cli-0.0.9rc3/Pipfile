@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "*"
+requests = "*"
+urllib3 = "<2.0"
+jinja2 = "*"
+prettytable = "*"
+
+[dev-packages]
+toml = "*"
+
+[requires]
+python_version = "3.10"
