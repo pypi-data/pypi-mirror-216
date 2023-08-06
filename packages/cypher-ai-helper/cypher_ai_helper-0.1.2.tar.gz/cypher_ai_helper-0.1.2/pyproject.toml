@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "cypher-ai-helper"
+version = "0.1.2"
+description = "A simple helper to create and execute Cypher queries for Neo4j"
+authors = ["Trayan Azarov <trayan.azarov@amikos.tech>"]
+readme = "README.md"
+license = "LICENSE"
+packages = [{ include = "cypher_ai_helper" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^0.27.8"
+neo4j = "^5.9.0"
+pydantic = "^1.10.9"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+pytest-env = "^0.8.2"
+pytest-html = "^3.2.0"
+pytest-metadata = "^3.0.0"
+python-dotenv = "^1.0.0"
+
+
+#[[tool.poetry.source]]
+#name = "pypi"
+#url = "https://test.pypi.org/simple/"
+#priority = "default"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+#[[tool.poetry.source]]
+#name = "PyPI"
+#url = "https://pypi.org/simple"
+#priority = "primary"
+
+[[tool.poetry.source]]
+name = "pypi-test"
+url = "https://test.pypi.org/legacy/"
+priority = "explicit"
