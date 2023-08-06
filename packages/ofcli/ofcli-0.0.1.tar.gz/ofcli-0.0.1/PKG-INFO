@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: ofcli
+Version: 0.0.1
+Summary: helper CLI tool for OIDC federation exploration
+Home-page: https://gitlab.geant.org/TI_Incubator/oidcfed/ofcli
+Author: Diana Gudu
+Author-email: gudu@kit.edu
+License: MIT
+Project-URL: Bug Tracker, https://gitlab.geant.org/TI_Incubator/oidcfed/ofcli/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: System :: Systems Administration :: Authentication/Directory
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+
+# oidcfed
+
+## Build the package
+
+```bash
+python -m build --sdist --wheel
+```
+
+If you're running the [OIDCfed testbed](https://gitlab.geant.org/TI_Incubator/oidcfed/fedservice) locally with self-signed certificates, you'll first need to trust the mkcert CA certificate:
+
+```bash
+pip install certifi
+cat "`mkcert -CAROOT`/rootCA.pem" >> `python -m certifi`
+```
