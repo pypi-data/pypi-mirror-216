@@ -1,0 +1,61 @@
+
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=3.4","attrs>=17.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s60z"
+authors = [
+  { name="Battieste, Nahjay", email="nahjaybattieste@gmail.com"},
+  { name="Hunter, Christerpher", email="djhunter67@gmail.com"},
+]
+dynamic = ["version", "dependencies"]
+description = "Package for s60z GUI, a user interface for signal generation on an SDR"
+requires-python = ">=3.10"
+readme = "README.md"
+classifiers = [
+"Programming Language :: Python :: 3",
+"License :: Other/Proprietary License",
+"Operating System :: POSIX :: Linux",
+]
+
+[project.optional-dependencies]
+test = [
+"pytest>=7.3.2",
+"pytest-asyncio>=0.21.0",
+"pytest-cov>=4.1.0"
+]
+
+[project.urls]
+"Source" = "https://github.com/cellantenna/s60z"
+
+[project.gui-scripts]
+s60z = "src.main:main"
+
+[tools.setuptools]
+include-package-data = "True"
+packages = ["s60z"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+version = {attr = "setuptools_scm.get_version"}
+
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["."]
+
+[tool.setuptools.package-data]
+"*" = [
+"*.ini",
+"*.sql",
+"*.db",
+"*.json",
+"*.lock",
+"*.ttf",
+"*.log",
+"*.rst",
+"*.txt",
+"*.cpy",
+"assets",
+"*.sh",
+]
