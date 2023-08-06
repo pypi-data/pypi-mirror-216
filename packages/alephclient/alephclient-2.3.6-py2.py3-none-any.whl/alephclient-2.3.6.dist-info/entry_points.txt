@@ -1,0 +1,2 @@
+[console_scripts]
+alephclient = alephclient.cli:cli
