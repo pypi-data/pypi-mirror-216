@@ -1,0 +1,84 @@
+[build-system]
+requires = [
+    "setuptools",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nfelib"
+description = "nfelib: electronic invoicing library for Brazil"
+authors = [
+    { name = "Raphaël Valyi", email = "raphael.valyi@akretion.com.br" },
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Text Processing :: Markup :: XML",
+]
+keywords = [
+    "e-invoicing",
+    "NFe",
+    "ERP",
+    "Odoo",
+]
+requires-python = ">=3.6"
+dependencies = [
+    "xsdata",
+    "six",
+]
+dynamic = ["version"]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/akretion/nfelib"
+Source = "https://github.com/akretion/nfelib"
+
+[project.optional-dependencies]
+test = [
+    "xmldiff",
+    "pytest",
+    "pytest-cov",
+    "tox",
+    "requests",
+    "beautifulsoup4",
+]
+
+[tool.setuptools]
+packages = [
+    "nfelib",
+]
+include-package-data = true
+license-files = [
+    "MIT-LICENSE",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "nfelib.__version__"}
+
+[tool.flake8]
+exclude = "tests/*"
+max-line-length = "88"
+ignore = "W503,ANN101,ANN102,E203"
+
+[tool.doc8]
+max-line-length = "88"
+
+[tool.pytest.ini_options]
+addopts = "--color=yes"
