@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "webint-search"
+version = "0.0.8"
+description = "search the data on your website and beyond"
+authors = ["Angelo Gladding <angelo@ragt.ag>"]
+license = "AGPL-3.0-or-later"
+packages = [{include = "webint_search"}]
+
+[tool.poetry.plugins."webapps"]
+search = "webint_search:app"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+webint = ">=0.0"
+typesense = "^0.15.0"
+youtube-search = "^2.1.2"
+wn = "^0.9.4"
+eng-to-ipa = "^0.0.2"
+pronouncing = "^0.2.0"
+
+[tool.poetry.group.dev.dependencies]
+# gmpg = "^0.0"
+bgq = {path="../bgq", develop=true}
+gmpg = {path="../gmpg", develop=true}
+newmath = {path="../newmath", develop=true}
+sqlyte = {path="../sqlyte", develop=true}
+webint = {path="../webint", develop=true}
+webagt = {path="../webagt", develop=true}
+microformats = {path="../python-microformats", develop=true}
+
+# [[tool.poetry.source]]
+# name = "main"
+# url = "https://ragt.ag/code/pypi"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
