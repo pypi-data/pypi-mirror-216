@@ -1,0 +1,16 @@
+setup.py
+noyerTransformer/CONST.py
+noyerTransformer/__init__.py
+noyerTransformer/convertNoyer.py
+noyerTransformer/latex2png.py
+noyerTransformer.egg-info/PKG-INFO
+noyerTransformer.egg-info/SOURCES.txt
+noyerTransformer.egg-info/dependency_links.txt
+noyerTransformer.egg-info/top_level.txt
+noyerTransformer/TexSoup/__init__.py
+noyerTransformer/TexSoup/category.py
+noyerTransformer/TexSoup/data.py
+noyerTransformer/TexSoup/reader.py
+noyerTransformer/TexSoup/tex.py
+noyerTransformer/TexSoup/tokens.py
+noyerTransformer/TexSoup/utils.py
