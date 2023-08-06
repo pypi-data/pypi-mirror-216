@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: gallon
+Version: 0.0.3
+Summary: 
+Author: Oscar Bahamonde
+Author-email: oscar.bahamonde@pucp.pe
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: typing-extensions
+Description-Content-Type: text/markdown
+
+
