@@ -1,0 +1,15 @@
+Change Log
+===========
+0.0.7 (June 30, 2023)
+-------------------------
+- Seventh Release
+
+Notes:
+------
+Added standard curve classes: parabolic_QR, linear_QR, power_std_curve, parabolic_std_curve
+
+The classes can be used to fit models to data. The classes also contain attriburtes such as estimation limits for inverse regression.
+Information such as smoothing, baseline subtraction, calibration procedures employed to process the data prior to fitting can also be stored.
+
+The prediction band edges of the standard curve are callable as methods within the objects. See documentation for full list of methods
+and attributes. 
