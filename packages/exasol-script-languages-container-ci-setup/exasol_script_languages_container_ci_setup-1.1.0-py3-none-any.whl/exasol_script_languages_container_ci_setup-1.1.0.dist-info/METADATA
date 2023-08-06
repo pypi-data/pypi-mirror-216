@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: exasol-script-languages-container-ci-setup
+Version: 1.1.0
+Summary: Manages AWS cloud CI build infrastructure.
+License: MIT
+Author: Thomas Uebensee
+Author-email: ext.thomas.uebensee@exasol.com
+Requires-Python: >=3.8.0,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: PyGithub (>=1.55.0,<2.0.0)
+Requires-Dist: boto3 (==1.26.163)
+Requires-Dist: botocore (==1.29.163)
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: datamodel-code-generator (>=0.20.0,<0.21.0)
+Requires-Dist: exasol-script-languages-container-ci (>=1.2.0,<2.0.0)
+Requires-Dist: exasol_error_reporting_python (>=0.3.0,<0.4.0)
+Requires-Dist: jinja2 (>=3.1.0)
+Requires-Dist: jsonschema (>=4.17.3,<5.0.0)
