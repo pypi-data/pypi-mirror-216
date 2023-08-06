@@ -1,0 +1,8 @@
+[backwork.downloads]
+cos = cos:CloudObjectStorageDownload
+
+[backwork.shows]
+cos = cos:CloudObjectStorageShow
+
+[backwork.uploads]
+cos = cos:CloudObjectStorageUpload
