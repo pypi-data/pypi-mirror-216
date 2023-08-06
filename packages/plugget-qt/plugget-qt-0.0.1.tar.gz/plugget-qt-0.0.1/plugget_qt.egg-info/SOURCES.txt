@@ -1,0 +1,11 @@
+.gitignore
+README.md
+pyproject.toml
+requirements.txt
+.github/workflows/PyPI-publish.yml
+plugget_qt/__init__.py
+plugget_qt.egg-info/PKG-INFO
+plugget_qt.egg-info/SOURCES.txt
+plugget_qt.egg-info/dependency_links.txt
+plugget_qt.egg-info/requires.txt
+plugget_qt.egg-info/top_level.txt

@@ -1,0 +1,5 @@
+plugget
+PySide2
+
+[:python_version < "3.4"]
+importlib-metadata
