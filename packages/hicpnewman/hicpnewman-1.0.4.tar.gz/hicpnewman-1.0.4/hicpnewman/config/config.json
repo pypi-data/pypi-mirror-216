@@ -1,0 +1,330 @@
+{
+  "collections": {},
+  "newman": {
+    "command": "newman",
+    "flags": [
+      {
+        "active": false,
+        "command": "--bail"
+      },
+      {
+        "active": false,
+        "command": "--silent"
+      },
+      {
+        "active": true,
+        "command": "--color auto"
+      },
+      {
+        "active": false,
+        "command": "--disable-unicode"
+      },
+      {
+        "active": false,
+        "command": "--insecure"
+      },
+      {
+        "active": false,
+        "command": "--suppress-exit-code"
+      },
+      {
+        "active": false,
+        "command": "--ignore-redirects"
+      },
+      {
+        "active": false,
+        "command": "--verbose"
+      }
+    ],
+    "reporters": {
+      "html": {
+        "package": "newman-reporter-html",
+        "export_path": "'{dir}/{collection_name}/{timestamp}/{collection_name}_html_{timestamp}.html'",
+        "flags": [
+          {
+            "active": true,
+            "command": "--reporter-html-template '{hicpnewman_dir}/templates/original/template-default-colored.hbs'"
+          }
+        ]
+      },
+      "csv": {
+        "package": "newman-reporter-csv",
+        "export_path": "'{dir}/{collection_name}/{timestamp}/{collection_name}_csv_{timestamp}.csv'",
+        "flags": []
+      },
+      "htmlfull": {
+        "package": "newman-reporter-htmlfull",
+        "export_path": "'{dir}/{collection_name}/{timestamp}/{collection_name}_htmlfull_{timestamp}.html'",
+        "flags": [
+          {
+            "active": true,
+            "command": "--reporter-htmlfull-template '{hicpnewman_dir}/templates/full/htmlreqres.hbs'"
+          }
+        ]
+      },
+      "allure": {
+        "package": "newman-reporter-allure",
+        "export_path": "'{dir}/allure_aggregate/{timestamp}/'",
+        "flags": [
+          {
+            "active": true,
+            "command": "--reporter-allure-collection-as-parent-suite"
+          }
+        ]
+      },
+      "htmlextra": {
+        "package": "newman-reporter-htmlextra",
+        "export_path": "'{dir}/{collection_name}/{timestamp}/{collection_name}_htmlextra_{timestamp}.html'",
+        "flags": [
+          {
+            "active": false,
+            "command": "--reporter-htmlextra-showOnlyFails"
+          },
+          {
+            "active": true,
+            "command": "--reporter-htmlextra-testPaging"
+          },
+          {
+            "active": true,
+            "command": "--reporter-htmlextra-browserTitle '{collection_name} report [{timestamp}]'"
+          },
+          {
+            "active": true,
+            "command": "--reporter-htmlextra-title '{collection_name} report [{timestamp}]'"
+          },
+          {
+            "active": true,
+            "command": "--reporter-htmlextra-titleSize 2"
+          },
+          {
+            "active": true,
+            "command": "--reporter-htmlextra-logs"
+          },
+          {
+            "active": false,
+            "command": "--reporter-htmlextra-omitRequestBodies"
+          },
+          {
+            "active": false,
+            "command": "--reporter-htmlextra-omitResponseBodies"
+          },
+          {
+            "active": false,
+            "command": "--reporter-htmlextra-showEnvironmentData"
+          },
+          {
+            "active": false,
+            "command": "--reporter-htmlextra-showGlobalData"
+          },
+          {
+            "active": false,
+            "command": "--reporter-htmlextra-omitHeaders"
+          },
+          {
+            "active": true,
+            "command": "--reporter-htmlextra-displayProgressBar"
+          }
+        ]
+      }
+    }
+  },
+  "default": {
+    "collection": {
+      "status": "default",
+      "content": {
+        "info": {
+          "_postman_id": "40dfcf4c-de99-47ba-988a-cc63040a3a55",
+          "name": "hicpnewman_default",
+          "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+          {
+            "name": "ping",
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              },
+              {
+                "listen": "prerequest",
+                "script": {
+                  "exec": [
+                    ""
+                  ],
+                  "type": "text/javascript"
+                }
+              }
+            ],
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{url}}/transverse/configuration/ping",
+                "host": [
+                  "{{url}}"
+                ],
+                "path": [
+                  "transverse",
+                  "configuration",
+                  "ping"
+                ]
+              }
+            },
+            "response": []
+          }
+        ],
+        "auth": {
+          "type": "digest",
+          "digest": [
+            {
+              "key": "clientNonce",
+              "value": "{{clientnonce}}",
+              "type": "string"
+            },
+            {
+              "key": "nonceCount",
+              "value": "{{noncecount}}",
+              "type": "string"
+            },
+            {
+              "key": "qop",
+              "value": "{{qop}}",
+              "type": "string"
+            },
+            {
+              "key": "nonce",
+              "value": "{{nonce}}",
+              "type": "string"
+            },
+            {
+              "key": "realm",
+              "value": "{{realm}}",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "string"
+            },
+            {
+              "key": "algorithm",
+              "value": "MD5",
+              "type": "string"
+            }
+          ]
+        },
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "type": "text/javascript",
+              "exec": [
+                ""
+              ]
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "type": "text/javascript",
+              "exec": [
+                ""
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "environment": {
+      "status": "default",
+      "content": {
+        "id": "9b79cd6d-78de-4a47-a330-f8032c1d7cbe",
+        "name": "hicpnewman_default",
+        "values": [],
+        "_postman_variable_scope": "environment",
+        "_postman_exported_at": "2023-06-23T12:22:28.164Z",
+        "_postman_exported_using": "Postman/10.14.2"
+      }
+    },
+    "globals": {
+      "status": "default",
+      "content": {
+        "id": "146e52f0-fd32-4814-8e58-8a3c0f4d5eb7",
+        "values": [
+          {
+            "key": "loadHicpPostmanUtils",
+            "value": "function loadHicpPostmanUtils() {\n    let hicpPostmanUtils = {};\n    ////////////////////////////////////////////////////////////////////////////////////////////////////////////\n    ///////////////////////////////////////// Tests Scripts Methods ////////////////////////////////////////////\n    ////////////////////////////////////////////////////////////////////////////////////////////////////////////\n    hicpPostmanUtils.parseResponseBody = function parseResponseBody(logPrefix = pm.info.requestName) {\n        \n        jsonData = JSON.parse(responseBody)\n        tests[logPrefix+\": ResponseBody parsed\"] = true\n        return(jsonData)\n    }\n    hicpPostmanUtils.checkHttpResponse = function checkHttpResponse(httpCodeExpected, logPrefix = pm.info.requestName) {\n        pm.test(logPrefix+\": Status code found \"+pm.response.code+ \", should be \"+httpCodeExpected, function () {\n            pm.expect(pm.response.code).to.eql(httpCodeExpected)\n        })\n        if (responseCode.code !== httpCodeExpected) {\n            throw new Error(`Expected HTTP ${httpCodeExpected}, but received HTTP ${responseCode.code}`);\n        }\n        \n    }\n    hicpPostmanUtils.checkHicpResponse = function checkHicpResponse(jsonData, treatmentOk, hicpErrorCodeExpected = null, logPrefix = pm.info.requestName) {\n        \n        treatment = jsonData.treatmentOk\n        if (treatment != treatmentOk) {\n            if (treatment) {\n                tests[logPrefix+\": Expected treatmentKo, got treatmentOk\"] = false\n            } else {\n                tests[logPrefix+\": Expected treatmentOk, got treatmentKo\"] = false\n            }\n        }\n        if (treatment !== treatmentOk) {\n            throw new Error(`Expected Treatment is not right, treatmentOk should be ${treatmentOk}`)\n        }\n        if (treatment) {\n            tests[logPrefix+\": Treatment found treatmentOk, should be treatmentOk\"] = true\n            return\n        }\n        hicpErrorJs = jsonData.hicpError\n        tests[logPrefix+\" : treatment is KO, hicpErrorJs found \"] = hicpErrorJs != null\n        if (hicpErrorJs === null) {\n            throw new Error(`HicpError is null`)\n        }\n        tests[logPrefix+\": hicpErrorCode found \"+ hicpErrorJs.errorCode+ \", should be \"+ hicpErrorCodeExpected] = hicpErrorCodeExpected == hicpErrorJs.errorCode\n        if (hicpErrorCodeExpected !== hicpErrorJs.errorCode) {\n            throw new Error(`Expected HicpError ${hicpErrorCodeExpected}, but received HicpError ${hicpErrorJs.errorCode}`)\n        }\n    }\n    hicpPostmanUtils.cleanResponse = function cleanResponse(httpCodeExpected, treatmentOk = true, hicpErrorCodeExpected = null, logPrefix = pm.info.requestName) {\n        try {\n            hicpPostmanUtils.checkHttpResponse(httpCodeExpected = httpCodeExpected, logPrefix = logPrefix)\n        } catch (error) {\n            throw new Error(`checkHttpResponse | ` + error)\n        }\n        var jsonData = hicpPostmanUtils.parseResponseBody(logPrefix = logPrefix)\n        try {\n            hicpPostmanUtils.checkHicpResponse(jsonData, treatmentOk = treatmentOk, hicpErrorCodeExpected = hicpErrorCodeExpected, logPrefix = logPrefix)\n        } catch (error) {\n            throw new Error(`checkHicpResponse | ` + error)\n        }\n        if (!treatmentOk) {\n            return(jsonData.hicpError)\n        }\n        if (_.get(jsonData, 'msgList')) {\n            return(jsonData.msgList)\n        } else if (_.get(jsonData, 'msg')) {\n            return(jsonData.msg)\n        } else {\n            return(jsonData)\n        }\n    }\n    ////////////////////////////////////////////////////////////////////////////////////////////////////////////\n    /////////////////////////////////// Pre-request Scripts Methods ////////////////////////////////////////////\n    ////////////////////////////////////////////////////////////////////////////////////////////////////////////\n    hicpPostmanUtils.loadList = function loadList(template, inputProperties, inputList) {\n        var newObjects = inputList.map(function(inputValues) {\n            var newObject = JSON.parse(JSON.stringify(template));\n            inputProperties.forEach(function(property, index) {\n                var propertyNames = property.split(\".\");\n                var tempObject = newObject;\n                for (var i = 0; i < propertyNames.length - 1; i++) {\n                    tempObject = tempObject[propertyNames[i]];\n                }\n                tempObject[propertyNames[propertyNames.length - 1]] = inputValues[index];\n            });\n            return newObject;\n        });\n        return newObjects\n    }\n    return hicpPostmanUtils;\n}; loadHicpPostmanUtils();",
+            "type": "any",
+            "enabled": true
+          },
+          {
+            "key": "url",
+            "value": "http://kmse-pcl5:{{port}}/hicp/rs",
+            "type": "default",
+            "enabled": true
+          },
+          {
+            "key": "port",
+            "value": "0000",
+            "type": "default",
+            "enabled": true
+          },
+          {
+            "key": "username",
+            "value": "admin",
+            "enabled": true
+          },
+          {
+            "key": "password",
+            "value": "7ff7dbf1ba482ca8257be11d699ccefc",
+            "type": "default",
+            "enabled": true
+          },
+          {
+            "key": "realm",
+            "value": "HicpRealm",
+            "enabled": true
+          },
+          {
+            "key": "nonce",
+            "value": "MTUwMDc0MDcxOTc2Nzo4ZTEwYjEzNDhiNzdhMjkzMDRiNjc3MTQ2MGY5OTIwOA",
+            "enabled": true
+          },
+          {
+            "key": "qop",
+            "value": "auth",
+            "enabled": true
+          },
+          {
+            "key": "clientnonce",
+            "value": "c822c727a648aba7",
+            "enabled": true
+          },
+          {
+            "key": "noncecount",
+            "value": "00000001",
+            "enabled": true
+          }
+        ],
+        "name": "My Workspace Globals",
+        "_postman_variable_scope": "globals",
+        "_postman_exported_at": "2023-06-23T12:22:47.650Z",
+        "_postman_exported_using": "Postman/10.14.2"
+      }
+    },
+    "data": {
+      "status": "empty",
+      "content": null
+    }
+  }
+}

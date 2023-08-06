@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: hicpnewman
+Version: 1.0.4
+Summary: a newman collection runner for hicp
+Home-page: https://kms-solutions.net
+Author: Antoine Buisson
+Author-email: antoine.buisson@kmse-tech.com
+License: MIT
+Keywords: newman hicp runner
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE.txt
