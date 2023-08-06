@@ -1,0 +1,124 @@
+
+DROP FUNCTION IF EXISTS api.available_metrics2;
+CREATE OR REPLACE FUNCTION api.available_metrics2(
+  at          TIMESTAMPTZ       DEFAULT NOW(),
+  config      JSONB             DEFAULT '{{}}'
+)
+RETURNS TABLE (device_id TEXT, metric_id TEXT) AS $$
+DECLARE
+from_devices    TEXT[]    := NULL;
+from_job_id     INT       := NULL;
+from_job_id_end TIMESTAMP := NULL;
+BEGIN
+IF config->>'job_id' IS NOT NULL THEN
+  SELECT nullif(substring(config->>'job_id' FROM '^\d+$'), '')::int INTO from_job_id;
+  IF from_job_id IS NOT NULL THEN
+    SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = from_job_id INTO from_job_id_end;
+    SELECT ARRAY(SELECT DISTINCT node FROM nodetime_by_job WHERE nodetime_by_job.job_id = from_job_id) INTO from_devices;
+    RETURN QUERY SELECT * FROM api.available_metrics(at => LEAST(from_job_id_end, at), config => jsonb_build_object('devices', array_to_json(from_devices)))
+  END IF;
+END IF;
+IF config->'devices' IS NOT NULL THEN
+  IF jsonb_typeof(config->'devices') = 'array' THEN
+    SELECT ARRAY(SELECT jsonb_array_elements_text(config->'devices')) INTO STRICT from_devices;
+  ELSE
+    RAISE EXCEPTION 'Cannot parse config->devices, should be JSON array';
+  END IF;
+END IF;
+RETURN QUERY
+WITH ametrics AS (
+  SELECT DISTINCT metrics.device_id, metrics.metric_id
+  FROM metrics AS metrics WHERE
+  CASE WHEN from_devices IS NOT NULL THEN metrics.device_id = ANY (from_devices) ELSE true END
+  AND
+  CASE WHEN from_job_id IS NOT NULL THEN
+    timestamp < LEAST(from_job_id_end, at) AND
+    timestamp > LEAST(from_job_id_end, at) - INTERVAL '1m'
+  ELSE
+    timestamp < at AND timestamp > at - INTERVAL '1m'
+  END
+  UNION ALL
+  SELECT DISTINCT metrics.labels ->> '_device_alias'::text AS device_id, metrics.metric_id
+  FROM metrics AS metrics
+  WHERE metrics.labels ? '_device_alias'
+  AND CASE WHEN from_devices IS NOT NULL THEN metrics.labels->>'_device_alias' = ANY (from_devices) ELSE true END
+  AND
+  CASE WHEN from_job_id IS NOT NULL THEN
+    timestamp < LEAST(from_job_id_end, at) AND
+    timestamp > LEAST(from_job_id_end, at) - INTERVAL '1m'
+  ELSE
+    timestamp < at AND timestamp > at - INTERVAL '1m'
+  END
+),
+ometrics AS (
+  SELECT metrics.device_id, metrics.metric_id,
+    CASE WHEN metrics.device_id ~ '^[a-z]+-\d+$' THEN '1' ELSE '2' END AS idx1,
+    (STRING_TO_ARRAY(metrics.device_id, '-'))[1] AS idx2,
+    COALESCE(SUBSTRING((STRING_TO_ARRAY(metrics.device_id, '-'))[2] FROM '([0-9]+)')::INTEGER, 0) as idx3
+  FROM ametrics AS metrics
+  ORDER BY idx1, idx2, idx3, metric_id
+)
+SELECT m.device_id, m.metric_id FROM ometrics AS m;
+END;
+$$ LANGUAGE plpgsql;
+
+
+kwdb=# \df+ api.available_metrics
+List of functions
+-[ RECORD 1 ]-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Schema              | api
+Name                | available_metrics
+Result data type    | TABLE(device_id text, metric_id text)
+Argument data types | at timestamp with time zone DEFAULT now(), config jsonb DEFAULT '{}'::jsonb
+Type                | func
+Volatility          | volatile
+Parallel            | unsafe
+Owner               | postgres
+Security            | invoker
+Access privileges   |
+Language            | plpgsql
+Source code         |                                                                                                                                                                                      +
+                    | DECLARE                                                                                                                                                                              +
+                    | from_devices    TEXT[]    := NULL;                                                                                                                                                   +
+                    | from_job_id     INT       := NULL;                                                                                                                                                   +
+                    | from_job_id_end TIMESTAMP := NULL;                                                                                                                                                   +
+                    | BEGIN                                                                                                                                                                                +
+                    |         IF config->>'job_id' IS NOT NULL THEN                                                                                                                                        +
+                    |                   SELECT nullif(substring(config->>'job_id' FROM '^\d+$'), '')::int INTO from_job_id;                                                                                +
+                    |                   IF from_job_id IS NOT NULL THEN                                                                                                                                    +
+                    |                             SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = from_job_id INTO from_job_id_end;                                                              +
+                    |                             SELECT ARRAY(SELECT DISTINCT node FROM nodetime_by_job WHERE nodetime_by_job.job_id = from_job_id) INTO from_devices;                                    +
+                    |                             RETURN QUERY SELECT * FROM api.available_metrics(at => LEAST(from_job_id_end, at), config => jsonb_build_object('devices', array_to_json(from_devices)));+
+                    |                             RETURN;                                                                                                                                                  +
+                    |                           END IF;                                                                                                                                                    +
+                    |                 END IF;                                                                                                                                                              +
+                    |                 IF config->'devices' IS NOT NULL THEN                                                                                                                                +
+                    |                           IF jsonb_typeof(config->'devices') = 'array' THEN                                                                                                          +
+                    |                                     SELECT ARRAY(SELECT jsonb_array_elements_text(config->'devices')) INTO STRICT from_devices;                                                      +
+                    |                                   ELSE                                                                                                                                               +
+                    |                                             RAISE EXCEPTION 'Cannot parse config->devices, should be JSON array';                                                                    +
+                    |                                           END IF;                                                                                                                                    +
+                    |                                 END IF;                                                                                                                                              +
+                    |                                 RETURN QUERY                                                                                                                                         +
+                    |                                 WITH ametrics AS (                                                                                                                                   +
+                    |                                           SELECT metrics.device_id, metrics.metric_id                                                                                                +
+                    |                                           FROM metrics AS metrics WHERE                                                                                                              +
+                    |                                           timestamp < at AND timestamp > at - INTERVAL '1m'                                                                                          +
+                    |                                           AND CASE WHEN from_devices IS NOT NULL THEN metrics.device_id = ANY (from_devices) ELSE true END                                           +
+                    |                                           UNION                                                                                                                                      +
+                    |                                           SELECT metrics.labels ->> '_device_alias'::text AS device_id, metrics.metric_id                                                            +
+                    |                                           FROM metrics AS metrics                                                                                                                    +
+                    |                                           WHERE metrics.labels ? '_device_alias'                                                                                                     +
+                    |                                           AND timestamp < at AND timestamp > at - INTERVAL '1m'                                                                                      +
+                    |                                           AND CASE WHEN from_devices IS NOT NULL THEN metrics.labels->>'_device_alias' = ANY (from_devices) ELSE true END                            +
+                    |                                 ),                                                                                                                                                   +
+                    |                                 ometrics AS (                                                                                                                                        +
+                    |                                           SELECT DISTINCT ON (idx1, idx2, idx3, metric_id)                                                                                           +
+                    |                                             metrics.device_id, metrics.metric_id,                                                                                                    +
+                    |                                             CASE WHEN metrics.device_id ~ '^[a-z]+-\d+$' THEN '1' ELSE '2' END AS idx1,                                                              +
+                    |                                                     (STRING_TO_ARRAY(metrics.device_id, '-'))[1] AS idx2,                                                                            +
+                    |                                                     COALESCE(SUBSTRING((STRING_TO_ARRAY(metrics.device_id, '-'))[2] FROM '([0-9]+)')::INTEGER, 0) as idx3                            +
+                    |                                                   FROM ametrics AS metrics                                                                                                           +
+                    |                                         )                                                                                                                                            +
+                    |                                         SELECT m.device_id, m.metric_id FROM ometrics AS m;                                                                                          +
+                    |                                 END;                                                                                                                                                 +

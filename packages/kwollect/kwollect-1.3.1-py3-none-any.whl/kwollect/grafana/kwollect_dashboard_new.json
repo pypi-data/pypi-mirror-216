@@ -1,0 +1,272 @@
+
+
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": false,
+  "fiscalYearStartMonth": 0,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 1,
+  "iteration": 1636718144297,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Postgres",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "interval": "",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "maxPerRow": 2,
+      "nullPointMode": "connected",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.2.3",
+      "pointradius": 1,
+      "points": true,
+      "renderer": "flot",
+      "repeat": "metric_id",
+      "repeatDirection": "h",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "CONCAT(device_id, ' ', labels)",
+          "rawQuery": true,
+          "rawSql": "WITH jobs AS (\n    SELECT CASE WHEN job ~ '^\\d+$' THEN job::int ELSE -1 END AS job_id FROM (SELECT '$job_str' AS job) s\n)\nSELECT\n  \"timestamp\" AS \"time\",\n  CONCAT(device_id, ' ', labels - '_metric_scrape_time') AS metric,\n  CASE WHEN metric_id LIKE '%_total' THEN\n    CASE\n      WHEN timestamp = LAG(timestamp) OVER w THEN NULL\n      WHEN LAG(value) OVER w IS NULL THEN NULL\n      WHEN value < LAG(value) OVER w THEN 2*value\n      ELSE (value - LAG(value) OVER w)\n    END / EXTRACT(epoch FROM timestamp - LAG(timestamp) OVER w)\n  ELSE\n    value\n  END AS value\nFROM (\n  SELECT * FROM metrics_by_device WHERE\n    CASE WHEN $__unixEpochTo() - $__unixEpochFrom() <= 1800 THEN TRUE ELSE FALSE END\n    AND CASE\n    WHEN (SELECT MIN(job_id) FROM jobs) = -1 THEN\n      timestamp > to_timestamp($__unixEpochTo()) - interval '1h'\n    WHEN (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs)) IS NULL THEN\n      timestamp < (SELECT MIN(start_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs)) + interval '1h'\n    ELSE\n      timestamp > (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs)) - interval '1h'\n    END\n  UNION ALL\n  SELECT * FROM metrics_by_device_summary WHERE\n    CASE WHEN $__unixEpochTo() - $__unixEpochFrom() > 1800 THEN TRUE ELSE FALSE END\n  ) AS metrics\nWHERE\n  CASE\n    WHEN (SELECT MIN(job_id) FROM jobs) = -1 THEN\n      timestamp > to_timestamp($__unixEpochFrom())\n    ELSE\n      timestamp > (SELECT MIN(start_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs))\n  END\n  AND\n  CASE\n    WHEN (SELECT MIN(job_id) FROM jobs) = -1 THEN\n      timestamp < to_timestamp($__unixEpochTo())\n    WHEN (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs)) IS NULL THEN\n      true\n    ELSE\n      timestamp < (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs))\n  END\n  AND device_id IN ($device_id)\n  AND $metric_id != '' AND metric_id = $metric_id\nWINDOW w AS (PARTITION BY metric_id, device_id, labels - '_metric_scrape_time' ORDER BY timestamp, labels->>'_metric_scrape_time')\nORDER BY 1,2",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              },
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "table": "metrics_by_device",
+          "timeColumn": "\"timestamp\"",
+          "timeColumnType": "timestamptz",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "metric_id",
+                "=",
+                "$metric_id"
+              ],
+              "type": "expression"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "$metric_id",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Metric value",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 31,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allFormat": "glob",
+        "current": {
+          "selected": false
+        },
+        "datasource": null,
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "label": "Job ID",
+        "name": "job_str",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "allFormat": "glob",
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "local",
+          "value": "local"
+        },
+        "datasource": "Postgres",
+        "definition": "WITH jobs AS (\n    SELECT CASE WHEN job ~ '^\\d+$' THEN job::int ELSE -1 END AS job_id FROM (SELECT '$job_str' AS job) s\n)\n(\nSELECT device_id FROM (\n    WITH x as (\n      SELECT DISTINCT(device_id),\n        CASE WHEN metrics.device_id ~ '^[a-z]+-[0-9]+' THEN 1 ELSE 2 END AS device_kind,\n        STRING_TO_ARRAY(metrics.device_id, '-') AS device_arr\n      FROM metrics WHERE\n        CASE WHEN (SELECT min(job_id) FROM jobs) = -1 THEN true ELSE false END\n        AND timestamp <  to_timestamp($__unixEpochTo()) AND timestamp > to_timestamp($__unixEpochTo()) - INTERVAL '1m'\n)\n    SELECT * FROM x ORDER BY device_kind, ARRAY_LENGTH(device_arr, 1), device_arr[1], COALESCE(SUBSTRING(device_arr[2] FROM '([0-9]+)')::INTEGER, 0)) s\n)\nUNION ALL\n(\nSELECT DISTINCT(node) AS device_id FROM nodetime_by_job nodetime_by_job WHERE\n    CASE WHEN (SELECT min(job_id) FROM jobs) = -1 THEN false ELSE true END\n    AND job_id = (SELECT MAX(job_id) FROM jobs)\n)\n",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Device selection",
+        "multi": true,
+        "name": "device_id",
+        "options": [],
+        "query": "WITH jobs AS (\n    SELECT CASE WHEN job ~ '^\\d+$' THEN job::int ELSE -1 END AS job_id FROM (SELECT '$job_str' AS job) s\n)\n(\nSELECT device_id FROM (\n    WITH x as (\n      SELECT DISTINCT(device_id),\n        CASE WHEN metrics.device_id ~ '^[a-z]+-[0-9]+' THEN 1 ELSE 2 END AS device_kind,\n        STRING_TO_ARRAY(metrics.device_id, '-') AS device_arr\n      FROM metrics WHERE\n        CASE WHEN (SELECT min(job_id) FROM jobs) = -1 THEN true ELSE false END\n        AND timestamp <  to_timestamp($__unixEpochTo()) AND timestamp > to_timestamp($__unixEpochTo()) - INTERVAL '1m'\n)\n    SELECT * FROM x ORDER BY device_kind, ARRAY_LENGTH(device_arr, 1), device_arr[1], COALESCE(SUBSTRING(device_arr[2] FROM '([0-9]+)')::INTEGER, 0)) s\n)\nUNION ALL\n(\nSELECT DISTINCT(node) AS device_id FROM nodetime_by_job nodetime_by_job WHERE\n    CASE WHEN (SELECT min(job_id) FROM jobs) = -1 THEN false ELSE true END\n    AND job_id = (SELECT MAX(job_id) FROM jobs)\n)\n",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allFormat": "glob",
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "prom_node_load1",
+          "value": "prom_node_load1"
+        },
+        "datasource": "Postgres",
+        "definition": "WITH jobs AS (\n    SELECT CASE WHEN job ~ '^\\d+$' THEN job::int ELSE -1 END AS job_id FROM (SELECT '$job_str' AS job) s\n)\nSELECT DISTINCT(metric_id) FROM metrics_by_device WHERE\n  device_id IN ($device_id) AND\n  CASE\n    WHEN (SELECT MIN(job_id) FROM jobs) = -1 THEN\n      timestamp > to_timestamp($__unixEpochTo()) - INTERVAL '1m'\n    WHEN (SELECT MAX(stop_time) FROM nodetime_by_job WHERE  job_id = (SELECT MAX(job_id) FROM jobs)) IS NULL THEN\n      timestamp > to_timestamp($__unixEpochTo()) - INTERVAL '1m'\n    ELSE\n      timestamp > (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs)) - INTERVAL '1m'\n  END\nORDER BY metric_id",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Metric name",
+        "multi": true,
+        "name": "metric_id",
+        "options": [],
+        "query": "WITH jobs AS (\n    SELECT CASE WHEN job ~ '^\\d+$' THEN job::int ELSE -1 END AS job_id FROM (SELECT '$job_str' AS job) s\n)\nSELECT DISTINCT(metric_id) FROM metrics_by_device WHERE\n  device_id IN ($device_id) AND\n  CASE\n    WHEN (SELECT MIN(job_id) FROM jobs) = -1 THEN\n      timestamp > to_timestamp($__unixEpochTo()) - INTERVAL '1m'\n    WHEN (SELECT MAX(stop_time) FROM nodetime_by_job WHERE  job_id = (SELECT MAX(job_id) FROM jobs)) IS NULL THEN\n      timestamp > to_timestamp($__unixEpochTo()) - INTERVAL '1m'\n    ELSE\n      timestamp > (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = (SELECT MAX(job_id) FROM jobs)) - INTERVAL '1m'\n  END\nORDER BY metric_id",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s"
+    ]
+  },
+  "timezone": "",
+  "title": "Kwollect Metrics",
+  "uid": "kwollect",
+  "version": 1
+}
