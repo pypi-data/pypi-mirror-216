@@ -1,0 +1,51 @@
+$def with (query, ipa_pronunciation, cmu_pronunciation, definition, rhymes, web_results, code_projects, code_files, books)
+$var breadcrumbs = ("search", "Search")
+$var title: Results for
+
+<form>
+    <input name=q value="$query"> <button>Search</button>
+</form>
+
+$if definition:
+    <p><strong title="$cmu_pronunciation">$ipa_pronunciation</strong>, $definition<br>
+    <small>rhymes: $", ".join(rhymes)</small></p>
+
+<h2>Web</h2>
+$if web_results:
+    <ul>
+    $for result in web_results:
+        <li><a href="$webagt.uri(result.element.attrib['href'])['uddg'][0]">$result.text</a></li>
+    </ul>
+$else:
+    <p>0 results</p>
+
+<h2>Code</h2>
+$if code_projects.most_common()[0][0]:
+    <ul>
+    $for project, file_count in code_projects.most_common():
+        <li><a href=$tx.origin/code/projects/$project>$project</a>
+        $ files = code_files[project]
+        <small>\
+        $for code_file in sorted(files)[:3]:
+            <a href=$tx.origin/code/projects/$project/files/$code_file
+            style=color:#777>$code_file</a>\
+            $if not loop.last:
+                , \
+        $if len(files) > 3:
+             <em>and $(file_count - 3) more</em>
+        </small></li>
+    </ul>
+$else:
+    <p>0 results</p>
+
+$# <h2>Books</h2>
+$# <p>found $books.pop("found") document out of $books.pop("out_of"),
+$# search took $books.pop("search_time_ms")ms</p>
+$# <ul>
+$# $for book in books.pop("hits"):
+$#     <li><p>$book.pop("document")</p>
+$#     <p>$book.pop("highlights")</p>
+$#     <pre>$pformat(book)</pre>
+$#     </li>
+$# </ul>
+$# XXX <pre>$pformat(books)</pre>
