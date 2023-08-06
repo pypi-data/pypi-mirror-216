@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/mmct/__init__.py
+src/mmct/core.py
+src/mmct.egg-info/PKG-INFO
+src/mmct.egg-info/SOURCES.txt
+src/mmct.egg-info/dependency_links.txt
+src/mmct.egg-info/requires.txt
+src/mmct.egg-info/top_level.txt
+test/test_core.py
