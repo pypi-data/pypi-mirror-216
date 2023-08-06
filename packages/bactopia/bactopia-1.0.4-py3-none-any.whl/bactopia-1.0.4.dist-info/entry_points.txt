@@ -1,0 +1,8 @@
+[console_scripts]
+bactopia-citations=bactopia.cli.citations:main
+bactopia-datasets=bactopia.cli.datasets:main
+bactopia-download=bactopia.cli.download:main
+bactopia-prepare=bactopia.cli.prepare:main
+bactopia-search=bactopia.cli.search:main
+bactopia-summary=bactopia.cli.summary:main
+
