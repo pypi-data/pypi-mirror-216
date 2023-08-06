@@ -1,0 +1,22 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "pwl_writer"
+authors = [{name = "Victor Sabiá P. Carpes", email = "victorscarpes@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.6.6"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = ["numpy"]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+doc = ["pycco"]
+
+[project.urls]
+Documentation = "https://htmlpreview.github.io/?https://github.com/victorscarpes/pwl_writer/blob/main/docs/pwl_writer.html"
+Source = "https://github.com/victorscarpes/pwl_writer"
+
