@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: xsigma
+Version: 1.2.0.dev0
+Summary: XSIGMA pricing library
+Home-page: https://xsigma.org
+Download-URL: https://xsigma.org/download/
+Author: XSIGMA developers
+License: BSD
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: C++
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Description-Content-Type: text/markdown
+Provides-Extra: numpy
+Requires-Dist: numpy (>=1.9) ; extra == 'numpy'
+
+Introduction:
+============
+Documentation:
+============
+* Win32:
+<ul>
+<li>install doxygen</li>
+<li>install perl</li>
+<li>install graphviz</li>
+</ul>
+
+* Unix:
+<ol>
+<li>sudo apt install doxygen</li>
+<li>sudo apt install graphviz</li>
+<li>sudo apt install html</li>
+</ol>
