@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: ottergon
+Version: 0.5.0
+Summary: 
+Author: 
+License: 
+Requires-Python: >=3.6
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
