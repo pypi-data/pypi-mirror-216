@@ -1,0 +1,9 @@
+numpy
+cytoolz
+rich
+matplotlib
+
+[dev]
+pytest
+pytest-random-order
+coverage
