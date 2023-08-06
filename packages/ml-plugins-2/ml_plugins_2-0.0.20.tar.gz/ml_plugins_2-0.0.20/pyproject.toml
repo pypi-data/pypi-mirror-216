@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml_plugins_2"
+version = "0.0.20"
+dependencies = [
+    "metaflow==2.9.2",
+    "poetry"
+]
+
+[tool.setuptools.packages]
+find = {}  # Scan the project directory with the default parameters
