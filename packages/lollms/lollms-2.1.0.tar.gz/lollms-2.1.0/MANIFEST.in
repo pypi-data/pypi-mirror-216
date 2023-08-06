@@ -1,0 +1,8 @@
+recursive-include lollms/configs *
+global-exclude *.bin
+global-exclude *.pyc
+global-exclude local_config.yaml
+global-exclude lollms_global_paths_cfg_path.yaml
+global-exclude .installed
+global-exclude .git
+global-exclude .gitignore
