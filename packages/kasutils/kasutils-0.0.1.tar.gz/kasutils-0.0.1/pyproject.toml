@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "setuptools>=58.0.4",
+    "wheel>=0.37.0"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "kasutils"
+version = "0.0.1"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/KasRoudra2/kasutils/"
+include = ["README.md", "LICENSE", "kasutils.py"]
+description = "My utility library with zero dependency"
+authors = ["KasRoudra <kasroudrakrd@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[build-system.sdist]
+formats = ["gztar"]
+
+[build-system.bdist_wheel]
+universal = false
