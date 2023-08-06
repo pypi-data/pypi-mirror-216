@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gPCS"
+version = "1.0.2"
+authors = [
+  { name="Aurelio Amerio", email="aurelio.amerio@ific.uv.es" },
+  { name="Francesca Calore", email=""},
+  { name="Pasquale Serpico", email=""},
+  { name="Bryan Zaldìvar", email=""}
+
+]
+description = "Code for the paper Deepening gamma-ray point-source catalogues with sub-threshold information"
+dependencies = [
+"numpy",
+"healpy",
+"astropy",
+"numba",
+]
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/aurelio-amerio/gPCS"
+"Bug Tracker" = "https://github.com/aurelio-amerio/gPCS/issues"
