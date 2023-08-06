@@ -1,0 +1,5 @@
+pyyaml>2
+iso8601~=2.0
+sob~=1.50
+jsonpointer~=2.4
+more-itertools<10.0,>=8.0
