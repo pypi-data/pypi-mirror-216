@@ -1,0 +1,95 @@
+from __future__ import annotations
+from dataclasses import dataclass, field
+from kiota_abstractions.serialization import AdditionalDataHolder, Parsable, ParseNode, SerializationWriter
+from typing import Any, Callable, Dict, List, Optional, TYPE_CHECKING, Union
+
+if TYPE_CHECKING:
+    from .attribute_mapping import AttributeMapping
+    from .filter import Filter
+    from .object_flow_types import ObjectFlowTypes
+    from .object_mapping_metadata_entry import ObjectMappingMetadataEntry
+
+@dataclass
+class ObjectMapping(AdditionalDataHolder, Parsable):
+    # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+    additional_data: Dict[str, Any] = field(default_factory=dict)
+
+    # The attributeMappings property
+    attribute_mappings: Optional[List[AttributeMapping]] = None
+    # The enabled property
+    enabled: Optional[bool] = None
+    # The flowTypes property
+    flow_types: Optional[ObjectFlowTypes] = None
+    # The metadata property
+    metadata: Optional[List[ObjectMappingMetadataEntry]] = None
+    # The name property
+    name: Optional[str] = None
+    # The OdataType property
+    odata_type: Optional[str] = None
+    # The scope property
+    scope: Optional[Filter] = None
+    # The sourceObjectName property
+    source_object_name: Optional[str] = None
+    # The targetObjectName property
+    target_object_name: Optional[str] = None
+    
+    @staticmethod
+    def create_from_discriminator_value(parse_node: Optional[ParseNode] = None) -> ObjectMapping:
+        """
+        Creates a new instance of the appropriate class based on discriminator value
+        Args:
+            parse_node: The parse node to use to read the discriminator value and create the object
+        Returns: ObjectMapping
+        """
+        if not parse_node:
+            raise TypeError("parse_node cannot be null.")
+        return ObjectMapping()
+    
+    def get_field_deserializers(self,) -> Dict[str, Callable[[ParseNode], None]]:
+        """
+        The deserialization information for the current model
+        Returns: Dict[str, Callable[[ParseNode], None]]
+        """
+        from .attribute_mapping import AttributeMapping
+        from .filter import Filter
+        from .object_flow_types import ObjectFlowTypes
+        from .object_mapping_metadata_entry import ObjectMappingMetadataEntry
+
+        from .attribute_mapping import AttributeMapping
+        from .filter import Filter
+        from .object_flow_types import ObjectFlowTypes
+        from .object_mapping_metadata_entry import ObjectMappingMetadataEntry
+
+        fields: Dict[str, Callable[[Any], None]] = {
+            "attributeMappings": lambda n : setattr(self, 'attribute_mappings', n.get_collection_of_object_values(AttributeMapping)),
+            "enabled": lambda n : setattr(self, 'enabled', n.get_bool_value()),
+            "flowTypes": lambda n : setattr(self, 'flow_types', n.get_enum_value(ObjectFlowTypes)),
+            "metadata": lambda n : setattr(self, 'metadata', n.get_collection_of_object_values(ObjectMappingMetadataEntry)),
+            "name": lambda n : setattr(self, 'name', n.get_str_value()),
+            "@odata.type": lambda n : setattr(self, 'odata_type', n.get_str_value()),
+            "scope": lambda n : setattr(self, 'scope', n.get_object_value(Filter)),
+            "sourceObjectName": lambda n : setattr(self, 'source_object_name', n.get_str_value()),
+            "targetObjectName": lambda n : setattr(self, 'target_object_name', n.get_str_value()),
+        }
+        return fields
+    
+    def serialize(self,writer: SerializationWriter) -> None:
+        """
+        Serializes information the current object
+        Args:
+            writer: Serialization writer to use to serialize this model
+        """
+        if not writer:
+            raise TypeError("writer cannot be null.")
+        writer.write_collection_of_object_values("attributeMappings", self.attribute_mappings)
+        writer.write_bool_value("enabled", self.enabled)
+        writer.write_enum_value("flowTypes", self.flow_types)
+        writer.write_collection_of_object_values("metadata", self.metadata)
+        writer.write_str_value("name", self.name)
+        writer.write_str_value("@odata.type", self.odata_type)
+        writer.write_object_value("scope", self.scope)
+        writer.write_str_value("sourceObjectName", self.source_object_name)
+        writer.write_str_value("targetObjectName", self.target_object_name)
+        writer.write_additional_data_value(self.additional_data)
+    
+
