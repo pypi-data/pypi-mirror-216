@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "tim_asinc_chat"
+version = "0.1.0"
+description = ""
+authors = ["T1monation <4timonaton@gmail.com>"]
+readme = "README.md"
+packages = [{include = "tim_asinc_chat"}]
+
+[tool.poetry.dependencies]
+
+python = "=3.10,<3.12"
+chardet = "^5.1.0"
+pyyaml = "^6.0"
+tabulate = "^0.9.0"
+sqlalchemy = "^2.0.15"
+postgres = "^4.0"
+alembic = "^1.11.1"
+pyqt6 = "^6.5.1"
+pyside6 = "^6.5.1.1"
+
+[tool.poetry.dev-dependencies]
+sphinx = "^7.0.1"
+mimesis = "^7.1.0"
+autopep8 = "^2.0.2"
+flake8 = "^6.0.0"
+black = "^23.3.0"
+setuptools = "^68.0.0"
+auto-py-to-exe = "^2.36.0"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
