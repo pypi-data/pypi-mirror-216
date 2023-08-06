@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: xia-logger
+Version: 0.1.3
+Summary: X-I-A
+Home-page: https://develop.x-i-a.com/docs/xia-logger/0.1.3/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: xia-engine
+Requires-Dist: xia-coder
+Requires-Dist: xia-storer
+Requires-Dist: xia-models
+
+.. image:: https://img.shields.io/pypi/v/xia-logger.svg?color=blue
+   :alt: PyPI-Server
+   :target: https://pypi.org/project/xia-logger/
+
+====================================
+X-I-A
+====================================
+
+
+
+Quick start
+=============================
+
+Install the package::
+
+    pip install xia-logger
+
+
