@@ -1,0 +1,15 @@
+setup.py
+src/wechaty_grpc/__init__.py
+src/wechaty_grpc.egg-info/PKG-INFO
+src/wechaty_grpc.egg-info/SOURCES.txt
+src/wechaty_grpc.egg-info/dependency_links.txt
+src/wechaty_grpc.egg-info/requires.txt
+src/wechaty_grpc.egg-info/top_level.txt
+src/wechaty_grpc/google/__init__.py
+src/wechaty_grpc/google/api/__init__.py
+src/wechaty_grpc/grpc/__init__.py
+src/wechaty_grpc/grpc/gateway/__init__.py
+src/wechaty_grpc/grpc/gateway/protoc_gen_openapiv2/__init__.py
+src/wechaty_grpc/grpc/gateway/protoc_gen_openapiv2/options/__init__.py
+src/wechaty_grpc/wechaty/__init__.py
+src/wechaty_grpc/wechaty/puppet/__init__.py
