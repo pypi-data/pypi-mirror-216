@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dearprudence"
+authors = [
+    { name="Brewster Malevich", email="bmalevich@rhg.com" },
+]
+description = "Internal Python library filled with sugar for swallowing downscalingCMIP6 parameter files"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = ">=3.9"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/brews/dearprudence"
+"Bug Tracker" = "https://github.com/brews/dearprudence/issues"
+
+[project.optional-dependencies]
+catalog = [
+    "intake_esm",
+]
+dev = [
+    "black",
+    "build",
+    "flake8",
+    "intake_esm",
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "twine",
+]
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "999"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/dearprudence/_version.py"
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = "intake"
+ignore_missing_imports = true
