@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "hs_api"
+version = "0.1.3"
+description = "CRI User Software"
+authors = ["Justin Frank & Abhinav Uppal"]
+
+[tool.poetry.dependencies]
+
+python = ">=3.10,<3.11"
+numba = "^0.55.1"
+numpy = ">=1.18"
+PyYAML = "^6.0"
+matplotlib = "^3.5.1"
+bidict = "^0.22.0"
+tqdm = "^4.64.1"
+#connectome_utils = {path = "../connectome_utils", develop = true}
+fxpmath = "^0.4.8"
+connectome-utils = "^0.1.0"
+torch = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+jupyterlab = "^3.3.3"
+hs_bridge = {path = "../hs_bridge", develop = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
