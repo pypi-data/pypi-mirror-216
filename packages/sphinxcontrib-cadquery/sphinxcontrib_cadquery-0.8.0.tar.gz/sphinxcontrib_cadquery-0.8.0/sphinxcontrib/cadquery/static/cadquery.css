@@ -1,0 +1,101 @@
+.cadquery-align-left {
+    float: left;
+}
+
+.cadquery-align-right {
+    float: right;
+}
+
+.cadquery-align-none {
+    float: none;
+}
+
+.cadquery-align-center {
+    margin: 0px auto;
+}
+
+.cadquery-container-model {
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+button.cadquery-credit {
+    border: 1px;
+    color: white;
+    cursor: pointer;
+    font-size: 75%;
+}
+
+div.cadquery-overlay {
+    color: black;
+    float: right;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    z-index: 100;
+}
+
+.cadquery-overlay-dropdown-content {
+    background-color: #f9f9f9;
+    display: none;
+    min-width: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+.cadquery-overlay-dropdown-content dl,
+.cadquery-overlay-dropdown-content dl dd,
+.cadquery-overlay-dropdown-content p {
+    margin: 1px;
+}
+.cadquery-overlay-dropdown-content p.footer {
+        font-size: 75%;
+}
+
+.cadquery-overlay:hover
+.cadquery-overlay-dropdown-content {
+    display: block;
+}
+
+.cadquery-overlay:hover button.cadquery-credit {
+    background-color: #2980b9;
+}
+
+.cadquery-overlay-dropdown-content dl {
+    display: grid;
+    grid-template-columns: 40% auto;
+}
+
+.cadquery-overlay-dropdown-content dl dt {
+    grid-column: 1;
+}
+
+.cadquery-overlay-dropdown-content dl dd {
+    grid-column: 2;
+}
+
+.cadquery-container {
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.cadquery-container * pre {
+    text-align: left;
+}
+
+figcaption *:last-child,
+figure *:last-child,
+.cadquery-container *:last-child {
+    margin-bottom: 0 !important;
+}
+
+.cadquery-notes * {
+    font-size: small;
+}
+
+.cadquery-error {
+    color: red;
+}
