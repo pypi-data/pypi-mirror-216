@@ -1,0 +1,1068 @@
+Metadata-Version: 2.1
+Name: ch5mpy
+Version: 0.2
+Summary: Collection of helper tools for reading or writing to h5 files using the h5py library.
+Author-email: Matteo Bouvier <m.bouvier@vidium-solutions.com>
+Maintainer-email: Matteo Bouvier <m.bouvier@vidium-solutions.com>
+License: CeCILL-B FREE SOFTWARE LICENSE AGREEMENT
+        
+        
+            Notice
+        
+        This Agreement is a Free Software license agreement that is the result
+        of discussions between its authors in order to ensure compliance with
+        the two main principles guiding its drafting:
+        
+            * firstly, compliance with the principles governing the distribution
+              of Free Software: access to source code, broad rights granted to
+              users,
+            * secondly, the election of a governing law, French law, with which
+              it is conformant, both as regards the law of torts and
+              intellectual property law, and the protection that it offers to
+              both authors and holders of the economic rights over software.
+        
+        The authors of the CeCILL-B (for Ce[a] C[nrs] I[nria] L[ogiciel] L[ibre])
+        license are:
+        
+        Commissariat à l'Energie Atomique - CEA, a public scientific, technical
+        and industrial research establishment, having its principal place of
+        business at 25 rue Leblanc, immeuble Le Ponant D, 75015 Paris, France.
+        
+        Centre National de la Recherche Scientifique - CNRS, a public scientific
+        and technological establishment, having its principal place of business
+        at 3 rue Michel-Ange, 75794 Paris cedex 16, France.
+        
+        Institut National de Recherche en Informatique et en Automatique -
+        INRIA, a public scientific and technological establishment, having its
+        principal place of business at Domaine de Voluceau, Rocquencourt, BP
+        105, 78153 Le Chesnay cedex, France.
+        
+        
+            Preamble
+        
+        This Agreement is an open source software license intended to give users
+        significant freedom to modify and redistribute the software licensed
+        hereunder.
+        
+        The exercising of this freedom is conditional upon a strong obligation
+        of giving credits for everybody that distributes a software
+        incorporating a software ruled by the current license so as all
+        contributions to be properly identified and acknowledged.
+        
+        In consideration of access to the source code and the rights to copy,
+        modify and redistribute granted by the license, users are provided only
+        with a limited warranty and the software's author, the holder of the
+        economic rights, and the successive licensors only have limited liability.
+        
+        In this respect, the risks associated with loading, using, modifying
+        and/or developing or reproducing the software by the user are brought to
+        the user's attention, given its Free Software status, which may make it
+        complicated to use, with the result that its use is reserved for
+        developers and experienced professionals having in-depth computer
+        knowledge. Users are therefore encouraged to load and test the
+        suitability of the software as regards their requirements in conditions
+        enabling the security of their systems and/or data to be ensured and,
+        more generally, to use and operate it in the same conditions of
+        security. This Agreement may be freely reproduced and published,
+        provided it is not altered, and that no provisions are either added or
+        removed herefrom.
+        
+        This Agreement may apply to any or all software for which the holder of
+        the economic rights decides to submit the use thereof to its provisions.
+        
+        
+            Article 1 - DEFINITIONS
+        
+        For the purpose of this Agreement, when the following expressions
+        commence with a capital letter, they shall have the following meaning:
+        
+        Agreement: means this license agreement, and its possible subsequent
+        versions and annexes.
+        
+        Software: means the software in its Object Code and/or Source Code form
+        and, where applicable, its documentation, "as is" when the Licensee
+        accepts the Agreement.
+        
+        Initial Software: means the Software in its Source Code and possibly its
+        Object Code form and, where applicable, its documentation, "as is" when
+        it is first distributed under the terms and conditions of the Agreement.
+        
+        Modified Software: means the Software modified by at least one
+        Contribution.
+        
+        Source Code: means all the Software's instructions and program lines to
+        which access is required so as to modify the Software.
+        
+        Object Code: means the binary files originating from the compilation of
+        the Source Code.
+        
+        Holder: means the holder(s) of the economic rights over the Initial
+        Software.
+        
+        Licensee: means the Software user(s) having accepted the Agreement.
+        
+        Contributor: means a Licensee having made at least one Contribution.
+        
+        Licensor: means the Holder, or any other individual or legal entity, who
+        distributes the Software under the Agreement.
+        
+        Contribution: means any or all modifications, corrections, translations,
+        adaptations and/or new functions integrated into the Software by any or
+        all Contributors, as well as any or all Internal Modules.
+        
+        Module: means a set of sources files including their documentation that
+        enables supplementary functions or services in addition to those offered
+        by the Software.
+        
+        External Module: means any or all Modules, not derived from the
+        Software, so that this Module and the Software run in separate address
+        spaces, with one calling the other when they are run.
+        
+        Internal Module: means any or all Module, connected to the Software so
+        that they both execute in the same address space.
+        
+        Parties: mean both the Licensee and the Licensor.
+        
+        These expressions may be used both in singular and plural form.
+        
+        
+            Article 2 - PURPOSE
+        
+        The purpose of the Agreement is the grant by the Licensor to the
+        Licensee of a non-exclusive, transferable and worldwide license for the
+        Software as set forth in Article 5 hereinafter for the whole term of the
+        protection granted by the rights over said Software.
+        
+        
+            Article 3 - ACCEPTANCE
+        
+        3.1 The Licensee shall be deemed as having accepted the terms and
+        conditions of this Agreement upon the occurrence of the first of the
+        following events:
+        
+            * (i) loading the Software by any or all means, notably, by
+              downloading from a remote server, or by loading from a physical
+              medium;
+            * (ii) the first time the Licensee exercises any of the rights
+              granted hereunder.
+        
+        3.2 One copy of the Agreement, containing a notice relating to the
+        characteristics of the Software, to the limited warranty, and to the
+        fact that its use is restricted to experienced users has been provided
+        to the Licensee prior to its acceptance as set forth in Article 3.1
+        hereinabove, and the Licensee hereby acknowledges that it has read and
+        understood it.
+        
+        
+            Article 4 - EFFECTIVE DATE AND TERM
+        
+        
+              4.1 EFFECTIVE DATE
+        
+        The Agreement shall become effective on the date when it is accepted by
+        the Licensee as set forth in Article 3.1.
+        
+        
+              4.2 TERM
+        
+        The Agreement shall remain in force for the entire legal term of
+        protection of the economic rights over the Software.
+        
+        
+            Article 5 - SCOPE OF RIGHTS GRANTED
+        
+        The Licensor hereby grants to the Licensee, who accepts, the following
+        rights over the Software for any or all use, and for the term of the
+        Agreement, on the basis of the terms and conditions set forth hereinafter.
+        
+        Besides, if the Licensor owns or comes to own one or more patents
+        protecting all or part of the functions of the Software or of its
+        components, the Licensor undertakes not to enforce the rights granted by
+        these patents against successive Licensees using, exploiting or
+        modifying the Software. If these patents are transferred, the Licensor
+        undertakes to have the transferees subscribe to the obligations set
+        forth in this paragraph.
+        
+        
+              5.1 RIGHT OF USE
+        
+        The Licensee is authorized to use the Software, without any limitation
+        as to its fields of application, with it being hereinafter specified
+        that this comprises:
+        
+           1. permanent or temporary reproduction of all or part of the Software
+              by any or all means and in any or all form.
+        
+           2. loading, displaying, running, or storing the Software on any or
+              all medium.
+        
+           3. entitlement to observe, study or test its operation so as to
+              determine the ideas and principles behind any or all constituent
+              elements of said Software. This shall apply when the Licensee
+              carries out any or all loading, displaying, running, transmission
+              or storage operation as regards the Software, that it is entitled
+              to carry out hereunder.
+        
+        
+              5.2 ENTITLEMENT TO MAKE CONTRIBUTIONS
+        
+        The right to make Contributions includes the right to translate, adapt,
+        arrange, or make any or all modifications to the Software, and the right
+        to reproduce the resulting software.
+        
+        The Licensee is authorized to make any or all Contributions to the
+        Software provided that it includes an explicit notice that it is the
+        author of said Contribution and indicates the date of the creation thereof.
+        
+        
+              5.3 RIGHT OF DISTRIBUTION
+        
+        In particular, the right of distribution includes the right to publish,
+        transmit and communicate the Software to the general public on any or
+        all medium, and by any or all means, and the right to market, either in
+        consideration of a fee, or free of charge, one or more copies of the
+        Software by any means.
+        
+        The Licensee is further authorized to distribute copies of the modified
+        or unmodified Software to third parties according to the terms and
+        conditions set forth hereinafter.
+        
+        
+                5.3.1 DISTRIBUTION OF SOFTWARE WITHOUT MODIFICATION
+        
+        The Licensee is authorized to distribute true copies of the Software in
+        Source Code or Object Code form, provided that said distribution
+        complies with all the provisions of the Agreement and is accompanied by:
+        
+           1. a copy of the Agreement,
+        
+           2. a notice relating to the limitation of both the Licensor's
+              warranty and liability as set forth in Articles 8 and 9,
+        
+        and that, in the event that only the Object Code of the Software is
+        redistributed, the Licensee allows effective access to the full Source
+        Code of the Software at a minimum during the entire period of its
+        distribution of the Software, it being understood that the additional
+        cost of acquiring the Source Code shall not exceed the cost of
+        transferring the data.
+        
+        
+                5.3.2 DISTRIBUTION OF MODIFIED SOFTWARE
+        
+        If the Licensee makes any Contribution to the Software, the resulting
+        Modified Software may be distributed under a license agreement other
+        than this Agreement subject to compliance with the provisions of Article
+        5.3.4.
+        
+        
+                5.3.3 DISTRIBUTION OF EXTERNAL MODULES
+        
+        When the Licensee has developed an External Module, the terms and
+        conditions of this Agreement do not apply to said External Module, that
+        may be distributed under a separate license agreement.
+        
+        
+                5.3.4 CREDITS
+        
+        Any Licensee who may distribute a Modified Software hereby expressly
+        agrees to:
+        
+           1. indicate in the related documentation that it is based on the
+              Software licensed hereunder, and reproduce the intellectual
+              property notice for the Software,
+        
+           2. ensure that written indications of the Software intended use,
+              intellectual property notice and license hereunder are included in
+              easily accessible format from the Modified Software interface,
+        
+           3. mention, on a freely accessible website describing the Modified
+              Software, at least throughout the distribution term thereof, that
+              it is based on the Software licensed hereunder, and reproduce the
+              Software intellectual property notice,
+        
+           4. where it is distributed to a third party that may distribute a
+              Modified Software without having to make its source code
+              available, make its best efforts to ensure that said third party
+              agrees to comply with the obligations set forth in this Article .
+        
+        If the Software, whether or not modified, is distributed with an
+        External Module designed for use in connection with the Software, the
+        Licensee shall submit said External Module to the foregoing obligations.
+        
+        
+                5.3.5 COMPATIBILITY WITH THE CeCILL AND CeCILL-C LICENSES
+        
+        Where a Modified Software contains a Contribution subject to the CeCILL
+        license, the provisions set forth in Article 5.3.4 shall be optional.
+        
+        A Modified Software may be distributed under the CeCILL-C license. In
+        such a case the provisions set forth in Article 5.3.4 shall be optional.
+        
+        
+            Article 6 - INTELLECTUAL PROPERTY
+        
+        
+              6.1 OVER THE INITIAL SOFTWARE
+        
+        The Holder owns the economic rights over the Initial Software. Any or
+        all use of the Initial Software is subject to compliance with the terms
+        and conditions under which the Holder has elected to distribute its work
+        and no one shall be entitled to modify the terms and conditions for the
+        distribution of said Initial Software.
+        
+        The Holder undertakes that the Initial Software will remain ruled at
+        least by this Agreement, for the duration set forth in Article 4.2.
+        
+        
+              6.2 OVER THE CONTRIBUTIONS
+        
+        The Licensee who develops a Contribution is the owner of the
+        intellectual property rights over this Contribution as defined by
+        applicable law.
+        
+        
+              6.3 OVER THE EXTERNAL MODULES
+        
+        The Licensee who develops an External Module is the owner of the
+        intellectual property rights over this External Module as defined by
+        applicable law and is free to choose the type of agreement that shall
+        govern its distribution.
+        
+        
+              6.4 JOINT PROVISIONS
+        
+        The Licensee expressly undertakes:
+        
+           1. not to remove, or modify, in any manner, the intellectual property
+              notices attached to the Software;
+        
+           2. to reproduce said notices, in an identical manner, in the copies
+              of the Software modified or not.
+        
+        The Licensee undertakes not to directly or indirectly infringe the
+        intellectual property rights of the Holder and/or Contributors on the
+        Software and to take, where applicable, vis-à-vis its staff, any and all
+        measures required to ensure respect of said intellectual property rights
+        of the Holder and/or Contributors.
+        
+        
+            Article 7 - RELATED SERVICES
+        
+        7.1 Under no circumstances shall the Agreement oblige the Licensor to
+        provide technical assistance or maintenance services for the Software.
+        
+        However, the Licensor is entitled to offer this type of services. The
+        terms and conditions of such technical assistance, and/or such
+        maintenance, shall be set forth in a separate instrument. Only the
+        Licensor offering said maintenance and/or technical assistance services
+        shall incur liability therefor.
+        
+        7.2 Similarly, any Licensor is entitled to offer to its licensees, under
+        its sole responsibility, a warranty, that shall only be binding upon
+        itself, for the redistribution of the Software and/or the Modified
+        Software, under terms and conditions that it is free to decide. Said
+        warranty, and the financial terms and conditions of its application,
+        shall be subject of a separate instrument executed between the Licensor
+        and the Licensee.
+        
+        
+            Article 8 - LIABILITY
+        
+        8.1 Subject to the provisions of Article 8.2, the Licensee shall be
+        entitled to claim compensation for any direct loss it may have suffered
+        from the Software as a result of a fault on the part of the relevant
+        Licensor, subject to providing evidence thereof.
+        
+        8.2 The Licensor's liability is limited to the commitments made under
+        this Agreement and shall not be incurred as a result of in particular:
+        (i) loss due the Licensee's total or partial failure to fulfill its
+        obligations, (ii) direct or consequential loss that is suffered by the
+        Licensee due to the use or performance of the Software, and (iii) more
+        generally, any consequential loss. In particular the Parties expressly
+        agree that any or all pecuniary or business loss (i.e. loss of data,
+        loss of profits, operating loss, loss of customers or orders,
+        opportunity cost, any disturbance to business activities) or any or all
+        legal proceedings instituted against the Licensee by a third party,
+        shall constitute consequential loss and shall not provide entitlement to
+        any or all compensation from the Licensor.
+        
+        
+            Article 9 - WARRANTY
+        
+        9.1 The Licensee acknowledges that the scientific and technical
+        state-of-the-art when the Software was distributed did not enable all
+        possible uses to be tested and verified, nor for the presence of
+        possible defects to be detected. In this respect, the Licensee's
+        attention has been drawn to the risks associated with loading, using,
+        modifying and/or developing and reproducing the Software which are
+        reserved for experienced users.
+        
+        The Licensee shall be responsible for verifying, by any or all means,
+        the suitability of the product for its requirements, its good working
+        order, and for ensuring that it shall not cause damage to either persons
+        or properties.
+        
+        9.2 The Licensor hereby represents, in good faith, that it is entitled
+        to grant all the rights over the Software (including in particular the
+        rights set forth in Article 5).
+        
+        9.3 The Licensee acknowledges that the Software is supplied "as is" by
+        the Licensor without any other express or tacit warranty, other than
+        that provided for in Article 9.2 and, in particular, without any warranty
+        as to its commercial value, its secured, safe, innovative or relevant
+        nature.
+        
+        Specifically, the Licensor does not warrant that the Software is free
+        from any error, that it will operate without interruption, that it will
+        be compatible with the Licensee's own equipment and software
+        configuration, nor that it will meet the Licensee's requirements.
+        
+        9.4 The Licensor does not either expressly or tacitly warrant that the
+        Software does not infringe any third party intellectual property right
+        relating to a patent, software or any other property right. Therefore,
+        the Licensor disclaims any and all liability towards the Licensee
+        arising out of any or all proceedings for infringement that may be
+        instituted in respect of the use, modification and redistribution of the
+        Software. Nevertheless, should such proceedings be instituted against
+        the Licensee, the Licensor shall provide it with technical and legal
+        assistance for its defense. Such technical and legal assistance shall be
+        decided on a case-by-case basis between the relevant Licensor and the
+        Licensee pursuant to a memorandum of understanding. The Licensor
+        disclaims any and all liability as regards the Licensee's use of the
+        name of the Software. No warranty is given as regards the existence of
+        prior rights over the name of the Software or as regards the existence
+        of a trademark.
+        
+        
+            Article 10 - TERMINATION
+        
+        10.1 In the event of a breach by the Licensee of its obligations
+        hereunder, the Licensor may automatically terminate this Agreement
+        thirty (30) days after notice has been sent to the Licensee and has
+        remained ineffective.
+        
+        10.2 A Licensee whose Agreement is terminated shall no longer be
+        authorized to use, modify or distribute the Software. However, any
+        licenses that it may have granted prior to termination of the Agreement
+        shall remain valid subject to their having been granted in compliance
+        with the terms and conditions hereof.
+        
+        
+            Article 11 - MISCELLANEOUS
+        
+        
+              11.1 EXCUSABLE EVENTS
+        
+        Neither Party shall be liable for any or all delay, or failure to
+        perform the Agreement, that may be attributable to an event of force
+        majeure, an act of God or an outside cause, such as defective
+        functioning or interruptions of the electricity or telecommunications
+        networks, network paralysis following a virus attack, intervention by
+        government authorities, natural disasters, water damage, earthquakes,
+        fire, explosions, strikes and labor unrest, war, etc.
+        
+        11.2 Any failure by either Party, on one or more occasions, to invoke
+        one or more of the provisions hereof, shall under no circumstances be
+        interpreted as being a waiver by the interested Party of its right to
+        invoke said provision(s) subsequently.
+        
+        11.3 The Agreement cancels and replaces any or all previous agreements,
+        whether written or oral, between the Parties and having the same
+        purpose, and constitutes the entirety of the agreement between said
+        Parties concerning said purpose. No supplement or modification to the
+        terms and conditions hereof shall be effective as between the Parties
+        unless it is made in writing and signed by their duly authorized
+        representatives.
+        
+        11.4 In the event that one or more of the provisions hereof were to
+        conflict with a current or future applicable act or legislative text,
+        said act or legislative text shall prevail, and the Parties shall make
+        the necessary amendments so as to comply with said act or legislative
+        text. All other provisions shall remain effective. Similarly, invalidity
+        of a provision of the Agreement, for any reason whatsoever, shall not
+        cause the Agreement as a whole to be invalid.
+        
+        
+              11.5 LANGUAGE
+        
+        The Agreement is drafted in both French and English and both versions
+        are deemed authentic.
+        
+        
+            Article 12 - NEW VERSIONS OF THE AGREEMENT
+        
+        12.1 Any person is authorized to duplicate and distribute copies of this
+        Agreement.
+        
+        12.2 So as to ensure coherence, the wording of this Agreement is
+        protected and may only be modified by the authors of the License, who
+        reserve the right to periodically publish updates or new versions of the
+        Agreement, each with a separate number. These subsequent versions may
+        address new issues encountered by Free Software.
+        
+        12.3 Any Software distributed under a given version of the Agreement may
+        only be subsequently distributed under the same version of the Agreement
+        or a subsequent version.
+        
+        
+            Article 13 - GOVERNING LAW AND JURISDICTION
+        
+        13.1 The Agreement is governed by French law. The Parties agree to
+        endeavor to seek an amicable solution to any disagreements or disputes
+        that may arise during the performance of the Agreement.
+        
+        13.2 Failing an amicable solution within two (2) months as from their
+        occurrence, and unless emergency proceedings are necessary, the
+        disagreements or disputes shall be referred to the Paris Courts having
+        jurisdiction, by the more diligent Party.
+        
+        
+        Version 1.0 dated 2006-09-05.
+        
+Project-URL: Documentation, https://ch5mpy.readthedocs.io/
+Project-URL: Source, https://github.com/Vidium/ch5mpy
+Keywords: h5df,h5py,data storage,data manipulation
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: CeCILL-B Free Software License Agreement (CECILL-B)
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: File Formats
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Typing :: Typed
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: h5py
+Requires-Dist: numpy
+Requires-Dist: tqdm
+Provides-Extra: docs
+Requires-Dist: sphinx (==6.1.3) ; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints (==1.22) ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme (==1.2.0) ; extra == 'docs'
+
+# Ch5mpy
+
+Pronounced "champy".
+This library provides a set of helper tools for easily reading or writing even complex objects to h5 files using the h5py library. It implements wrappers around h5py objects providing APIs identical to regular Python lists and dicts and to numpy ndarrays.
+
+See the complete documentation at https://ch5mpy.readthedocs.io/en/latest/ for more details.
+
+## Description
+
+Ch5mpy provides a set of abstractions over h5py's (https://docs.h5py.org/en/stable/) objects for handling them as more commonly used objects :
+- H5Dict: an object behaving as regular Python dictionaries, for exploring Files and Groups.
+- H5List: an object behaving as regular Python lists for storing any set of objects.
+- H5Array: an object behaving as Numpy ndarrays for dealing effortlessly with Datasets while keeping the memory usage low. This works by applying numpy functions to small chunks of the whole Dataset at a time.
+- AttributeManager: a dict-like object for accessing an h5 object's metadata.
+- read/write utily functions for effortlessly storing any object to an h5 file.
+
+Pickling has also been added to base h5 objects.
+
+### Pickling
+Ch5mpy provides Datasets, Groups and Files objects wrapping the h5py's equivalents to allow pickling. Those objects can be directly imported from `ch5mpy`:
+
+```python
+>>> from ch5mpy import File
+>>> from ch5mpy import Group
+>>> from ch5mpy import Dataset
+```
+
+The `H5Mode` enum lists valid modes for opening an h5 file:
+
+```python
+>>> from ch5mpy import H5Mode
+```
+
+```python
+class H5Mode(str, Enum):
+    READ = "r"  # Readonly, file must exist
+    READ_WRITE = "r+"  # Read/write, file must exist
+    WRITE_TRUNCATE = "w"  # Create file, truncate if exists
+    WRITE = "w-"  # Create file, fail if exists
+    READ_WRITE_CREATE = "a"  # Read/write if exists, create otherwise
+```
+
+### Attributes
+Metadata on Datasets, Groups and Files can be obtained and modified through the `.attrs` attribute, returning an `AttributeManager` object. `AttributeManagers` behave like Python dictionaries for getting and setting any value.
+
+```python
+>>> from ch5mpy import File
+>>> f = File('some/file.h5')
+>>> f.attrs
+AttributeManager{value: 1,
+                 creation: '02/08/2021',
+                 parent: None}
+>>> f.attrs['value']
+1
+```
+
+`AttributeManagers` correctly handle `None` values.
+
+### H5Dict
+An `H5Dict` allows to explore the content of an H5 File or Group as if it was a regular Python dict. Any value can be set in an `H5Dict`. However, keys in an `H5Dict` are not loaded into memory until they are directly requested. `Datasets` are wrapped and accessed as `H5Arrays` (see section [H5Arrays](#h5array)).
+
+To create an `H5Dict`, a `File` or `Group` object must be provided as argument:
+
+```python
+>>> from ch5mpy import File
+>>> from ch5mpy import H5Dict
+>>> from ch5mpy import H5Mode
+>>>
+>>> dct = H5Dict(File("dict.h5", H5Mode.READ_WRITE))
+>>> dct
+H5Dict{
+    a: 1, 
+    b: H5Array([1, 2, 3], shape=(3,), dtype=int64), 
+    c: {...}
+}
+```
+
+Here, `dct` is an `H5Dict` with 3 keys `a, b and c` where :
+- `a` maps to the value `1`
+- `b` maps to a 1D Dataset 
+- `c` maps to a sub H5Dict with keys and values not loaded yet
+
+Alternatively, an `H5Dict` can be created directly from a path to an h5 file:
+
+```python
+>>> H5Dict.read("dict.h5")
+H5Dict{
+    a: 1, 
+    b: H5Array([1, 2, 3], shape=(3,), dtype=int64), 
+    c: {...}
+}
+```
+
+### H5List
+An `H5List` behave as regular Python lists, allowing to store and access any kind of object in an h5 file. `H5Lists` are usually created when regular lists are stored in an h5 file. 
+
+As for [H5Dicts](#h5dict), `H5Lists` can be created by providing a `File` or by calling the `.read()` method:
+
+```python
+>>> from ch5mpy import File
+>>> from ch5mpy import H5List
+>>> from ch5mpy import H5Mode
+>>>
+>>> lst = H5List(File("backed_list.h5", H5Mode.READ_WRITE))
+>>> lst
+H5List[1.0, 2, '4.']
+```
+
+```python
+class O_:
+    def __init__(self, v: float):
+        self._v = v
+
+    def __repr__(self) -> str:
+        return f"O({self._v})"
+```
+
+```python
+>>> lst.append(O(5.0))
+>>> lst
+H5List[1.0, 2, '4.', O(5.0)]
+```
+
+`H5Lists` can store regular integers, floats and strings, but can also store any object (such as the `O` object at index 3 in this example).
+
+### H5Array
+`H5Arrays` wrap `Datasets` and implement numpy ndarrays' interface to behave as numpy ndarrays while controlling the amount of RAM used. The maximum amount of available RAM for performing operations can be set with the class variable 
+`H5Array.MAX_MEM_USAGE`, using suffixes `K`, `M` and `G` for expressing amounts in bytes.
+
+H5Arrays can be created by passing a `Dataset` as argument. 
+
+```python
+>>> from ch5mpy import File
+>>> from ch5mpy import H5Mode
+>>> from ch5mpy import H5Array
+>>> h5_array = H5Array(File("h5_arrays", H5Mode.READ_WRITE)["integers"])
+>>> h5_array
+H5Array([[0, 1, 2],
+         [3, 4, 5],
+         [6, 7, 8]], shape=(3, 3), dtype=int64)
+>>> h5_array = H5Array(File("h5_arrays", H5Mode.READ_WRITE)["strings"])
+>>> h5_array
+H5Array(['blue', 'red', 'yellow'], shape=(3,), dtype='<U6')
+```
+
+
+
+Then, all usual numpy indexing and methods can be used. To keep the memory footprint small, those methods will be applied repeatedly on small chunks of the underlying Dataset.
+
+To load an H5Array into memory as a numpy array, simply run :
+
+```python
+np.array(h5_array)
+```
+
+### Read/write utilities
+
+#### Functions
+To store any array-like object (object which could be converted to a numpy ndarray), functions `write_dataset()` and `write_datasets()` respectively allow to store one or many such objects.
+
+To store any other object, call functions `write_object()` and `write_objects()`. 
+To dertermine how the object will be stored in the h5 file, the following rules are applied:
+- objects implementing the [Storing API](#storing-api) will be stored by calling the `__h5_write__()` function
+- objects that can be converted to numpy arrays will be saved by calling `write_dataset()`
+- numbers and strings will be stored directly 
+- all other objects will be stored as binary data by first pickling them
+
+#### Storing API
+To define by hand how an object is stored and read from an h5 file, you can implement the `__h5_write__()` and `__h5_read__()` methods:
+
+```python
+class YourObject:
+    ...
+
+    def __h5_write__(self, values: ch5mpy.H5Dict[Any]) -> None: 
+        ...
+
+    @classmethod
+    def __h5_read__(cls, values: ch5mpy.H5Dict[Any]) -> YourObject:
+        ...
+```
+
+Both `__h5_write__()` and `__h5_read__()` receive as input an `H5Dict` in which to store or retreive your object. Please note that `__h5_read__()` is a classmethod, called as `YourObject.__h5_read__()` and which is responsible for both reading data from the `H5Dict` and reconstructing an instance of `YourObject`.
+
+### Roadmap
+
+Numpy methods to implement for `H5Arrays`:
+
+Logic functions
+- [x] np.all
+- [x] np.any
+- [x] np.isfinite
+- [x] np.isinf
+- [x] np.isnan
+- [ ] np.isnat
+- [x] np.isneginf
+- [x] np.isposinf
+- [ ] np.iscomplex
+- [ ] np.iscomplexobj
+- [ ] np.isfortran
+- [ ] np.isreal
+- [ ] np.isrealobj
+- [ ] np.isscalar
+- [x] np.logical_and
+- [x] np.logical_or
+- [x] np.logical_not
+- [x] np.logical_xor
+- [ ] np.allclose
+- [ ] np.isclose
+- [x] np.array_equal
+- [ ] np.array_equiv
+- [x] np.greater
+- [x] np.greater_equal
+- [x] np.less
+- [x] np.less_equal
+- [x] np.equal
+- [x] np.not_equal
+
+Binary operations
+- [ ] np.bitwize_and
+- [ ] np.bitwize_or
+- [ ] np.bitwize_xor
+- [ ] np.invert
+- [ ] np.left_shift
+- [ ] np.right_shift
+- [ ] np.packbits
+- [ ] np.unpackbits
+- [ ] np.binary_repr
+
+String operations
+- [x] np.char.add
+- [x] np.char.multiply
+- [x] np.char.mod
+- [ ] np.char.capitalize
+- [ ] np.char.center
+- [ ] np.char.decode
+- [ ] np.char.encode
+- [ ] np.char.expandtabs
+- [ ] np.char.join
+- [ ] np.char.ljust
+- [ ] np.char.lower
+- [ ] np.char.lstrip
+- [ ] np.char.partition
+- [ ] np.char.replace
+- [ ] np.char.rjust
+- [ ] np.char.rpartition
+- [ ] np.char.rsplit
+- [ ] np.char.rstrip
+- [ ] np.char.split
+- [ ] np.char.splitlines
+- [ ] np.char.strip
+- [ ] np.char.swapcase
+- [ ] np.char.title
+- [ ] np.char.translate
+- [ ] np.char.upper
+- [ ] np.char.zfill
+- [x] np.char.equal
+- [x] np.char.not_equal
+- [x] np.char.greater_equal
+- [x] np.char.less_equal
+- [x] np.char.greater
+- [x] np.char.less
+- [ ] np.char.compare_chararrays
+- [ ] np.char.count
+- [ ] np.char.endswith
+- [ ] np.char.find
+- [ ] np.char.index
+- [ ] np.char.isalpha
+- [ ] np.char.isalnum
+- [ ] np.char.isdecimal
+- [ ] np.char.isdigit
+- [ ] np.char.islower
+- [ ] np.char.isnumeric
+- [ ] np.char.isspace
+- [ ] np.char.istitle
+- [ ] np.char.isupper
+- [ ] np.char.rfind
+- [ ] np.char.rindex
+- [ ] np.char.startswith
+- [ ] np.char.str_len
+- [ ] np.char.array
+- [ ] np.char.asarray
+- [ ] np.char.chararray
+
+Mathematical functions
+- [x] np.sin
+- [x] np.cos
+- [x] np.tan
+- [x] np.arcsin
+- [x] np.arccos
+- [x] np.arctan
+- [ ] np.hypot
+- [ ] np.arctan2
+- [ ] np.degrees
+- [ ] np.radians
+- [ ] np.unwrap
+- [ ] np.deg2rad
+- [ ] np.rad2deg
+- [x] np.sinh
+- [x] np.cosh
+- [x] np.tanh
+- [x] np.arcsinh
+- [x] np.arccosh
+- [x] np.arctanh
+- [ ] np.around
+- [ ] np.rint
+- [ ] np.fix
+- [x] np.floor
+- [x] np.ceil
+- [x] np.trunc
+- [x] np.prod
+- [x] np.sum
+- [ ] np.nanprod
+- [ ] np.nansum
+- [ ] np.cumprod
+- [ ] np.cumsum
+- [ ] np.nancumprod
+- [ ] np.nancumsum
+- [ ] np.diff
+- [ ] np.ediff1d
+- [ ] np.gradient
+- [ ] np.cross
+- [ ] np.trapz
+- [x] np.exp
+- [x] np.expm1
+- [x] np.exp2
+- [x] np.log
+- [x] np.log10
+- [x] np.log2
+- [x] np.log1p
+- [ ] np.logaddexp
+- [ ] np.logaddexp2
+- [ ] np.i0
+- [ ] np.sinc
+- [ ] np.signbit
+- [ ] np.copysign
+- [ ] np.frexp
+- [ ] np.ldexp
+- [ ] np.nextafter
+- [ ] np.spacing
+- [ ] np.lcm
+- [ ] np.gcd
+- [x] np.add
+- [ ] np.reciprocal
+- [x] np.positive
+- [x] np.negative
+- [x] np.multiply
+- [x] np.divide
+- [x] np.power
+- [x] np.subtract
+- [x] np.true_divide
+- [x] np.floor_divide
+- [x] np.float_power
+- [x] np.fmod
+- [x] np.mod
+- [ ] np.modf
+- [ ] np.remainder
+- [ ] np.divmod
+- [ ] np.angle
+- [ ] np.real
+- [ ] np.imag
+- [ ] np.conj
+- [ ] np.conjugate
+- [x] np.maximum
+- [x] np.fmax
+- [x] np.amax
+- [ ] np.nanmax
+- [x] np.minimum
+- [x] np.fmin
+- [x] np.amin
+- [ ] np.nanmin
+- [ ] np.convolve
+- [ ] np.clip
+- [x] np.sqrt
+- [x] np.cbrt
+- [x] np.square
+- [x] np.absolute
+- [x] np.fabs
+- [x] np.sign
+- [ ] np.heaviside
+- [ ] np.nan_to_num
+- [ ] np.real_if_close
+- [ ] np.interp
+
+Set routines
+- [x] np.unique
+- [x] np.in1d
+- [ ] np.intersect1d
+- [x] np.isin
+- [ ] np.setdiff1d
+- [ ] np.setxor1d
+- [ ] np.union1d
+
+Array creation routines
+- [ ] np.empty
+  - [x] ch5mpy.empty
+- [ ] np.empty_like
+- [ ] np.eye
+- [ ] np.identity
+- [ ] np.ones
+  - [x] ch5mpy.ones
+- [x] np.ones_like
+- [ ] np.zeros
+  - [x] ch5mpy.zeros
+- [x] np.zeros_like
+- [ ] np.full
+  - [x] ch5mpy.full
+- [ ] np.full_like
+- [x] np.array
+- [x] np.asarray
+- [x] np.asanyarray
+- [ ] np.ascontiguousarray
+- [ ] np.asmatrix
+- [x] np.copy
+- [ ] np.frombuffer
+- [ ] np.from_dlpack
+- [ ] np.fromfile
+- [ ] np.fromfunction
+- [ ] np.fromiter
+- [ ] np.fromstring
+- [ ] np.loadtxt
+- [ ] np.core.records.array
+- [ ] np.core.records.fromarrays
+- [ ] np.core.records.fromrecords
+- [ ] np.core.records.fromstring
+- [ ] np.core.records.fromfile
+- [ ] np.core.defchararray.array
+- [ ] np.core.defchararray.asarray
+- [ ] np.arange
+- [ ] np.linspace
+- [ ] np.logspace
+- [ ] np.geomspace
+- [ ] np.meshgrid
+- [ ] np.mgrid
+- [ ] np.ogrid
+- [ ] np.diag
+- [ ] np.diagflat
+- [ ] np.tri
+- [ ] np.tril
+- [ ] np.triu
+- [ ] np.vander
+- [ ] np.mat
+- [ ] np.bmat
+
+Array manipulation routines
+- [ ] np.copyto
+- [ ] np.shape
+- [ ] np.reshape
+- [ ] np.ravel
+- [ ] np.ndarray.flat
+- [ ] np.ndarray.flatten
+- [ ] np.moveaxis
+- [ ] np.rollaxis
+- [ ] np.swapaxes
+- [ ] np.ndarray.T
+- [ ] np.transpose
+- [ ] np.atleast_1d
+- [ ] np.atleast_2d
+- [ ] np.atleast_3d
+- [ ] np.broadcast
+- [ ] np.broadcast_to
+- [ ] np.broadcast_arrays
+- [ ] np.expand_dims
+- [ ] np.squeeze
+- [ ] np.asarray
+- [ ] np.asanyarray
+- [ ] np.asmatrix
+- [ ] np.asfarray
+- [ ] np.asfortranarray
+- [ ] np.ascontiguousarray
+- [ ] np.asarray_chkfinite
+- [ ] np.require
+- [x] np.concatenate
+- [ ] np.stack
+- [ ] np.block
+- [ ] np.vstack
+- [ ] np.hstack
+- [ ] np.dstack
+- [ ] np.column_stack
+- [ ] np.row_stack
+- [ ] np.split
+- [ ] np.array_split
+- [ ] np.dsplit
+- [ ] np.hsplit
+- [ ] np.vsplit
+- [ ] np.tile
+- [ ] np.repeat
+- [x] np.delete
+- [x] np.insert
+- [ ] np.append
+- [ ] np.resize
+- [ ] np.trim_zeros
+- [ ] np.unique
+- [ ] np.flip
+- [ ] np.fliplr
+- [ ] np.flipud
+- [ ] np.reshape
+- [ ] np.roll
+- [ ] np.rot90
+
+Sorting, searching, and counting
+- [ ] np.sort
+- [ ] np.lexsort
+- [ ] np.argsort
+- [ ] np.ndarray.sort
+- [ ] np.sort_complex
+- [ ] np.partition
+- [ ] np.argpartition
+- [ ] np.argmax
+- [ ] np.nanargmax
+- [ ] np.argmin
+- [ ] np.nanargmin
+- [ ] np.argwhere
+- [ ] np.nonzero
+- [ ] np.flatnonzero
+- [ ] np.where
+- [ ] np.searchsorted
+- [ ] np.extract
+- [ ] np.count_nonzero
+
