@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "feedancy"
+version = "0.0.0"
+description = "сервис по сбору вакансий"
+authors = [
+    "Alexey Ostanin <aostaninn@gmal.com>",
+    "Stanislav Losev <stanislav_losev@protonmail.com>",
+    "Tatiana Zimina <tratatatanya@gmail.com>"
+]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+djangorestframework = ">=3.14.0"
+Django = ">=4"
+gunicorn = ">=20.1.0"
+psycopg2-binary = ">=2.9.6"
+Pillow = ">=9.5.0"
+django-filter = ">=23.2"
+pydantic = ">=1.10.8"
+requests = ">=2.31"
+bs4 = ">=0.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
