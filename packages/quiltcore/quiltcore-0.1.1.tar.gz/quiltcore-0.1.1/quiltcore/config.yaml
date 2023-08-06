@@ -1,0 +1,37 @@
+---
+_yaml:
+  _version: 0.3.1
+  app: registry
+  app_version: 0.1.0
+  doc: quiltcore
+  doc_version: 0.1.0
+dirs:
+  config: .quilt
+  names: named_packages
+  values: packages
+multihash:
+  SHA256: sha2-256
+resources:
+  CoreRegistry:
+    child: CoreName
+    glob: "*/*"
+  CoreName:
+    child: CoreManifest
+    glob: "*"
+  CoreManifest:
+    child: CoreBlob
+schema:
+  columns:
+    logical_key: string
+    physical_keys: [string]
+    size: int64
+    hash:
+      type: string
+      value: string
+    meta: struct
+  headers:
+    version: string
+    message: string
+  location: physical_keys
+  name: logical_key
+type: application/ld+json
