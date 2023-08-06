@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pycareer
+Version: 0.1.5
+Summary: 
+Author: Tadas Gedgaudas
+Author-email: tadasgedgaudas@0xw.app
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: aiohttp (>=3.8.4,<4.0.0)
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Requires-Dist: rich (>=13.4.2,<14.0.0)
+Requires-Dist: structlog (>=23.1.0,<24.0.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Description-Content-Type: text/markdown
+
+# PyCareer
+
+## Python Jobs in Your Terminal!
+
