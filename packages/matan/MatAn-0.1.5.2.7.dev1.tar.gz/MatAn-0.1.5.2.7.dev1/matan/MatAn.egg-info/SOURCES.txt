@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+matan/MatAn.egg-info/PKG-INFO
+matan/MatAn.egg-info/SOURCES.txt
+matan/MatAn.egg-info/dependency_links.txt
+matan/MatAn.egg-info/requires.txt
+matan/MatAn.egg-info/top_level.txt
+matan/polymers/__init__.py
+matan/polymers/charpy/__init__.py
+matan/polymers/tensile/__init__.py
+matan/polymers/tensile/ISO527/__init__.py
