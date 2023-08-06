@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "labelprinterkit"
+version = "0.5.5"
+description = "A library for creating and printing labels for Brother P-Touch devices"
+authors = ["Adrian Tschira <packages@notafile.com>", "Benedikt Neuffer <benedikt.neuffer@kit.edu>"]
+license = "Apache License, Version 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pillow = "^9.5.0"
+pyusb = "^1.2.1"
+packbits = "^0.6"
+pyserial = {version = "^3.5", optional = true}
+qrcode = {version = "^7.4.2", optional = true, extras = ["pil"]}
+
+[tool.poetry.extras]
+bluetooth = ["pyserial"]
+qrcode = ["qrcode"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
