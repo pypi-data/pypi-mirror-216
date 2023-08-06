@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: funkagent
+Version: 0.0.2
+Summary: Minimal agent framework using OpenAI functions
+Author: James Briggs
+Author-email: james@aurelio.ai
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Description-Content-Type: text/markdown
+
+# FunkAgent
+
+Get started with:
+
+```
+pip install funkagent
+```
+
