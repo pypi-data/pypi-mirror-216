@@ -1,0 +1,16 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/boto3_assume/__init__.py
+src/boto3_assume/aio_assume_refresh.py
+src/boto3_assume/aio_core.py
+src/boto3_assume/assume_refresh.py
+src/boto3_assume/core.py
+src/boto3_assume.egg-info/PKG-INFO
+src/boto3_assume.egg-info/SOURCES.txt
+src/boto3_assume.egg-info/dependency_links.txt
+src/boto3_assume.egg-info/requires.txt
+src/boto3_assume.egg-info/top_level.txt
