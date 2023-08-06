@@ -1,0 +1,331 @@
+
+pydatawork功能建议收集表：
+https://docs.qq.com/form/page/DZVNabWlkRUtldWtJ
+
+
+# functions and description
+
+
+## game_number_guessing() 猜数字游戏：自定义数字的范围，输入自己猜的数字，并根据计算机的提示调整，直至猜对 （v 0.1.37）
+
+###### Sat Jul 1 01:42:58 CST 2023
+
+```python
+def game_number_guessing(number=100):
+    """
+    游戏规则：指定一个整数，确定数字的范围；根据提示猜数字，直到猜中。
+    number:大于1的整数，用于指定数字的范围，默认100，说明要猜的数字在100以内。
+    用法1：若不设定参数，可以写成 game_number_guessing() ，这时默认值为100。
+    用法2：自定义参数，可以写成 game_number_guessing(number=200)，这时，数字范围设定为在200以内。
+    """
+```
+
+使用示例1：
+
+```python
+import pydatawork as dw
+
+dw.game_number_guessing(number=200) # 将数字范围调整成200
+```
+
+使用示例2：
+
+```python
+import pydatawork as dw
+
+dw.game_number_guessing() # 使用默认值100
+```
+
+
+
+## get_BMI() 输入身高（m）、体重(kg)，进行身体质量指数（BMI）测量，了解当前身体健康状态，获得体重管理建议 （V 0.1.36）
+
+###### Fri Jun 30 19:50:03 CST 2023
+
+```python
+def get_BMI(height,weight):
+    """
+    height：身高（m）（注意，单位为米）
+    weight：体重（kg）（注意，单位为千克）
+    BMI（身体质量指数）是一种计算一个人体重是否健康的方法，基于身高和体重的比例来计算。如果 bmi 小于 18.5，说明体重过轻；如果 bmi 在 18.5 和 24.9 之间说明体重在正常范围；如果 bmi 在 24.9 和 29.9 之间说明体重过重；如果大于 29.9 说明肥胖。
+    """
+```
+
+使用示例1：
+
+```python
+import pydatawork as dw
+
+dw.get_BMI(height=1.75,weight=73) # 调用函数，通过关键词参数输入值
+```
+
+使用示例2:
+
+```python
+import pydatawork as dw
+
+height = float(1.75)
+weight = float(73)
+
+dw.get_BMI(height,weight)
+```
+
+测量结果示例：
+```text
+本次BMI测量时间：2023.06.30 20:20:34
+身高： 1.75 m
+体重： 73.0 kg
+BMI(身体质量指数)：23.84
+当前BMI健康状态评价：体重在正常范围
+正常体重范围：建议体重保持在 56.66 kg 至 76.26 kg 之间
+(注意：男女有别，请结合自身实际情况判断自己的体重状态)
+```
+
+
+
+## obsidian_bookmarks_merge_and_deduplicate() obsidian中surfing插件产生的书签整理：先合并，再去重 （v 0.1.31）
+
+###### Mon Jun 26 22:50:45 CST 2023
+
+```python
+def obsidian_bookmarks_merge_and_deduplicate(original_bookmarks_path,result_path):
+    """
+    函数设计：用于处理surfing插件产生的bookmarks。先合并多个bookmarks（只有1个也能正常使用），再对合并后的bookmarks去重，最后得到一个最全、不重复的bookmarks。
+    original_bookmarks_path:一个路径，路径下存放bookmarks文件，json格式，可以是1个或多个json文件。
+    result_path:一个路径，用于存放最终结果。
+    """
+```
+
+
+
+## current_folder_name() 给定一个路径，返回当前文件夹名 (v 0.1.26)
+
+###### Mon Jun 26 24:23:48 CST 2023
+```python
+def current_folder_name(path):
+    """
+    path:一个路径，可以是文件夹路径，也可以是文件路径
+    结果：返回current_folder_name
+    """
+```
+
+
+
+## file_name() 给定一个路径，返回文件名  (v 0.1.32)
+
+###### Mon Jun 26 24:24:45 CST 2023
+```python
+def file_name(path):
+    """
+    path:一个路径，可以是文件夹路径，也可以是文件路径
+    结果：返回file_name,当path为文件夹路径值，返回的值为空值
+    """
+```
+
+
+
+## copy_files() 复制当前文件夹中（不包括子文件夹）指定类型的文件 （v 0.1.23） 
+
+###### Sun Jun 25 06:19:50 CST 2023
+
+```python
+def copy_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要复制的文件类别的后缀类型，如[".jpg",".zip",".png",".gz",".whl",".md"]，注意，要带点“.”。其中“.gz”表示“.tar.gz”这一类
+    实现效果：将待整理文件夹中(注：不包括子文件夹)指定类型的文件复制到目标文件夹
+    """
+```
+
+
+
+## move_files() 移动当前文件夹中（不包括子文件夹）指定类型的文件 （v 0.1.23） 
+
+###### Sun Jun 25 06:17:26 CST 2023
+
+```python
+def move_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要移动的文件类别的后缀类型，如[".jpg",".zip",".png",".gz",".whl",".md"]，注意，要带点“.”。其中“.gz”表示“.tar.gz”这一类
+    实现效果：将待整理文件夹中(注：不包括子文件夹)指定类型的文件移动到目标文件夹
+    """
+```
+
+
+
+## copy_all_files() 复制文件夹及子文件夹下指定类型的全部文件 （v 0.1.22）
+
+###### Sun Jun 25 06:05:29 CST 2023
+
+```python
+def copy_all_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹，可包含多层级子文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要复制的文件类别的后缀类型，如[".jpg",".zip",".png",".gz",".whl",".md"]，注意，要带点“.”。其中“.gz”表示“.tar.gz”这一类
+    实现效果：将待整理文件夹及其子文件夹中指定类型的全部文件复制到目标文件夹
+    """
+```
+
+
+
+## move_all_files() 移动文件夹及子文件夹下指定类型的全部文件 （v 0.1.22）
+
+###### Sun Jun 25 05:01:22 CST 2023
+
+```python
+def move_all_files(folder_path, target_folder, file_type_list):
+    """
+    folder_path:待整理文件夹，可包含多层级子文件夹
+    target_folder:目标文件夹
+    file_type_list:一个列表，里面存放需要移动的文件类别的后缀类型，如.ipg|.png|.gif|.zip|.rar|.md|.mp4|.xml|.gz(表示.tar.gz)|等，注意，要带点“.”
+    实现效果：将待整理文件夹及其子文件夹中指定类型的全部文件移动到目标文件夹
+    """
+```
+
+示例：
+```Python
+import pydatawork as dw 
+
+folder_path = "/home/jkzhou/Desktop/pydatawork/test_data/move_all_files/folder_path"
+target_folder = "/home/jkzhou/Desktop/pydatawork/test_data/move_all_files/target_folder"
+file_type_list = [".jpg",".zip",".png",".gz",".whl",".md"]
+
+dw.move_all_files(folder_path,target_folder,file_type_list)
+```
+
+
+
+## obsidian_move_md_or_canvas_linked_images() 提取obsidian中.md文档、.canvas文档中链接的图片，实现附件管理、库空间管理、笔记归档 (v 0.1.24)
+
+###### Sat Jun 24 18:37:16 CST 2023
+
+```python
+def obsidian_move_md_or_canvas_linked_images(images_path,folder_path,target_folder):
+    """
+    提取obsidian中.md文档、.canvas文档中链接的图片，实现附件管理、库空间管理、笔记归档。
+    需要指定三个路径：
+    images_path:图片附件所在的文件夹。通常是笔记库的附件文件夹
+    folder_path:待整理的md、canvas文档所在文件夹（可包括多层级子文件夹，会遍历）。通常临时建立一个文件夹,将待整理的笔记存进去
+    target_folder:提前准备的文件夹，可以建在任意位置，用于存放提取出来的图片
+    执行结束后，可以将文档和对应的图片一起进行归档，实现笔记管理的目的。
+    """
+```
+
+示例及说明：在自己的代码中提前准备好三个路径，然后调用函数
+
+```python
+import pydatawork as dw 
+
+images_path = "/home/jkzhou/Desktop/手机笔记同步-附件"
+folder_path = "/home/jkzhou/Desktop/file"
+target_folder = "/home/jkzhou/Desktop/file/附件"
+
+dw.obsidian_move_md_or_canvas_linked_images(images_path,folder_path,target_folder)
+```
+
+
+
+## rename_folder_numeric_serialize() 文件夹从左到右比较，按数值从小到大排序，再从1开始进行序列化重命名（v 0.1.6）
+
+###### Sun Jun 18 22:37:01 CST 2023
+
+```python
+def rename_folder_numeric_serialize(path):
+    """
+    path:文件夹路径。给定一个文件夹路径，获取其中子文件夹的名字，根据子文件夹的名字，从左到右进行比较，按数值从小到大对子文件夹排序，再从1开始对子文件夹进行序列化重命名。
+    """
+```
+
+
+
+## get_weibo() 微博图片获取（v 0.1.2）
+
+###### Sun Jun 18 17:10:46 CST 2023
+
+```python
+def get_weibo(path,id,weibo_name):
+    """
+    path: 内容存放路径；
+    id: 微博id；
+    weibo_name: 内容存放路径下文件夹的名字。
+    """
+```
+
+示例：获取梅西的微博id，获取其微博内容
+
+```python
+import pydatawork as dw 
+
+path="/home/Desktop/pydatawork"
+id="5934019851" # 梅西的微博id。在网页版上能获得链接，链接中u后面的内容即为id ,梅西微博的id为 5934019851  https://weibo.com/u/5934019851
+weibo_name="mx"
+
+dw.get_weibo(path,id,weibo_name)
+```
+
+来源：非原创
+原作者：XYJISAW
+参考链接：https://www.omegaxyz.com/2018/02/13/python_weibo/
+
+
+
+# about pydatawork
+
+## hello_jkzhou() 获得帮助（v 0.1.7）
+
+###### Sun Jun 18 23:34:45 CST 2023
+
+```python
+def hello_jkzhou():
+    """If you need help or have a better idea, send me an e-mail."""
+    print("My e-mail is: zhouqiling.bjfu@foxmail.com")
+```
+
+
+## pypi维护指令
+
+```shell
+cd 到pydatawork文件夹
+python3 setup.py sdist bdist_wheel # 打包
+twine check dist/* # 检查
+twine upload dist/* # 上传，需要输入帐号密码
+
+```
+
+## 查看pydatawork是否有更新
+
+```shell
+pip3 list --outdated
+```
+
+## pydatawork升级方法（先卸载，再安装）
+
+```shell
+pip3 uninstall pydatawork # 卸载
+pip3 install pydatawork # 安装
+```
+
+## pydatawork 导入方式
+```shell
+import pydatawork # 标准导入方式
+import pydatawork as dw # 推荐使用此方式，更简洁
+```
+
+## pydatawork安装
+```shell
+pip3 install pydatawork # 安装指令
+```
+
+## 关于pydatawork
+
+数据工作相关的分享、梳理，主要目的是辅助个人开展数据处理、数据分析工作。
+
+推荐始终使用最新版。
+
+要升级使用最新的安装包，比较稳定可靠的一种方式是，先卸载旧的，再重装。
+
+发布时间：Thu Jun 15 13:23:43 CST 2023
