@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: bioticDETR
+Version: 1.0.0.dev0
+Summary: Detection Transformers for Biotic Interactions
+Home-page: https://github.com/IsotopeC/bioticDETR
+Author: Calvin
+Author-email: calvin.isotope@gmail.com
+Keywords: DETR AI Biotic Interactions
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.9
+Description-Content-Type: text/x-rst
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+
+############
+Introduction
+############
+
+bioticDETR - Detection Transformers for Biotic Interactions
+
+
+
+
+********
+Overview
+********
+
+Tools to create AI nural network models for biotic interactions.
+
+
+************
+Installation
+************
+
+Install from the Python Package Index (PyPI)::
+
+    pip install bioticDETR
+
+
+*************
+Documentation
+*************
+
+https://bioticDETR.readthedocs.io
+
+
+***********
+Source Code
+***********
+
+https://github.com/IsotopeC/bioticDETR
