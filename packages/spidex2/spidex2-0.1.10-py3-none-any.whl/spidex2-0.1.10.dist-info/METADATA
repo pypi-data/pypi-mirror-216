@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: spidex2
+Version: 0.1.10
+Summary: This is a lightweight library for Spidex API.
+Home-page: https://github.com/hellosoldier/spidex-api
+Author: spx
+Author-email: 404260423@qq.com
+License: MIT
+Keywords: Spidex API
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas (>=1.5.0)
+Requires-Dist: numpy (>=1.20.2)
+
+UNKNOWN
+
+
