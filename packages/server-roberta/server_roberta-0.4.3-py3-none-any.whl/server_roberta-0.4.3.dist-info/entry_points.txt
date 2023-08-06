@@ -1,0 +1,2 @@
+[console_scripts]
+server-roberta = serverRoberta.server:main
