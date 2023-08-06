@@ -1,0 +1,99 @@
+name: Upload Python Package to PyPI and nodejs bindings to npm
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: Build package 📦
+        run: python -m build
+
+      - name: Install package 📦
+        run: python -m pip install .
+
+      - name: Verify python package version matches tag
+        run: |
+          python -c "import hvps; assert '${{ github.event.release.tag_name }}' == 'v' + hvps.__version__"
+
+      - name: Verify npm package version matches tag
+        run: |
+          python -c "import os,json;version=json.load(open('bindings/nodejs/package.json'))['version'];assert '${{ github.event.release.tag_name }}' == 'v' + version"
+
+      - name: Cache dist directory
+        uses: actions/cache@v3
+        with:
+          path: dist
+          key: ${{ runner.os }}-dist-${{ github.sha }}-${{ github.run_id}}-${{ github.run_number }}
+
+  publish-to-pypi-test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore dist from cache
+        uses: actions/cache@v3
+        with:
+          path: dist
+          key: ${{ runner.os }}-dist-${{ github.sha }}-${{ github.run_id}}-${{ github.run_number }}
+
+      - name: Publish package 📦 to TEST PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_TEST_API_TOKEN }}
+          repository-url: https://test.pypi.org/legacy/
+
+  publish-to-pypi:
+    needs: [ build, publish-to-pypi-test ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore dist from cache
+        uses: actions/cache@v3
+        with:
+          path: dist
+          key: ${{ runner.os }}-dist-${{ github.sha }}-${{ github.run_id}}-${{ github.run_number }}
+
+      - name: Publish package 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+  publish-to-npm:
+    needs: [ publish-to-pypi ]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bindings/nodejs
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: bindings/nodejs/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
