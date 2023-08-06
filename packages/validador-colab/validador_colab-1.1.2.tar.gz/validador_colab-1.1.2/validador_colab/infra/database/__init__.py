@@ -1,0 +1,4 @@
+from .postgres import DBConnectionHandlerPostgres
+from .postgres_controle import DBConnectionHandlerPostgresControle
+
+DB_CONTROLE = DBConnectionHandlerPostgresControle()
