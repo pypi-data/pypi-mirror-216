@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: dftpy
+Version: 2.0.2
+Summary: Python3 packages for Density Functional Theory
+Home-page: http://dftpy.rutgers.edu
+Author: Pavanello Research Group
+Author-email: m.pavanello@rutgers.edu
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Provides-Extra: libxc
+Provides-Extra: upf
+Provides-Extra: mpi
+Provides-Extra: all
+License-File: LICENSE.txt
+
+# DFTpy's Manual and Tutorials
+
+See [DFTpy's website](http://dftpy.rutgers.edu) for details.
+
+

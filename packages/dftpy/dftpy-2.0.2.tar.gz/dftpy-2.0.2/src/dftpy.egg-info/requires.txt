@@ -1,0 +1,25 @@
+numpy>=1.11.0
+scipy>=0.18.0
+ase>=3.22.0
+xmltodict>=0.12.0
+
+[all]
+upf_to_json
+mpi4py
+mpi4py-fft
+pyfftw
+
+[all:python_version < "3.10"]
+pylibxc2
+
+[libxc]
+
+[libxc:python_version < "3.10"]
+pylibxc2
+
+[mpi]
+mpi4py
+mpi4py-fft
+
+[upf]
+upf_to_json
