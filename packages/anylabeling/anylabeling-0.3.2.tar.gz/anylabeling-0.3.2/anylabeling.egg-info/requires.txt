@@ -1,0 +1,13 @@
+imgviz>=0.11
+natsort>=7.1.0
+numpy
+Pillow>=2.8
+PyYAML
+termcolor
+opencv-python-headless
+onnx==1.13.1
+qimage2ndarray==1.10.0
+onnxruntime==1.14.1
+
+[:platform_system != "Darwin"]
+PyQt5>=5.15.7
