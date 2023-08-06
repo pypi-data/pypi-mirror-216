@@ -1,0 +1,276 @@
+python: '>=3.11'
+
+channels:  
+  - conda-forge
+  - pytorch
+  - fastai
+  - bioconda  
+  - dglteam
+  - nvidia
+  - dsm-72
+
+categories:
+  utils:
+    name: 'Utilities'
+    checked: true
+    dependencies:
+      tqdm:
+        always: true
+      pyyaml:
+
+      iza:
+        channel: dsm-72
+        note: 'chaotic package of utilities'
+
+      ipos:
+        channel: dsm-72
+        note: 'devilish import package'
+
+  scripting:
+    name: 'Scripting'
+    dependencies:
+      rich:
+      typer:
+      questionary:
+        channel: conda-forge
+
+  packaging:
+    name: 'Packaging'
+    dependencies:
+      twine:
+        note: 'for uploading to PyPI'        
+      anaconda-client:
+        note: 'for uploading to Anaconda Cloud'
+      conda:
+        note: 'for building conda packages and conda-plugins'
+      conda-build:
+        note: 'for building conda packages and conda-plugin'
+        channel: conda-forge
+      boa:
+        note: 'for --mambabuild in nbdev_conda'
+        channel: conda-forge
+    
+    subcategories:
+      typing:
+        name: 'Typing'
+        dependencies:
+          beartype:
+            note: 'for runtime type checking'
+            channel: conda-forge
+          nptyping:
+            pip_only: false
+            note: 'for typing numpy arrays'
+            channel: conda-forge
+          littyping:
+            pip_only: false
+            note: 'for typing pytorch tensors'
+            channel: dsm-72
+          
+      versioning:
+        packaging:
+          note: 'for handling pypa versions'
+
+  testing:
+    name: 'Testing'
+    dependencies:
+      pytest:
+  
+  jupyter:
+    name: 'Jupyter Notebooks'
+    checked: true
+    dependencies:
+      notebook:
+        channel: conda-forge
+        always: true
+      ipykernel:
+        channel: conda-forge
+        always: true
+      ipywidgets:
+        channel: conda-forge
+        always: true
+      jupyterlab:
+        channel: conda-forge
+        always: true
+
+  nbdev:
+    name: 'nbdev'
+    checked: true
+    dependencies:
+      nbdev:
+        version: '>=2.3.12'
+        channel: fastai
+
+  dsm72:
+    name: 'Settings'
+    checked: true
+    dependencies:
+      env2ini:
+        channel: dsm-72
+        note: 'for converting environment.yml to requirements for settings.ini'
+
+      litenv:
+        channel: dsm-72
+        note: 'for quickly generating environments'
+        
+
+  torch:
+    name: 'PyTorch & Deep Learning'
+    checked: true
+    dependencies:
+      pytorch:
+        pypi_name: torch
+
+      pytorch-cuda:
+        channel: pytorch
+        cuda_only: true
+        note: 'add pytorch-cuda if using a CUDA enabled GPU. You will need to remove this if you are on Apple Silicon'
+
+      pytorch-lightning:
+        pypi_name: lightning
+
+
+    subcategories:
+      ode:
+        name: 'Neural ODEs'
+        dependencies:
+          torchdiffeq:
+          torchdyn:
+            version: '==1.0.3'
+            pip_only: true
+      gnn:
+        name: 'Graph Neural Networks'
+        dependencies:
+          dgl:
+            channel: dglteam
+            note: 'dgl is not built for ARM (e.g. Apple Silicon) on dglteam. You can install it via pip.'
+            no_arm_support: true
+  
+  data:    
+    name: 'Data Science'
+    checked: true
+    dependencies:
+      scikit-learn:
+        channel: conda-forge
+      pandas:
+      numpy:
+      scipy:
+
+    subcategories:
+      efficiency:
+        name: 'Efficiency'
+        dependencies:
+          pyarrow:
+            channel: conda-forge
+
+      ot:
+        name: 'Optimal Transport'
+        dependencies:
+          pot:
+            pip_only: true
+
+  plot:
+    name: 'Plotting'
+    checked: true
+    dependencies:
+      matplotlib:
+        channel: conda-forge
+      seaborn:
+        channel: conda-forge
+
+    subcategories:
+      deepscatter:        
+        name: 'Deep Scatter'
+        dependencies:
+          'git+https://github.com/bmschmidt/quadfeather':
+            pip_only: true
+            note: 'see https://github.com/nomic-ai/deepscatter#running-locally'
+
+  single-cell:
+    name: 'Single-Cell'
+    dependencies:
+      scanpy:
+        channel: conda-forge
+      anndata:
+        channel: conda-forge
+
+    subcategories:
+      doublets:
+        name: 'Doublet Detection'
+        dependencies:
+          scrublet:
+            pip_only: true
+
+      clustering:
+        name: 'Clustering'
+        dependencies:
+          liedenalg:      
+
+      de:
+        name: 'Differential Expression'
+        dependencies:
+          diffxpy:
+            pip_only: true
+            note: 'requires batchglm'
+          batchglm:
+            pip_only: true
+            note: 'requires tensorflow and tensorflow probability'
+
+      gse:
+        name: 'Gene Set Enrichment'
+        dependencies:
+          gseapy:            
+            pip_only: true
+            note: 'for gene set enrichment analysis'
+    
+  krishnswamy:
+    name: 'Krishnaswamy Lab'
+    checked: true
+    dependencies:
+      phate:
+        channel: bioconda
+        version: '==1.0.10'
+        # note: 'phate requires s_gd2 which is not built for ARM (e.g. Apple Silicon) on conda-forge. You can install it via pip.'
+        # no_arm_support: true
+
+      
+    subcategories:
+      graphtools:
+        name: 'Graphtools'
+        dependencies:
+          graphtools:
+            pip_only: true
+            note: 'for graph diffusion'
+
+      sc:
+        name: 'Single-Cell'
+        dependencies:
+          scprep:
+            channel: bioconda
+          magic-impute:
+            pip_only: true
+          # meld:
+          #   pip_only: true    
+
+          degex:
+            channel: dsm-72
+            note: 'personal collection of utility functions developed with Scott Youlten'      
+
+      ms:
+        name: 'Multiscale Analysis'
+        dependencies:
+          'git+https://github.com/KrishnaswamyLab/Multiscale_PHATE':
+            pip_only: true
+
+      ot:
+        name: 'Optimal Transport'
+        dependencies:
+          DiffusionEMD:
+              pip_only: true
+              
+      
+accelerators:
+  - mps
+  - cpu
+  - cuda
+
+
