@@ -1,0 +1,117 @@
+{
+  "nodes": {
+    "arch-lint": {
+      "inputs": {
+        "nix_filter": "nix_filter",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1685371599,
+        "narHash": "sha256-DcOPPeAKrjdev/2K1o3pnZUL2+nggMmqa6uJ5An9IxA=",
+        "owner": "dmurciaatfluid",
+        "repo": "arch_lint",
+        "rev": "72a495bb933f052ad812292b468ca3e18fd9dde4",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "dmurciaatfluid",
+        "repo": "arch_lint",
+        "type": "gitlab"
+      }
+    },
+    "fa-purity": {
+      "inputs": {
+        "nix_filter": "nix_filter_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1685212251,
+        "narHash": "sha256-b/2MMuPOFcfgyJpoGJg/71lNMUhoLiv3lpN3MUAH4Ag=",
+        "owner": "dmurciaatfluid",
+        "repo": "purity",
+        "rev": "feaa69ef3ad93ad91fd679d8169c80458457d779",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "dmurciaatfluid",
+        "repo": "purity",
+        "type": "gitlab"
+      }
+    },
+    "nix_filter": {
+      "locked": {
+        "lastModified": 1645371475,
+        "narHash": "sha256-z2n0y5ME7yQTqzzGWnQTVd1MG5Bp1E+of7ZgA861/9E=",
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "rev": "38bc843f1ce76958a9f6f0a1e4e3455221c8ecf6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "type": "github"
+      }
+    },
+    "nix_filter_2": {
+      "locked": {
+        "lastModified": 1645371475,
+        "narHash": "sha256-z2n0y5ME7yQTqzzGWnQTVd1MG5Bp1E+of7ZgA861/9E=",
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "rev": "38bc843f1ce76958a9f6f0a1e4e3455221c8ecf6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "type": "github"
+      }
+    },
+    "nix_filter_3": {
+      "locked": {
+        "lastModified": 1645371475,
+        "narHash": "sha256-z2n0y5ME7yQTqzzGWnQTVd1MG5Bp1E+of7ZgA861/9E=",
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "rev": "38bc843f1ce76958a9f6f0a1e4e3455221c8ecf6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nix-filter",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1679793451,
+        "narHash": "sha256-JafTtgMDATE8dZOImBhWMA9RCn9AP8FVOpN+9K/tTlg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0cd51a933d91078775b300cf0f29aa3495231aa2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0cd51a933d91078775b300cf0f29aa3495231aa2",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "arch-lint": "arch-lint",
+        "fa-purity": "fa-purity",
+        "nix_filter": "nix_filter_3",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
