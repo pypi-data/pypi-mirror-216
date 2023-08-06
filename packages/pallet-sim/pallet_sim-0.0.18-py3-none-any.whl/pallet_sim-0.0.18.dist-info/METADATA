@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: pallet-sim
+Version: 0.0.18
+Summary: Pallet simulation library developed at THWS
+Author: Rodolfo Verde
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: mujoco
+Requires-Dist: pybullet
+Requires-Dist: numpy-stl
+Requires-Dist: mujoco-python-viewer
+Requires-Dist: PyYAML
+Requires-Dist: opencv-python
+Requires-Dist: tqdm
+Requires-Dist: ipywidgets
+Requires-Dist: pyvista[all,trame]
+
+# Pallet Simulator
+
+pip install pallet-sim to install the package
+
+## Usage
+
+see the example folder for a simple example of how to use the simulator
+remember to download the pallet_data folder
