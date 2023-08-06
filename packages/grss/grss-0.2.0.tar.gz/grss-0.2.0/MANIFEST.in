@@ -1,0 +1,9 @@
+include include/*.h
+include src/*.cpp
+
+recursive-include extern *
+
+include CMakeLists.txt
+include src/CMakeLists.txt
+
+include version.txt
