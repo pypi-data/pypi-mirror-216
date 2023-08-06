@@ -1,0 +1,2 @@
+[console_scripts]
+artnet = libmonty_artnet.__main__:main
