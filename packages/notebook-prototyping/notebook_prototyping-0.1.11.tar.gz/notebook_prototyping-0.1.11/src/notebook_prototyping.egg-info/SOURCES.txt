@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+readme.md
+setup.cfg
+setup.py
+src/notebook_prototyping/__init__.py
+src/notebook_prototyping/example.py
+src/notebook_prototyping/notebook_import.py
+src/notebook_prototyping/second_example.py
+src/notebook_prototyping.egg-info/PKG-INFO
+src/notebook_prototyping.egg-info/SOURCES.txt
+src/notebook_prototyping.egg-info/dependency_links.txt
+src/notebook_prototyping.egg-info/requires.txt
+src/notebook_prototyping.egg-info/top_level.txt
