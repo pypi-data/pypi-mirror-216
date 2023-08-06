@@ -1,0 +1,8 @@
+requests~=2.31.0
+
+[dev]
+pycodestyle
+pylint
+flake8
+black
+isort

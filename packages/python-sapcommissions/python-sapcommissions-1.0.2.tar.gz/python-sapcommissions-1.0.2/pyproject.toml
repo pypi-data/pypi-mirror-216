@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "python-sapcommissions"
+description = "A Python wrapper for the SAP Commissions API"
+authors = [
+    {name = "Niels Perfors", email = "niels.perfors1987@gmail.com"},
+]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "requests ~= 2.31.0",
+]
+readme = "docs/README.md"
+dynamic = ["version"]
+
+
+[project.urls]
+"Homepage" = "https://github.com/niro1987/python-sapcommissions"
+
+
+[tool.setuptools_scm]
+
+
+[tool.setuptools.packages.find]
+exclude = [
+    "tests",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pycodestyle",
+    "pylint",
+    "flake8",
+    "black",
+    "isort",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.MAIN]
+py-version = "3.11"
+ignore = [
+    "tests"
+]
+
+load-plugins = [
+    "pylint.extensions.code_style",
+    "pylint.extensions.typing"
+]
+
+[tool.pylint.BASIC]
+attr-naming-style = "camelCase"
+argument-naming-style = "camelCase"
+good-names = [
+    "id"
+]
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "too-many-ancestors",
+    "too-many-arguments",
+    "too-many-instance-attributes",
+    "too-many-lines",
+    "missing-class-docstring"
+]
+
+enable = ["use-symbolic-message-instead"]
+
+[tool.pylint.CODE_STYLE]
+max-line-length-suggestions = 88
