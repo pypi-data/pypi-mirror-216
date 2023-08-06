@@ -1,0 +1,42 @@
+{
+  "data": {
+    "batch_size_per_gpu": 4,
+    "img_size": [
+      512
+    ],
+    "test": {
+      "ann": "tests/assets/detection/small_coco/annotation.json",
+      "augmentation": {
+        "ImageNormalization": {
+          "type": "base"
+        }
+      },
+      "data_root": "tests/assets/detection/small_coco/img",
+      "type": "COCODetectionDataset"
+    },
+    "train": {
+      "ann": "tests/assets/detection/small_coco/annotation.json",
+      "augmentation": {
+        "HorizontalFlip": {
+          "p": 0.5
+        },
+        "ImageNormalization": {
+          "type": "base"
+        }
+      },
+      "data_root": "tests/assets/detection/small_coco/img",
+      "type": "COCODetectionDataset"
+    },
+    "val": {
+      "ann": "tests/assets/detection/small_coco/annotation.json",
+      "augmentation": {
+        "ImageNormalization": {
+          "type": "base"
+        }
+      },
+      "data_root": "tests/assets/detection/small_coco/img",
+      "type": "COCODetectionDataset"
+    },
+    "workers_per_gpu": 4
+  }
+}
