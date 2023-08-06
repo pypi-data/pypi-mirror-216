@@ -1,0 +1,13 @@
+pynwb~=2.3
+nwbinspector~=0.4
+neo~=0.12
+numpy
+pendulum
+pandas
+pyyaml
+opencv-python-headless
+Pillow
+imageio==2.30.0
+av
+fastcrc
+dict-plus==0.3.4
