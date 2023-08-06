@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: llm-lens
+Version: 0.0.0.3
+Summary: llm-lens is a Python package for CV as NLP, where you can run very descriptive image modules on images, and then pass those descriptions to a Large Language Model (LLM) to reason about those images.
+Home-page: https://github.com/ContextualAI/lens
+Author: The Contextual AI Tech Team
+Author-email: tech@contextual.ai
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
