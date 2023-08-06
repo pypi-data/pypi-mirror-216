@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: fca-algorithms-cpp
+Version: 0.1.3
+Summary: Cpp implementation of the lib fca_algorithms
+Home-page: https://gitlab.com/Lwr/fca_algorithms_cpp
+Author: Ramshell
+Author-email: ramshellcinox@gmail.com
+License: MIT
+Classifier: Programming Language :: C++
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pybind11 (>=2.10.4)
+
+# FCA algorithms C++ Implementation
+
+This projects is the version of the [fca_algorithms](https://pypi.org/project/fca-algorithms/0.2.4/) PyPi module implemented in C++.
+
+## Purpose
+
+The goal of this project is to eventually replace totally the implementation of the Python library with backend C++, and just leave the Python interface.
+
+So far, the only ported algorithm is inclose.
+
+## Performance
+
+Unsurprisingly, this implementation runs much faster than the one done totally in python. In the following, we can see an example of the difference in runtimes using `get_concepts` method from the `Concept` class of both `fca_algorithms<=0.2.x` and `fca_algorithms_cpp`.
+
+![test1](https://gitlab.com/Lwr/fca_algorithms_cpp/raw/main/imgs/img_test_1.png)
+
+![test2](https://gitlab.com/Lwr/fca_algorithms_cpp/raw/main/imgs/img_test_2.png)
+
+After running these tests, I decided to use this library in the [Python one](https://pypi.org/project/fca-algorithms/) so that at least the code can take advantage of the faster implementation of `inclose`.
+
+## Future Work
+
+As said before, the ideal would be to fully implement the CPU-intensive algorithms in C++ and maintain the Python interface. Considering this, the goal would be to eventually replace the python code with full C++ one.
+
+
+## Usage
+
+There are one function and two classes that are exported to Python
+
+```python
+from fca_algorithms_cpp import ContextCpp, ConceptCpp, inclose
+
+
+# inclose: (List[str] -> List[str] -> List[List[int]]) -> List[ConceptCpp]
+inclose(['g1', 'g2'], ['m1', 'm2', 'm3'], [[1, 1, 0], [0, 1, 0]])
+
+# ContextCpp: (List[str] -> List[str] -> List[List[int]]) -> List[ConctextCpp]
+c = ContextCpp(['g1', 'g2'], ['m1', 'm2', 'm3'], [[1, 1, 0], [0, 1, 0]])
+c.G  # ['g1', 'g2']
+c.M  # ['m1', 'm2', 'm3']
+C.I  # [[1, 1, 0], [0, 1, 0]]
+
+# ConceptCpp: (ContextCpp, List[int], List[int]) -> ConceptCpp
+concept = ConceptCpp(c, [0, 1], [1, 2])  # ({g1, g2}, {m2, m3})
+concept.X  # [0, 1]
+concept.Y  # [1, 2]
+```
