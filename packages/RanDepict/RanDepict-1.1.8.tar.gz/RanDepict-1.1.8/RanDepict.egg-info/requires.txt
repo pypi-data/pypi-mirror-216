@@ -1,0 +1,18 @@
+numpy>=1.19
+imgaug
+scikit-image
+epam.indigo
+jpype1
+ipyplot
+rdkit
+imagecorruptions
+pillow>=8.2.0
+pikachu-chem>=1.0.7
+omegaconf
+
+[:python_version < "3.8"]
+typing-extensions
+
+[dev]
+tox
+pytest
