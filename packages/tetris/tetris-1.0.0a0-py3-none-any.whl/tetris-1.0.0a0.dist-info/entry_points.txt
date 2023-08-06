@@ -1,0 +1,3 @@
+[console_scripts]
+tetris=tetris.__main__:main
+
