@@ -1,0 +1,2 @@
+[console_scripts]
+influx3 = influxdb_cli.influx3:main
