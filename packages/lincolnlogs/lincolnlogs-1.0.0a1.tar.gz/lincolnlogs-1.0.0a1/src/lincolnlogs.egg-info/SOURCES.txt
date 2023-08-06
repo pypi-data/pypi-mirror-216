@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/lincolnlogs/__init__.py
+src/lincolnlogs/build.py
+src/lincolnlogs/notebook.py
+src/lincolnlogs.egg-info/PKG-INFO
+src/lincolnlogs.egg-info/SOURCES.txt
+src/lincolnlogs.egg-info/dependency_links.txt
+src/lincolnlogs.egg-info/requires.txt
+src/lincolnlogs.egg-info/top_level.txt
+src/lincolnlogs/monkeypatch/__init__.py
+src/lincolnlogs/monkeypatch/deprecation.py
