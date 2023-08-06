@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: fewlines
+Version: 0.0.1
+Summary: Horizon chart in terminal to use in Python scripts.
+Home-page: https://github.com/okuvshynov/fewlines
+Author: Oleksandr Kuvshynov
+Author-email: okuvshynov@gmail.com
+License-File: LICENSE
+
+Horizon chart in terminal. Useful to visualize weight/gradient distribution in compact form in the terminal, as if with a print statement.
