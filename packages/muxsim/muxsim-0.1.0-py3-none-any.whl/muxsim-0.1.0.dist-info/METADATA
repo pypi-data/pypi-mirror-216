@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: muxsim
+Version: 0.1.0
+Summary: A tool to simulate cell/guide matrices
+Home-page: https://github.com/noamteyssier/muxsim
+Author: Noam Teyssier
+Author-email: Noam.Teyssier@ucsf.edu
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: tqdm
+
+# muxsim
+a python module for generate cell / guide matrices for demultiplex testing
