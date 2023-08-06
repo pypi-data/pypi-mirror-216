@@ -1,0 +1,14 @@
+dkist-processing-common==3.0.0rc11
+dkist-header-validator==3.0.5
+dkist-fits-specifications==3.6.0
+numba==0.56.0
+astropy==5.1.1
+numpy==1.22.4
+dkist-spectral-lines==1.0.0
+
+[test]
+pytest
+pytest-xdist
+pytest-cov
+pytest-mock
+dkist-data-simulator>=2.0.0
