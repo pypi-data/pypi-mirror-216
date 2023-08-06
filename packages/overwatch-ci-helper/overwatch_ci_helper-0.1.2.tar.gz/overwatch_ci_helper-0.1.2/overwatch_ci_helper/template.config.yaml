@@ -1,0 +1,76 @@
+
+input-server:
+  docker:
+    image: "distributivenetwork/overwatch:input-server-v0.5.0"
+
+  fileURL:
+    inputDir: "../data-dir/inputs/"
+
+  server:
+    dataRetainPol: 3600 #minimum seconds to keep data around (data retention). 
+    logLevel: "http"
+    port: 3000 # #This is the port on which the server will listen on when started. i.e.: 3000
+
+
+
+
+
+model-registry:
+
+  database:
+    dbEnabled: false 
+    dbUrl: "dummy URL"
+    host: "dummy host"
+    pass: "dummy pass"
+
+  docker:
+    image: "distributivenetwork/overwatch:model-registry-v0.5.1"
+
+  fileURL:
+    # this is the key for making post request, have to be the same as the post request header
+    # in this example the key is "ovwatch-secret-key", base64 of that => b3Z3YXRjaC1zZWNyZXQta2V5
+    modelDir: "../data-dir/models/"
+
+  server:
+    key: "b3Z3YXRjaC1zZWNyZXQta2V5"
+    logLevel: 'http'
+    modelCacheSize: 20
+    port: 5051
+
+
+
+
+overwatch-server:
+  database:
+    dbEnabled: false
+    dbUrl: “dummy URL”
+    host: “dummy host”
+    pass: “dummy pass”
+
+  docker:
+    image: "distributivenetwork/overwatch:overwatch-server-v0.5.1"
+
+  fileURL:
+    # The URL where you want the images to be saved, i.e “../data-dir/images”
+    inputDir: “../data-dir/inputs”
+  # Create a copy of this file and name it config.yaml
+  # Get the joinkey and joinsecret in the config.yaml from a DCP admin, convert them to BASE64 and fill them out below
+  server:
+    debug: “false” # whether you want the debugger for the job
+    #OVWATCH
+    joinKey: “demo” # if joinkey is “myjoinkey”, base64 of that => “bXlqb2lua2V5”
+    joinSecret: “dcp” # if joinsecret is “myjoinsecret”, base64 of that => “bXlqb2luc2VjcmV0"
+    # AITF
+    # joinkey: “YWl0Zg==”
+    # joinsecret: “OVlERVhkaWh1ZA==”
+    # this is the key for making post request, have to be the same as the post request header
+    # in this example the key is “ovwatch-secret-key”, base64 of that => b3Z3YXRjaC1zZWNyZXQta2V5
+    key: “b3Z3YXRjaC1zZWNyZXQta2V5"
+    port: 5050 #This is the port on which the server will listen on when started. i.e.: 5050
+  url:
+    # The  URL where the resources will be coming from
+    baseURL: “http://localhost:5050”
+    inputURL: “http://localhost:3000”
+    modelURL: “http://localhost:5051”
+
+
