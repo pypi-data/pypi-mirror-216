@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+autodice.egg-info/PKG-INFO
+autodice.egg-info/SOURCES.txt
+autodice.egg-info/dependency_links.txt
+autodice.egg-info/entry_points.txt
+autodice.egg-info/requires.txt
+autodice.egg-info/top_level.txt
+partition/__init__.py
+partition/code_generator.py
+partition/dice.py
+partition/interface.py
+tests/test_simple.py
