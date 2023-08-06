@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: cardiac-geometries
+Version: 0.6.1
+Summary: A python library for cardiac geometries
+Home-page: https://github.com/ComputationalPhysiology/cardiac_geometries
+Author: Henrik Finsberg
+Author-email: henriknf@simula.no
+License: MIT
+Keywords: cardiac,geometry,mesh,gmsh
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: docs
+Provides-Extra: gmsh
+Provides-Extra: ldrb
+Provides-Extra: pypi
+Provides-Extra: test
+Provides-Extra: viz
+License-File: LICENSE
+
+# Cardiac Geometries
+
+This is a library for creating idealized cardiac geometries in FEniCS using `gmsh`. There is also some functionality for doing this with `mshr`, however, `mshr` is not really supported anymore.
+
+This package can also output analytic fiber orientations.
+
+Please read the documentation at http://computationalphysiology.github.io/cardiac_geometries for more info.
