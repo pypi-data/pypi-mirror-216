@@ -1,0 +1,149 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "MS²Rescore configuration",
+    "description": "MS²Rescore JSON configuration file.",
+    "type": "object",
+    "required": ["ms2rescore"],
+    "properties": {
+        "ms2rescore": {
+            "description": "General MS²Rescore settings.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "feature_generators": {
+                    "description": "Feature generators to use.",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["ms2pip", "deeplc", "maxquant"]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "default": ["ms2pip", "deeplc"]
+                },
+                "rescoring_engine": {
+                    "description": "Rescoring engine to use.",
+                    "oneOf": [{"type": "string"}, {"type": "null"}],
+                    "enum": [null, "percolator"],
+                    "default": "percolator"
+                },
+                "config_file": {
+                    "description": "Path to configuration file",
+                    "oneOf": [{"type": "string"}, {"type": "null"}]
+                },
+                "psm_file": {
+                    "description": "Path to file with peptide-spectrum matches.",
+                    "oneOf": [{"type": "string"}, {"type": "null"}]
+                },
+                "psm_file_type": {
+                    "description": "PSM file type. By default inferred from file extension.",
+                    "type": "string",
+                    "default": "infer"
+                },
+                "spectrum_path": {
+                    "description": "Path to spectrum file or directory with spectrum files",
+                    "oneOf": [{"type": "string"}, {"type": "null"}]
+                },
+                "tmp_path": {
+                    "description": "Path to directory to place temporary files",
+                    "oneOf": [{"type": "string"}, {"type": "null"}]
+                },
+                "output_path": {
+                    "description": "Path and root name for output files",
+                    "oneOf": [{"type": "string"}, {"type": "null"}]
+                },
+                "log_level": {
+                    "description": "Logging level",
+                    "type": "string",
+                    "enum": ["debug", "info", "warning", "error", "critical"]
+                },
+                "id_decoy_pattern": {
+                    "description": "Regex pattern used to identify the decoy PSMs in identification file.",
+                    "oneOf": [{"type": "string"}, {"type": "null"}],
+                    "default": null
+                },
+                "spectrum_id_pattern":{
+                    "description": "Regex pattern to extract index or scan number from spectrum file. Requires at least one capturing group.",
+                    "oneOf": [{"type": "string"}, {"type": "null"}],
+                    "default": "(.*)",
+                    "format": "regex"
+                },
+                "psm_id_pattern": {
+                    "description": "Regex pattern to extract index or scan number from PSM file. Requires at least one capturing group.",
+                    "oneOf": [{"type": "string"}, {"type": "null"}],
+                    "default": "(.*)",
+                    "format": "regex"
+                },
+                "lower_score_is_better": {
+                    "description": "Bool indicating if lower score is better",
+                    "type": "boolean",
+                    "default": false
+                },
+                "modification_mapping": {
+                    "description": "Mapping of modification labels to each replacement label.",
+                    "type": "object",
+                    "default": {}
+                },
+                "fixed_modifications": {
+                    "description": "Mapping of amino acids with fixed modifications to the modification name.",
+                    "type": "object",
+                    "default": {},
+                    "additionalProperties": true
+                },
+                "processes": {
+                    "description": "Number of parallel processes to use; -1 for all available",
+                    "type": "number",
+                    "multipleOf": 1,
+                    "minimum": -1,
+                    "default": -1
+                },
+                "USI": {
+                    "description": "Use universal spectrum identifier (USI)",
+                    "type": "boolean"
+                }
+            }
+        },
+        "ms2pip": {
+            "description": "MS²PIP settings.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "model": {
+                    "description": "MS²PIP model to use (see MS²PIP documentation)",
+                    "type": "string",
+                    "default": "HCD"
+                },
+                "ms2_tolerance": {
+                    "description": "MS2 error tolerance in Da",
+                    "type": "number",
+                    "minimum": 0,
+                    "default": 0.02
+                }
+            }
+        },
+        "deeplc": {
+            "description": "DeepLC keyword arguments",
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "calibration_set_size": {
+                    "description": "Calibration set size",
+                    "oneOf": [{"type": "integer"}, {"type": "number"}],
+                    "default": 0.15
+                }
+            }
+        },
+        "percolator": {
+            "description": "Percolator settings",
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "init-weights": {
+                    "description": "Weights file for scoring function",
+                    "oneOf": [{"type": "string"}, {"type": "boolean"}],
+                    "default": false
+                }
+        }
+    }
+}
+}
