@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+    {name = "Clemens Burgstaller", email = "burgstaller@ift.at"},
+    {name = "René Schwaiger", email = "rene.schwaiger@ift.at"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: Other/Proprietary License",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Programming Language :: Python",
+]
+
+dependencies = [
+  "bidict>=0.22.1,<2",
+  "dynaconf>=3.1.12,<4",
+  "matplotlib>=3.7.1,<4",
+  "netaddr>=0.8.0,<2",
+  "pdfrw>=0.4,<2",
+  "pint>=0.22,<2",
+  "platformdirs>=3.5.0,<4",
+  "python-can[pcan]>=4,<5",
+  "pywin32>=306; os_name == 'nt'",
+  "reportlab>=4.0.4,<5",
+  "tables>=3.6,<4",
+  "tqdm>=4.65,<5",
+  "semantic_version>=2.10,<3",
+  "windows-curses>=2.3.1,<3; os_name == 'nt'",
+]
+description = """Control and test software for sensory tool holders (STH), \
+                 sensor milling heads (SMH) and stationary transceiver units \
+                 (STU)"""
+dynamic = ["version"]
+keywords = [
+    "smart-tool",
+    "smh",
+    "stu",
+    "sth",
+    "tool-holder",
+]
+name = "icoc"
+readme = "ReadMe.md"
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = [
+    "flake8",
+    "mypy",
+    "toml",
+]
+test = [
+    "icolyzer>=1.5.0", # Require ICOlyzer for Prysk tests
+    "prysk[pytest-plugin]>=0.13.1",
+    "pytest",
+]
+
+[project.scripts]
+icoc = "mytoolit.old.ui:main"
+icon = "mytoolit.cmdline.icon:main"
+check-eeprom = "mytoolit.scripts.eeprom:main"
+test-smh = "mytoolit.test.production.smh:main"
+test-sth = "mytoolit.test.production.sth:main"
+test-sth-verification = "mytoolit.old.test.MyToolItTestSth:main"
+test-stu-verification = "mytoolit.old.test.MyToolItTestStu:main"
+test-stu = "mytoolit.test.production.stu:main"
+convert-base64-mac = "mytoolit.scripts.name:main"
+convert-mac-base64 = "mytoolit.scripts.mac:main"
+
+[project.urls]
+Documentation = "https://mytoolit.github.io/ICOc/"
+Source = "https://github.com/mytoolit/ICOc/"
+
+[tool.black]
+line-length = 79
+preview = true
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+# - Use doctests
+# - Fail after first errors
+# - Ignore macOS metadata files
+# - Verbose output
+# - Disable Prysk test
+addopts = "--doctest-modules -x --ignore-glob='*._*.py' -v"
+minversion = "6.0"
+
+[tool.setuptools.dynamic]
+version = {attr = "mytoolit.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["mytoolit*"]

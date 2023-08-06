@@ -1,0 +1,11 @@
+[console_scripts]
+check-eeprom = mytoolit.scripts.eeprom:main
+convert-base64-mac = mytoolit.scripts.name:main
+convert-mac-base64 = mytoolit.scripts.mac:main
+icoc = mytoolit.old.ui:main
+icon = mytoolit.cmdline.icon:main
+test-smh = mytoolit.test.production.smh:main
+test-sth = mytoolit.test.production.sth:main
+test-sth-verification = mytoolit.old.test.MyToolItTestSth:main
+test-stu = mytoolit.test.production.stu:main
+test-stu-verification = mytoolit.old.test.MyToolItTestStu:main
