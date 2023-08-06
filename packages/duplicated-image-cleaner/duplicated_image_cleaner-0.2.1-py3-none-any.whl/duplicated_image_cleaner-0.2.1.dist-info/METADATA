@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: duplicated-image-cleaner
+Version: 0.2.1
+Summary: Script to delete duplicate or similar images
+Author: Jorge Anzola
+Author-email: jorgeanzola@gmail.com
+Requires-Dist: Pillow (==8.3.2)
+Requires-Dist: imagehash (==4.2.1)
+
