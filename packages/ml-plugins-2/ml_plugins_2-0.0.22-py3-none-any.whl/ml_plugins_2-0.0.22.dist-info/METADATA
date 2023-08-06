@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: ml-plugins-2
+Version: 0.0.22
+Requires-Dist: metaflow (==2.9.2)
+Requires-Dist: poetry
+
