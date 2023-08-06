@@ -1,0 +1,13 @@
+backtrader-lucidinvestor
+cython
+matplotlib
+numpy
+pandas
+pandas-datareader
+python-dateutil
+pytz
+scipy
+yfinance
+# trading calendar
+pandas_market_calendars
+pyfolio-reloaded # https://github.com/stefan-jansen/pyfolio-reloaded
