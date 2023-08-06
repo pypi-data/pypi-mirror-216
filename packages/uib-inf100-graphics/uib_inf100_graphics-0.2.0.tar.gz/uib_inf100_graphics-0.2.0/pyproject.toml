@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uib_inf100_graphics"
+dynamic = ["version"]
+authors = [
+  { name="Torstein Strømme", email="torstein.stromme@uib.no" },
+]
+description = "A simple graphics library for INF100 at the University of Bergen."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Education",
+    "Topic :: Education",
+    "Topic :: Software Development :: Libraries :: Tcl Extensions"
+]
+dependencies = [
+    "Pillow >= 9.2.0",
+    "requests >= 2.28.0"
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "uib_inf100_graphics.__version__"}
+
+[project.urls]
+"Homepage" = "https://github.com/torsteins/uib_inf100_graphics"
+"Issues" = "https://github.com/torsteins/uib_inf100_graphics/issues"
