@@ -1,0 +1,85 @@
+
+
+[tool.poetry]
+name = "idf-component-manager"
+version = "1.3.0"
+description = "Espressif IDF Component Manager"
+authors = []
+license = "Apache2"
+readme = "README.md"
+packages = [
+    { include = "idf_component_manager" },
+    { include = "idf_component_tools" },
+]
+
+[tool.poetry.dependencies]
+cachecontrol = { version = '*', extras = ["filecache"] }
+click = '*'
+colorama = '*'
+packaging = "*"
+python = ">=3.7,<4.0"
+pyyaml = "*"
+requests = "*"
+urllib3 = "<2"
+requests-file = "*"
+requests-toolbelt = "*"
+schema = "*"
+six = "*"
+tqdm = '*'
+
+[tool.poetry.group.docs.dependencies]
+sphinx_collapse = "==0.1.2"
+sphinx-copybutton = "==0.5.1"
+sphinx-rtd-theme = "==1.1.1"
+sphinx-click = "==4.4.0"
+sphinx-tabs = "==3.4.0"
+
+[tool.poetry.group.dev.dependencies]
+types-requests = "^2.31.0.1"
+types-six = "^1.16.21.8"
+types-pyyaml = "^6.0.12.10"
+requests-mock = "^1.11.0"
+comment-parser = "*"
+coverage = '*'
+deptry = { version = ">=0.12.0", python = ">=3.9,<4.0" }
+flake8 = '*'
+flake8-quotes = '*'
+jinja2 = "*"
+jsonschema = "*"
+mypy = { extras = ["python2"], version = '*' }
+pexpect = "*"
+pre-commit = '*'
+pylint = "*"
+pytest = '*'
+pytest-cov = '*'
+pytest-mock = '*'
+pytest-rerunfailures = "*"
+rope = '*'
+setuptools = "*"
+thefuzz = "*"
+twine = "*"
+unify = '*'
+vcrpy = '<5'
+wheel = "*"
+yapf = '*'
+
+[tool.poetry.scripts]
+compote = { callable = "idf_component_manager.cli:safe_cli" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.deptry]
+extend_exclude = [
+    "docs",
+    "integration_tests",
+    "idf_component_tools/file_cache.py", # Tries a number of ways to detect paths on Windows
+]
+
+[tool.deptry.per_rule_ignores]
+DEP001 = ["urlparse", "idf_py_actions"]
+DEP002 = ["colorama", "urllib3"]
+
+[tool.deptry.package_module_name_map]
+pyyaml = ["yaml"]
