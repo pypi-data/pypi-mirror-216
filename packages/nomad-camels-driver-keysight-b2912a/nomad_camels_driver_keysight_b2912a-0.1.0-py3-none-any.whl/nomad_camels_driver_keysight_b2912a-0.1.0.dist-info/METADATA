@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: nomad-camels-driver-keysight-b2912a
+Version: 0.1.0
+Summary: Device driver for the Keysight B2912A precision SMU.
+Author-email: FAIRmat - HU Berlin <nomad-camels@fau.de>
+Project-URL: GitHub Page, https://github.com/FAU-LAP/NOMAD-CAMELS
+Project-URL: Documentation, https://fau-lap.github.io/NOMAD-CAMELS/docs/instruments.html
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Requires-Python: >=3.9.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pyvisa
+Requires-Dist: pyvisa-py
+
+# NOMAD-CAMELS Driver for Keysight B2912A
+
+Driver of the Keysight E5270B Precision IV Analyzer written for the measurement software [NOMAD-CAMELS](https://fau-lap.github.io/NOMAD-CAMELS/).
+
+
+## Documentation
+
+For more information and documentation visit [this page](https://fau-lap.github.io/NOMAD-CAMELS/docs/instruments.html).
