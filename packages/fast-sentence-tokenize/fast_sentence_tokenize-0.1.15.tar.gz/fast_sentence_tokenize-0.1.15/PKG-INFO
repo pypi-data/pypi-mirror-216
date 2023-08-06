@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: fast-sentence-tokenize
+Version: 0.1.15
+Summary: Fast and Efficient Sentence Tokenization
+Home-page: https://github.com/craigtrim/fast-sentence-tokenize
+License: None
+Keywords: nlp,nlu,text,classify,classification
+Author: Craig Trim
+Author-email: craigtrim@gmail.com
+Maintainer: Craig Trim
+Maintainer-email: craigtrim@gmail.com
+Requires-Python: >=3.8.5,<4.0.0
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: baseblock
+Requires-Dist: nltk
+Requires-Dist: spacy (>=3.5.0,<4.0.0)
+Project-URL: Bug Tracker, https://github.com/craigtrim/fast-sentence-tokenize/issues
+Project-URL: Repository, https://github.com/craigtrim/fast-sentence-tokenize
+Description-Content-Type: text/markdown
+
+# Fast Sentence Tokenizer (fast-sentence-tokenize)
+Best in class tokenizer
+
+## Usage
+
+### Import
+```python
+from fast_sentence_tokenize import fast_sentence_tokenize
+```
+
+### Call Tokenizer
+```python
+results = fast_sentence_tokenize("isn't a test great!!?")
+```
+
+### Results
+```json
+[
+   "isn't",
+   "a",
+   "test",
+   "great",
+   "!",
+   "!",
+   "?"
+]
+```
+Note that whitespace is not preserved in the output by default.
+
+This generally results in a more accurate parse from downstream components, but may make the reassembly of the original sentence more challenging.
+
+### Preserve Whitespace
+```python
+results = fast_sentence_tokenize("isn't a test great!!?", eliminate_whitespace=False)
+```
+### Results
+```json
+[
+   "isn't ",
+   "a ",
+   "test ",
+   "great",
+   "!",
+   "!",
+   "?"
+]
+```
+
+This option preserves whitespace.
+
+This is useful if you want to re-assemble the tokens using the pre-existing spacing
+```python
+assert ''.join(tokens) == input_text
+```
+
