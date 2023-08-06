@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "pic-chrono"
+version = "1.0.0"
+description = "A tool to automaticallly rename images to their respective date-time taken"
+authors = ["Valentin Ruben Kondakov <kondakov.valentin@icloud.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/kondakoffer/PicChrono" # Update me!
+repository = "https://github.com/kondakoffer/PicChrono"
+documentation = "https://github.com/kondakoffer/PicChrono" # Update me!
+keywords = ["Metadata extraction", "Date-time extraction", "File renaming", "Pillow library", "Media organization"]
+packages = [{include = "pic_chrono"}]
+
+[tool.poetry.scripts]
+PicChrono = "pic_chrono.__main__:app"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Pillow = ">=9.3"
+typer = "^0.9.0"
+rich = "^13.4.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pytest-cov = "^4.1.0"
+black = "^23.3.0"
+coverage-badge = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
