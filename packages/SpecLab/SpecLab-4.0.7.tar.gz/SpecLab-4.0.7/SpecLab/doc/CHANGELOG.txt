@@ -1,0 +1,16 @@
+4.0.5
+
+- Added epar_imXam.py to files that are put into anaconda bin, allowing one
+to directly edit the imXam_param.dat using vim.
+
+- Added imXam_param.default.dat just as a file in case imXam_param.dat gets
+too messed up 
+
+4.0.6
+
+- added improved documentation to README
+
+- now T key allows user to enter a number like 1.5e4 (previously, could
+only enter integers)
+
+- changed plot style for 'c' and 'l' keys in Plotly.
