@@ -1,0 +1,27 @@
+[build-system]
+requires = ["flit_core>=3.9"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "szh_toolbox"
+version = "0.0.7"
+authors = [
+  { name="szh", email="suo.zh@qq.com"},
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+greetc = "szh_toolbox.commond:main"
+st-wps = "szh_toolbox.namelistwps:main"
+st-noaa = "szh_toolbox.noaa_download:main"
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
