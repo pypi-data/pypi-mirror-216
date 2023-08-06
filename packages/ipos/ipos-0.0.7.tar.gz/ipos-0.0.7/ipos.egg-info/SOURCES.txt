@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+ipos/__init__.py
+ipos/_modidx.py
+ipos/core.py
+ipos/imp.py
+ipos.egg-info/PKG-INFO
+ipos.egg-info/SOURCES.txt
+ipos.egg-info/dependency_links.txt
+ipos.egg-info/entry_points.txt
+ipos.egg-info/not-zip-safe
+ipos.egg-info/requires.txt
+ipos.egg-info/top_level.txt
