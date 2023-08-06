@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: modular-cli-sdk
+Version: 1.1.0
+Summary: Core component for CLI tools built atop of Modular Framework
+License: Apache-2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: boto3 (==1.26.80)
+Requires-Dist: botocore (==1.29.80)
+Provides-Extra: hvac
+Requires-Dist: hvac (==0.11.2) ; extra == 'hvac'
+
