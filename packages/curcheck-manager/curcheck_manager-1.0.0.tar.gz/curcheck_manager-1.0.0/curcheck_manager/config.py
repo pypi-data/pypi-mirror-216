@@ -1,0 +1,22 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+TEMPLATES_DIR = Path(BASE_DIR / "templates")
+
+
+def get_project_base_dir():
+    current_dir = Path.cwd()
+    
+    for _ in range(len(str(current_dir).split("\\"))):
+        file = [i for i in current_dir.glob("env.env")]
+
+        if len(file):
+            return current_dir
+
+        current_dir = current_dir.parent
+
+
+def get_project_apps_dir():
+    project_base_dir = get_project_base_dir()
+
+    return Path(project_base_dir / "src" / "apps")
