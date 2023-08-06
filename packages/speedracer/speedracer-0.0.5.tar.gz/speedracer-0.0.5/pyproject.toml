@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+  "hatchling",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "speedracer"
+version = "0.0.5"
+authors = [
+  { name="RRC", email="" },
+]
+description = "Conveniently access data"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+]
+
+dependencies = [
+  "requests~=2.31.0",
+  "pyjwt~=2.7.0",
+  "aiohttp~=3.8.4",
+  "nats-py[nkeys]~=2.3.1",
+]
