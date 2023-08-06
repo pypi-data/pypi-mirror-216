@@ -1,0 +1,12 @@
+aws-requests-auth>=0.3.0
+elasticsearch<8.0.0,>=7.0.0
+
+[dev]
+black
+celery
+coverage
+django
+djangorestframework
+flake8
+isort
+uritemplate
