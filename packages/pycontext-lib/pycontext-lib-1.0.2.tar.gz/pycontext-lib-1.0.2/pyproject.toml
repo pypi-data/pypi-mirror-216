@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycontext-lib"
+version = "1.0.2"
+description = "Lots of properties that help with program context!"
+readme = "README.md"
+authors = [{ name = "Carl Furtado", email = "carlzfurtado@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+	"License :: OSI Approved :: MIT License",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+requires-python = ">= 3.9"
+keywords = ["context", "properties"]
+
+[project.urls]
+Homepage = "https://github.com/User0332/pycontext"
+
+[project.scripts]
+webpy = "webpy.__main__:main"
+webpy-framework = "webpy.__main__:main"
