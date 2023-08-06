@@ -1,0 +1,140 @@
+Metadata-Version: 2.1
+Name: asmc-asmc
+Version: 1.3.1
+Summary: ASMC is a method to efficiently estimate pairwise coalescence time along the genome
+Home-page: https://github.com/PalamaraLab/ASMC/
+Author: PalamaraLab (https://palamaralab.github.io/)
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: COPYING
+Requires-Dist: jupyter
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: asmc-preparedecoding
+Requires-Dist: matplotlib
+
+[![Unit tests: Ubuntu](https://github.com/PalamaraLab/ASMC/actions/workflows/ubuntu-unit.yml/badge.svg)](https://github.com/PalamaraLab/ASMC/actions/workflows/ubuntu-unit.yml)
+[![Unit tests: macOS](https://github.com/PalamaraLab/ASMC/actions/workflows/macos-unit.yml/badge.svg)](https://github.com/PalamaraLab/ASMC/actions/workflows/macos-unit.yml)
+[![Python 3.8 3.11](https://github.com/PalamaraLab/ASMC/actions/workflows/ubuntu-python.yml/badge.svg)](https://github.com/PalamaraLab/ASMC/actions/workflows/ubuntu-python.yml)
+[![Regression test](https://github.com/PalamaraLab/ASMC/workflows/Regression%20test/badge.svg)](https://github.com/PalamaraLab/ASMC/actions)
+[![Ubuntu asan](https://github.com/PalamaraLab/ASMC/workflows/Ubuntu%20asan/badge.svg)](https://github.com/PalamaraLab/ASMC/actions)
+[![Ubuntu no sse/avx](https://github.com/PalamaraLab/ASMC/workflows/Ubuntu%20no%20sse/avx/badge.svg)](https://github.com/PalamaraLab/ASMC/actions)
+[![codecov](https://codecov.io/gh/PalamaraLab/ASMC/branch/main/graph/badge.svg)](https://codecov.io/gh/PalamaraLab/ASMC)
+
+# ASMC and FastSMC
+
+This repository contains ASMC and an extension, FastSMC, together with python bindings for both.
+
+## Quickstart
+
+### Install the Python module from PyPI
+
+Most functionality is available through a Python module which can be installed with:
+
+```bash
+pip install asmc-asmc
+```
+
+### Documentation
+
+The following pages of documentation contains specific information:
+- [Quickstart guide for users](https://github.com/PalamaraLab/ASMC/blob/main/docs/quickstart_user.md)
+- [ASMC python docs](https://github.com/PalamaraLab/ASMC/blob/main/docs/asmc_python.md)
+- [FastSMC python docs](https://github.com/PalamaraLab/ASMC/blob/main/docs/fastsmc_python.md)
+
+This Python module is currently available on Linux and macOS.
+
+Example Jupyter notebooks showcasing basic functionality can be found here:
+- [Example notebooks](https://github.com/PalamaraLab/ASMC/tree/main/notebooks)
+
+## License
+
+ASMC and FastSMC are distributed under the GNU General Public License v3.0 (GPLv3). For any questions or comments on ASMC, please contact Pier Palamara using `<lastname>@stats.ox.ac.uk`.
+
+## Reference
+
+If you use this software, please cite the appropriate reference(s) below.
+
+The ASMC algorithm and software were developed in
+- P. Palamara, J. Terhorst, Y. Song, A. Price. High-throughput inference of pairwise coalescence times identifies signals of selection and enriched disease heritability. *Nature Genetics*, 2018.
+
+The FastSMC algorithm and software were developed in
+- J. Nait Saada, G. Kalantzis, D. Shyr, F. Cooper, M. Robinson, A. Gusev, P. F. Palamara. Identity-by-descent detection across 487,409 British samples reveals fine-scale evolutionary history and trait associations. *Nature Communications*, 2020.
+
+# ASMC Release Notes
+
+## v1.3.1 (2023-06-30)
+
+### Breaking changes
+
+None
+
+### Other changes
+
+- The location of a `.map` or `.map.gz` file can now be optionally specified explicitly: previously it was assumed to be at the `inFileRoot`.
+
+
+## v1.3 (2023-03-03)
+
+### Breaking changes
+
+None
+
+### Other changes
+
+- Decoding a batch can now be done in a selected subregion with from / to indices.
+  A `cm_burn_in` parameter takes into account additional variants on either side of the subregion for HMM burn-in.
+- Allow the user to access selected attributes of the DecodingParams and Data from the ASMC object.
+- Python continuous integration now uses Python 3.8 and 3.11 (previously 3.6 and 3.9)
+- Update Catch to v2.13.
+
+
+## v1.2 (2021-09-28)
+
+All functionality for ASMC and FastSMC is now in this repository ([link](https://github.com/PalamaraLab/ASMC)).
+
+### Breaking changes
+
+- Fixed an issue with demographic models.
+  The `CEU.demo` demographic model and the decoding quantities for CEU+UKBB previously provided in the repository were mistakenly encoded as diploid rather than haploid. 
+  CEU.demo and CEU+UKBB decoding quantities have now been updated and can be found in [this repository](https://github.com/PalamaraLab/ASMC_data).
+  Also see the manual for a note on how this affects analyses.
+
+### Other changes
+
+- New API for decoding pairs with ASMC.
+  In addition to running full analyses as described in the ASMC paper, users can now decode specific pairs and get back a variety of summary statistics.
+  See the [ASMC python documentation](https://github.com/PalamaraLab/ASMC/blob/main/docs/asmc_python.md) for details.
+- New, more extensive, [documentation](https://github.com/PalamaraLab/ASMC/blob/main/docs/) is available.
+
+
+## v1.1 (2021-01-20)
+
+[Legacy repository](https://github.com/PalamaraLab/FastSMC/releases/tag/v1.1)
+
+Improvements to documentation and default use.
+No changes to any core functionality.
+
+### Breaking changes
+
+- The hashing functionality, previously named `GERMLINE`, has been renamed to `hashing`.
+  This includes the command line flag for turning this behaviour on/off, which is now `--hashing`.
+
+### Other changes
+
+- `--hashing` is now ON by default when running the FastSMC executable: previously, `--GERMLINE` was OFF by default.
+- Extra output, including the IBD segment length, posterior mean, and MAP, are now on by default.
+  This behaviour can be toggled with the flags `--segmentLength`, `--perPairPosteriorMeans`, `--perPairMAP`.
+- An example script has been added to `cpp_example/FastSMC_example_multiple_jobs.sh` that demonstrates how to run FastSMC with multiple jobs simultaneously.
+- The README has been updated to focus on FastSMC functionality.
+- More robust checking is now used to verify the decoding quantities file is correct before reading it.
+- CMake will now, by default, build in Release mode (giving 03 optimisation on Linux).
+  Previously, Debug was used by default.
+
+
+## v1.0 (2020-09-18)
+
+[Legacy repository](https://github.com/PalamaraLab/FastSMC/releases/tag/v1.0)
+
+First public release of FastSMC, with functionality as described and used in [this paper](https://doi.org/10.1038/s41467-020-19588-x).
