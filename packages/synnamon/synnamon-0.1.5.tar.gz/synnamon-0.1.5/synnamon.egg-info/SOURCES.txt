@@ -1,0 +1,12 @@
+LICENSE.md
+README.md
+setup.py
+synnamon/__init__.py
+synnamon/get_syns.py
+synnamon.egg-info/PKG-INFO
+synnamon.egg-info/SOURCES.txt
+synnamon.egg-info/dependency_links.txt
+synnamon.egg-info/requires.txt
+synnamon.egg-info/top_level.txt
+synnamon/data/__init__.py
+tests/test_get_syns.py
