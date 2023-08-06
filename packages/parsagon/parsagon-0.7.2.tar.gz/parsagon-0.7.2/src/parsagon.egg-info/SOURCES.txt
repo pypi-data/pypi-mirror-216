@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/parsagon/__init__.py
+src/parsagon/api.py
+src/parsagon/custom_function.py
+src/parsagon/executor.py
+src/parsagon/main.py
+src/parsagon/settings.py
+src/parsagon.egg-info/PKG-INFO
+src/parsagon.egg-info/SOURCES.txt
+src/parsagon.egg-info/dependency_links.txt
+src/parsagon.egg-info/entry_points.txt
+src/parsagon.egg-info/requires.txt
+src/parsagon.egg-info/top_level.txt
+src/parsagon/tests/__init__.py
