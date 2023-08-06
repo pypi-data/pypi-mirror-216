@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: sparksampling-proto
+Version: 0.1.0
+Summary: python proto for sparksampling
+Project-URL: Source, https://github.com/Wh1isper/pyspark-sampling
+Author-email: Wh1isper <9573586@qq.com>
+License: BSD 3-Clause License
+Keywords: sparksampling
+Requires-Python: >=3.7
+Requires-Dist: grpcio>=1.51.0
+Requires-Dist: protobuf>=4
+Description-Content-Type: text/markdown
+
+# protos for datasamplnig
+
+install grpc_tools
+
+``` shell
+pip install grpcio-tools
+```
+
+protobuf generate code for pyspark-sampling
+
+``` shell
+python -m grpc_tools.protoc -I./pb --python_out=./sparksampling_proto/ --grpc_python_out=./sparksampling_proto/ ./pb/sampling_service.proto
+cd ./sparksampling_proto/ && 2to3 -n -w * && cd -
+```
+
+publish
+
+```shell
+rm -rf build dist && python -m build
+twine upload dist/*
+
+```
