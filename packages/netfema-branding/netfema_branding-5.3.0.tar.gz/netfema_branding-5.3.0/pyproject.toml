@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "netfema-branding"
+version = "5.3.0"
+description = "NETwork Front End Management System - Bootstrap5 Base Files, and SCSS Pipeline"
+authors = ["Mike Simkins <487+msimkins@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "netfema_branding"}]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django :: 4.2",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Content Management System"
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "<5"
+
+[tool.poetry.group.dev.dependencies]
+
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
