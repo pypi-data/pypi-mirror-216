@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: hop-file-browser
+Version: 2.0.4
+Summary: An intuitive and fast terminal file browser
+Project-URL: Documentation, https://github.com/benrutter/hop#readme
+Project-URL: Issues, https://github.com/benrutter/hop/issues
+Project-URL: Source, https://github.com/benrutter/hop
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6
+Requires-Dist: rich
+Requires-Dist: send2trash
+Provides-Extra: unix
+Requires-Dist: getch; extra == 'unix'
+Description-Content-Type: text/markdown
+
+# Hop!
+
+Hop is a terminal based file explorer designed to be fast, simple and user friendly. Hop runs on any operating system.
+
+![demo](docs/demo.gif)
+
+## Use
+Once Hop installed, it can be ran at any point in the terminal by typing ```hop```. This will bring you into the file explorer.
+
+Anything you type will filter the files, and pressing enter will navigate into a selected folder.
+
+Typing ```+``` at the end of your input, and pressing enter will add a selected item into your "inventory".
+
+You can delete, copy or move the files into your current folder by typing ```!delete```, ```!copy``` or ```!move``` and pressing enter. Deleting will move to the recycle bin.
+
+Empty your inventory (i.e. clear your selection) with ```!empty``` or ```!e```, and quit with ```!q``` or ```!quit```.
+
+Otherwise, run any normal shell commands (i.e. vim, mkdir, rm etc) by using the ! prefix, such as ```!mkdir cool-files```
+
+## Installation
+The only requirement for running Hop is python. It can be installed with pip, with optional dependencies for unix (apple/linux):
+```
+pip install hop-file-browser
+pip install 'hop-file-browser[unix]'
+```
+Consider using pipx to install into an isolated environment.
