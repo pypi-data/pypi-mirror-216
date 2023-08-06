@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: napari-graph
+Version: 0.1.1
+Summary: Fast editable graphs in Python and numba
+Home-page: https://github.com/napari/napari-graph
+Author: Jordão Bragantini, Jonas Windhager & Juan Nunez-Iglesias
+Author-email: jordao.bragantini@czbiohub.org
+License: BSD-3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Framework :: napari
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: networkx
+Requires-Dist: numba
+Requires-Dist: numpy
+Requires-Dist: pandas
+Provides-Extra: docs
+Requires-Dist: sphinx-material ; extra == 'docs'
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: jupyter ; extra == 'docs'
+Requires-Dist: notebook ; extra == 'docs'
+Requires-Dist: sphinx-toggleprompt ; extra == 'docs'
+Requires-Dist: sphinx-copybutton ; extra == 'docs'
+Requires-Dist: sphinxcontrib-bibtex ; extra == 'docs'
+Requires-Dist: myst-nb ; extra == 'docs'
+Provides-Extra: testing
+Requires-Dist: coverage ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+# napari-graph
+
+Efficient graph data structures and algorithms for fast slicing, visualization, and editing.
+
+Implementation based on the [trackmate-graph](https://github.com/mastodon-sc/mastodon/blob/master/doc/trackmate-graph.pdf).
