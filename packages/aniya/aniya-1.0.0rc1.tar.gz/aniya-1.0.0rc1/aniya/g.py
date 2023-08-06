@@ -1,0 +1,21 @@
+# 异常信息映射
+err_msg: dict = {
+    'required': '%(key)s 是必须的',
+    'include': '%(key)s 的值 %(value)s 必须是 %(assign)s 中的一项',
+    'exclude': '%(key)s 的值 %(value)s 不允许是 %(assign)s 中的任意一项',
+    'min_length': '%(key)s 值的长度必须大于等于 %(assign)s',
+    'max_length': '%(key)s 值的长度必须小于等于 %(assign)s',
+    'gt': '%(key)s 的值必须大于 %(assign)s',
+    'gte': '%(key)s 的值必须大于等于 %(assign)s',
+    'lt': '%(key)s 的值必须小于 %(assign)s',
+    'lte': '%(key)s 的值必须小于等于 %(assign)s',
+    'multi': '%(key)s 的值必须是可以被迭代的',
+    'undefined': '%(key)s 的值没有被定义',
+    'len': '无法获取 %(key)s 的长度',
+    'compare': '无法对 %(key)s 的值进行比较',
+    'include_keys': '%(key)s 的字典key中没有完全包含指定keys',
+    'exclude_keys': '%(key)s 的字典key中不允许包含指定keys中的任何一个key',
+    'regex': '%(key)s 的值不符合正则规则',
+    'number': '%(key)s 的值不是数字类型',
+    'string': '%(key)s 的值不是字符串类型',
+}
