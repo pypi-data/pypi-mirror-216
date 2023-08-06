@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: ocamlec-plt
+Version: 0.0.5
+Summary: OcamlEC plots
+Author: Mario Hevia Fajardo
+Author-email: <m.heviafajardo@bham.ac.uk>
+Keywords: python,ocamlec
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: License :: Free for non-commercial use
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: PyPDF2
+Requires-Dist: networkx
+
+Package to plot and get statistics from OcamlEC files
