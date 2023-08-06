@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: zhenglin
+Version: 0.13.0
+Summary: A deep-learning package contains a set of well-organized deep-neural networks&tools.
+Project-URL: Homepage, https://github.com/ZhenglinPan/zhenglin-package
+Project-URL: Bug Tracker, https://github.com/ZhenglinPan/zhenglin-package/issues
+Author-email: Zhenglin <aidenhpan@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# pip install zhenglin
+
+This package contains some off-the-shelves deep-learning networks implemented by pytorch.
+
+- cycleGAN
+- DDPM
+- EDSR
+- ESRGAN
+- Noise2Void
+- Pix2Pix
+- RCAN
+- Restormer
+- RRDBNet
+- SRGAN
+- SWinIR
+- U2Net
+- UNet
