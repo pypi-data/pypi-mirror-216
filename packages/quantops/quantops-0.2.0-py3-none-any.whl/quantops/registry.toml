@@ -1,0 +1,417 @@
+
+## PREFIX SYSTEMS ########
+
+
+[[prefix_systems]]
+name = "SI"
+extend = ["LowerSI", "UpperSI"]
+
+[[prefix_systems]]
+name = "KiloSI"
+prefixes = [
+  { factor = 1e3, label = "kilo", symbol = "k" }
+]
+
+[[prefix_systems]]
+name = "UpperSI"
+extend = ["KiloSI"]
+prefixes = [
+  { factor = 1e6, label = "mega", symbol = "M" },
+  { factor = 1e9, label = "giga", symbol = "G" },
+  { factor = 1e12, label = "tera", symbol = "T" },
+  { factor = 1e15, label = "peta", symbol = "P" }
+]
+
+[[prefix_systems]]
+name = "LowerSI"
+prefixes = [
+  { factor = 1e-3, label = "milli", symbol = "m" },
+  { factor = 1e-6, label = "micro", symbol = "\u00B5", symbol_names = ["\u00B5", "\u03BC", "u"] }, # U+00B5 => micro sign, U+03BC => greek letter mu
+  { factor = 1e-9, label = "nano", symbol = "n" },
+  { factor = 1e-12, label = "pico", symbol = "p" },
+  { factor = 1e-15, label = "femto", symbol = "f" }
+]
+
+[[prefix_systems]]
+name = "BinaryMemory"
+prefixes = [
+  { factor = 1_024, label = "kibi", symbol = "Ki" },
+  { factor = 1_048_576, label = "mebi", symbol = "Mi" },
+  { factor = 1_073_741_824, label = "gibi", symbol = "Gi" },
+  { factor = 1_099_511_627_776, label = "tebi", symbol = "Ti" },
+  { factor = 1_125_899_906_842_624, label = "pebi", symbol = "Pi" }
+]
+
+
+
+## UNITS ########
+
+
+[[units]]
+dimensionality = { length = 1 }
+label = ["meter", "meters"]
+label_names = ["meter", "meters", "metre", "metres"]
+symbol = "m"
+prefixes = ["LowerSI", "KiloSI"]
+
+[[units]]
+dimensionality = { length = 1 }
+label = ["angstrom", "angstroms"]
+label_names = ["angstrom", "angstroms", "ångström", "ångströms"]
+symbol = "Å"
+value = 1e-10
+
+[[units]]
+dimensionality = { mass = 1 }
+label = ["gram", "grams"]
+symbol = "g"
+prefixes = ["LowerSI", "KiloSI"]
+value = 1e-3
+
+[[units]]
+dimensionality = { length = 1, mass = 1, time = -2 }
+label = ["newton", "newtons"]
+prefixes = ["LowerSI", "UpperSI"]
+symbol = "N"
+
+[[units]]
+dimensionality = { time = 1 }
+label = ["second", "seconds"]
+label_names = ["sec", "second", "seconds"]
+prefixes = ["LowerSI"]
+symbol = "s"
+
+[[units]]
+dimensionality = { time = 1 }
+label = ["minute", "minutes"]
+symbol = "min"
+value = 60
+
+[[units]]
+dimensionality = { time = 1 }
+label = ["hour", "hours"]
+symbol = ["hr", "hrs"]
+symbol_names = ["h", "hr", "hrs"]
+value = 3600
+
+[[units]]
+dimensionality = { time = 1 }
+label = ["day", "days"]
+symbol = "d"
+value = 86_400
+
+[[units]]
+dimensionality = { time = 1 }
+label = ["year", "years"]
+symbol = "y"
+value = 31_536_000
+
+[[units]]
+dimensionality = { length = 1, time = -1 }
+label = ["kilometer per hour", "kilometers per hour"]
+label_names = []
+symbol = "kph"
+value = 0.277778
+
+[[units]]
+dimensionality = { length = 3 }
+label = ["liter", "liters"]
+label_names = ["liter", "liters", "litre", "litres"]
+prefixes = ["LowerSI"]
+symbol = "l"
+value = 1e-3
+
+[[units]]
+dimensionality = { temperature = 1 }
+label = ["Celsius degree", "Celsius degrees"]
+label_names = []
+offset = 273.15
+symbol = "°C"
+symbol_names = ["degC"]
+
+[[units]]
+dimensionality = { temperature = 1 }
+label = "kelvin"
+prefixes = ["LowerSI"]
+symbol = "K"
+
+[[units]]
+dimensionality = { memory = 1 }
+label = ["byte", "bytes"]
+prefixes = ["SI"]
+symbol = "B"
+
+[[units]]
+dimensionality = { length = -1, mass = 1, time = -2 }
+label = ["pascal", "pascals"]
+prefixes = ["SI"]
+symbol = "Pa"
+
+[[units]]
+dimensionality = { length = -1, mass = 1, time = -2 }
+label = ["pound per square inch", "pounds per square inch"]
+label_names = []
+prefixes = ["SI"]
+symbol = "psi"
+value = 6.894757e3
+
+[[units]]
+dimensionality = { length = -1, mass = 1, time = -2 }
+label = ["bar", "bars"]
+symbol = "bar"
+value = 1e5
+
+[[units]]
+dimensionality = { length = -1, mass = 1, time = -2 }
+label = ["standard atmosphere", "standard atmospheres"]
+symbol = "atm"
+value = 101.325e3
+
+[[units]]
+dimensionality = { length = 2, mass = 1, time = -3 }
+label = ["watt", "watts"]
+prefixes = ["SI"]
+symbol = "W"
+
+[[units]]
+dimensionality = { length = 2, mass = 1, time = -2 }
+label = ["joule", "joules"]
+prefixes = ["SI"]
+symbol = "J"
+
+[[units]]
+dimensionality = { length = 2, mass = 1, time = -2 }
+label = ["calorie", "calories"]
+prefixes = ["KiloSI"]
+symbol = "cal"
+
+[[units]]
+dimensionality = { length = 2, mass = 1, time = -2 }
+label = ["electronvolt", "electronvolts"]
+prefixes = ["SI"]
+symbol = "eV"
+value = 1.602176634e-19
+
+[[units]]
+dimensionality = { current = 1 }
+label = ["ampere", "amperes"]
+prefixes = ["SI"]
+symbol = "A"
+
+[[units]]
+dimensionality = { angle = 1 }
+label = ["degree", "degrees"]
+label_names = ["deg", "degree", "degrees"]
+symbol = "°"
+symbol_names = []
+value = 0.017453292519943295
+
+[[units]]
+dimensionality = { angle = 1 }
+label = ["radian", "radians"]
+symbol = "rad"
+
+[[units]]
+dimensionality = { current = 1, time = 1 }
+label = ["coulomb", "coulombs"]
+prefixes = ["SI"]
+symbol = "C"
+
+[[units]]
+dimensionality = { time = -1 }
+label = ["hertz", "hertz"]
+prefixes = ["SI"]
+symbol = "Hz"
+
+[[units]]
+dimensionality = { time = -1 }
+label = ["becquerel", "becquerels"]
+prefixes = ["SI"]
+symbol = "Bq"
+
+[[units]]
+dimensionality = { solid_angle = 1 }
+label = ["steradian", "steradians"]
+symbol = "sr"
+
+[[units]]
+dimensionality = { light = 1 }
+label = ["candela", "candelas"]
+prefixes = ["SI"]
+symbol = "cd"
+
+[[units]]
+dimensionality = { length = -2, light = 1, solid_angle = 1 }
+label = ["lux", "luxes"]
+prefixes = ["SI"]
+symbol = "lx"
+
+[[units]]
+dimensionality = { light = 1, solid_angle = 1 }
+label = ["lumen", "lumens"]
+prefixes = ["SI"]
+symbol = "lm"
+
+[[units]]
+dimensionality = {}
+label = ["decibel", "decibels"]
+symbol = "dB"
+
+[[units]]
+dimensionality = { substance = 1 }
+label = ["mole", "moles"]
+prefixes = ["SI"]
+symbol = "mol"
+
+[[units]]
+dimensionality = { length = -3, substance = 1 }
+label = ["molar", "molars"]
+prefixes = ["SI"]
+symbol = "M"
+
+
+## CONTEXTS ########
+
+
+[[contexts]]
+name = "length"
+variants = [{ options = ["~m"] }]
+
+[[contexts]]
+name = "length:atomic"
+variants = [{ options = ["~angstrom"] }]
+
+[[contexts]]
+name = "time"
+variants = [{ options = ["s", "min", "hr", "day", "year"] }]
+
+[[contexts]]
+name = "velocity"
+
+  [[contexts.variants]]
+  options = ["~m/s"]
+  systems = ["SI"]
+
+[[contexts]]
+name = "car_velocity"
+
+  [[contexts.variants]]
+  options = ["km/hr"]
+  systems = ["SI"]
+
+[[contexts]]
+name = "flowrate"
+
+  [[contexts.variants]]
+  options = ["~l/min"]
+  systems = ["SI"]
+
+[[contexts]]
+name = "temperature"
+
+  [[contexts.variants]]
+  options = ["~degC"]
+  systems = ["SI"]
+
+[[contexts]]
+name = "temperature:kelvin"
+
+  [[contexts.variants]]
+  options = ["~K"]
+  systems = ["SI"]
+
+[[contexts]]
+name = "dna_concentration"
+variants = [{ options = ["ng/ul"] }]
+
+[[contexts]]
+name = "memory"
+variants = [{ options = ["~B"] }]
+
+[[contexts]]
+name = "pressure"
+variants = [{ options = ["~Pa"] }]
+
+[[contexts]]
+name = "pressure:psi"
+variants = [{ options = ["~psi"] }]
+
+[[contexts]]
+name = "power"
+variants = [{ options = ["~W"] }]
+
+[[contexts]]
+name = "energy"
+variants = [{ options = ["~J"] }]
+
+[[contexts]]
+name = "energy:cal"
+variants = [{ options = ["~cal"] }]
+
+[[contexts]]
+name = "energy:kcal"
+variants = [{ options = ["kcal"] }]
+
+[[contexts]]
+name = "energy:ev"
+variants = [{ options = ["~eV"] }]
+
+[[contexts]]
+name = "energy:watthour"
+variants = [{ options = ["~W*h"] }]
+
+[[contexts]]
+name = "frequency"
+variants = [{ options = ["~Hz"] }]
+
+[[contexts]]
+name = "illuminance"
+variants = [{ options = ["~lx"] }]
+
+[[contexts]]
+name = "luminous_intensity"
+variants = [{ options = ["~cd"] }]
+
+[[contexts]]
+name = "luminous_flux"
+variants = [{ options = ["~lm"] }]
+
+[[contexts]]
+name = "luminous_exposure"
+variants = [{ options = ["~lx*s"] }]
+
+[[contexts]]
+name = "luminous_exitance"
+variants = [{ options = ["~lm/m^2"] }]
+
+[[contexts]]
+name = "luminous_efficacy"
+variants = [{ options = ["~lm/W"] }]
+
+[[contexts]]
+name = "luminance"
+variants = [{ options = ["~cd/m^2"] }]
+
+[[contexts]]
+name = "luminous_energy"
+variants = [{ options = ["~lm*s"] }]
+
+[[contexts]]
+name = "angle"
+variants = [{ options = ["rad"] }]
+
+[[contexts]]
+name = "angle:deg"
+variants = [{ options = ["deg"] }]
+
+[[contexts]]
+name = "substance"
+variants = [{ options = ["~mol"] }]
+
+[[contexts]]
+name = "molar_concentration"
+variants = [{ options = ["~M/l"] }]
+
+[[contexts]]
+name = "molar_concentration:explicit"
+variants = [{ options = ["~mol/l"] }]

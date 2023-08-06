@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: quantops
+Version: 0.2.0
+Summary: Tools to define, manipulate and format physical quantities
+License: EUPL-1.2
+Project-URL: repository, https://github.com/slietar/quantops
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: snaptext (~=0.1.0)
+
