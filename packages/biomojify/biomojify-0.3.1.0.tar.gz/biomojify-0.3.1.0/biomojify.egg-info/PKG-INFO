@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: biomojify
+Version: 0.3.1.0
+Summary: Convert FASTQ and FASTA files to emoji.
+Home-page: https://github.com/fastqe/biomojify
+Author: Andrew Lonsdale
+Author-email: andrew.lonsdale@lonsbio.com.au
+License: LICENSE
+License-File: LICENSE
+
+The program reads one or more input FASTA or FASTQ files and converts them to emoji.
