@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: sqlalchemy-pagination-fastapi
+Version: 0.0.4
+Summary: Package used to paginate sqlalchemy query results.
+Author: Oriol Viladrosa
+Author-email: oviladrosa@gmail.com
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# sqlalchemy-pagination
+
+The `sqlalchemy-pagination` is a simple package that paginates queries using sqlalchemy utils like size or offset.
