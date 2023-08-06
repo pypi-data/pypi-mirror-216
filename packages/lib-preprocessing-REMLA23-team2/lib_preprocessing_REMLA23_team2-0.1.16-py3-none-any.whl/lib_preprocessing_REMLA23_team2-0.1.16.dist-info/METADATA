@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: lib-preprocessing-REMLA23-team2
+Version: 0.1.16
+Summary: Library for preprocessing the data
+Author: remla23_team2
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: nltk
+Requires-Dist: re
+
+# Create a Library for Preprocessing
