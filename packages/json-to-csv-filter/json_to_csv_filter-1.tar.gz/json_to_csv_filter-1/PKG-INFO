@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: json_to_csv_filter
+Version: 1
+Summary: Convert list of json objects to csv with optional filters
+Project-URL: Homepage, https://github.com/hylkefoeken/json-to-csv
+Project-URL: Bug Tracker, https://github.com/hylkefoeken/json-to-csv/issues
+Author-email: Hylke Foeken <h.foeken@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# json-to-csv
+converts a list of json objects to a csv
