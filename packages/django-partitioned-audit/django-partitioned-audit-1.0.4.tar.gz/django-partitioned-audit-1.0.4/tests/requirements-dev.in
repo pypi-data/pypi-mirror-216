@@ -1,0 +1,12 @@
+-r requirements-test.txt
+
+docker-compose
+bump2version
+tox
+pylint
+prettytable
+twine
+pre-commit
+
+# Reqs to run the stress tests using gunicorn
+gunicorn

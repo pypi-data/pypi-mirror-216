@@ -1,0 +1,8 @@
+/.idea
+/dist
+/django_partitioned_audit.egg-info
+*.pyc
+/.tox
+/.venv
+tests/app_install_test/venv
+/build

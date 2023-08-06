@@ -1,0 +1,6 @@
+# Minimal requirements to run the tests - remember to keep in sync with `tox.ini`
+django>=4.2,<4.3
+psycopg2-binary
+pytest
+pytest-django
+requests

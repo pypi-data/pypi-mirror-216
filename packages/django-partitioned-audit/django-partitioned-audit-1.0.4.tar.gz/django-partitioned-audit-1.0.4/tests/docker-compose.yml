@@ -1,0 +1,54 @@
+version: '3.7'
+
+services:
+  db12:
+    # https://hub.docker.com/_/postgres
+    image: postgres:12-alpine
+    restart: "no"
+    volumes:
+      - /dev/shm/django-partitioned-audit/pg-data-12:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: test12
+      POSTGRES_PASSWORD: test12
+      POSTGRES_DB: test12
+    ports:
+      - 55012:5432
+
+  db13:
+    # https://hub.docker.com/_/postgres
+    image: postgres:13-alpine
+    restart: "no"
+    volumes:
+      - /dev/shm/django-partitioned-audit/pg-data-13:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: test13
+      POSTGRES_PASSWORD: test13
+      POSTGRES_DB: test13
+    ports:
+      - 55013:5432
+
+  db14:
+    # https://hub.docker.com/_/postgres
+    image: postgres:14-alpine
+    restart: "no"
+    volumes:
+      - /dev/shm/django-partitioned-audit/pg-data-14:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: test14
+      POSTGRES_PASSWORD: test14
+      POSTGRES_DB: test14
+    ports:
+      - 55014:5432
+
+  db15:
+    # https://hub.docker.com/_/postgres
+    image: postgres:15-alpine
+    restart: "no"
+    volumes:
+      - /dev/shm/django-partitioned-audit/pg-data-15:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: test15
+      POSTGRES_PASSWORD: test15
+      POSTGRES_DB: test15
+    ports:
+      - 55015:5432

@@ -1,0 +1,1 @@
+default_app_config = "django_partitioned_audit.apps.SimpleTriggerAuditAppConfig"
