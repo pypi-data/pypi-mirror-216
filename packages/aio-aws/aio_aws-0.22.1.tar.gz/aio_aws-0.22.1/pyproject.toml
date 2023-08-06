@@ -1,0 +1,102 @@
+[tool.poetry]
+name = "aio-aws"
+version = "0.22.1"
+description = "aio-aws"
+authors = [
+    "Darren Weber <dazza-codes@github.com>",
+]
+license = "Apache-2.0"
+
+readme = "README.md"  # Markdown files are supported
+repository = "https://github.com/dazza-codes/aio-aws.git"
+homepage = "https://github.com/dazza-codes/aio-aws"
+
+keywords = [
+    "Development Status :: 3 - Alpha",
+    "Topic :: Utilities",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+include = ["aio_aws/**/*"]
+exclude = ["tests/**/*"]
+
+packages = [
+    {include = "aio_aws"}
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+# Allow s3fs/aiobotcore to bundle compatible versions of botocore, boto3, and awscli;
+# see https://github.com/fsspec/s3fs/blob/main/setup.py
+s3fs = {version = "^2023.0", extras = ["awscli", "boto3"]}
+
+aiofiles = "^22.0"
+pydantic = "^1.10"
+PyYAML = "^5.2"
+requests = "^2.0"
+tinydb = "^4.0"
+
+#
+# Optional packages
+#
+
+redis = {extras = ["hiredis"], version = "^4.0", optional = true}
+databases = {extras = ["postgresql", "mysql", "sqlite"], version = "*", optional = true}
+
+# Optional docs pages for readthedocs builds
+Sphinx = {version = "^5.0", optional = true}
+sphinx-autoapi = {version = "^2.0", optional = true}
+sphinx-autodoc-typehints = {version = "^1.0", optional = true}
+sphinx-rtd-theme = {version = "^1.0", optional = true}
+ipython = {version = "^8.0", optional = true}
+
+[tool.poetry.extras]
+
+all = [
+    "redis",
+    "databases",
+]
+
+redis = ["redis"]
+aioredis = ["redis"]  # for backward compatibility
+
+databases = ["databases"]
+
+# readthedocs can use this optional dependency to build docs;
+# the optional docs dependencies are also in py-dev-deps
+docs = [
+    "Sphinx",
+    "sphinx-autoapi",
+    "sphinx-autodoc-typehints",
+    "sphinx-rtd-theme",
+    "ipython"
+]
+
+
+[tool.poetry.group.dev.dependencies]
+
+pytest-aiomoto = "^0.7"
+pytest-redis = "^3.0"
+
+# py-dev-deps is used as a common denominator for many development dependencies
+py-dev-deps = "^0.5"
+
+
+[tool.isort]
+profile = "black"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
