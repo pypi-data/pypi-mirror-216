@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: sample-csv
+Version: 1.0.1
+Summary: 
+Author: simonpfish
+Author-email: simonpfish@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pandas (>=2.0.2,<3.0.0)
+Requires-Dist: rich (>=13.4.2,<14.0.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Description-Content-Type: text/markdown
+
+# sample-csv
+
+A minimal CLI tool for sampling from large CSV files to reduce their size.
+
+```console
+pip install sample-csv
+```
+
+![sample-csv](https://raw.githubusercontent.com/simonpfish/sample-csv/main/examples/demo.gif)
+
+**Usage**:
+
+```console
+$ sample-csv INPUT_PATH [PERCENTAGE]
+```
+
+**Arguments**:
+
+- `INPUT_PATH`: Path to the input CSV file. [required]
+- `[PERCENTAGE]`: Percentage of data to sample. The value should be between 0.0 and 1.0. [default: 0.1]
+
+**Options**:
+
+- `--help`: Show this message and exit.
+
