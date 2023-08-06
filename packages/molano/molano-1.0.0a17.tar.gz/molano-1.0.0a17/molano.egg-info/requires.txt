@@ -1,0 +1,7 @@
+aorta[google]>=3.0.0a5
+cbra[google]>=2.0.0a16
+canonical>=0.27.0
+google-cloud-datastore
+google-api-python-client
+gunicorn>=20.1.0
+pydantic>=1.10.2
