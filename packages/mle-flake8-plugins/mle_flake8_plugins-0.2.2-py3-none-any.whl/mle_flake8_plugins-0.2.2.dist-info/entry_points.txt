@@ -1,0 +1,4 @@
+[flake8.extension]
+MLE00=mle_flake8_plugins.flake8_mle_docstring:MleDocstringChecker
+MLE10=mle_flake8_plugins.flake8_mle_convention:MleConventionChecker
+
