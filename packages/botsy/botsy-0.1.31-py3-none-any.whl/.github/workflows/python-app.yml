@@ -1,0 +1,66 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: 
+      name: Test
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+  
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y portaudio19-dev ffmpeg
+    
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest poetry pyaudio
+
+    - name: Poetry Install
+      run: |
+        poetry install
+
+    - name: Lint with flake8
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Test with pytest
+      run: |
+        # secrets
+        echo "PROJECT_ROOT=${{secrets.PROJECT_ROOT}}" >> .env
+        echo "GOOGLE_CUSTOME_SEARCH_API_KEY=${{secrets.GOOGLE_CUSTOME_SEARCH_API_KEY}}" >> .env
+        echo "GOOGLE_CUSTOME_CSE_ID=${{secrets.GOOGLE_CUSTOME_CSE_ID}}" >> .env
+
+        # envs
+        echo "MODELS_DIR=${{vars.MODELS_DIR}}" >> .env 
+        echo "SVM_ACTIONS_CLASSIFIER=${{vars.SVM_ACTIONS_CLASSIFIER}}" >> .env 
+        # echo "REGISTRY_DB=${{vars.REGISTRY_DB}}" >> .env 
+        # echo "ACTIONS_CLASSIFIER=${{vars.ACTIONS_CLASSIFIER}}" >> .env 
+        # echo "TICKER_CLASSIFIER=${{vars.TICKER_CLASSIFIER}}" >> .env 
+        
+
+        # can envs for easier debugging
+        cat .env
+
+        # run tests
+        poetry run pytest -p no:warnings
+
+  
