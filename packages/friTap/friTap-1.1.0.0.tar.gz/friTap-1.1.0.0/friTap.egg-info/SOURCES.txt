@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+friTap/__init__.py
+friTap/_ssl_log.js
+friTap/_ssl_log_legacy.js
+friTap/android.py
+friTap/friTap.py
+friTap/pcap.py
+friTap.egg-info/PKG-INFO
+friTap.egg-info/SOURCES.txt
+friTap.egg-info/dependency_links.txt
+friTap.egg-info/entry_points.txt
+friTap.egg-info/requires.txt
+friTap.egg-info/top_level.txt
