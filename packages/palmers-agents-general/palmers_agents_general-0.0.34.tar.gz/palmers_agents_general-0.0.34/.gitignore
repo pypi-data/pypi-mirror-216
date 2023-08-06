@@ -1,0 +1,6 @@
+data/*
+*/__pycache__/*
+.idea
+mlops/azure_functions/.venv/
+__azurite_db_queue__.json
+__azurite_db_queue_extent__.json
