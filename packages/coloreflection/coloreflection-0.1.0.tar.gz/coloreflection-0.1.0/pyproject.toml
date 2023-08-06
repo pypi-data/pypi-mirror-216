@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "coloreflection"
+version = "0.1.0"
+description = "Module for using colors for the terminal, based on reflection"
+authors = ["Vitaly Zorin <addefan@mail.ru>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/Addefan/coloreflection"
+keywords = ["colorist", "terminal"]
+
+[tool.poetry.dependencies]
+python = "^3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
