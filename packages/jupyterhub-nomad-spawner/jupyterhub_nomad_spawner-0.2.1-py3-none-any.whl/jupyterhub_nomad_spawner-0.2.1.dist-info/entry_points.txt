@@ -1,0 +1,3 @@
+[jupyterhub.spawners]
+nomad-spawner=jupyterhub_nomad_spawner.spawner:NomadSpawner
+
