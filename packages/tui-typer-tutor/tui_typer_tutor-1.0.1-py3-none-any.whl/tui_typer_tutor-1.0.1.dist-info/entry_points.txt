@@ -1,0 +1,4 @@
+[console_scripts]
+ttt=tui_typer_tutor.scripts:start
+tui-typer-tutor=tui_typer_tutor.scripts:start
+
