@@ -1,0 +1,17 @@
+lightning>=2.0.0rc0
+matplotlib
+numpy
+pandas
+plotly
+pytorch-lightning>=1.4
+river
+scikit-learn
+scipy
+spotriver
+seaborn
+tabulate
+tensorboard
+torch
+torch-tb-profiler
+torchmetrics
+torchvision
