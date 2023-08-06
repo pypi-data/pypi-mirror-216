@@ -1,0 +1,3 @@
+recursive-include certora_jars *.jar
+recursive-include certora_bins *
+include EquivalenceCheck/equivCheck.py EquivalenceCheck/Eq_sanity.conf EquivalenceCheck/Eq_default.confEquivalenceCheck/Eq_template.specEquivalenceCheck/Eq_mc_template.spec CERTORA-CLI-VERSION-METADATA.json
