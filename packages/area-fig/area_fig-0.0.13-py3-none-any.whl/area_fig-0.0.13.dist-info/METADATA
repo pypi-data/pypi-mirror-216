@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: area-fig
+Version: 0.0.13
+Summary: Area and Perimeter calculator
+Author: Kailash Lohar
+Author-email: kailash@aganitha.ai
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.11
+
+A package to find area of square, rectangle, triangle and circle
