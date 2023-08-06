@@ -1,0 +1,92 @@
+## function for wrangling data
+from dateutil import parser
+import mb.pandas as pd
+
+__all__ = ['wrangling_data']
+
+def wrangling_data(queries_res,site_data=None,date = '2023-06-06',logger=None):
+    """
+    Args:
+        query_res: query result from database
+    Output:
+        wrangled data : csv file
+    """
+    
+    hub_custom_breakdown = queries_res[0]
+    site_info = queries_res[1]
+    pp_driver_input = queries_res[2]
+    food_items = queries_res[3]
+    meal_period_configuration = queries_res[4]
+    pp_production_rework = queries_res[5]
+    waste_data_for_site = queries_res[6]
+    
+    meal_period_start = meal_period_configuration['waste_disposal_start_time'].values[0]
+    meal_period_end = meal_period_configuration['waste_disposal_end_time'].values[0]
+    
+    meal_period_end_dt =parser.parse(meal_period_end)   
+    meal_period_start_dt =parser.parse(meal_period_start)
+    
+    covers = pp_driver_input[pp_driver_input['driver_type'] == 'NO_OF_COVERS']['value']
+    actual_covers = pp_driver_input[pp_driver_input['driver_type'] == 'ACTUAL_NO_OF_COVERS']['value']
+
+    cover_count = None
+    if len(actual_covers.values) > 0:
+        cover_count = actual_covers.values[0]
+    else:
+        cover_count = covers.values[0]
+    
+
+    actual_production_and_rework = pp_production_rework.copy()
+    actual_production_and_rework['quantity_g'] = actual_production_and_rework['quantity_kg']*1000
+    actual_production_and_rework['rework_g'] = actual_production_and_rework['rework']*1000
+    
+    joined_df = waste_data_for_site.join(hub_custom_breakdown.set_index('id'), on='reason_guid', how='inner')
+
+    # Filter the joined dataframe based on the 'name' column
+    filtered_df = joined_df.loc[joined_df['name'] == 'Overproduction']
+     
+    if logger and site_data:
+        logger.info('Site info {} : {}'.format(site_data['site_id'],site_info['tracker_name'].values[0]))
+        logger.info('Cover count for the date {} : {}'.format(site_data['date'],cover_count))
+        logger.info('pp_production_rework total : {}'.format(pp_production_rework['rework'].sum()))
+
+    # Filter the filtered dataframe based on the 'local_time' column
+    itemised_overproduction = filtered_df.loc[(filtered_df['local_time'].dt.time >= meal_period_start_dt.time()) & (filtered_df['local_time'].dt.time <= meal_period_end_dt.time())]
+    itemised_overproduction = itemised_overproduction[list(waste_data_for_site.columns)]
+
+    joined_df = food_items.join(itemised_overproduction.set_index('item_id'), on='waste_identifier', how='left',rsuffix='_2')
+
+    # Group the joined dataframe by 'food_item_id' and calculate the sum of 'weight_g' column while replacing null values with 0
+    grouped_df = joined_df.groupby('food_item_id')['weight_g'].sum().fillna(0)
+
+    # Convert the resulting series object to a dataframe
+    overproduction = pd.DataFrame(grouped_df).reset_index().rename(columns={'weight_g': 'quantity_g'})
+
+    joined_df = pd.merge(food_items, overproduction, how='left', on='food_item_id').fillna(0)
+
+    # Join the resulting dataframe with 'actual_production_and_rework' dataframe on 'taxonomy_code' column and replace null values with 0
+    joined_df2 = pd.merge(joined_df, actual_production_and_rework, how='left', on='taxonomy_code').fillna(0)
+
+    # Select the required columns from the resulting dataframe
+    result_df = joined_df2[['food_item_id_x', 'food_group', 'name_x', 'taxonomy_code', 'quantity_g_y', 'rework_g', 'quantity_g_x']]
+
+    # Rename the columns to match the column names in the SQL query
+    meal_service_summary = result_df.rename(columns={'food_item_id_x':'food_item_id','name_x': 'name','quantity_g_y': 'actual_production', 'rework_g': 'rework_or_reuse', 'quantity_g_x': 'waste'})
+
+    meal_service_summary_df = meal_service_summary.copy()
+
+    # Calculate the new columns as required
+    meal_service_summary_df['covers'] = cover_count
+    meal_service_summary_df['actual_consumption'] = meal_service_summary_df['actual_production'] - meal_service_summary_df['rework_or_reuse'] - meal_service_summary_df['waste']
+    meal_service_summary_df['consumption_per_cover'] = meal_service_summary_df['actual_consumption'] / cover_count
+    meal_service_summary_df['scaling_factor'] = meal_service_summary_df['actual_consumption'] / (cover_count * 1000)
+
+    # Select all columns from the resulting dataframe
+    result_df = meal_service_summary_df.loc[:, :]
+    result_df['date'] = date
+
+    if logger:
+        logger.info("Added date column to the result_df")
+        logger.info("result_df : {}".format(result_df.head(2)))
+                        
+    return result_df
