@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+swarms/__init__.py
+swarms.egg-info/PKG-INFO
+swarms.egg-info/SOURCES.txt
+swarms.egg-info/dependency_links.txt
+swarms.egg-info/requires.txt
+swarms.egg-info/top_level.txt
+swarms/agents/__init__.py
+swarms/agents/swarms.py
+swarms/agents/utils.py
