@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "backup-juggler"
+version = "0.2.0"
+description = "Multiple copies of files and directories simultaneously made easy"
+license = "GPL-3.0-only"
+authors = ["Marcos Raulino <marcosfsraulino@gmail.com>"]
+readme = "README.md"
+packages = [{include = "backup_juggler"}]
+classifiers = [
+    "Natural Language :: English",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3.11",
+    "Environment :: Console",
+    "Topic :: Utilities",
+    "Topic :: System :: Archiving :: Backup",
+    "Development Status :: 5 - Production/Stable"
+]
+
+[tool.poetry.urls]
+"Documentation" = "https://backup-juggler.readthedocs.io/en/latest/"
+"Code" = "https://github.com/raulin0/backup-juggler"
+"Issue Tracker" = "https://github.com/raulin0/backup-juggler/issues"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tqdm = "^4.65.0"
+rich = "^13.4.2"
+typer = {extras = ["all"], version = "^0.9.0"}
+toml = "^0.10.2"
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.5.2"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+blue = "^0.9.1"
+isort = "^5.12.0"
+taskipy = "^1.11.0"
+
+[tool.poetry.group.doc.dependencies]
+mkdocs-material = "^9.1.17"
+mkdocstrings = "^0.22.0"
+mkdocstrings-python = "^1.1.2"
+mkdocs-macros-plugin = "^1.0.1"
+jinja2 = "^3.1.2"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "poetry"
+update_changelog_on_bump = true
+changelog_incremental = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+lint = "blue --check --diff . && isort --check --diff ."
+docs = "mkdocs serve"
+pre_test = "task lint"
+test = "pytest -s --cov=backup_juggler -vv tests/ --cov-report term-missing"
+post_test = "coverage html"
+
+[tool.poetry.scripts]
+bj = "backup_juggler.juggler_cli:app"
