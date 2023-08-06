@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: yaqd-fakes
+Version: 2023.6.0
+Project-URL: Home page, https://yaq.fyi
+Project-URL: Source, https://github.com/yaq-project/yaq-python
+Project-URL: Issues, https://github.com/yaq-project/yaq-python/issues
+Author: yaq developers
+License-Expression: LGPL-3.0-only
+License-File: LICENSE
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.7
+Requires-Dist: yaqd-core>=2022.3.0
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: pre-commit; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# yaqd-fakes
+
+[![PyPI](https://img.shields.io/pypi/v/yaqd-fakes)](https://pypi.org/project/yaqd-fakes)
+[![Conda](https://img.shields.io/conda/vn/conda-forge/yaqd-fakes)](https://anaconda.org/conda-forge/yaqd-fakes)
+[![yaq](https://img.shields.io/badge/framework-yaq-orange)](https://yaq.fyi/)
+[![black](https://img.shields.io/badge/code--style-black-black)](https://black.readthedocs.io/)
+[![ver](https://img.shields.io/badge/calver-YYYY.M.MICRO-blue)](https://calver.org/)
+[![log](https://img.shields.io/badge/change-log-informational)](https://github.com/yaq-project/yaq-python/-/blob/main/yaq-fakes/CHANGELOG.md)
+
+fake yaq daemons, for testing purposes
+
+This package contains the following daemon(s):
+
+- [fake-camera](https://yaq.fyi/daemons/fake-camera)
+- [fake-continuous-hardware](https://yaq.fyi/daemons/fake-continuous-hardware)
+- [fake-has-transformed-position](https://yaq.fyi/daemons/fake-has-transformed-position)
+- [fake-discrete-hardware](https://yaq.fyi/daemons/fake-discrete-hardware)
+- [fake-furnace](https://yaq.fyi/daemons/fake-furnace)
+- [fake-has-turret](https://yaq.fyi/daemons/fake-has-turret)
+- [fake-sensor](https://yaq.fyi/daemons/fake-sensor)
+- [fake-spectrometer](https://yaq.fyi/daemons/fake-spectrometer) (requires numpy)
+- [fake-triggered-sensor](https://yaq.fyi/daemons/fake-triggered-sensor)

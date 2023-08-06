@@ -1,0 +1,10 @@
+[console_scripts]
+yaqd-fake-camera = yaqd_fakes._fake_camera:FakeCamera.main
+yaqd-fake-continuous-hardware = yaqd_fakes._fake_continuous_hardware:FakeContinuousHardware.main
+yaqd-fake-discrete-hardware = yaqd_fakes._fake_discrete_hardware:FakeDiscreteHardware.main
+yaqd-fake-furnace = yaqd_fakes._fake_furnace:FakeFurnace.main
+yaqd-fake-has-transformed-position = yaqd_fakes._fake_has_transformed_position:FakeHasTransformedPosition.main
+yaqd-fake-has-turret = yaqd_fakes._fake_has_turret:FakeHasTurret.main
+yaqd-fake-sensor = yaqd_fakes._fake_sensor:FakeSensor.main
+yaqd-fake-spectrometer = yaqd_fakes._fake_spectrometer:FakeSpectrometer.main
+yaqd-fake-triggered-sensor = yaqd_fakes._fake_triggered_sensor:FakeTriggeredSensor.main
