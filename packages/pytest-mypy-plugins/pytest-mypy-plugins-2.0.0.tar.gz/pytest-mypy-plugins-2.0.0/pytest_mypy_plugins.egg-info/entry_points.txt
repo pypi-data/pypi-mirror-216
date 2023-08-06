@@ -1,0 +1,2 @@
+[pytest11]
+pytest-mypy-plugins = pytest_mypy_plugins.collect

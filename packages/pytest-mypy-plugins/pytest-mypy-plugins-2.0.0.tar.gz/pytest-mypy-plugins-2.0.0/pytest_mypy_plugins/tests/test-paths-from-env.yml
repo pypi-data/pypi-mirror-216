@@ -1,0 +1,13 @@
+- case: add_mypypath_env_var_to_package_search
+  main: |
+    import extra_module
+    extra_module.extra_fn()
+
+    extra_module.missing()  # E: Module has no attribute "missing"  [attr-defined]
+  env:
+    - MYPYPATH=../extras
+  files:
+    - path: ../extras/extra_module.py
+      content: |
+        def extra_fn() -> None:
+            pass

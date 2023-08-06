@@ -1,0 +1,7 @@
+pytest>=7.0.0
+mypy>=1.3
+decorator
+pyyaml
+Jinja2
+regex
+packaging
