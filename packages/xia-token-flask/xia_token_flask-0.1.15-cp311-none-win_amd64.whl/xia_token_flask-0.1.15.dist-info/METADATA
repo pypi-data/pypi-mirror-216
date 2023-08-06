@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: xia-token-flask
+Version: 0.1.15
+Home-page: https://develop.x-i-a.com/docs/xia-token-flask/0.1.15/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: Flask
+Requires-Dist: PyJWT
+Requires-Dist: xia-engine
+
+Introduction
+=============================
+
+Welcome to use X-I-A's software
+
