@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: phyle-phynder
+Version: 0.1.1
+Summary: 
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: tabulate (>=0.9.0,<0.10.0)
+Description-Content-Type: text/markdown
+
+Um buscador de arquivos trivial desenvolvido para fins educacionais. Produzido através do curso disponibilizado pelo canal caverna_dev na plataforma Udemy.
