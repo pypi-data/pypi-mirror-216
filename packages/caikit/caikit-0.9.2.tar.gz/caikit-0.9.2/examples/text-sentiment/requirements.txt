@@ -1,0 +1,7 @@
+caikit[all]
+
+# Only needed for HuggingFace
+scipy
+torch
+transformers~=4.27.2
+
