@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dexcolor"
+version = "0.1"
+authors = [
+  { name="Terong33", email="thisterong33@proton.me" },
+]
+description = "Terminal colored text."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Terminals",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Terong33/dexcolor"
