@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <!--
+    <link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <meta http-equiv="refresh" content="{{ meta.refresh_interval }}" />
+  </head>
+
+  <body>
+     <table class="table table-striped"><tr>
+      <td>Host: --</td>
+      <td></td>
+      {% for link in meta.extra_links %}
+          <td><a href="{{ meta.extra_links[link] }}">{{link}}</a></td>
+          <td></td>
+      {% endfor %}
+
+    </tr><tr>
+
+      {% for interval in meta.intervals %}
+          <td>{{interval}} = {{meta.intervals[interval]}}s  </td><td></td>
+      {% endfor %}
+
+    </tr><tr>
+
+      <td><a href="/">Dashboard</a></td>
+      <td></td>
+      <td><a href="/containers">Containers</a></td>
+      <td></td>
+      <td><a href="/images">Images</a></td>
+
+    </tr></table>
+
+    <div class="dashboard">
+      {% block content %}{% endblock %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+
+  </body>
+</html>
