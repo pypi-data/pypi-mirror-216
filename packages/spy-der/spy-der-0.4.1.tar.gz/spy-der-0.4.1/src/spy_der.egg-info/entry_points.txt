@@ -1,0 +1,2 @@
+[console_scripts]
+spyder = spyder.der:compute_der_from_rttm
