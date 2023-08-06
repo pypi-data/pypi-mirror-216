@@ -1,0 +1,16 @@
+pronto>=2.4
+termcolor
+
+[all]
+natsort
+numpy
+pandas
+
+[docs]
+
+[substitutability-matrix]
+natsort
+numpy
+pandas
+
+[tests]
