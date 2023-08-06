@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <table class="table table-striped">
+    <tr>
+      <td>event_horizon (monitoring since)</td>
+      <td>{{ meta.event_horizon }}</td>
+      <td>
+    </tr>
+  </table>
+
+  <h2>containers ({{meta.container_count}})</h2>
+  {{ containers_html|safe }}
+
+  <h2>images ({{meta.image_count}})</h2>
+  {{ images_html|safe }}
+
+{% endblock %}
+
