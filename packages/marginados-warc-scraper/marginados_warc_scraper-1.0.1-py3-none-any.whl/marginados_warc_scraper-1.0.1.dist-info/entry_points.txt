@@ -1,0 +1,2 @@
+[console_scripts]
+marwar-scraper = marwar_scraper.scrape:main
