@@ -1,0 +1,47 @@
+psalpsdtools
+psalpsdtools is developed for the processing of PSA’s Livestock and Poultry Statistics Division.
+
+Features
+Looking-up of values from the Supply-Disposition file and copying to the EDRW file.
+
+Creating output files based on user specified:
+region
+
+commodity
+
+year
+
+Installation
+Install psalpsdtools by running:
+
+pip install psalpsdtools
+
+Usage
+from psalpsdtools import Edrw
+
+# SET REGION TO PROCESS
+regName = “Caraga”
+# SET QUARTER, ALSO USED IN READING THE S-D FILE
+qtr = “Q1”
+# SET FOLDER OF SOURCES/FINAL FILES INCLUDING S-D FILE
+baseFolder = “D:/EDRW/Q1”
+# SET S-D FILE NAME
+sdFile = ‘SD Q1 2023.xlsm’
+# COMMODITY 08=chicken, 09=duck, etc.
+commcode = ‘08’
+# Year
+yr = ‘23’
+# CALL AN INSTANCE OF Edrw
+myedrw = Edrw()
+# RUN THE UPDATING
+myedrw.update_sources(regName,qtr,baseFolder,sdFile,commcode,yr)
+Contribute
+Issue Tracker: github.com/psalpsdtools/psalpsdtools/issues
+
+Source Code: github.com/psalpsdtools/psalpsdtools
+
+Support
+If you are having issues, please let us know. We have a mailing list located at: a.diaziii@psa.gov.ph
+
+License
+The project is licensed under the BSD license.
