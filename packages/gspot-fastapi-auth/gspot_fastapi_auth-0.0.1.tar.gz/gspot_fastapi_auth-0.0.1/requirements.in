@@ -1,0 +1,13 @@
+redis
+httpx
+twine
+
+factory_boy
+Faker
+
+fastapi-gspot-auth==0.0.1
+
+setuptools
+
+fastapi
+uvicorn
