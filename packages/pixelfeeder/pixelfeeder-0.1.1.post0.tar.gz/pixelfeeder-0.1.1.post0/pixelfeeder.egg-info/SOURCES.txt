@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+pixelfeeder/__init__.py
+pixelfeeder/cli.py
+pixelfeeder/flickr_data_reader.py
+pixelfeeder/gui.py
+pixelfeeder/image_loader.py
+pixelfeeder/pixelfed_uploader.py
+pixelfeeder/tools.py
+pixelfeeder.egg-info/PKG-INFO
+pixelfeeder.egg-info/SOURCES.txt
+pixelfeeder.egg-info/dependency_links.txt
+pixelfeeder.egg-info/entry_points.txt
+pixelfeeder.egg-info/requires.txt
+pixelfeeder.egg-info/top_level.txt
