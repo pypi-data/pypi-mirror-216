@@ -1,0 +1,133 @@
+[build-system]
+requires = [
+    "setuptools >= 64",
+    "setuptools_scm[toml] >= 6.4"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asphalt-web"
+description = "Web framework integrations for the Asphalt framework"
+readme = "README.rst"
+authors = [{name = "Alex Grönholm", email = "alex.gronholm@nextday.fi"}]
+license = {text = "Apache License 2.0"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Environment :: Web Environment",
+    "Framework :: AsyncIO",
+    "Typing :: Typed",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "asphalt ~= 4.8",
+]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://asphalt-web.readthedocs.org/en/latest/"
+"Source code" = "https://github.com/asphalt-framework/asphalt-web"
+"Issue tracker" = "https://github.com/asphalt-framework/asphalt-web/issues"
+"Help and support" = "https://github.com/asphalt-framework/asphalt/wiki/Help-and-support"
+
+[project.optional-dependencies]
+aiohttp = [
+    "aiohttp >= 3.8"
+]
+asgi3 = [
+    "asgiref ~= 3.5",
+    "uvicorn >= 0.17.6",
+]
+django = [
+    "Django >= 3.2",
+    "uvicorn >= 0.17.6",
+]
+fastapi = [
+    "fastapi >= 0.75",
+    "uvicorn >= 0.17.6",
+]
+starlette = [
+    "starlette >= 0.17",
+    "uvicorn >= 0.17.6",
+]
+test = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+    "websockets",
+    "aiohttp >= 3.8; python_version < '3.12'",
+    "Django >= 3.2; python_implementation == 'CPython'",
+    "asphalt-web[asgi3,starlette,fastapi]",
+]
+doc = [
+    "Sphinx >= 6.0",
+    "sphinx_rtd_theme >= 1.2.0",
+    "sphinx-autodoc-typehints >= 1.22",
+    "sphinx-tabs >= 3.3.1",
+    "asphalt-web[aiohttp,asgi3,starlette,django,fastapi]",
+]
+
+[project.entry-points."asphalt.components"]
+aiohttp = "asphalt.web.aiohttp:AIOHTTPComponent"
+asgi3 = "asphalt.web.asgi3:ASGIComponent"
+django = "asphalt.web.django:DjangoComponent"
+fastapi = "asphalt.web.fastapi:FastAPIComponent"
+starlette = "asphalt.web.starlette:StarletteComponent"
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "dirty-tag"
+
+[tool.pytest.ini_options]
+addopts = "-rsx --tb=short"
+asyncio_mode = "strict"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 99
+select = [
+    "E", "F", "W",  # default flake-8
+    "I",            # isort
+    "PGH",          # pygrep-hooks
+    "UP",           # pyupgrade
+]
+target-version = "py38"
+
+[tool.ruff.isort]
+known-first-party = ["asphalt.web"]
+
+[tool.mypy]
+python_version = "3.8"
+
+[tool.coverage.run]
+source = ["asphalt.web"]
+relative_files = true
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py38, py39, py310, py311, py312, pypy3
+skip_missing_interpreters = true
+minversion = 4.0
+
+[testenv]
+extras = test
+commands = python -m pytest {posargs}
+
+[testenv:docs]
+extras = doc
+commands = sphinx-build docs build/sphinx
+"""
