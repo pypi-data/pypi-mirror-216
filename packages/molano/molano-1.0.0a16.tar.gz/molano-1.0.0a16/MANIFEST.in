@@ -1,0 +1,11 @@
+include VERSION
+include molano/package.json
+include requirements.txt
+include README.md
+include VERSION
+recursive-include molano VERSION
+recursive-include molano **.html
+recursive-include molano **.j2
+recursive-include molano **.json
+recursive-include molano **.yaml
+recursive-include molano **.xml
