@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cle_utilities"
+version = "0.0.1"
+authors = [
+  { name="Adeep Malmotra", email="Adeep.Malmotra@ibm.com" },
+]
+description = "A logging package which will help to implement the cle capabilities and design the requests to be sent to cle api."
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["cle", "logging", "automated alert", "exceptions"]
+dependencies = [
+  "datetime",
+  "requests",
+  "requests-oauthlib",
+  "toml",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 1 - Planning",
+    "Operating System :: OS Independent",
+]
