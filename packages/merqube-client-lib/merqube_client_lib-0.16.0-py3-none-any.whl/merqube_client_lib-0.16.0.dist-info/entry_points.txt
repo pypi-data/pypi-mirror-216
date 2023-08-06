@@ -1,0 +1,4 @@
+[console_scripts]
+create=merqube_client_lib.templates.equity_baskets.create_index:main
+update_portfolio=merqube_client_lib.templates.equity_baskets.multiple_equity_basket.update_portfolio:main
+
