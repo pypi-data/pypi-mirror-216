@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+amazon_login.egg-info/PKG-INFO
+amazon_login.egg-info/SOURCES.txt
+amazon_login.egg-info/dependency_links.txt
+amazon_login.egg-info/requires.txt
+amazon_login.egg-info/top_level.txt
+utils/__init__.py
+utils/driver.py
+utils/gmail_helper.py
+utils/webdriver_actions.py
+vendor_central/__init__.py
+vendor_central/vendor_central.py
+vendor_central/vendor_login.py
