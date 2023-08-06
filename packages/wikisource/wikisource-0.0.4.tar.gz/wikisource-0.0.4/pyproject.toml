@@ -1,0 +1,17 @@
+[project]
+name = "wikisource"
+version = "0.0.4"
+authors = [ 
+    { name = "Mathieu G.", email = "mathieu6700417@gmail.com" }
+]
+description = "A wrapper around wikisource to search in books and books collections available on wikisource.org"
+dependencies = [
+    "requests",
+    "bs4"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/mathieu6700417/wikisource"
+"Bug Tracker" = "https://github.com/mathieu6700417/wikisource/issues"
+
+
