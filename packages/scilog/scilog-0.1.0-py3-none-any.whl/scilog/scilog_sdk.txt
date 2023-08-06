@@ -1,0 +1,18 @@
+
+
+
+
+msg = scilog.LogbookMessage()
+msg.add_text("").add_file("").add_tags([""])
+msg.add_text("")
+
+scilog.send_msg(msg)
+scilog.add_task()
+scilog.select_logbook()
+scilog.get_snippets()
+
+
+scilog.core.append_files_to_snippet()
+
+scilog.core.post_snippet()
+scilog.send_msg()
