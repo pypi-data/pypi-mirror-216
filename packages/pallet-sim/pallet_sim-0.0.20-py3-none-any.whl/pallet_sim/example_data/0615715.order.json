@@ -1,0 +1,4254 @@
+{
+    "pallets": [
+        {
+            "palletNr": "001",
+            "palletType": "EURO_PALLET",
+            "palletDimension": {
+                "x": 800.0,
+                "y": 1200.0
+            },
+            "boxes": [
+                {
+                    "product_code": "30",
+                    "anchor": {
+                        "x": 0.0,
+                        "y": 636.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 551.0,
+                        "y": 238.0,
+                        "z": 274.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "30",
+                    "anchor": {
+                        "x": 0.0,
+                        "y": 924.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 551.0,
+                        "y": 238.0,
+                        "z": 274.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "30",
+                    "anchor": {
+                        "x": 562.0,
+                        "y": 623.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 238.0,
+                        "y": 551.0,
+                        "z": 274.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "123",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 2.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 593.0,
+                        "z": 250.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "11",
+                    "anchor": {
+                        "x": 393.0,
+                        "y": 6.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 394.0,
+                        "y": 584.0,
+                        "z": 251.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "128",
+                    "anchor": {
+                        "x": -8.0,
+                        "y": 599.0,
+                        "z": 274.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 295.0,
+                        "z": 240.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "128",
+                    "anchor": {
+                        "x": -8.0,
+                        "y": 899.0,
+                        "z": 274.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 295.0,
+                        "z": 240.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "123",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 2.0,
+                        "z": 250.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 593.0,
+                        "z": 250.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "11",
+                    "anchor": {
+                        "x": 393.0,
+                        "y": 6.0,
+                        "z": 251.0
+                    },
+                    "dimension": {
+                        "x": 394.0,
+                        "y": 584.0,
+                        "z": 251.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "25",
+                    "anchor": {
+                        "x": 392.0,
+                        "y": 599.0,
+                        "z": 274.0
+                    },
+                    "dimension": {
+                        "x": 398.0,
+                        "y": 596.0,
+                        "z": 152.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "25",
+                    "anchor": {
+                        "x": 392.0,
+                        "y": 599.0,
+                        "z": 426.0
+                    },
+                    "dimension": {
+                        "x": 398.0,
+                        "y": 596.0,
+                        "z": 152.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "123",
+                    "anchor": {
+                        "x": 390.0,
+                        "y": 2.0,
+                        "z": 502.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 593.0,
+                        "z": 250.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "123",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 2.0,
+                        "z": 500.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 593.0,
+                        "z": 250.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "25",
+                    "anchor": {
+                        "x": 392.0,
+                        "y": 599.0,
+                        "z": 578.0
+                    },
+                    "dimension": {
+                        "x": 398.0,
+                        "y": 596.0,
+                        "z": 152.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "107",
+                    "anchor": {
+                        "x": -8.0,
+                        "y": 599.0,
+                        "z": 514.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 595.0,
+                        "z": 190.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "107",
+                    "anchor": {
+                        "x": -8.0,
+                        "y": 599.0,
+                        "z": 704.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 595.0,
+                        "z": 190.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "24",
+                    "anchor": {
+                        "x": 400.0,
+                        "y": 6.0,
+                        "z": 752.0
+                    },
+                    "dimension": {
+                        "x": 397.0,
+                        "y": 593.0,
+                        "z": 188.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "50",
+                    "anchor": {
+                        "x": -9.0,
+                        "y": 2.0,
+                        "z": 750.0
+                    },
+                    "dimension": {
+                        "x": 398.0,
+                        "y": 594.0,
+                        "z": 130.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "90",
+                    "anchor": {
+                        "x": 408.0,
+                        "y": 599.0,
+                        "z": 730.0
+                    },
+                    "dimension": {
+                        "x": 365.0,
+                        "y": 595.0,
+                        "z": 140.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "43",
+                    "anchor": {
+                        "x": 137.0,
+                        "y": 599.0,
+                        "z": 894.0
+                    },
+                    "dimension": {
+                        "x": 271.0,
+                        "y": 278.0,
+                        "z": 260.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "86",
+                    "anchor": {
+                        "x": 408.0,
+                        "y": 599.0,
+                        "z": 870.0
+                    },
+                    "dimension": {
+                        "x": 397.0,
+                        "y": 595.0,
+                        "z": 138.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "122",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 4.0,
+                        "z": 880.0
+                    },
+                    "dimension": {
+                        "x": 395.0,
+                        "y": 595.0,
+                        "z": 133.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "135",
+                    "anchor": {
+                        "x": 400.0,
+                        "y": 2.0,
+                        "z": 940.0
+                    },
+                    "dimension": {
+                        "x": 410.0,
+                        "y": 597.0,
+                        "z": 175.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "8",
+                    "anchor": {
+                        "x": 9.0,
+                        "y": 898.0,
+                        "z": 894.0
+                    },
+                    "dimension": {
+                        "x": 398.0,
+                        "y": 299.0,
+                        "z": 125.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "92",
+                    "anchor": {
+                        "x": 408.0,
+                        "y": 599.0,
+                        "z": 1008.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 597.0,
+                        "z": 129.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "14",
+                    "anchor": {
+                        "x": 408.0,
+                        "y": 599.0,
+                        "z": 1137.0
+                    },
+                    "dimension": {
+                        "x": 399.0,
+                        "y": 298.0,
+                        "z": 130.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "141",
+                    "anchor": {
+                        "x": 408.0,
+                        "y": 897.0,
+                        "z": 1137.0
+                    },
+                    "dimension": {
+                        "x": 388.0,
+                        "y": 299.0,
+                        "z": 110.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "43",
+                    "anchor": {
+                        "x": 58.0,
+                        "y": 898.0,
+                        "z": 1019.0
+                    },
+                    "dimension": {
+                        "x": 278.0,
+                        "y": 271.0,
+                        "z": 260.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "69",
+                    "anchor": {
+                        "x": 9.0,
+                        "y": 2.0,
+                        "z": 1013.0
+                    },
+                    "dimension": {
+                        "x": 391.0,
+                        "y": 597.0,
+                        "z": 127.0
+                    },
+                    "approach": "7"
+                }
+            ]
+        },
+        {
+            "palletNr": "002",
+            "palletType": "DUESSELDORFER_PALLET",
+            "palletDimension": {
+                "x": 800.0,
+                "y": 600.0
+            },
+            "boxes": [
+                {
+                    "product_code": "70",
+                    "anchor": {
+                        "x": 264.0,
+                        "y": 162.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 272.0,
+                        "y": 276.0,
+                        "z": 258.0
+                    },
+                    "approach": "3"
+                }
+            ]
+        },
+        {
+            "palletNr": "003",
+            "palletType": "EURO_PALLET",
+            "palletDimension": {
+                "x": 800.0,
+                "y": 1200.0
+            },
+            "boxes": [
+                {
+                    "product_code": "1",
+                    "anchor": {
+                        "x": 441.0,
+                        "y": 430.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 182.0,
+                        "y": 273.0,
+                        "z": 311.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "48",
+                    "anchor": {
+                        "x": 177.0,
+                        "y": 528.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 261.0,
+                        "y": 175.0,
+                        "z": 316.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "48",
+                    "anchor": {
+                        "x": 188.0,
+                        "y": 703.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 261.0,
+                        "y": 175.0,
+                        "z": 316.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "48",
+                    "anchor": {
+                        "x": 188.0,
+                        "y": 878.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 261.0,
+                        "y": 175.0,
+                        "z": 316.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "137",
+                    "anchor": {
+                        "x": 466.0,
+                        "y": 718.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 160.0,
+                        "y": 233.0,
+                        "z": 320.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "76",
+                    "anchor": {
+                        "x": 626.0,
+                        "y": 439.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 182.0,
+                        "y": 275.0,
+                        "z": 313.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "117",
+                    "anchor": {
+                        "x": 184.0,
+                        "y": 167.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 240.0,
+                        "y": 361.0,
+                        "z": 205.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "71",
+                    "anchor": {
+                        "x": 435.0,
+                        "y": 167.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 179.0,
+                        "y": 263.0,
+                        "z": 319.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "18",
+                    "anchor": {
+                        "x": 184.0,
+                        "y": 332.0,
+                        "z": 205.0
+                    },
+                    "dimension": {
+                        "x": 222.0,
+                        "y": 165.0,
+                        "z": 113.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "18",
+                    "anchor": {
+                        "x": 184.0,
+                        "y": 167.0,
+                        "z": 205.0
+                    },
+                    "dimension": {
+                        "x": 222.0,
+                        "y": 165.0,
+                        "z": 113.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "137",
+                    "anchor": {
+                        "x": 466.0,
+                        "y": 965.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 160.0,
+                        "y": 233.0,
+                        "z": 320.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "67",
+                    "anchor": {
+                        "x": 636.0,
+                        "y": 720.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 159.0,
+                        "y": 233.0,
+                        "z": 312.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "29",
+                    "anchor": {
+                        "x": 204.0,
+                        "y": 1054.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 237.0,
+                        "y": 156.0,
+                        "z": 318.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "71",
+                    "anchor": {
+                        "x": 625.0,
+                        "y": 169.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 179.0,
+                        "y": 263.0,
+                        "z": 319.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "78",
+                    "anchor": {
+                        "x": 215.0,
+                        "y": -10.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 265.0,
+                        "y": 177.0,
+                        "z": 315.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "126",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 291.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 275.0,
+                        "z": 315.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "126",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 605.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 275.0,
+                        "z": 315.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "126",
+                    "anchor": {
+                        "x": -9.0,
+                        "y": -5.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 275.0,
+                        "z": 315.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "126",
+                    "anchor": {
+                        "x": -9.0,
+                        "y": 902.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 275.0,
+                        "z": 315.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "67",
+                    "anchor": {
+                        "x": 636.0,
+                        "y": 967.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 159.0,
+                        "y": 233.0,
+                        "z": 312.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "78",
+                    "anchor": {
+                        "x": 515.0,
+                        "y": -10.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 265.0,
+                        "y": 177.0,
+                        "z": 315.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "57",
+                    "anchor": {
+                        "x": 316.0,
+                        "y": 270.0,
+                        "z": 319.0
+                    },
+                    "dimension": {
+                        "x": 155.0,
+                        "y": 230.0,
+                        "z": 311.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "15",
+                    "anchor": {
+                        "x": 244.0,
+                        "y": 512.0,
+                        "z": 316.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 269.0,
+                        "z": 308.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "15",
+                    "anchor": {
+                        "x": 434.0,
+                        "y": 535.0,
+                        "z": 320.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 269.0,
+                        "z": 308.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "47",
+                    "anchor": {
+                        "x": 355.0,
+                        "y": 17.0,
+                        "z": 319.0
+                    },
+                    "dimension": {
+                        "x": 155.0,
+                        "y": 234.0,
+                        "z": 308.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "60",
+                    "anchor": {
+                        "x": 516.0,
+                        "y": 356.0,
+                        "z": 319.0
+                    },
+                    "dimension": {
+                        "x": 264.0,
+                        "y": 178.0,
+                        "z": 300.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "98",
+                    "anchor": {
+                        "x": 28.0,
+                        "y": 269.0,
+                        "z": 318.0
+                    },
+                    "dimension": {
+                        "x": 263.0,
+                        "y": 180.0,
+                        "z": 311.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "51",
+                    "anchor": {
+                        "x": -7.0,
+                        "y": 449.0,
+                        "z": 318.0
+                    },
+                    "dimension": {
+                        "x": 247.0,
+                        "y": 165.0,
+                        "z": 300.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "51",
+                    "anchor": {
+                        "x": -7.0,
+                        "y": 638.0,
+                        "z": 316.0
+                    },
+                    "dimension": {
+                        "x": 247.0,
+                        "y": 165.0,
+                        "z": 300.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "61",
+                    "anchor": {
+                        "x": 179.0,
+                        "y": -4.0,
+                        "z": 318.0
+                    },
+                    "dimension": {
+                        "x": 176.0,
+                        "y": 264.0,
+                        "z": 311.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "15",
+                    "anchor": {
+                        "x": 623.0,
+                        "y": 535.0,
+                        "z": 320.0
+                    },
+                    "dimension": {
+                        "x": 187.0,
+                        "y": 269.0,
+                        "z": 308.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "60",
+                    "anchor": {
+                        "x": 543.0,
+                        "y": 175.0,
+                        "z": 319.0
+                    },
+                    "dimension": {
+                        "x": 264.0,
+                        "y": 178.0,
+                        "z": 300.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "60",
+                    "anchor": {
+                        "x": 543.0,
+                        "y": -7.0,
+                        "z": 319.0
+                    },
+                    "dimension": {
+                        "x": 264.0,
+                        "y": 178.0,
+                        "z": 300.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "85",
+                    "anchor": {
+                        "x": -5.0,
+                        "y": 804.0,
+                        "z": 320.0
+                    },
+                    "dimension": {
+                        "x": 589.0,
+                        "y": 400.0,
+                        "z": 259.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "105",
+                    "anchor": {
+                        "x": 9.0,
+                        "y": 14.0,
+                        "z": 315.0
+                    },
+                    "dimension": {
+                        "x": 157.0,
+                        "y": 232.0,
+                        "z": 303.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "114",
+                    "anchor": {
+                        "x": 584.0,
+                        "y": 804.0,
+                        "z": 320.0
+                    },
+                    "dimension": {
+                        "x": 162.0,
+                        "y": 400.0,
+                        "z": 251.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "0",
+                    "anchor": {
+                        "x": -6.0,
+                        "y": 804.0,
+                        "z": 579.0
+                    },
+                    "dimension": {
+                        "x": 592.0,
+                        "y": 400.0,
+                        "z": 297.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "116",
+                    "anchor": {
+                        "x": 396.0,
+                        "y": 630.0,
+                        "z": 628.0
+                    },
+                    "dimension": {
+                        "x": 257.0,
+                        "y": 173.0,
+                        "z": 319.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "68",
+                    "anchor": {
+                        "x": 402.0,
+                        "y": 460.0,
+                        "z": 630.0
+                    },
+                    "dimension": {
+                        "x": 240.0,
+                        "y": 160.0,
+                        "z": 320.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "136",
+                    "anchor": {
+                        "x": 420.0,
+                        "y": 179.0,
+                        "z": 630.0
+                    },
+                    "dimension": {
+                        "x": 183.0,
+                        "y": 271.0,
+                        "z": 328.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "121",
+                    "anchor": {
+                        "x": 649.0,
+                        "y": 291.0,
+                        "z": 619.0
+                    },
+                    "dimension": {
+                        "x": 154.0,
+                        "y": 225.0,
+                        "z": 331.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "19",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 532.0,
+                        "z": 624.0
+                    },
+                    "dimension": {
+                        "x": 406.0,
+                        "y": 272.0,
+                        "z": 171.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "19",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 532.0,
+                        "z": 795.0
+                    },
+                    "dimension": {
+                        "x": 406.0,
+                        "y": 272.0,
+                        "z": 171.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "129",
+                    "anchor": {
+                        "x": 635.0,
+                        "y": 8.0,
+                        "z": 619.0
+                    },
+                    "dimension": {
+                        "x": 174.0,
+                        "y": 258.0,
+                        "z": 325.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "127",
+                    "anchor": {
+                        "x": 397.0,
+                        "y": 3.0,
+                        "z": 627.0
+                    },
+                    "dimension": {
+                        "x": 235.0,
+                        "y": 158.0,
+                        "z": 317.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "19",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 259.0,
+                        "z": 630.0
+                    },
+                    "dimension": {
+                        "x": 406.0,
+                        "y": 272.0,
+                        "z": 171.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "19",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 259.0,
+                        "z": 801.0
+                    },
+                    "dimension": {
+                        "x": 406.0,
+                        "y": 272.0,
+                        "z": 171.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "125",
+                    "anchor": {
+                        "x": 201.0,
+                        "y": -9.0,
+                        "z": 629.0
+                    },
+                    "dimension": {
+                        "x": 185.0,
+                        "y": 265.0,
+                        "z": 331.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "125",
+                    "anchor": {
+                        "x": 4.0,
+                        "y": -9.0,
+                        "z": 629.0
+                    },
+                    "dimension": {
+                        "x": 185.0,
+                        "y": 265.0,
+                        "z": 331.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "121",
+                    "anchor": {
+                        "x": 656.0,
+                        "y": 545.0,
+                        "z": 628.0
+                    },
+                    "dimension": {
+                        "x": 154.0,
+                        "y": 225.0,
+                        "z": 331.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "23",
+                    "anchor": {
+                        "x": 403.0,
+                        "y": 563.0,
+                        "z": 950.0
+                    },
+                    "dimension": {
+                        "x": 193.0,
+                        "y": 227.0,
+                        "z": 268.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "131",
+                    "anchor": {
+                        "x": 28.0,
+                        "y": 546.0,
+                        "z": 966.0
+                    },
+                    "dimension": {
+                        "x": 364.0,
+                        "y": 243.0,
+                        "z": 190.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "33",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 806.0,
+                        "z": 876.0
+                    },
+                    "dimension": {
+                        "x": 600.0,
+                        "y": 395.0,
+                        "z": 240.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "23",
+                    "anchor": {
+                        "x": 403.0,
+                        "y": 315.0,
+                        "z": 958.0
+                    },
+                    "dimension": {
+                        "x": 193.0,
+                        "y": 227.0,
+                        "z": 268.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "22",
+                    "anchor": {
+                        "x": 404.0,
+                        "y": 9.0,
+                        "z": 958.0
+                    },
+                    "dimension": {
+                        "x": 196.0,
+                        "y": 293.0,
+                        "z": 257.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "23",
+                    "anchor": {
+                        "x": 609.0,
+                        "y": 275.0,
+                        "z": 950.0
+                    },
+                    "dimension": {
+                        "x": 193.0,
+                        "y": 227.0,
+                        "z": 268.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "131",
+                    "anchor": {
+                        "x": 14.0,
+                        "y": 278.0,
+                        "z": 972.0
+                    },
+                    "dimension": {
+                        "x": 364.0,
+                        "y": 243.0,
+                        "z": 190.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "131",
+                    "anchor": {
+                        "x": 14.0,
+                        "y": 8.0,
+                        "z": 960.0
+                    },
+                    "dimension": {
+                        "x": 364.0,
+                        "y": 243.0,
+                        "z": 190.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "23",
+                    "anchor": {
+                        "x": 596.0,
+                        "y": 547.0,
+                        "z": 959.0
+                    },
+                    "dimension": {
+                        "x": 193.0,
+                        "y": 227.0,
+                        "z": 268.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "46",
+                    "anchor": {
+                        "x": 609.0,
+                        "y": 29.0,
+                        "z": 944.0
+                    },
+                    "dimension": {
+                        "x": 193.0,
+                        "y": 221.0,
+                        "z": 271.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "110",
+                    "anchor": {
+                        "x": 193.0,
+                        "y": 498.0,
+                        "z": 1162.0
+                    },
+                    "dimension": {
+                        "x": 200.0,
+                        "y": 299.0,
+                        "z": 280.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "42",
+                    "anchor": {
+                        "x": 56.0,
+                        "y": 537.0,
+                        "z": 1156.0
+                    },
+                    "dimension": {
+                        "x": 137.0,
+                        "y": 272.0,
+                        "z": 159.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "58",
+                    "anchor": {
+                        "x": 10.0,
+                        "y": 809.0,
+                        "z": 1116.0
+                    },
+                    "dimension": {
+                        "x": 560.0,
+                        "y": 395.0,
+                        "z": 224.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "18",
+                    "anchor": {
+                        "x": 181.0,
+                        "y": 257.0,
+                        "z": 1162.0
+                    },
+                    "dimension": {
+                        "x": 222.0,
+                        "y": 165.0,
+                        "z": 113.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "42",
+                    "anchor": {
+                        "x": 56.0,
+                        "y": 537.0,
+                        "z": 1315.0
+                    },
+                    "dimension": {
+                        "x": 137.0,
+                        "y": 272.0,
+                        "z": 159.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "99",
+                    "anchor": {
+                        "x": 8.0,
+                        "y": 232.0,
+                        "z": 1162.0
+                    },
+                    "dimension": {
+                        "x": 155.0,
+                        "y": 305.0,
+                        "z": 211.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "103",
+                    "anchor": {
+                        "x": 181.0,
+                        "y": 232.0,
+                        "z": 1275.0
+                    },
+                    "dimension": {
+                        "x": 195.0,
+                        "y": 200.0,
+                        "z": 307.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "118",
+                    "anchor": {
+                        "x": 8.0,
+                        "y": -10.0,
+                        "z": 1150.0
+                    },
+                    "dimension": {
+                        "x": 363.0,
+                        "y": 242.0,
+                        "z": 207.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "130",
+                    "anchor": {
+                        "x": 403.0,
+                        "y": 466.0,
+                        "z": 1227.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 266.0,
+                        "z": 185.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "41",
+                    "anchor": {
+                        "x": 403.0,
+                        "y": 74.0,
+                        "z": 1227.0
+                    },
+                    "dimension": {
+                        "x": 406.0,
+                        "y": 392.0,
+                        "z": 303.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "55",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 253.0,
+                        "z": 1373.0
+                    },
+                    "dimension": {
+                        "x": 191.0,
+                        "y": 284.0,
+                        "z": 133.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "73",
+                    "anchor": {
+                        "x": 213.0,
+                        "y": 498.0,
+                        "z": 1442.0
+                    },
+                    "dimension": {
+                        "x": 180.0,
+                        "y": 292.0,
+                        "z": 186.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "130",
+                    "anchor": {
+                        "x": 403.0,
+                        "y": 466.0,
+                        "z": 1412.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 266.0,
+                        "z": 185.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "118",
+                    "anchor": {
+                        "x": 8.0,
+                        "y": -10.0,
+                        "z": 1357.0
+                    },
+                    "dimension": {
+                        "x": 363.0,
+                        "y": 242.0,
+                        "z": 207.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "108",
+                    "anchor": {
+                        "x": 181.0,
+                        "y": 179.0,
+                        "z": 1582.0
+                    },
+                    "dimension": {
+                        "x": 210.0,
+                        "y": 316.0,
+                        "z": 162.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "55",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 253.0,
+                        "z": 1506.0
+                    },
+                    "dimension": {
+                        "x": 191.0,
+                        "y": 284.0,
+                        "z": 133.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "58",
+                    "anchor": {
+                        "x": 10.0,
+                        "y": 809.0,
+                        "z": 1340.0
+                    },
+                    "dimension": {
+                        "x": 560.0,
+                        "y": 395.0,
+                        "z": 224.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "108",
+                    "anchor": {
+                        "x": 176.0,
+                        "y": 499.0,
+                        "z": 1639.0
+                    },
+                    "dimension": {
+                        "x": 210.0,
+                        "y": 316.0,
+                        "z": 162.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "41",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 815.0,
+                        "z": 1564.0
+                    },
+                    "dimension": {
+                        "x": 406.0,
+                        "y": 392.0,
+                        "z": 303.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "91",
+                    "anchor": {
+                        "x": 396.0,
+                        "y": 790.0,
+                        "z": 1564.0
+                    },
+                    "dimension": {
+                        "x": 180.0,
+                        "y": 266.0,
+                        "z": 152.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "5",
+                    "anchor": {
+                        "x": 403.0,
+                        "y": 450.0,
+                        "z": 1597.0
+                    },
+                    "dimension": {
+                        "x": 255.0,
+                        "y": 299.0,
+                        "z": 187.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "5",
+                    "anchor": {
+                        "x": 139.0,
+                        "y": 200.0,
+                        "z": 1744.0
+                    },
+                    "dimension": {
+                        "x": 255.0,
+                        "y": 299.0,
+                        "z": 187.0
+                    },
+                    "approach": "7"
+                }
+            ]
+        },
+        {
+            "palletNr": "004",
+            "palletType": "EURO_PALLET",
+            "palletDimension": {
+                "x": 800.0,
+                "y": 1200.0
+            },
+            "boxes": [
+                {
+                    "product_code": "82",
+                    "anchor": {
+                        "x": 476.0,
+                        "y": 523.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 154.0,
+                        "y": 229.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 229.0,
+                        "y": 548.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 250.0,
+                        "y": 878.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 239.0,
+                        "y": 295.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 305.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "82",
+                    "anchor": {
+                        "x": 641.0,
+                        "y": 523.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 154.0,
+                        "y": 229.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "87",
+                    "anchor": {
+                        "x": 490.0,
+                        "y": 752.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 304.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": -9.0,
+                        "y": 295.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": -9.0,
+                        "y": 600.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 249.0,
+                        "y": -10.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 564.0,
+                        "y": 218.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 2.0,
+                        "y": -10.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 489.0,
+                        "y": -10.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 305.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "87",
+                    "anchor": {
+                        "x": 490.0,
+                        "y": 982.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 304.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 1.0,
+                        "y": 446.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 302.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 3.0,
+                        "y": 676.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 302.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 320.0,
+                        "y": 294.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 326.0,
+                        "y": 601.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 1.0,
+                        "y": 218.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 302.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 320.0,
+                        "y": -10.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 302.0,
+                        "y": 907.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 566.0,
+                        "y": 325.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "52",
+                    "anchor": {
+                        "x": 3.0,
+                        "y": 905.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 305.0,
+                        "z": 111.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "106",
+                    "anchor": {
+                        "x": 610.0,
+                        "y": 654.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 150.0,
+                        "y": 199.0,
+                        "z": 108.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "94",
+                    "anchor": {
+                        "x": 560.0,
+                        "y": -7.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 236.0,
+                        "y": 318.0,
+                        "z": 118.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "38",
+                    "anchor": {
+                        "x": 263.0,
+                        "y": 604.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 129.0,
+                        "y": 191.0,
+                        "z": 94.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 1.0,
+                        "y": -10.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 302.0,
+                        "y": 228.0,
+                        "z": 111.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 22.0,
+                        "y": 907.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "56",
+                    "anchor": {
+                        "x": 566.0,
+                        "y": 871.0,
+                        "z": 111.0
+                    },
+                    "dimension": {
+                        "x": 228.0,
+                        "y": 302.0,
+                        "z": 111.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "13",
+                    "anchor": {
+                        "x": 135.0,
+                        "y": 602.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 128.0,
+                        "y": 194.0,
+                        "z": 83.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "13",
+                    "anchor": {
+                        "x": -2.0,
+                        "y": 602.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 128.0,
+                        "y": 194.0,
+                        "z": 83.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "37",
+                    "anchor": {
+                        "x": -7.0,
+                        "y": 799.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 420.0,
+                        "y": 143.0,
+                        "z": 90.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "28",
+                    "anchor": {
+                        "x": 314.0,
+                        "y": 330.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 205.0,
+                        "y": 270.0,
+                        "z": 281.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "28",
+                    "anchor": {
+                        "x": 540.0,
+                        "y": 330.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 205.0,
+                        "y": 270.0,
+                        "z": 281.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "63",
+                    "anchor": {
+                        "x": 36.0,
+                        "y": 946.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 347.0,
+                        "y": 259.0,
+                        "z": 94.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "111",
+                    "anchor": {
+                        "x": -3.0,
+                        "y": 313.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 213.0,
+                        "y": 280.0,
+                        "z": 141.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "79",
+                    "anchor": {
+                        "x": 436.0,
+                        "y": 627.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 358.0,
+                        "y": 264.0,
+                        "z": 169.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "140",
+                    "anchor": {
+                        "x": 222.0,
+                        "y": -10.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 239.0,
+                        "y": 316.0,
+                        "z": 221.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "26",
+                    "anchor": {
+                        "x": 203.0,
+                        "y": 609.0,
+                        "z": 316.0
+                    },
+                    "dimension": {
+                        "x": 205.0,
+                        "y": 293.0,
+                        "z": 109.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "26",
+                    "anchor": {
+                        "x": 203.0,
+                        "y": 911.0,
+                        "z": 316.0
+                    },
+                    "dimension": {
+                        "x": 205.0,
+                        "y": 293.0,
+                        "z": 109.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "101",
+                    "anchor": {
+                        "x": 461.0,
+                        "y": 12.0,
+                        "z": 229.0
+                    },
+                    "dimension": {
+                        "x": 349.0,
+                        "y": 266.0,
+                        "z": 170.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "132",
+                    "anchor": {
+                        "x": 429.0,
+                        "y": 916.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 369.0,
+                        "y": 273.0,
+                        "z": 165.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "102",
+                    "anchor": {
+                        "x": -9.0,
+                        "y": -1.0,
+                        "z": 222.0
+                    },
+                    "dimension": {
+                        "x": 230.0,
+                        "y": 305.0,
+                        "z": 138.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "74",
+                    "anchor": {
+                        "x": -3.0,
+                        "y": 309.0,
+                        "z": 363.0
+                    },
+                    "dimension": {
+                        "x": 214.0,
+                        "y": 288.0,
+                        "z": 209.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "9",
+                    "anchor": {
+                        "x": -6.0,
+                        "y": 607.0,
+                        "z": 316.0
+                    },
+                    "dimension": {
+                        "x": 206.0,
+                        "y": 384.0,
+                        "z": 105.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "54",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": -1.0,
+                        "z": 360.0
+                    },
+                    "dimension": {
+                        "x": 230.0,
+                        "y": 310.0,
+                        "z": 112.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "77",
+                    "anchor": {
+                        "x": 23.0,
+                        "y": 998.0,
+                        "z": 316.0
+                    },
+                    "dimension": {
+                        "x": 139.0,
+                        "y": 206.0,
+                        "z": 107.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "3",
+                    "anchor": {
+                        "x": 415.0,
+                        "y": 619.0,
+                        "z": 391.0
+                    },
+                    "dimension": {
+                        "x": 132.0,
+                        "y": 295.0,
+                        "z": 175.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "49",
+                    "anchor": {
+                        "x": 363.0,
+                        "y": 308.0,
+                        "z": 503.0
+                    },
+                    "dimension": {
+                        "x": 428.0,
+                        "y": 292.0,
+                        "z": 162.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "72",
+                    "anchor": {
+                        "x": 550.0,
+                        "y": 608.0,
+                        "z": 391.0
+                    },
+                    "dimension": {
+                        "x": 259.0,
+                        "y": 321.0,
+                        "z": 176.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "80",
+                    "anchor": {
+                        "x": -1.0,
+                        "y": 600.0,
+                        "z": 425.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 210.0,
+                        "z": 185.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "80",
+                    "anchor": {
+                        "x": 200.0,
+                        "y": 810.0,
+                        "z": 425.0
+                    },
+                    "dimension": {
+                        "x": 210.0,
+                        "y": 400.0,
+                        "z": 185.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "54",
+                    "anchor": {
+                        "x": 222.0,
+                        "y": -2.0,
+                        "z": 443.0
+                    },
+                    "dimension": {
+                        "x": 230.0,
+                        "y": 310.0,
+                        "z": 112.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "2",
+                    "anchor": {
+                        "x": 472.0,
+                        "y": 935.0,
+                        "z": 387.0
+                    },
+                    "dimension": {
+                        "x": 294.0,
+                        "y": 133.0,
+                        "z": 175.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "2",
+                    "anchor": {
+                        "x": 472.0,
+                        "y": 1073.0,
+                        "z": 387.0
+                    },
+                    "dimension": {
+                        "x": 294.0,
+                        "y": 133.0,
+                        "z": 175.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "80",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 810.0,
+                        "z": 423.0
+                    },
+                    "dimension": {
+                        "x": 210.0,
+                        "y": 400.0,
+                        "z": 185.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "139",
+                    "anchor": {
+                        "x": 476.0,
+                        "y": 25.0,
+                        "z": 399.0
+                    },
+                    "dimension": {
+                        "x": 320.0,
+                        "y": 240.0,
+                        "z": 277.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "36",
+                    "anchor": {
+                        "x": 149.0,
+                        "y": 621.0,
+                        "z": 610.0
+                    },
+                    "dimension": {
+                        "x": 253.0,
+                        "y": 336.0,
+                        "z": 214.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "20",
+                    "anchor": {
+                        "x": -3.0,
+                        "y": 309.0,
+                        "z": 572.0
+                    },
+                    "dimension": {
+                        "x": 259.0,
+                        "y": 287.0,
+                        "z": 236.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "12",
+                    "anchor": {
+                        "x": 278.0,
+                        "y": 988.0,
+                        "z": 610.0
+                    },
+                    "dimension": {
+                        "x": 128.0,
+                        "y": 191.0,
+                        "z": 103.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "12",
+                    "anchor": {
+                        "x": 278.0,
+                        "y": 988.0,
+                        "z": 713.0
+                    },
+                    "dimension": {
+                        "x": 128.0,
+                        "y": 191.0,
+                        "z": 103.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "54",
+                    "anchor": {
+                        "x": 222.0,
+                        "y": -2.0,
+                        "z": 555.0
+                    },
+                    "dimension": {
+                        "x": 230.0,
+                        "y": 310.0,
+                        "z": 112.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "7",
+                    "anchor": {
+                        "x": 413.0,
+                        "y": 600.0,
+                        "z": 567.0
+                    },
+                    "dimension": {
+                        "x": 380.0,
+                        "y": 400.0,
+                        "z": 231.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "31",
+                    "anchor": {
+                        "x": 16.0,
+                        "y": 611.0,
+                        "z": 610.0
+                    },
+                    "dimension": {
+                        "x": 133.0,
+                        "y": 365.0,
+                        "z": 208.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "84",
+                    "anchor": {
+                        "x": 440.0,
+                        "y": 1000.0,
+                        "z": 562.0
+                    },
+                    "dimension": {
+                        "x": 355.0,
+                        "y": 164.0,
+                        "z": 223.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "74",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 987.0,
+                        "z": 610.0
+                    },
+                    "dimension": {
+                        "x": 288.0,
+                        "y": 214.0,
+                        "z": 209.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "53",
+                    "anchor": {
+                        "x": 363.0,
+                        "y": 295.0,
+                        "z": 676.0
+                    },
+                    "dimension": {
+                        "x": 410.0,
+                        "y": 305.0,
+                        "z": 121.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "53",
+                    "anchor": {
+                        "x": 390.0,
+                        "y": 270.0,
+                        "z": 797.0
+                    },
+                    "dimension": {
+                        "x": 410.0,
+                        "y": 305.0,
+                        "z": 121.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "35",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 234.0,
+                        "z": 818.0
+                    },
+                    "dimension": {
+                        "x": 305.0,
+                        "y": 385.0,
+                        "z": 365.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "40",
+                    "anchor": {
+                        "x": 540.0,
+                        "y": 39.0,
+                        "z": 676.0
+                    },
+                    "dimension": {
+                        "x": 255.0,
+                        "y": 231.0,
+                        "z": 202.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "40",
+                    "anchor": {
+                        "x": 269.0,
+                        "y": 3.0,
+                        "z": 676.0
+                    },
+                    "dimension": {
+                        "x": 255.0,
+                        "y": 231.0,
+                        "z": 202.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "83",
+                    "anchor": {
+                        "x": 266.0,
+                        "y": 621.0,
+                        "z": 824.0
+                    },
+                    "dimension": {
+                        "x": 133.0,
+                        "y": 152.0,
+                        "z": 93.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "83",
+                    "anchor": {
+                        "x": 225.0,
+                        "y": 773.0,
+                        "z": 824.0
+                    },
+                    "dimension": {
+                        "x": 152.0,
+                        "y": 133.0,
+                        "z": 93.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "143",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 657.0,
+                        "z": 824.0
+                    },
+                    "dimension": {
+                        "x": 235.0,
+                        "y": 255.0,
+                        "z": 80.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "32",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 619.0,
+                        "z": 917.0
+                    },
+                    "dimension": {
+                        "x": 405.0,
+                        "y": 250.0,
+                        "z": 255.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "34",
+                    "anchor": {
+                        "x": 255.0,
+                        "y": 906.0,
+                        "z": 824.0
+                    },
+                    "dimension": {
+                        "x": 183.0,
+                        "y": 273.0,
+                        "z": 99.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "62",
+                    "anchor": {
+                        "x": 440.0,
+                        "y": 575.0,
+                        "z": 798.0
+                    },
+                    "dimension": {
+                        "x": 350.0,
+                        "y": 425.0,
+                        "z": 348.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "16",
+                    "anchor": {
+                        "x": 235.0,
+                        "y": 923.0,
+                        "z": 923.0
+                    },
+                    "dimension": {
+                        "x": 193.0,
+                        "y": 127.0,
+                        "z": 116.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "142",
+                    "anchor": {
+                        "x": 440.0,
+                        "y": 1000.0,
+                        "z": 785.0
+                    },
+                    "dimension": {
+                        "x": 369.0,
+                        "y": 168.0,
+                        "z": 101.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "119",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 912.0,
+                        "z": 824.0
+                    },
+                    "dimension": {
+                        "x": 244.0,
+                        "y": 298.0,
+                        "z": 132.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "96",
+                    "anchor": {
+                        "x": 390.0,
+                        "y": 270.0,
+                        "z": 918.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 239.0,
+                        "z": 219.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "66",
+                    "anchor": {
+                        "x": 230.0,
+                        "y": 36.0,
+                        "z": 878.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 198.0,
+                        "z": 146.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "27",
+                    "anchor": {
+                        "x": 630.0,
+                        "y": 47.0,
+                        "z": 878.0
+                    },
+                    "dimension": {
+                        "x": 150.0,
+                        "y": 223.0,
+                        "z": 220.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "81",
+                    "anchor": {
+                        "x": 236.0,
+                        "y": 921.0,
+                        "z": 1039.0
+                    },
+                    "dimension": {
+                        "x": 191.0,
+                        "y": 130.0,
+                        "z": 103.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "115",
+                    "anchor": {
+                        "x": 234.0,
+                        "y": 1051.0,
+                        "z": 923.0
+                    },
+                    "dimension": {
+                        "x": 196.0,
+                        "y": 149.0,
+                        "z": 185.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "10",
+                    "anchor": {
+                        "x": 438.0,
+                        "y": 1000.0,
+                        "z": 886.0
+                    },
+                    "dimension": {
+                        "x": 220.0,
+                        "y": 168.0,
+                        "z": 226.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "39",
+                    "anchor": {
+                        "x": 660.0,
+                        "y": 1000.0,
+                        "z": 886.0
+                    },
+                    "dimension": {
+                        "x": 148.0,
+                        "y": 183.0,
+                        "z": 185.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "113",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 912.0,
+                        "z": 956.0
+                    },
+                    "dimension": {
+                        "x": 213.0,
+                        "y": 293.0,
+                        "z": 130.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "96",
+                    "anchor": {
+                        "x": 390.0,
+                        "y": 285.0,
+                        "z": 1138.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 239.0,
+                        "z": 219.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "66",
+                    "anchor": {
+                        "x": 230.0,
+                        "y": 36.0,
+                        "z": 1024.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 198.0,
+                        "z": 146.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "65",
+                    "anchor": {
+                        "x": 265.0,
+                        "y": 576.0,
+                        "z": 1183.0
+                    },
+                    "dimension": {
+                        "x": 130.0,
+                        "y": 293.0,
+                        "z": 63.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "65",
+                    "anchor": {
+                        "x": 265.0,
+                        "y": 576.0,
+                        "z": 1247.0
+                    },
+                    "dimension": {
+                        "x": 130.0,
+                        "y": 293.0,
+                        "z": 63.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "4",
+                    "anchor": {
+                        "x": 395.0,
+                        "y": 540.0,
+                        "z": 1146.0
+                    },
+                    "dimension": {
+                        "x": 397.0,
+                        "y": 233.0,
+                        "z": 226.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "17",
+                    "anchor": {
+                        "x": 227.0,
+                        "y": 869.0,
+                        "z": 1146.0
+                    },
+                    "dimension": {
+                        "x": 297.0,
+                        "y": 159.0,
+                        "z": 165.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "45",
+                    "anchor": {
+                        "x": 57.0,
+                        "y": 869.0,
+                        "z": 1086.0
+                    },
+                    "dimension": {
+                        "x": 148.0,
+                        "y": 282.0,
+                        "z": 187.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "6",
+                    "anchor": {
+                        "x": 205.0,
+                        "y": 1051.0,
+                        "z": 1112.0
+                    },
+                    "dimension": {
+                        "x": 279.0,
+                        "y": 145.0,
+                        "z": 190.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "109",
+                    "anchor": {
+                        "x": 27.0,
+                        "y": 234.0,
+                        "z": 1183.0
+                    },
+                    "dimension": {
+                        "x": 238.0,
+                        "y": 600.0,
+                        "z": 240.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "124",
+                    "anchor": {
+                        "x": 533.0,
+                        "y": 809.0,
+                        "z": 1146.0
+                    },
+                    "dimension": {
+                        "x": 265.0,
+                        "y": 223.0,
+                        "z": 138.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "144",
+                    "anchor": {
+                        "x": 192.0,
+                        "y": 41.0,
+                        "z": 1170.0
+                    },
+                    "dimension": {
+                        "x": 504.0,
+                        "y": 193.0,
+                        "z": 170.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "112",
+                    "anchor": {
+                        "x": 524.0,
+                        "y": 773.0,
+                        "z": 1284.0
+                    },
+                    "dimension": {
+                        "x": 278.0,
+                        "y": 322.0,
+                        "z": 185.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "64",
+                    "anchor": {
+                        "x": 202.0,
+                        "y": 834.0,
+                        "z": 1311.0
+                    },
+                    "dimension": {
+                        "x": 258.0,
+                        "y": 125.0,
+                        "z": 180.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "120",
+                    "anchor": {
+                        "x": 390.0,
+                        "y": 540.0,
+                        "z": 1372.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 230.0,
+                        "z": 220.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "59",
+                    "anchor": {
+                        "x": 411.0,
+                        "y": 247.0,
+                        "z": 1357.0
+                    },
+                    "dimension": {
+                        "x": 399.0,
+                        "y": 293.0,
+                        "z": 282.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "133",
+                    "anchor": {
+                        "x": 201.0,
+                        "y": -5.0,
+                        "z": 1357.0
+                    },
+                    "dimension": {
+                        "x": 398.0,
+                        "y": 239.0,
+                        "z": 284.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "120",
+                    "anchor": {
+                        "x": 390.0,
+                        "y": 540.0,
+                        "z": 1592.0
+                    },
+                    "dimension": {
+                        "x": 400.0,
+                        "y": 230.0,
+                        "z": 220.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "93",
+                    "anchor": {
+                        "x": 492.0,
+                        "y": 770.0,
+                        "z": 1469.0
+                    },
+                    "dimension": {
+                        "x": 264.0,
+                        "y": 341.0,
+                        "z": 237.0
+                    },
+                    "approach": "3"
+                }
+            ]
+        },
+        {
+            "palletNr": "005",
+            "palletType": "DUESSELDORFER_PALLET",
+            "palletDimension": {
+                "x": 800.0,
+                "y": 600.0
+            },
+            "boxes": [
+                {
+                    "product_code": "89",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 24.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 445.0,
+                        "y": 335.0,
+                        "z": 118.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "138",
+                    "anchor": {
+                        "x": 435.0,
+                        "y": 226.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 298.0,
+                        "y": 159.0,
+                        "z": 211.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "97",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 388.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 392.0,
+                        "y": 204.0,
+                        "z": 175.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "97",
+                    "anchor": {
+                        "x": 382.0,
+                        "y": 388.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 392.0,
+                        "y": 204.0,
+                        "z": 175.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "97",
+                    "anchor": {
+                        "x": 194.0,
+                        "y": -4.0,
+                        "z": 118.0
+                    },
+                    "dimension": {
+                        "x": 204.0,
+                        "y": 392.0,
+                        "z": 175.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "97",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": -4.0,
+                        "z": 118.0
+                    },
+                    "dimension": {
+                        "x": 204.0,
+                        "y": 392.0,
+                        "z": 175.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "44",
+                    "anchor": {
+                        "x": 435.0,
+                        "y": -4.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 375.0,
+                        "y": 188.0,
+                        "z": 192.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 388.0,
+                        "z": 175.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": 366.0,
+                        "y": 388.0,
+                        "z": 175.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 388.0,
+                        "z": 265.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": 366.0,
+                        "y": 388.0,
+                        "z": 265.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": 194.0,
+                        "y": -4.0,
+                        "z": 293.0
+                    },
+                    "dimension": {
+                        "x": 204.0,
+                        "y": 376.0,
+                        "z": 90.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "138",
+                    "anchor": {
+                        "x": 435.0,
+                        "y": 226.0,
+                        "z": 211.0
+                    },
+                    "dimension": {
+                        "x": 298.0,
+                        "y": 159.0,
+                        "z": 211.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "97",
+                    "anchor": {
+                        "x": 398.0,
+                        "y": -4.0,
+                        "z": 192.0
+                    },
+                    "dimension": {
+                        "x": 392.0,
+                        "y": 204.0,
+                        "z": 175.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": -4.0,
+                        "z": 293.0
+                    },
+                    "dimension": {
+                        "x": 204.0,
+                        "y": 376.0,
+                        "z": 90.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 372.0,
+                        "z": 355.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": 366.0,
+                        "y": 388.0,
+                        "z": 355.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "95",
+                    "anchor": {
+                        "x": 398.0,
+                        "y": -4.0,
+                        "z": 367.0
+                    },
+                    "dimension": {
+                        "x": 376.0,
+                        "y": 204.0,
+                        "z": 90.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "88",
+                    "anchor": {
+                        "x": 188.0,
+                        "y": 334.0,
+                        "z": 445.0
+                    },
+                    "dimension": {
+                        "x": 313.0,
+                        "y": 271.0,
+                        "z": 177.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "138",
+                    "anchor": {
+                        "x": 100.0,
+                        "y": 175.0,
+                        "z": 383.0
+                    },
+                    "dimension": {
+                        "x": 298.0,
+                        "y": 159.0,
+                        "z": 211.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "138",
+                    "anchor": {
+                        "x": 73.0,
+                        "y": 16.0,
+                        "z": 383.0
+                    },
+                    "dimension": {
+                        "x": 298.0,
+                        "y": 159.0,
+                        "z": 211.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "100",
+                    "anchor": {
+                        "x": -10.0,
+                        "y": 334.0,
+                        "z": 445.0
+                    },
+                    "dimension": {
+                        "x": 198.0,
+                        "y": 200.0,
+                        "z": 175.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "75",
+                    "anchor": {
+                        "x": 501.0,
+                        "y": 66.0,
+                        "z": 457.0
+                    },
+                    "dimension": {
+                        "x": 292.0,
+                        "y": 399.0,
+                        "z": 190.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "21",
+                    "anchor": {
+                        "x": 525.0,
+                        "y": 66.0,
+                        "z": 647.0
+                    },
+                    "dimension": {
+                        "x": 272.0,
+                        "y": 392.0,
+                        "z": 226.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "88",
+                    "anchor": {
+                        "x": 105.0,
+                        "y": 21.0,
+                        "z": 594.0
+                    },
+                    "dimension": {
+                        "x": 271.0,
+                        "y": 313.0,
+                        "z": 177.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "88",
+                    "anchor": {
+                        "x": 188.0,
+                        "y": 334.0,
+                        "z": 622.0
+                    },
+                    "dimension": {
+                        "x": 313.0,
+                        "y": 271.0,
+                        "z": 177.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "88",
+                    "anchor": {
+                        "x": 105.0,
+                        "y": 63.0,
+                        "z": 771.0
+                    },
+                    "dimension": {
+                        "x": 313.0,
+                        "y": 271.0,
+                        "z": 177.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "134",
+                    "anchor": {
+                        "x": 126.0,
+                        "y": 352.0,
+                        "z": 799.0
+                    },
+                    "dimension": {
+                        "x": 399.0,
+                        "y": 240.0,
+                        "z": 284.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "104",
+                    "anchor": {
+                        "x": 525.0,
+                        "y": 66.0,
+                        "z": 873.0
+                    },
+                    "dimension": {
+                        "x": 237.0,
+                        "y": 350.0,
+                        "z": 285.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "134",
+                    "anchor": {
+                        "x": 82.0,
+                        "y": 94.0,
+                        "z": 948.0
+                    },
+                    "dimension": {
+                        "x": 399.0,
+                        "y": 240.0,
+                        "z": 284.0
+                    },
+                    "approach": "7"
+                },
+                {
+                    "product_code": "104",
+                    "anchor": {
+                        "x": 151.0,
+                        "y": 355.0,
+                        "z": 1083.0
+                    },
+                    "dimension": {
+                        "x": 350.0,
+                        "y": 237.0,
+                        "z": 285.0
+                    },
+                    "approach": "9"
+                }
+            ]
+        }
+    ],
+    "articles": {
+        "0": {
+            "description": "G400006720020",
+            "weight": 4767.0,
+            "shippingGroup": "G4"
+        },
+        "1": {
+            "description": "G1300010780006",
+            "weight": 8658.0,
+            "shippingGroup": "G13"
+        },
+        "2": {
+            "description": "G300015230012",
+            "weight": 3646.0,
+            "shippingGroup": "G3"
+        },
+        "3": {
+            "description": "G300015330012",
+            "weight": 3616.0,
+            "shippingGroup": "G3"
+        },
+        "4": {
+            "description": "G300015600012",
+            "weight": 5629.0,
+            "shippingGroup": "G3"
+        },
+        "5": {
+            "description": "G200016460009",
+            "weight": 5789.0,
+            "shippingGroup": "G2"
+        },
+        "6": {
+            "description": "G300018820018",
+            "weight": 2398.0,
+            "shippingGroup": "G3"
+        },
+        "7": {
+            "description": "G300019760030",
+            "weight": 4784.0,
+            "shippingGroup": "G3"
+        },
+        "8": {
+            "description": "G3100019990010",
+            "weight": 5400.0,
+            "shippingGroup": "G31"
+        },
+        "9": {
+            "description": "G300021900005",
+            "weight": 2191.0,
+            "shippingGroup": "G3"
+        },
+        "10": {
+            "description": "G300029720010",
+            "weight": 3495.0,
+            "shippingGroup": "G3"
+        },
+        "11": {
+            "description": "G3100032760025",
+            "weight": 8440.0,
+            "shippingGroup": "G31"
+        },
+        "12": {
+            "description": "G300033460006",
+            "weight": 2096.0,
+            "shippingGroup": "G3"
+        },
+        "13": {
+            "description": "G300034050006",
+            "weight": 1644.0,
+            "shippingGroup": "G3"
+        },
+        "14": {
+            "description": "G3100034570010",
+            "weight": 5367.0,
+            "shippingGroup": "G31"
+        },
+        "15": {
+            "description": "G1300036290006",
+            "weight": 9338.0,
+            "shippingGroup": "G13"
+        },
+        "16": {
+            "description": "G300037770006",
+            "weight": 2369.0,
+            "shippingGroup": "G3"
+        },
+        "17": {
+            "description": "G300039190010",
+            "weight": 1962.0,
+            "shippingGroup": "G3"
+        },
+        "18": {
+            "description": "G1300041830012",
+            "weight": 2600.0,
+            "shippingGroup": "G13"
+        },
+        "19": {
+            "description": "G1300043780024",
+            "weight": 12990.0,
+            "shippingGroup": "G13"
+        },
+        "20": {
+            "description": "G300045650015",
+            "weight": 8493.0,
+            "shippingGroup": "G3"
+        },
+        "21": {
+            "description": "G200046020016",
+            "weight": 4651.0,
+            "shippingGroup": "G2"
+        },
+        "22": {
+            "description": "G1300049020008",
+            "weight": 12522.0,
+            "shippingGroup": "G13"
+        },
+        "23": {
+            "description": "G1300049030006",
+            "weight": 9407.0,
+            "shippingGroup": "G13"
+        },
+        "24": {
+            "description": "G3100049610016",
+            "weight": 8611.0,
+            "shippingGroup": "G31"
+        },
+        "25": {
+            "description": "G3100050150024",
+            "weight": 6705.0,
+            "shippingGroup": "G31"
+        },
+        "26": {
+            "description": "G300051170012",
+            "weight": 2425.0,
+            "shippingGroup": "G3"
+        },
+        "27": {
+            "description": "G300055500024",
+            "weight": 4215.0,
+            "shippingGroup": "G3"
+        },
+        "28": {
+            "description": "G1100057050012",
+            "weight": 10560.0,
+            "shippingGroup": "G11"
+        },
+        "29": {
+            "description": "G1300059120006",
+            "weight": 7271.0,
+            "shippingGroup": "G13"
+        },
+        "30": {
+            "description": "G3100060610020",
+            "weight": 10492.0,
+            "shippingGroup": "G31"
+        },
+        "31": {
+            "description": "G300062280003",
+            "weight": 2800.0,
+            "shippingGroup": "G3"
+        },
+        "32": {
+            "description": "G300067710017",
+            "weight": 11936.0,
+            "shippingGroup": "G3"
+        },
+        "33": {
+            "description": "G400068770016",
+            "weight": 4200.0,
+            "shippingGroup": "G4"
+        },
+        "34": {
+            "description": "G300076230014",
+            "weight": 1748.0,
+            "shippingGroup": "G3"
+        },
+        "35": {
+            "description": "G300082230040",
+            "weight": 4806.0,
+            "shippingGroup": "G3"
+        },
+        "36": {
+            "description": "G300084000020",
+            "weight": 9462.0,
+            "shippingGroup": "G3"
+        },
+        "37": {
+            "description": "G300097310004",
+            "weight": 1800.0,
+            "shippingGroup": "G3"
+        },
+        "38": {
+            "description": "G300097320006",
+            "weight": 1875.0,
+            "shippingGroup": "G3"
+        },
+        "39": {
+            "description": "G300099720008",
+            "weight": 2550.0,
+            "shippingGroup": "G3"
+        },
+        "40": {
+            "description": "G1100113190012",
+            "weight": 6297.0,
+            "shippingGroup": "G11"
+        },
+        "41": {
+            "description": "G400222280026",
+            "weight": 7134.0,
+            "shippingGroup": "G4"
+        },
+        "42": {
+            "description": "G200226600008",
+            "weight": 2700.0,
+            "shippingGroup": "G2"
+        },
+        "43": {
+            "description": "G3100229340014",
+            "weight": 5772.0,
+            "shippingGroup": "G31"
+        },
+        "44": {
+            "description": "G1600244100010",
+            "weight": 5307.0,
+            "shippingGroup": "G16"
+        },
+        "45": {
+            "description": "G300246600018",
+            "weight": 2359.0,
+            "shippingGroup": "G3"
+        },
+        "46": {
+            "description": "G1300273180006",
+            "weight": 9440.0,
+            "shippingGroup": "G13"
+        },
+        "47": {
+            "description": "G1300276970006",
+            "weight": 7169.0,
+            "shippingGroup": "G13"
+        },
+        "48": {
+            "description": "G1300282470006",
+            "weight": 8949.0,
+            "shippingGroup": "G13"
+        },
+        "49": {
+            "description": "G1100283780006",
+            "weight": 13987.0,
+            "shippingGroup": "G11"
+        },
+        "50": {
+            "description": "G3100285880007",
+            "weight": 5671.0,
+            "shippingGroup": "G31"
+        },
+        "51": {
+            "description": "G1300291450006",
+            "weight": 7155.0,
+            "shippingGroup": "G13"
+        },
+        "52": {
+            "description": "G1100292390012",
+            "weight": 5587.0,
+            "shippingGroup": "G11"
+        },
+        "53": {
+            "description": "G1100294060012",
+            "weight": 11547.0,
+            "shippingGroup": "G11"
+        },
+        "54": {
+            "description": "G1100294080012",
+            "weight": 5810.0,
+            "shippingGroup": "G11"
+        },
+        "55": {
+            "description": "G200323250012",
+            "weight": 2088.0,
+            "shippingGroup": "G2"
+        },
+        "56": {
+            "description": "G1100327160012",
+            "weight": 5721.0,
+            "shippingGroup": "G11"
+        },
+        "57": {
+            "description": "G1300344970006",
+            "weight": 7080.0,
+            "shippingGroup": "G13"
+        },
+        "58": {
+            "description": "G400384110035",
+            "weight": 8035.0,
+            "shippingGroup": "G4"
+        },
+        "59": {
+            "description": "G300473460018",
+            "weight": 1251.0,
+            "shippingGroup": "G3"
+        },
+        "60": {
+            "description": "G1300486410006",
+            "weight": 7712.0,
+            "shippingGroup": "G13"
+        },
+        "61": {
+            "description": "G1300549100006",
+            "weight": 7647.0,
+            "shippingGroup": "G13"
+        },
+        "62": {
+            "description": "G300587080048",
+            "weight": 7904.0,
+            "shippingGroup": "G3"
+        },
+        "63": {
+            "description": "G300658100012",
+            "weight": 2478.0,
+            "shippingGroup": "G3"
+        },
+        "64": {
+            "description": "G300658540012",
+            "weight": 1600.0,
+            "shippingGroup": "G3"
+        },
+        "65": {
+            "description": "G300659730005",
+            "weight": 1100.0,
+            "shippingGroup": "G3"
+        },
+        "66": {
+            "description": "G1100697080024",
+            "weight": 12655.0,
+            "shippingGroup": "G11"
+        },
+        "67": {
+            "description": "G1300704050006",
+            "weight": 7343.0,
+            "shippingGroup": "G13"
+        },
+        "68": {
+            "description": "G1300709270006",
+            "weight": 7650.0,
+            "shippingGroup": "G13"
+        },
+        "69": {
+            "description": "G3100765200014",
+            "weight": 7357.0,
+            "shippingGroup": "G31"
+        },
+        "70": {
+            "description": "G3100774330014",
+            "weight": 5743.0,
+            "shippingGroup": "G31"
+        },
+        "71": {
+            "description": "G1300775030006",
+            "weight": 7845.0,
+            "shippingGroup": "G13"
+        },
+        "72": {
+            "description": "G300776670024",
+            "weight": 7899.0,
+            "shippingGroup": "G3"
+        },
+        "73": {
+            "description": "G200882820056",
+            "weight": 6019.0,
+            "shippingGroup": "G2"
+        },
+        "74": {
+            "description": "G300884360021",
+            "weight": 7452.0,
+            "shippingGroup": "G3"
+        },
+        "75": {
+            "description": "G200898620020",
+            "weight": 5314.0,
+            "shippingGroup": "G2"
+        },
+        "76": {
+            "description": "G1300988360006",
+            "weight": 8900.0,
+            "shippingGroup": "G13"
+        },
+        "77": {
+            "description": "G300989050012",
+            "weight": 2158.0,
+            "shippingGroup": "G3"
+        },
+        "78": {
+            "description": "G1300992270006",
+            "weight": 7864.0,
+            "shippingGroup": "G13"
+        },
+        "79": {
+            "description": "G301036370015",
+            "weight": 8742.0,
+            "shippingGroup": "G3"
+        },
+        "80": {
+            "description": "G301057940012",
+            "weight": 5650.0,
+            "shippingGroup": "G3"
+        },
+        "81": {
+            "description": "G301114810006",
+            "weight": 2100.0,
+            "shippingGroup": "G3"
+        },
+        "82": {
+            "description": "G1101132850006",
+            "weight": 2785.0,
+            "shippingGroup": "G11"
+        },
+        "83": {
+            "description": "G301181640020",
+            "weight": 624.0,
+            "shippingGroup": "G3"
+        },
+        "84": {
+            "description": "G301233620035",
+            "weight": 5850.0,
+            "shippingGroup": "G3"
+        },
+        "85": {
+            "description": "G401233880021",
+            "weight": 3760.0,
+            "shippingGroup": "G4"
+        },
+        "86": {
+            "description": "G3101245670014",
+            "weight": 7447.0,
+            "shippingGroup": "G31"
+        },
+        "87": {
+            "description": "G1101260080012",
+            "weight": 5628.0,
+            "shippingGroup": "G11"
+        },
+        "88": {
+            "description": "G201270960024",
+            "weight": 6851.0,
+            "shippingGroup": "G2"
+        },
+        "89": {
+            "description": "G6501285570012",
+            "weight": 6733.0,
+            "shippingGroup": "G65"
+        },
+        "90": {
+            "description": "G3101298300010",
+            "weight": 8775.0,
+            "shippingGroup": "G31"
+        },
+        "91": {
+            "description": "G201300160016",
+            "weight": 2250.0,
+            "shippingGroup": "G2"
+        },
+        "92": {
+            "description": "G3101309180012",
+            "weight": 4920.0,
+            "shippingGroup": "G31"
+        },
+        "93": {
+            "description": "G301317350024",
+            "weight": 4137.0,
+            "shippingGroup": "G3"
+        },
+        "94": {
+            "description": "G1101321810012",
+            "weight": 6953.0,
+            "shippingGroup": "G11"
+        },
+        "95": {
+            "description": "G1601327500027",
+            "weight": 5661.0,
+            "shippingGroup": "G16"
+        },
+        "96": {
+            "description": "G301333990012",
+            "weight": 6776.0,
+            "shippingGroup": "G3"
+        },
+        "97": {
+            "description": "G1601364190010",
+            "weight": 10216.0,
+            "shippingGroup": "G16"
+        },
+        "98": {
+            "description": "G1301367670006",
+            "weight": 7835.0,
+            "shippingGroup": "G13"
+        },
+        "99": {
+            "description": "G201369770004",
+            "weight": 1370.0,
+            "shippingGroup": "G2"
+        },
+        "100": {
+            "description": "G201383290014",
+            "weight": 2513.0,
+            "shippingGroup": "G2"
+        },
+        "101": {
+            "description": "G1101384780012",
+            "weight": 12024.0,
+            "shippingGroup": "G11"
+        },
+        "102": {
+            "description": "G1101396500012",
+            "weight": 7300.0,
+            "shippingGroup": "G11"
+        },
+        "103": {
+            "description": "G201418550010",
+            "weight": 3432.0,
+            "shippingGroup": "G2"
+        },
+        "104": {
+            "description": "G301420680012",
+            "weight": 1769.0,
+            "shippingGroup": "G3"
+        },
+        "105": {
+            "description": "G1301428500006",
+            "weight": 6885.0,
+            "shippingGroup": "G13"
+        },
+        "106": {
+            "description": "G1101468890012",
+            "weight": 1775.0,
+            "shippingGroup": "G11"
+        },
+        "107": {
+            "description": "G3101473990024",
+            "weight": 8663.0,
+            "shippingGroup": "G31"
+        },
+        "108": {
+            "description": "G201476280006",
+            "weight": 3390.0,
+            "shippingGroup": "G2"
+        },
+        "109": {
+            "description": "G301489710004",
+            "weight": 3225.0,
+            "shippingGroup": "G3"
+        },
+        "110": {
+            "description": "G1301495160006",
+            "weight": 9088.0,
+            "shippingGroup": "G13"
+        },
+        "111": {
+            "description": "G1101507760012",
+            "weight": 6134.0,
+            "shippingGroup": "G11"
+        },
+        "112": {
+            "description": "G301511320024",
+            "weight": 6047.0,
+            "shippingGroup": "G3"
+        },
+        "113": {
+            "description": "G301517720006",
+            "weight": 2626.0,
+            "shippingGroup": "G3"
+        },
+        "114": {
+            "description": "G201519270004",
+            "weight": 4353.0,
+            "shippingGroup": "G2"
+        },
+        "115": {
+            "description": "G301520450010",
+            "weight": 3005.0,
+            "shippingGroup": "G3"
+        },
+        "116": {
+            "description": "G1301526710006",
+            "weight": 8173.0,
+            "shippingGroup": "G13"
+        },
+        "117": {
+            "description": "G1301526740008",
+            "weight": 10457.0,
+            "shippingGroup": "G13"
+        },
+        "118": {
+            "description": "G1301526750008",
+            "weight": 10568.0,
+            "shippingGroup": "G13"
+        },
+        "119": {
+            "description": "G301537510024",
+            "weight": 6008.0,
+            "shippingGroup": "G3"
+        },
+        "120": {
+            "description": "G301588430004",
+            "weight": 6809.0,
+            "shippingGroup": "G3"
+        },
+        "121": {
+            "description": "G1301593930006",
+            "weight": 7845.0,
+            "shippingGroup": "G13"
+        },
+        "122": {
+            "description": "G3101600350012",
+            "weight": 5000.0,
+            "shippingGroup": "G31"
+        },
+        "123": {
+            "description": "G3101604400012",
+            "weight": 7583.0,
+            "shippingGroup": "G31"
+        },
+        "124": {
+            "description": "G301607210006",
+            "weight": 2575.0,
+            "shippingGroup": "G3"
+        },
+        "125": {
+            "description": "G1301609240006",
+            "weight": 9454.0,
+            "shippingGroup": "G13"
+        },
+        "126": {
+            "description": "G1301612350006",
+            "weight": 9325.0,
+            "shippingGroup": "G13"
+        },
+        "127": {
+            "description": "G1301612360006",
+            "weight": 7162.0,
+            "shippingGroup": "G13"
+        },
+        "128": {
+            "description": "G3101636040008",
+            "weight": 3705.0,
+            "shippingGroup": "G31"
+        },
+        "129": {
+            "description": "G1301656790006",
+            "weight": 8315.0,
+            "shippingGroup": "G13"
+        },
+        "130": {
+            "description": "G401727620070",
+            "weight": 6250.0,
+            "shippingGroup": "G4"
+        },
+        "131": {
+            "description": "G1301766150008",
+            "weight": 9400.0,
+            "shippingGroup": "G13"
+        },
+        "132": {
+            "description": "G355144680015",
+            "weight": 8692.0,
+            "shippingGroup": "G3"
+        },
+        "133": {
+            "description": "G355144940012",
+            "weight": 13228.0,
+            "shippingGroup": "G3"
+        },
+        "134": {
+            "description": "G355145000012",
+            "weight": 13365.0,
+            "shippingGroup": "G3"
+        },
+        "135": {
+            "description": "G3156059420016",
+            "weight": 5012.0,
+            "shippingGroup": "G31"
+        },
+        "136": {
+            "description": "G1356112480006",
+            "weight": 9435.0,
+            "shippingGroup": "G13"
+        },
+        "137": {
+            "description": "G1364033710006",
+            "weight": 7353.0,
+            "shippingGroup": "G13"
+        },
+        "138": {
+            "description": "G1665092120008",
+            "weight": 8611.0,
+            "shippingGroup": "G16"
+        },
+        "139": {
+            "description": "G1177019440012",
+            "weight": 12850.0,
+            "shippingGroup": "G11"
+        },
+        "140": {
+            "description": "G1177039160012",
+            "weight": 6551.0,
+            "shippingGroup": "G11"
+        },
+        "141": {
+            "description": "G3177084510006",
+            "weight": 3359.0,
+            "shippingGroup": "G31"
+        },
+        "142": {
+            "description": "G377093410007",
+            "weight": 751.0,
+            "shippingGroup": "G3"
+        },
+        "143": {
+            "description": "G377101130009",
+            "weight": 1850.0,
+            "shippingGroup": "G3"
+        },
+        "144": {
+            "description": "G377105160015",
+            "weight": 3592.0,
+            "shippingGroup": "G3"
+        }
+    },
+    "orderID": "U1418750.0615715"
+}
