@@ -1,0 +1,3 @@
+[console_scripts]
+depthchargectl = depthcharge_tools.depthchargectl:depthchargectl.main
+mkdepthcharge = depthcharge_tools.mkdepthcharge:mkdepthcharge.main
