@@ -1,0 +1,2 @@
+[console_scripts]
+lib_compare_packages = lib_compare_packages.cli:main
