@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: ss-daily-tools
+Version: 1.0.0
+Summary: 常用的调用方法
+Home-page: https://github.com/shimufeng?tab=repositories
+Author: ss
+Author-email: 791386952@qq.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas (==1.4.1)
+Requires-Dist: pymongo (==3.12.2)
+Requires-Dist: PyMySQL (==1.0.2)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: pytz (==2021.3)
+Requires-Dist: redis (==3.5.3)
+Requires-Dist: setuptools (==49.2.1)
+
+# 简介
+个人的工具包
+# 功能
+## 时间转换类
+关于时间的转换
+## 加密类
+关于md5、base64等方法
+## 金额转换类
+## 文件类
+关于文件的读写
+## 数据库类
+### mysql
+### mongodb
+### redis
+## 其他类
+大杂烩
+
