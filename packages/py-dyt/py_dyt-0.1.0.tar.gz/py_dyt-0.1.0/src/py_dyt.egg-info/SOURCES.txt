@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/py_dyt/__init__.py
+src/py_dyt/translate.py
+src/py_dyt.egg-info/PKG-INFO
+src/py_dyt.egg-info/SOURCES.txt
+src/py_dyt.egg-info/dependency_links.txt
+src/py_dyt.egg-info/top_level.txt
+tests/test_variables.py

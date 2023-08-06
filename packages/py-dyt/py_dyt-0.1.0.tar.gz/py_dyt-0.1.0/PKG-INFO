@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: py_dyt
+Version: 0.1.0
+Summary: A python DyT parser
+Author-email: Nickolay Chistov <nikola-chistov@mail.ru>
+Project-URL: Homepage, https://gitflic.ru/project/nchistov/py_dyt
+Project-URL: Bug Tracker, https://gitflic.ru/project/nchistov/py_dyt/issue
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Py-Dyt
+## Python parser for _DyT_
+### version 0.1.0
+
+> This project needs Python >= 3.10!
+
+Simple example:
+
+```pycon
+>>> from py_dyt import translate
+>>> print(translate('Hello, $name$!', {'name': 'Nick'}))
+Hello, Nick!
+```
