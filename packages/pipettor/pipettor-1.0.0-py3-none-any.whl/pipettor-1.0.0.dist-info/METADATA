@@ -1,0 +1,104 @@
+Metadata-Version: 2.1
+Name: pipettor
+Version: 1.0.0
+Summary: pipettor - robust, easy to use Unix process pipelines
+Home-page: https://github.com/diekhans/pipettor
+Author: Mark Diekhans
+Author-email: markd@ucsc.edu
+License: MIT
+Keywords: Unix,process,pipe
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+Pipettor Overview
+=================
+
+pipettor - robust, easy to use Python package for running Unix process pipelines
+
+Features
+--------
+
+* Creating process pipelines in Python is either complex (e.g. ``subprocess``),
+  or not robust (e.g. ``os.system()``).  This package aims to address these shortcomings.
+* Command pipelines are simply specified as a sequence of commands, with each
+  command represented as a sequence of arguments.
+* Failure of any process in the pipeline results in an exception, with ``stderr``
+  included in the exception.
+* Pipeline ``stdin/stdout/stderr`` can be passed through from parent process,
+  redirected to a file, or read/written by the parent process.
+* Asynchronous reading and writing to and from the pipeline maybe done without risk of
+  deadlock.
+* Pipeline can run asynchronously or block until completion.
+* Popen-style File-like objects for reading or writing a pipeline.
+* Documentation: https://pipettor.readthedocs.org.
+
+
+
+
+
+History
+=======
+
+1.0.0 (2023-06-29)
+-----------------
+* Don't use a process group; as it caused signals to not get propagated.  Processes are explicitly waited for by pid, so this will not consume the exit of other process not create by this module.
+  
+
+0.8.0 (2023-02-05)
+-----------------
+* make most optional arguments require keyword form to help prevent errors, especially if open() options are assumed
+* added more functions to make Popen objects file-like objects
+
+0.7.0 (2023-01-06)
+-----------------
+* don't fail if invalid UTF-8 characters are written to capture stderr
+
+0.6.0 (2022-11-16)
+-----------------
+* remove use of deprecated pipes module
+
+0.5.0 (2020-12-25)
+-----------------
+* Removed Python-2 support.
+* Switch to using subprocess as a base rather interface directly
+  with Unix system calls.  This lets subprocess deal with
+  various issues dealing with the Python interpreter environment.  
+
+0.4.0 (2018-04-21)
+------------------
+* Allow passing through universial newline mode for PY2.
+* Fix bug with not using specified log level.
+
+
+0.3.0 (2018-02-25)
+-----------------------
+* added open-stying buffering, encoding, and errors options
+* source cleanup
+
+0.2.0 (2017-09-19)
+-----------------------
+* Simplified and log of info and errors levels by removing logLevel options.
+* Improvements to documentation.
+
+0.1.3 (2017-06-13)
+------------------
+* Documentation fixes
+
+0.1.2 (2017-06-11)
+------------------
+* First public release on PyPI.
