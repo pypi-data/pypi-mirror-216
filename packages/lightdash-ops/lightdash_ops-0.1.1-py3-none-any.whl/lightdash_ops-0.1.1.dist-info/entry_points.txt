@@ -1,0 +1,3 @@
+[console_scripts]
+lightdash-ops=lightdash_ops.cli.main:app
+
