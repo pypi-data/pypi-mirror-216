@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/wad2023_program/__init__.py
+src/wad2023_program/__main__.py
+src/wad2023_program/app_config.py
+src/wad2023_program/model.py
+src/wad2023_program/program.py
+src/wad2023_program.egg-info/PKG-INFO
+src/wad2023_program.egg-info/SOURCES.txt
+src/wad2023_program.egg-info/dependency_links.txt
+src/wad2023_program.egg-info/entry_points.txt
+src/wad2023_program.egg-info/requires.txt
+src/wad2023_program.egg-info/top_level.txt
