@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: nics
+Version: 0.18.0
+Summary: Automated docs repo generator
+Home-page: https://nvfp.github.io/now-i-can-sleep
+Author: Nicholas Valentinus
+Author-email: nvfastplease@gmail.com
+License: MIT
+Project-URL: documentation, https://nvfp.github.io/now-i-can-sleep/docs
+Project-URL: report bugs, https://github.com/nvfp/now-i-can-sleep/issues
+Project-URL: repo, https://github.com/nvfp/now-i-can-sleep
+Project-URL: changelog, https://nvfp.github.io/now-i-can-sleep/changelog
+Keywords: python,toolkit,mykit
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Natural Language :: English
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+
+# Now-I-Can-Sleep
+
+(unstable)
+
+## Usage
+
+1. Install via pip:
+
+    ```sh
+    pip install nics
+    ```
+
+2. Navigate to your project root directory
+3. Run:
+
+    ```sh
+    nics start
+    ```
+4. Follow the wizard, and you all set!
