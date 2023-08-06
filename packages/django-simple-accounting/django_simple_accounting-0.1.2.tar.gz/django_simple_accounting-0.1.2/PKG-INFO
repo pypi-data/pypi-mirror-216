@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: django-simple-accounting
+Version: 0.1.2
+Summary: Plain and simple accounting module for Django
+License: MIT
+Author: Šarūnas Navickas
+Author-email: sarunas@griaustinis.lt
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Description-Content-Type: text/markdown
+
+# django-simple-accounting
+Plain and Simple Accounting module for Django
+
+[![PyPI version fury.io](https://badge.fury.io/py/django-simple-accounting.svg)](https://pypi.python.org/pypi/django-simple-accounting/)
+[![PyPI download month](https://img.shields.io/pypi/dm/django-simple-accounting.svg)](https://pypi.python.org/pypi/django-simple-accounting/)
+[![GitHub license](https://img.shields.io/github/license/Griaustinis-Media/django-simple-accounting.svg)](https://github.com/Griaustinis-Media/django-simple-accounting/blob/master/LICENSE)
+
+## Installation
+
+Install from pypi:
+
+`pip install django-simple-accounting`
+
+Add "simple_accounting" to your INSTALLED_APPS setting.
+
+```
+INSTALLED_APPS = [
+    ...
+    "simple_accounting",
+]
+```
