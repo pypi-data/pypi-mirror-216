@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+setupdoc/__init__.py
+setupdoc/__main__.py
+setupdoc/generators.py
+setupdoc/ui.py
+setupdoc.egg-info/PKG-INFO
+setupdoc.egg-info/SOURCES.txt
+setupdoc.egg-info/dependency_links.txt
+setupdoc.egg-info/entry_points.txt
+setupdoc.egg-info/requires.txt
+setupdoc.egg-info/top_level.txt
