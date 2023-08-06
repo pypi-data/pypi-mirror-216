@@ -1,0 +1,134 @@
+[project]
+name = "MyoKTROS"
+authors = [
+  { name="Iori Mizutani", email="iomz@sazanka.io" },
+  { name="Felix Wohlgemuth", email="felixwohlgemuth@gmx.ch" },
+]
+maintainers = [
+  { name="Iori Mizutani", email="iomz@sazanka.io" },
+]
+description = "Myo EMG-based KT system for ROS"
+readme = "README.md"
+classifiers = [
+    "Environment :: Console",
+    "Framework :: AsyncIO",
+    "Framework :: Robot Framework :: Tool",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/Interactions-HSG/MyoKTROS"
+"Bug Tracker" = "https://github.com/Interactions-HSG/MyoKTROS/issues"
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+target-version = ["py310"]
+
+[tool.ruff]
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = ["E", "F"]
+ignore = []
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
+unfixable = []
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+# Same as Black.
+line-length = 120
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Assume Python 3.10.
+target-version = "py310"
+
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.ruff.per-file-ignores]
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*" = ["PLR2004", "S101", "TID252"]
+"src/myoktros/__init__.py" = ["F401"]
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.paths]
+tests = ["tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.poetry]
+name = "MyoKTROS"
+version = "0.3.0"
+description = "Myo EMG-based KT system for ROS"
+authors = ["Iori Mizutani <iomz@sazanka.io>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+dl-myo = ">=1.0.3"
+joblib = "^1.2.0"
+numpy = "^1.24.3"
+pandas = "^2.0.2"
+scikit-learn = "^1.2.2"
+tensorflow = ">=2.13.0rc1"
+transitions = "^0.9.0"
+websockets = "^11.0.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pytest = "^7.3.2"
+pytest-cov = "^4.1.0"
+pytest-asyncio = "^0.21.0"
+transitions-gui = "^0.1.0"
+tornado = "^6.3.2"
+
+[tool.poetry.scripts]
+myoktros = "myoktros:entrypoint"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+style = "semver"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
