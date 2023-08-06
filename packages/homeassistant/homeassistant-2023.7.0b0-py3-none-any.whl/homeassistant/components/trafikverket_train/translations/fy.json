@@ -1,0 +1,24 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "weekday": "Dagen"
+                }
+            }
+        }
+    },
+    "selector": {
+        "weekday": {
+            "options": {
+                "fri": "Freed",
+                "mon": "Moandei",
+                "sat": "Sneon",
+                "sun": "Snein",
+                "thu": "Tongersdei",
+                "tue": "Tiisdei",
+                "wed": "Woansdei"
+            }
+        }
+    }
+}

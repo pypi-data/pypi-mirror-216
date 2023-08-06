@@ -1,0 +1,11 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "codelock": "Prijat\u00fd k\u00f3d z\u00e1mku",
+            "fingerprint": "Prijat\u00fd k\u00f3d odtla\u010dku prsta",
+            "send_keys": "Prijatie odoslan\u00fdch k\u013e\u00fa\u010dov",
+            "transmitter": "Prijat\u00fd k\u00f3d vysiela\u010da",
+            "transponder": "Prijat\u00fd k\u00f3d transpond\u00e9ra"
+        }
+    }
+}

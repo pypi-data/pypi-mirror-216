@@ -1,0 +1,93 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured",
+            "already_in_progress": "Configuration flow is already in progress",
+            "no_devices_found": "No devices found on the network"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect"
+        },
+        "flow_title": "{model} {id} ({ipaddr})",
+        "step": {
+            "discovery_confirm": {
+                "description": "Do you want to set up {model} {id} ({ipaddr})?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "description": "If you leave the host empty, discovery will be used to find devices."
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "unpair_remotes": {
+                "name": "Unpair remotes"
+            }
+        },
+        "number": {
+            "effect_speed": {
+                "name": "Effect speed"
+            },
+            "music_pixels_per_segment": {
+                "name": "Music pixels per segment"
+            },
+            "music_segments": {
+                "name": "Music segments"
+            },
+            "pixels_per_segment": {
+                "name": "Pixels per segment"
+            },
+            "segments": {
+                "name": "Segments"
+            }
+        },
+        "select": {
+            "ic_type": {
+                "name": "IC type"
+            },
+            "operating_mode": {
+                "name": "Operating mode"
+            },
+            "power_restored": {
+                "name": "Power restored"
+            },
+            "remote_config": {
+                "name": "Remote config"
+            },
+            "white_channel": {
+                "name": "White channel"
+            },
+            "wiring": {
+                "name": "Wiring"
+            }
+        },
+        "sensor": {
+            "paired_remotes": {
+                "name": "Paired remotes"
+            }
+        },
+        "switch": {
+            "music": {
+                "name": "Music"
+            },
+            "remote_access": {
+                "name": "Remote access"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "custom_effect_colors": "Custom Effect: List of 1 to 16 [R,G,B] colors. Example: [255,0,255],[60,128,0]",
+                    "custom_effect_speed_pct": "Custom Effect: Speed in percents for the effect that switch colors.",
+                    "custom_effect_transition": "Custom Effect: Type of transition between the colors.",
+                    "mode": "The chosen brightness mode."
+                }
+            }
+        }
+    }
+}

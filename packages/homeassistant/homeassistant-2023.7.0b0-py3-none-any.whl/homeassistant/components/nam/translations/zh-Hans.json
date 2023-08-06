@@ -1,0 +1,53 @@
+{
+    "entity": {
+        "button": {
+            "restart": {
+                "name": "\u91cd\u542f"
+            }
+        },
+        "sensor": {
+            "dht22_temperature": {
+                "name": "DHT22\u6e29\u5ea6"
+            },
+            "heca_humidity": {
+                "name": "HECA\u6e7f\u5ea6"
+            },
+            "heca_temperature": {
+                "name": "HECA\u6e29\u5ea6"
+            },
+            "last_restart": {
+                "name": "\u4e0a\u6b21\u91cd\u542f"
+            },
+            "pmsx003_caqi_level": {
+                "state": {
+                    "high": "\u9ad8",
+                    "low": "\u4f4e",
+                    "medium": "\u4e2d",
+                    "very_high": "\u5f88\u9ad8",
+                    "very_low": "\u5f88\u4f4e"
+                }
+            },
+            "sds011_caqi_level": {
+                "state": {
+                    "high": "\u9ad8",
+                    "low": "\u4f4e",
+                    "medium": "\u4e2d",
+                    "very_high": "\u5f88\u9ad8",
+                    "very_low": "\u5f88\u4f4e"
+                }
+            },
+            "signal_strength": {
+                "name": "\u4fe1\u53f7\u5f3a\u5ea6"
+            },
+            "sps30_caqi_level": {
+                "state": {
+                    "high": "\u9ad8",
+                    "low": "\u4f4e",
+                    "medium": "\u4e2d",
+                    "very_high": "\u5f88\u9ad8",
+                    "very_low": "\u5f88\u4f4e"
+                }
+            }
+        }
+    }
+}
