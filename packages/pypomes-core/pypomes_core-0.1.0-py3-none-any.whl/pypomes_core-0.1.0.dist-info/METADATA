@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pypomes-core
+Version: 0.1.0
+Summary: A collection of Python pomes, pennyeach (core modules)
+Project-URL: Homepage, https://github.com/TheWiseCoder/PyPomes-Core
+Project-URL: Bug Tracker, https://github.com/TheWiseCoder/PyPomes-Core/issues
+Author-email: GT Nunes <wisecoder01@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: flask>=2.3.2
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: setuptools>=68.0.0
+Requires-Dist: wheel>=0.40.0
+Requires-Dist: xmltodict3>=0.0.4
