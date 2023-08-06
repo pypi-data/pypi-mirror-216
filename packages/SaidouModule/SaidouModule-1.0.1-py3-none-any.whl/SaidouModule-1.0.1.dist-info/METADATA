@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: SaidouModule
+Version: 1.0.1
+Summary: Module possédant 2 packages : SaidouPixels et SaidouNeurone, lire le README.md pour plus d'informations.
+Home-page: UNKNOWN
+Author: Meddahi Saïd
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: opencv-python
+Requires-Dist: tqdm
+Requires-Dist: scikit-learn
+
+UNKNOWN
+
