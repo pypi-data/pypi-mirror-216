@@ -1,0 +1,12 @@
+pandas
+ncls>=0.0.63
+tabulate
+sorted_nearest>=0.0.33
+natsort
+
+[dev]
+black
+bumpver
+isort
+pip-tools
+pytest
