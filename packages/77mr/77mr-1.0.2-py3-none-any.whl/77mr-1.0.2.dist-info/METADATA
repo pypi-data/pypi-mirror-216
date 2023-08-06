@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: 77mr
+Version: 1.0.2
+Summary: create merge request
+Home-page: https://github.com/linrol/mr
+Author: linrol
+Author-email: linrolmail@gmail.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+
+# amyTools
+
+#### 介绍
+分支轻量工具
+
+#### 安装教程
+
+1.  安装最新的python环境
+2.  pip3 install mr
+
+#### 使用说明
+
+####命令
+mr
+基于当前分支创建远程分支并发起merge request，目标分支为当前分支
