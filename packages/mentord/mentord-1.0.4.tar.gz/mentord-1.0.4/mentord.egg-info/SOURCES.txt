@@ -1,0 +1,16 @@
+setup.cfg
+setup.py
+mentord/__init__.py
+mentord/channel.py
+mentord/client.py
+mentord/embed.py
+mentord/eother.py
+mentord/guild.py
+mentord/http_.py
+mentord/member.py
+mentord/message.py
+mentord/user.py
+mentord.egg-info/PKG-INFO
+mentord.egg-info/SOURCES.txt
+mentord.egg-info/dependency_links.txt
+mentord.egg-info/top_level.txt
