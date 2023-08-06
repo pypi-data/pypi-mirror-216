@@ -1,0 +1,16 @@
+AUTHORS
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+dalec_nextcloud/__init__.py
+dalec_nextcloud/apps.py
+dalec_nextcloud/proxy.py
+dalec_nextcloud.egg-info/PKG-INFO
+dalec_nextcloud.egg-info/SOURCES.txt
+dalec_nextcloud.egg-info/dependency_links.txt
+dalec_nextcloud.egg-info/not-zip-safe
+dalec_nextcloud.egg-info/requires.txt
+dalec_nextcloud.egg-info/top_level.txt
