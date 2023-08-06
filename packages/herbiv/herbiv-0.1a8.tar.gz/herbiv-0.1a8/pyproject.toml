@@ -1,0 +1,36 @@
+[build-system]
+requires = [
+    "hatchling",
+    "numpy",
+    "pandas",
+    "tqdm",
+    "pyecharts",
+    "typing-extensions",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "herbiv"
+version = "0.1a8"
+authors = [
+  { name="王皓阳", email="Wesady@qq.com" },
+]
+description = "HerbiV(Bidirectional and Visible Database of Herb)既是一个数据库，又是一个强大的数据分析平台，集成了50多万条方剂、中药、成分、靶点数据，以及经过检验的数据挖掘模型。HerbiV is far more than a database, which is also a powerful data analysis platform that integrates more than 500,000 prescriptions, traditional Chinese medicine, ingredients and target data. Moreover, two tested data mining models are contained in HerbiV."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Chinese (Simplified)",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/MLi-lab-Bioinformatics-NJUCM/pharmastar"
+"Bug Tracker" = "https://github.com/MLi-lab-Bioinformatics-NJUCM/pharmastar/issues"
