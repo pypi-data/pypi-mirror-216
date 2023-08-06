@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: csv-detective
+Version: 0.6.4.dev390
+Summary: Detect CSV column content
+Home-page: https://github.com/etalab/csv_detective
+Author: Etalab
+Author-email: opendatateam@data.gouv.fr
+License: http://www.fsf.org/licensing/licenses/agpl-3.0.html
+Keywords: CSV data processing encoding guess parser tabular
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Description-Content-Type: text/markdown
+License-File: LICENSE.AGPL.txt
+Requires-Dist: pandas (>=0.20)
+Requires-Dist: boto3 (>=1.21.21)
+Requires-Dist: unidecode (>=0.4)
+Requires-Dist: cchardet
+
