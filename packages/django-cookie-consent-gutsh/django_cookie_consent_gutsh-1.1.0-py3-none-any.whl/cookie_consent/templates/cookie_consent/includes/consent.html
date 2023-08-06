@@ -1,0 +1,11 @@
+{% if not user.is_authenticated and not request.session.cookie_consent or user.is_authenticated and not user.cookie_consent %}
+<article class="cookie-consent">
+    <header><h5>Cookie consent!</h5><button class="close">Close</button></header>
+    <section>
+        <p>We are using cookies to make this web-site fully-functional.</p>
+        <p>If you understand what HTTP cookies are, you probably would accept their usage by clicking the button in the right-below corner</p>
+        <p>If you are not sure, close this notification (but you will be forced to close it every time you visit this web-site until you accept)</p>
+    </section>
+    <button class="accept">Accept</button>
+</article>
+{% endif %}
