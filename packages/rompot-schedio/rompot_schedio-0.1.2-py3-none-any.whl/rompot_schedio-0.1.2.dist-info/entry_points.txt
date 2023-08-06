@@ -1,0 +1,3 @@
+[console_scripts]
+schedio=schedio.__cli__:main
+
