@@ -1,0 +1,4 @@
+[console_scripts]
+oligo-server=app.server:main
+oligo-synth=examples.dna_synthesis:main
+

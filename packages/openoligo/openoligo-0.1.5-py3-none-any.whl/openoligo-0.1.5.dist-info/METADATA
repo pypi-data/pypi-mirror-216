@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: openoligo
+Version: 0.1.5
+Summary: An open-source platform for programmatically interacting with and managing Nucleic acid sequences synthesis processes.
+License: Apache-2.0
+Keywords: DNA,synthesis,genetics,open-source
+Author: Satyam Tiwary
+Author-email: satyam@technoculture.io
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: bb
+Provides-Extra: rpi
+Requires-Dist: Adafruit_BBIO (>=1.2.0,<2.0.0) ; extra == "bb"
+Requires-Dist: RPi.GPIO (>=0.7.1,<0.8.0) ; extra == "rpi"
+Requires-Dist: fastapi (>=0.98.0,<0.99.0)
+Requires-Dist: pdocs (>=1.2.0,<2.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: rich (>=13.4.2,<14.0.0)
+Requires-Dist: tqdm (>=4.65.0,<5.0.0)
+Description-Content-Type: text/markdown
+
+# OpenOligo
+
+[![PyPI version](https://badge.fury.io/py/openoligo.svg)](https://badge.fury.io/py/openoligo)
+![Coverage](https://raw.githubusercontent.com/TechnocultureResearch/OpenOligo/dev/.github/coverage.svg)
+[![Lint OpenOligo](https://github.com/TechnocultureResearch/OpenOligo/actions/workflows/lint.yaml/badge.svg)](https://github.com/TechnocultureResearch/OpenOligo/actions/workflows/lint.yaml)
+[![Test OpenOligo](https://github.com/TechnocultureResearch/OpenOligo/actions/workflows/test.yaml/badge.svg)](https://github.com/TechnocultureResearch/OpenOligo/actions/workflows/test.yaml)
+
+OpenOligo is an open-source platform for programmatically interacting with and managing DNA synthesis processes.
+
+## Getting Started
+```sh
+pip install openoligo
+```
+
+### A simple Example
+
+```py
+import asyncio
+
+from openoligo.instrument import Instrument
+from openoligo.protocols.dna_synthesis import synthesize
+from openoligo.seq import Seq
+
+
+inst = Instrument()
+
+try:
+    asyncio.run(synthesize(inst, Seq("ATCGAAATTTTT")))
+except KeyboardInterrupt:
+    print("Keyboard interrupt received, exiting...")
+```
+
