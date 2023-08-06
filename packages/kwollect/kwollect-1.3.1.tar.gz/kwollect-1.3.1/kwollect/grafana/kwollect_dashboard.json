@@ -1,0 +1,252 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": false,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "iteration": 1612080979001,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Postgres",
+      "description": "",
+      "fill": 0,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "interval": "",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "maxPerRow": 2,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 1,
+      "points": true,
+      "renderer": "flot",
+      "repeat": "metric_id",
+      "repeatDirection": "h",
+      "scopedVars": {
+        "metric_id": {
+          "selected": false
+        }
+      },
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "CONCAT(device_id, ' ', labels)",
+          "rawQuery": true,
+          "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  CONCAT(device_id, ' ', labels - '_metric_scrape_time') AS metric,\n  value\nFROM api.get_metrics(\n       job_id => substring('$job_str' FROM '^\\d+$')::int,\n       devices => '${device_id:raw}', metrics => $metric_id,\n       start_time => least(to_timestamp($__unixEpochFrom()), (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = substring('$job_str' FROM '^\\d+$')::int) - interval '5m')::text,\n       end_time => least(to_timestamp($__unixEpochTo()), (SELECT MAX(stop_time) FROM nodetime_by_job WHERE job_id = substring('$job_str' FROM '^\\d+$')::int))::text,\n       summary => (($__unixEpochTo()-$__unixEpochFrom())/(30*60))::bool,\n       as_rate =>  nullif(substring($metric_id FROM '_total$'), '') is not null\n       )\nWHERE CASE WHEN '${device_id:raw}' = '' OR '${device_id:raw}' = 'Select...' OR '${metric_id:raw}' = '' THEN FALSE ELSE TRUE END\n",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              },
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "alias"
+              }
+            ]
+          ],
+          "table": "metrics_by_device",
+          "timeColumn": "\"timestamp\"",
+          "timeColumnType": "timestamptz",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            },
+            {
+              "datatype": "text",
+              "name": "",
+              "params": [
+                "metric_id",
+                "=",
+                "$metric_id"
+              ],
+              "type": "expression"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "$metric_id",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "Metric value",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 1,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false
+        },
+        "error": null,
+        "hide": 0,
+        "label": "Job ID",
+        "name": "job_str",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "allValue": null,
+        "current": {
+        },
+        "datasource": "Postgres",
+        "definition": "SELECT device_id FROM api.available_metrics(at => to_timestamp($__unixEpochTo()),  params => '{\"job_id\":  \"$job_str\"}')",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": "Device selection",
+        "multi": true,
+        "name": "device_id",
+        "options": [],
+        "query": "SELECT device_id FROM api.available_metrics(at => to_timestamp($__unixEpochTo()),  params => '{\"job_id\":  \"$job_str\"}')",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+        },
+        "datasource": "Postgres",
+        "definition": "SELECT DISTINCT metric_id FROM api.available_metrics(at => to_timestamp($__unixEpochTo()), params => '{\"devices\": [${device_id:doublequote}], \"job_id\": \"$job_str\"}') WHERE CASE WHEN '${device_id:raw}' = '' OR '${device_id:raw}' = 'Select...' THEN FALSE ELSE TRUE END",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": "Metric name",
+        "multi": true,
+        "name": "metric_id",
+        "options": [],
+        "query": "SELECT DISTINCT metric_id FROM api.available_metrics(at => to_timestamp($__unixEpochTo()), params => '{\"devices\": [${device_id:doublequote}], \"job_id\": \"$job_str\"}') WHERE CASE WHEN '${device_id:raw}' = '' OR '${device_id:raw}' = 'Select...' THEN FALSE ELSE TRUE END",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s"
+    ]
+  },
+  "timezone": "",
+  "title": "Kwollect Metrics",
+  "uid": "kwollect",
+  "variables": {
+    "list": []
+  },
+  "version": 1
+}

@@ -1,0 +1,217 @@
+kwollect (1.3.1) unstable; urgency=medium
+
+  * db: update move_chunk_to_archive to not reorder index
+  * db: order metric output from api.available_metrics
+  * db: enable compression on metrics_summary and change policy scheduling
+  * kwollector: Use more IPMI worker processes
+
+kwollect (1.3.0) unstable; urgency=medium
+
+  * db: Fix as_rate calculation in get_metrics function
+  * db: Fix summarized aggregation for counters metrics
+  * kwollector_wattmetre: make v3 parsing more robust
+  * ci: fix g5k-deploy-files options
+  * grafana: update datasource for PG 12+ and recent grafana versions
+  * Add dumprestore_metrics tool
+
+kwollect (1.2.0) unstable; urgency=medium
+
+  * Update ci to also build bullseye package
+  * db: Move job and time related processing in api.get_metrics function
+
+kwollect (1.1.0) unstable; urgency=medium
+
+  * grafana: make use of new APIs
+  * db: move fikes to db/ subdirectory
+  * devel: Add tests for api.available_metrics
+  * db: Add api.available_metrics function
+  * db: Add 'as_rate' param to api.get_metrics
+  * db: Fix labels naming in metrics_by_device
+  * Update psycopg dependency version
+  * kwollector: Add 'bridge-sensors' option to ipmi-sensors
+  * devel: Update vagrant to debian11, postgresql 13 and postgrest 8
+  * grafana: fixes in dashboard
+  * kwollector_wattmetre: Inital support for wattmetre v3
+
+kwollect (1.0.1) unstable; urgency=medium
+
+  * db: Schedule archiving at night
+  * kwollector: Update aiosnmp usage according to 0.5 API
+  * devel: Update vagrant tests
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 27 Jul 2021 10:00:00 +0200
+
+kwollect (1.0.0) unstable; urgency=medium
+
+  * dev: Update vagrant
+  * db: Add summarized metrics archiving support
+  * Update grafana dashboard
+  * kwollector: Minor fix
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 26 Jul 2021 10:00:00 +0200
+
+kwollect (0.19.2) unstable; urgency=medium
+
+  * kwollector: Fix errors when no metrics are fetched
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 19 Apr 2021 10:00:00 +0200
+
+kwollect (0.19.1) unstable; urgency=medium
+
+  * Revert code not ready for release
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 16 Apr 2021 17:00:00 +0200
+
+kwollect (0.19.0) unstable; urgency=medium
+
+  * dev: Add integration tests
+  * dev: Add kwollector to vagrant
+  * kwollector: better parsing of metric defined by a template, not done at startup only
+  * kwollector: refactor process_<proto>_metrics functions
+  * kwollector: allow starting task without delay
+  * kwollector: fix to not skip values equal to 0
+  * kwollector: add comments and linting
+  * fix debian/changelog
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 15 Apr 2021 18:00:00 +0200
+
+kwollect (0.18.0) unstable; urgency=medium
+
+  * kwollector: better log for SQL data ingest
+  * kwollector: More robust parsing of custom metrics timestamp
+  * devel: Fix vagrant provisionning for TSDB 2
+  * db: Add support for metrics_summary
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 29 Mar 2021 16:00:00 +0200
+
+kwollect (0.17.1) unstable; urgency=medium
+
+  * db: Fix db setup when compression already enabled
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 16 Mar 2021 08:00:00 +0100
+
+kwollect (0.17.0) unstable; urgency=medium
+
+  * Include grafana files in python package
+  * db: Migrate to TimescaleDB version 2
+  * Fixes in Grafana dashboard
+  * Fixes for Vagrant provisionning
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 15 Mar 2021 17:00:00 +0100
+
+kwollect (0.16.0) unstable; urgency=medium
+
+  * Update grafana dashboard
+  * Add devel. instructions and Vagrant environment
+  * db: fix _device_orig sorting
+  * db: Rewrite get_metrics function for better parameter support
+  * db: Remove metrics primary key and other various performance related tweaks
+  * db: Add RO user login
+  * Update dependency PyJWT to v2
+  * kwollector: Add an option for the number of background worker
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Thu, 10 Feb 2021 17:00:00 +0100
+
+kwollect (0.15.1) unstable; urgency=medium
+
+  * Re-add pyscopg dependency
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 14 Dec 2020 12:00:00 +0100
+
+kwollect (0.15.0) unstable; urgency=medium
+
+  * kwollector: Push data using SQL copy
+  * kwollector: Batching SQL inserts, then performed by dedicated workers
+  * kwollector: Allow fixed delay and configurable timeout for scheduling
+  * kwollector: Rearrange imports
+  * kwollector: Add some debug log
+  * kwollector: Use orjson library when possible
+  * kwollector: Switch to asyncpg library
+  * kwollector: Improve prometheus parsing performance
+  * kwollector: Use processes executor to launch ipmisensor commands
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 14 Dec 2020 10:00:00 +0100
+
+kwollect (0.14.0) unstable; urgency=medium
+
+  * db: Disable reorder_policy for now
+  * Improve README
+  * kwollector: Add debug log to prometheus parser
+  * kwollector: Improve prometheus parser performance
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Fri, 30 Nov 2020 10:00:00 +0100
+
+kwollect (0.13.0) unstable; urgency=medium
+
+  * kwollector: More robust prometheus exporter parsing
+  * Add grafana dashboard
+  * kwollector: Better handling of prometheus duplicates
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Fri, 21 Nov 2020 18:00:00 +0100
+
+kwollect (0.12.0) unstable; urgency=medium
+
+  * kwollector: Fix promoted_metrics cache
+  * kwollector: Add support for custom prometheus metrics
+  * kwollector: Clear IPMI SDR cache when needed
+  * kwollector: Improve log and exception
+  * kwollector: switch to aiosnmp lib.
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Fri, 20 Oct 2020 12:00:00 +0200
+
+kwollect (0.11.0) unstable; urgency=medium
+
+  * kwollector: Improve log and exception
+  * kwollector: Add support for metric regexp in promoted_metrics table
+  * db-oar: Add support for regexp in OAR monitor type
+  * kwollect: Add prometheus exporter support
+  * db: Fix for remote insert function
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Fri, 02 Oct 2020 12:00:00 +0200
+
+kwollect (0.0.10) unstable; urgency=medium
+
+  * db: Performance tweaks
+  * db: Add safeguards against too long requests
+  * kwollector: Add asyncio timeout to snmp requests
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 15 Sep 2020 08:00:00 +0200
+
+kwollect (0.0.9) unstable; urgency=medium
+
+  * gitlab-ci: Add git to build environment
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 20 Jul 2020 15:30:00 +0200
+
+kwollect (0.0.8) unstable; urgency=medium
+
+  * kwollector: Use PySNMP v5 (unreleased yet) to avoid MIB lookup for better performance
+  * wattmetre: Fix port number mapping
+  * kwollector: Do not crash on startup when a device fails on snmpwalk
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 20 Jul 2020 14:30:00 +0200
+
+kwollect (0.0.7) unstable; urgency=medium
+
+  * kwollector: Support more generic SNMP template for OIDs needing dynamic dyscovery
+  * kwollector: Minor fixes
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 08 Jun 2020 10:30:00 +0200
+
+kwollect (0.0.6) unstable; urgency=medium
+
+  * Fix for metric labels
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 23 May 2020 10:30:00 +0200
+
+kwollect (0.0.5) unstable; urgency=medium
+
+  * Extend support for metric labels (DB breaking change)
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 19 May 2020 11:00:00 +0200
+
+kwollect (0.0.4) unstable; urgency=medium
+
+  * New deb release
+
+ -- Simon Delamare <simon.delamare@ens-lyon.fr>  Mon, 04 May 2020 18:00:00 +0200

@@ -1,0 +1,15 @@
+apiVersion: 1
+
+datasources:
+  - name: Postgres
+    type: postgres
+    url: localhost:5432
+    database: kwdb
+    user: kwuser_ro
+    secureJsonData:
+      password: ro
+    jsonData:
+      sslmode: "disable" # disable/require/verify-ca/verify-full
+      maxOpenConns: 6         # Grafana v5.4+
+      postgresVersion: 1200
+      timescaledb: true
