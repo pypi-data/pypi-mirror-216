@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: PersianConverter
+Version: 1.0.3
+Summary: A package for converting Persian text
+Home-page: https://github.com/komeylian/PersianConverter
+Author: Hamidreza Komeylian
+Author-email: komeylian@gmail.com
+License: MIT
+Keywords: Persian,text conversion
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: arabic-reshaper
+Requires-Dist: python-bidi
+
+A package for converting Persian text. This package provides functions to reshape and display Persian text.
