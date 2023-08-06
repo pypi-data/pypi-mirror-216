@@ -1,0 +1,23 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "\u00dchendus hostiga nurjus",
+            "invalid_auth": "Tuvastamine nurjus",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Hostinimi",
+                    "password": "Salas\u00f5na",
+                    "port": "Port",
+                    "ssl": "Luba SSL",
+                    "username": "Kasutajanimi",
+                    "verify_ssl": "SSL-i kinnitamine"
+                },
+                "description": "qnap sensor v\u00f5imaldab saada erinevaid statistilisi andmeid QNAP NAS-i kohta.",
+                "title": "\u00dchendu QNAP-seadmega"
+            }
+        }
+    }
+}

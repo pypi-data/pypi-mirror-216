@@ -1,0 +1,41 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data_description": {
+                    "api_key": "\u6309\u7167\u6587\u6863\u83b7\u53d6\u60a8\u7684 api \u5bc6\u94a5"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "horizontalswing": {
+                "state": {
+                    "stopped": "\u5df2\u505c\u6b62"
+                }
+            },
+            "light": {
+                "state": {
+                    "dim": "\u5149\u7ebf\u6697",
+                    "off": "\u5173\u95ed",
+                    "on": "\u5f00\u542f"
+                }
+            }
+        },
+        "sensor": {
+            "sensitivity": {
+                "state": {
+                    "n": "\u6b63\u5e38",
+                    "s": "\u7075\u654f"
+                }
+            },
+            "smart_type": {
+                "state": {
+                    "humidity": "\u6e7f\u5ea6",
+                    "temperature": "\u6e29\u5ea6"
+                }
+            }
+        }
+    }
+}

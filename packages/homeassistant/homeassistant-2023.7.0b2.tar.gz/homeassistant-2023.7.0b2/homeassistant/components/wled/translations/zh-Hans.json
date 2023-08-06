@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "error": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        }
+    },
+    "entity": {
+        "select": {
+            "live_override": {
+                "state": {
+                    "0": "\u5173\u95ed",
+                    "1": "\u5f00\u542f",
+                    "2": "\u76f4\u5230\u8bbe\u5907\u91cd\u542f"
+                }
+            }
+        }
+    }
+}
