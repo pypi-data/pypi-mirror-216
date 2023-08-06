@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: cgpmgr
+Version: 1.5
+Summary: Controller tool of Raspberry Pi power management board "RPZ-PowerMGR".
+Home-page: https://github.com/IndoorCorgi/cgpmgr
+Author: Indoor Corgi
+Author-email: indoorcorgi@gmail.com
+License: Apache License 2.0
+Requires-Python: >=3.6
+License-File: LICENSE
