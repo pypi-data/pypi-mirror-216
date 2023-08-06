@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: atomcalc
+Version: 0.1.7
+Summary: 
+Author: Moritz Wilke
+Requires-Python: >=3.8.5,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: matplotlib (>=3.7.1,<4.0.0)
+Requires-Dist: numpy (>=1.24.3,<2.0.0)
+Requires-Dist: qutip (>=4.7.1,<5.0.0)
+Requires-Dist: scipy (==1.10.1)
+Project-URL: homepage, https://atomcalc.github.io/AtomCalc/
+Description-Content-Type: text/markdown
+
+About AtomCalc
+==============
+[![Docs](https://github.com/AtomCalc/AtomCalc/actions/workflows/documentation.yaml/badge.svg)](https://atomcalc.github.io/AtomCalc/)
+
+AtomCalc simulates the interaction between multi-level atoms and laser fields. It calculates how the population of the electronic levels of an atom changes if laser pulses are applied. To allow for realistic simulations, the motional state of the atom and decay channels can be taken into account.
+A system is defined by the levels, the lasers, and decay paths. For each of them exists one class that owns the corresponding properties.
+The time evolution of the population of each level is then calculated with the ``simulate`` function that uses a Lindblad master equation approach.
+
+This project is supposed to be expanded and should be seen as a construction fundament.
+The methods used in the code are explained in my master thesis which can be obtained via the 5th institute of physics of the university of Stuttgart.
+
+
+Installation
+============
+AtomCalc can be installed with ``pip install atomcalc``. Its dependencies are Matplotlib, SciPy, NumPy and QuTiP.
