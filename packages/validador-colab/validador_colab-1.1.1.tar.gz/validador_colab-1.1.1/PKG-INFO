@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: validador-colab
+Version: 1.1.1
+Summary: Validador colab é uma ferramenta para validar os dados diarios incrementáis nas tabelas de fato do colab e no Analytics
+Project-URL: Documentation, https://github.com/unknown/validador-colab#readme
+Project-URL: Issues, https://github.com/unknown/validador-colab/issues
+Project-URL: Source, https://github.com/unknown/validador-colab
+Author-email: Davi Amaral de Araujo <davi@smarketsolutions.com.br>
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Requires-Dist: click==8.1.3
+Requires-Dist: cryptography
+Requires-Dist: exceptiongroup
+Requires-Dist: fastapi
+Requires-Dist: greenlet
+Requires-Dist: h11
+Requires-Dist: httptools
+Requires-Dist: idna
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: paramiko
+Requires-Dist: psycopg2-binary
+Requires-Dist: pycparser
+Requires-Dist: pydantic
+Requires-Dist: pynacl
+Requires-Dist: python-dateutil
+Requires-Dist: python-dotenv
+Requires-Dist: pytz
+Requires-Dist: pyyaml
+Requires-Dist: six
+Requires-Dist: sniffio
+Requires-Dist: sqlalchemy
+Requires-Dist: sshtunnel
+Requires-Dist: starlette
+Requires-Dist: typing-extensions
+Requires-Dist: tzdata
+Requires-Dist: uvicorn
+Requires-Dist: uvloop
+Requires-Dist: watchfiles
+Requires-Dist: websockets
