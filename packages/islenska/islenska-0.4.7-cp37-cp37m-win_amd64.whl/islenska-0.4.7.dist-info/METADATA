@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: islenska
+Version: 0.4.7
+Summary: The vocabulary of the modern Icelandic language, encapsulated in a Python package
+Home-page: https://github.com/mideind/BinPackage
+Author: Miðeind ehf
+Author-email: mideind@mideind.is
+License: MIT
+Keywords: nlp,icelandic,language,vocabulary,dictionary
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: Natural Language :: Icelandic
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: Topic :: Text Processing :: Linguistic
+License-File: LICENSE
+Requires-Dist: cffi (>=1.13.0)
+Requires-Dist: typing-extensions
+
+BinPackage, published by Miðeind ehf, is a Python package that embeds the
+vocabulary of the Database of Icelandic Morphology (Beygingarlýsing íslensks
+nútímamáls, BÍN) and offers various lookups and queries of the data.
+
+The database, maintained by Árni Magnússon Institute for Icelandic Studies,
+contains over 6.5 million entries, over 3.1 million unique word forms,
+and about 300,000 distinct lemmas.
+
+With BinPackage, `pip install islenska` is all you need to have almost all of
+of the commonly used vocabulary of modern Icelandic at your
+disposal via Python. Batteries are included; no additional databases,
+downloads or middleware are required.
