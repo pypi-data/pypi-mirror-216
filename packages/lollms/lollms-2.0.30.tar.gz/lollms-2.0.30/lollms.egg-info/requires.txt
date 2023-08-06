@@ -1,0 +1,17 @@
+tqdm
+pyyaml
+Pillow
+flask
+flask_socketio
+flask-cors
+simple-websocket
+eventlet
+
+[dev]
+tqdm
+pyyaml
+Pillow
+flask
+flask_socketio
+flask-cors
+simple-websocket
