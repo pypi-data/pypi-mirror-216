@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-19 15:39-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: api/serializers/user.py:71
+msgid "The password is required."
+msgstr "La clave es obligatoria."
+
+#: api/serializers/user.py:81
+msgid "Email is already registered in our database."
+msgstr "El correo ya se encuentra registrado con nosotros."
+
+#: api/services/user.py:165
+msgid "User does not exists."
+msgstr "El usuario no existe."
+
+#: api/services/user.py:190
+msgid "Cannot delete yourself."
+msgstr "No se puede eliminar a si mismo."
+
+#: api/services/user.py:197
+msgid "User has protected child records. Cannot delete."
+msgstr "El usuario tiene registros dependientes. No se puede eliminar."
+
+#: api/services/user.py:226
+msgid "Password change"
+msgstr "Cambio de clave"
+
+#: api/services/user.py:229
+msgid "Old password does not match."
+msgstr "La clave antigua no coincide."
+
+#: api/services/user.py:231
+msgid "Old/New password are required."
+msgstr "Se requiere la clave antigua y la nueva."
+
+#: api/services/user.py:261
+msgid "Request password."
+msgstr "Solicitar clave."
+
+#: api/services/user.py:264
+msgid "Email is not registered."
+msgstr "El correo no está registrado con nosotros."
+
+#: apps.py:20
+msgid "Zibanu Auth for Django"
+msgstr "Autenticación Zibanu Django"
+
+#: models.py:22
+msgid "Time Zone"
+msgstr "Zona Horaria"
+
+#: models.py:23
+msgid "User Theme"
+msgstr "Tema de Usuario"
+
+#: models.py:24
+msgid "Language"
+msgstr "Lenguaje"
+
+#: models.py:25
+msgid "Avatar"
+msgstr "Avatar"
+
+#: models.py:26
+msgid "Message's Timeout"
+msgstr "Tiempo de espera de mensajes"
+
+#: models.py:27
+msgid "Keep Logged In"
+msgstr "Mantener sesión abierta"
+
+#: models.py:28
+msgid "Custom Application Profile"
+msgstr "Perfil de aplicación"
+
+#: templates/change_password.html:8 templates/change_password.txt:2
+#: templates/request_password.html:8 templates/request_password.txt:2
+msgid "Hello"
+msgstr "Hola"
+
+#: templates/change_password.html:9 templates/change_password.txt:4
+msgid "You have changed your password successfully."
+msgstr "Su clave ha sido cambiada de manera exitosa."
+
+#: templates/change_password.html:13 templates/change_password.txt:7
+#: templates/request_password.html:15 templates/request_password.txt:9
+#, python-format
+msgid ""
+"This email was generated automatically at %(email_datetime)s with id "
+"%(email_id)s. Please do not answer it."
+msgstr "Este correo ha sido generado automaticamente a las %(email_datetime)s con el id "
+"%(email_id)s. Por favor no lo responda."
+
+#: templates/request_password.html:9 templates/request_password.txt:4
+msgid "The system has generated a new password for you:"
+msgstr "El sistema ha generado un nuevo password para usted:"
