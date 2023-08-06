@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "SensitiBot"
+version = "1.1.0"
+description = "A Python bot to detect data leaks on public repositories"
+readme = "README.md"
+authors = ["José Manuel Martín Luque <josemanuelmartinluque@outlook.com>"]
+packages = [
+    { include = "sensitibot" },
+    { include = "local" },
+    { include = "github" },
+    { include = "reader" },
+    { include = "renderer" },
+    { include = "cleaner" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.28.2"
+python-dotenv = "^1.0.0"
+pandas = "^2.0.2"
+tqdm = "^4.62.3"
+openpyxl = "^3.1.2"
+XlsxWriter = "^3.1.0"
+#sqlalchemy-access = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+sensitibot = "sensitibot.sensitibot:main"
+
+[tool.poetry.urls]
+Homepage = "https://pypi.org/project/sensitibot/"
+Documentation = "https://github.com/TFG-SensitiBot/SensitiBot/wiki"
+Source = "https://github.com/TFG-SensitiBot/SensitiBot"
