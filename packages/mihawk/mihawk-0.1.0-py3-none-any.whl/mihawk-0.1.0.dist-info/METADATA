@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: mihawk
+Version: 0.1.0
+Summary: Pathfinding algorithms for optimized kados routing
+License: MIT
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: vis
+Requires-Dist: matplotlib (==3.7.1) ; extra == "vis"
+Requires-Dist: numpy (>=1.25.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+# mihawk
+
+Pathfinding algorithms for optimized kados routing.
+
