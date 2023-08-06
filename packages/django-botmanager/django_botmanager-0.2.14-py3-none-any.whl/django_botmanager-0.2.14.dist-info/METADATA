@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: django-botmanager
+Version: 0.2.14
+Summary: Async tasks for django
+Home-page: https://github.com/dimoha/django-botmanager
+Author: Dimoha
+Author-email: dimoha@controlstyle.ru
+License-File: LICENSE
+Requires-Dist: setproctitle (==1.1.10)
+Requires-Dist: jsonfield (==3.1.0)
+Requires-Dist: psutil (==5.8.0)
+
