@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "InjecToast"
+version = "1.1.6"
+authors = [
+	{ name="PatzEdi", email="edwardferrari717@gmail.com" },
+]
+description = "A tool to inject toasts in Android applications."
+readme = "README.md"
+keywords = ["android", "androidtool", "reverse-engineering", "development"]
+requires-python = ">=3.9"
+classifiers = [
+		"Programming Language :: Python :: 3",
+		"License :: OSI Approved :: MIT License",
+		"Operating System :: OS Independent",
+]
+[project.scripts]
+InjecToast = "InjecToast:main"
+
+[project.urls]
+"Homepage" = "https://github.com/PatzEdi"
+"Repository" = "https://github.com/PatzEdi/InjecToast"
+"Bug Tracker" = "https://github.com/PatzEdi/InjecToast/issues"
