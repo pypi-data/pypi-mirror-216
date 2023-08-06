@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: aws-secrets-cache
+Version: 0.1.0
+Summary: 
+License: BSD-3-Clause
+Author: Łukasz Kostka
+Author-email: lukasz.kostka@mirumee.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: boto3 (>=1.26.163,<2.0.0)
+Description-Content-Type: text/markdown
+
+### Use AWS Secrets Manager as dict.
+
+This package provides convenient way of using secrets manager as a dict. You can
+configure underlying cache time with `ttl` parameter. If you want to use non
+default kms key id pass it with `kms_key_id` parameter.
+
+```python
+sec = Secrets(client=boto3.client('secretsmanager'))
+# Set secret
+sec['name'] = value
+# Get secret
+value = sec['name']
+```
+
