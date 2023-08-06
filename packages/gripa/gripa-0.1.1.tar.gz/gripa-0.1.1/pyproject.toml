@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "gripa"
+version = "0.1.1"
+description = "Time series anomaly detection"
+authors = ["hamiddimyati <hamid.dimyati@outlook.com>"]
+license = "MIT license"
+repository = "https://github.com/hamiddimyati/gripa"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+numpy = "^1.25.0"
+pandas = "^2.0.2"
+scikit-learn = "^1.2.2"
+scipy = "^1.10.1"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.3.3"
+pytest = "^7.3.2"
+pytest-cov = "^4.1.0"
+pytest-xdist = "^3.3.1"
+pytest-black = "^0.3.12"
+pytest-isort = "^3.1.0"
+pytest-mypy = "^0.10.3"
+pytest-ruff = "^0.1"
+pandas-stubs = "^2.0.2.230605"
+
+[tool.ruff]
+line-length = 88
+src = ["gripa"]
+show-fixes = true
+show-source = true
+
+[tool.black]
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+
+[[tool.mypy.overrides]]
+module = [
+    "numpy.*",
+    "pandas.*",
+    "pandas.testing.*",
+    "scipy.*",
+    "sklearn.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-rxX --black --ruff --isort --mypy --cov-report term-missing --cov=gripa --color=yes -v -s -n auto"
+testpaths = [
+    "tests",
+    "gripa",
+]
+log_cli = true
+log_cli_level = "WARNING"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
