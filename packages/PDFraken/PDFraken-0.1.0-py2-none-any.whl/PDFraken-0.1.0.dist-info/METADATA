@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: PDFraken
+Version: 0.1.0
+Summary: Split your PDF from command line instead of sending your data to third parties
+Home-page: https://github.com/patrickfleith/PDFraken
+Author: Patrick Fleith
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: typer
+Requires-Dist: PyPDF2
+
+UNKNOWN
+
+
