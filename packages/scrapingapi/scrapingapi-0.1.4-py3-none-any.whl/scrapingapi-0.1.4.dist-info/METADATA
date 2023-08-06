@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: scrapingapi
+Version: 0.1.4
+Summary: The official python client of ScrapingApi, website scraping API.
+Home-page: https://scrapingapi.net/
+Author: Timothée Jeannin
+Author-email: tjeannin@scrapingapi.net
+License: MIT
+Project-URL: Documentation, https://scrapingapi.net/documentation
+Project-URL: Code, https://github.com/ScrapingApi/python-client
+Project-URL: Issue tracker, https://github.com/ScrapingApi/python-client/issues
+Keywords: scraping,proxy,phantomjs,scraping,website,headless,chrome,render,page,webkit
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: setuptools ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+
+# ScrapingApi Python Client
+
+This is a placeholder for a future python ScrapingApi [web scraping API](https://scrapingapi.net) client. 
+Get in touch with us at [contact@scrapingapi.net](mailto:contact@scrapingapi.net) if you need this client. 
+
+## Installation
+
+Signup at [scrapingapi.net](https://scrapingapi.net) to get your API key.
+
+```
+pip install scrapingapi
+```
+
+## Example
+
+```python
+# Python client not available yet.
+```
+
+## Parameters
+
+Check the [ScrapingApi documentation](https://scrapingapi.net/documentation) for more details.
+
