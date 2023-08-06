@@ -1,0 +1,6 @@
+[console_scripts]
+
+
+[nbdev]
+ocr_iiif_tools = ocr_iiif_tools._modidx:d
+
