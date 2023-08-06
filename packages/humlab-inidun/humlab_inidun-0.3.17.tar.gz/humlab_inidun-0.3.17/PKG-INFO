@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: humlab-inidun
+Version: 0.3.17
+Summary: INIDUN research project text analysis tools and utilities
+Home-page: https://inidun.github.io
+License: Apache-2.0
+Author: Roger Mähler
+Author-email: roger.mahler@hotmail.com
+Requires-Python: ==3.11.*
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development
+Requires-Dist: bokeh
+Requires-Dist: click
+Requires-Dist: humlab-penelope[full] (>=0.7.33,<0.8.0)
+Requires-Dist: ipysheet
+Requires-Dist: ipywidgets
+Requires-Dist: jupyterlab (==3.*)
+Requires-Dist: matplotlib
+Requires-Dist: msgpack
+Requires-Dist: pandas
+Requires-Dist: pandas-bokeh
+Requires-Dist: tqdm
+Project-URL: Repository, https://github.com/inidun/text_analytics
+Description-Content-Type: text/markdown
+
+# The INIDUN Text Analytics Repository
+
+### Prerequisites
+
+### Installation
+
+### Note
+
+
+

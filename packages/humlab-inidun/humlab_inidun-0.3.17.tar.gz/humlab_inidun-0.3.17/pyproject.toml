@@ -1,0 +1,125 @@
+[tool]
+[tool.poetry]
+name = "humlab-inidun"
+version = "0.3.17"
+description = "INIDUN research project text analysis tools and utilities"
+authors = ["Roger Mähler <roger.mahler@hotmail.com>"]
+packages = [{ include = "notebooks" }]
+classifiers = [
+    'License :: OSI Approved :: Apache Software License',
+    'Operating System :: OS Independent',
+    'Topic :: Software Development',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.11',
+]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://inidun.github.io"
+repository = "https://github.com/inidun/text_analytics"
+
+
+[tool.poetry.dependencies]
+bokeh = "*"
+click = "*"
+ipysheet = "*"
+ipywidgets = "*"
+jupyterlab = "==3.*.*"
+matplotlib = "*"
+msgpack = "*"
+pandas = "*"
+pandas-bokeh = "*"
+python = "==3.11.*"
+tqdm = "*"
+humlab-penelope = {extras = ["full"], version = "^0.7.33"}
+
+[tool.poetry.dev-dependencies]
+black = "*"
+coverage = "*"
+flake8 = "*"
+flake8-pytest-style = "*"
+isort = "*"
+jupytext = "*"
+mypy = "*"
+pep8-naming = "*"
+pre-commit = "*"
+pycodestyle = "*"
+pyflakes = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pyright = "*"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "-rafE",
+    "-q",
+    # "-s",
+]
+log_cli = "False"
+testpaths = ["tests"]
+norecursedirs = [
+    'notebooks',
+    '.git',
+    'data',
+    'output',
+    'deprecated',
+    '__pycache__',
+    'tmp',
+]
+python_files = "*_test.py"
+python_functions = "test_*"
+filterwarnings = [
+    "ignore::_pytest.warning_types.PytestCollectionWarning",
+    "ignore::DeprecationWarning",
+]
+
+[tool.dephell.main]
+from = { format = "poetry", path = "pyproject.toml" }
+to = { format = "poetry", path = "pyproject.toml" }
+
+[tool.black]
+line-length = 120
+target-version = ["py39"]
+skip-string-normalization = true
+# include = '\.pyi?$'
+exclude = '''
+(
+  \.git
+  | \.pypy_cache
+  | \.pytest_cache
+  | \.ipynb_checkpoints
+  | deprecated
+)
+'''
+
+[tool.isort]
+# https://github.com/timothycrosley/isort/wiki/isort-Settings
+profile = "black"
+line_length = 120
+py_version = "auto"
+float_to_top = true
+src_paths = ["notebooks", "tests", "scripts"]
+extra_standard_library = ["__paths__"]
+
+[tool.coverage]
+# https://github.com/nedbat/coveragepy
+
+[tool.coverage.run]
+source = ["notebooks"]
+branch = true
+omit = [
+    '**/__init__.py',
+    '**/__paths__.py',
+    'notebooks/co_occurrence/co_occurrence_trends.py',
+    'notebooks/pos_statistics/pos_statistics.py',
+    'notebooks/word_trends/word_trends.py',
+]
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "raise NotImplementedError"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
