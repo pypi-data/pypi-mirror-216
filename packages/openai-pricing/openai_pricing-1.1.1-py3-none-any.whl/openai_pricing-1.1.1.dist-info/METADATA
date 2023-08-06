@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: openai-pricing
+Version: 1.1.1
+Summary: Easily check the current costs of OpenAI's GPT and ChatGPT models.
+Author-email: Pedro Dupim <pedrodupim@icloud.com>
+Maintainer-email: Pedro Dupim <pedrodupim@icloud.com>
+Project-URL: Homepage, https://github.com/Alo-mundo/openai-pricing
+Project-URL: Documentation, https://github.com/Alo-mundo/openai-pricing/blob/main/README.md
+Project-URL: Repository, https://github.com/Alo-mundo/openai-pricing.git
+Keywords: openai,chat gpt,pricing
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: pandas
+Requires-Dist: tabulate
+
