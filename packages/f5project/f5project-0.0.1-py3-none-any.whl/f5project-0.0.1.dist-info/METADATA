@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: f5project
+Version: 0.0.1
+Summary: F5 project
+Home-page: https://github.com/thejimmylin/f5project
+Author: thejimmylin
+Author-email: b00502013@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# F5 project
+
+This package makes you use F5 project in Python.
+
+
