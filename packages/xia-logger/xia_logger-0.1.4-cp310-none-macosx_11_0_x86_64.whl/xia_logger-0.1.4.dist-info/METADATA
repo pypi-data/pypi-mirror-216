@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: xia-logger
+Version: 0.1.4
+Home-page: https://develop.x-i-a.com/docs/xia-logger/0.1.4/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: xia-engine
+Requires-Dist: xia-coder
+Requires-Dist: xia-storer
+Requires-Dist: xia-models
+
+Introduction
+=============================
+
+Welcome to use X-I-A's software
+
