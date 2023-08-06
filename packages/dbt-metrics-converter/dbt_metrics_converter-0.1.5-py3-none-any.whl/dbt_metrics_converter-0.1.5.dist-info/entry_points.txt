@@ -1,0 +1,3 @@
+[console_scripts]
+dbtc=converter.main:cli
+
