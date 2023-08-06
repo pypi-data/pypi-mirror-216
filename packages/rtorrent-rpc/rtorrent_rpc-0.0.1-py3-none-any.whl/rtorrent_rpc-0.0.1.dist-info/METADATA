@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: rtorrent-rpc
+Version: 0.0.1
+Summary: Typed rtorrent rpc client
+Home-page: https://github.com/trim21/rtorrent-rpc
+License: MIT
+Keywords: rtorrent,rpc
+Author: Trim21
+Author-email: i@trim21.me
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Dist: bencode-py (>=4.0.0,<5.0.0)
+Requires-Dist: rtorrent-xmlrpc (>=0.0.3,<0.0.4)
+Requires-Dist: typing-extensions
+Project-URL: Repository, https://github.com/trim21/rtorrent-rpc
+Description-Content-Type: text/markdown
+
+# Typed rtorrent rpc client
+
