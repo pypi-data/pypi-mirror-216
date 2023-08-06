@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: raspi-gpio
+Version: 0.1.0
+Summary: RPi.GPIO wrapper with mocks for developmennt on any platform
+Home-page: https://pypi.org/project/raspi-gpio/
+License: MIT
+Keywords: raspberry-pi,gpio,rpi,rpi-gpio,RPi.GPIO
+Author: Mark Parker
+Author-email: mark@parker-programs.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: rpi-gpio (>=0.7.1,<0.8.0) ; sys_platform == "linux"
+Project-URL: Documentation, https://github.com/MarkParker5/raspi-gpio/blob/main/README.md
+Project-URL: Repository, https://github.com/MarkParker5/raspi-gpio
+Description-Content-Type: text/markdown
+
+# raspi-gpio
+RPi.GPIO wrapper with mocks for developmennt on any platform
+
