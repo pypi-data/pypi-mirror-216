@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: greyhorse-rmq
+Version: 0.1
+Summary: Greyhorse RabbitMQ library
+Home-page: https://gitlab.com/max-plutonium/greyhorse
+License: MIT
+Author: Max Plutonium
+Author-email: plutonium.max@gmail.com
+Maintainer: Max Plutonium
+Maintainer-email: plutonium.max@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: async
+Requires-Dist: aio-pika (>=9.1,<10.0) ; extra == "async"
+Requires-Dist: greyhorse_core @ file:///home/plutonium/Projects/greyhorse/core
+Project-URL: Repository, https://gitlab.com/max-plutonium/greyhorse
