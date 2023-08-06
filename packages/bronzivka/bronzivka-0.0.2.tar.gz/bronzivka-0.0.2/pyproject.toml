@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "bronzivka"
+version = "0.0.2"
+description = "My Python packages sphinx documentation theme"
+authors = ["Lionel Garcia"]
+license = "MIT"
+readme = "readme.md"
+include = ["bronzivka/theme", "bronzivka/theme/**/*"]
+repository = "https://github.com/lgrcia/bronzivka"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+sphinx = "*"
+docutils = "*"
+jupyterlab = "*"
+myst-parser = "*"
+sphinx-book-theme = "^1.0.0"
+myst-nb = "*"
+sphinx-copybutton = "*"
+sphinx-design = "*"
+toml = "*"
+ipywidgets = "*"
+
+[tool.poetry.plugins."sphinx.html_themes"]
+pobronzivka = "bronzivka"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
