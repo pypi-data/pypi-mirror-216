@@ -1,0 +1,8 @@
+{
+  "urls": [
+    ["micropython_tcs3430/__init__.py", "github:jposada202020/MicroPython_TCS3430/micropython_tcs3430/__init__.py"],
+    ["micropython_tcs3430/i2c_helpers.py", "github:jposada202020/MicroPython_TCS3430/micropython_tcs3430/i2c_helpers.py"],
+    ["micropython_tcs3430/tcs3430.py", "github:jposada202020/MicroPython_TCS3430/micropython_tcs3430/tcs3430.py"]
+  ],
+  "version": "0.1"
+}
