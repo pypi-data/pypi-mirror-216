@@ -1,0 +1,3 @@
+recursive-include parsing *.py
+include parsing/py.typed
+include LICENSE* README.rst .flake8

@@ -1,0 +1,37 @@
+[project]
+name = "parsing"
+description = "LR(1) parser generator for Python"
+requires-python = ">=3.7.0"
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 79
+target-version = ["py37"]
+
+[tool.mypy]
+python_version = "3.7"
+follow_imports = "normal"
+ignore_missing_imports = true
+warn_redundant_casts = true
+warn_unused_configs = true
+show_column_numbers = true
+disallow_subclassing_any = true
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_reexport = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = ["parsing.tests.*"]
+ignore_errors = true

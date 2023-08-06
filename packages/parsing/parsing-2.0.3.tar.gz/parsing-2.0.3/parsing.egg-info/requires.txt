@@ -1,0 +1,5 @@
+mypy-extensions>=1.0.0
+
+[test]
+flake8
+mypy>=1.4.1
