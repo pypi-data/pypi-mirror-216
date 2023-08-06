@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssh_remote_control"
+version = "0.1.8"
+authors = [
+  { name="zhbjsh", email="zhbjsh@outlook.com" },
+]
+description = "Control and monitor remote devices through SSH"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+keywords = [
+  "ssh", 
+  "command line", 
+  "remote control",
+]
+dependencies = [
+  "async-timeout >= 4.0.2",
+  "icmplib >= 3.0",
+  "paramiko >= 3.2.0",
+  "python-slugify >= 4.0.1",
+  "wakeonlan >= 3.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/zhbjsh/ssh-remote-control"
+"Bug Tracker" = "https://github.com/zhbjsh/ssh-remote-control/issues"
