@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: py-random-useragent
+Version: 0.1.1
+Summary: Generate a random User Agent
+Home-page: https://github.com/suvorinov/py-random-useragent
+Author: Oleg Suvorinov
+Author-email: suvorinovoleg@yandex.ru
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: lxml (>=4.9.2,<5.0.0)
+Requires-Dist: requests (>=2.30.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# py-random-useragent
+
+Generate a random User Agent
+
+### Installation
+
+```
+pip install py-random-useragent
+```
+
+### Usage
+
+``` python
+from py_random_useragent import UserAgent
+
+# Обновление списка наиболее популярных браузеров
+UserAgent().update_ua()
+
+# Получение UserAgent
+ua = UserAgent().get_ua()
+print(ua)
+```
+
