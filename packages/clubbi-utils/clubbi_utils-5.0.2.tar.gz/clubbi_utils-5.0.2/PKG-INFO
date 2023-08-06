@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: clubbi_utils
+Version: 5.0.2
+Description-Content-Type: text/plain
+Provides-Extra: pydantic
+Provides-Extra: orjson
+Provides-Extra: postgresql
+Provides-Extra: mysql
+Provides-Extra: slack
+License-File: LICENSE
+
+Several helper functions, decorators and layers
