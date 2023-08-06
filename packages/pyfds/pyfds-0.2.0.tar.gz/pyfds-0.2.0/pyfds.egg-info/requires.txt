@@ -1,0 +1,11 @@
+matplotlib
+numpy
+scipy
+
+[doc]
+setuptools_scm
+sphinx
+sphinx-rtd-theme
+
+[test]
+pytest

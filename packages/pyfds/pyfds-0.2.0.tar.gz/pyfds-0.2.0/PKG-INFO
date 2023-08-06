@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: pyfds
+Version: 0.2.0
+Summary: Modular field simulation tool using finite differences.
+Home-page: https://emt.uni-paderborn.de
+Author: Leander Claes
+Author-email: Leander Claes <claes@emt.uni-paderborn.de>
+License: Copyright (c) 2017 Leander Claes
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its contributors
+           may be used to endorse or promote products derived from this software
+           without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: homepage, https://emt.uni-paderborn.de
+Project-URL: source, https://github.com/emtpb/pyfds
+Project-URL: tracker, https://github.com/emtpb/pyfds/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Provides-Extra: doc
+Provides-Extra: test
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+=====
+pyfds
+=====
+.. image:: https://zenodo.org/badge/92026828.svg
+   :target: https://zenodo.org/badge/latestdoi/92026828
+
+Modular field simulation tool using finite differences.
+
+Features
+--------
+ 
+* One-dimensional, two-dimensional, and axial-symmetric linear acoustic field simulation.
+* One-dimensional nonlinear acoustic field simulation in ideal gases and arbitrary fluids using second order approximation.
+* Two-dimensional acoustic simulation with moving medium.
+* One-dimensional, two-dimensional, and axial-symmetric thermal field simulation.
+* One-dimensional and two-dimensional electrostatic field simulation.
