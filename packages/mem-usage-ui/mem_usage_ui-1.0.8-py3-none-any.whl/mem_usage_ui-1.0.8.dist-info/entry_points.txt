@@ -1,0 +1,3 @@
+[console_scripts]
+mem_usage_ui=mem_usage_ui.__main__:main
+
