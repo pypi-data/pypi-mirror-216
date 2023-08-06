@@ -1,0 +1,5 @@
+async-timeout>=4.0.2
+icmplib>=3.0
+paramiko>=3.2.0
+python-slugify>=4.0.1
+wakeonlan>=3.0.0
