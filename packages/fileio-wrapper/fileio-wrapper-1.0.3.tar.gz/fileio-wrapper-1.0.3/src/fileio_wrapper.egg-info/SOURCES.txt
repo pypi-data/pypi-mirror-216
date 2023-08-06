@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/fileio_wrapper/__init__.py
+src/fileio_wrapper/__version__.py
+src/fileio_wrapper/fileio_wrapper.py
+src/fileio_wrapper.egg-info/PKG-INFO
+src/fileio_wrapper.egg-info/SOURCES.txt
+src/fileio_wrapper.egg-info/dependency_links.txt
+src/fileio_wrapper.egg-info/requires.txt
+src/fileio_wrapper.egg-info/top_level.txt
+tests/test_fileio_wrapper.py
