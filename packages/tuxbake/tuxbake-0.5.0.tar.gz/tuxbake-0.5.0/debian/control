@@ -1,0 +1,29 @@
+Source: tuxbake
+Maintainer: Your Name <your.name@yourdomain.com>
+Section: python
+Priority: optional
+Build-Depends: bash-completion,
+               debhelper-compat (= 13),
+               dh-python,
+               flit,
+               git,
+               python3-all,
+               python3-pytest,
+               python3-pytest-cov,
+               python3-pytest-mock,
+               tuxmake,
+               repo,
+               python3-retrying,
+Standards-Version: 4.6.0.1
+Homepage: FIXME
+
+Package: tuxbake
+Architecture: all
+Depends: ${misc:Depends},
+         python3 (>= 3.6),
+         ${python3:Depends},
+         tuxmake,
+         python3-retrying,
+Recommends: repo
+Description: <FIXME>
+ <FIXME>
