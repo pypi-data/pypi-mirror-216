@@ -1,0 +1,22 @@
+[
+  "tests/main.py::test_Fail",
+  "tests/main.py::test_everything",
+  "tests/test_future.py::test_about",
+  "tests/test_future.py::test_fields",
+  "tests/test_future.py::test_invalid_union",
+  "tests/test_future.py::test_mixed_defines",
+  "tests/test_future.py::test_typedfield_reprs",
+  "tests/test_future.py::test_typedfield_to_field_type",
+  "tests/test_future.py::test_using_model_without_define",
+  "tests/test_main.py::[mypy]mypy_test_types",
+  "tests/test_main.py::test_Fail",
+  "tests/test_main.py::test_about",
+  "tests/test_main.py::test_dont_allow_bool_in_query",
+  "tests/test_main.py::test_everything",
+  "tests/test_main.py::test_fields",
+  "tests/test_main.py::test_invalid_union",
+  "tests/test_main.py::test_mixed_defines",
+  "tests/test_main.py::test_typedfield_reprs",
+  "tests/test_main.py::test_typedfield_to_field_type",
+  "tests/test_main.py::test_using_model_without_define"
+]
