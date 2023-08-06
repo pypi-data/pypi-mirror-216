@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: sphinx-polyversion
+Version: 0.5.0
+Summary: Build multiple versions of your sphinx docs and merge them into one website.
+Home-page: https://github.com/real-yfprojects/sphinx-polyversion
+License: MIT
+Keywords: utils,documentation,sphinx
+Author: yfprojects
+Author-email: real-yfprojects@users.noreply.github.com
+Requires-Python: >=3.8
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.7
+Provides-Extra: jinja
+Provides-Extra: virtualenv
+Requires-Dist: jinja2 (>=3) ; extra == "jinja"
+Requires-Dist: virtualenv (>=20) ; extra == "virtualenv"
+Project-URL: Repository, https://github.com/real-yfprojects/sphinx-polyversion
