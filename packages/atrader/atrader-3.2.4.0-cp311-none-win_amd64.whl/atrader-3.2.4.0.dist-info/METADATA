@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: atrader
+Version: 3.2.4.0
+Summary: AT-edu，量化研究交易教学实践平台，简称：AT-edu 教学平台
+Home-page: 
+Author: Digquant Technoloy
+Author-email: Contact@digquant.com
+License: LICENSE
+Keywords: quantitative,trading
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3.5
+License-File: LICENSE
+Requires-Dist: enum34 (>=1.1.6)
+Requires-Dist: six (>=1.11.0)
+Requires-Dist: pytz (>=2017.3)
+Requires-Dist: python-dateutil (>=2.6.1)
+Requires-Dist: numpy (<=1.23.5,>=1.22.0)
+Requires-Dist: scipy (>=1.0.0)
+Requires-Dist: pandas (<=2.0.2,>=1.5.0)
+
+=======
+atquant
+=======
+
+atquant 从数据获取、算法交易、回测引擎，实盘模拟，实盘交易到数据分析，为程序化交易者提供了全套解决方案。
