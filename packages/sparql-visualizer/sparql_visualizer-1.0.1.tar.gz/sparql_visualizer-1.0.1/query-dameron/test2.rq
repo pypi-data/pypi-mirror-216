@@ -1,0 +1,234 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+PREFIX chebi: <http://purl.obolibrary.org/obo/chebi/>
+PREFIX chebidb: <http://purl.obolibrary.org/obo/CHEBI_>
+PREFIX chebirel: <http://purl.obolibrary.org/obo/CHEBI#>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX uniprot: <http://purl.uniprot.org/uniprot/>
+
+PREFIX bp3: <http://www.biopax.org/release/biopax-level3.owl#>
+
+PREFIX gr: <http://www.univ-rennes.fr/odameron/genericity/>
+
+PREFIX reactome: <http://www.reactome.org/biopax/84/48887#>
+
+SELECT DISTINCT ?reactionIdent1 ?reactionIdent2
+WHERE {
+   ?reaction1 rdf:type bp3:BiochemicalReaction .
+   ?reaction1 gr:participant ?commonParticipant1 .
+   #?commonParticipant1 gr:entity|gr:entityReference
+#?commonParticipantEntityReference . #Added: '#'
+   ?commonParticipant1 gr:role ?commonParticipantRole .
+   ?commonParticipant1 gr:stoichiometry ?commonParticipantStoichio1 .
+
+   #?commonParticipant2 gr:entity|gr:entityReference
+#?commonParticipantEntityReference .
+   ?commonParticipant2 gr:role ?commonParticipantRole .
+   {
+     ?commonParticipant1 gr:entity|gr:entityReference
+?commonParticipantEntityReference .
+     ?commonParticipant2 gr:entity|gr:entityReference
+?commonParticipantEntityReference .
+   }
+   UNION
+   {
+     ?commonParticipant1 gr:chebiIdent ?commonParticipantChebiSub .
+     ?commonParticipantChebiSub rdfs:subClassOf+
+?commonParticipantChebiSuper .
+     ?commonParticipant2 gr:chebiIdent ?commonParticipantChebiSuper .
+   }
+   ?commonParticipant2 gr:stoichiometry ?commonParticipantStoichio2 .
+   FILTER (?commonParticipantStoichio1 = ?commonParticipantStoichio2)
+   ?reaction2 gr:participant ?commonParticipant2 .
+
+   FILTER (STR(?reaction1) != STR(?reaction2))
+
+   FILTER NOT EXISTS {
+     {
+       ?reaction1 gr:participant ?specificParticipant1 .
+       ?specificParticipant1 gr:entity
+?specificParticipantEntityReference1 .
+       ?specificParticipant1 gr:role ?specificParticipantRole1 .
+       ?specificParticipant1 gr:stoichiometry
+?specificParticipantStoichio1 .
+
+       FILTER NOT EXISTS {
+         ?reaction2 gr:participant ?missingParticipant2 .
+         ?missingParticipant2 gr:entity
+?specificParticipantEntityReference1 .
+         ?missingParticipant2 gr:role ?specificParticipantRole1 .
+         ?missingParticipant2 gr:stoichiometry
+?missingParticipantStoichio2 .
+         FILTER (?specificParticipantStoichio1 =
+?missingParticipantStoichio2)
+       }
+     }
+     UNION
+     {
+       ?reaction1 gr:participant ?specificParticipant1 .
+       ?specificParticipant1 gr:entityReference
+?specificParticipantEntityReference1 .
+       ?specificParticipant1 gr:role ?specificParticipantRole1 .
+       ?specificParticipant1 gr:stoichiometry
+?specificParticipantStoichio1 .
+
+       FILTER NOT EXISTS {
+         ?reaction2 gr:participant ?missingParticipant2 .
+         ?missingParticipant2 gr:entityReference
+?specificParticipantEntityReference1 .
+         ?missingParticipant2 gr:role ?specificParticipantRole1 .
+         ?missingParticipant2 gr:stoichiometry
+?missingParticipantStoichio2 .
+         FILTER (?specificParticipantStoichio1 =
+?missingParticipantStoichio2)
+       }
+     }
+     UNION
+     {
+       ?reaction1 gr:participant ?specificParticipant1 .
+       ?specificParticipant1 gr:chebiIdent ?specificParticipantChebiIdent1 .
+       ?specificParticipant1 gr:role ?specificParticipantRole1 .
+       ?specificParticipant1 gr:stoichiometry
+?specificParticipantStoichio1 .
+
+       FILTER NOT EXISTS {
+         ?reaction2 gr:participant ?missingParticipant2 .
+         ?missingParticipant2 gr:chebiIdent
+?specificParticipantChebiIdent2 .
+         ?specificParticipantChebiIdent1 rdfs:subClassOf+
+?specificParticipantChebiIdent2 .
+         ?missingParticipant2 gr:role ?specificParticipantRole1 .
+         ?missingParticipant2 gr:stoichiometry
+?missingParticipantStoichio2 .
+         FILTER (?specificParticipantStoichio1 =
+?missingParticipantStoichio2)
+       }
+     }
+   }
+
+   FILTER NOT EXISTS {
+     {
+       ?reaction2 gr:participant ?specificParticipant2 .
+       ?specificParticipant2 gr:entity
+?specificParticipantEntityReference2 .
+       ?specificParticipant2 gr:role ?specificParticipantRole2 .
+       ?specificParticipant2 gr:stoichiometry
+?specificParticipantStoichio2 .
+
+       FILTER NOT EXISTS {
+         ?reaction1 gr:participant ?missingParticipant1 .
+         ?missingParticipant1 gr:entity
+?specificParticipantEntityReference2 .
+         ?missingParticipant1 gr:role ?specificParticipantRole2 .
+         ?missingParticipant1 gr:stoichiometry
+?missingParticipantStoichio1 .
+         FILTER (?specificParticipantStoichio2 =
+?missingParticipantStoichio1)
+       }
+     }
+     UNION
+     {
+       ?reaction2 gr:participant ?specificParticipant2 .
+       ?specificParticipant2 gr:entityReference
+?specificParticipantEntityReference2 .
+       ?specificParticipant2 gr:role ?specificParticipantRole2 .
+       ?specificParticipant2 gr:stoichiometry
+?specificParticipantStoichio2 .
+
+       FILTER NOT EXISTS {
+         ?reaction1 gr:participant ?missingParticipant1 .
+         ?missingParticipant1 gr:entityReference
+?specificParticipantEntityReference2 .
+         ?missingParticipant1 gr:role ?specificParticipantRole2 .
+         ?missingParticipant1 gr:stoichiometry
+?missingParticipantStoichio1 .
+         FILTER (?specificParticipantStoichio2 =
+?missingParticipantStoichio1)
+       }
+     }
+     UNION
+     {
+       ?reaction2 gr:participant ?specificParticipant2 .
+       ?specificParticipant2 gr:chebiIdent ?specificParticipantChebiIdent2 .
+       ?specificParticipant2 gr:role ?specificParticipantRole2 .
+       ?specificParticipant2 gr:stoichiometry
+?specificParticipantStoichio2 .
+
+       FILTER NOT EXISTS {
+         ?reaction1 gr:participant ?missingParticipant1 .
+         ?missingParticipant1 gr:chebiIdent
+?specificParticipantChebiIdent1 .
+         ?specificParticipantChebiIdent1 rdfs:subClassOf+
+?specificParticipantChebiIdent2 .
+         ?missingParticipant1 gr:role ?specificParticipantRole2 .
+         ?missingParticipant1 gr:stoichiometry
+?missingParticipantStoichio1 .
+         FILTER (?specificParticipantStoichio2 =
+?missingParticipantStoichio1)
+       }
+     }
+   }
+
+   FILTER NOT EXISTS {
+     ?reaction1 gr:controlledBy ?specificControl1 .
+     #?specificControl1 gr:controller ?specificController1 .
+
+     FILTER NOT EXISTS {
+       #?reaction2 gr:controlledBy/gr:controller ?missingController2 .
+       #?specificController1 rdfs:subClassOf* ?missingController2 .
+       ?reaction2 gr:controlledBy ?missingControl2 .
+       {
+         ?specificControl1 gr:controller ?specificController1 .
+         ?missingControl2 gr:controller ?specificController1 .
+       }
+       UNION
+       {
+         ?specificControl1 gr:entityReference
+?specificControlEntityReference1 .
+         ?missingControl2 gr:entityReference
+?specificControlEntityReference1 .
+       }
+       UNION
+       {
+         ?specificControl1 gr:chebiIdent ?specificControlChebiIdent1 .
+         ?missingControl2 gr:chebiIdent ?missingControlChebiIdent2 .
+         ?specificControlChebiIdent1 rdfs:subClassOf+
+?missingControlChebiIdent2 .
+       }
+     }
+   }
+
+   FILTER NOT EXISTS {
+     ?reaction2 gr:controlledBy ?specificControl2 .
+
+     FILTER NOT EXISTS {
+       ?reaction1 gr:controlledBy ?missingControl1 .
+       {
+         ?specificControl2 gr:controller ?specificController2 .
+         ?missingControl1 gr:controller ?specificController2 .
+       }
+       UNION
+       {
+         ?specificControl2 gr:entityReference
+?specificControlEntityReference2 .
+         ?missingControl1 gr:entityReference
+?specificControlEntityReference2 .
+       }
+       UNION
+       {
+         ?specificControl2 gr:chebiIdent ?specificControlChebiIdent2 .
+         ?missingControl1 gr:chebiIdent ?missingControlChebiIdent1 .
+         ?missingControlChebiIdent1 rdfs:subClassOf+
+?specificControlChebiIdent2 .
+       }
+     }
+   }
+
+   ?reaction1 gr:reactomeIdent ?reactionIdent1 .
+   ?reaction2 gr:reactomeIdent ?reactionIdent2 .
+}
