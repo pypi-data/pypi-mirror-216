@@ -1,0 +1,9 @@
+[report]
+exclude_lines =
+	pragma: no cover
+    def _
+
+[run]
+omit =
+	*/katalytic/files.py
+	*/katalytic/pkg.py
