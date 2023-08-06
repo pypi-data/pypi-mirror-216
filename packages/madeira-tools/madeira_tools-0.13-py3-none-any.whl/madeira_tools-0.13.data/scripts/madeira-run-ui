@@ -1,0 +1,14 @@
+#!python
+"""
+Usage:
+  madeira-run-ui [ --debug ]
+  madeira-run-ui --help
+
+Options:
+  -h --help                        Show this help screen.
+  --debug                          When specified, enables debug-level logging
+"""
+import docopt
+from madeira_tools import docker
+arguments = docopt.docopt(__doc__, help=True)
+docker.DockerDev(debug=arguments.get('--debug')).run_ui()
