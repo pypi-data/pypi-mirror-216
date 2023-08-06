@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: sspr.python.by.designermadsen
+Version: 0.0.5
+Summary: a revised school project that i have programmed in python instead of C#.
+Author-email: Kent vejrup Madsen <Kent.vejrup.Madsen@outlook.com>
+License: # MIT License
+        
+        Copyright (c) 2023 Kent Madsen
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Repository, https://github.com/KentVejrupMadsen/specialised-study-project.revised.python
+Project-URL: Issues, https://github.com/KentVejrupMadsen/specialised-study-project.revised.python/issues
+Project-URL: Contact, https://about.designermadsen.dk
+Project-URL: on Github, https://github.com/KentVejrupMadsen
+Project-URL: On PyPi, https://pypi.org/project/sspr.python.by.designermadsen/
+Keywords: high-school-project,designermadsen,kentvejrupmadsen,project,old,revision,naive-bayes,Reuters21578,revised,python,python3.10,python3.11,TDD
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: System :: Benchmark
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: Indexing
+Classifier: Topic :: Text Processing :: Markup :: Markdown
+Classifier: Topic :: Text Processing :: General
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: wheel
+Requires-Dist: setuptools
+
+# Specialised Study Project - Revised
+## Build status
+[![Python application](https://github.com/KentVejrupMadsen/specialised-study-project.revised.python/actions/workflows/python.yml/badge.svg)](https://github.com/KentVejrupMadsen/specialised-study-project.revised.python/actions/workflows/python.yml)
+
+    pip install sspr.python.by.designermadsen
+
+## Summary
+Old project that I decided to rewrite in Python. 
+The project was originally written is C# and can be found at a previous account I had on 
+[Github](https://github.com/KentMadsen/Rybners-SpecialisedStudyProject). 
+Which I Since been locked out of.
+
+I decided to make the project to see if I could make the mess more readable 
+and also to see what i learned since then.
+
+
+
+## Content
+1. [License](License.md)
+2. [Documents](docs/readme.md)
+
+## Footnotes
+
