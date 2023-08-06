@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: mentord
+Version: 1.0.3
+Summary: Library for discord self bots.
+Description-Content-Type: text/markdown
+
+# Example use:
+``User_client: Client = Client()
+
+User_client.connect(token='YOUR TOKEN')``
+
+# Use decorators:
+``User_client.on_message
+def client_wait_message(message: Message):
+
+    print('new message!')``
