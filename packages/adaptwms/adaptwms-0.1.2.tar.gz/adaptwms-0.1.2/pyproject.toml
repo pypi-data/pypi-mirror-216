@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "adaptwms"
+version = "0.1.2"
+description = "Lightweight OpenStreetMap adapter for WMS services as Django app"
+authors = ["v3l0c1r4pt0r <v3l0c1r4pt0r@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/v3l0c1r4pt0r/adaptwms"
+classifiers = [
+  "Framework :: Django"
+]
+include = ["adaptwms/templates"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.2"
+pyproj = "^3.6.0"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
