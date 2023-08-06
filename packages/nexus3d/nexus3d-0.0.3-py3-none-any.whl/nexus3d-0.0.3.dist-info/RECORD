@@ -1,0 +1,16 @@
+nexus3d/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nexus3d/coordinate_systems.py,sha256=mhCR2MGya_9oS-SQ1SWCt_S3BUVkMtSTQOmcIAWILq0,1795
+nexus3d/matrix.py,sha256=AMjwVPwhNTjl66maeWq9rO7b86asVjcvthbQbQ-BiL0,2532
+nexus3d/nexus_transformations.py,sha256=sCZbz-dVPpYflDkqpOV7CJznIUm_YqDB90L-50iUi3M,7919
+nexus3d/units.py,sha256=gpiP-Vcxk8FlJmCNx65RIA74tIbgFuRb3-RWZVxbiXw,92
+nexus3d/formats/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nexus3d/formats/gltf_writer.py,sha256=oh9fdxQqJ-kncY4P_JKyWeqhjc8QXJwlofockVkvX5o,10277
+nexus3d/formats/interfaces.py,sha256=qgrAOaJuaeWd3XjPqdY8a4iHqRJns1ieV_stHZw4Szo,559
+nexus3d/formats/mesh.py,sha256=EuCWPjNr4CXR5OiU_--EHFNDc6NdrPlQJPBsAugfcK8,3461
+nexus3d/formats/stl_writer.py,sha256=aH1EIOPhkwZqTIzV-XCXHNxgoLE6koKKv51k7aQ-sMg,2329
+nexus3d-0.0.3.dist-info/LICENSE,sha256=RFhQPdSOiMTguUX7JSoIuTxA7HVzCbj_p8WU36HjUQQ,10947
+nexus3d-0.0.3.dist-info/METADATA,sha256=T6rmcnX_3cPvZBYrGNdLtQklHSvd_tvpue9sWhAkAoQ,18346
+nexus3d-0.0.3.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+nexus3d-0.0.3.dist-info/entry_points.txt,sha256=bYXh2E9Ib6D85xNb7PRlLZ1U0F6FWTWstabquaSuA9Q,62
+nexus3d-0.0.3.dist-info/top_level.txt,sha256=ElyMC8xtTe3O0Qa0RnDcS0hNeTLCeApg64BlIO4Ebjc,8
+nexus3d-0.0.3.dist-info/RECORD,,
