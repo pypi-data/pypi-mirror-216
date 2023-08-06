@@ -1,0 +1,3 @@
+[console_scripts]
+cmysql = datamini_toolkits.cmysql.cli:main
+sql-data-maker = datamini_toolkits.mock_data.cli:main
