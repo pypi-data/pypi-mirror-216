@@ -1,0 +1,5 @@
+{{ from_name }} veut vous inviter sur Needle.
+
+{{ message }}
+
+Pour créer un compte, cliquez sur le lien suivant <a href="{{ link }}" target="_blank">{{ link }}</a>
