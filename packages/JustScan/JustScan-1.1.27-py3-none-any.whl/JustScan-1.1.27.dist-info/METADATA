@@ -1,0 +1,120 @@
+Metadata-Version: 2.1
+Name: JustScan
+Version: 1.1.27
+Summary: E-kyc for Industries application
+Home-page: https://gitlab.itcgroup.io/Theodore.vo
+Author: Theodore
+Author-email: theodore.v@itcgroup.io
+License: MIT
+Keywords: ITC,AI,E-kyc,Deep Learning,Computer Vision,Yolov5,Interface
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: anyio (==3.7.0)
+Requires-Dist: beautifulsoup4 (==4.12.2)
+Requires-Dist: certifi (==2023.5.7)
+Requires-Dist: charset-normalizer (==3.1.0)
+Requires-Dist: click (==8.1.3)
+Requires-Dist: coloredlogs (==15.0.1)
+Requires-Dist: einops (==0.6.1)
+Requires-Dist: exceptiongroup (==1.1.1)
+Requires-Dist: fastapi (==0.97.0)
+Requires-Dist: filelock (==3.12.2)
+Requires-Dist: flatbuffers (==23.5.26)
+Requires-Dist: gdown (==4.7.1)
+Requires-Dist: h11 (==0.14.0)
+Requires-Dist: humanfriendly (==10.0)
+Requires-Dist: idna (==3.4)
+Requires-Dist: Jinja2 (==3.1.2)
+Requires-Dist: MarkupSafe (==2.1.3)
+Requires-Dist: mpmath (==1.3.0)
+Requires-Dist: networkx (==3.1)
+Requires-Dist: numpy (==1.24.3)
+Requires-Dist: onnx (==1.14.0)
+Requires-Dist: onnxruntime-gpu (==1.15.1)
+Requires-Dist: opencv-python (==4.5.5.62)
+Requires-Dist: packaging (==23.1)
+Requires-Dist: pandas (==2.0.2)
+Requires-Dist: Pillow (==9.5.0)
+Requires-Dist: protobuf (==4.23.3)
+Requires-Dist: psycopg2-binary (==2.9.6)
+Requires-Dist: pyaml (==23.5.9)
+Requires-Dist: pydantic (==1.10.9)
+Requires-Dist: PySocks (==1.7.1)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: python-multipart (==0.0.6)
+Requires-Dist: pytz (==2023.3)
+Requires-Dist: PyYAML (==6.0)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: scipy (==1.10.1)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: sniffio (==1.3.0)
+Requires-Dist: soupsieve (==2.4.1)
+Requires-Dist: SQLAlchemy (==2.0.16)
+Requires-Dist: starlette (==0.27.0)
+Requires-Dist: sympy (==1.12)
+Requires-Dist: torch (==2.0.1)
+Requires-Dist: torchvision (==0.15.2)
+Requires-Dist: tqdm (==4.65.0)
+Requires-Dist: typing-extensions (==4.6.3)
+Requires-Dist: tzdata (==2023.3)
+Requires-Dist: urllib3 (==1.26.6)
+Requires-Dist: uvicorn (==0.22.0)
+Requires-Dist: pycuda
+Requires-Dist: tensorrt
+Provides-Extra: dev
+Requires-Dist: pytest (>=7.0) ; extra == 'dev'
+Requires-Dist: twine (>=4.0.2) ; extra == 'dev'
+
+# EKYC (OCR&FaceID) API 
+<!-- [![My Skills](https://skills.thijs.gg/icons?i=python&theme=light)](https://skills.thijs.gg) -->
+EKYC (OCR&FaceID) API is an API developed to provide Optical Character Recognition (OCR) and Face ID functionalities. The API supports the scanning of national ID cards, motorbike registration certificates, and EVN bills. It utilizes Makesense AI for labeling data, Yolov5 for text detection, and VietOCR for text recognition.
+
+In addition to OCR, the API also provides Face ID functionality, including face detection, face recognition, and quality checks. It utilizes SCRFD for face detection, ArcFace for face recognition, and provides face liveness detection, face quality assessment, face mask detection, and closed eyes detection.
+
+# Scanning Card Type 🚀
+
++ Type Support 
+  + National ID card
+  + MRC (Motorbike Registation Certificate) 
+  + Passport
++ OCR Techniques: 
+  + Makesense AI for labeling data
+  + Yolov5 for Text Detection task 
+  + VietOCR for Text Recognition task
+# Face ID 🚀 
+
++ Face Detection & Face Recognition
+  + SCRFD (Sample and Computation Redistribution for Efficient) for Face Detection
+  + ArcFace (From InsightFace project with high accuracy in Face Recognition)
+  + Check Quality techniques:
+    + Face Liveness Detection 
+    + Face Quality Assessment
+    + Face Mask Detection 
+    + Closed Eyes Detection 
+
+# How to install
++ Install Python version: >= 3.8.10
+# Quick Start 🏆
++ When you finished install python and follow to install module: 
+
+``
+  pip install JustScan
+``
+
+and finally, we start the api and enjoy it:
+
+
+``
+  itc_service run api 
+``
++ The service will start api and run follow this address as below:
+``
+http://127.0.0.1:8000/docs
+``
+
+
++ You have to convert your image from array -> base64 by using image to base64 (ex: https://codebeautify.org/image-to-base64-converter) and then paste your base64 string into input API for running 
+
