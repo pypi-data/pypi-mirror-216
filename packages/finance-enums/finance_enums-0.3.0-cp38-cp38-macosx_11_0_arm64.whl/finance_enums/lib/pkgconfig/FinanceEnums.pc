@@ -1,0 +1,10 @@
+prefix="/Users/runner/work/finance-enums/finance-enums/_skbuild/macosx-11.0-arm64-3.8/cmake-install/finance_enums"
+exec_prefix="${prefix}"
+libdir=""
+includedir=""
+
+Name: finance-enums
+Description: 
+Version: 0.3.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -lfinance-enums
