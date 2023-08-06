@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: speed-benchmark
+Version: 1.0.1
+Summary: A generic speed benchmark library.
+Home-page: https://github.com/shenmishajing/speed_benchmark
+Author: shenmishajing
+Author-email: shenmishajing@gmail.com
+License: MIT License
+Project-URL: Code, https://github.com/shenmishajing/speed_benchmark
+Project-URL: Issue tracker, https://github.com/shenmishajing/speed_benchmark/issues
+Platform: all
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Natural Language :: Chinese (Simplified)
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+## Introduction
+
+A generic speed benchmark library. It runs every func with every arg to get the average time cost and also checks the result.
+
+The `funcs` parameter is a `dict` of function name and functions to evaluate. The `args` parameter is a `dict` with key `main_arg_name` and `data`. The `main_arg_name` is used to determine the variable name of each group argument of the function, and the `data` is a dict of `<main_arg_value>:<args_of_func>`. The `data` can also be a list of arguments. If so, the `main_arg_name` must be in each group of arguments and the value of it will be used as the `main_arg_value`.
+
+Also, you can set the `pre_func`, `post_func`, and `check_result_func` to change the behavior of the benchmark.
