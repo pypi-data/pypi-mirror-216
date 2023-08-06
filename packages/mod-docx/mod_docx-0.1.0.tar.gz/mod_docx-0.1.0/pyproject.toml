@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mod_docx"
+version = "0.1.0"
+authors = [
+  { name="Jamilah Foucher", email="j622amilah@gmail.com" },
+]
+description = "The purpose of this library is to serve as a reliable and simple library to reassemble docx documents after they have been treated using AI/machine learning text treatment."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: OS Independent",
+]
+#https://pypi.org/classifiers/
+
+[project.urls]
+"Homepage" = "https://github.com/DevopsPractice7/mod_docx"
+"Bug Tracker" = "https://github.com/DevopsPractice7/mod_docx/issues"
+
