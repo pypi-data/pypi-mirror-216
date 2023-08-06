@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+openexpressions/Automata.py
+openexpressions/ExpressionNodes.py
+openexpressions/Grammar.py
+openexpressions/ParseTable.py
+openexpressions/Parser.py
+openexpressions/Tokenizer.py
+openexpressions/__init__.py
+openexpressions.egg-info/PKG-INFO
+openexpressions.egg-info/SOURCES.txt
+openexpressions.egg-info/dependency_links.txt
+openexpressions.egg-info/top_level.txt
