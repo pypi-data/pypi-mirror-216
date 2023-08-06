@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: ipyanchorviz
+Version: 0.2.1
+Summary: A Custom Jupyter Widget Library
+Home-page: https://github.com/ORNL/ipyanchorviz
+Author: Nathan Martindale
+Author-email: martindalena@ornl.gov
+License: BSD 3-Clause License
+Keywords: ipython,widgets,Jupyter,JupyterLab,JupyterLab3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: IPython
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Framework :: Jupyter
+Classifier: Framework :: Jupyter :: JupyterLab
+Classifier: Framework :: Jupyter :: JupyterLab :: 3
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions
+Classifier: Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ipywidgets (<9,>=7.6.0)
+
+# IPyAnchorViz
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![PyPI version](https://badge.fury.io/py/ipyanchorviz.svg)](https://badge.fury.io/py/ipyanchorviz)
+
+This is an ipywidgets implementation of the AnchorViz visualization, see _Chen, Nan-Chen, et al. "[AnchorViz: Facilitating classifier error discovery through interactive semantic data exploration](https://dl.acm.org/doi/abs/10.1145/3172944.3172950)"
+
+<!-- TODO: add an image! -->
+
+## Installation
+
+To install, use pip:
+
+    $ pip install ipyanchorviz
+
+## Development
+
+For a development installation of the Python library:
+
+    $ git clone https://github.com/ORNL/ipyanchorviz.git
+    $ cd ipyanchorviz
+    $ pip install -e .
+
+After pip, you need to install node (requires [Node.js](https://nodejs.org) and [Yarn version 1](https://classic.yarnpkg.com/)). This will need to be rebuilt when you make a JS change.hen you need to rebuild the JS when you make a code change. The yarn command is run first to install additional needed dependencies.
+
+    $ cd js
+    $ yarn
+    $ yarn run build
+
+Then to have have the extension work in Jupyter notebook:
+
+    $ jupyter nbextension install --py --symlink --overwrite --sys-prefix ipyanchorviz
+    $ jupyter nbextension enable --py --sys-prefix ipyanchorviz
+
+When actively developing your extension for JupyterLab, run the command:
+
+    $ jupyter labextension develop --overwrite ipyanchorviz
+
+You then need to refresh the JupyterLab page when your javascript changes.
