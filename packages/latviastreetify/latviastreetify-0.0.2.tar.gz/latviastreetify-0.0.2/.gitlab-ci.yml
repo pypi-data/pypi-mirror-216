@@ -1,0 +1,28 @@
+image: python:3.11-bullseye
+
+stages:
+  - simple_test
+  - publish_to_pypi
+
+simple_test:
+  tags:
+    - docker
+    - linux
+  stage: simple_test
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  script:
+    - python3 -m pip install flit
+    - FLIT_ROOT_INSTALL=1 flit install --extras dev
+    - mypy latviastreetify
+    - coverage run -m pytest && coverage report
+
+publish_to_pypi:
+  tags:
+    - docker
+    - linux
+  only:
+    - tags
+  stage: publish_to_pypi
+  script:
+    - python3 -m pip install flit
+    - flit publish

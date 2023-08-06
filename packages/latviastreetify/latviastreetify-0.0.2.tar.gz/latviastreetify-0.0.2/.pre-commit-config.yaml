@@ -1,0 +1,36 @@
+default_stages: [commit]
+repos:
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+
+  - repo: https://github.com/psf/black
+    rev: 22.6.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: pretty-format-json
+        args:
+          - "--autofix"
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: 7e1ceac2d5967f5428f0b1900cb7fe26da724bb1
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [feat, fix, docs, chore, ci, build] # optional: list of Conventional Commits types to allow
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: "6e63c9e9c65e1df04465cdcda0f2490e89291f58"
+    hooks:
+      - id: mypy
