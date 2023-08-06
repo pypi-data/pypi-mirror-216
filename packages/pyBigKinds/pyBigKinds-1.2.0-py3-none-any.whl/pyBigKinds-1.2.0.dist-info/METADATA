@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: pyBigKinds
+Version: 1.2.0
+Summary: BigKinds Data Analysis Toolkit for python
+Home-page: https://github.com/sorrychoe/pyBigKinds
+Author: Sorrychoe
+License: MIT
+Project-URL: Source Code, https://github.com/sorrychoe/pyBigKinds
+Project-URL: Bug Tracker, https://github.com/sorrychoe/pyBigKinds/issues
+Keywords: Journalism,preprocessing-data,BigKinds
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib (>=3.5.3)
+Requires-Dist: pandas (>=1.5.3)
+Requires-Dist: wordcloud (>=1.8.2.2)
+Requires-Dist: scikit-learn (>=1.0.0)
+Requires-Dist: tomotopy (>=0.12.4)
+Requires-Dist: openpyxl (>=3.1.2)
+Requires-Dist: mlxtend (>=0.22.0)
+Provides-Extra: dev
+Requires-Dist: flake8 (>=3.9) ; extra == 'dev'
+Requires-Dist: isort (>=5.7) ; extra == 'dev'
+Requires-Dist: pre-commit (>=2.13) ; extra == 'dev'
+Requires-Dist: pylint (>=2.9) ; extra == 'dev'
+Requires-Dist: pytest (>=7) ; extra == 'dev'
+
+# pyBigKinds
+
+pyBigKinds는 한국 언론의 빅데이터 저장소인 BigKinds에서 추출한 데이터를 low-Code로 분석할 수 있게 만든 툴입니다.
+
+## Requirements
+
+- Python >= 3.8
+
+## Installation
+
+- macOS
+
+  ```bash
+  python3 -m pip install pyBigKinds
+  ```
+
+- Windows, linux
+
+  ```bash
+  python -m pip install pyBigKinds
+  ```
+
+## Usage
+
+![](docs/example1.png)
+![](docs/example2.png)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## you have some issue?
+
+사용 중 문제 발생 시, 해당 Repo issue에 등록해주세요.
