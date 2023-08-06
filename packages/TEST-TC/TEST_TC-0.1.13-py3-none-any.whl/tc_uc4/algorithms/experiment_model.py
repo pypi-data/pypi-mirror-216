@@ -1,0 +1,195 @@
+from typing import Any
+
+import pandas as pd
+from prophet import Prophet
+from typing_extensions import Self
+
+from ..analytics.evaluationMetrics import evaluations
+from ..datapreparation.datapreparation_utils import PreprocessingTeleconsulto, logger
+from ..datapreparation.prep import PreprocessingClass
+from ..utility.experiment_utils import create_zero_dataframe
+from .algorithm import Prophet_model, prophet_tuning
+from .prophet_utils import (
+    preprocess_prophet_input,
+    preprocess_prophet_output,
+    train_val_test_split,
+)
+
+
+def preprocess_and_split_df(
+    preprocessor: PreprocessingClass,
+    df: pd.DataFrame,
+    time_granularity: str,
+    val_size: float,
+    test_size: float = None,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """
+    Preprocess the filtered DataFrame and split it into train, validation, and test sets.
+
+    Parameters
+    ----------
+    preprocessor : PreprocessingClass
+        An instance of the PreprocessingClass used for data preprocessing.
+    df : pd.DataFrame
+        The DataFrame to be preprocessed and split.
+    val_size : float
+        The percentage of validation data
+    test_size : float, optional
+        The percentage of test data. Default is None
+
+
+    Returns
+    -------
+    tuple
+        tuple: A tuple containing four DataFrames: (df_preproc, df_train, df_val, df_test).
+    """
+    full_df = preprocessor.transform(df, time_granularity=time_granularity)
+    full_df = preprocess_prophet_input(full_df, date="Timestamp", target="Target")
+    df_train, df_val, df_test = train_val_test_split(full_df, val_size, test_size)
+    return full_df, df_train, df_val, df_test
+
+
+class ExperimentModel:
+    def __init__(self, preprocessor: PreprocessingTeleconsulto):
+        self.preprocessor = preprocessor
+        self.models_dict: dict[str, Prophet_model] = {}
+
+    def fit(
+        self,
+        df: pd.DataFrame,
+        dict_id_pred_queries: dict[str, str],
+        hyperparameters_grid: dict[str, Any],
+        time_granularity: str,
+        val_size: float,
+        test_size: float = None,
+        max_na_ratio: float = 0.5,
+    ) -> Self:
+        count = 0
+        # Train and tune all models for all the possible levels in the hierarchy
+        for id_pred, query in dict_id_pred_queries.items():
+            self.models_dict[id_pred] = None
+            logger.info(f"START training {id_pred}")
+            filtered_df = df.query(query)
+            full_df, df_train, df_val, df_test = preprocess_and_split_df(
+                self.preprocessor, filtered_df, time_granularity, val_size, test_size
+            )
+            if full_df.isnull().sum() / len(full_df) >= max_na_ratio:
+                logger.info(
+                    f"The time series{id_pred} has more than\
+                        {max_na_ratio*100}% null values, skipping it."
+                )
+                count += 1
+                logger.info(
+                    f"Remaining number of iteration - {len(dict_id_pred_queries.keys())-count}"
+                )
+                continue
+            try:
+                # Tune if we have a non-empty validation set
+                best_params = prophet_tuning(hyperparameters_grid, df_train, df_val)
+                Model = Prophet_model(best_params)
+                # Retrain on train and val data with best parameters
+                Model.fit(pd.concat([df_train, df_val]))
+            except ValueError as e:
+                logger.info(f"Skipping training {id_pred}, due to: {e}")
+                count += 1
+                logger.info(
+                    f"Remaining number of iteration - {len(dict_id_pred_queries.keys())-count}"
+                )
+                continue
+
+            self.models_dict[id_pred] = Model
+            logger.info(f"DONE training {id_pred}")
+
+            count += 1
+            logger.info(
+                f"Remaining number of iteration - {len(dict_id_pred_queries.keys())-count}"
+            )
+
+        return self
+
+    def create_hyperparameters_table(
+        self, hyperparameters: dict[str, Any]
+    ) -> dict[str, Any]:
+        def get_params_to_log(
+            model: Prophet, hyperparameters: list[str]
+        ) -> dict[str, Any]:
+            return {hyper: getattr(model, hyper) for hyper in hyperparameters}
+
+        return {
+            id_pred: get_params_to_log(model.model, list(hyperparameters.keys()))
+            for id_pred, model in self.models_dict.items()
+        }
+
+    def predict(
+        self,
+        df_test: pd.DataFrame,
+        dict_id_pred_queries: dict[str, str],
+        time_granularity: str,
+    ) -> pd.DataFrame:
+        predictions = []
+        for id_pred, query in dict_id_pred_queries.items():
+            logger.info(f"START predicting {id_pred}")
+            filtered_df = df_test.query(query)
+            filtered_df = self.preprocessor.transform(filtered_df, time_granularity)
+            filtered_df = preprocess_prophet_input(
+                filtered_df, date="Timestamp", target="Target"
+            )
+
+            model = self.models_dict[id_pred]
+            if model is None:
+                logger.info(
+                    f"Skipping prediction for {id_pred}, as the model has not been trained"
+                )
+                df_output = create_zero_dataframe(
+                    [
+                        "Timestamp",
+                        "Id_pred",
+                        "Pred_mean",
+                        "Sigma",
+                        "Pi_lower_95",
+                        "Pi_upper_95",
+                    ],
+                    len(filtered_df),
+                )
+            try:
+                df_test_pred = model.model.predict(filtered_df)
+                df_output = preprocess_prophet_output(df_test_pred, id_pred)
+            except ValueError as e:
+                logger.info(f"Skipping prediction for {id_pred}, due to: {e}")
+                df_output = create_zero_dataframe(
+                    [
+                        "Timestamp",
+                        "Id_pred",
+                        "Pred_mean",
+                        "Sigma",
+                        "Pi_lower_95",
+                        "Pi_upper_95",
+                    ],
+                    len(filtered_df),
+                )
+
+            # Evaluate model
+            predictions.append(df_output)
+            logger.info(f"DONE predicting {id_pred}")
+
+        return pd.concat(predictions)
+
+    def evaluate(
+        self,
+        df_test: pd.DataFrame,
+        dict_id_pred_queries: dict[str, str],
+        time_granularity: str,
+    ) -> pd.DataFrame:
+        reals = []
+        for id_pred, query in dict_id_pred_queries.items():
+            logger.info(f"START predicting {id_pred}")
+            filtered_df = df_test.query(query)
+            filtered_df = self.preprocessor.transform(filtered_df, time_granularity)
+
+            reals.append(filtered_df)
+
+        df_test = pd.concat(reals)
+        predictions = self.predict(df_test, dict_id_pred_queries, time_granularity)
+        eval_df = evaluations(df_test, predictions)
+        eval_df["id_pred"] = predictions["id_pred"]
+        return eval_df
