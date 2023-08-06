@@ -1,0 +1,9 @@
+torch>=1.4
+numpy
+scipy
+matplotlib
+corner
+joblib
+pytest
+tqdm
+multiprocess
