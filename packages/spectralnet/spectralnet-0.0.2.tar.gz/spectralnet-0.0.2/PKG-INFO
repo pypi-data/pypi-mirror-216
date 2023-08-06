@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: spectralnet
+Version: 0.0.2
+Summary: Spectral Clustering Using Deep Neural Networks
+Home-page: https://github.com/AmitaiYacobi/SpectralNet.git
+Author: Amitai
+Project-URL: Bug Tracker, https://github.com/AmitaiYacobi/SpectralNet/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+
+# SpectralNet
+
+<p align="center">
+    <img src="https://github.com/AmitaiYacobi/SpectralNet01/blob/main/figures/twomoons.png"
+</p>
+
+SpectralNet is a python library that performs spectral clustering with deep neural networks.<br><br>
+Link to the paper - [SpectralNet](https://openreview.net/pdf?id=HJ_aoCyRZ)
