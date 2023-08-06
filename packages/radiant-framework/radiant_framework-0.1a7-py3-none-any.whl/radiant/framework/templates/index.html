@@ -1,0 +1,126 @@
+{% autoescape None %}
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+
+    <!--Brython-->
+    <script type="text/javascript" src="/static/brython/brython-{{brython_version}}/brython.js"></script>
+    <script type="text/javascript" src="/static/brython/brython-{{brython_version}}/brython_stdlib.js"></script>
+
+
+    {% if 'mdc' in modules %}
+        <!--MDC-->
+        <script type="text/javascript" src="/static/material-components-web/material-components-web.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/material-components-web/material-components-web.min.css">
+        <link rel="stylesheet" type="text/css" href="/theme.css">
+
+        <!--Fonts-->
+        <link type="text/css" rel="stylesheet" href="/static/fonts/roboto-android/roboto.css">
+        <link type="text/css" rel="stylesheet" href="/static/fonts/roboto-android/roboto-mono.css">
+    {% end %}
+
+
+    {% if 'md' in modules %}
+        <!--MD-->
+        <script type="module" src="/static/material-web/material-1.0.0-pre.3.js"></script>
+
+        <!--Fonts-->
+        <link type="text/css" rel="stylesheet" href="/static/fonts/roboto-android/roboto.css">
+        <link type="text/css" rel="stylesheet" href="/static/fonts/roboto-android/roboto-mono.css">
+    {% end %}
+
+    {% if 'md_git' in modules %}
+        <!--MD-->
+        <script type="module" src="/static/material-web/material-git.js"></script>
+
+        <!--Fonts-->
+        <link type="text/css" rel="stylesheet" href="/static/fonts/roboto-android/roboto.css">
+        <link type="text/css" rel="stylesheet" href="/static/fonts/roboto-android/roboto-mono.css">
+    {% end %}
+
+    {% if 'material_symbols' in modules %}
+        <!--Material Symbols-->
+        <link type="text/css" rel="stylesheet" href="/static/fonts/material-symbols/material_symbols.css">
+        <style>
+        md-icon[rounded] {
+          --md-icon-font: 'Material Symbols Rounded';
+        }
+        md-icon[sharp] {
+          --md-icon-font: 'Material Symbols Sharp';
+        }
+        md-icon[filled] {
+          --md-icon-font-variation-settings: 'FILL' 1;
+        }
+        </style>
+    {% end %}
+
+    {% if 'material_icons' in modules %}
+        <!--Material Icons-->
+        <link type="text/css" rel="stylesheet" href="/static/fonts/material-design-icons-3.0.1/iconfont/material-icons.css">
+    {% end %}
+
+    {% if 'bootstrap' in modules %}
+        <!--Bootstrap-->
+        <script src="/static/js/popper.min.js"></script>
+        <link href="/static/bootstrap/bootstrap-5.2.0-beta1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/static/bootstrap/bootstrap-5.2.0-beta1/js/bootstrap.min.js"></script>
+
+        <!--Icons -->
+        <link type="text/css" rel="stylesheet" href="/static/fonts/bootstrap-icons/bootstrap-icons.css">
+    {% end %}
+
+    <!--Fonts-->
+    <link type="text/css" rel="stylesheet" href="/static/fonts/fontawesome/css/all.min.css">
+
+
+    <style>
+    .RADIANT-HIDE {
+        display: none !important;
+    }
+    </style>
+
+
+
+    {% block html_head %}{% end %}
+
+    <script type="text/python">
+import sys
+
+sys.path.append('/root/')
+sys.path.append('/static/modules/brython')
+
+from radiant.framework.utils import fake
+{% for module in mock_imports %}
+sys.modules["{{module}}"] = fake()
+{% end %}
+    </script>
+
+
+    <script type="text/python">
+{% if path %}
+import sys
+sys.path.append('/path/')
+{% end %}
+
+from radiant.framework.utils import autoinit
+from {{file}} import {{class_}}
+
+argvs = {{argv}}
+
+{% block module_init %}
+{{class_}}(None, {{python_}})
+{% end %}
+
+autoinit()
+
+    </script>
+
+    </head>
+
+
+    <body onload="brython({{debug_level}})">
+        {% block html_body %}{% end %}
+    </body>
+</html>
