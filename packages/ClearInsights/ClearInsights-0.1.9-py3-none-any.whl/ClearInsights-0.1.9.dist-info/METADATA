@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: ClearInsights
+Version: 0.1.9
+Summary: A portable class Library for the ClearInsights API. (Official Library)
+Home-page: https://clearinsights.io
+Author: ClearInsights
+Author-email: support@clearinsights.io
+License: UNKNOWN
+Project-URL: Documentation, https://docs.clearinsights.io
+Project-URL: Bug Reports, https://clearinsights.io/contact-us/
+Keywords: logging,monitoring,insights,application insights,clearinsights
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests (>=2.28.1)
+Provides-Extra: dev
+Requires-Dist: check-manifest ; extra == 'dev'
+
+## Introduction 
+An example of how to use the ClearInsights package within your python applications
+- [Explore the docs](https://docs.clearinsights.io)
+- [Request Feature](https://clearinsights.io/contact-us/)
+
+
+## Getting Started
+
+
+
+### Prerequisites
+
+_Install the ClearInsights Package_
+* Package Manager
+  ```pip
+  pip install ClearInsights
+  ```
+
+
+### Installation
+
+_Create a free ClearInsights account to start using the python package_
+
+1. Get a free account at [https://clearinsights.io](https://clearinsights.io) and retrieve your API Key under the Administration ->APIKey menu.
+2. Create at least 1 product and 1 environment and retrieve the Client Secret for the product/environment.
+3. Import ClearInsights 
+   ```
+   import ClearInsights
+   ```
+4. Initialize and use ClearInsights Logger class
+   ```py
+    log = ClearInsights.Logger(apiKey = "{ApiKey}", clientSecret = "{ClientSecret}", applicationName = "{ApplicationName, Ex. My First App}")
+    log.LogInformation("App started");
+   ```
+5. Use global exception handling.
+   ```py
+    def my_except_hook(exctype, error, error_traceback):    
+      log = ClearInsights.Logger(apiKey = "{ApiKey}", clientSecret = "{ClientSecret}", applicationName = "{ApplicationName, Ex. My First App}")
+      log.LogError(error)
+
+    def main():    
+      sys.excepthook = my_except_hook
+   ```
+
+
+## Usage
+
+Use this app as an example of how to use the ClearInsights package within your python applications.
+
+_For more examples, please refer to the [Documentation](https://docs.clearinsights.io)_
+
+
+
+
