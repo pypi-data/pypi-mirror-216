@@ -1,0 +1,5 @@
+[console_scripts]
+iza = iza.commands:app
+
+[nbdev]
+iza = iza._modidx:d
