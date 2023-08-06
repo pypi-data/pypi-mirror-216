@@ -1,0 +1,292 @@
+{
+    "title": "节点编辑器",
+    "description": "节点编辑器的配置",
+    "jupyter.lab.menus": {
+        "main": [
+            {
+                "id": "jp-mainmenu-node-editor",
+                "label": "节点编辑器",
+                "items": [
+                    {
+                        "command": "nd-load"
+                    },
+                    {
+                        "command": "nd-create"
+                    },
+                    {
+                        "command": "nd-rename"
+                    },
+                    {
+                        "command": "nd-run-all-cells"
+                    },
+                    {
+                        "command": "nd-clear-run-cache"
+                    },
+                    {
+                        "command": "nd-undo"
+                    },
+                    {
+                        "command": "nd-redo"
+                    },
+                    {
+                        "command": "nd-reset-viewport"
+                    },
+                    {
+                        "command": "nd-toggle-output-area"
+                    },
+                    {
+                        "command": "nd-clear-output-area"
+                    },
+                    {
+                        "command": "nd-open-code-editor"
+                    },
+                    {
+                        "command": "nd-kernel-interrupt"
+                    },
+                    {
+                        "command": "nd-kernel-restart"
+                    },
+                    {
+                        "command": "nd-kernel-change"
+                    },
+                    {
+                        "command": "nd-select-all"
+                    },
+                    {
+                        "command": "nd-delete-selected-nodes"
+                    },
+                    {
+                        "command": "nd-copy-selected-nodes"
+                    },
+                    {
+                        "command": "nd-paste-selected-nodes"
+                    },
+                    {
+                        "command": "nd-focus-to-selected-nodes"
+                    },
+                    {
+                        "command": "nd-close-image-viewer"
+                    },
+                    {
+                        "command": "nd-run-cucrrent-cell"
+                    },
+                    {
+                        "command": "nd-insert-cell"
+                    },
+                    {
+                        "command": "nd-delete-cell"
+                    },
+                    {
+                        "command": "nd-cell-undo"
+                    },
+                    {
+                        "command": "nd-cell-redo"
+                    },
+                    {
+                        "command": "nd-edit-pre-cell"
+                    },
+                    {
+                        "command": "nd-edit-next-cell"
+                    },
+                    {
+                        "command": "nd-set-as-default"
+                    }
+                ],
+                "rank": 100
+            }
+        ]
+    },
+    "jupyter.lab.shortcuts": [
+        {
+            "command": "nd-load",
+            "keys": [
+                "Accel R"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-create",
+            "keys": [
+                "Alt N"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-delete",
+            "keys": [
+                "Alt D"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-rename",
+            "keys": [
+                "Alt R"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-run-all-cells",
+            "keys": [
+                "Accel Alt R"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-clear-run-cache",
+            "keys": [
+                "Alt C"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-undo",
+            "keys": [
+                "Accel Z"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false][data-inputing=false]"
+        },
+        {
+            "command": "nd-redo",
+            "keys": [
+                "Accel Y"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false][data-inputing=false]"
+        },
+        {
+            "command": "nd-reset-viewport",
+            "keys": [
+                "Alt G"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-toggle-output-area",
+            "keys": [
+                "Accel O"
+            ],
+            "selector": "[data-show-image-viewer=false]"
+        },
+        {
+            "command": "nd-clear-output-area",
+            "keys": [
+                "Accel L"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-open-code-editor",
+            "keys": [
+                "Accel E"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-kernel-interrupt",
+            "keys": [
+                "Accel I"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-kernel-restart",
+            "keys": [
+                "Accel K"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-select-all",
+            "keys": [
+                "Accel Alt A"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-delete-selected-nodes",
+            "keys": [
+                "Delete"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-copy-selected-nodes",
+            "keys": [
+                "Accel C"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false][data-inputing=false]"
+        },
+        {
+            "command": "nd-paste-selected-nodes",
+            "keys": [
+                "Accel V"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false][data-inputing=false]"
+        },
+        {
+            "command": "nd-focus-to-selected-nodes",
+            "keys": [
+                "Alt F"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-close-image-viewer",
+            "keys": [
+                "Escape"
+            ],
+            "selector": "[data-show-image-viewer=true][data-show-code-editor=false]"
+        },
+        {
+            "command": "nd-run-cucrrent-cell",
+            "keys": [
+                "Accel Enter"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=true][data-use-diff-editor=false]"
+        },
+        {
+            "command": "nd-insert-cell",
+            "keys": [
+                "Accel I"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=true][data-use-diff-editor=false]"
+        },
+        {
+            "command": "nd-delete-cell",
+            "keys": [
+                "Accel Delete"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=true][data-use-diff-editor=false]"
+        },
+        {
+            "command": "nd-cell-undo",
+            "keys": [
+                "Alt Shift Z"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=true][data-use-diff-editor=false]"
+        },
+        {
+            "command": "nd-cell-redo",
+            "keys": [
+                "Alt Shift Y"
+            ],
+            "selector": "[data-show-image-viewer=false][data-show-code-editor=true][data-use-diff-editor=false]"
+        },
+        {
+            "command": "nd-edit-pre-cell",
+            "keys": [
+                "Alt ArrowUp"
+            ],
+            "selector": "[data-show-image-viewer=false][data-use-diff-editor=false]"
+        },
+        {
+            "command": "nd-edit-next-cell",
+            "keys": [
+                "Alt ArrowDown"
+            ],
+            "selector": "[data-show-image-viewer=false][data-use-diff-editor=false]"
+        }
+    ],
+    "additionalProperties": false,
+    "type": "object"
+}
