@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: devopsstringtest-ramon
+Version: 0.0.1
+Summary: String standardization package
+Author-email: Ramon Durães <ramongduraes@gmail.com>
+Project-URL: Homepage, https://github.com/ramongduraes/devops_test
+Project-URL: Bug Tracker, https://github.com/ramongduraes/devops_test/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Unidecode (==1.3.6)
+Requires-Dist: pytest (==7.3.2)
+Requires-Dist: flake8 (==6.0.0)
+
+# devops-string
+Simple project tutorial for standardizing strings
