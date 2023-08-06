@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: dia-adfpro
+Version: 1.6.7
+Summary: A Python application for anomaly detection
+Home-page: https://github.com/EliLillyCo/MQIT_DIA_ADFPRO
+Author: Francesco Gabbanini, Manjunath Bagewadi, Henson Tauro
+Author-email: fgabbanini@yahoo.it
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# MQIT_DIA_ADFPRO
+Anomaly Detection for Fast PROcesses (ADFPRO) is a Python application used to implement anomaly detection for "fast" processes that can be described by multiple features.
+Fast means processes that are repeated continuously on manufacturing equipments and have a duration of a few seconds.
+
+Repository includes 2 modules:
+1) used from ML frameworks running on the cloud (Domino, SageMaker, AzureML) to trigger model training and classification on datasets having a certain structure;
+2) used to implement Dash dashboards to visualize results
+
+Uses code contained in MQIT_DIA_AIML_Toolkit.
+
+Developed and maintained by MQ-IDS Data Integration and Analytics.
