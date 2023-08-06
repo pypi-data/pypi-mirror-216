@@ -1,0 +1,16 @@
+aserto/client/__init__.py,sha256=J49-vfbbLLLpOB-lAIx_Qfj7HWPZ4wwL9wYKtjR57v8,195
+aserto/client/_deadline.py,sha256=NbINn36rxsfbTW4mQr7g8N3RJaCBd1Zuero362HMXz0,412
+aserto/client/_typing.py,sha256=SsBHRi4_cjB6od7E5HvV5HfpSnm8q1RIrU_h1XzhCu0,177
+aserto/client/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aserto/client/api/authorizer/__init__.py,sha256=djEYGbVgJiO2ct7u3H4nLC5brANjtdIhsUZamzvpIkI,2629
+aserto/client/api/authorizer/_protocol.py,sha256=UujJi1Tihj1gBxJfUp1PTGbkm7mo-L5eqKJTAENFktI,1183
+aserto/client/api/authorizer/grpc.py,sha256=Dtf8M2vXRqf8362QzF9yr1qY16W12MWhiiw-xDwfJ4o,8387
+aserto/client/api/authorizer/rest.py,sha256=N8YxT34_gNwpv8oEJjkTNJU7TRdT90vqqpEPxen4DUo,7758
+aserto/client/directory/__init__.py,sha256=O89ch-ZjZu3lQAUU1gyV-VMvv12X0s7h42QE_O7O3pI,15276
+aserto/client/identity.py,sha256=pXxnvhTQMpo5ElSZbfnS9gUhz0XuGNtJwutDW4EHKC4,2129
+aserto/client/options.py,sha256=hOgmXglVoESuzNfxyGzLdARIMZrkyJzMuc3YZtzYkis,1984
+aserto/client/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aserto/client/resource_context.py,sha256=4olMVXpm4E5NRGB_hf1mETSAzdEE7PsXZk_6oUsi6Qw,143
+aserto-0.21.0.dist-info/WHEEL,sha256=y3eDiaFVSNTPbgzfNn0nYn5tEn1cX6WrdetDlQM4xWw,83
+aserto-0.21.0.dist-info/METADATA,sha256=ZJJu33QyQeA0mLWjPZ2elT4rc7-Ov8_yPfiVRuNO-js,4246
+aserto-0.21.0.dist-info/RECORD,,
