@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "/evacuation_point_resolution/1.1.0",
+  "required": [
+    "dataset"
+  ],
+  "properties": {
+    "additionalItems": false,
+    "dataset": {
+      "type": "string",
+      "movici.type": "dataset"
+    },
+    "evacuation_points": {
+      "$ref": "#/$defs/evacuationLabelDef"
+    },
+    "road_segments": {
+      "$ref": "#/$defs/evacuationLabelDef"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "attributeDef": {
+      "type": "string",
+      "movici.type": "attribute"
+    },
+    "evacuationLabelDef": {
+      "type": "object",
+      "required": [ "entity_group", "attribute" ],
+      "properties": {
+        "entity_group": {
+          "type": "string",
+          "movici.type": "entityGroup"
+        },
+        "attribute": {
+          "type": "string",
+          "movici.type": "attribute"
+        }
+      }
+    }
+  }
+}
