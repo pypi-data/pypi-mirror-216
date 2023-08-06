@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: mathsnip
+Version: 0.0.6
+Summary: this is a description
+Home-page: https://github.com/zk4/mathsnip
+Author: zk
+Author-email: liuzq7@gmail.com
+License: BSD
+Download-URL: https://github.com/zk4/mathsnip/archive/master.zip
+Keywords: best practice for python project
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Requires-Python: >3.0.0
+Description-Content-Type: text/markdown
+Requires-Dist: bleach (==6.0.0)
+Requires-Dist: certifi (==2023.5.7)
+Requires-Dist: charset-normalizer (==3.1.0)
+Requires-Dist: docutils (==0.20.1)
+Requires-Dist: exceptiongroup (==1.1.1)
+Requires-Dist: idna (==3.4)
+Requires-Dist: importlib-metadata (==6.6.0)
+Requires-Dist: importlib-resources (==5.12.0)
+Requires-Dist: iniconfig (==2.0.0)
+Requires-Dist: jaraco.classes (==3.2.3)
+Requires-Dist: keyring (==23.13.1)
+Requires-Dist: markdown-it-py (==2.2.0)
+Requires-Dist: mdurl (==0.1.2)
+Requires-Dist: more-itertools (==9.1.0)
+Requires-Dist: packaging (==23.1)
+Requires-Dist: Pillow (==9.5.0)
+Requires-Dist: pkginfo (==1.9.6)
+Requires-Dist: pluggy (==1.0.0)
+Requires-Dist: Pygments (==2.15.1)
+Requires-Dist: PySimpleGUI (==4.60.5)
+Requires-Dist: pytest (==7.3.1)
+Requires-Dist: pywildcard (==1.0.10)
+Requires-Dist: readme-renderer (==37.3)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: requests-toolbelt (==1.0.0)
+Requires-Dist: rfc3986 (==2.0.0)
+Requires-Dist: rich (==13.4.2)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: tomli (==2.0.1)
+Requires-Dist: twine (==4.0.2)
+Requires-Dist: typing-extensions (==4.6.3)
+Requires-Dist: urllib3 (==2.0.3)
+Requires-Dist: webencodings (==0.5.1)
+Requires-Dist: zipp (==3.15.0)
+
+# Demo
+
+# Install
+
+``` python
+pip install mathsnip
+```
+
+# Configuration
+put your app_id and app_key in ~/.bash_config
+```
+export MATHPIX_APP_ID="xxx"
+export MATHPIX_APP_KEY="xxx"
+```
+
+where to find the app_id and app_key?
+- open https://accounts.mathpix.com/account
+- click 'OCR API settings'
+- and you should find
+
+# Use
+```
+mathsnip
+```
+
+# Reference
+gui part: https://mgregchi02.medium.com/take-screenshots-of-any-area-of-the-screen-with-python-gui-program-6320110e99f7
+
