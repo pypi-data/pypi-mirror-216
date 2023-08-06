@@ -1,0 +1,16 @@
+lxml
+bs4
+python-dateutil
+chardet
+
+[dev]
+pylint
+pyenchant
+pytest
+pytest-cov
+
+[full]
+redis
+diskcache
+gunicorn
+setproctitle
