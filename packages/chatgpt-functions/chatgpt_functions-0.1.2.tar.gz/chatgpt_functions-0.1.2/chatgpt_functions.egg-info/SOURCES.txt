@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+chatgpt_functions/__init__.py
+chatgpt_functions/chatgpt.py
+chatgpt_functions/chatgpt_function.py
+chatgpt_functions/chatgpt_types.py
+chatgpt_functions/function_parameters.py
+chatgpt_functions.egg-info/PKG-INFO
+chatgpt_functions.egg-info/SOURCES.txt
+chatgpt_functions.egg-info/dependency_links.txt
+chatgpt_functions.egg-info/requires.txt
+chatgpt_functions.egg-info/top_level.txt
