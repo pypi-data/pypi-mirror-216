@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: zenitechcyber-irsx
+Version: 0.2
+Summary: Turn the IRS' versioned XML 990's into python objects         with original line number and description.
+Home-page: https://github.com/davidaharlow/990-xml-reader
+Author: David Harlow
+Author-email: david@uptokyn.com
+License: MIT
+Keywords: 990,nonprofit,tax
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: xmltodict
+Requires-Dist: unicodecsv
+

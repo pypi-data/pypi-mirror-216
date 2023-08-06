@@ -1,0 +1,4 @@
+[console_scripts]
+zenitechcyber_irsx = irsx.irsx_cli:main
+zenitechcyber_irsx_index = irsx.irsx_index_cli:main
+zenitechcyber_irsx_retrieve = irsx.irsx_retrieve_cli:main
