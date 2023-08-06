@@ -1,0 +1,62 @@
+Data reading
+[93mUserWarning: Spectrum file /home/katenos/Workspace/popgen/temp/GADMA/examples/changing_theta/YRI_CEU.fs is in an old format - without population labels, so they will be taken from the corresponding parameter: YRI, CEU.[0m (/home/katenos/.local/lib/python3.6/site-packages/gadma-2.0.0rc11.dev21-py3.6.egg/gadma/engines/dadi_moments_common.py:284)
+Number of populations: 2
+Projections: [20, 20]
+Population labels: ['YRI', 'CEU']
+Outgroup: True
+[92m--Successful data reading--[0m
+
+[92m--Successful arguments parsing--[0m
+
+Parameters of launch are saved in output directory: /home/katenos/Workspace/popgen/temp/GADMA/my_example_run/params_file
+All output is saved in output directory: /home/katenos/Workspace/popgen/temp/GADMA/my_example_run/GADMA.log
+
+[94m--Start pipeline--[0m
+Run launch number 1
+Run launch number 3
+Run launch number 2
+[93mUserWarning: Additional evaluation for theta. Nothing to worry if this warning is seldom.[0m (/home/katenos/.local/lib/python3.6/site-packages/gadma-2.0.0rc11.dev21-py3.6.egg/gadma/engines/dadi_moments_common.py:119)
+
+[000:01:00]
+All best by log-likelihood models
+Number	log-likelihood	Model
+Run 2	-1599.03	 [Nanc = 8072] [ [ 1 pop split   46.63% (s1) [0.466(s1*1.0), 0.534((1-s1)*1.0)] ],	[ 2492.447(t1), [71846.873(nu11), 2663.596(nu12)], [[0, 0.00e+00(m1_12)], [1.70e-04(m1_21), 0]], [Exp(dyn11), Exp(dyn12)] ] ]	(theta =  3065.54)
+Run 1	-1677.46	 [Nanc = 7978] [ [ 21805.817(t1), [7978.725(nu11)], [Sud(dyn11)] ],	[ 1 pop split   24.50% (s1) [1954.417(s1*nu11), 6024.307((1-s1)*nu11)] ],	[ 3462.821(t2), [13040.777(nu21), 1770.283(nu22)], [[0, 0.00e+00(m2_12)], [8.72e-05(m2_21), 0]], [Sud(dyn21), Lin(dyn22)] ] ]	(theta =  3030.00)
+Run 3	-1763.94	 [Nanc = 6996] [ [ 1 pop split   67.75% (s1) [0.677(s1*1.0), 0.323((1-s1)*1.0)] ],	[ 2879.419(t1), [50025.541(nu11), 3222.866(nu12)], [[0, 1.32e-04(m1_12)], [9.71e-05(m1_21), 0]], [Sud(dyn11), Exp(dyn12)] ] ]	(theta =  2657.17)
+
+You can find the picture and the Python code of the best model in the output directory.
+
+[93mUserWarning: Additional evaluation for theta. Nothing to worry if this warning is seldom.[0m (/home/katenos/.local/lib/python3.6/site-packages/gadma-2.0.0rc11.dev21-py3.6.egg/gadma/engines/dadi_moments_common.py:119)
+[93mUserWarning: Additional evaluation for theta. Nothing to worry if this warning is seldom.[0m (/home/katenos/.local/lib/python3.6/site-packages/gadma-2.0.0rc11.dev21-py3.6.egg/gadma/engines/dadi_moments_common.py:119)
+Finish genetic algorithm number 1
+Finish genetic algorithm number 2
+
+[000:02:00]
+All best by log-likelihood models
+Number	log-likelihood	Model
+[93mUserWarning: Additional evaluation for theta. Nothing to worry if this warning is seldom.[0m (/home/katenos/.local/lib/python3.6/site-packages/gadma-2.0.0rc11.dev21-py3.6.egg/gadma/engines/dadi_moments_common.py:119)
+Run 2	-1378.24	 [Nanc = 7310] [ [ 5861.434(t1), [9496.666(nu11)], [Sud(dyn11)] ],	[ 5861.434(t2), [9496.666(nu21)], [Sud(dyn21)] ],	[ 1 pop split   46.63% (s1) [4427.931(s1*nu21), 5068.735((1-s1)*nu21)] ],	[ 2257.119(t3), [76290.361(nu31), 2016.764(nu32)], [[0, 0.00e+00(m3_12)], [2.11e-04(m3_21), 0]], [Exp(dyn31), Sud(dyn32)] ] ]	(theta =  2776.10)
+Run 3	-1473.85	 [Nanc = 2275] [ [ 16755.448(t1), [17586.139(nu11)], [Exp(dyn11)] ],	[ 1 pop split   66.47% (s1) [11690.244(s1*nu11), 5895.895((1-s1)*nu11)] ],	[ 10962.34(t2), [11543.998(nu21), 3173.675(nu22)], [[0, 1.19e-04(m2_12)], [7.73e-05(m2_21), 0]], [Exp(dyn21), Sud(dyn22)] ] ]	(theta =  864.13)
+Run 1	-1486.88	 [Nanc = 6016] [ [ 14152.635(t1), [7571.15(nu11)], [Lin(dyn11)] ],	[ 20433.891(t2), [7792.275(nu21)], [Exp(dyn21)] ],	[ 1 pop split   15.34% (s1) [1195.33(s1*nu21), 6596.945((1-s1)*nu21)] ],	[ 3418.405(t3), [14824.105(nu31), 2146.846(nu32)], [[0, 0.00e+00(m3_12)], [1.04e-04(m3_21), 0]], [Sud(dyn31), Lin(dyn32)] ] ]	(theta =  2284.97)
+
+You can find the picture and the Python code of the best model in the output directory.
+
+Finish genetic algorithm number 3
+
+[000:02:25]
+All best by log-likelihood models
+Number	log-likelihood	Model
+Run 3	-1245.24	 [Nanc = 2557] [ [ 7944.434(t1), [7738.84(nu11)], [Exp(dyn11)] ],	[ 11958.587(t2), [19925.435(nu21)], [Exp(dyn21)] ],	[ 1 pop split   75.85% (s1) [15113.376(s1*nu21), 4812.059((1-s1)*nu21)] ],	[ 18333.902(t3), [8389.535(nu31), 3472.532(nu32)], [[0, 1.77e-04(m3_12)], [7.84e-05(m3_21), 0]], [Exp(dyn31), Sud(dyn32)] ] ]	f	(theta =  971.12)
+[93mUserWarning: Additional evaluation for theta. Nothing to worry if this warning is seldom.[0m (/home/katenos/.local/lib/python3.6/site-packages/gadma-2.0.0rc11.dev21-py3.6.egg/gadma/engines/dadi_moments_common.py:119)
+Run 2	-1378.24	 [Nanc = 7310] [ [ 5861.434(t1), [9496.666(nu11)], [Sud(dyn11)] ],	[ 5861.434(t2), [9496.666(nu21)], [Sud(dyn21)] ],	[ 1 pop split   46.63% (s1) [4427.931(s1*nu21), 5068.735((1-s1)*nu21)] ],	[ 2257.119(t3), [76290.361(nu31), 2016.764(nu32)], [[0, 0.00e+00(m3_12)], [2.11e-04(m3_21), 0]], [Exp(dyn31), Sud(dyn32)] ] ]	(theta =  2776.10)
+Run 1	-1486.88	 [Nanc = 6016] [ [ 14152.635(t1), [7571.15(nu11)], [Lin(dyn11)] ],	[ 20433.891(t2), [7792.275(nu21)], [Exp(dyn21)] ],	[ 1 pop split   15.34% (s1) [1195.33(s1*nu21), 6596.945((1-s1)*nu21)] ],	[ 3418.405(t3), [14824.105(nu31), 2146.846(nu32)], [[0, 0.00e+00(m3_12)], [1.04e-04(m3_21), 0]], [Sud(dyn31), Lin(dyn32)] ] ]	(theta =  2284.97)
+
+You can find the picture and the Python code of the best model in the output directory.
+
+
+--Finish pipeline--
+
+Thank you for using GADMA!
+
+In case of any questions or problems, please contact: ekaterina.e.noskova@gmail.com
+
