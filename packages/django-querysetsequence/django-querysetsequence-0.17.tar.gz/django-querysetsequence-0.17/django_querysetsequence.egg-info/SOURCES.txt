@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+django_querysetsequence.egg-info/PKG-INFO
+django_querysetsequence.egg-info/SOURCES.txt
+django_querysetsequence.egg-info/dependency_links.txt
+django_querysetsequence.egg-info/requires.txt
+django_querysetsequence.egg-info/top_level.txt
+queryset_sequence/__init__.py
+queryset_sequence/pagination.py
+tests/test_pagination.py
+tests/test_querysetsequence.py
+tests/test_values.py
+tests/test_views.py
