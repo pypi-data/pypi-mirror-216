@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "resbaz"
+version = "0.0.6"
+authors = [
+  { name="Victor Gambarini", email="victor.gambarini@auckland.ac.nz" },
+]
+description = "ResBaz example package"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://resbaz.auckland.ac.nz/"
