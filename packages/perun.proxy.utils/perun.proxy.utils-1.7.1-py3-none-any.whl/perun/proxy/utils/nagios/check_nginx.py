@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+from check_nginx_status.check_nginx_status import main
+
+# for program arguments check
+# https://gitlab.ics.muni.cz/perun-proxy-aai/python/check_nginx_status/
+
+if __name__ == "__main__":
+    main()
