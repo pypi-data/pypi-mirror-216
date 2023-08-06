@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: Gammatone
+Version: 1.0.0
+License-File: COPYING
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: nose
+Requires-Dist: mock
+Requires-Dist: matplotlib
+
