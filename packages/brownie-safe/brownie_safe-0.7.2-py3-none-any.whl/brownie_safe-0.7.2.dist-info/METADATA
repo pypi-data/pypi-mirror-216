@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: brownie-safe
+Version: 0.7.2
+Summary: Build complex Gnosis Safe transactions and safely preview them in a forked environment.
+Home-page: https://github.com/banteg/brownie-safe
+License: MIT
+Author: banteg
+Requires-Python: >=3.8,<3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: eth-brownie (==1.19.2)
+Requires-Dist: safe-eth-py (==4.3.2)
+Requires-Dist: trezor (==0.13.7)
+Project-URL: Repository, https://github.com/banteg/brownie-safe
+Description-Content-Type: text/markdown
+
+# Brownie Safe: Gnosis Safe tx builder
+
+[Read Documentation](https://safe.ape.tax/)
+
+Brownie Safe allows you to iteratively build complex multi-step Gnosis Safe transactions and safely preview their side effects from the convenience of a locally forked mainnet environment.
+
+*Previously known as Ape Safe`
+
+## Installation
+
+```
+pip install -U brownie-safe
+```
+
+## Quickstart
+
+```bash
+brownie console --network mainnet-fork
+```
+
+```python
+from brownie_safe import BrownieSafe
+safe = BrownieSafe('ychad.eth')
+
+dai = safe.contract('0x6B175474E89094C44Da98b954EedeAC495271d0F')
+vault = safe.contract('0x19D3364A399d251E894aC732651be8B0E4e85001')
+
+amount = dai.balanceOf(safe.account)
+dai.approve(vault, amount)
+vault.deposit(amount)
+
+safe_tx = safe.multisend_from_receipts()
+safe.preview(safe_tx)
+safe.post_transaction(safe_tx)
+```
+
+See [Documentation](https://safe.ape.tax/) for more examples and full reference.
+
