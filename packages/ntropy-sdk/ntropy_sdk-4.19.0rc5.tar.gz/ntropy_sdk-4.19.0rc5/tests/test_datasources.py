@@ -1,0 +1,46 @@
+import os
+
+import pytest
+
+from ntropy_sdk.errors import NtropyDatasourceError
+from ntropy_sdk.ntropy_sdk import BankStatementRequest
+
+
+@pytest.fixture()
+def bank_statement_sample():
+    return os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "bank_statement_sample.jpg"
+    )
+
+
+def test_submit_bank_statement(sdk, bank_statement_sample):
+    with open(bank_statement_sample, "rb") as f:
+        bsr = sdk.add_bank_statement(file=f, filename="bank_statement_sample.jpg")
+        bs = bsr.poll()
+        assert bs.status == "queued"
+        assert bs.id is not None
+
+
+def test_processed_bank_statement(sdk, bank_statement_sample):
+    bsr = BankStatementRequest(
+        sdk=sdk,
+        filename="file",
+        bs_id="855ec219-6366-4b06-82f4-1ed6b9a6b0db",
+    )
+
+    df = bsr.wait()
+    assert len(df) > 0
+    assert df.iloc[3].merchant == "RBC"
+
+
+def test_processed_bank_statement_error(sdk, bank_statement_sample):
+    bsr = BankStatementRequest(
+        sdk=sdk,
+        filename="file",
+        bs_id="adcdc5f8-9ce9-46a2-978c-2148a3271d50",
+    )
+
+    with pytest.raises(NtropyDatasourceError) as e:
+        bsr.wait()
+    assert e.value.error_code == 415
+    assert "file type not supported" in e.value.error.lower()
