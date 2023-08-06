@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: hebpipe
+Version: 3.0.0.5
+Summary: A pipeline for Hebrew NLP
+Home-page: https://github.com/amir-zeldes/HebPipe
+Author: Amir Zeldes
+Author-email: amir.zeldes@georgetown.edu
+License: Apache License, Version 2.0
+Download-URL: https://github.com/amir-zeldes/HebPipe/releases/tag/v3.0.0.5
+Description: UNKNOWN
+Keywords: NLP,Hebrew,segmentation,tokenization,tagging,parsing,morphology,POS,lemmatization
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
