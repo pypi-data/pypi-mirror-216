@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "milho-multi-sqlite3-manager"
+version = "0.2.0"
+description = ""
+authors = ["Guilherme S. Magalhães <40049979+Guisilcol@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "multisqlite3manager"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+sqlalchemy = "^2.0.16"
+sqlglot = "^16.3.1"
+pandas = "^2.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
