@@ -1,0 +1,16 @@
+servifai/__init__.py,sha256=CnSuZoQCoHY-_fZzN76asV9U7NQdjo8ihcEtPjGHCGQ,53
+servifai/agents/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+servifai/agents/react.py,sha256=hKm_W1yAlz53LedCPpHqv5WTyW-KfaNoa3OuT4m3FqU,1063
+servifai/default_config.yaml,sha256=DpP_9TDflH_y-qtnULut-RBh0taU_apGLeqnvVlbzAc,113
+servifai/llms/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+servifai/llms/openai.py,sha256=R5Lf93Q0qiPwxqe4kp94nuMq1AvbjaH4vfCGuP4xuz4,849
+servifai/memory/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+servifai/memory/chroma.py,sha256=ed9G--If-QMWjZcmI0J1b-4_pfc5snoJoQoHPV8ditc,1467
+servifai/servifai.py,sha256=IvOzW6rknB625XTPYjUDOD1A8No9irSyShskyhNqMfk,2317
+servifai/tools/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+servifai/tools/default.py,sha256=4PvaHtiKSNvHWel3-ERxOKhmb_Q6o6BzkEGiUEIHrcE,1291
+servifai/tools/knowledge_base.py,sha256=nZvR-s0i_GzncKfSexXOQGji-8mRXc8thHdYTc_wBdM,6690
+servifai-0.1.0.dist-info/LICENSE,sha256=jfj8YO2lFp0z-YQKti4puwfe-TxHjGgBG9vmBixY0po,1067
+servifai-0.1.0.dist-info/METADATA,sha256=emaZobj0GG10reM5nNVRiZ6w8qFWpMIHVmjgnMoZzMI,4442
+servifai-0.1.0.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+servifai-0.1.0.dist-info/RECORD,,
