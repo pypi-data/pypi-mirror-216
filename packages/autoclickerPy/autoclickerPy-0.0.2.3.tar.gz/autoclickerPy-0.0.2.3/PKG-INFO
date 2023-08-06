@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: autoclickerPy
+Version: 0.0.2.3
+Summary: Simple autoclicker for python
+Author: Geo
+Author-email: <geocraft31@gamil.com>
+Keywords: python,autoclicker
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# Autoclicker
+
+Simple autoclicker in python.
+
+## How to use
+
+Running the autoclicker for some time
+
+```python
+from autoclickerPy import Autoclicker
+from pynput.mouse import Button
+
+clicker = Autoclicker(delay=0.1)
+
+# Runs autoclicker for 1 second
+clicker.run(1)
+```
+
+Starting and stoping the autoclicker
+
+```python
+from autoclickerPy import Autoclicker
+from pynput.mouse import Button
+import time
+
+clicker = Autoclicker(delay=0.1)
+
+clicker.start(button=Button.middle)
+ ... some code ...
+clicker.stop()
+```
