@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+    <include package="plone.behavior" file="meta.zcml"/>
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <plone:behavior
+        name="collective.gridlisting.grid_listing"
+        title="GridListing"
+        description="Provides Settings for grid listing appearance"
+        provides=".grid_listing.IGridListing"
+        factory=".grid_listing.GridListing"
+        marker=".grid_listing.IGridListingMarker"
+        />
+
+
+</configure>
