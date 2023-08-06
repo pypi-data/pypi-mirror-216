@@ -1,0 +1,37 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+# depthcharge-tools depthchargectl-bless sysvinit service
+# Copyright (C) 2020-2021 Alper Nebi Yasak <alpernebiyasak@gmail.com>
+# See COPYRIGHT and LICENSE files for full copyright information.
+
+### BEGIN INIT INFO
+# Provides:          depthchargectl-bless
+# Required-Start:    $remote_fs
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Mark the current depthcharge partition as successful
+### END INIT INFO
+
+if ! command -v depthchargectl >/dev/null 2>/dev/null; then
+    exit 0
+fi
+
+if ! grep "cros_secure" /proc/cmdline >/dev/null 2>/dev/null; then
+    # Not booted by depthcharge.
+    exit 0
+fi
+
+if [ -f /lib/lsb/init-functions ]; then
+    . /lib/lsb/init-functions
+fi
+
+case "$1" in
+    start|restart|reload|force-reload)
+        depthchargectl bless
+        ;;
+    stop|status)
+        # Not a daemon.
+        ;;
+esac
