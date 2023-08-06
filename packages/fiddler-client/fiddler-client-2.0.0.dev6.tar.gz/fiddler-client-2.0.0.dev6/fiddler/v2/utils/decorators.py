@@ -1,0 +1,91 @@
+from functools import wraps
+from http import HTTPStatus
+from typing import Any, Callable
+
+from requests.exceptions import HTTPError
+
+from fiddler.exceptions import (
+    NotSupported,
+    ErrorResponseHandler,
+    FiddlerAPIHTTPException,
+    FiddlerAPIBadRequestException,
+    FiddlerAPIForbiddenException,
+    FiddlerAPIConflictException,
+    FiddlerAPINotFoundException,
+    FiddlerAPIInternalServerErrorException
+)
+from fiddler.utils import logging
+from fiddler.v2.utils.helpers import match_semver
+
+logger = logging.getLogger(__name__)
+
+map_except_resp_code = {
+    HTTPStatus.BAD_REQUEST: FiddlerAPIBadRequestException,  # 400
+    HTTPStatus.FORBIDDEN: FiddlerAPIForbiddenException,  # 403
+    HTTPStatus.NOT_FOUND: FiddlerAPINotFoundException,  # 404
+    HTTPStatus.CONFLICT: FiddlerAPIConflictException,  # 409
+    HTTPStatus.INTERNAL_SERVER_ERROR: FiddlerAPIInternalServerErrorException,  # 500
+}
+
+
+def check_version(version_expr: str) -> Callable:
+    """
+    Check version_expr against server version before making an API call
+
+    Usage:
+        @check_version(version_expr=">=23.1.0")
+        @handle_api_error_response
+        def get_model_deployment(...):
+            ...
+
+    Add this decorator on top of other decorators to make sure version check happens
+    before doing any other work.
+
+    :param version_expr: Supported version to match with. Read more at VersionInfo.match
+    :return: Decorator function
+    """
+
+    def decorator(func) -> Callable:
+        @wraps(func)
+        def wrapper(self, *args: Any, **kwargs: Any) -> Any:
+            if not match_semver(self.server_info.server_version, version_expr):
+                raise NotSupported(
+                    f'{func.__name__} method is supported with server version '
+                    f'{version_expr}, but the current server version is '
+                    f'{self.server_info.server_version}'
+                )
+
+            return func(self, *args, **kwargs)
+
+        return wrapper
+
+    return decorator
+
+
+def handle_api_error_response(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except HTTPError as error:
+            logger.error(
+                'HTTP request to %s failed with %s - %s',
+                getattr(error.request, 'url', 'unknown'),
+                getattr(error.response, 'status_code', 'unknown'),
+                getattr(error.response, 'content', 'missing'),
+            )
+            error_response = ErrorResponseHandler(error).get_error_details()
+            # raise status_code specific exceptions else raise generic FiddlerAPIHTTPException
+            exec_class = map_except_resp_code.get(
+                error_response.status_code, FiddlerAPIHTTPException
+            )
+            raise exec_class(
+                error_response.status_code,
+                error_response.error_code,
+                error_response.message,
+                error_response.errors,
+            ) from None
+            # disabling automatic exception chaining
+            # ref: https://docs.python.org/3/tutorial/errors.html#exception-chaining
+
+    return wrapper
