@@ -1,0 +1,11 @@
+appthreat-vulnerability-db>=5.2.0
+defusedxml
+PyYAML
+rich
+quart
+
+[dev]
+black
+flake8
+pytest
+pytest-cov
