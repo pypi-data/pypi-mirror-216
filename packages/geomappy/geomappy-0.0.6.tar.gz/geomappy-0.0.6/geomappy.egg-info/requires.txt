@@ -1,0 +1,10 @@
+cartopy>=0.20
+rioxarray
+geopandas
+
+[develop]
+sphinx
+sphinx_rtd_theme
+numpydoc
+jupyter
+pytest
