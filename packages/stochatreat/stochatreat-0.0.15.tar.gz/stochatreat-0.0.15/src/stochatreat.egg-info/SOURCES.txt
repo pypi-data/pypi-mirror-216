@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/stochatreat/__about__.py
+src/stochatreat/__init__.py
+src/stochatreat/stochatreat.py
+src/stochatreat/utils.py
+src/stochatreat.egg-info/PKG-INFO
+src/stochatreat.egg-info/SOURCES.txt
+src/stochatreat.egg-info/dependency_links.txt
+src/stochatreat.egg-info/requires.txt
+src/stochatreat.egg-info/top_level.txt
+tests/test_stochatreat_assignment.py
+tests/test_stochatreat_io.py

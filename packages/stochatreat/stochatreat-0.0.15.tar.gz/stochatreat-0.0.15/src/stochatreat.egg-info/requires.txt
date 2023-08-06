@@ -1,0 +1,10 @@
+pandas
+
+[dev]
+black
+build
+bump2version
+mypy
+ruff
+pytest
+pytest-cov
