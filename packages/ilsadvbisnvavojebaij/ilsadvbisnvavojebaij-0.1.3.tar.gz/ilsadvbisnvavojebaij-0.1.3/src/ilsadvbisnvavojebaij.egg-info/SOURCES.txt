@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+src/ilsadvbisnvavojebaij/__init__.py
+src/ilsadvbisnvavojebaij.egg-info/PKG-INFO
+src/ilsadvbisnvavojebaij.egg-info/SOURCES.txt
+src/ilsadvbisnvavojebaij.egg-info/dependency_links.txt
+src/ilsadvbisnvavojebaij.egg-info/requires.txt
+src/ilsadvbisnvavojebaij.egg-info/top_level.txt
+src/ilsadvbisnvavojebaij/math/__init__.py
+src/ilsadvbisnvavojebaij/math/scalars.py
+src/ilsadvbisnvavojebaij/math/vectors.py
+src/ilsadvbisnvavojebaij/utils/__init__.py
+src/ilsadvbisnvavojebaij/utils/logging.py
