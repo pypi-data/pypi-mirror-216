@@ -1,0 +1,3 @@
+[console_scripts]
+giskard=giskard.cli:cli
+
