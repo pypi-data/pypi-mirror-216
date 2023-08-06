@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+gspot_django_auth/__init__.py
+gspot_django_auth/authentication.py
+gspot_django_auth/exceptions.py
+gspot_django_auth/models.py
+gspot_django_auth/redis_client.py
+gspot_django_auth/token.py
+gspot_django_auth.egg-info/PKG-INFO
+gspot_django_auth.egg-info/SOURCES.txt
+gspot_django_auth.egg-info/dependency_links.txt
+gspot_django_auth.egg-info/requires.txt
+gspot_django_auth.egg-info/top_level.txt
