@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: py-chinese-holidays
+Version: 1.1
+Summary: Calculate Chinese holidays, traditional festivals, and rest days for a specified year.
+Home-page: https://github.com/ymzx/chinese-holidays
+Author: JWDuan
+Author-email: 494056012@qq.com
+License: MIT
+Platform: any
+Requires: requests
+Requires: json
+Requires: datetime
+Requires: os
+
+UNKNOWN
+
