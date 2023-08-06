@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: albatros-uav
+Version: 0.1.0
+Summary: 
+Author: Jędrzej Stasik
+Author-email: sjedrzej58@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pika (>=1.3.2,<2.0.0)
+Requires-Dist: pymavlink (>=2.4.39,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Albatros - Python libary handling mavlink commands
+
+## Run examples
+
+__Arming vehicle__ (in SITL simulation)
+
+Simply arm and disarm vehicle
+```bash
+$ python -m examples.arming_vehicle
+```
+
+__Takeoff__ (Plane)
+```bash
+$ python -m examples.takeoff
+```
