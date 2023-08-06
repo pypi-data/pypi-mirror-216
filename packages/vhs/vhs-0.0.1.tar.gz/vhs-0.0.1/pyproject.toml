@@ -1,0 +1,55 @@
+[project]
+name = "vhs"
+authors = [{name = "Tamika Nomara", email = "taminomara@gmail.com"}]
+description = "Write terminal GIFs as code for integration testing and demoing your CLI tools, now with python"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Typing :: Typed",
+]
+dynamic = ["version"]
+dependencies = [
+    "PyGithub~=1.59.0",
+    "requests~=2.31.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest~=7.0",
+    "pytest-mypy~=0.10.3",
+    "black~=23.0",
+    "types-requests",
+]
+doc = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme~=1.2.2",
+]
+
+[project.urls]
+Documentation = "https://python-vhs.readthedocs.io/en/stable/"
+Issues = "https://github.com/taminomara/python-vhs/issues"
+Source = "https://github.com/taminomara/python-vhs/"
+Changelog = "https://github.com/taminomara/python-vhs/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel>=0.40"]
+
+[tool.setuptools_scm]
+write_to = "vhs/_version.py"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["vhs", "test"]
+addopts = ["--mypy", "--strict-markers"]
+markers = ["darwin", "linux", "win32"]

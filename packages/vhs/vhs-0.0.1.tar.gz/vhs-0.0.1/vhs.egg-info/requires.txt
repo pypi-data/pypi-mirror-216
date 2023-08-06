@@ -1,0 +1,12 @@
+PyGithub~=1.59.0
+requests~=2.31.0
+
+[doc]
+sphinx>=6.0.0
+sphinx-rtd-theme~=1.2.2
+
+[test]
+pytest~=7.0
+pytest-mypy~=0.10.3
+black~=23.0
+types-requests
