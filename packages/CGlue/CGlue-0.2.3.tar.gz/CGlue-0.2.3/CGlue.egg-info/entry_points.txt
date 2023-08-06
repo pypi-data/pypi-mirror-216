@@ -1,0 +1,3 @@
+[console_scripts]
+cglue = cglue.cli:cli
+cglue-3.11 = cglue.cli:cli
