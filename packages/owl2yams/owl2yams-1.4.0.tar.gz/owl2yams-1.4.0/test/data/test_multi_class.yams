@@ -1,0 +1,8 @@
+from yams.buildobjs import *
+
+class Loutre2FrPerson(EntityType):
+    pass
+
+class LoutreFrPerson(EntityType):
+    pass
+

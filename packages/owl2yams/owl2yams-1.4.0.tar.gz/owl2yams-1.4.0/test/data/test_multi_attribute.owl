@@ -1,0 +1,6 @@
+@prefix loutre: <http://loutre.fr/>.
+@prefix loutre2: <http://loutre2.fr/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+loutre:toto a owl:DatatypeProperty.
+loutre2:toto a owl:DatatypeProperty.

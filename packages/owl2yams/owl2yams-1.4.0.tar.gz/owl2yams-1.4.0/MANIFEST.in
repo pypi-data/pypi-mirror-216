@@ -1,0 +1,12 @@
+include *.py
+
+include owl2yams/prefixes.json
+include owl2yams/cw_react_admin/main.js
+
+recursive-include owl2yams *.py
+recursive-include test *.py *.owl *.yams
+
+exclude *.ini *.example
+exclude .gitlab-ci.yml
+exclude .gitlab-ci-extended.yml
+recursive-exclude doc *.odg

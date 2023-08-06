@@ -1,0 +1,12 @@
+from yams.buildobjs import *
+
+class LoutreFrFirstClass(EntityType):
+    pass
+
+class LoutreFrSecondClass(EntityType):
+    pass
+
+class loutre_fr_rel1(RelationDefinition):
+    subject = ('LoutreFrFirstClass', 'LoutreFrSecondClass',)
+    object = ('LoutreFrFirstClass', 'LoutreFrSecondClass',)
+

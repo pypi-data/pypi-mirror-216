@@ -1,0 +1,5 @@
+from yams.buildobjs import *
+
+class LoutreFrFirstClass(EntityType):
+    loutre_fr_toto = Int()
+
