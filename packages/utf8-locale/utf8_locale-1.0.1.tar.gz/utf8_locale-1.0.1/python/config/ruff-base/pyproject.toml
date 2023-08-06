@@ -1,0 +1,45 @@
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+select = []
+ignore = [
+  # We know what "self" is... I hope
+  "ANN101",
+
+  # We also know what "cls" is... I hope
+  "ANN102",
+
+  # We leave most of the formatting to the `black` tool
+  "COM812",
+
+  # No blank lines before the class docstring, TYVM
+  "D203",
+
+  # The multi-line docstring summary starts on the same line
+  "D213",
+
+  # We use the subprocess library responsibly
+  "S603",
+  "S606",
+  "S607",
+]
+
+[tool.ruff.isort]
+force-single-line = true
+known-first-party = ["utf8_locale"]
+lines-after-imports = 2
+single-line-exclusions = ["typing"]
+
+[tool.ruff.per-file-ignores]
+# This is a command-line tool; console output is part of its task
+"python/utf8_locale/__main__.py" = ["T201"]
+
+# This is a test suite
+"python/unit_tests/**.py" = ["S101"]
+
+# This is a command-line test tool; console output is part of its task
+# Also, it is a standalone program on purpose.
+"tests/functional.py" = ["INP001", "T201"]

@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: utf8-locale
+Upstream-Contact: Peter Pentchev <roam@ringlet.net>
+Source: https://gitlab.com/ppentchev/utf8-locale
+
+Files:
+  Cargo.lock
+  tests/data.json
+Copyright: Peter Pentchev <roam@ringlet.net>
+License: BSD-2-Clause

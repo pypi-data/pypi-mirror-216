@@ -1,0 +1,77 @@
+# SPDX-FileCopyrightText: Peter Pentchev <roam@ringlet.net>
+# SPDX-License-Identifier: BSD-2-Clause
+
+[build-system]
+requires = [
+  "hatchling >= 1.8, < 2",
+  "hatch-requirements-txt >= 0.3, < 0.5",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "utf8-locale"
+description = "Detect a UTF-8-capable locale for running programs in"
+readme = "README.md"
+license = {text = "BSD-2-Clause"}
+requires-python = ">= 3.8"
+dynamic = ["version"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: DFSG approved",
+  "License :: Freely Distributable",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[[project.authors]]
+name = "Peter Pentchev"
+email = "roam@ringlet.net"
+
+[project.scripts]
+u8loc = "utf8_locale.__main__:main"
+
+[project.urls]
+Homepage = "https://devel.ringlet.net/devel/utf8-locale/"
+# Changes = "https://devel.ringlet.net/devel/utf8-locale/changes/"
+"Issue Tracker" = "https://gitlab.com/ppentchev/utf8-locale/-/issues"
+"Source Code" = "https://gitlab.com/ppentchev/utf8-locale"
+
+[tool.hatch.build]
+include = [
+  "/.reuse",
+  "/.editorconfig",
+  "/LICENSES",
+  "/NEWS.md",
+  "/nix",
+  "/pyproject.toml",
+  "/python",
+  "/README.md",
+  "/setup.cfg",
+  "/tests",
+  "/tox.ini",
+  "/u8loc.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/utf8_locale"]
+
+[tool.hatch.version]
+path = "python/utf8_locale/detect.py"
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+strict = true
+
+[tool.test-stages]
+stages = ["ruff and not @manual", "@check and not @manual", "@tests and not @manual"]
