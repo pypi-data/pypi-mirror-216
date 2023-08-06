@@ -1,0 +1,14 @@
+Plone
+setuptools
+z3c.unconfigure
+collective.exportimport>=1.9
+
+[test]
+zest.releaser[recommended]
+zestreleaser.towncrier
+plone.volto
+plone.app.testing
+plone.restapi[test]
+pytest
+pytest-cov
+pytest-plone>=0.2.0
