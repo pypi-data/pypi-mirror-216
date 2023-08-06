@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "upstash_ratelimit"
+version = "0.2.0"
+description = ""
+authors = ["Zgîmbău Tudor <tudor.zgimbau@gmail.com>"]
+readme = "README.md"
+packages = [{include = "upstash_ratelimit"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pytest = "^7.3.0"
+pytest-asyncio = "^0.21.0"
+upstash-redis = "^0.12.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
