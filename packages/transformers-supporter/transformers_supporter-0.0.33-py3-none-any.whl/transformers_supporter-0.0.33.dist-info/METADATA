@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: transformers-supporter
+Version: 0.0.33
+Summary: Transformers supporter
+Home-page: https://github.com/automatethem/transformers-supporter
+Author: Sang Ki Kwon
+Author-email: automatethem@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: transformers
+Requires-Dist: konlpy
+Requires-Dist: pillow
+Requires-Dist: spacy
+
+# transformers-supporter
+
+https://pypi.org/project/transformers-supporter
+```
+pip install transformers-supporter
+```
+
+## Supported models
+
+[ANN](README_ann.md)  
+[CNN](README_cnn.md)  
+[RNN](README_rnn.md)  
+[BERT](README_bert.md)
