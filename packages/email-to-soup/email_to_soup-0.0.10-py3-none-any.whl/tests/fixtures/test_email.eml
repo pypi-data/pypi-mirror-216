@@ -1,0 +1,641 @@
+Delivered-To: email-recipient@example.com
+Received: aaaa aaaaaaaaa0a0a.aaaa.aaa (aaaaaaaaa0a0a.aaaa.aaa [00.00.00.000])
+	aa aaaaaaaaa-a000.aaaa.aaa (Aaaaaaaa Aaaaaaaaa Aaaaaaa) aaaa AAAA aa
+ A0.00.00000.AA0A0000; Aaa, 00 Aaa 0000 00:00:00 -0000 (AAA)
+X-Google-Smtp-Source:
+  AAaaAAaaAaa0A0aAAaaA0AAaAAaaaAa0A0AAAA0AAAa0AaaAAaaaa0AAAaaAAAaAAAaaa0AAAaaA
+X-Received: aa 0000:a00:0a0a:: aaaa AAAA aa a00aa0000000aaa.000.0000000000000;
+        Aaa, 00 Aaa 0000 00:00:00 -0000 (AAA)
+ARC-Seal: a=0; a=aaa-aaa000; a=0000000000; aa=aaaa;        a=aaaaaa.aaa;
+ a=aaa-00000000;
+ a=a0aa0AA+AaaaA0AAaaaA00AAaa00aAaaa00AaAAaA0AaAA0AAA0AaAA0a0aAaaaaaA
+ aA+Aaa0AAAAA0+aaaaAaaAaAAAA0/AaaAaAaAaAAAaAAaaaA0AAA00AaAAaaaaAA0aaA
+ 0A0/0aaaaaAaaAaaaaA0aAaaaAAaAaA0aAaaAA0a0AAaAaAa/0Aaaaa0AA0AAaaAAaaa
+ 0aaAaaa0a0AAaaA0A0aAaA/AAA/0AaaaAaAAaaaa00AAA00AAaAaaaa0aAaAAaaA0aaa
+ a0aAA00aaaA0AAAaaaAAaaA0AAaa+aaaAaAaAAa/aAAAA0aaAAaaaaaAAAa00aAA+aaA
+ AAAA==
+ARC-Message-Signature: a=0; a=aaa-aaa000; a=aaaaaaa/aaaaaaa; a=aaaaaa.aaa;
+ a=aaa-00000000;
+ a=aaaa-aaaaaaa:aaaaaaa:aaaaaaa-aa:aa:aaaa:aaaa:aaaa-aaaaaaaaa;
+ aa=AaAAaaAAaaaAAaaAaaAAAAaAaaAa0A0AaAAAA/aAaaA=;
+ a=AAAaa0aAA/AAAA0aAaaaA0AAaAA000aa0AAAa00Aaaa0aa0aaaAAA0AaA0AaaaaaAA
+ aAa+AaaAAa/aAaa0AaAAaaA0aaAAaaaaAAAaAAaAaaA/A0AaaAaaAAaaaAAAAaA0/aA/
+ Aa0A0aaAaaa0AaaaAa00aAaaAAaAAa0Aa0AAAaAAAAaAaaAAAA0aaaaaaAAAaa00a0AA
+ a/aaaaAaAAaA0AaaAAAaaA0AAaAa0aaaaaaA0aA0AaAAA0AAAA0AaAaa0AaAaAAaaaaa
+ AaaaAaAAaAaaAa0AaaAAaaaAaA0aaAAa0AaAaaAaAaaAaAaAAAAaaAaaaAaAa0aAAaAA
+ 0A0A==
+ARC-Authentication-Results: a=0; aa.aaaaaa.aaa;       aaaa=aaaa
+ aaaaaa.a=@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa
+ aaaaaa.a=aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa0000 aaaaaa.a=AAaAAAaA;       aaa=aaaa
+ (aaaaaa.aaa: aaaaaa aa aaaaaaaaaaaaaaaaaaaa@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa
+ aaaaaaaaaa 00.0.000.000 aa aaaaaaaaa aaaaaa)
+ aaaa.aaaaaaaa=AAAAAaaaaaaaaaaaaaaa@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa;
+ aaaaa=aaaa (a=AAAA aa=AAAA aaa=AAAA)
+ aaaaaa.aaaa=aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa
+Return-Path: <AAAAAaaaaaaaaaaaaaaa@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa>
+Received-SPF: aaaa (aaaaaa.aaa: aaaaaa aa
+ aaaaaaaaaaaaaaaaaaaa@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa aaaaaaaaaa 00.0.000.000
+ aa aaaaaaaaa aaaaaa) aaaaaa-aa=00.0.000.000;
+Authentication-Results: aa.aaaaaa.aaa;       aaaa=aaaa
+ aaaaaa.a=@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa
+ aaaaaa.a=aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa0000 aaaaaa.a=AAaAAAaA;       aaa=aaaa
+ (aaaaaa.aaa: aaaaaa aa aaaaaaaaaaaaaaaaaaaa@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa
+ aaaaaaaaaa 00.0.000.000 aa aaaaaaaaa aaaaaa)
+ aaaa.aaaaaaaa=AAAAAaaaaaaaaaaaaaaa@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa;
+ aaaaa=aaaa (a=AAAA aa=AAAA aaa=AAAA)
+ aaaaaa.aaaa=aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa
+DKIM-Signature: a=0; a=aaa-aaa000; a=aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa;
+ a=aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa0000; a=aaaaaaa/aaaaaaa;	a=aaa/aaa;
+ a=@aaaaa.aaaaaaaaaaaaaaaa.aaaa.aaa; a=0000000000; a=0000000000;	=?utf-8?q?a?=
+ =?utf-8?q?=3DAaaa=3AAaaaaa=3AAaaaa-Aa=3AAaaaaaa=3AAaaa=3AAaaaaaa-AA=3AAa=3AA?=
+ =?utf-8?q?a=3AAAAA-Aaaaaaa=3AAaaaaaa-Aaaa=3A=09Aaaaaaa-Aaaaaaaa-Aaaaaaaa=3AA?=
+ =?utf-8?q?aaaaaa-AA=3AAaaaaaa-Aaaaaaaaaaa=3AAaaaaa-Aaaa=3AAaaaaa-Aaaa=3A=09A?=
+ =?utf-8?q?aaaaa-Aaaaaa=3AAaaaaa-Aa=3AAaaaaa-Aa=3AAaaaaa-Aaaaaaa-AA=3AAa-Aaaa?=
+ =?utf-8?q?a-Aa=3AAaaaaaaaaa=3AAaaa-Aa=3A?=
+	Aaaa-Aaaa:Aaaa-Aaaaaaaaaaa:Aaaa-Aaaaaaaaa:Aaaa-Aaaa:Aaaa-Aaaaa:Aaaa-Aaaaaaa;
+	aa=AaAAaaAAaaaAAaaAaaAAAAaAaaAa0A0AaAAAA/aAaaA=;
+	a=AAaAAAaAAaaAAAAaA0AAaAA+a000aAaAAA0aaA+aaaaAaaaaaAAaA0aa0a00a0aA
+	AAaaAaAAaaaAaAA000000A+aaA+aa0Aa0A0aaAAaAA0aaA0AaaaaaaaaAAaaa0Aa
+	A0aa0AaAa0a0aaaaA00AAAaA0aaAa+aAAAaAA/0AaAaaaa+a0A0+aa0AAAaaaaAa
+	aA0AaaaAAaa0A0AA0aAAa00aaaaaa0aAaAa+0A0a0aaaa000AaAAaaaaaAAa0aAa
+	a0aAA0AaaA0aAAAaaaaaa0AaAAaAAaA+AaAAAaA0AAAAaaAaa/AaAa0AAa00Aa0a
+	a0aa0a0aAa00AAaA0AAaaa==;
+Date: Sat, 12 Feb 2022 08:36:45 -0600
+X-AuditID: 00000a00-aaaa000000000000-aa-0000a0aa0a00
+From:
+  USPS Informed Delivery <USPSInformeddelivery@email.informeddelivery.usps.com>
+To: aaaa00@aaaaa.aaa
+Message-ID:
+  <000000000.000000.0000000000000.AaaaAaaa.aaaaa@aaaaaaaaa0a0a.aaaa.aaa>
+Subject: Your Daily Digest for Sat, Feb 12
+MIME-Version: 1.0
+X-Brightmail-Tracker:
+ A0aAAAAAAAAAA+AaAaaAAAAAaAaAAaAAaAAAaaAaaAAaaaa0AAaAaaAaAAaAAAAAAAa0aa00
+	aa0AAAAaa0Aaa0aAAaAaa0AAAAA0A0aAA+aAA0aaaAAaAAa0aAAAaAAAAaAA0aAaAaAaAa0A
+	AAAAaAA/Aa0AA0AAAAaAaaAaaAaaAAAAaAa0aaAaaAaAAAA00Aa0AAaAAAaa0a0A0AAaAAaA
+	A0+aaAaAAaAAA0+aAaaAaAAAAAaAaaAAAaAAaAA0aAa0Aaa0aAA0aAaAAaaaaAAAaaa0AAaA
+	AA00+aaaAaaAA0/0AaAaaAAAAAAA+a/0AA0aaaAaa0A0AaaAA0a0aAAA0aa0aaAa0a0A00Aa
+	A0AAaAAAa0AAaAaaaa0AAAaaAaAAAAa/AaAa0AAaA0A00aAAaAAaA00aaaa/a0aaAAAAaAAA
+	aa0aAa0A0aA0A0+Aa0Aa++aAaAAAaaAaa00a+0AAaAaAa0AA0AAaa00AAAa0AAa0aaAA0Aaa
+	aAa0AAaAA0aaA00Aaaa0aA0A0Aa+Aaa+a0aAaaa0aaa0AAaA0AaAAAAa++aA0+aaa/aa00A0
+	AA00aaaA00aaaaaAaaa000a0AaAaA000aaAAAa0AAaAAAAa0aaaaaA0AAaA/a0Aa0aaa+A0A
+	a0aaAA0aAA+00A/a0Aa00aAAa0aaaAaAAaAAaAaAaaAAaaAAAaaAAAA=
+Content-Type: multipart/alternative; boundary="---ANONYMIZEDEMAILBOUNDARY---"
+
+-----ANONYMIZEDEMAILBOUNDARY---
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+-----ANONYMIZEDEMAILBOUNDARY---
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml">
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type"/>
+<meta name=3D"=E2=80=9Dx-apple-disable-message-reformatting=E2=80=9D"/>
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewport"/>
+<title>Informed Delivery</title>
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<style type=3D"text/css">
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+div[style*=3D"margin: 16px 0"] {
+    margin: 0 !important;
+}
+.from {
+    color: #000000;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    margin: 15px 0 -10px 6%!important;
+    padding: 0;
+}
+table, td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+    color: #595959;
+}
+.custom-email-doc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    display: block;
+    margin: 0 auto;
+    max-width: 820px!important;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+p.details {
+    color: #6f6e6e;
+    font-size: 12px;
+    padding-top: 8px;
+}
+p.legal {
+    font-size: 11px;
+    color: #595959;
+    font-weight: normal;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+hr {
+    clear: both;
+    display: block;
+    height: 1px;
+    background-color: #D8D8D8;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3573B1;
+    text-decoration: none;
+}
+a:link {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #3573B1;
+}
+a:hover {
+    text-decoration: none!important;
+    color: #3573B1!important;
+    font-weight: bold;
+}
+a.inline-link {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #3573B1!important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+a.inline-link a:hover {
+    text-decoration: none!important;
+}
+a img {
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+}
+img {
+    outline-width: medium;
+    outline-style: none;
+    outline-color: initial;
+    text-decoration: none;
+    max-width: 100%;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 0;
+}
+.title-text {
+    font-size: 32px;
+    color: #333366;
+    font-weight: bold;
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+}
+.h1banner {
+    vertical-align: middle;
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 32px;
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 15px;
+}
+table {
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    vertical-align: text-top;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    margin: 0 auto !important;
+}
+ol, ul {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+li {
+    margin-bottom: 5px;
+    margin-left: 0;
+    padding-left: 0;
+}
+.ridetableright {
+    float: right;
+    width: 55%;
+    display: inline-block;
+}
+.ridetableleft {
+    float: left;
+    width: 40%;
+    display: inline-block;
+}
+/* Begin Apple Fixes */
+a[x-apple-data-detectors],     /* iOS */ .unstyle-auto-detected-links a, .aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+/* End Apple Fixes */
+    /* Begin Gmail Fixes */
+.im {
+    color: inherit !important;
+}
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+img.g-img+div {
+    display: none !important;
+}
+
+/* End Gmail Fixes */
+    /* Begin iPhone Fixes */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+u~div .email-container {
+    min-width: 320px !important;
+}
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+u~div .email-container {
+    min-width: 375px !important;
+}
+}
+
+@media only screen and (min-device-width: 414px) {
+u~div .email-container {
+    min-width: 414px !important;
+}
+}
+/* End iPhone Fixes */
+b, strong {
+    font-weight: bold;
+}
+i, em {
+    font-style: italic;
+}
+.desktop-only {
+    display: block;
+}
+.mobile-only {
+    display: none;
+    mso-hide: all !important;
+}
+.padding-height-top {
+    height: 40px;
+}
+.padding-height-bottom {
+    height: 30px;
+}
+.padding-ridealong-top {
+    padding-top: 20px
+}
+.padding-ridealong-bottom {
+    padding-bottom: 20px
+}
+.padding {
+    padding-right: 6%
+}
+
+@media screen and (max-width: 600px) {
+/*  .ridetableright {
+    float: left;
+    width: 100%!important;
+    clear: both;
+    display: block!important;
+}
+.ridetableleft {
+    float: left;
+    width: 100%!important;
+    clear: both;
+    display: block!important;
+}*/
+.from {
+    color: #000000;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    margin: 15px 0 -10px 6%!important;
+    padding: 0;
+}
+.padding {
+    padding-left: 30px;
+    padding-right: 30px
+}
+.padding-ridealong-top {
+    padding-top: 15px
+}
+.padding-ridealong-bottom {
+    padding-bottom: 20px
+}
+.padding-height-top {
+    height: 30px;
+}
+.padding-height-bottom {
+    height: 10px;
+}
+}
+
+@media screen and (max-width: 550px) {
+.mobile-label-width {
+    width: 180px !important;
+    padding-top: 20px;
+}
+.ridetableright {
+    float: right;
+    width: 45%!important;
+    display: inline-block;
+}
+.ridetableleft {
+    float: left;
+    width: 40%!important;
+    display: inline-block;
+}
+.ridealongimg {
+    max-width: 175px!important;
+}
+}
+
+@media screen and (max-width: 500px) {
+.mobile-label-width {
+    width: 140px !important;
+    padding-top: 20px;
+}
+}
+
+@media screen and (max-width: 450px) {
+.desktop-only {
+    display: none!important;
+    mso-hide: all!important;
+}
+.mobile-only {
+    display: block !important;
+    mso-hide: all !important;
+}
+.mobile-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    direction: ltr !important;
+}
+.title-text {
+    font-size: 20px;
+}
+.mobile-centered {
+    text-align: center !important;
+}
+.responsive-image {
+    height: auto !important;
+}
+.indented {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.mobile-label-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    direction: ltr !important;
+}
+.padding {
+    padding-left: 20px;
+    padding-right: 20px
+}
+.padding-ridealong-top {
+    padding-top: 5px
+}
+.padding-ridealong-bottom {
+    padding-bottom: 20px
+}
+.padding-height-top {
+    height: 20px;
+}
+.padding-height-bottom {
+    height: 0;
+}
+}
+</style>
+</head>
+<body lang=3D"EN-US" link=3D"#333366" style=3D"margin: 0 auto; font-family:Arial, sans-serif; font-size: 16px;color:#595959; padding:0;max-width: 820px!important;" vlink=3D"#333366">
+<div class=3D"custom-email-doc">
+<!--main table-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"padding:10px;margin:10px;margin:0 auto;max-width: 820px!important" width=3D"100%">
+<tr>
+<td><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-spacing: 0px;-webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; font-family:Arial, sans-serif; font-family:Arial, sans-serif; font-size: 0.750em;color:#00000=
+0; max-width:820px;margin:0 auto;" width=3D"100%">
+<tr><!--row within main table-->
+<td width=3D"100%"><table cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-collapse: collapse; font-family:Arial, sans-serif;" width=3D"100%">
+<tr>
+<td align=3D"center" style=3D"padding-top: 20px; padding-bottom: 30px; font-size: 12px; font-family: Arial, sans-serif; padding-left: 3%; color: #595959; line-height: 16px; text-align: left;" width=3D"50%">You have mail and packages arriving soon.</td>
+<td align=3D"center" style=3D"padding-top: 20px; padding-bottom: 30px; font-size: 12px; font-family: Arial, sans-serif; padding-right: 3%; color: #595959; line-height: 16px; text-align: right;" width=3D"50%"><span style=3D"padding-top: 20px; padding-bottom: 30px; font-size: 12px; font-family: Arial=
+, sans-serif; padding-right: 5px; color: #595959; line-height: 16px; text-align: left;">2/12/2022</span></td>
+</tr>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%">
+<tr>
+<td align=3D"left" style=3D"vertical-align:middle;padding-left:30px" valign=3D"middle"><span><a href=3D"https://www.usps.com/" style=3D"border:none; font-family:Arial, sans-serif;vertical-align:middle" tabindex=3D"1"><img alt=3D"USPS.com Informed Delivery" height=3D"36" id=3D"logo--main" src=3D"htt=
+ps://www.usps.com/real-mail/images/logo_mobile.png" style=3D"border:none;" width=3D"64"/></a></span> <span class=3D"title-text" style=3D"text-align:center;font-family:Arial, sans-serif; color:#333366; line-height: 34px; font-weight: bolder;vertical-align:top;padding-left:20px">COMING TO YOUR MAILBO=
+X SOON.</span></td>
+</tr>
+</table>
+<!--  customerAlerts BEGIN -->
+<div align=3D"center"> </div>
+<!--  customerAlerts END -->
+<br/>
+<div align=3D"left" style=3D"background-color:#333366; vertical-align: middle; margin-left:10px; margin-right:10px;padding-left:10px;"> <img alt=3D"You have mail arriving soon." class=3D"responsive-image" src=3D"https://www.usps.com/email/id/IDdailyDmailHeader90.jpg" style=3D"border:none;display: i=
+nline-block;vertical-align: middle;" title=3D"You have mail arriving soon."/> </div>
+<br/>
+<table align=3D"center" role=3D"presentation" width=3D"100%">
+<tr>
+<td align=3D"right" style=3D"text-align:right;vertical-align:middle; padding-right:10px;"><a class=3D"inline-link" href=3D"https://informeddelivery.usps.com/box/pages/secure/DashboardAction_input?keyword=3Daaaa" style=3D"vertical-align: middle; font-family:Arial, sans-serif;font-weight:bold;font-si=
+ze:16px; line-height: 18px;" tabindex=3D"2">View all mail on dashboard</a></td>
+</tr>
+</table>
+<br/>
+<br/>
+<!--MAILPIECES AND RIDEALONG HTML FIT IN HERE BEGIN-->
+<div align=3D"center" style=3D"margin-top: 30px"> <table align=3D"center" bgcolor=3D"#ffffff" role=3D"presentation" style=3D"margin-top: 10px;margin-bottom:0px;padding-top: 10px;padding-bottom:20px;width:800px !important" width=3D"800">
+<tr>
+<td>
+<table align=3D"center" role=3D"presentation" style=3D"padding-bottom:20px;width:800px !important" width=3D"800">
+<tr style=3D"margin-bottom:20px;">
+<td align=3D"left" style=3D"padding-top:30px; padding-bottom:0px; font-size: 16px; text-align: left; font-family:Arial, sans-serif;vertical-align:middle;color:#595959; line-height: 18px;padding-left:40px">No mail available to display.</td>
+</tr>
+</table><!--end table content-->
+</td></tr>
+</table> </div>
+<br/>
+<!--MAILPIECES AND RIDEALONG HTML FIT IN HERE END-->
+<!--PACKAGES HTML FIT IN HERE BEGIN-->
+<div align=3D"left" style=3D"background-color:#333366; vertical-align: middle; margin-left:10px; margin-right:10px;padding-left:10px;max-width: 820px!important"> <img alt=3D"The packages below are expected to be delivered based upon data at the time this email was sent." class=3D"responsive-image" =
+src=3D"https://www.usps.com/email/id/IDdailyDpackagesHeader90.jpg" style=3D"border:none;display: inline-block;vertical-align: middle;" title=3D"The packages below are expected to be delivered based upon data at the time this email was sent."/> </div>
+<br/>
+<table align=3D"center" role=3D"presentation" style=3D"max-width: 820px!important" width=3D"100%">
+<tr>
+<td align=3D"right" style=3D"text-align:right;vertical-align:middle; padding-right:10px;"><a class=3D"inline-link" href=3D"https://informeddelivery.usps.com/box/pages/secure/DashboardAction_input?keyword=3Daaaa" style=3D"vertical-align: middle; font-family:Arial, sans-serif;font-weight:bold;font-si=
+ze:16px;color: #3573B1!important; line-height: 18px;" tabindex=3D"2">View all packages on dashboard</a></td>
+</tr>
+</table>
+<br/>
+<br/>
+<div align=3D"left" style=3D"width:100%;margin-top: 20px;padding-left:20px" width=3D"100%">
+<br/>
+<table align=3D"left" role=3D"presentation" style=3D"margin-bottom:30px" width=3D"100%">
+<tr>
+<td align=3D"left" style=3D"text-align:left;vertical-align:middle;padding-top: 20px;padding-bottom:5px"><span style=3D"vertical-align: middle; font-family:Arial, sans-serif;color:#333366;font-weight:bold;font-size:20px;text-decoration:none; line-height: 18px;padding-right:0px;margin-right:0px">Arri=
+ving Today</span></td>
+<td align=3D"right" style=3D"text-align:right;vertical-align:middle;padding-top: 20px;padding-bottom:5px;padding-right:30px"><span style=3D"vertical-align: middle; font-family:Arial, sans-serif;color:#595959;font-weight:normal;font-size:20px;text-decoration:none; line-height: 18px;padding-right:0px=
+;margin-right:0px;">Saturday, Feb 12</span></td>
+</tr>
+<tr>
+<td align=3D"center" colspan=3D"2" style=3D"font-family:Arial, sans-serif;font-size: 11px;padding-left:0px;padding-top:10px;padding-right: 30px;" valign=3D"middle"><hr size=3D"2" style=3D"margin:0 auto; padding-left:0px; font-family:Arial, sans-serif;font-size: 12px;color:#333366;"/></td>
+</tr>
+</table>
+<div align=3D"left" style=3D"margin-top: 20px;padding-left:20px">
+<!--begin PACKAGE table content with CUSTOM name-->
+<table align=3D"left" bgcolor=3D"#ffffff" role=3D"presentation" style=3D"height:auto;padding-left:20px;color:#595959;margin-bottom:30pt" width=3D"780">
+<tr>
+<td align=3D"left" colspan=3D"1" style=3D"vertical-align:top;padding-top:0px;">
+<p align=3D"left" style=3D"text-align:left;vertical-align:top;font-size:18px;text-decoration:none; line-height: 22px;padding-top:10px;padding-left:20px;padding-right:20px;margin-bottom:10px;font-family: 'HelveticaNeueW02-75Bold', 'Helvetica Neue', Helvetica,
+		Arial, sans-serif; font-weight:bold;color:#595959;">AMAZON TRANSPORTATION FOR MERCHANTS</p>
+<p align=3D"left" style=3D"text-align:left;vertical-align:top;font-weight:bold;font-size:16px;text-decoration:none; line-height: 18px;padding-left:20px;padding-right:20px;margin-bottom:10px; font-family: 'HelveticaNeueW02-75Bold', 'Helvetica Neue', Helvetica,
+		Arial, sans-serif; display:block;color:#333366;"><a href=3D"https://informeddelivery.usps.com/box/pages/secure/packageDashboardAction?selectedTrckNum=3D0000000000000000000000&amp;selectedTypeOfLabel=3DAaaaaaa"><span style=3D"white-space:nowrap;word-break:normal">9300120111409082698691</span></a><=
+/p>
+</td>
+</tr>
+</table>
+<!--end PACKAGE table content-->
+</div><br/>
+</div>
+<br/>
+<div align=3D"left" style=3D"margin-top: 20px;padding-left:20px;padding-bottom:20px!important">
+<br/>
+<table align=3D"left" role=3D"presentation" style=3D"margin-bottom:30px" width=3D"100%">
+<tr>
+<td align=3D"left" style=3D"text-align:left;vertical-align:middle;padding-top: 20px;padding-bottom:5px"><span style=3D"vertical-align: middle; font-family:Arial, sans-serif;color:#333366;font-weight:bold;font-size:20px;text-decoration:none; line-height: 18px;padding-right:0px;margin-right:0px">Arri=
+ving Soon</span></td>
+</tr>
+<tr>
+<td align=3D"center" colspan=3D"1" style=3D"font-family:Arial, sans-serif;font-size: 11px;padding-left:0px;padding-top:10px;padding-right: 30px;" valign=3D"middle"><hr size=3D"2" style=3D"margin:0 auto; padding-left:0px; font-family:Arial, sans-serif;font-size: 12px;color:#333366;"/></td>
+</tr>
+</table>
+<div align=3D"left" style=3D"margin-top: 20px;margin-bottom:20px;padding-left:20px">
+<!--begin PACKAGE table content with CUSTOM name-->
+<table align=3D"left" bgcolor=3D"#ffffff" role=3D"presentation" style=3D"height:auto;padding-left:20px;color:#595959;margin-bottom:30pt" width=3D"780">
+<tr>
+<td align=3D"left" colspan=3D"1" style=3D"vertical-align:top;padding-top:0px;">
+<p align=3D"left" style=3D"text-align:left;vertical-align:top;font-size:18px;text-decoration:none; line-height: 22px;padding-top:10px;padding-left:20px;padding-right:20px;margin-bottom:10px;font-family: 'HelveticaNeueW02-75Bold', 'Helvetica Neue', Helvetica,
+        Arial, sans-serif; font-weight:bold;color:#595959;">Stamps.com</p>
+<p align=3D"left" style=3D"text-align:left;vertical-align:top;font-weight:bold;font-size:16px;text-decoration:none; line-height: 18px;padding-left:20px;padding-right:20px;margin-bottom:10px; font-family: 'HelveticaNeueW02-75Bold', 'Helvetica Neue', Helvetica,
+        Arial, sans-serif; display:block;color:#333366;"><a href=3D"https://informeddelivery.usps.com/box/pages/secure/packageDashboardAction?selectedTrckNum=3D0000000000000000000000&amp;selectedTypeOfLabel=3DAaaaaaa"><span style=3D"white-space:nowrap;word-break:normal">9405511202508597717093</span=
+></a></p>
+<p align=3D"left" style=3D"text-align:left;vertical-align:top;font-size:16px;text-decoration:none; line-height: 18px;padding-left:20px;padding-right:20px;font-family: 'HelveticaNeueW02-75Bold', 'Helvetica Neue', Helvetica,
+		Arial, sans-serif;">Estimated=C2=A0Delivery=C2=A0on:=C2=A0Monday, Feb 14</p>
+</td>
+</tr>
+</table>
+<!--end PACKAGE table content-->
+</div><br/>
+</div>
+<br/>
+<br/>
+<!--PACKAGES HTML FIT IN HERE END-->
+<!--table Go to Dashboard link BEGIN-->
+<div class=3D"custom-email-doc">
+<table align=3D"center" role=3D"presentation" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"vertical-align:middle;line-height:18px;padding-left:20px;padding-right:20px;" width=3D"100%"><hr size=3D"2" style=3D"width:100%;margin-top: 30px;"/>
+<p style=3D"padding-left:20px;padding-right:20px">You may have more mail or packages than are shown in your Daily Digest. To check, <a class=3D"inline-link" href=3D"https://informeddelivery.usps.com/box/pages/secure/DashboardAction_input?keyword=3Daaaa" target=3D"_blank">go to your Dashboard</a></p>
+<p style=3D"padding-left:20px;padding-right:20px">Mail may arrive several days after you receive this notification.  Please allow up to a week for delivery before reporting missing mail. <a class=3D"inline-link" href=3D"https://informeddelivery.usps.com/box/pages/mailpiece/confirm?id=3D000000000%C3=
+%97aaaa%3D0000000000000&amp;mac=3D0000000000a000a00000a000a000aaa00000a0000aa00a00a00aa00000aa000a&amp;deliveryDate=3D00%2F00%2F0000&amp;physicalAddressId=3D000000000" tabindex=3D"4">Report missing mail </a> </p>
+<hr size=3D"2" style=3D"width:100%;"/></td>
+</tr>
+</tbody>
+</table>
+<!--table Go to Dashboard link END-->
+<!--table Didnt get a mailpiece-->
+<table cellpadding=3D"10" role=3D"presentation" style=3D"margin-top: 0px; font-family:Arial, sans-serif;" width=3D"100%">
+<!--row within container table-->
+<tr>
+<td colspan=3D"2" style=3D"font-size: 11px; font-family:Arial, sans-serif; color:#595959; line-height: 16px; padding-bottom:30px;padding-left:40px;padding-right:20px;"><p class=3D"legal">*These images represent mail pieces that are sorted on USPS<sup>=C2=AE</sup> automated equipment. Some of your m=
+ail may not be shown here. </p>
+<p class=3D"legal">You subscribed to this service with USPS<sup>=C2=AE</sup> New Products &amp; innovation, PO Box 23972, Washington DC 20026-3972.</p>
+<!--                    <p class=3D"legal">You subscribed to this service with USPS<sup>&reg;</sup>  Innovative Business Technology, PO Box 23972, Washington DC 20026-3972.</p>-->
+<p class=3D"legal">If you no longer wish to receive daily email notifications, <a class=3D"inline-link" href=3D"https://informeddelivery.usps.com/box/pages/unsubscribe/confirm?id=3D000000000%C3%97aaaa%3D0000000000000&amp;mac=3D0000000000aaaa00a0000000000aaa0a0000a00a00a0a00a0a00000aa0000000&amp;phy=
+sicalAddressId=3D000000000" tabindex=3D"5">unsubscribe here.</a> </p>
+<p class=3D"legal">If you need support, please visit <a class=3D"inline-link" href=3D"https://usps.force.com/emailus/s/?path=3D000000000" tabindex=3D"6">user support for Informed Delivery<sup>=C2=AE</sup>.</a> </p>
+<p class=3D"legal">For more information about this service, please visit <a class=3D"inline-link" href=3D"http://faq.usps.com" tabindex=3D"7">general information about Informed Delivery.</a> </p>
+<p class=3D"legal">Copyright=C2=A9 2021 United States Postal Service<sup>=C2=AE</sup>. All Rights Reserved. The Eagle Logo and the trade dress of USPS<sup>=C2=AE</sup> Packaging are among the many trademarks of the U.S. Postal Service<sup>=C2=AE</sup>. </p>
+<p class=3D"legal">This is an automated email, please do not reply to this message. This message is for the designated recipient only and may contain privileged, proprietary, or otherwise private information. If you have received it in error, please delete. Any other use of the email by you is proh=
+ibited.</p></td>
+</tr>
+</table>
+</div>
+<!--end table--></td>
+</tr>
+<!--end row within main table-->
+</table></td>
+</tr>
+</table>
+<!--end main table-->
+<p style=3D"display:none;visibility:hidden"> <br/>
+<img alt=3D"" height=3D"0" src=3D"http://pixel.watch/1ewx" style=3D"display:none;visibility:hidden" width=3D"0"/> <img alt=3D"" height=3D"0" src=3D"https://informeddelivery.usps.com/tracking/emailRead?emailToken=3D00aa00a00000aaaa00000a00a00a00a00&amp;sentTime=3D0000-00-00A00%3A00%3A00.000A&amp;del=
+iveryDate=3D0000-00-00A00%3A00%3A00.000A&amp;physicalAddressId=3D000000000" style=3D"display:none;visibility:hidden" width=3D"0"/> </p>
+</div>
+</body>
+</html>
+
+-----ANONYMIZEDEMAILBOUNDARY-----

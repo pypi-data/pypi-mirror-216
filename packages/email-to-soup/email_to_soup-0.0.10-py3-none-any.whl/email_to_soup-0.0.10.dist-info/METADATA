@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: email-to-soup
+Version: 0.0.10
+Summary: Email to HTML-Soup & Soup-Text
+Home-page: https://github.com/devtanna/email-to-soup
+Author-email: Dev Tanna <dev.tanna@gmail.com>
+Project-URL: Homepage, https://github.com/devtanna/soup-to-email
+Project-URL: Bug Tracker, https://github.com/devtanna/soup-to-email/issues
+Keywords: html-soup,soup-text,email-to-soup,email-to-text
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: beautifulsoup4 (==4.11.1)
+Requires-Dist: lxml (==4.9.1)
+Requires-Dist: html2text (==2020.1.16)
+
+# email-to-soup
+Convert Email to HTML-Soup &amp; Soup-Text
+
+## Usage
+```python
+from email_to_soup import soupify_email
+
+email = """ your email here
+"""
+soup_object = soupify_email(email)
+print(soup_object.soup_text)
+print(soup_object.html_body)
+print(soup_object.html_soup)
+```
