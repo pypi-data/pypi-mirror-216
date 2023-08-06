@@ -1,0 +1,8 @@
+include README.rst
+include LICENSE
+include NOTICE
+include bin/*
+include media/*
+include requirements/*
+recursive-include boxkit/cbox *
+recursive-include boxkit/depends *
