@@ -1,0 +1,6 @@
+[console_scripts]
+
+
+[nbdev]
+omekac_iiif_tools = omekac_iiif_tools._modidx:d
+
