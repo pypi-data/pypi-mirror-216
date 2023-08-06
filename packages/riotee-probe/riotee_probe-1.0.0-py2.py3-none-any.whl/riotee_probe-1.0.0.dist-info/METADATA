@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: riotee-probe
+Version: 1.0.0
+Summary: Riotee Probe Python package
+Author-email: Kai Geissdoerfer <info@nessie-circuits.de>
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: numpy
+Requires-Dist: intelhex
+Requires-Dist: click
+Requires-Dist: pyserial
+Requires-Dist: progress
+Requires-Dist: pyocd
