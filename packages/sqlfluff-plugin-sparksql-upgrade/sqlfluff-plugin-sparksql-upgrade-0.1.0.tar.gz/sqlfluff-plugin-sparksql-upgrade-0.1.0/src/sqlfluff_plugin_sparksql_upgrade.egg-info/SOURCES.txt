@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.py
+src/sparksql_upgrade/__init__.py
+src/sparksql_upgrade/plugin_default_config.cfg
+src/sparksql_upgrade/rules.py
+src/sqlfluff_plugin_sparksql_upgrade.egg-info/PKG-INFO
+src/sqlfluff_plugin_sparksql_upgrade.egg-info/SOURCES.txt
+src/sqlfluff_plugin_sparksql_upgrade.egg-info/dependency_links.txt
+src/sqlfluff_plugin_sparksql_upgrade.egg-info/entry_points.txt
+src/sqlfluff_plugin_sparksql_upgrade.egg-info/requires.txt
+src/sqlfluff_plugin_sparksql_upgrade.egg-info/top_level.txt
