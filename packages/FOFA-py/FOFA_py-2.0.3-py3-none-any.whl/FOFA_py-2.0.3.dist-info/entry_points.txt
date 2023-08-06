@@ -1,0 +1,3 @@
+[console_scripts]
+fofa = fofa.__main__:main
+
