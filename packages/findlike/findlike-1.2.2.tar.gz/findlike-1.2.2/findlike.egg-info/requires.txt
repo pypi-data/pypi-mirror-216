@@ -1,0 +1,14 @@
+nltk~=3.8
+numpy~=1.21.6
+scikit-learn~=1.0.2
+rank-bm25~=0.2.2
+stop-words~=2018.7.23
+
+[dev]
+build~=0.10.0
+black~=23.3.0
+twine~=4.0.2
+pylint~=2.17.4
+mypy~=1.4.0
+flake8~=5.0.4
+pytest~=7.4.0
