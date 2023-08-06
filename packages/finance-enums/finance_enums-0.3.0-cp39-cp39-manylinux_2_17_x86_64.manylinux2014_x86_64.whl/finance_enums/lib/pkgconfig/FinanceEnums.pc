@@ -1,0 +1,10 @@
+prefix="/project/_skbuild/linux-x86_64-3.9/cmake-install/finance_enums"
+exec_prefix="${prefix}"
+libdir=""
+includedir=""
+
+Name: finance-enums
+Description: 
+Version: 0.3.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -lfinance-enums
