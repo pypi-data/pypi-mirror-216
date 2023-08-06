@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: electricalsim_opf_quadratic
+Version: 1.0
+Summary: Optimal power flow calculation with quadratic costs for the Electrical Grid Simulator
+Author-email: "PhD Ariel S. Loyarte" <aloyarte@frsf.utn.edu.ar>
+License: MIT
+License-File: LICENSE
+Keywords: Electrical Grid Simulator,electrical networks,energy,optimal power flow,pandapower,power systems,simulation
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: electricalsim>=0.0.7.0
+Description-Content-Type: text/markdown
+
+# electricalsim-opf-quadratic
+
+Optimal Power Flow calculation with quadratic costs for the Electrical Grid Simulator (EGS).
