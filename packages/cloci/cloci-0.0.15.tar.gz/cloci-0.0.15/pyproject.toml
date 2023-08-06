@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloci"
+version = "0.0.15"
+authors = [{name="Zachary Konkel", email="konkelzach@protonmail.com"}]
+description = "Co-occurrence Locus and Orthologous Cluster Identifier"
+readme = "cloci/README.md"
+license = {file = "cloci/LICENSE"}
+requires-python = '>=3.0,<4'
+dependencies = ['cloci', 'numpy', 'scipy', 'graph-tools', 'cogent3',
+                'sniffio', 'pydantic', 'PyYAML', 'SQLAlchemy', 'packaging',
+                'pydantic', 'anyio', 'attrs']
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/xonq/cloci"
+"Bug Tracker" = "https://github.com/xonq/cloci/issues"
+
+[project.scripts]
+cloci = "cloci.cloci:main"
