@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: fortiedr
+Version: 1.1
+Summary: Open-source python package intended to help on interacting with FortiEDR API.
+Home-page: UNKNOWN
+Author: Rafael Foster
+Author-email: fosterr@fortinet.com
+License: UNKNOWN
+Project-URL: GitHub, https://github.com/rafaelfoster/FortiEDR_API
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.5
