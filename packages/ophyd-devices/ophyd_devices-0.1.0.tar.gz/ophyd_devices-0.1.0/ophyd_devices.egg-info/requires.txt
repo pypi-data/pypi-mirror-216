@@ -1,0 +1,8 @@
+ophyd
+typeguard
+prettytable
+bec_lib
+
+[dev]
+pytest
+pytest-random-order

@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: ophyd_devices
+Version: 0.1.0
+Summary: Custom device implementations based on the ophyd hardware abstraction layer
+Home-page: https://gitlab.psi.ch/bec/ophyd_devices
+License: UNKNOWN
+Project-URL: Bug Tracker, https://gitlab.psi.ch/bec/ophyd_devices/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# Ophyd Devices
+
+Ophyd Devices
+
