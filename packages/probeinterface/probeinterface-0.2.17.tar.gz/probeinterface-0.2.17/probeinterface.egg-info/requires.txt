@@ -1,0 +1,16 @@
+numpy
+
+[docs]
+pillow
+sphinx-gallery
+matplotlib==3.2.2
+scipy
+pandas
+
+[test]
+pytest
+pytest-cov
+matplotlib
+scipy
+pandas
+h5py
