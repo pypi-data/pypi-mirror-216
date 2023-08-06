@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: inmanta-module-vyos
+Version: 3.0.5
+License: ASL2.0
+License-File: LICENSE
+Requires-Dist: inmanta-module-ip
+Requires-Dist: inmanta-module-net
+Requires-Dist: inmanta-module-openstack
+Requires-Dist: inmanta-module-std
+Requires-Dist: vyattaconfparser (<1,>=0.5)
+Requires-Dist: vymgmt (<1,>=0.1)
+Requires-Dist: pexpect (<5,>=4.8)
+Requires-Dist: ptyprocess (<1,>=0.7)
+
