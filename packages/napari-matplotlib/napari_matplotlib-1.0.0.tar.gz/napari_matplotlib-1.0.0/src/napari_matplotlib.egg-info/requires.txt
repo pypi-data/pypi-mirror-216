@@ -1,0 +1,27 @@
+matplotlib
+napari
+numpy
+tinycss2
+
+[docs]
+napari[all]
+numpydoc
+pydata-sphinx-theme
+qtgallery
+sphinx
+sphinx-automodapi
+sphinx-gallery
+
+[testing]
+napari[pyqt6-experimental]
+pooch
+pyqt6
+pytest
+pytest-cov
+pytest-mock
+pytest-mpl
+pytest-qt
+tox
+
+[testing:sys_platform == "linux"]
+pytest-xvfb
