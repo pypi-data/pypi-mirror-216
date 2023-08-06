@@ -1,0 +1,3 @@
+[console_scripts]
+blacksmith=blacksmith.scripts.cli:main
+
