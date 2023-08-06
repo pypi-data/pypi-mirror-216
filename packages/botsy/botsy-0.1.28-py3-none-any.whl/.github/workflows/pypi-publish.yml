@@ -1,0 +1,23 @@
+name: Publish to PyPi (tag push only)
+
+on:
+  workflow_dispatch:
+  release:
+    types: 
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: |
+        docker build --build-arg PYPI_USERNAME="${{ secrets.PYPI_USERNAME }}" --build-arg PYPI_PASSWORD="${{ secrets.PYPI_PASSWORD }}" -t testbuild .
+
+    - name: Run Commands Inside Container
+      run: |
+        docker run -e PYPI_BUILD=1  testbuild
+
