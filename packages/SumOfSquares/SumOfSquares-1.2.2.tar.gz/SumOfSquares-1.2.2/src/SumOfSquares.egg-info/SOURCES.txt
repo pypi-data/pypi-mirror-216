@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/SumOfSquares/SoS.py
+src/SumOfSquares/__init__.py
+src/SumOfSquares/basis.py
+src/SumOfSquares/util.py
+src/SumOfSquares.egg-info/PKG-INFO
+src/SumOfSquares.egg-info/SOURCES.txt
+src/SumOfSquares.egg-info/dependency_links.txt
+src/SumOfSquares.egg-info/requires.txt
+src/SumOfSquares.egg-info/top_level.txt
+tests/test_basis.py
+tests/test_sos.py

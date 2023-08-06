@@ -1,0 +1,10 @@
+numpy
+sympy
+picos
+
+[ConvexHull]
+scipy
+
+[test]
+pytest
+pytest-cov
