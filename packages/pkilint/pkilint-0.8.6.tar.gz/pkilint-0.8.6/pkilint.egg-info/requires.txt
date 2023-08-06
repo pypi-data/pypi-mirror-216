@@ -1,0 +1,11 @@
+pyasn1
+pyasn1-alt-modules
+pyyaml
+cryptography
+iso3166
+validators
+python-dateutil
+publicsuffixlist
+
+[dev]
+pytest
