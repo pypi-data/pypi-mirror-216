@@ -1,0 +1,292 @@
+###
+# Initially copied from
+# https://github.com/actions/starter-workflows/blob/main/ci/python-package.yml
+# And later based on the version I (jamadden) updated at gevent/gevent
+#
+# Original comment follows.
+###
+###
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+###
+
+###
+# Important notes on GitHub actions:
+#
+# - We only get 2,000 free minutes a month (private repos)
+# - We only get 500MB of artifact storage
+# - Cache storage is limited to 7 days and 5GB.
+# - macOS minutes are 10x as expensive as Linux minutes
+# - windows minutes are twice as expensive.
+#
+# So keep those workflows light.
+#
+# In December 2020, github only supports x86/64. If we wanted to test
+# on other architectures, we can use docker emulation, but there's no
+# native support.
+#
+# Another major downside: You can't just re-run the job for one part
+# of the matrix. So if there's a transient test failure that hit, say, 3.8,
+# to get a clean run every version of Python runs again. That's bad.
+# https://github.community/t/ability-to-rerun-just-a-single-job-in-a-workflow/17234/65
+
+name: tests
+
+
+# Triggers the workflow on push or pull request events
+on: [push, pull_request]
+# Limiting to particular branches might be helpful to conserve minutes.
+#on:
+  # push:
+  #   branches: [ $default-branch ]
+  # pull_request:
+  #   branches: [ $default-branch ]
+
+env:
+  # Weirdly, this has to be a top-level key, not ``defaults.env``
+  PYTHONHASHSEED: 8675309
+  PYTHONUNBUFFERED: 1
+  PYTHONDONTWRITEBYTECODE: 1
+  # PYTHONDEVMODE leads to crashes in pylibmc.
+  # See https://github.com/lericson/pylibmc/issues/254
+  # - PYTHONDEVMODE=1
+  PYTHONFAULTHANDLER: 1
+
+  PIP_UPGRADE_STRATEGY: eager
+  # Don't get warnings about Python 2 support being deprecated. We
+  # know. The env var works for pip 20.
+  PIP_NO_PYTHON_VERSION_WARNING: 1
+  PIP_NO_WARN_SCRIPT_LOCATION: 1
+
+  # Disable some warnings produced by libev especially and also some Cython generated code.
+  # These are shared between GCC and clang so it must be a minimal set.
+  # TODO: Figure out how to set env vars per platform without resorting to inline scripting.
+  CFLAGS: -Ofast -pipe
+  CXXFLAGS: -Ofast -pipe
+  # Uploading built wheels for releases.
+  # TWINE_PASSWORD is encrypted and stored directly in the
+  # travis repo settings.
+  TWINE_USERNAME: __token__
+
+  ###
+  # caching
+  ###
+  CCACHE_DIR: ~/.ccache
+  CC: "ccache gcc"
+  CCACHE_NOCPP2: true
+  CCACHE_SLOPPINESS: file_macro,time_macros,include_file_ctime,include_file_mtime
+  CCACHE_NOHASHDIR: true
+
+  #
+
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # XXX: PyPy 3.9 is failing to build zope.interface 6.0!
+        # Need to take this up with the zope.interface repo.
+        python-version: ['3.12-dev', 3.8, 3.9, '3.10', '3.11']
+        os: [ubuntu-latest, macos-latest]
+        exclude:
+          - os: macos-latest
+            python-version: pypy-3.9
+          # Can't build persistent on 3.12 with -UNDEBUG because it
+          # accesses fields of objects that aren't there in assert statements;
+          # we build linux with assertions enabled, and there is no 3.12
+          # persistent wheel yet, so we have to exclude that one.
+          - os: ubuntu-latest
+            python-version: "3.12-dev"
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: setup.py
+
+      - name: Install ccache, configure CFLAGS (ubuntu)
+        uses: ./.github/actions/config-cc
+
+      - name: Install native libs
+        uses: ./.github/actions/install-native-libs
+
+
+      - name: Install Build Dependencies
+        run: |
+          pip install -U pip
+          pip install -U -q setuptools wheel twine
+          pip install -q -U 'cython>=3.0b3; python_version < "3.12"' "Cython @ https://github.com/cython/cython/archive/37f4dcdc04547875e2836fda076f5707ec50e579.zip; python_version >= '3.12'"
+          pip install -U coverage
+          pip install -U cffi
+      - name: Build mysqlclient
+        # Ubuntu 20 doesn't have libmysqlclient.20, but mysqlclient
+        # client binaries on PyPI are linked against that. We can install that,
+        # but then SSL breaks for an unknown reason, and we can't disable SSL
+        # because authentication requires it (maybe we could change the authentiaction plugin?)
+        # So instead we install the development sources and compile mysqlclient locally.
+        # The relevant package, libmysqlclient-dev, is already installed.
+        if: startsWith( matrix.os, 'ubuntu-20')
+        run: |
+          pip install --no-binary :all: mysqlclient
+
+      - name: Install RelStorage (non-Mac)
+        if: ${{ ! startsWith(runner.os, 'Mac') }}
+        run: |
+          python setup.py bdist_wheel
+          WHL=$(ls dist/*whl)
+          python -m pip install -U  "$WHL[test,docs,all_tested_drivers]"
+        env:
+          # Ensure we test with assertions enabled.
+          # As opposed to the manylinux builds, which we distribute and
+          # thus only use O3 (because Ofast enables fast-math, which has
+          # process-wide effects), we test with Ofast here, because we
+          # expect that some people will compile it themselves with that setting.
+          CPPFLAGS: "-Ofast -UNDEBUG"
+
+      - name: Install RelStorage (Mac)
+        if: startsWith(runner.os, 'Mac')
+        run: |
+          python setup.py bdist_wheel
+          WHL=$(ls dist/*whl)
+          python -m pip install -U "$WHL[test,docs,all_tested_drivers]"
+        env:
+          # Unlike the above, we are actually distributing these
+          # wheels, so they need to be built for production use.
+          CPPFLAGS: "-O3"
+          # Build for both architectures
+          ARCHFLAGS: "-arch x86_64 -arch arm64"
+
+      - name: Check RelStorage build
+        run: |
+          ls -l dist
+          twine check dist/*
+      - name: Upload RelStorage wheel
+        uses: actions/upload-artifact@v2
+        with:
+          name: RelStorage-${{ runner.os }}-${{ matrix.python-version }}.whl
+          path: dist/*whl
+      - name: lint
+        if: matrix.python-version == '3.11' && startsWith(runner.os, 'Linux')
+        # At this writing, PyLint 2.17/astroid 2.15 won't work on 3.12
+        run: |
+          pip install -U pylint
+          python -m pylint --limit-inference-results=1 --rcfile=.pylintrc relstorage -f parseable -r n
+      - name: Initialize Test Databases
+        if: startsWith(runner.os, 'macOS')
+        run: |
+          brew services start mysql
+          brew services start postgresql
+          # Make sure postgresql is accepting connections.
+          # TODO: Use pg_isready in a loop?
+          sleep 5
+          # XXX: mysql isn't currently starting. Why? So
+          # skip initializing it.
+          #
+          # brew postgres uses the current username, apparently, instead of
+          # the standard "postgres" user as the root. It still uses 'postgres'
+          # as the default database, though.
+          brew services list
+          RELSTORAGETEST_PG_UNAME=$USER RELSTORAGETEST_PG_DBNAME=postgres .travis/postgres.sh
+      - name: Initialize Test Databases
+        if: startsWith(runner.os, 'Linux')
+        run: |
+          sudo systemctl start mysql.service
+          echo Configuring MySQL
+          RELSTORAGETEST_MY_PW="--password=root" .travis/mysql.sh
+          # XXX: Disabled: The software is installed, but isn't running by default,
+          # apparently. They *really* want you to use a docker service.
+          # echo Configuring PostgreSQL
+          # .travis/postgres.sh
+      - name: Run tests and report coverage
+        uses: ./.github/actions/run-tests
+        with:
+          useCoverage: ${{ !startsWith(matrix.python-version, 'pypy')  }}
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@v2
+        with:
+          flag-name: run-${{ join(matrix.*, '-') }}
+          parallel: true
+      - name: Publish package to PyPI (mac)
+        # We cannot 'uses: pypa/gh-action-pypi-publish@v1.4.1' because
+        # that's apparently a container action, and those don't run on
+        # the Mac.
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags') && startsWith(runner.os, 'Mac')
+        env:
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+        run: |
+          twine upload --skip-existing dist/*
+
+  coveralls-finish:
+    needs: test
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@v2
+        with:
+          parallel-finished: true
+
+  manylinux:
+    needs: test
+    runs-on: ubuntu-latest
+    # We use a regular Python matrix entry to share as much code as possible.
+    strategy:
+      matrix:
+        python-version: [3.9]
+        image:
+          - manylinux2010_x86_64
+          - manylinux2014_aarch64
+          - manylinux2014_ppc64le
+          - manylinux2014_s390x
+          - manylinux2014_x86_64
+          - musllinux_1_1_x86_64
+          - musllinux_1_1_aarch64
+    name: ${{ matrix.image }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: all
+      - name: Build RelStorage
+        env:
+          DOCKER_IMAGE: quay.io/pypa/${{ matrix.image }}
+        run: bash ./scripts/releases/make-manylinux
+      - name: Store RelStorage wheels
+        uses: actions/upload-artifact@v3
+        with:
+          path: wheelhouse/*whl
+          name: ${{ matrix.image }}_wheels.zip
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.4.1
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+        with:
+          user: __token__
+          password: ${{ secrets.TWINE_PASSWORD }}
+          skip_existing: true
+          packages_dir: wheelhouse/
+
+
+# TODO:
+# * Use YAML syntax to share snippets, like the old .travis.yml did
+# Sadly, as of 2021-02-01, Github Actions does not support anchors at
+# all. Just having an anchor results in an error:
+#
+#   The workflow is not valid. .github/workflows/tests.yml: Anchors
+#   are not currently supported. Remove the anchor 'an-strategy'
+#
+# The alternative of using composite actions doesn't work either,
+# because composite actions are limited to running shell scripts.
+# Steps in them can't call other actions with `uses:`, and nor can
+# they be conditional with `if:`.

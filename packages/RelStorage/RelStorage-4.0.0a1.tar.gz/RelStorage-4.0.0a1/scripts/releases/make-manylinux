@@ -1,0 +1,136 @@
+#!/bin/bash
+# Initially based on a snippet from the greenlet project.
+# This needs to be run from the root of the project.
+# To update: docker pull quay.io/pypa/manylinux2010_x86_64
+set -evo pipefail
+export PYTHONUNBUFFERED=1
+export PYTHONDONTWRITEBYTECODE=1
+
+# Use a fixed hash seed for reproducability
+export PYTHONHASHSEED=8675309
+# Disable tests that use external network resources;
+# too often we get failures to resolve DNS names or failures
+# to connect on AppVeyor.
+export GEVENTTEST_USE_RESOURCES="-network"
+export CI=1
+export TRAVIS=true
+export GEVENT_MANYLINUX=1
+# Don't get warnings about Python 2 support being deprecated. We
+# know. The env var works for pip 20.
+export PIP_NO_PYTHON_VERSION_WARNING=1
+export PIP_NO_WARN_SCRIPT_LOCATION=1
+
+# Build configuration.
+
+export CC="ccache gcc"
+export CXX="ccache g++"
+export LDCXXSHARED="ccache g++ -shared"
+export LDSHARED="ccache gcc -shared"
+export CCACHE_NOCPP2=true
+export CCACHE_SLOPPINESS=file_macro,time_macros,include_file_ctime,include_file_mtime
+export CCACHE_NOHASHDIR=true
+export CCACHE_BASEDIR="/RelStorage"
+export CFLAGS="-pipe -O3"
+export CXXFLAGS="-pipe -O3"
+export BUILD_LIBS=$HOME/.libs
+# Share the ccache directory
+export CCACHE_DIR="/ccache"
+
+# Disable some warnings produced by libev especially and also some Cython generated code.
+# Note that changing the value of these variables invalidates configure caches
+SLOW_BUILD=''
+GEVENT_WARNFLAGS="-Wno-strict-aliasing -Wno-comment -Wno-unused-value -Wno-unused-but-set-variable -Wno-sign-compare -Wno-parentheses -Wno-unused-function -Wno-tautological-compare -Wno-strict-prototypes -Wno-return-type -Wno-misleading-indentation"
+OPTIMIZATION_FLAGS="-pipe"
+if [ -n "$GITHUB_ACTIONS" ]; then
+    if [ "$DOCKER_IMAGE" == "quay.io/pypa/manylinux2014_aarch64" ] || [ "$DOCKER_IMAGE" == "quay.io/pypa/manylinux2014_ppc64le" ] || [ "$DOCKER_IMAGE" == "quay.io/pypa/manylinux2014_s390x" ] ||  [ "$DOCKER_IMAGE" == "quay.io/pypa/musllinux_1_1_aarch64" ] ; then
+        # Compiling with -Ofast is a no-go because of the regression it causes (#1864).
+        # The default settings have -O3, and adding -Os doesn't help much. So maybe -O1 will.
+        echo "Compiling with -O1"
+        OPTIMIZATION_FLAGS="-pipe -O1"
+        SLOW_BUILD=1
+    fi
+else
+    echo "Compiling with -O3"
+    OPTIMIZATION_FLAGS="-pipe -O3"
+fi
+
+export CFLAGS="$OPTIMIZATION_FLAGS $GEVENT_WARNFLAGS"
+export CXXFLAGS="$CFLAGS"
+
+if [ -d /RelStorage -a -d /opt/python ]; then
+    # Running inside docker
+
+    # Set a cache directory for pip. This was
+    # mounted to be the same as it is outside docker so it
+    # can be persisted.
+    # XXX: This works for macOS, where everything bind-mounted
+    # is seen as owned by root in the container. But when the host is Linux
+    # the actual UIDs come through to the container, triggering
+    # pip to disable the cache when it detects that the owner doesn't match.
+    # The workaround is to use ``-u`` in the call to docker run,
+    # but that fails when we need to be root inside the container,
+    # such as to run ``yum``. The ``sudo`` command isn't available.
+    ## export XDG_CACHE_HOME="/cache"
+    id
+    ls -ld /cache
+    mkdir -p /cache/pip
+    ls -ld /cache/pip
+
+    if [ -e /usr/bin/yum ]; then
+        # manylinux
+        # Some images/archs (specificaly 2014_aarch64) don't have ccache;
+        # This also seems to have vanished for manylinux_2010 x64/64 after November 30
+        # 2020 when the OS went EOL and the package repos switched to the "vault"
+        if [ -n "$SLOW_BUILD" ] ; then
+            # This provides access to ccache for the 2014 image; it is already installed in the
+            # s390x image.
+            echo Installing epel
+            rpm -Uvh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-14.noarch.rpm || true
+        fi
+        yum -y install ccache || export CC=gcc LDSHARED="gcc -shared" LDCXXSHARED="gcc -shared"
+    fi
+    if [ -e /sbin/apk ]; then
+        # musllinux
+        apk add ccache
+    fi
+
+    cd /RelStorage
+    rm -rf wheelhouse
+    mkdir wheelhouse
+    ls -l /opt/python
+    for variant in `ls -d /opt/python/cp{312,38,39,310,311}*`; do
+        echo "Building $variant"
+        mkdir /tmp/build
+        cd /tmp/build
+        git clone /RelStorage RelStorage
+        cd RelStorage
+        $variant/bin/pip install -U pip
+        $variant/bin/pip install -U setuptools
+        $variant/bin/pip install -U 'cython>=3.0b3; python_version < "3.12"' "Cython @ https://github.com/cython/cython/archive/37f4dcdc04547875e2836fda076f5707ec50e579.zip; python_version >= '3.12'"
+        PATH=$variant/bin:$PATH $variant/bin/python setup.py bdist_wheel
+        auditwheel show dist/RelStorage*.whl
+        auditwheel repair dist/RelStorage*.whl
+        cp wheelhouse/RelStorage*.whl /RelStorage/wheelhouse
+        cd /RelStorage
+        rm -rf /tmp/build
+    done
+    rm -rf dist build *.egg-info
+    exit 0
+fi
+
+# Mount the current directory as /RelStorage
+# Mount the pip cache directory as /cache
+# and the ccache directory as /ccache
+# `pip cache` requires pip 20.1
+echo Setting up caching
+python --version
+python -mpip --version
+LCACHE="$(dirname `python -mpip cache dir`)"
+echo Sharing pip cache at $LCACHE $(ls -ld $LCACHE)
+echo Sharing ccache dir at $HOME/.ccache
+if [ ! -d $HOME/.ccache ]; then
+    mkdir $HOME/.ccache
+fi
+
+docker run --rm -e GITHUB_ACTIONS -e DOCKER_IMAGE -v "$(pwd):/RelStorage" -v "$LCACHE:/cache" -v "$HOME/.ccache:/ccache" ${DOCKER_IMAGE:-quay.io/pypa/manylinux2014_aarch64} /RelStorage/scripts/releases/$(basename $0)
+ls -l wheelhouse
