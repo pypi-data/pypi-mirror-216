@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: detect-gene-feature
+Version: 0.1.7
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# Plasmid detect gene feature.  
+This is a package developed based on PyO3 for internal use.  
+It contains such functions:  
+
+```python 
+load_feature  
+sequence_search  
+align_feature  
+align_feature_list  
+align_fasta  
+load_fasta  
+align_seq  
+```
