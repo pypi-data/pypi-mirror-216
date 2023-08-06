@@ -1,0 +1,12 @@
+#
+# MANIFEST.in
+#
+
+include MANIFEST.in
+include setup.py
+include CHANGES.rst
+include LICENSE.rst
+include README.rst
+include inspect_extensions.py
+include test_inspect_extensions.py
+include docs/*
