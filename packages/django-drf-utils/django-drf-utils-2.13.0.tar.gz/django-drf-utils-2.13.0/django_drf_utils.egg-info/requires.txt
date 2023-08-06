@@ -1,0 +1,17 @@
+Django>=3.2
+djangorestframework>=3.12
+python-json-logger>=2
+
+[dev]
+pylint==2.15.8
+mypy==0.991
+black==22.12.0
+pytest==7.2.0
+pytest-django
+requests
+bandit==1.7.4
+django-stubs
+djangorestframework-stubs
+types-requests
+factory_boy
+types-factory-boy
