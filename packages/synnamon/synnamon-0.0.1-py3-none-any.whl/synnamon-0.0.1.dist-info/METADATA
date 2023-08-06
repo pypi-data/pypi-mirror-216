@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: synnamon
+Version: 0.0.1
+Summary: Pure Python package for getting synonyms for words.
+Home-page: https://github.com/eddiethedean/synnamon
+Author: Odos Matthews
+Author-email: odosmatthews@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+
+A simple Python package that looks up synonyms using a built in thesaurus json file.
+
