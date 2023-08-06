@@ -1,0 +1,116 @@
+{
+    "pallets": [
+        {
+            "palletNr": "001",
+            "palletType": "DUESSELDORFER_PALLET",
+            "palletDimension": {
+                "x": 800.0,
+                "y": 600.0
+            },
+            "boxes": [
+                {
+                    "product_code": "0",
+                    "anchor": {
+                        "x": 3.0,
+                        "y": 20.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 395.0,
+                        "y": 560.0,
+                        "z": 224.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "0",
+                    "anchor": {
+                        "x": 405.0,
+                        "y": 20.0,
+                        "z": 0.0
+                    },
+                    "dimension": {
+                        "x": 395.0,
+                        "y": 560.0,
+                        "z": 224.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "2",
+                    "anchor": {
+                        "x": 200.0,
+                        "y": 42.0,
+                        "z": 224.0
+                    },
+                    "dimension": {
+                        "x": 200.0,
+                        "y": 515.0,
+                        "z": 255.0
+                    },
+                    "approach": "3"
+                },
+                {
+                    "product_code": "2",
+                    "anchor": {
+                        "x": 0.0,
+                        "y": 42.0,
+                        "z": 224.0
+                    },
+                    "dimension": {
+                        "x": 200.0,
+                        "y": 515.0,
+                        "z": 255.0
+                    },
+                    "approach": "9"
+                },
+                {
+                    "product_code": "1",
+                    "anchor": {
+                        "x": 404.0,
+                        "y": 0.0,
+                        "z": 224.0
+                    },
+                    "dimension": {
+                        "x": 393.0,
+                        "y": 300.0,
+                        "z": 198.0
+                    },
+                    "approach": "5"
+                },
+                {
+                    "product_code": "1",
+                    "anchor": {
+                        "x": 404.0,
+                        "y": 300.0,
+                        "z": 224.0
+                    },
+                    "dimension": {
+                        "x": 393.0,
+                        "y": 300.0,
+                        "z": 198.0
+                    },
+                    "approach": "3"
+                }
+            ]
+        }
+    ],
+    "articles": {
+        "0": {
+            "description": "G300384110035",
+            "weight": 8035.0,
+            "shippingGroup": "G3"
+        },
+        "1": {
+            "description": "G501707840034",
+            "weight": 6425.0,
+            "shippingGroup": "G5"
+        },
+        "2": {
+            "description": "G1401795240018",
+            "weight": 9450.0,
+            "shippingGroup": "G14"
+        }
+    },
+    "orderID": "U1418622.0615618"
+}
