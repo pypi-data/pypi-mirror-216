@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: asterisk-plus-agent-test
+Version: 1.0
+Summary: Asterisk Plus PBX Agent
+Home-page: https://odoopbx.com
+Author: Odooist
+Author-email: odooist@gmail.com
+License: Odoo Enterprise Edition License v1.0
+Description: =======================================
+        The Asterisk Plus PBX Agent application
+        =======================================
+        
+        For more details visit the project homepage: https://odoopbx.com
+        
+        Latest Asterisk Plus modules require the latest Agent. 
+        
+        If you have outdates Odoo modules see the release history for the corresponding  version and install it.
+        
+        For example, to install version 1.1 enter the following command:
+        
+        pip3 install asterisk-plus-agent==1.1
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/x-rst
