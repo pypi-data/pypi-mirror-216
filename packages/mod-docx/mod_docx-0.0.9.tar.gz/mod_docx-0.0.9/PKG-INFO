@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: mod_docx
+Version: 0.0.9
+Summary: The purpose of this library is to serve as a reliable and simple library to reassemble docx documents after they have been treated using AI/machine learning text treatment.
+Author-email: Jamilah Foucher <j622amilah@gmail.com>
+Project-URL: Homepage, https://github.com/DevopsPractice7/mod_docx
+Project-URL: Bug Tracker, https://github.com/DevopsPractice7/mod_docx/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# mod_docx
+The purpose of this library is to serve as a reliable and simple library to reassemble docx documents after they have been treated using AI/machine learning text treatment.
