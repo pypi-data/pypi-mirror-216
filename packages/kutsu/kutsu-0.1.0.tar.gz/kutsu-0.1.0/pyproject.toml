@@ -1,0 +1,129 @@
+[tool.poetry]
+name = "kutsu"
+version = "0.1.0"
+description = ""
+authors = ["Mikko Kortelainen <mikko.kortelainen@techelp.fi>"]
+license = "MIT"
+homepage = "https://github.com/kortsi/kutsu"
+repository = "https://github.com/kortsi/kutsu"
+readme = "README.md"
+include = ["README.md", "LICENSE"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nest-asyncio = "^1.5.6"
+httpx = { version = "^0.23.0", extras=["http2"] }
+rich = "^12.6.0"
+Pygments = "^2.14.0"
+tornado = "^6.2"
+trio = "^0.22.0"
+boto3 = { version = "^1.26.93", optional = true }
+httpx-auth-awssigv4 = { version = "^0.1.4", optional = true }
+
+[tool.poetry.extras]
+aws = ["boto3", "httpx-auth-awssigv4"]
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2"
+pylint = "^2.15.5"
+flake8 = "^5.0.4"
+isort = "^5.10.1"
+mypy = "^0.991"
+yapf = "^0.32.0"
+toml = "^0.10.2"
+types-Pygments = "^2.14.0"
+ipython = "8.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+multi_line_output = 3
+use_parentheses = true
+include_trailing_comma = true
+line_length = 90
+
+[tool.yapf]
+based_on_style = "pep8"
+column_limit = 90
+dedent_closing_brackets = true
+allow_split_before_dict_value = false
+
+[tool.pylint.master]
+ignore = ["tests_old","migrations"]
+ignore-patterns = ["conftest","test_*",".*_test","case"]
+
+[tool.pylint.messages_control]
+disable=[
+    "invalid-name",
+    "fixme",
+    "useless-import-alias",         # For mypy no_implicit_reexport
+    "import-outside-toplevel",
+    "too-few-public-methods",
+    "too-many-return-statements",
+    "too-many-branches",
+    "too-many-locals",
+    "too-many-arguments",
+    "too-many-instance-attributes",
+    "too-many-lines",
+    "too-many-statements",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "abstract-method",
+]
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint.reports]
+output-format = "parseable"
+
+[tool.pyright]
+reportGeneralTypeIssues = false
+
+[tool.mypy]
+python_version = "3.10"
+namespace_packages = true
+pretty = true
+# plugins = "sqlmypy"
+
+# Strict mode checks:
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_reexport = true
+
+# Other checks:
+strict_equality = true
+strict_optional = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = [
+    "tests.*",
+    "tests.*.*",
+    "tests.*.*.*",
+    "tests.*.*.*.*",
+    "tests.*.*.*.*.*",
+    "tests.*.*.*.*.*.*",
+]
+disallow_untyped_calls = false
+disallow_untyped_defs = false
+disallow_untyped_decorators = false
+disallow_incomplete_defs = false
+
+[[tool.mypy.overrides]]
+module = [
+    'nest_asyncio'
+]
+ignore_missing_imports = true
