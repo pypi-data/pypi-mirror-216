@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* pdf styles are global but also do not conflict with page setting for header and footer overlays */
+
+:root {
+
+  --branding-color: black;
+
+}
