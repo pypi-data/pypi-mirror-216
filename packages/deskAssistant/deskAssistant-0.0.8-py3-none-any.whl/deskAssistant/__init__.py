@@ -1,0 +1,1 @@
+from deskAssistant.deskAssistant import Assistant
