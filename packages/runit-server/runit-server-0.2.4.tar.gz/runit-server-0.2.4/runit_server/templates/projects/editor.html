@@ -1,0 +1,77 @@
+<style>
+    #directory {
+        width: 20%;
+        height: 95vh;
+    }
+
+    .editor-container {
+        width: 80%;
+        position: relative;
+    }
+
+    #editor {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 1rem;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .files-container {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 12px;
+        cursor: pointer;
+        font-weight: 100;
+    }
+
+    .files-container:hover {
+        font-weight: 500;
+    }
+</style>
+<div class="modal fade" id="editorModal" tabindex="-1" aria-labelledby="editorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header text-bg-dark rounded-0 py-1">
+                <h5 class="modal-title fw-bolder" id="editorModalLabel">Editor</h5>
+                <div class="d-flex align-items-center gap-3">
+                    <select title="theme" class="form-select-sm" id="themes">
+                        <option value="clouds">Clouds</option>
+                        <option value="clouds_midnight">Clouds Midnight</option>
+                        <option value="cobalt">Cobalt</option>
+                        <option value="crimson_editor">Crimson Editor</option>
+                        <option value="dawn">Dawn</option>
+                        <option value="gob">Green on Black</option>
+                        <option value="eclipse">Eclipse</option>
+                        <option value="idle_fingers">Idle Fingers</option>
+                        <option value="kr_theme">Kr Theme</option>
+                        <option value="merbivore">Merbivore</option>
+                        <option value="merbivore_soft">Merbivore Soft</option>
+                        <option value="mono_industrial">Mono Industrial</option>
+                        <option value="monokai">Monokai</option>
+                        <option value="pastel_on_dark">Pastel On Dark</option>
+                        <option value="solarized_dark">Solarized Dark</option>
+                        <option value="solarized_light">Solarized Light</option>
+                        <option value="textmate">Textmate</option>
+                        <option value="twilight">Twilight</option>
+                        <option value="vibrant_ink">Vibrant Ink</option>
+                    </select>
+                    <i class="fas fa-save fa-fw cursor-pointer d-none" id="saveBtn"></i>
+                    <i class="fas fa-times cursor-pointer" id="closeBtn" data-bs-dismiss="modal" aria-label="Close"></i>
+                </div>
+            </div>
+            <div class="modal-body p-0 w-100 d-flex">
+                <aside id="directory" class="text-bg-dark p-3"></aside>
+                <main class="editor-container position-relative">
+                    <div id="editor" class="w-100"></div>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
