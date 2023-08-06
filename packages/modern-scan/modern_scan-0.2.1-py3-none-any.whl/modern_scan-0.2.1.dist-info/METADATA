@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: modern-scan
+Version: 0.2.1
+Summary: Modern network scanner
+Author: thewh1teagle
+Author-email: 61390950+thewh1teagle@users.noreply.github.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: fastapi (>=0.89.1,<0.90.0)
+Requires-Dist: icmplib (>=3.0.3,<4.0.0)
+Requires-Dist: mac-vendor-lookup (>=0.1.12,<0.2.0)
+Requires-Dist: psutil (>=5.9.4,<6.0.0)
+Requires-Dist: uvicorn[standard] (>=0.20.0,<0.21.0)
+Description-Content-Type: text/markdown
+
+# Mscan
+
+<img with="150px" height="150px" src="https://user-images.githubusercontent.com/61390950/182006521-350c306a-2567-49eb-b77a-42224783768f.png">  
+
+## A modern network scanner
+## 🖥 User Interface
+![image](https://user-images.githubusercontent.com/61390950/216823967-a06601df-4d3f-41a2-9324-ca0c5c5b9a52.png)
+
+## 💿 Installation
+Install from pypi
+```
+pip3 install --upgrade modern-scan
+```
+## 🖥 Usage
+Simply run the command mscan
+```shell
+$ mscan
+Mscan running at http://127.0.0.1:8000/
+```
+## ✨ Features
+
+- 🕹 Simple and clear user interface
+- 🌐️️ Cross platform
+- 🚀 Super fast
+- 🛠 More features in development
+
+## 🔌 API
+Mscan offers an API which you can access at the following route:
+```
+/docs
+```
+This endpoint contains all the necessary information to get started with using the Mscan API in your software.
+
