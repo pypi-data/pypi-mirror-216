@@ -1,0 +1,4 @@
+
+
+class ArtefactBase(object):
+    pass
