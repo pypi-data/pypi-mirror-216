@@ -1,0 +1,4 @@
+[console_scripts]
+ncs-uml = ncs_uml.run:run
+ncs_uml = ncs_uml.run:run
+
