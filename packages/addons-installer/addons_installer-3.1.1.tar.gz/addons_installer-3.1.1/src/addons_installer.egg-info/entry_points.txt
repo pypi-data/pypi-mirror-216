@@ -1,0 +1,2 @@
+[console_scripts]
+addons-installer = addons_installer.cli:install_from_env

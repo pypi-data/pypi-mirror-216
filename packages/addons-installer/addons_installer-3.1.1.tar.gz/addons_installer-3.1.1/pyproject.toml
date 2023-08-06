@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]>=7.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "addons_installer"
+dynamic = ["version"]
+requires-python = ">=3.8"
+dependencies = [
+    "typing==3.10.0.0;python_version<='3'",
+    "python-dotenv==1.0.0",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+description = "Allow to find Odoo addons from Environment Variables"
+
+[project.scripts]
+addons-installer = "addons_installer.cli:install_from_env"
+
+[tool.setuptools]
+include-package-data = true
+#packages = ["addons_installer"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+write_to = "src/addons_installer/_version.py"
+
+[tool.bdist_wheel]
+python-tag = "py3"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+
+[tool.isort]
+profile = "black"
