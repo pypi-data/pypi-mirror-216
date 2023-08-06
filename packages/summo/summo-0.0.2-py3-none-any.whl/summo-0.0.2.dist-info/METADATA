@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: summo
+Version: 0.0.2
+Author-email: Rafael Sanabria <rafael.d.sanabria@gmail.com>
+License: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas (>=2.0.0)
+Provides-Extra: test
+Requires-Dist: pytest (>=7.3) ; extra == 'test'
+
+# summo
+
+- Agregar testing
+- Agregar el .env de Twine
+- How to include datasets in the tests?
+- Statistics by groups
+
+## Keys
+
+- dataset
+- columns
+  - first_column
+  - second_column
+- groups
+- relations
