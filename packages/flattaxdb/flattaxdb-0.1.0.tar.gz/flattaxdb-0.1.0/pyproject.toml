@@ -1,0 +1,18 @@
+[project]
+name = "flattaxdb"
+version = "0.1.0"
+description = "Yet another Python library to work with taxonomy databases"
+authors = [
+  { name="Brandon Seah", email="brandon.seah@thuenen.de" },
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+keywords = ["taxonomy", "NCBI", "GBIF"]
+
+[build-system]
+requires = ["setuptools >= 61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

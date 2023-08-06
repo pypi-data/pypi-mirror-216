@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: flattaxdb
+Version: 0.1.0
+Summary: Yet another Python library to work with taxonomy databases
+Author-email: Brandon Seah <brandon.seah@thuenen.de>
+License: 
+         The MIT License (MIT)
+         Copyright (c) 2023 Brandon Seah
+         
+         Permission is hereby granted, free of charge, to any person obtaining a copy
+         of this software and associated documentation files (the "Software"), to deal
+         in the Software without restriction, including without limitation the rights
+         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+         copies of the Software, and to permit persons to whom the Software is
+         furnished to do so, subject to the following conditions:
+         
+         The above copyright notice and this permission notice shall be included in all
+         copies or substantial portions of the Software.
+         
+         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+         EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+         MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+         IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+         DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+         OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+         OR OTHER DEALINGS IN THE SOFTWARE.
+        
+        
+Keywords: taxonomy,NCBI,GBIF
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Parse and query different taxonomic databases
+=============================================
+
+Aims
+----
+* Work with taxonomic databases from data dump flatfiles.
+* Load them directly into memory for queries and other operations.
+* Use same internal data structures and methods for different source DBs.
+* Report output as far as possible with DwC terms.
+
+Such functionality is available with the R package
+[`taxadb`](https://github.com/ropensci/taxadb), but we wish to work in Python
+with few dependencies as possible.
+
+
+Databases supported
+-------------------
+* NCBI Taxonomy (names.dmp and nodes.dmp file from taxdump)
+  * Tested with version [2022-12-01](https://ftp.ncbi.nih.gov/pub/taxonomy/taxdump_archive/taxdmp_2022-12-01.zip)
+* GBIF Backbone Taxonomy (Taxon.tsv file from backbone dump)
+  * Tested with version [2021-11-26](https://hosted-datasets.gbif.org/datasets/backbone/2021-11-26/backbone.zip)
