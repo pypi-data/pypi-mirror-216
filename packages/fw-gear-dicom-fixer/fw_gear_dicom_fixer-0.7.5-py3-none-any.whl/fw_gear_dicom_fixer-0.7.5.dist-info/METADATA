@@ -1,0 +1,132 @@
+Metadata-Version: 2.1
+Name: fw-gear-dicom-fixer
+Version: 0.7.5
+Summary: This gear reports on the Dicom files data elements and optionally fixes or enhances the problematic ones, generating a new archive.
+Home-page: https://gitlab.com/flywheel-io/flywheel-apps/dicom-fixer
+License: MIT
+Keywords: Flywheel,Gears,Dicom,Fixer
+Author: Flywheel
+Author-email: support@flywheel.io
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Requires-Dist: flywheel-gear-toolkit (>=0.6,<0.7)
+Requires-Dist: flywheel-sdk (>=16.0.0,<17.0.0)
+Requires-Dist: fw-file (>=2.3.0,<3.0.0)
+Requires-Dist: numpy (>=1.22.2,<2.0.0)
+Project-URL: Repository, https://gitlab.com/flywheel-io/flywheel-apps/dicom-fixer
+Description-Content-Type: text/markdown
+
+<!-- markdownlint-disable line-length-->
+# Dicom Fixer
+
+## Description
+
+This gear is responsible for reporting on the Dicom files data elements and optionally
+fixing/enhancing the problematic ones and generating a new archive.  
+
+This gear utilizes the `tracker` functionality of `RawDataElements`
+in [fw-file](https://gitlab.com/flywheel-io/tools/lib/fw-file.git). Namely, it houses
+a collection of default and custom fixers that are applied to `RawDataElements` on
+read through `pydicom`. More on callback below.
+
+Dicom fixer will also decompress compressed TransferSyntaxes so that no issues are met
+on the platform downstream.
+
+## Usage
+
+### Inputs
+
+* __dicom__: Input dicom
+
+### Configuration
+
+* `debug` (boolean, default False): Include debug statements in output.
+* `standardize_transfer_syntax` (boolean, default True): Whether or not to change `TransferSyntaxUID` to ExplicitVRLittleEndian
+* `tag` (string, default: `dicom-fixer`): The tag to be added on input file upon run completion.
+
+### Standardize transfer syntax
+
+The `standardize_transfer_syntax` option supports the following Transfer Syntaxes:
+
+| Name                               | UID                    | Supported          |
+|------------------------------------|------------------------|--------------------|
+| Explicit VR Little Endian          | 1.2.840.10008.1.2.1    | :white_check_mark: |
+| Implicit VR Little Endian          | 1.2.840.10008.1.2      | :white_check_mark: |
+| Explicit VR Big Endian             | 1.2.840.10008.1.2.2    | :white_check_mark: |
+| Deflated Explicit VR Little Endian | 1.2.840.10008.1.2.1.99 | :white_check_mark: |
+| RLE Lossless                       | 1.2.840.10008.1.2.5    | :white_check_mark: |
+| JPEG Baseline (Process 1)          | 1.2.840.10008.1.2.4.50 | :white_check_mark: |
+| JPEG Extended (Process 2 and 4)    | 1.2.840.10008.1.2.4.51 | :white_check_mark: |
+| JPEG Lossless (Process 14)         | 1.2.840.10008.1.2.4.57 | :white_check_mark: |
+| JPEG Lossless (Process 14, SV1)    | 1.2.840.10008.1.2.4.70 | :white_check_mark: |
+| JPEG LS Lossless                   | 1.2.840.10008.1.2.4.80 | :white_check_mark: |
+| JPEG LS Lossy                      | 1.2.840.10008.1.2.4.81 | :white_check_mark: |
+| JPEG2000 Lossless                  | 1.2.840.10008.1.2.4.90 | :white_check_mark: |
+| JPEG2000                           | 1.2.840.10008.1.2.4.91 | :white_check_mark: |
+| JPEG2000 Multi-component Lossless  | 1.2.840.10008.1.2.4.92 | :x:                |
+| JPEG2000 Multi-component           | 1.2.840.10008.1.2.4.93 | :x:                |
+
+All transfer syntax decompressing is done with pydicom using either `numpy` and
+`GDCM`, `JPEG-LS`, `Pillow`, or `pylibjpeg`,  see more info on pydicom's docs on
+[supported transfer syntaxes](https://pydicom.github.io/pydicom/stable/old/image_data_handlers.html)
+
+### Output
+
+#### File
+
+DICOM-fixer will either output a fixed file to overwrite the input or will output
+nothing
+
+#### QC
+
+DICOM-fixer will add a QC result titled `fixed` to either the input file if no output is
+written, or the output file if there is an output.  The state will be either `PASS` or
+`FAIL`:
+
+* `PASS` if either fixes were attempted and write was successful, or if no fixes were
+attempted.  
+* `FAIL` if fixes were attempted but write was not successful.
+
+For a `PASS` result, any fixing events will be under the `events` key.
+
+## Fixers
+
+The following fixes are applied:
+
+### General fixes from [fw-file](https://gitlab.com/flywheel-io/tools/lib/fw-file)
+
+* Fix VR for SpecificCharacterSet and surplus SequenceDelimitationItem tags.
+* Replace VR=None with VR found in the public or private dictionaries.
+* Replace VR='UN' with VR found in the public or private dictionaries.
+* Replace invalid \ characters with _ in string VR values of VM=1.
+* Crop text VRs which are too long.
+* Fix an invalid UID. Determine if UID is semi-valid (e.g. composed of a minimum 5 nodes
+  including invalid node starting with 0), if semi-valid, generates a new UID with the
+  semi-valid UID as entropy source (deterministic), else, generates a new UID.
+* Fix date times tags. Attempt to parse an invalid date and format correctly.
+* Fix AS strings. Ensure one of D,W,M,Y is at end of the string, and pad to 4
+  characters. If no time quantifier is present, assume Years.
+* Fix number strings. Fix DS (Decimal String) and IS (Integer String) number strings by
+  removing invalid characters and truncate floats in IS VR.
+* Fix invalid character. Attempt to remove non-printable characters from byte decoding.
+* Fix invalid VR value. Try to fix an invalid value for the given VR.
+* Fix LUT Descriptor tags.
+  
+### Custom fixes
+
+* Fix incorrect units. Correct MagneticFieldStrength from milli-Tesla to Tesla.
+* Remove file in archive that are not likely DICOM (defined as having at least 2
+  public dicom tags outside the file_meta (0000, 0002) group).
+* Optionally, sets the TransferSyntaxUID to ExplicitVRLittleEndian.
+
+## Contributing
+
+For more information about how to get started contributing to that gear,
+checkout [CONTRIBUTING.md](CONTRIBUTING.md).
+
