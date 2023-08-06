@@ -1,0 +1,149 @@
+Metadata-Version: 2.1
+Name: sortinghat-openinfra
+Version: 0.1.7
+Summary: SortingHat backend to import identities from OpenInfraID
+Home-page: https://chaoss.github.io/grimoirelab/
+License: GPL-3.0+
+Keywords: development,grimoirelab,sortinghat
+Author: Bitergia Developers
+Requires-Python: >=3.7.1,<4.0.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development
+Requires-Dist: aniso8601 (==7.0.0)
+Requires-Dist: asgiref (==3.7.2)
+Requires-Dist: cachetools (==5.3.1)
+Requires-Dist: certifi (==2023.5.7)
+Requires-Dist: charset-normalizer (==3.1.0)
+Requires-Dist: click (==7.1.1)
+Requires-Dist: django (==3.2.19)
+Requires-Dist: django-cors-headers (==3.14.0)
+Requires-Dist: django-graphql-jwt (==0.3.4)
+Requires-Dist: django-rq (==2.8.0)
+Requires-Dist: django-storages (==1.13.2)
+Requires-Dist: django-treebeard (==4.6.0)
+Requires-Dist: google-api-core (==2.11.1)
+Requires-Dist: google-auth (==2.21.0)
+Requires-Dist: google-cloud-core (==2.3.2)
+Requires-Dist: google-cloud-storage (==2.10.0)
+Requires-Dist: google-crc32c (==1.5.0)
+Requires-Dist: google-resumable-media (==2.5.0)
+Requires-Dist: googleapis-common-protos (==1.59.1)
+Requires-Dist: graphene (==2.1.9)
+Requires-Dist: graphene-django (==2.16.0)
+Requires-Dist: graphql-core (==2.3.2)
+Requires-Dist: graphql-relay (==2.0.1)
+Requires-Dist: grimoirelab-toolkit (==0.3.5)
+Requires-Dist: idna (==3.4)
+Requires-Dist: importlib-resources (==5.12.0)
+Requires-Dist: jinja2 (==3.1.2)
+Requires-Dist: markupsafe (==2.1.3)
+Requires-Dist: mysqlclient (==2.0.3)
+Requires-Dist: numpy (==1.21.0)
+Requires-Dist: pandas (==1.3.5)
+Requires-Dist: promise (==2.3)
+Requires-Dist: protobuf (==4.23.3)
+Requires-Dist: pyasn1 (==0.5.0)
+Requires-Dist: pyasn1-modules (==0.3.0)
+Requires-Dist: pyjwt (==2.7.0)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: pytz (==2023.3)
+Requires-Dist: redis (==4.6.0)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: rq (==1.11.1)
+Requires-Dist: rsa (==4.9)
+Requires-Dist: rx (==1.6.3)
+Requires-Dist: setuptools (==68.0.0)
+Requires-Dist: sgqlc (==16.2)
+Requires-Dist: singledispatch (==4.0.0)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: sortinghat (==0.11.0)
+Requires-Dist: sqlparse (==0.4.4)
+Requires-Dist: text-unidecode (==1.3)
+Requires-Dist: urllib3 (==1.26.16)
+Requires-Dist: uwsgi (==2.0.21)
+Project-URL: Bug Tracker, https://github.com/bitergia-analytics/sortinghat-openinfra/issues
+Project-URL: Repository, https://github.com/bitergia-analytics/sortinghat-openinfra
+Description-Content-Type: text/markdown
+
+# sortinghat-openinfra
+
+SortingHat backend to import identities from OpenInfraID
+
+## Requirements
+
+ * Python >= 3.7
+
+You will also need some other libraries for running the tool, you can find the
+whole list of dependencies in [pyproject.toml](pyproject.toml) file.
+
+## Installation
+
+There are several ways to install sortinghat-openinfra on your system: packages or source 
+code using Poetry or pip.
+
+### PyPI
+
+sortinghat-openinfra can be installed using pip, a tool for installing Python packages. 
+To do it, run the next command:
+```
+$ pip install sortinghat-openinfra
+```
+
+### Source code
+
+To install from the source code you will need to clone the repository first:
+```
+$ git clone https://github.com/bitergia-analytics/sortinghat-openinfra
+$ cd sortinghat-openinfra
+```
+
+Then use pip or Poetry to install the package along with its dependencies.
+
+#### Pip
+To install the package from local directory run the following command:
+```
+$ pip install .
+```
+In case you are a developer, you should install sortinghat-openinfra in editable mode:
+```
+$ pip install -e .
+```
+
+## Usage
+
+Install this SortingHat backend to import identities from OpenInfraID. You can
+use this importer using the API or the UI. The name of the backend is 
+`OpenInfraID`. You need to provide the URL in the importer configuration,
+typically `https://openstackid-resources.openstack.org`.
+
+By default, this backend only obtain members from the public API that doesn't
+contain email information. If you want to obtain members emails you need
+to define the following configuration variables in your settings file:
+- `OPENINFRA_CLIENT_ID`: OpenInfraID Oauth2 client ID for private API.
+- `OPENINFRA_CLIENT_SECRET`: OpenInfraID Oauth2 client secret for private API.
+
+#### Poetry
+We use [poetry](https://python-poetry.org/) for dependency management and 
+packaging. You can install it following its [documentation](https://python-poetry.org/docs/#installation).
+Once you have installed it, you can install sortinghat-openinfra and the dependencies in 
+a project isolated environment using:
+```
+$ poetry install
+```
+To spaw a new shell within the virtual environment use:
+```
+$ poetry shell
+```
+
+## License
+
+Licensed under GNU General Public License (GPL), version 3 or later.
+
