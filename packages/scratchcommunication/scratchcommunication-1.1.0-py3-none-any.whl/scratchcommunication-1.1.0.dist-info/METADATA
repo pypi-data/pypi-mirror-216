@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: scratchcommunication
+Version: 1.1.0
+Summary: A python module for communicating with scratch projects
+Home-page: https://github.com/thecommcraft/scratchcommunication
+Author: Simon Gilde
+Author-email: simon.c.gilde@gmail.com
+Keywords: scratch,api
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: websocket-client
+
+A python module for communicating with scratch projects
