@@ -1,0 +1,41 @@
+#fsdbtable {
+    height: 100%;
+    background: #014201;
+}
+
+#fsdbcontainer {
+    height: 100%;
+}
+
+#mainpanel {
+    height: 100%;
+}
+
+#history {
+/*    height: 4; */
+    dock: bottom;
+}
+
+#command_input {
+    height: 1;
+    dock: bottom;
+}
+
+#ourtitle {
+    dock: top;
+    background: #880000;
+}
+
+#ourfooter {
+    dock: top;
+}
+
+#save {
+    dock: bottom;
+}
+
+.entry_dialog {
+    dock: bottom;
+    height: 3;
+}
+
