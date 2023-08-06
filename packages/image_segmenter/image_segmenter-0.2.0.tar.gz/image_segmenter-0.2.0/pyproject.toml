@@ -1,0 +1,21 @@
+[build-system]
+requires = [
+    "flit_core >=3.2,<4",
+    "opencv-python >=4.5.1,<5",
+    "matplotlib >=3.3.4,<4",
+    "numpy >=1.20.1,<2",
+    "pascal-voc-writer >=0.1.4,<1"
+]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "image_segmenter"
+authors = [{name = "Rich Baird", email = "rich@rbaird.me"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+
+[project.urls]
+Home = "https://github.com/richbai90/image_segmenter.git"
+Repository = "https://github.com/richbai90/image_segmenter.git"
