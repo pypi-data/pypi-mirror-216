@@ -1,0 +1,7 @@
+googleapis-common-protos>=1.56.3
+grpcio>=1.50.0
+
+[dev]
+mypy-protobuf>=3.2.0
+python-dotenv>=0.20.0
+iotics-identity>=1.0.4
