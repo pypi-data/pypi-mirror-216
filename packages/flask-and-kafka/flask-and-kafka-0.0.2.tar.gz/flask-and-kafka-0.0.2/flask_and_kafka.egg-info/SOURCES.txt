@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+flask_and_kafka/__init__.py
+flask_and_kafka/close.py
+flask_and_kafka/consumer.py
+flask_and_kafka/formatters.py
+flask_and_kafka/log.py
+flask_and_kafka/producer.py
+flask_and_kafka.egg-info/PKG-INFO
+flask_and_kafka.egg-info/SOURCES.txt
+flask_and_kafka.egg-info/dependency_links.txt
+flask_and_kafka.egg-info/not-zip-safe
+flask_and_kafka.egg-info/requires.txt
+flask_and_kafka.egg-info/top_level.txt
