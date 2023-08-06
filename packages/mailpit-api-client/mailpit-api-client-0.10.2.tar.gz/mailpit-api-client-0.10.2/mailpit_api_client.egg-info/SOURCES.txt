@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+pyproject.toml
+mailpit/__init__.py
+mailpit/config.py
+mailpit/client/__init__.py
+mailpit/client/api.py
+mailpit/client/models.py
+mailpit/testing/__init__.py
+mailpit/testing/pytest.py
+mailpit/testing/unittest.py
+mailpit_api_client.egg-info/PKG-INFO
+mailpit_api_client.egg-info/SOURCES.txt
+mailpit_api_client.egg-info/dependency_links.txt
+mailpit_api_client.egg-info/requires.txt
+mailpit_api_client.egg-info/top_level.txt
