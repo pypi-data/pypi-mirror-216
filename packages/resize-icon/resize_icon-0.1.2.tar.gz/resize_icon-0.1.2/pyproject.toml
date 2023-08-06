@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "resize-icon"
+version = "0.1.2"
+description = ""
+authors = ["yayunHuang <yayun146@oursky.com>"]
+readme = "README.md"
+packages = [{include = "resize_icon"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^9.5.0"
+path = "^16.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
