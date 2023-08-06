@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "gallon"
+version = "0.0.3"
+description = ""
+authors = ["Oscar Bahamonde <oscar.bahamonde@pucp.pe>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typing-extensions = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
