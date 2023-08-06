@@ -1,0 +1,9 @@
+docstring-parser==0.15.0
+
+[dev]
+black
+pytest
+flake8
+
+[test]
+pytest
