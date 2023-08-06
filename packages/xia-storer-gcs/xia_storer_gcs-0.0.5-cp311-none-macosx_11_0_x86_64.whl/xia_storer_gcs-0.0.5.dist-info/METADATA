@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: xia-storer-gcs
+Version: 0.0.5
+Home-page: https://develop.x-i-a.com/docs/xia-storer-gcs/0.0.5/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: gcsfs
+Requires-Dist: google-cloud-storage
+Requires-Dist: xia-storer
+
+Introduction
+=============================
+
+Welcome to use X-I-A's software
+
