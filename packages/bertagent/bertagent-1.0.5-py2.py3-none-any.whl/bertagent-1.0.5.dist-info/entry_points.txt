@@ -1,0 +1,2 @@
+[console_scripts]
+bertagent = bertagent.cli.bertagent:main
