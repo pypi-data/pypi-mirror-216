@@ -1,0 +1,6 @@
+exclude .gitignore
+include README.md
+recursive-include rcdb_web *.py
+recursive-include rcdb_web/templates/*.html
+recursive-include rcdb_web/static/css/*
+recursive-include rcdb_web/static/js/*
