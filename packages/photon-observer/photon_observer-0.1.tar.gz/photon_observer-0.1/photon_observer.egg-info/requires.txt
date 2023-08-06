@@ -1,0 +1,6 @@
+pyshark
+pydantic<2
+
+[test]
+pytest>7.0
+pytest-cov
