@@ -1,0 +1,8 @@
+write_to = "src/vollseg/_version.py"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79
