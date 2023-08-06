@@ -1,0 +1,10 @@
+langchain
+openai
+tiktoken
+pinecone-client[grpc]
+bumpversion
+setuptools
+wheel
+twine
+pdfplumber
+python-docx
