@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: bfgdealer
+Version: 0.0.10
+Summary: """A collection of modules that supports dealing Bid for Game applications."""
+Home-page: https://psionman@bitbucket.org/psionman/bfgdealer.git
+Download-URL: https://pypi.org/project/bfgdealer/
+Author: jeff watkins
+Author-email: support@bidforgame.com
+License: MIT
+Keywords: bridge, dealing
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# bfgdealer
+
+A collection of modules that supports dealing in Bid for Game applications.
+
+## Installation
+
+```bash
+pip install bfgdealer
+```
+
+
+# Version History
+
+Version 0.0.10 30 Jun 2023
+
+1. Copy init from env to pack
+
+------
+
+Version 0.0.9 30 Jun 2023
+
+1. Change source to src
+
+------
+
+Version 0.0.8 30 Jun 2023
+
+1. Linting and start tests
+
+------
+
+Version 0.0.7 20 Jun 2023
+
+1. Various refactor and Lucas 2s
+
+------
+
+Version 0.0.6 18 Jun 2023
+
+1. Multi-2D
+
+------
+
+
+Version 0.0.5 11 May 2023
+
+1. Change __init__ to reflect set hand defn__
+
+------
+Version 0.0.4 05 May 2023
+
+1. Change set hands defn
+
+------
+
+Version 0.0.3 14 Mar 2023
+
+1. Improve condition checking on negative doubles
+
+------
+
+Version 0.0.2 08 Mar 2023
+
+1. Add source to board
+
+------
+
+Version 0.0.1 05 Mar 2023
+
+1. Super in dealer_solo
+
+------
+
+Version 0.0.0 1 Feb 2023
+
+1. Initial load
+
+------
