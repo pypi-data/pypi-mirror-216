@@ -1,0 +1,21 @@
+{% include '.header.template' %}
+
+using System.Globalization;
+using StellaNowSDK.Messages;
+
+namespace {{ namespace }};
+
+public class {{ className }}Message : StellaNowMessageWrapper
+{
+    public {{ className }}Message({{ constructorArguments }})
+        : base(
+            "{{ eventName }}",
+            new List<EntityType>{ {{ entitiesList }} })
+    {
+        {%- for field in fields %}
+        AddField("{{ field.original_name }}", {{ field.csharp_name }}{{ field.format }});
+        {%- endfor %}
+    }
+}
+
+{% include '.footer.template' %}

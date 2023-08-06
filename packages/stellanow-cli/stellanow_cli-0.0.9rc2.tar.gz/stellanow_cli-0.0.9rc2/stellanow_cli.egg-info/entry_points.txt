@@ -1,0 +1,2 @@
+[console_scripts]
+stellanow = stellanow_cli.cli:cli
