@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+exif2pandas/__init__.py
+exif2pandas/clean.py
+exif2pandas/extract.py
+exif2pandas/gps_utils.py
+exif2pandas/main.py
+exif2pandas/utils.py
+exif2pandas.egg-info/PKG-INFO
+exif2pandas.egg-info/SOURCES.txt
+exif2pandas.egg-info/dependency_links.txt
+exif2pandas.egg-info/entry_points.txt
+exif2pandas.egg-info/requires.txt
+exif2pandas.egg-info/top_level.txt

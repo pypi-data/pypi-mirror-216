@@ -1,0 +1,3 @@
+[console_scripts]
+exif2pandas = exif2pandas.main:main
+
