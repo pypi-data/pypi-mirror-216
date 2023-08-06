@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: aicoder
+Version: 0.2.0
+Summary: This is a tool to generate code using OpenAI api.
+Home-page: https://github.com/AICoderHub/AICoder
+Author: Carlos Polop
+Author-email: carlospolop@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: colorlog
+Requires-Dist: openai
+Requires-Dist: tqdm
+Requires-Dist: PyGithub
+
