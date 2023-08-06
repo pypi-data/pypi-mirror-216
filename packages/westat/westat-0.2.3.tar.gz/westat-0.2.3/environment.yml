@@ -1,0 +1,17 @@
+name: westat
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+
+  # documentation
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  -
+
+  - pip:
+      - sphinx-rtd-theme
+      - readthedocs-sphinx-search
