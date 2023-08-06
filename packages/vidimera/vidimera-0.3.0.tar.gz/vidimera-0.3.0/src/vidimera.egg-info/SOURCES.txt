@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/vidimera/__init__.py
+src/vidimera/assertions.py
+src/vidimera/behaviour.py
+src/vidimera/missing_behaviour.py
+src/vidimera.egg-info/PKG-INFO
+src/vidimera.egg-info/SOURCES.txt
+src/vidimera.egg-info/dependency_links.txt
+src/vidimera.egg-info/top_level.txt
