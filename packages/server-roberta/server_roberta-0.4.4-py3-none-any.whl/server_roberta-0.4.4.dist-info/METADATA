@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: server-roberta
+Version: 0.4.4
+Summary: To classify, BPE, ROBERTA and SVM are used
+Author: Tilsor
+Author-email: tilsor@tilsor.com.uy
+Description-Content-Type: text/markdown
+Requires-Dist: fairseq (==0.10.0)
+Requires-Dist: scipy (==1.5.0)
+Requires-Dist: scikit-learn (==0.23.1)
+Requires-Dist: numpy (==1.23.5)
+Requires-Dist: pandas (==1.3.4)
+Requires-Dist: pyparsing (==3.0.6)
+Requires-Dist: torch (==1.10.0)
+Requires-Dist: tqdm (==4.62.3)
+Requires-Dist: wget (==3.2)
+Requires-Dist: grpcio-tools (==1.29.0)
+Requires-Dist: requests
+
+README
