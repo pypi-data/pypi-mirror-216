@@ -1,0 +1,10 @@
+README.rst
+pyproject.toml
+setup.py
+pygaul/__init__.py
+pygaul.egg-info/PKG-INFO
+pygaul.egg-info/SOURCES.txt
+pygaul.egg-info/dependency_links.txt
+pygaul.egg-info/requires.txt
+pygaul.egg-info/top_level.txt
+tests/test_pygaul.py
