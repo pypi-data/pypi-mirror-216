@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "Orr_Sommerfeld_convmix_CGB"
+version = "0.2.9"
+authors = [
+  { name="Pablo Szuban", email="pablo.szuban@ib.edu.ar" },
+]
+description = "Paquete para cálculo de autovalores y autofunciones."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+"Source Code" = "https://gitlab.com/mecom-cnea-os/orr-sommerfeld-convmix-cgb"
