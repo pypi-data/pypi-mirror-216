@@ -1,0 +1,2 @@
+[console_scripts]
+dbt_snapshot_analysis = dbt_snapshot_analysis.streamlit_entry_point:main
