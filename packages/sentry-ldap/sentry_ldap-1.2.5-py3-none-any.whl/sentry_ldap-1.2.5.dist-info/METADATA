@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: sentry-ldap
+Version: 1.2.5
+Summary: A Sentry extension to add an LDAP server as an authentication source.
+Home-page: https://github.com/huynhminhtan/sentry-ldap
+Download-URL: https://github.com/huynhminhtan/sentry-ldap
+Author: 
+Author-email: 
+License: Apache-2.0
+Project-URL: Bug Tracker, https://github.com/huynhminhtan/sentry-ldap/issues
+Project-URL: CI, https://github.com/huynhminhtan/sentry-ldap/actions
+Project-URL: Source Code, https://github.com/huynhminhtan/sentry-ldap
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: django-auth-ldap (==4.1.0)
+Requires-Dist: sentry (>=23.6.0)
+
+# sentry-ldap
+
+Just fork from (PMExtra/sentry-auth-ldap)[https://github.com/PMExtra/sentry-auth-ldap]
