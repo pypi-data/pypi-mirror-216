@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+.github/workflows/main.yaml
+src/pytest_smtp4dev/__init__.py
+src/pytest_smtp4dev/_version.py
+src/pytest_smtp4dev/client.py
+src/pytest_smtp4dev/models.py
+src/pytest_smtp4dev/plugin.py
+src/pytest_smtp4dev.egg-info/PKG-INFO
+src/pytest_smtp4dev.egg-info/SOURCES.txt
+src/pytest_smtp4dev.egg-info/dependency_links.txt
+src/pytest_smtp4dev.egg-info/entry_points.txt
+src/pytest_smtp4dev.egg-info/top_level.txt
