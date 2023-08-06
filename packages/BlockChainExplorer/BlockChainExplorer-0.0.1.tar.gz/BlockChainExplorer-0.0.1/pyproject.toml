@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "Requests==2.31.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BlockChainExplorer"
+version = "0.0.1"
+authors = [
+  { name="ManiacalEngineer", email="unhfireboy@yahoo.com"},
+]
+description = "Simple package to access EVM blockchain explorers, currently supports Binance Smart Chain, Ethereum, Avalanche and Polygon"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ManicalEngineer/BlockChainExplorer"
