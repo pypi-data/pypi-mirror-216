@@ -1,0 +1,11 @@
+dearpygui
+serial
+colorama
+numpy
+pytest
+pathlib
+
+[test]
+pytest>=7.3.2
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
