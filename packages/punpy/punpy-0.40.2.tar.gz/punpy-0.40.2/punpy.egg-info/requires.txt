@@ -1,0 +1,12 @@
+comet_maths>=0.19.4
+obsarray
+numpy
+scipy
+xarray>=2023.6.0
+netcdf4
+
+[dev]
+pre-commit
+tox
+sphinx
+sphinx_rtd_theme
