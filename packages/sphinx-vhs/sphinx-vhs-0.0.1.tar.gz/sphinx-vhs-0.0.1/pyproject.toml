@@ -1,0 +1,61 @@
+[project]
+name = "sphinx-vhs"
+authors = [{name = "Tamika Nomara", email = "taminomara@gmail.com"}]
+description = "Sphinx plugin that generates terminal GIFs using charm's VHS"
+dynamic = ["version"]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Framework :: Sphinx",
+    "Framework :: Sphinx :: Extension",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Documentation",
+    "Topic :: Documentation :: Sphinx",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "sphinx>=5.0.2",
+    "vhs~=0.0.3",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest~=7.0",
+    "pytest-mypy~=0.10.3",
+    "black~=23.0",
+    "isort~=5.12.0",
+    "html5lib~=1.1",
+    "types-requests",
+    "types-docutils",
+    "types-html5lib",
+]
+doc = [
+    "sphinx-rtd-theme~=1.2.2",
+]
+
+[project.urls]
+Documentation = "https://taminomara.github.io/sphinx-vhs/"
+Issues = "https://github.com/taminomara/sphinx-vhs/issues/"
+Source = "https://github.com/taminomara/sphinx-vhs/"
+Changelog = "https://github.com/taminomara/sphinx-vhs/blob/main/CHANGELOG.md"
+
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel>=0.40"]
+
+[tool.setuptools_scm]
+write_to = "sphinx_vhs/_version.py"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["sphinx_vhs", "test"]
+addopts = ["--mypy"]

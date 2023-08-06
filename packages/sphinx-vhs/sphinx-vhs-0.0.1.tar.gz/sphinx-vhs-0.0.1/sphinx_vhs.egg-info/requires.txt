@@ -1,0 +1,15 @@
+sphinx>=5.0.2
+vhs~=0.0.3
+
+[doc]
+sphinx-rtd-theme~=1.2.2
+
+[test]
+pytest~=7.0
+pytest-mypy~=0.10.3
+black~=23.0
+isort~=5.12.0
+html5lib~=1.1
+types-requests
+types-docutils
+types-html5lib
