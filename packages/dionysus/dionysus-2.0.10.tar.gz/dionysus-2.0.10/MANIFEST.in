@@ -1,0 +1,12 @@
+recursive-include . *
+recursive-exclude ./.hg *
+recursive-exclude ./.git *
+recursive-exclude ./doc/_build *
+recursive-exclude ./dist *
+exclude .hgignore .hgsubtree ./tags
+recursive-exclude . *.orig
+recursive-exclude ./bindings/python/dionysus/__pycache__ *
+recursive-exclude ./.peru *
+recursive-exclude ./build *
+recursive-exclude ./.pytest_cache *
+recursive-exclude ./tests/__pycache__ *
