@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pynalyzer
+Version: 0.1.0
+Summary: Meta code analysis tool, bundling together multiple code analysis libs
+License: MIT
+Author: Devourian
+Author-email: dorian.antonkiewicz@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: bandit (>=1.7.5,<2.0.0)
+Requires-Dist: black (>=23.3.0,<24.0.0)
+Requires-Dist: isort (>=5.12.0,<6.0.0)
+Requires-Dist: mypy (>=1.4.1,<2.0.0)
+Description-Content-Type: text/markdown
+
+
