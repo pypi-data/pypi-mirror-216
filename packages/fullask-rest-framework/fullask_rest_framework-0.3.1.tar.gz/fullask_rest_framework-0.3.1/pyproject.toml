@@ -1,0 +1,97 @@
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "fullask-rest-framework"
+description = "A fully-supported flask extension to build REST API."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [
+    { name = "tgoddessana", email = "twicegoddessana1229@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "Flask",
+    "flask-jwt-extended",
+    "flask-sqlalchemy",
+    "flask-marshmallow",
+    "flask-migrate",
+    "flask-smorest",
+    "flask-cors",
+    "python-dotenv",
+    "dependency-injector",
+    "marshmallow",
+    "marshmallow-sqlalchemy",
+]
+dynamic = ["version"]
+
+[project.scripts]
+fullask-manager = "fullask_rest_framework.cli:main"
+
+[tool.flit.module]
+name = "fullask_rest_framework"
+
+[tool.flit.sdist]
+include = [
+    "fullask_rest_framework/",
+    "README.md",
+]
+exclude = [
+    "docs/",
+    "tests/",
+    ".github/"
+]
+
+[tool.poetry]
+name = "fullask-rest-framework"
+version = "0.3.1"
+description = ""
+authors = ["tgoddessana <twicegoddessana1229@gmail.com>"]
+
+[tool.poetry.dependencies]
+pip = "*"
+python = "^3.11"
+flask = "^2.2.3"
+flask-jwt-extended = "*"
+marshmallow = "^3.19.0"
+marshmallow-sqlalchemy = "^0.29.0"
+flask-sqlalchemy = "^3.0.3"
+flask-marshmallow = "^0.15.0"
+flask-migrate = "^4.0.4"
+flask-smorest = "^0.42.0"
+python-dotenv = "^1.0.0"
+flask-cors = "^3.0.10"
+dependency_injector = "*"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+wheel = "^0.40.0"
+twine = "^4.0.2"
+pre-commit = "^3.3.2"
+bumpversion = "^0.6.0"
+flit = "^3.9.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.1"
+pytest-cov = "^4.1.0"
+flake8 = "^6.0.0"
+tox = "*"
+coverage = "*"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "*"
+sphinx-rtd-theme = "^1.2.0"
+myst-parser = "*"
+jinja2 = "^3.0"
