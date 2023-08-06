@@ -1,0 +1,16 @@
+object_storage/__init__.py,sha256=7hz3PSm9U1FxwmPg7YzUJBUU_ICjYljaVtL5-QsH11M,120
+object_storage/clients/__init__.py,sha256=JnR5aSUAmRe6-GszKhcuIa0ESxfZ-8oQVt1ZuuuakjM,324
+object_storage/clients/azure_blob_client.py,sha256=mSw31b_qBR56ss4BuHzKS3wkLolWB0Y3O3SCfVqDui8,6476
+object_storage/clients/azure_container_client.py,sha256=uIMzo0YAyy9XG5_49Uy2_4lMd6vI6x0zNOOaLxZo8n4,7117
+object_storage/clients/base_container_client.py,sha256=drigfj9ZuMlQvdkK1fvG-WYOTez797eq9iQm5q7SaLQ,2143
+object_storage/clients/base_file_client.py,sha256=MMxcr8cNZYlYb3L8oylVhAFABMgFUF2ZTJ-HwcSZ-DM,2051
+object_storage/factories.py,sha256=x2bzGzWTQwIN0LM7xAiKaCDiBOpNbmVt3TeR2-vwae8,1902
+object_storage/managers/__init__.py,sha256=tZXanK4Xs4SAg5Yj1aFaRWG-EwM3Nbs_hDcj2pEVAPc,239
+object_storage/managers/azure_blob_manager.py,sha256=-TYEFaVYrHmKImKd6V1dYSBW5sbJkVt7dfWsGW-TnhM,3763
+object_storage/managers/base_manager.py,sha256=iPqZ_9e8bT2fjHbk9vnNTw4sEtcZuTUJ_xmQ_sX0n3o,727
+object_storage/providers/__init__.py,sha256=nxmxbam3Dj7m5LEPcNKH0ahEpRnb7x6e7legIZ6LMUo,266
+object_storage/providers/azure.py,sha256=HOi2QmCb669Sgvk29J2w_KCjUEYbJXdH7hyUYInoGPY,6387
+object_storage/providers/enum.py,sha256=EjJ_xucFcO2_msuA2Not3uGT0aNt2HPZMEqXazwvwLM,444
+pilot_platform_object_storage-1.3.0.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+pilot_platform_object_storage-1.3.0.dist-info/METADATA,sha256=NdQY-2cYBQN7-HvIlf4KBRsQ_SdQJtNka_BnUct0N6g,4221
+pilot_platform_object_storage-1.3.0.dist-info/RECORD,,
