@@ -1,0 +1,30 @@
+# Templated default Knative service manifest
+#
+# Override by passing `--config service_template=<path>` to `create_deployment`
+# or `update_deployment`.
+#
+# Readiness probe is set to "/version" because it becomes available only after
+# a model is loaded by MLflow.
+#
+# If deploying a MLServer image, parallel inference is disabled by default.
+# https://mlserver.readthedocs.io/en/stable/user-guide/parallel-inference.html
+#
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ${name}
+  namespace: ${namespace}
+spec:
+  template:
+    spec:
+      containers:
+      - image: ${image}
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MLSERVER_INFER_WORKERS
+          value: "0"
+        readinessProbe:
+          httpGet:
+            path: "/version"
+            port: 8080

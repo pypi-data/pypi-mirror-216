@@ -1,0 +1,3 @@
+[mlflow.deployments]
+knative=mlflow_knative.deployment_client
+
