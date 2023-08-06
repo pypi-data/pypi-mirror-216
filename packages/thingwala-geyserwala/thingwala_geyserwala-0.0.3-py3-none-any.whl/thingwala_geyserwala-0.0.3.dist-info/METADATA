@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: thingwala-geyserwala
+Version: 0.0.3
+Summary: Python bindings to the Geyserwala REST API
+Home-page: https://github.com/thingwala/geyserwala-py
+Author: ThingWala
+License: MIT
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: asyncio
+Requires-Dist: zeroconf
+
