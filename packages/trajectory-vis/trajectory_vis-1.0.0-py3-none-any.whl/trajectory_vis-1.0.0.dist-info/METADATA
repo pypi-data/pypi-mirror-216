@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: trajectory-vis
+Version: 1.0.0
+Summary: Visualization of data and/or model trajectories on a 2D plane using pygame
+Home-page: https://gitlab-ncsa.ubisoft.org/tboulet/trajectory-visualization
+Author: tboulet
+Author-email: timothe.boulet0@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: pygame
+
+# Trajectory Visualization
+
+Visualization of data and/or model trajectories on a 2D plane using pygame.
+
+The trajectory can be made of positions but may extend to aim, jump, leaning, etc.
+
+## Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone git@gitlab-ncsa.ubisoft.org:tboulet/trajectory-visualization.git
+cd trajectory-visualization
+pip install -r requirements.txt
+```
+
+# Visualize trajectories from JSON data
+
+Run the following command to visualize the trajectories from the JSON data file `data.json`:
+
+```bash
+python trajectory_vis\vizualizers\visualizer_from_json.py --path=<path_to_json_folder> --random=<true or false> --n=<number_of_trajectories_to_visualize_at_once>
+```
+
+If you don't specify any path, the default path "//ubisoft.org/projects/r6/mtl/Public/AIBots/playerdata/y8s1.2/bigresults/output" will be used.
+
+# Visualize trajectories from the Drain database
+
+This is done as a drain job. The configuration can be modified in the yaml file `yamls\visualize_episodes.yaml`. Once it is done, run the following command:
+
+```bash
+drain run --yaml=yamls\visualize_episodes.yaml
+```
+
+# Visualize trajectories from a model 
+
+TODO
