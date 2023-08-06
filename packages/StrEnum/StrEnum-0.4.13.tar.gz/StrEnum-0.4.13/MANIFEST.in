@@ -1,0 +1,5 @@
+include strenum/*.pyi
+include strenum/*.typed
+include versioneer.py
+include strenum/_version.py
+exclude tests/*
