@@ -1,0 +1,24 @@
+healpy>=1.16.0
+numba
+toml
+astropy
+
+[:python_version < "3.8"]
+importlib_metadata
+
+[docs]
+sphinx-astropy
+nbsphinx
+sphinx-math-dollar
+pandoc
+ipykernel
+
+[mpi]
+mpi4py
+
+[test]
+pytest-astropy
+pytest
+psutil
+tox
+pixell>=0.17.3
