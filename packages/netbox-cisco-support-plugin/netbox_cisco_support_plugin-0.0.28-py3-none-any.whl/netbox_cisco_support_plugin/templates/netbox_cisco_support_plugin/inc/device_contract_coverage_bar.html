@@ -1,0 +1,16 @@
+<div class="progress">
+    <div role="progressbar"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="40"
+        class="progress-bar {{ cisco_device_support.coverage_progress_bar_class }}"
+        style="width: 40%;"
+    >
+    {% if cisco_device_support.coverage_progress >= 35 %}
+        {{ cisco_device_support.coverage_end_date|timeuntil }} remaining
+    {% endif %}
+    </div>
+    {% if cisco_device_support.coverage_progress < 35 %}
+        <span class="ps-1">{{ cisco_device_support.coverage_end_date|timeuntil }} remaining</span>
+    {% endif %}
+</div>
