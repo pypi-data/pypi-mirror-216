@@ -1,0 +1,8 @@
+numpy
+tifffile
+torch
+scipy
+jupyterlab
+tqdm
+jax>=0.3.25
+jaxlib>=0.3.25
