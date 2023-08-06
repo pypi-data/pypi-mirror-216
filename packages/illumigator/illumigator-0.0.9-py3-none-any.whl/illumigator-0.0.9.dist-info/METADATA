@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: illumigator
+Version: 0.0.9
+Summary: 2D Light-Based Puzzle Game
+Project-URL: Homepage, https://github.com/EltonLi2000/IllumiGator
+Project-URL: Bug Tracker, https://github.com/EltonLi2000/IllumiGator/issues
+Author-email: Richard Sorkin <r.sorkin@ufl.edu>, Tomas Mejia <tomas.mejia@ufl.edu>, Amber Handal <amberhandal@ufl.edu>, Elton Li <eltonli@ufl.edu>, Dakota Cappel <dakota.cappel@ufl.edu>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Requires-Dist: arcade
+Requires-Dist: numpy
+Requires-Dist: screeninfo
+Description-Content-Type: text/markdown
+
+# IllumiGator
+2D Light-Based Puzzle Game
+
+## Source Code and Other Resources
+https://github.com/EltonLi2000/IllumiGator
+
+https://drive.google.com/drive/folders/1HQ1lIxgZJNANgWnts3bsWUUTnnfJrKXW?usp=sharing
+
+(contains timesheet and project ideas)
+
+## Dependencies
+arcade
+numpy
+screeninfo
+
+## Install
+pip install illumigator
+
+run **illumigator** command
