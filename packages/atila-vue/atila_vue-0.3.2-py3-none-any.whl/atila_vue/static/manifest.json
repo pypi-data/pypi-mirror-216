@@ -1,0 +1,29 @@
+{
+    "name": "HTTP SFC Proto Templates",
+    "short_name": "HTTP SFC",
+    "theme_color": "#ffcbe4",
+    "background_color": "#fa99ca",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": ".",
+    "description": "Vue Single File Component Based Website Template",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/favicon/favicon-64.png",
+            "sizes": "64x64"
+        },
+        {
+            "src": "/favicon/favicon-128.png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/favicon/favicon-256.png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "/favicon/favicon-512.png",
+            "sizes": "512x512"
+        }
+    ]
+}

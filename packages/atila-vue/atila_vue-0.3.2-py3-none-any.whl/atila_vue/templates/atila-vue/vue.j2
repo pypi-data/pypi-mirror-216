@@ -1,0 +1,382 @@
+{% extends 'atila-vue/html.j2' %}
+
+{% if context.use_vue_router %}
+  {% set routes, pathes, router_view_layout = build_routes ('/' + self._TemplateReference__context.name.split ('.')[0]) %}
+{% else %}
+  {% set routes, pathes, router_view_layout = [], [], None %}
+{% endif %}
+{% set use_vue_loader = context.use_vue_loader or app.debug %}
+
+{% set _base_scripts = [
+  "https://unpkg.com/vue@3/dist/vue.{}.js".format (app.debug and 'global' or 'global.prod'),
+  "https://unpkg.com/vuex@4.1.0/dist/vuex.{}.js".format (app.debug and 'global' or 'global.prod'),
+  "https://unpkg.com/mitt/dist/mitt.umd.js",
+  "https://unpkg.com/axios/dist/axios.min.js",
+] %}
+
+{% if context.use_vue_router %}
+  {% set _ = _base_scripts.append ("https://unpkg.com/vue-router@4.2.2/dist/vue-router.{}.js".format (app.debug and 'global' or 'global.prod')) %}
+{% endif %}
+
+{% if use_vue_loader %}
+  {% set _ = _base_scripts.append ("https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js") %}
+{% endif %}
+
+{% macro show_python_context () %}
+  <article class='container'>
+      <hr noshade>
+      <h5>Template Context</h5>
+      <ul>
+      {% for k, v in context.items () %}
+          <li class='mb-0'>context.{{ k }}: {{ v | escape }}</li>
+      {% endfor %}
+      </ul>
+  </article>
+{% endmacro %}
+
+{% macro set_cloak (flag = True) %}
+  {{ map_data ('$cloak', flag) }}
+{% endmacro %}
+
+{% macro map_data (name, value, container = '', list_size = -1) %}
+  {% if not container %}
+    <script>assign_state ('{{name}}', {{ value|tojson_with_datetime|replace ("'", "&#39;") }})</script>
+  {% else %}
+    {% if list_size == -1 %}{{ raise ('map_data error, list_size must be defined if container specified') }}{% endif %}
+    <div class="veux-state" data-name="{{ name }}" data-max-size="{{ list_size }}" data-container="{{ container }}" data-default='{{ value|tojson_with_datetime|replace ("'", "&#39;") }}'></div>
+    <script>_vuexState.{{ name }} = []</script>
+  {% endif %}
+{% endmacro%}
+
+{% macro map_state (name, value, container = '', list_size = -1) %}
+  {{ map_data (name, value, container, list_sizeargs) }}
+{% endmacro%}
+
+{% macro map_dict (name) %}
+  {{ map_data (name, kwargs) }}
+{% endmacro %}
+
+{% macro map_text (name, container, type = 'text') %}
+  <div class="veux-state" data-name="{{ name }}" data-container="{{ container }}" data-type="{{ type }}"></div>
+  <script>_vuexState.{{ name }} = ''</script>
+{% endmacro %}
+
+{% macro map_html (name, container) %}
+  {{ map_text (name, container, 'html') }}
+{% endmacro %}
+
+{% macro map_route (__name__ = '') %}
+  {% for k, v in kwargs.items () %}
+    {% do kwargs.__setitem__ (k | upper, request_context.urlspec (v)) %}
+  {% endfor %}
+  {{ map_data ('$urlspecs', kwargs) }}
+{% endmacro %}
+
+{% macro component (path, alias = none, _async = True) %}
+  {% set url = request_context.static (path) %}
+  {% do request_context.push (url) %}
+  {% if _async %}
+    {{ "'{}': Vue.defineAsyncComponent ( () => loadModule ('{}', options) ),".format (alias or path.split ("/")[-1][:-4], url) }}
+  {% else %}
+    {{ "'{}': () => loadModule ('{}', options),".format (alias or path.split ("/")[-1][:-4], url) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro global_component (path, alias = none, _async = True) %}
+  {% set url = request_context.static (path) %}
+  {% do request_context.push (url) %}
+  {% if _async %}
+    {{ "app.component ('{}', Vue.defineAsyncComponent ( () => loadModule ('{}', options) ))".format (alias or path.split ("/")[-1][:-4], url) }}
+  {% else %}
+    {{ "app.component ('{}', () => loadModule ('{}', options) )".format (alias or path.split ("/")[-1][:-4], url) }}
+  {% endif %}
+{% endmacro %}
+
+{% block head %}
+  {% for each in _base_scripts %}
+    <link rel="preload" as="script" href="{{ each }}">
+  {% endfor %}
+{% endblock %}
+
+{% block style %}
+   [v-cloak] { display: none !important;}
+   #state-map {display: none;}
+{% endblock %}
+
+{% block head_script %}
+  {{ super () }}
+  <script>
+    const _vuexState = {}
+    function assign_state (name, value) {
+      if (_vuexState [name] !== undefined) {
+        delete _vuexState [name]
+      }
+      _vuexState [name] = value
+    }
+  </script>
+{% endblock %}
+
+{% block body %}
+  <div id="app" v-cloak>
+    <div v-show='!$cloak'>
+    {% block content %}
+      {% if context.use_vue_router %}<app-layout></app-layout>{% endif %}
+    {% endblock %}
+    </div>
+    {% if app.debug %}
+      {{ show_python_context () }}
+      <vuex-state></vuex-state>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block body_trailer %}
+  {{ super () }}
+  {% block before_vue_load %}{% endblock %}
+  {% for each in _base_scripts %}
+    <script src="{{ each }}"></script>
+  {% endfor %}
+
+  <script src="{{ request_context.static ('atila-vue/vue/config.js') }}"></script>
+  <script src="{{ request_context.static ('atila-vue/vue/helpers.js') }}"></script>
+
+  {% block vue_loaded %}{% endblock %}
+  {% block body_trailer_script %}{% endblock %}
+  <div id="state-map">
+
+  {{ map_data ('$apispecs', get_apispecs ()) }}
+  {{ map_data ('$args', request.args) }}
+  {{ map_data ('$debug', app.debug) }}
+  {{ map_data ('$cloak', False) }}
+  {{ map_data ('$static_url', app.config.STATIC_URL) }}
+  {{ map_data ('$media_url', app.config.MEDIA_URL) }}
+  {% if app.config.get ('BACKEND') %}{{ map_data ('$backend', app.config.BACKEND) }}{% endif %}
+  {{ map_data ('$txnid', '{}@{}'.format (request.gtxid, request.channel.server.worker_ident)) }}
+  {% block state_map %}{% endblock %}
+  </div>
+  {% block scripts %}{% endblock %}
+
+  {% block vue_router %}
+    {% if context.use_vue_router %}
+      <script>
+        const { useRouter, useRoute, useLink, RouterLink, onBeforeRouteLeave, onBeforeRouteUpdate } = VueRouter
+
+        {% for path in pathes %}
+          prefetch ("{{ path }}")
+        {% endfor %}
+
+        const router = VueRouter.createRouter ({
+          history: VueRouter.createWebHistory ('{{ context.use_vue_router }}'),
+          routes: [
+            {% block vue_routes scoped %}
+              {{ routes }}
+            {% endblock %}
+          ],
+          {# {% block scroll_behavior %}
+            scrollBehavior (to, from, savedPosition) {
+              if (savedPosition) {
+                return savedPosition
+              } else {
+                return { left: 0, top: 0 }
+              }
+            },
+          {% endblock %} #}
+        })
+        {% block vue_router_before_each %}
+          router.beforeEach ((to, from, next) => {
+            next()
+          })
+        {% endblock %}
+
+        {% block vue_router_after_each %}
+          router.afterEach ((to, from) => {
+            {% if app.config.GOOGLE_ANALITICS_ID %}
+              gtag ('config', '{{ app.config.GOOGLE_ANALITICS_ID }}', {
+                page_title: window.document.title,
+                page_location: window.location.origin + '{{ context.use_vue_router }}' + to.path,
+                page_path: '{{ context.use_vue_router }}' + to.path,
+              })
+            {% endif %}
+          })
+        {% endblock %}
+      </script>
+    {% else %}
+      <script>
+          const useRouter = null
+      </script>
+    {% endif %}
+  {% endblock vue_router %}
+
+  {% block vuex %}
+    <script>
+    const { useStore, mapState, mapGetters, mapActions, mapMutations } = Vuex
+
+    const store = Vuex.createStore ({
+      state () {
+        return {
+          ..._vuexState,
+          {% block vuex_state %}{% endblock %}
+        }
+      },
+      getters: {
+        {% block vuex_getters %}{% endblock %}
+      },
+      mutations: {
+        _clear_credential (state) {
+          state.$uid = null
+          state.$grp = null
+          state.$claims = null
+          state.$ls.remove ('refresh_token')
+          state.$ls.remove ('access_token')
+          delete axios.defaults.headers.common ["Authorization"]
+        },
+
+        _save_credential (state, payload) {
+          const { uid, grp, access_token, refresh_token } = payload
+          state.$uid = uid
+          state.$grp = grp
+          const claims = decode_jwt (access_token)
+          delete claims.uid
+          delete claims.grp
+          state.$claims = claims
+          state.$ls.set ('access_token', access_token)
+          axios.defaults.headers.common ["Authorization"] = `Bearer ${access_token}`
+          if (!!refresh_token) {
+            const refresh_token_timeout = decode_jwt (refresh_token).exp - new Date ().unixepoch ()
+            state.$ls.set ('refresh_token', refresh_token, refresh_token_timeout)
+          }
+        },
+        {% block vuex_mutations %}{% endblock %}
+      },
+      actions: {
+        {% block vuex_actions %}{% endblock %}
+      },
+    })
+    </script>
+  {% endblock vuex %}
+
+  {% block vue %}
+    <script>
+    const {
+      ref, computed, watch, watchEffect, getCurrentInstance, inject, provide, InjectionKey,
+      onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted,
+      onErrorCaptured, onRenderTracked, onRenderTriggered, onActivated, onDeactivated
+    } = Vue
+
+    const useState = () => {
+      const store = Vuex.useStore()
+      return Object.fromEntries(Object.keys(store.state).map(key => [key, Vue.computed(() => store.state[key])]))
+    }
+
+    const useGetters = () => {
+      const store = Vuex.useStore()
+      return Object.fromEntries(Object.keys(store.getters).map(getter => [getter, Vue.computed(() => store.getters[getter])]))
+    }
+
+    const useMutations = () => {
+      const store = Vuex.useStore()
+      return Object.fromEntries(Object.keys(store._mutations).map(mutation => [mutation, value => store.commit(mutation, value)]))
+    }
+
+    const useActions = () => {
+      const store = Vuex.useStore()
+      return Object.fromEntries(Object.keys(store._actions).map(action => [action, value => store.dispatch(action, value)]))
+    }
+
+    const app = Vue.createApp ({
+      setup (props, context) {
+        {% block vue_setup %}{% endblock %}
+      },
+      data () {
+        return {
+          {% block vue_data %}{% endblock %}
+        }
+      },
+      components: {
+        {% block vue_components %}{% endblock %}
+      },
+      computed: {
+        ...mapVuexItems (),
+        {% block vue_computed %}{% endblock %}
+      },
+      watch: {
+        {% block vue_watch %}{% endblock %}
+      },
+
+      beforeCreate () {
+        {% block vue_before_create %}{% endblock %}
+      },
+      created () {
+        {% block vue_created %}{% endblock %}
+      },
+      beforeMount () {
+        _readSchemas ()
+        {% block vue_before_mount %}{% endblock %}
+      },
+      mounted () {
+        _readDataset ()
+        if (this.$csrf) {
+          axios.defaults.headers.common [this.$csrf.name] = this.$csrf.token
+        }
+        {% block vue_mounted %}{% endblock %}
+      },
+      beforeUpdate () {
+        {% block vue_before_update %}{% endblock %}
+      },
+      updated () {
+        {% block vue_updated %}{% endblock %}
+      },
+      beforeDestroy () {
+        {% block vue_before_destroy %}{% endblock %}
+      },
+      destroyed () {
+        {% block vue_destroyed %}{% endblock %}
+      },
+    })
+    </script>
+
+    {% if use_vue_loader %}
+    <script>
+      const options = {
+        moduleCache: {
+          vue: Vue
+        },
+
+        async getFile (url) {
+          const res = await fetch (url);
+          if ( !res.ok )
+            throw Object.assign (new Error (res.statusText + ' ' + url), { res })
+          return {
+            getContentData: asBinary => asBinary ? res.arrayBuffer () : res.text (),
+          }
+        },
+
+        addStyle (textContent) {
+          const style = Object.assign (document.createElement('style'), { textContent })
+          const ref = document.head.getElementsByTagName ('style') [0] || null
+          document.head.insertBefore (style, ref)
+        },
+      }
+      const { loadModule } = window ['vue3-sfc-loader']
+      {% if app.debug %}
+        {{ global_component ('atila-vue/components/dev/vuex-state.vue') }}
+      {% endif %}
+      {% if router_view_layout %}
+        {{ global_component (router_view_layout, 'app-layout') }}
+      {% endif %}
+      {% block global_component %}{% endblock %}
+    </script>
+    {% endif %}
+
+    <script>
+    const $bus = mitt()
+    app.provide ($bus)
+    app.use (store)
+    {% if context.use_vue_router %}
+      app.use (router)
+    {% endif %}
+    {% block vue_app_created %}{% endblock %}
+    app.mount ('#app')
+    </script>
+  {% endblock vue %}
+{% endblock %}

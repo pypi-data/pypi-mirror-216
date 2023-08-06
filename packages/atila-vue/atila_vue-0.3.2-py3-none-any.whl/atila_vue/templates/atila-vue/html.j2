@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% macro csrf () %}
+  <meta name="csrf" content="{{ request_context.csrf_token }};{{ request_context.CSRF_NAME }}">
+{% endmacro %}
+<html lang="{% block lang %}en{% endblock %}">
+  <head>
+    {{ csrf () }}
+    {% if app.config.GOOGLE_ANALITICS_ID %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ app.config.GOOGLE_ANALITICS_ID }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ app.config.GOOGLE_ANALITICS_ID }}');
+      </script>
+    {% endif %}
+    {% block head_start %}{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=8.0, user-scalable=yes, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="{{ request_context.static ('favicon.ico') }}">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" sizes="512x512" href="{{ request_context.static ('favicon/512.png') }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{{ app.config.SITE_NAME }} PWA">
+
+    {% block head %}{% endblock %}
+    {% block prefetch %}{% endblock %}
+    {% block head_style %}
+      <link rel="stylesheet" href="{{ request_context.static ('css/helpers.css') }}">
+      <link rel="stylesheet" href="{{ request_context.static ('css/custom.css') }}">
+    {% endblock %}
+    {% block head_script %}{% endblock %}
+    {% block head_end %}{% endblock %}
+    <style>
+      {% block style %}{% endblock %}
+    </style>
+  </head>
+
+  <body>
+    {% block noscript %}{% endblock %}
+    {% block body %}{% endblock %}
+    {% block body_trailer %}{% endblock %}
+    <script src="{{ request_context.static ('sw/serviceworker-register.js') }}"></script>
+  </body>
+</html>
