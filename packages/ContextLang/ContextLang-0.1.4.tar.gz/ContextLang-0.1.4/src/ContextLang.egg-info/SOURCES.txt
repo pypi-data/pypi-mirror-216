@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/ContextLang.egg-info/PKG-INFO
+src/ContextLang.egg-info/SOURCES.txt
+src/ContextLang.egg-info/dependency_links.txt
+src/ContextLang.egg-info/entry_points.txt
+src/ContextLang.egg-info/requires.txt
+src/ContextLang.egg-info/top_level.txt
+src/context/Context.py
+src/context/__init__.py
+src/context/code_generator.py
+src/context/config.py
+src/context/file_manager.py
+src/context/log.py
+src/context/openai_interface.py
+src/context/tag_parser.py
