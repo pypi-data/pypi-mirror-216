@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+gestalt/__init__.py
+gestalt/provider.py
+gestalt/utils.py
+gestalt/vault.py
+tests/__init__.py
+tests/conftest.py
+tests/test_gestalt.py
+tests/test_vault.py
+yi_foo.egg-info/PKG-INFO
+yi_foo.egg-info/SOURCES.txt
+yi_foo.egg-info/dependency_links.txt
+yi_foo.egg-info/requires.txt
+yi_foo.egg-info/top_level.txt
