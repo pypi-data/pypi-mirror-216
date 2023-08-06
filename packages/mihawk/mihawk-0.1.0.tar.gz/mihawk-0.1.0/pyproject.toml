@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "mihawk"
+version = "0.1.0"
+description = "Pathfinding algorithms for optimized kados routing"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+include = ["mihawk/static/*"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.25.0"
+
+# Optional dependencies
+matplotlib = { version = "3.7.1", optional = true }
+
+[tool.poetry.extras]
+vis = ["matplotlib"]
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+pre-commit = "^3.3.2"
+pytest = "^7.3.1"
+pytest-cov = "^4.1.0"
+tox = "^4.6.0"
+
+
+[tool.poetry.scripts]
+mihawk = "mihawk.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
