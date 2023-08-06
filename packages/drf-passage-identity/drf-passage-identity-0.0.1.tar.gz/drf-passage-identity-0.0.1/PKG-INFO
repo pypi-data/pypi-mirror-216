@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: drf-passage-identity
+Version: 0.0.1
+Summary: A Django app to authenticate users passwordless using Passage.
+Home-page: https://github.com/kothawleprem/drf-passage-identity
+Author: Prem
+Author-email: kothawleprem@gmail.com
+License: MIT License
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+Documentation for DRF Passage Identity
