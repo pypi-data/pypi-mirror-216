@@ -1,0 +1,25 @@
+window:
+  size: [100, 50, 1000, 400]  # [start_x, start_y, width, height]
+  title: Example of an real time graph
+  status_bar: True
+
+  toolbar:
+    - item:
+        name:    start_stop_action
+        title:   Stop Animation
+        type:    Action
+        action:  start_stop_animation
+        tooltip: Click to start or stop the graph bellow
+
+  layout:
+    - item:
+        name:    controls_and_figure
+        type:    grid
+        subtype: horizontal
+        layout:
+          - item:
+              name:    graph
+              type:    figure
+              subtype: animation
+              view_size: [10, 10]
+
