@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: popstar
+Version: 1.0.0
+Summary: SSP synthetic spectra
+Home-page: https://github.com/dnidever/popstar
+Author: David Nidever
+Author-email: dnidever@montana.edu
+License: MIT
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+Provides-Extra: test
+Provides-Extra: docs
+License-File: LICENSE
+
+
+popstar
+=======
+
+Integrated light synthetic spectra of a simple stellar population.
+
+Authors
+-------
+
+- **David Nidever** (Montana State University)
+  
+Installation
+------------
+
+You can also pip install directly from GitHub::
+
+    pip install git+https://github.com/dnidever/popstar
+

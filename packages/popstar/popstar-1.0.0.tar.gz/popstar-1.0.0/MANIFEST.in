@@ -1,0 +1,5 @@
+include README.rst
+include data/*.hdr
+include data/ssp_isochrones.fits.gz
+
+prune build
