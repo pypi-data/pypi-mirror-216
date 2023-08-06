@@ -1,0 +1,38 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "pyspark-ai"
+version = "0.1.4"
+description = "English SDK for Apache Spark"
+authors = ["Gengliang Wang <gengliang@apache.org>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/databrickslabs/pyspark-ai"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+requests = "^2.31.0"
+tiktoken = "0.4.0"
+beautifulsoup4 = "^4.12.2"
+openai = "^0.27.8"
+langchain = "^0.0.201"
+pandas = "^2.0.2"
+pygments = "^2.15.1"
+google-api-python-client = "^2.90.0"
+chispa = "^0.9.2"
+
+
+[tool.poetry.dev-dependencies]
+pyspark = "^3.4.0"
+
