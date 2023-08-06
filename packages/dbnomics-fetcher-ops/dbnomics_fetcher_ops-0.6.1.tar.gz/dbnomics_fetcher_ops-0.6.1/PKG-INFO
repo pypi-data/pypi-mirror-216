@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: dbnomics-fetcher-ops
+Version: 0.6.1
+Summary: Manage DBnomics fetchers
+License: AGPL-3.0-or-later
+Author: Christophe Benz
+Author-email: christophe.benz@nomics.world
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: PyYAML (>=6.0,<7.0)
+Requires-Dist: daiquiri (>=3.0.1,<4.0.0)
+Requires-Dist: dbnomics-solr (>=1.1.13,<2.0.0)
+Requires-Dist: pydantic (>=1.8.1,<2.0.0)
+Requires-Dist: python-dotenv (>=0.21.0,<0.22.0)
+Requires-Dist: python-gitlab (>=3.11.0,<4.0.0)
+Requires-Dist: requests (>=2.24.0,<3.0.0)
+Requires-Dist: typer[all] (>=0.7.0,<0.8.0)
+Requires-Dist: validators (>=0.20.0,<0.21.0)
+Requires-Dist: xdg (>=5.1.1,<6.0.0)
+Description-Content-Type: text/markdown
+
+# DBnomics fetcher ops
+
+Manage DBnomics fetchers: list, configure and run pipelines.
+
+## Install
+
+```bash
+pip install dbnomics-fetcher-ops[cli]
+```
+
+## Usage
+
+### Configure a fetcher
+
+The configure command needs write privileges. Create a GitLab [personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) having the `api` scope, and pass it using the `--gitlab-private-token` option or the `GITLAB_PRIVATE_TOKEN` environment variable in `~/.config/dbnomics/dbnomics-fetchers.env`.
+
+```bash
+dbnomics-fetchers -v configure scsmich --dry-run
+# If everything seems OK, remove the --dry-run flag:
+dbnomics-fetchers -v configure scsmich
+```
+
+### List fetchers
+
+```bash
+dbnomics-fetchers -v list
+```
+
+### Run fetcher pipelines
+
+```bash
+# Replace PROVIDER_SLUG by the real value:
+dbnomics-fetchers -v run --provider-slug PROVIDER_SLUG
+
+# To run a pipeline for each fetcher:
+dbnomics-fetchers -v list --slug | xargs -I {} dbnomics-fetchers -v run --provider-slug {}
+```
+
+## Development
+
+Install [Poetry](https://python-poetry.org/).
+
+```bash
+# git clone repo or fork
+cd dbnomics-fetcher-ops
+poetry install
+cp .env.example .env
+```
+
+Run commands with:
+
+```bash
+poetry shell
+dbnomics-fetchers COMMAND
+```
+
