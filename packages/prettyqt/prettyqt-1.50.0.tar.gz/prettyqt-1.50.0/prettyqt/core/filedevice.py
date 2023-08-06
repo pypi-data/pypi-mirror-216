@@ -1,0 +1,133 @@
+from __future__ import annotations
+
+import datetime
+from typing import Literal
+
+from prettyqt import core
+from prettyqt.qt import QtCore
+from prettyqt.utils import bidict, datatypes, get_repr
+
+
+FileErrorStr = Literal[
+    "none",
+    "read",
+    "write",
+    "fatal",
+    "resource",
+    "open",
+    "abort",
+    "time_out",
+    "unspecified",
+    "remove",
+    "rename",
+    "position",
+    "resize",
+    "permissions",
+    "copy",
+]
+
+FILE_ERROR: bidict[FileErrorStr, QtCore.QFileDevice.FileError] = bidict(
+    none=QtCore.QFileDevice.FileError.NoError,
+    read=QtCore.QFileDevice.FileError.ReadError,
+    write=QtCore.QFileDevice.FileError.WriteError,
+    fatal=QtCore.QFileDevice.FileError.FatalError,
+    resource=QtCore.QFileDevice.FileError.ResourceError,
+    open=QtCore.QFileDevice.FileError.OpenError,
+    abort=QtCore.QFileDevice.FileError.AbortError,
+    time_out=QtCore.QFileDevice.FileError.TimeOutError,
+    unspecified=QtCore.QFileDevice.FileError.UnspecifiedError,
+    remove=QtCore.QFileDevice.FileError.RemoveError,
+    rename=QtCore.QFileDevice.FileError.RenameError,
+    position=QtCore.QFileDevice.FileError.PositionError,
+    resize=QtCore.QFileDevice.FileError.ResizeError,
+    permissions=QtCore.QFileDevice.FileError.PermissionsError,
+    copy=QtCore.QFileDevice.FileError.CopyError,
+)
+
+FileTimeStr = Literal["access", "birth", "metadata_change", "modification"]
+
+FILE_TIME: bidict[FileTimeStr, QtCore.QFileDevice.FileTime] = bidict(
+    access=QtCore.QFileDevice.FileTime.FileAccessTime,
+    birth=QtCore.QFileDevice.FileTime.FileBirthTime,
+    metadata_change=QtCore.QFileDevice.FileTime.FileMetadataChangeTime,
+    modification=QtCore.QFileDevice.FileTime.FileModificationTime,
+)
+
+PermissionStr = Literal[
+    "read_owner",
+    "write_owner",
+    "exe_owner",
+    "read_user",
+    "write_user",
+    "exe_user",
+    "read_group",
+    "write_group",
+    "exe_group",
+    "read_other",
+    "write_other",
+    "exe_other",
+]
+
+PERMISSIONS: bidict[PermissionStr, QtCore.QFileDevice.Permission] = bidict(
+    read_owner=QtCore.QFileDevice.Permission.ReadOwner,
+    write_owner=QtCore.QFileDevice.Permission.WriteOwner,
+    exe_owner=QtCore.QFileDevice.Permission.ExeOwner,
+    read_user=QtCore.QFileDevice.Permission.ReadUser,
+    write_user=QtCore.QFileDevice.Permission.WriteUser,
+    exe_user=QtCore.QFileDevice.Permission.ExeUser,
+    read_group=QtCore.QFileDevice.Permission.ReadGroup,
+    write_group=QtCore.QFileDevice.Permission.WriteGroup,
+    exe_group=QtCore.QFileDevice.Permission.ExeGroup,
+    read_other=QtCore.QFileDevice.Permission.ReadOther,
+    write_other=QtCore.QFileDevice.Permission.WriteOther,
+    exe_other=QtCore.QFileDevice.Permission.ExeOther,
+)
+
+
+class FileDeviceMixin(core.IODeviceMixin):
+    def __repr__(self):
+        return get_repr(self, self.fileName())
+
+    def __str__(self):
+        return self.fileName()
+
+    def get_permissions(self) -> list[PermissionStr]:
+        return PERMISSIONS.get_list(self.permissions())
+
+    def set_file_time(
+        self,
+        file_time: datatypes.DateTimeType,
+        typ: FileTimeStr | QtCore.QFileDevice.FileTime,
+    ) -> bool:
+        """Set file time.
+
+        Args:
+            file_time: file time to set
+            typ: file time type
+        """
+        file_time = datatypes.to_datetime(file_time)
+        return self.setFileTime(file_time, FILE_TIME.get_enum_value(typ))  # type: ignore
+
+    def get_file_time(
+        self, typ: FileTimeStr | QtCore.QFileDevice.FileTime
+    ) -> datetime.datetime | None:
+        """Return current file time.
+
+        Returns:
+            file time
+        """
+        if date := self.fileTime(FILE_TIME.get_enum_value(typ)):
+            return date.toPython()  # type: ignore
+        return None
+
+    def get_error(self) -> FileErrorStr:
+        """Return file error status.
+
+        Returns:
+            file error status
+        """
+        return FILE_ERROR.inverse[self.error()]
+
+
+class FileDevice(FileDeviceMixin, QtCore.QFileDevice):
+    pass
