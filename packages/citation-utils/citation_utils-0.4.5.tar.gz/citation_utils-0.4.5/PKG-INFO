@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: citation-utils
+Version: 0.4.5
+Summary: Pattern matching Philippine Supreme Court citations.
+Home-page: https://lawsql.com
+Author: Marcelino G. Veloso III
+Author-email: contact@mv3.dev
+Requires-Python: >=3.11,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Pydantic
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Legal Industry
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Text Processing :: General
+Classifier: Typing :: Typed
+Requires-Dist: citation_report (>=0.1.5,<0.2.0)
+Project-URL: Documentation, https://justmars.github.io/citation-utils
+Project-URL: Repository, https://github.com/justmars/citation-utils
