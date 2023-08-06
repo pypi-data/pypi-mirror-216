@@ -1,0 +1,3 @@
+[console_scripts]
+gull-api=gull_api.run_gull_api:main
+
