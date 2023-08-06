@@ -1,0 +1,3 @@
+[console_scripts]
+mksync=mksync.__main__:main
+
