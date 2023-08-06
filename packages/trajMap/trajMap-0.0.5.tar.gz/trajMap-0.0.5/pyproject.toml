@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trajMap"
+version = "0.0.5"
+authors = [
+  { name="Gilbert Han", email="gilberthan1011@gmail.com" },
+]
+description = "A package to bulid trajMap"
+readme = {file = "README.md", content-type="text/markdown"}
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+	"scanpy",
+	"pandas",
+	"scvi",
+	"scArches",
+	"tensorflow",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/GilbertHan1011/Macro_osteo_comm"
+"Bug Tracker" = "https://github.com/GilbertHan1011/Macro_osteo_comm/issues"
+
+[tool.setuptools.packages.find]
+# scanning for namespace packages is true by default in pyproject.toml, so
+# you do NOT need to include the following line.
+namespaces = true
+where = ["src"]
+
+[tool.setuptools.package-data]
+"trajMap.dataset" = ["*.csv","*.h5ad"]
+"trajMap.dataset.scanvi_chondro" = ["*.pt"]
+"trajMap.dataset.scanvi_mes" = ["*.pt"]
+"trajMap.dataset.scanvi_lepr" = ["*.pt"]
+
+
+[tool.setuptools]
+# ...
+# By default, include-package-data is true in pyproject.toml, so you do
+# NOT have to specify this line.
+include-package-data = true
+
+
+
+
+[tool.poetry]
+# ...
+include = ["src/**"]
