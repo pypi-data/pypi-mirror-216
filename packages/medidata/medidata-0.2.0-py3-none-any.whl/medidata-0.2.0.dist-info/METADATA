@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: medidata
+Version: 0.2.0
+Summary: A Python library for working with various medical image datasets.
+Home-page: https://github.com/erenalpt/medidata
+Author: Alperen T.
+Author-email: your_email@example.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: numpy (>=1.23.4)
+Requires-Dist: opencv-python (>=3.4.4)
+Requires-Dist: tqdm (>=4.65.0)
+
