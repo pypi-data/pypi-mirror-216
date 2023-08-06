@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/truconsts/__init__.py
+src/truconsts/annotations.py
+src/truconsts/constants.py
+src/truconsts/constmeta.c
+src/truconsts.egg-info/PKG-INFO
+src/truconsts.egg-info/SOURCES.txt
+src/truconsts.egg-info/dependency_links.txt
+src/truconsts.egg-info/top_level.txt
+tests/test_base.py
+tests/test_constantsmeta.py
+tests/test_genfuncasync.py
