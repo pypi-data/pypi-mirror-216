@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "sensor": {
+            "download_speed": {
+                "name": "\u4e0b\u8f7d\u901f\u5ea6"
+            },
+            "status": {
+                "name": "\u72b6\u6001",
+                "state": {
+                    "downloading": "\u4e0b\u8f7d\u4e2d",
+                    "idle": "\u7a7a\u95f2"
+                }
+            }
+        }
+    }
+}

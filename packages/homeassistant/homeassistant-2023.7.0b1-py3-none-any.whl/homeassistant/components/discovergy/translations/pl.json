@@ -1,0 +1,18 @@
+{
+    "config": {
+        "step": {
+            "reauth": {
+                "data": {
+                    "email": "Adres e-mail",
+                    "password": "Has\u0142o"
+                }
+            },
+            "user": {
+                "data": {
+                    "email": "Adres e-mail",
+                    "password": "Has\u0142o"
+                }
+            }
+        }
+    }
+}
