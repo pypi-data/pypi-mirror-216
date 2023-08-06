@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: sambacc
+Version: 0.3
+Summary: Samba Container Configurator
+Home-page: https://github.com/samba-in-kubernetes/sambacc
+Author: John Mulligan
+Author-email: phlogistonjohn@asynchrono.us
+License: GPL3
+Provides-Extra: validation
+Provides-Extra: yaml
+Provides-Extra: toml
+License-File: COPYING

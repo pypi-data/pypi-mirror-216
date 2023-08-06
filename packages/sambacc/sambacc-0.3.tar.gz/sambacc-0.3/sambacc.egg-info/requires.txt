@@ -1,0 +1,11 @@
+
+[toml]
+
+[toml:python_version < "3.11"]
+tomli
+
+[validation]
+jsonschema>=4.10
+
+[yaml]
+PyYAML>=5.4

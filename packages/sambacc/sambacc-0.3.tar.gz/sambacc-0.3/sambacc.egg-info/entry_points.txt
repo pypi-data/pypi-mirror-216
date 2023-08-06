@@ -1,0 +1,3 @@
+[console_scripts]
+samba-container = sambacc.commands.main:main
+samba-dc-container = sambacc.commands.dcmain:main
