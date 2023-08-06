@@ -1,0 +1,13 @@
+floris>=3.4
+feather-format
+matplotlib>=3.6.3
+numpy
+pandas>=1.5
+pyproj
+pytest
+SALib
+scipy
+sqlalchemy
+streamlit
+tkcalendar
+seaborn
