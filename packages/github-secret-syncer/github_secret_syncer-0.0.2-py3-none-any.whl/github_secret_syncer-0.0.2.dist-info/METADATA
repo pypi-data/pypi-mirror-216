@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: github-secret-syncer
+Version: 0.0.2
+Summary: Github Secret Syncer.
+Home-page: https://github.com/thejimmylin/github-secret-syncer
+Author: thejimmylin
+Author-email: b00502013@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Github Secret Syncer..
+
+Synchronize Github secrets with local `.env` file.
+
+
