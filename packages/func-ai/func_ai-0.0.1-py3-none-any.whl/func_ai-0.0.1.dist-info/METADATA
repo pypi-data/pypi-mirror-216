@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: func-ai
+Version: 0.0.1
+Summary: AI Functional Catalog - OpenAI functions on steriods
+License: MIT
+Author: Trayan Azarov
+Author-email: trayan.azarov@amikos.tech
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: chromadb (>=0.3.26,<0.4.0)
+Requires-Dist: fastapi (>=0.98.0,<0.99.0)
+Requires-Dist: jsonschema (>=4.17.3,<5.0.0)
+Requires-Dist: openai (>=0.27.8,<0.28.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: python-ulid (>=1.1.0,<2.0.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Project-URL: Bug Tracker, https://github.com/amikos-tech/func-ai/issues
+Project-URL: Homepage, https://github.com/amikos-tech/func-ai/
+Project-URL: Source, https://github.com/amikos-tech/func-ai/
+Description-Content-Type: text/markdown
+
+# AI Functional Catalog
+
+Your OpenAI function calling on steroids
+
+Features:
+- Index any python function and use it in your AI workflows
+- Index any CLI command and use it in your AI workflows
+- Index any API endpoint and use it in your AI workflows
+
+## Installation
+
+With pip:
+
+```bash
+pip install func-ai
+```
+
+With poetry:
+
+```bash
+poetry add func-ai
+```
+
