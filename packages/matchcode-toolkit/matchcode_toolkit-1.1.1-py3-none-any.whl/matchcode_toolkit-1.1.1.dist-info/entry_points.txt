@@ -1,0 +1,5 @@
+[scancode_post_scan]
+fingerprint = matchcode_toolkit.plugin_fingerprint:Fingerprint
+
+[scancodeio_pipelines]
+scan_and_fingerprint_package = matchcode_toolkit.pipelines.scan_and_fingerprint_package:ScanAndFingerprintPackage
