@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: pySWXF
+Version: 0.0.4
+Summary: Routines for calculating standing wave x-ray fluorescence and x-ray reflectivity
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Author-email: Laurence Lurio <llurio@niu.edu>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >3.7
+Description-Content-Type: text/markdown
+
+# pySWXF 
+
+Code for calculating reflectivity and standing wave x-ray reflectivity
+
+There are three subpackages, refl_funs, for reflectivity calculations, standing_wave, for standing 
+wave calculations and xray_utils, for a few auxilary utilities
+
+refl_funs
+	mlayer_rough(alpha,k0,n_r,zm0,sig)
+	mlayer_conv(alpha,k0,n,z,sig,res,npt)
+standing_wave
+	reflection_matrix(alpha,E,layers)
+	standing_wave(z,T,R,kz,h_i)
+xray_utils 
+	n_to_rho(material,n,energy)
+
