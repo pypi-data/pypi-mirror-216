@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: orbit-component-dbshell
+Version: 0.0.92
+Summary: Orbit Database shell component
+Home-page: https://gitlab.com/madpenguin/orbit-component-dbshell
+License: MIT
+Author: Gareth Bult
+Author-email: gareth@madpenguin.uk
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: orbit-database-shell (>=1.0.0,<2.0.0)
+Project-URL: Documentation, https://gitlab.com/madpenguin/orbit-component-dbshell
+Project-URL: Repository, https://gitlab.com/madpenguin/orbit-component-dbshell
+Description-Content-Type: text/markdown
+
+
