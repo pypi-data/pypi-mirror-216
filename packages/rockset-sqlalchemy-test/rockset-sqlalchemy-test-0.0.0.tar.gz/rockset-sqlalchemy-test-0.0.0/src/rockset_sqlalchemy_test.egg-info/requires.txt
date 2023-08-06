@@ -1,0 +1,6 @@
+rockset>=1.0.0
+sqlalchemy<2.0.0,>=1.4.0
+
+[sqlalchemy]
+sqlalchemy<1.4,>=1.0
+geojson>=2.5.0

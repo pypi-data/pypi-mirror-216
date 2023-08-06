@@ -1,0 +1,3 @@
+[sqlalchemy.dialects]
+rockset_sqlalchemy = rockset_sqlalchemy.client.sqlalchemy:RocksetDialect
+
