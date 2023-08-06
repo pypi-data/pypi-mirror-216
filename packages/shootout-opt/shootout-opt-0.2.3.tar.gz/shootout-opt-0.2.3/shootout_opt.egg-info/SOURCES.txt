@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+shootout/methods/pipeplines.py
+shootout/methods/plotters.py
+shootout/methods/post_processors.py
+shootout/methods/runners.py
+shootout/tests/test_plotters.py
+shootout/tests/test_post_processors.py
+shootout/tests/test_runners.py
+shootout_opt.egg-info/PKG-INFO
+shootout_opt.egg-info/SOURCES.txt
+shootout_opt.egg-info/dependency_links.txt
+shootout_opt.egg-info/requires.txt
+shootout_opt.egg-info/top_level.txt
