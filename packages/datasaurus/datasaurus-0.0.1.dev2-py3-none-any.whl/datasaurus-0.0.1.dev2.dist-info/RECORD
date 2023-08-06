@@ -1,0 +1,16 @@
+datasaurus/__init__.py,sha256=46DljmCM-jQnsOncKjmqktL4CT3O01eYILEsLpmVyaE,103
+datasaurus/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+datasaurus/core/loggers.py,sha256=CbpdzAPXLbuUb5BIombgxdRajGh70_RCeTU2wHL0AcQ,179
+datasaurus/core/models/__init__.py,sha256=Mzxnwthpy6cIplHppg4zYixpO5uQMBLDJfiIIRNR_I4,274
+datasaurus/core/models/base.py,sha256=1bl6D_dcCatV7BVa_NImK_gQZmPaQ2A2fQyEapWGDRY,11447
+datasaurus/core/models/columns.py,sha256=nbdrRwu5IYhOXBoSoGvXu3cJaF-BEPwWgN7bqfxz-dU,8222
+datasaurus/core/models/exceptions.py,sha256=7Jni8IjuzZxoikcRKkeMAZO6_Y-bC7zw0gbNSqgo2mM,459
+datasaurus/core/storage/__init__.py,sha256=gZtHcCKQFjDwk-kpciCNJuDyGK566x3JVMwCJZ-hz2g,156
+datasaurus/core/storage/azure.py,sha256=FU44fL3GVC9qGJxisDEWS8rCxFaua0BaU-bhCGRpOLU,1512
+datasaurus/core/storage/base.py,sha256=DmuePRoKCRrM2f9nUQkie2UFC1uHTSvK8uRUN1pyMZA,3212
+datasaurus/core/storage/format.py,sha256=HDOTe0JdjvKKPIGQezR6gx0Igpqx6hB8EuhLDlvpmDc,846
+datasaurus/core/storage/mixins.py,sha256=dvfmuASlrbvw6yAUWAe3Rp93Y5I4FGZsGsKlMDdpIiY,3388
+datasaurus/core/storage/storage.py,sha256=eZMoG8dPleKuFuUy_MAMHnTfIGK0g_8Qfei29VVudxQ,5100
+datasaurus-0.0.1.dev2.dist-info/METADATA,sha256=oPK-OeyflLEAa0eYq_nxUg0f2krOKskCDEPVnN6Rp1M,6048
+datasaurus-0.0.1.dev2.dist-info/WHEEL,sha256=7Z8_27uaHI_UZAc4Uox4PpBhQ9Y5_modZXWMxtUi4NU,88
+datasaurus-0.0.1.dev2.dist-info/RECORD,,
