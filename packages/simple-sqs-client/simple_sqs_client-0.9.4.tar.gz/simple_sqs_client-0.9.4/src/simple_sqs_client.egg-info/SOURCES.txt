@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/simple_sqs_client/__init__.py
+src/simple_sqs_client/builder.py
+src/simple_sqs_client/client.py
+src/simple_sqs_client/setup.py
+src/simple_sqs_client/test_client.py
+src/simple_sqs_client.egg-info/PKG-INFO
+src/simple_sqs_client.egg-info/SOURCES.txt
+src/simple_sqs_client.egg-info/dependency_links.txt
+src/simple_sqs_client.egg-info/requires.txt
+src/simple_sqs_client.egg-info/top_level.txt
+tests/test_client.py
