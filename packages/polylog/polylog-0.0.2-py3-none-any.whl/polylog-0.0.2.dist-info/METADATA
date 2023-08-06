@@ -1,0 +1,74 @@
+Metadata-Version: 2.1
+Name: polylog
+Version: 0.0.2
+Summary: A custom python logging package
+Home-page: https://github.com/lvlcn-t/PolyLog
+Author: lvlcn-t
+Author-email: lvlcn-t <75443136+lvlcn-t@users.noreply.github.com>
+Maintainer-email: lvlcn-t <75443136+lvlcn-t@users.noreply.github.com>
+Project-URL: Homepage, https://github.com/lvlcn-t/polylog
+Project-URL: Bug Reports, https://github.com/lvlcn-t/polylog/issues
+Project-URL: Source, https://github.com/lvlcn-t/polylog/
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: check-manifest ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+
+# PolyLog
+
+PolyLog is a custom logging package designed to support your application development process. Built with versatility in mind, this package provides comprehensive, formatted logging in Python. It includes features such as:
+
+- Customizable formatting
+- Thread-safe logging
+- Trace and Span ID integration
+- Color-coded log levels
+- Optional local log file storage
+
+This package forms part of a larger multi-language (polylog) logging framework, with companion modules in Go, Rust, and TypeScript.
+
+## Installation
+
+To install PolyLog, you can simply use pip:
+
+```bash
+pip install polylog
+```
+
+## Usage
+
+Here is a basic usage example:
+
+```python
+from polylog import setup_logger
+
+# Set up the logger
+logger = setup_logger(__name__)
+
+# Use the logger
+logger.info("This is an information message")
+logger.error("This is an error message")
+```
+
+In this example, `setup_logger` is a function that sets up the logger and returns it. You can then use methods like `logger.info` and `logger.error` to log messages.
+
+## Contact
+
+If you have any questions, feel free to reach out at [GitHub](https://github.com/lvlcn-t/polylog/issues).
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
