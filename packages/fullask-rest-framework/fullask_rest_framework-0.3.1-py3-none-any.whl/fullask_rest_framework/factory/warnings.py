@@ -1,0 +1,2 @@
+class BlueprintWarning(UserWarning):
+    pass
