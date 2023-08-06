@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "httpie-mauth"
+version = "0.0.3"
+description = "MAuth plugin for HTTPie"
+authors = ["Mason Gup <mason.gup@3ds.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "httpie_mauth.py"}]
+repository = "https://github.com/masongup-mdsol/httpie-mauth"
+classifiers = [
+    'Environment :: Web Environment',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Topic :: Internet :: WWW/HTTP',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+httpie = "^3.0.0"
+mauth-client = "^1.2.1"
+PyYAML = "^6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."httpie.plugins.auth.v1"]
+httpie_mauth = "httpie_mauth:MAuthPlugin"
