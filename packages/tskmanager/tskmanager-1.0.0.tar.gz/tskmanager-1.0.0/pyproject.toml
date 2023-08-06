@@ -1,0 +1,18 @@
+[project]
+name = "tskmanager"
+version = "1.0.0"
+authors = [
+  { name="Highghlow", email="highghlow@proton.me" },
+]
+description = "Task manager for python"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/highghlow/tasker"
+"Bug Tracker" = "https://github.com/highghlow/tasker/issues"
