@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: modalmap
+Version: 0.0.0
+Author-email: Shyam Sudhakaran <shyamsnair@protonmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: vexpresso
+Requires-Dist: torch
+Requires-Dist: anything2image (==1.1.4)
+Provides-Extra: dev
+
+# Base Template
