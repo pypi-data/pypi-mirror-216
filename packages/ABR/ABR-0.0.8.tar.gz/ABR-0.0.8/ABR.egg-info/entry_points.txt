@@ -1,0 +1,5 @@
+[console_scripts]
+abr = abr.app:main_launcher
+abr-batch = abr.app:main_batch
+abr-compare = abr.app:main_compare
+abr-gui = abr.app:main_gui
