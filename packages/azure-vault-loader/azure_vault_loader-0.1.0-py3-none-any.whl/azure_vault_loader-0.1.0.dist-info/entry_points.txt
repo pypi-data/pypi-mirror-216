@@ -1,0 +1,4 @@
+[console_scripts]
+load_azure_secrets = azure_vault_loader.cli:main
+obfuscate_service_principals = azure_vault_loader.cli:run_obfuscate_service_principals
+
