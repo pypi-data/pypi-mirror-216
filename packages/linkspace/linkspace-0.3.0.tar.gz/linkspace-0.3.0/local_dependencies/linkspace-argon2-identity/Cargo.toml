@@ -1,0 +1,21 @@
+[package]
+name = "linkspace-argon2-identity"
+description = "Argon2 encrypted schnorr keys"
+
+version= "0.3.0-rc2"
+authors= ["Anton Sol <AntonSol919@gmail.com>"]
+edition= "2021"
+license= "MPL-2.0"
+homepage= "https://www.linkspace.dev"
+documentation= "https://www.linkspace.dev/docs/guide/index.html"
+repository= "https://github.com/AntonSol919/linkspace"
+resolver = "2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+linkspace-cryptography = { path = "../linkspace-cryptography", version="0.3.0-rc2"}
+
+thiserror=  "=1.0.40"
+base64="=0.21"
+
+rust-argon2 = {version = "1.0.0",default-features=false}

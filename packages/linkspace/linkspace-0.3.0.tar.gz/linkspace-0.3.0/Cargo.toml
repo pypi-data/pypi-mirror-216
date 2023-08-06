@@ -1,0 +1,30 @@
+[package]
+name = "linkspace-py"
+
+version = "0.3.0"
+authors= ["Anton Sol <AntonSol919@gmail.com>"]
+edition= "2021"
+license= "MPL-2.0"
+homepage= "https://www.linkspace.dev"
+documentation= "https://www.linkspace.dev/docs/guide/index.html"
+repository= "https://github.com/AntonSol919/linkspace"
+build = "../../build_env.rs"
+resolver = "2"
+
+[lib]
+name = "linkspace"
+crate-type = ["cdylib"]
+
+[dependencies]
+linkspace = { path = "local_dependencies/linkspace", version ="0.3.0-rc2"}
+linkspace-pkt = { path = "local_dependencies/linkspace-pkt", version ="0.3.0-rc2"}
+
+smallvec= {version="1.10.0",features=["const_new","const_generics","write"]}
+anyhow= "=1.0.71"
+tracing= {version = "=0.1.37",features=["release_max_level_info"]}
+tracing-subscriber = { version = "=0.3.17", features = ["env-filter"] }
+
+pyo3 = { version = "0.19.0", features = ["extension-module","anyhow","abi3","serde","abi3-py38"]  }
+[build-dependencies]
+vergen = { version = "=8.2.1", features = ["git", "gitcl", "rustc"] }
+

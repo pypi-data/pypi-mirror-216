@@ -1,0 +1,46 @@
+[package]
+name = "linkspace-common"
+categories = []
+keywords = ["linkspace"]
+description = "linkspace common"
+
+version= "0.3.0-rc2"
+authors= ["Anton Sol <AntonSol919@gmail.com>"]
+edition= "2021"
+license= "MPL-2.0"
+homepage= "https://www.linkspace.dev"
+documentation= "https://www.linkspace.dev/docs/guide/index.html"
+repository= "https://github.com/AntonSol919/linkspace"
+resolver = "2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["full", "lmdb"]
+lmdb=["linkspace-core/lmdb"]
+fs=["memmap2", "notify"]
+cli=["clap", "clap/env", "clap/derive", "rpassword"]
+full=["fs", "cli"]
+
+[dependencies]
+abe = { path = "../abe", version = "0.3.0-rc2"}
+byte-fmt = { path = "../byte-fmt", version = "0.3.0-rc2"}
+linkspace-pkt = { path = "../linkspace-pkt", version = "0.3.0-rc2"}
+linkspace-core= { path = "../linkspace-core",default-features=false, version = "0.3.0-rc2"}
+linkspace-argon2-identity = { path = "../linkspace-argon2-identity", version = "0.3.0-rc2"}
+
+anyhow= "=1.0.71"
+serde= { version = "=1.0.160", features = ["derive"] }
+tracing= {version = "=0.1.37",features=["release_max_level_info"]}
+tracing-subscriber= "=0.3.17"
+thiserror=  "=1.0.40"
+rand= "=0.8.5"
+clap = { version = "=4.3.4", optional = true , features = ["derive"] }
+futures= "=0.3.28"
+either= "=1.8.1"
+
+memmap2 = { version = "0.7.1", optional = true }
+notify = { version = "5.0", optional = true }
+rpassword = { version = "7.1" , optional = true }
+async_executors = { version = "0.6.0", features = ["timer","async_global","bindgen","localpool"] }
+

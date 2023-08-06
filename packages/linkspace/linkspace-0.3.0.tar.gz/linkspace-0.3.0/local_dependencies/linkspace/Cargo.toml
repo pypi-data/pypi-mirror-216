@@ -1,0 +1,30 @@
+[package]
+name = "linkspace"
+version = "0.3.0-rc2"
+edition = "2021"
+authors = ["Anton Sol <AntonSol919@gmail.com>"]
+license = "MPL-2.0"
+homepage = "https://antonsol919.github.io/linkspace/"
+documentation = "https://www.linkspace.dev/docs/guide/index.html"
+repository = "https://github.com/AntonSol919/linkspace"
+categories = ["database","network-programming","asynchronous"]
+keywords = ["linkspace", "supernet"]
+description = "linkspace - a general purpose supernet"
+resolver = "2"
+
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["full", "lmdb"]
+lmdb=["linkspace-common/lmdb"]
+full = ["linkspace-common/full"]
+
+
+[dependencies]
+anyhow= "=1.0.71"
+backtrace = "0.3.67"
+linkspace-common = { path = "../linkspace-common", version = "0.3.0-rc2", default-features = false}
+tracing= {version = "=0.1.37",features=["release_max_level_info"]}
+

@@ -1,0 +1,43 @@
+[package]
+name = "linkspace-core"
+categories = []
+keywords = ["linkspace"]
+description = "linkspace core"
+
+version= "0.3.0-rc2"
+authors= ["Anton Sol <AntonSol919@gmail.com>"]
+edition= "2021"
+license= "MPL-2.0"
+homepage= "https://www.linkspace.dev"
+documentation= "https://www.linkspace.dev/docs/guide/index.html"
+repository= "https://github.com/AntonSol919/linkspace"
+resolver = "2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default=["lmdb"]
+lmdb = ["lmdb-rkv", "lmdb-rkv-sys", "libc"]
+
+[dependencies]
+
+linkspace-pkt = { path = "../linkspace-pkt", version="0.3.0-rc2"}
+linkspace-cryptography = { path = "../linkspace-cryptography",version="0.3.0-rc2"}
+
+arrayvec= "=0.7.2  "
+anyhow= "=1.0.71"
+thiserror=  "=1.0.40"
+tracing= {version = "=0.1.37",features=["release_max_level_info"]}
+either= "=1.8.1"
+serde = { version = "=1.0.160", features = ["derive","rc"] }
+libc = { version = "0.2.147", optional =true}
+smallvec= {version="1.10.0",features=["const_new","const_generics","write"]}
+
+dunce = "1.0.2"
+ipcbus = { path = "../ipcbus", version = "0.1.0"}
+lmdb-rkv = { git="https://github.com/AntonSol919/lmdb-rs", optional = true }
+lmdb-rkv-sys = { git="https://github.com/AntonSol919/lmdb-rs" ,optional = true }
+#lmdb-rkv = {path = "../../../lmdb-rs",optional=true}
+#lmdb-rkv-sys = {path = "../../../lmdb-rs/lmdb-sys",optional=true}
+
+time = {version="0.3",features=["parsing","formatting"]}
+parse-display = "0.6.0"
