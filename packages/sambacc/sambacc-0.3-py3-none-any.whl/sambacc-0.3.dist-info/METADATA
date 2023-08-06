@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: sambacc
+Version: 0.3
+Summary: Samba Container Configurator
+Home-page: https://github.com/samba-in-kubernetes/sambacc
+Author: John Mulligan
+Author-email: phlogistonjohn@asynchrono.us
+License: GPL3
+License-File: COPYING
+Provides-Extra: toml
+Requires-Dist: tomli ; (python_version < "3.11") and extra == 'toml'
+Provides-Extra: validation
+Requires-Dist: jsonschema (>=4.10) ; extra == 'validation'
+Provides-Extra: yaml
+Requires-Dist: PyYAML (>=5.4) ; extra == 'yaml'
+
