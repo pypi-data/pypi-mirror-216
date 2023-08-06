@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: mentord
+Version: 1.2.0
+Summary: A sync library for creating self bots in python!
+Description-Content-Type: text/markdown
+
+
+### Example use:
+
+```python
+from mentord import *
+
+User_client: Client = Client()
+User_client.connect(token='YOUR TOKEN')
+```
+
+### Use decorators:
+
+```python
+@on_ready(client=User_client, delay=5.0)
+def client_on_ready() -> None:
+    print('Self-bot is started!')
+
+@on_message(client=User_client, delay=0.5)
+def client_on_message(message: Message) -> None:
+    utils.channel_opers.ChannelOperations(channel=message.channel_id, client=User_client).send_message("hello!")
+```
