@@ -1,0 +1,3 @@
+include msprior/configs/*.gin
+include requirements.txt
+include msprior/cuda/wkv_*
