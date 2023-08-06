@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: micropython-captive-dhcp-server
+Version: 0.0.4.dev0
+Summary: Micropython asyncio simplistic dhcp server for use with captive portals
+Author-email: Patrick McAndrew <patrick@urg.name>
+Project-URL: Homepage, https://github.com/urg/micropython-captive-dhcp-server
+Project-URL: Repository, https://github.com/urg/micropython-captive-dhcp-server
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: MicroPython
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# micropython-captive-dhcp-server
+Micropython asyncio simplistic dhcp server for use with captive portals
+
+docker compose exec busybox udhcpc -B -f -v
