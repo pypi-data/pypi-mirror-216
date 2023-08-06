@@ -1,0 +1,9 @@
+click
+jina>=3.18.0
+
+[test]
+flaky
+pytest
+pytest-asyncio
+pytest-repeat
+pytest-timeout
