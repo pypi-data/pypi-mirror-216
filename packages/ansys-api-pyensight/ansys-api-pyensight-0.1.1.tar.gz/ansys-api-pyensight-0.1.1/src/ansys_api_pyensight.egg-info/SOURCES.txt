@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/ansys/api/pyensight/VERSION
+src/ansys/api/pyensight/__init__.py
+src/ansys/api/pyensight/py.typed
+src/ansys/api/pyensight/v0/__init__.py
+src/ansys/api/pyensight/v0/enshell.proto
+src/ansys/api/pyensight/v0/ensight.proto
+src/ansys/api/pyensight/v0/ensight_api.xml
+src/ansys_api_pyensight.egg-info/PKG-INFO
+src/ansys_api_pyensight.egg-info/SOURCES.txt
+src/ansys_api_pyensight.egg-info/dependency_links.txt
+src/ansys_api_pyensight.egg-info/entry_points.txt
+src/ansys_api_pyensight.egg-info/requires.txt
+src/ansys_api_pyensight.egg-info/top_level.txt
