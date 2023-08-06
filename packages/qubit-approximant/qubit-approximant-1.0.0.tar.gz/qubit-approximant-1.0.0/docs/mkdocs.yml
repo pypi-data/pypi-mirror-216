@@ -1,0 +1,74 @@
+site_name: QubitApproximant
+site_description: "A package for approximating quantum circuits with a single qubit."
+
+repo_url: https://github.com/pablovegan/QubitApproximant
+repo_name: pablovegan/QubitApproximant
+docs_dir: ./
+watch: [../README.md, ../qubit_approximant]
+
+
+nav:
+  - Introduction: index.md
+  - API documentation: reference/
+
+theme:
+  features:
+    - navigation.tracking
+    - toc.follow
+    - navigation.top
+  icon:
+    repo: fontawesome/brands/github
+  name: "material"
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: "red"
+      accent: "indigo"
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: "indigo"
+      accent: "white"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+
+plugins:
+  - search
+  - same-dir
+  - autorefs
+  - gen-files:
+      scripts:
+      - scripts/gen_ref_nav.py
+  - literate-nav:
+      nav_file: SUMMARY.txt
+  - section-index
+  - mkdocstrings:
+      handlers:
+        python:
+          import:
+          - https://docs.python.org/3/objects.inv
+          - https://installer.readthedocs.io/en/stable/objects.inv  # demonstration purpose in the docs
+          - https://mkdocstrings.github.io/autorefs/objects.inv
+          options:
+            docstring_style: numpy
+            docstring_options:
+              ignore_init_summary: yes
+            merge_init_into_class: yes
+            show_submodules: no
+
+markdown_extensions:
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - mdx_math
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+extra_css:
+- css/code_select.css
