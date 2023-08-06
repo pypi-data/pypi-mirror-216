@@ -1,0 +1,3 @@
+[console_scripts]
+pixelfeeder = pixelfeeder.cli:main
+pixelfeeder-gui = pixelfeeder.gui:main
