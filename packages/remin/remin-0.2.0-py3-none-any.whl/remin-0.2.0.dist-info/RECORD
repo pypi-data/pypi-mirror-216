@@ -1,0 +1,15 @@
+remin/__init__.py,sha256=tY5CIeTcfr6h9XGRbdj3cDifA8IMaNfjjzvTmalDtTw,7272
+remin/callbacks.py,sha256=vgHJhksG3Vv5CZqy0mxs93lKmZQ1Yc0_n3egH6yZbvw,5795
+remin/domain.py,sha256=FP3RFzuRa9YJmnv1FdYkD4wUV4d5gwTXWhs6zBv94O0,7307
+remin/func.py,sha256=3Crft-B0pIGovOwv5h7ro7GOs2n-rR5zkLJifipGgKM,1045
+remin/residual.py,sha256=hf4ntGJ3y_YvFWL66acMVHR97BsmQBv-uj_ZTK-BGFk,5286
+remin/solver/__init__.py,sha256=NKm8hJUiwN8F-jR_cxTm6vN40e2Ic8Ih6jIUBLk_Xm8,117
+remin/solver/residual_loss.py,sha256=I-zf4aUEgzKPNaSQxmkEHey-8kd3FkT3TmcabkppaIY,1794
+remin/solver/solver.py,sha256=a_HAKemtm_TOi7uKcvv49UFU0zTlqISw-5DUQynOu18,3456
+remin/solver/trainer.py,sha256=1IrOSuIuljcSaV4uuhFwJvUE_u0cdVer2atUTyGM7RU,3475
+remin-0.2.0.dist-info/LICENSE,sha256=IX0D1KonoL9jX95GXOY6SGLVa7H_m7mMKC84pf8JN00,1072
+remin-0.2.0.dist-info/METADATA,sha256=j0FJmprVHbRp-ZT7vc4iWxFFMmA2Ft7gH5JRn0CSHTw,3393
+remin-0.2.0.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+remin-0.2.0.dist-info/entry_points.txt,sha256=nbt1LLMBvoGdcDLfT9AHaFXW5uY4y5SW9ph5PdZL37o,37
+remin-0.2.0.dist-info/top_level.txt,sha256=ow9rqYHC-jBMT1OMS4JpKbxrOHWdvXLUcbX_GlESQhs,6
+remin-0.2.0.dist-info/RECORD,,
