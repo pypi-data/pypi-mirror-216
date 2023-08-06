@@ -1,0 +1,16 @@
+astropy
+numpy
+scipy
+requests
+beautifulsoup4
+cython
+
+[all]
+h5py
+
+[docs]
+sphinx-astropy
+
+[test]
+pytest-astropy
+h5py
