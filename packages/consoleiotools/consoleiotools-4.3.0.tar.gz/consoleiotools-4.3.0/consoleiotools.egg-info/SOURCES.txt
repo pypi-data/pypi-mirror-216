@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+consoleiotools/__init__.py
+consoleiotools/__main__.py
+consoleiotools.egg-info/PKG-INFO
+consoleiotools.egg-info/SOURCES.txt
+consoleiotools.egg-info/dependency_links.txt
+consoleiotools.egg-info/requires.txt
+consoleiotools.egg-info/top_level.txt
+tests/test_consoleiotools.py

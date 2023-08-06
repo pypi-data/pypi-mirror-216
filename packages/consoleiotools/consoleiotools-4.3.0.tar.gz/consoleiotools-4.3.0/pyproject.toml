@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "consoleiotools"
+description = "Console tools for inputs and outputs in Python"
+requires-python = ">=3.6"
+readme = "README.md"
+keywords = ["python", "console", "input", "output", "tool"]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: User Interfaces",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = ["rich"]
+dynamic = ["version"]
+
+[[project.authors]]
+name = "Kyan"
+email = "kai@kyan001.com"
+
+[project.optional-dependencies]
+dev = ["build", "wheel", "pycodestyle"]
+
+[project.urls]
+Homepage = "https://github.com/kyan001/PyConsoleIOTools"
+"Issue Tracker" = "https://github.com/kyan001/PyConsoleIOTools/issues"
+"Source Code" = "https://github.com/kyan001/PyConsoleIOTools"
+
+[tool.setuptools]
+py-modules = ["consoleiotools"]
+
+[tool.setuptools.dynamic]
+version = {attr = "consoleiotools.__version__"}
+
+[tool.setuptools.packages.find]
+exclude = ["contrib", "docs", "tests"]
