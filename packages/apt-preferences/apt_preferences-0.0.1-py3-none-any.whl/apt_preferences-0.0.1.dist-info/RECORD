@@ -1,0 +1,14 @@
+apt_preferences/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+apt_preferences/_constants.py,sha256=Pm2QOjJaH_0YgSiFKjrLKmgmM0vZy-emYfZRP4IeHuQ,737
+apt_preferences/_utils.py,sha256=qQ2Nkd8G0SNCFebRPj1c0OWoLJgC_YikIOmAsBhMg2w,744
+apt_preferences/apt_preferences.lark,sha256=4SxvFesTdZ6NN4VuXOUxB0IEO2hi3PaXny1r5hGjGWo,869
+apt_preferences/data_structures.py,sha256=n_eSJ5kuUSyoGhJGiIvMXVIYhnjcN5El1f3DyED722E,399
+apt_preferences/errors.py,sha256=oHPp9BzvPllfSYwv57qpCPZw0OW5reZ2T_rtqL3oqXE,229
+apt_preferences/find_preferences_files.py,sha256=vIML5JsYrUep-z-_rXha8b9fIiXgQlOwbAFBu_-bp0Y,1961
+apt_preferences/parse_preferences_files.py,sha256=NfZSHr1gDiIPU2Ep32tmo__aPc7DCfONBWTtjfW74Qs,5870
+apt_preferences/render_preferences_files.py,sha256=lFhSaxhfi9tNlFGpzYbk55P6JfXEXk9setDUtK-eXEU,3683
+apt_preferences-0.0.1.dist-info/LICENSE,sha256=grpykcrk0m7D5HPtQEmH5r4_yfIlGlATfjy5o2-j2j8,1077
+apt_preferences-0.0.1.dist-info/METADATA,sha256=B8hB9zOqSFYqI65QY2IVNBETL84DhQpOHLe9ETTolc0,3831
+apt_preferences-0.0.1.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+apt_preferences-0.0.1.dist-info/top_level.txt,sha256=IvDNsmn3dRVAislXlxvPveZ_BO6CBRFe77L6CF4vVNY,16
+apt_preferences-0.0.1.dist-info/RECORD,,
