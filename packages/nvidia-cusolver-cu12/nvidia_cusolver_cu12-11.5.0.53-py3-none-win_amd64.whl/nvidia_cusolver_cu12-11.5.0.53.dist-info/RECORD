@@ -1,0 +1,17 @@
+nvidia/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nvidia/cusolver/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nvidia/cusolver/bin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nvidia/cusolver/bin/cusolver64_11.dll,sha256=00RySWWcP_GSN7_1W7cor1j8dcNdW1fH6UIL3sHbyCo,110174720
+nvidia/cusolver/bin/cusolverMg64_11.dll,sha256=XbF9cSmgI6sFjS8bN7MdYyqUx4NFgiNBWyEb4nyHpwI,78220288
+nvidia/cusolver/include/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nvidia/cusolver/include/cusolverDn.h,sha256=yVyd9n7ZgiGu6Z2d8oiAUqngwBqRKcG1KdsQT8xiccQ,152837
+nvidia/cusolver/include/cusolverMg.h,sha256=kAgz4PBnrE_ciTT2-DM-vj4BacP6bGH6ooYzC-8B9TY,11867
+nvidia/cusolver/include/cusolverRf.h,sha256=xK0TBqdwp92DgkujcpOAMiiVwKcgPpH8dv-Daa5KSQ8,14631
+nvidia/cusolver/include/cusolverSp.h,sha256=GfqGSVSjNHtrI95ccU23Rs6Byk2ecI7byi8fNWh3h5w,33484
+nvidia/cusolver/include/cusolverSp_LOWLEVEL_PREVIEW.h,sha256=Wlwovi12XJlXxGpssaHtPSB0O_PLZti1q6qCrHC8uBc,38602
+nvidia/cusolver/include/cusolver_common.h,sha256=e7fj4cLLhezTSclix2--5CfXlj2EF_1HSHGvZOZPRIo,9091
+nvidia_cusolver_cu12-11.5.0.53.dist-info/License.txt,sha256=rW9YU_ugyg0VnQ9Y1JrkmDDC-Mk_epJki5zpCttMbM0,59262
+nvidia_cusolver_cu12-11.5.0.53.dist-info/METADATA,sha256=yXwIAqqy7DHAlkI5o_7T5KOSUAh2oLBBYH1NTfCpqAM,1625
+nvidia_cusolver_cu12-11.5.0.53.dist-info/WHEEL,sha256=i9qQj8KaD8_YEW0Vc2oS56fKju23RkQ-FVz-QmzVakQ,98
+nvidia_cusolver_cu12-11.5.0.53.dist-info/top_level.txt,sha256=fTkAtiFuL16nUrB9ytDDtpytz2t0B4NvYTnRzwAhO14,7
+nvidia_cusolver_cu12-11.5.0.53.dist-info/RECORD,,
