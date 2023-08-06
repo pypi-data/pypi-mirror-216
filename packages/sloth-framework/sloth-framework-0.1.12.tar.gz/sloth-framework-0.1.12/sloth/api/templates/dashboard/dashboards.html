@@ -1,0 +1,21 @@
+{% extends "dashboard/base.html" %}
+{% load tags %}
+{% block body %}
+    {% if not request|is_ajax %}
+        <body id="{{ request.path|url_slug }}">
+            {% include "dashboard/menu.html" with menu=dashboard.data.menu %}
+            {% block header %}{% include "dashboard/header.html" %}{% endblock %}
+            {% include "dashboard/links.html" with data=dashboard.data %}
+            <main>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+    {% include "dashboard/messages.html" %}
+
+    {% if not request|is_ajax %}
+            </main>
+            {% include "dashboard/footer.html" %}
+            {% include "dashboard/bottom.html" %}
+        </body>
+    {% endif %}
+{% endblock %}
