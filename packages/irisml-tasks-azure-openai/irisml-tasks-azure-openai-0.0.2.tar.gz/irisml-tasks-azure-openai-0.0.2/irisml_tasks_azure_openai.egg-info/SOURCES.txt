@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+irisml/tasks/call_azure_openai_completion.py
+irisml/tasks/create_azure_openai_chat_model.py
+irisml/tasks/create_azure_openai_completion_model.py
+irisml_tasks_azure_openai.egg-info/PKG-INFO
+irisml_tasks_azure_openai.egg-info/SOURCES.txt
+irisml_tasks_azure_openai.egg-info/dependency_links.txt
+irisml_tasks_azure_openai.egg-info/requires.txt
+irisml_tasks_azure_openai.egg-info/top_level.txt
+test/test_call_azure_openai_completion.py
+test/test_create_azure_openai_chat_model.py
+test/test_create_azure_openai_completion_model.py
