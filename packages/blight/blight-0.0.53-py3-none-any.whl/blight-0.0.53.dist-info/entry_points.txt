@@ -1,0 +1,12 @@
+[console_scripts]
+blight-ar=blight._cli:tool
+blight-as=blight._cli:tool
+blight-c++=blight._cli:tool
+blight-cc=blight._cli:tool
+blight-cpp=blight._cli:tool
+blight-env=blight._cli:env
+blight-exec=blight._cli:exec_
+blight-install=blight._cli:tool
+blight-ld=blight._cli:tool
+blight-strip=blight._cli:tool
+
