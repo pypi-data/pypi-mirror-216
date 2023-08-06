@@ -1,0 +1,302 @@
+$def with (files)
+$var title: Media
+
+$if tx.user.is_owner:
+    <form action="" method=post>
+    <div><label>URL <input name=url type=url></label> <button>Download</button></div>
+    </form>
+    <form action="" enctype=multipart/form-data method=post>
+    <div><label>File <input name=file type=file></label> <button>Upload</button></div>
+    </form>
+    $# <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    $# <link rel="stylesheet" type="text/css"
+    $# href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css">
+    $# <form action="" class="dropzone" id="my-awesome-dropzone"></form>
+    $# <script type="application/javascript">
+    $# console.log(Dropzone)
+    $# Dropzone.options.dropper = {
+    $#     paramName: 'file',
+    $#     chunking: true,
+    $#     forceChunking: true,
+    $#     url: 'https://ragt.ag/media',
+    $#     maxFilesize: 1025, 
+    $#     chunkSize: 10000,
+    $#     parallelChunkUploads: true
+    $# }
+    $# </script>
+
+<div id=files>
+$for file in files:
+    <div>
+    $if tx.user.is_owner:
+        <form action="/$file.name" method=delete>
+        <input type=hidden name=_http_method value=delete>
+    $if file.name.endswith((".png", ".jpg", ".jpeg", ".gif", ".webp")):
+        <div><a href=/$file.name><img src=/$file.name></a></div>
+    $elif file.name.endswith((".mp4", ".webm", ".mov", ".flv")):
+        $if file.name.endswith(".mp4"):
+            $ type = "mp4"
+        $elif file.name.endswith(".webm"):
+            $ type = "webm"
+        $elif file.name.endswith(".mov"):
+            $ type = "mp4"
+        $elif file.name.endswith(".flv"):
+            $ type = "x-flv"
+        <div>
+        <video id=player class="video-js vjs-default-skin" controls style=height:360px;width:100%>
+        <source src="/$file.name" type=video/$type>
+        </video>
+        </div>
+        <script>
+        player = videojs('player')
+        player.fluid(true)
+        // player.aspectRatio('4:3')
+        // player.play()
+        </script>
+    $elif file.name.endswith((".m4a",)):
+        <div><audio controls>
+        <source src=/$file.name type=audio/mp4>
+        </audio></div>
+    <p>$file.name <small>$round(file.stat().st_size / 1024 / 1024, 2)mb</small></p>
+    $if tx.user.is_owner:
+        <button>Delete</button>
+        </form>
+    </div>
+</div>
+
+
+
+$# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.8.1/video-js.min.css" />
+$# <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.8.1/video.min.js"></script>
+$# 
+$# <video id=wtvideo class="video-js" data-setup="{}" controls="true"></video>
+$# <script type='module'>   
+$#   // import WebTorrent from 'https://esm.sh/webtorrent'
+$#   import WebTorrent from '/static/webtorrent.min.js'
+$#   const client = new WebTorrent()
+$#   const torrentId = 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10&dn=Sintel&tr=udp%3A%2F%2Fexplodie.org%3A6969&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.empire-js.us%3A1337&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=wss%3A%2F%2Ftracker.btorrent.xyz&tr=wss%3A%2F%2Ftracker.fastcast.nz&tr=wss%3A%2F%2Ftracker.openwebtorrent.com&ws=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2F&xs=https%3A%2F%2Fwebtorrent.io%2Ftorrents%2Fsintel.torrent'
+$#   const player = document.querySelector('#wtvideo')
+$# 
+$#   // see tutorials.md for a full example of streaming media using service workers
+$# navigator.serviceWorker.register('/static/sw.min.js')
+$# const controller = await navigator.serviceWorker.ready
+$# client.createServer({ controller })
+$# 
+$# client.add(torrentId, torrent => {
+$#   // Torrents can contain many files. Let's use the .mp4 file
+$#   console.log("ASD")
+$#   const file = torrent.files.find(file => {
+$#     return file.name.endsWith('.mp4')
+$#   })
+$#   file.streamTo(player) // append the file to the DOM
+$#   })
+$# 
+$#   // function download () {
+$#   //   client.add(torrentId, torrent => {
+$#   //     // Torrents can contain many files. Let's use the .mp4 file
+$#   //     const file = torrent.files.find(file => file.name.endsWith('.mp4'))
+$# 
+$#   //     // Stream to a <video> element by providing an the DOM element
+$#   //     file.streamTo(player)
+$#   //     console.log('Ready to play!')
+$#   //   })
+$#   // }
+$#   // navigator.serviceWorker.register('/static/sw.min.js', { scope: '/static/' }).then(reg => {
+$#   //   const worker = reg.active || reg.waiting || reg.installing
+$#   //   function checkState (worker) {
+$#   //     return worker.state === 'activated' && client.createServer({ controller: reg }) && download()
+$#   //   }
+$#   //   if (!checkState(worker)) {
+$#   //     worker.addEventListener('statechange', ({ target }) => checkState(target))
+$#   //   }
+$#   // })
+$# </script>
+
+
+
+
+
+
+
+
+<style>
+#files {
+  list-style: none;
+  padding-left: 0;
+  text-align: right; }
+#files img {
+  width: 100%; }
+</style>
+
+
+
+
+
+
+
+$# <style>
+$#   #output video {
+$#     width: 100%;
+$#   }
+$#   #progressBar {
+$#     height: 5px;
+$#     width: 0%;
+$#     background-color: #35b44f;
+$#     transition: width .4s ease-in-out;
+$#   }
+$#   body.is-seed .show-seed {
+$#     display: inline;
+$#   }
+$#   body.is-seed .show-leech {
+$#     display: none;
+$#   }
+$#   .show-seed {
+$#     display: none;
+$#   }
+$#   #status code {
+$#     font-size: 90%;
+$#     font-weight: 700;
+$#     margin-left: 3px;
+$#     margin-right: 3px;
+$#     border-bottom: 1px dashed rgba(255,255,255,0.3);
+$#   }
+$# 
+$#   .is-seed {
+$#     background-color: #154820;
+$#     transition: .5s .5s background-color ease-in-out;
+$#   }
+$#   body {
+$#     background-color: #2a3749;
+$#     margin: 0;
+$#     height: 100%;
+$#   }
+$#   #status {
+$#     color: #fff;
+$#     font-size: 17px;
+$#     padding: 5px;
+$#   }
+$#   a:link, a:visited {
+$#     color: #30a247;
+$#     text-decoration: none;
+$#   }
+$# </style>
+$# 
+$# <div>
+$#   <div id="progressBar"></div>
+$#   <video id="output" controls></video>
+$# </div>
+$# <!-- Statistics -->
+$# <div id="status">
+$#   <div>
+$#     <span class="show-leech">Downloading </span>
+$#     <span class="show-seed">Seeding </span>
+$#     <code>
+$#       <!-- Informative link to the torrent file -->
+$#       <a id="torrentLink" href="https://webtorrent.io/torrents/sintel.torrent">sintel.torrent</a>
+$#     </code>
+$#     <span class="show-leech"> from </span>
+$#     <span class="show-seed"> to </span>
+$#     <code id="numPeers">0 peers</code>.
+$#   </div>
+$#   <div>
+$#     <code id="downloaded"></code>
+$#     of <code id="total"></code>
+$#     — <span id="remaining"></span><br/>
+$#     &#x2198;<code id="downloadSpeed">0 b/s</code>
+$#     / &#x2197;<code id="uploadSpeed">0 b/s</code>
+$#   </div>
+$# </div>
+$# 
+$# <!-- Moment is used to show a human-readable remaining time -->
+$# <script src="http://momentjs.com/downloads/moment.min.js"></script>
+$# 
+$# <script type="module">
+$#   // Include the latest version of WebTorrent
+$#   // import WebTorrent from './webtorrent.min.js'
+$#   // import WebTorrent from 'https://esm.sh/webtorrent'
+$#   import WebTorrent from '/static/webtorrent.min.js'
+$# 
+$#   const torrentId = 'https://webtorrent.io/torrents/sintel.torrent'
+$# 
+$#   const client = new WebTorrent()
+$# 
+$#   // HTML elements
+$#   const $$body = document.body
+$#   const $$progressBar = document.querySelector('#progressBar')
+$#   const $$numPeers = document.querySelector('#numPeers')
+$#   const $$downloaded = document.querySelector('#downloaded')
+$#   const $$total = document.querySelector('#total')
+$#   const $$remaining = document.querySelector('#remaining')
+$#   const $$uploadSpeed = document.querySelector('#uploadSpeed')
+$#   const $$downloadSpeed = document.querySelector('#downloadSpeed')
+$# 
+$#   navigator.serviceWorker.register('/static/sw.min.js', { scope: '/static/' }).then(reg => {
+$#     const worker = reg.active || reg.waiting || reg.installing
+$#     function checkState (worker) {
+$#       return worker.state === 'activated' && client.createServer({ controller: reg }) && download()
+$#     }
+$#     if (!checkState(worker)) {
+$#       worker.addEventListener('statechange', ({ target }) => checkState(target))
+$#     }
+$#   })
+$# 
+$#   function download () {
+$#     // Download the torrent
+$#     client.add(torrentId, torrent => {
+$#       // Torrents can contain many files. Let's use the .mp4 file
+$#       const file = torrent.files.find(file => {
+$#         return file.name.endsWith('.mp4')
+$#       })
+$# 
+$#       // Stream the file in the browser
+$#       file.streamTo(document.querySelector('#output'))
+$# 
+$#       // Trigger statistics refresh
+$#       torrent.on('done', onDone)
+$#       setInterval(onProgress, 500)
+$#       onProgress()
+$# 
+$#       // Statistics
+$#       function onProgress () {
+$#       // Peers
+$#         $$numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')
+$# 
+$#         // Progress
+$#         const percent = Math.round(torrent.progress * 100 * 100) / 100
+$#         $$progressBar.style.width = percent + '%'
+$#         $$downloaded.innerHTML = prettyBytes(torrent.downloaded)
+$#         $$total.innerHTML = prettyBytes(torrent.length)
+$# 
+$#         // Remaining time
+$#         let remaining
+$#         if (torrent.done) {
+$#           remaining = 'Done.'
+$#         } else {
+$#           remaining = moment.duration(torrent.timeRemaining / 1000, 'seconds').humanize()
+$#           remaining = remaining[0].toUpperCase() + remaining.substring(1) + ' remaining.'
+$#         }
+$#         $$remaining.innerHTML = remaining
+$# 
+$#         // Speed rates
+$#         $$downloadSpeed.innerHTML = prettyBytes(torrent.downloadSpeed) + '/s'
+$#         $$uploadSpeed.innerHTML = prettyBytes(torrent.uploadSpeed) + '/s'
+$#       }
+$#       function onDone () {
+$#         $$body.className += ' is-seed'
+$#         onProgress()
+$#       }
+$#     })
+$#   }
+$# 
+$#   // Human readable bytes util
+$#   function prettyBytes (num) {
+$#     const units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+$#     const neg = num < 0
+$#     if (neg) num = -num
+$#     if (num < 1) return (neg ? '-' : '') + num + ' B'
+$#     const exponent = Math.min(Math.floor(Math.log(num) / Math.log(1000)), units.length - 1)
+$#     const unit = units[exponent]
+$#     num = Number((num / Math.pow(1000, exponent)).toFixed(2))
+$#     return (neg ? '-' : '') + num + ' ' + unit
+$#   }
+$# </script>
