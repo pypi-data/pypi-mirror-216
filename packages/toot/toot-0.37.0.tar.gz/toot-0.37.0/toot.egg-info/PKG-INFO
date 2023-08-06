@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: toot
+Version: 0.37.0
+Summary: Mastodon CLI client
+Home-page: https://github.com/ihabunek/toot/
+Author: Ivan Habunek
+Author-email: ivan@habunek.com
+License: GPLv3
+Project-URL: Documentation, https://toot.bezdomni.net/
+Project-URL: Issue tracker, https://github.com/ihabunek/toot/issues/
+Keywords: mastodon toot
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console :: Curses
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+License-File: LICENSE
+
+Toot is a CLI and TUI tool for interacting with Mastodon instances from the
+command line.
+
+Allows posting text and media to the timeline, searching, following, muting
+and blocking accounts and other actions.
