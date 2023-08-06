@@ -1,0 +1,14 @@
+[
+  "tests/test_Matrix.py::test_length_invalid_dir",
+  "tests/test_Matrix.py::test_length_matrix_col",
+  "tests/test_Matrix.py::test_length_matrix_row",
+  "tests/test_Matrix.py::test_length_vector",
+  "tests/test_abc.py::test_abc",
+  "tests/test_abc.py::test_abc_fun",
+  "tests/test_trigonometry.py::test_Cos",
+  "tests/test_trigonometry.py::test_Sin",
+  "tests/test_trigonometry.py::test_Tan",
+  "tests/test_trigonometry.py::test_aCos",
+  "tests/test_trigonometry.py::test_aSin",
+  "tests/test_trigonometry.py::test_aTan"
+]
