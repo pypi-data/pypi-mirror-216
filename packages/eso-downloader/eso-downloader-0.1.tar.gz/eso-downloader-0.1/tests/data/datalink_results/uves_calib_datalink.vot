@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+  <RESOURCE type="results">
+    <TABLE>
+      <INFO name="QUERY_STATUS" value="OK" />
+      <FIELD name="ID" datatype="char" ucd="meta.id;meta.main" arraysize="*" />
+      <FIELD name="access_url" datatype="char" ucd="meta.ref.url" arraysize="*" />
+      <FIELD name="service_def" datatype="char" ucd="meta.ref" arraysize="*" />
+      <FIELD name="error_message" datatype="char" ucd="meta.code.error" arraysize="*" />
+      <FIELD name="semantics" datatype="char" ucd="meta.code" arraysize="*" />
+      <FIELD name="description" datatype="char" ucd="meta.note" arraysize="*" />
+      <FIELD name="content_type" datatype="char" ucd="meta.code.mime" arraysize="*" />
+      <FIELD name="content_length" datatype="long" ucd="phys.size;meta.file" unit="byte" />
+      <FIELD name="eso_origfile" datatype="char" ucd="meta.id;meta.file" arraysize="*" />
+      <FIELD name="eso_category" datatype="char" ucd="meta.code.class;meta.dataset" arraysize="*" />
+      <FIELD name="eso_datalink" datatype="char" ucd="meta.ref.url" arraysize="*" />
+      <DATA>
+        <TABLEDATA>
+          <TR>
+            <TD>ivo://eso.org/ID?M.UVES.2022-02-24T17:04:11.596</TD>
+            <TD><![CDATA[https://dataportal.eso.org/dataPortal/file/M.UVES.2022-02-24T17:04:11.596]]></TD>
+            <TD />
+            <TD />
+            <TD>#this</TD>
+            <TD>Requested file</TD>
+            <TD>application/fits</TD>
+            <TD>8640</TD>
+            <TD>M.UVES.2022-02-24T17:04:11.596.fits</TD>
+            <TD />
+            <TD>https://archive.eso.org/datalink/links?ID=ivo://eso.org/ID?M.UVES.2022-02-24T17:04:11.596</TD>
+          </TR>
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+  </RESOURCE>
+</VOTABLE>

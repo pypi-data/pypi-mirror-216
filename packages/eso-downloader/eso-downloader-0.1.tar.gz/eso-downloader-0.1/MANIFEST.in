@@ -1,0 +1,16 @@
+include versioneer.py
+include src/eso_downloader/_version.py
+include pylintrc
+include pytest.ini
+include tox.ini
+include tests
+include .gitlab-ci.yml
+include pypi-intro.rst
+recursive-include tests *.py
+recursive-include tests/data *
+recursive-exclude tests/__pycache__ *
+include *.txt
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
+recursive-include docs .empty

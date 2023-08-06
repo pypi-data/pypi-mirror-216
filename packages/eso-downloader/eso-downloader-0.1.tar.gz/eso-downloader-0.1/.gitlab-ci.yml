@@ -1,0 +1,10 @@
+include:
+  - project: 'datacentral/gitlab-ci-templates'
+    ref: main
+    file: '/dc-internal-python-package.yml'
+  - project: 'datacentral/gitlab-ci-templates'
+    ref: main
+    file: '/release-to-pypi.yml'
+
+pylint:
+  allow_failure: true

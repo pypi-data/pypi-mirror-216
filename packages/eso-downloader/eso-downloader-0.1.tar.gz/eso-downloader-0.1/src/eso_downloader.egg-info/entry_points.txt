@@ -1,0 +1,2 @@
+[console_scripts]
+eso-downloader = eso_downloader.cli:main
