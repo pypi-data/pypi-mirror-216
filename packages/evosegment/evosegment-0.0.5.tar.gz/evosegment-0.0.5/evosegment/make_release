@@ -1,0 +1,5 @@
+source ~/.virtualenvs/evosegment/bin/activate
+python3 -m build
+twine upload dist/* --verbose --skip-existing #needs authentication
+git tag 0.0.5 -m "Tagging release 0.0.3"
+git push --tags
