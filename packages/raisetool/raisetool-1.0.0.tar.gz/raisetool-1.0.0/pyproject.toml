@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "raisetool"
+version = "1.0.0"
+description = "Rise class for formatting thrown exception messages."
+authors = ["Jacek Kotlarski <szumak@virthost.pl>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/Szumak75/RaiseTool"
+classifiers = [
+        "Programming Language :: Python :: 3",
+        "Topic :: Software Development :: Libraries"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+attribtool = "^1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pytest = "^7.3.1"
+nose = "^1.3.7"
+typing-extensions = "^4.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
