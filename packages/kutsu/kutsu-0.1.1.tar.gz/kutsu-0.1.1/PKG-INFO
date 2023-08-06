@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: kutsu
+Version: 0.1.1
+Summary: 
+Home-page: https://github.com/kortsi/kutsu
+License: MIT
+Author: Mikko Kortelainen
+Author-email: mikko.kortelainen@techelp.fi
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: aws
+Requires-Dist: Pygments (>=2)
+Requires-Dist: boto3 (>=1.26) ; extra == "aws"
+Requires-Dist: httpx-auth-awssigv4 ; extra == "aws"
+Requires-Dist: httpx[http2] (>=0.23)
+Requires-Dist: nest-asyncio (>=1.5)
+Requires-Dist: rich (>=12)
+Requires-Dist: tornado (>=6)
+Project-URL: Repository, https://github.com/kortsi/kutsu
+Description-Content-Type: text/markdown
+
+
