@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+capi/__init__.py
+capi/containers/__init__.py
+capi/containers/mapping/__init__.py
+capi/containers/mapping/frozendict.py
+capi/tools/__init__.py
+capi/tools/hashing.py
+commonapi.egg-info/PKG-INFO
+commonapi.egg-info/SOURCES.txt
+commonapi.egg-info/dependency_links.txt
+commonapi.egg-info/top_level.txt

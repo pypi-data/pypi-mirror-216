@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: commonapi
+Version: 0.0.1
+Summary: Common API
+Author-email: Stephen Maldonado <capi@StephenMaldonado.com>
+Project-URL: github, https://github.com/StephenMal/capi
+Project-URL: github-issues, https://github.com/StephenMal/capi/issues
+Project-URL: author, https://stephenmaldonado.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
