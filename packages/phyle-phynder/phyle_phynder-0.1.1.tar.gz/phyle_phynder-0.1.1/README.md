@@ -1,0 +1,1 @@
+Um buscador de arquivos trivial desenvolvido para fins educacionais. Produzido através do curso disponibilizado pelo canal caverna_dev na plataforma Udemy.
