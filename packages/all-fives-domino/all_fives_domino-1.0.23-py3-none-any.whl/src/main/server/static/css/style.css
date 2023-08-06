@@ -1,0 +1,131 @@
+* {
+    --block-size: 40px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.face {
+    width: var(--block-size);
+    height: var(--block-size);
+    padding: 3px;
+}
+
+.attached-pieces {
+    display: inline-block;
+}
+
+.face:nth-child(2) {
+    border-left: 1px solid #222222;
+}
+
+body {
+    overflow: hidden;
+}
+
+img.resource {
+    position: absolute;
+    left: -1000px;
+    visibility: hidden;
+}
+
+#board {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/wood-background.jpg");
+    background-size: cover;
+    image-rendering: pixelated;
+    z-index: -1;
+}
+
+#drawpool-count {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    line-height: calc(2 * var(--block-size));
+    font-size: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.drawpool {
+    display: inline-block;
+    text-align: center;
+    background-image: url("../img/drawpool.png");
+    width: var(--block-size);
+    height: calc(2 * var(--block-size));
+    background-size: cover;
+    border: 2px dashed #888;
+}
+
+#controls {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+#player-hand {
+    position: absolute;
+    bottom: .5em;
+    left: 0;
+
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    transition: .2s;
+}
+
+#opponent-hand {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    transform: translate(0, -40%);
+    display: flex;
+    justify-content: center;
+}
+
+.hand-piece {
+    display: inline-block;
+    border: 2px solid #777;
+    margin: 1px;
+    width: calc(1.2 * var(--block-size));
+    height: calc(2.4 * var(--block-size));
+    transition: .2s;
+}
+
+.hand-piece.hidden {
+    background-image: url("../img/drawpool.png");
+    background-size: cover;
+}
+
+.hand-piece.player {
+    border: none;
+    cursor: pointer;
+}
+
+.hand-piece.player:hover {
+    width: calc(1.5 * var(--block-size));
+    height: calc(3 * var(--block-size));
+}
+
+.hand-piece.player:hover img {
+    width: calc(1.5 * var(--block-size));
+    height: calc(1.5 * var(--block-size));
+}
+
+.hand-piece.player.selected {
+    filter: sepia(100%) hue-rotate(320deg) brightness(80%) saturate(420%);
+}
+
+.hand-piece.player img {
+    width: calc(1.2 * var(--block-size));
+    height: calc(1.2 * var(--block-size));
+    margin-bottom: -4px;
+    transform: rotate(90deg);
+}
