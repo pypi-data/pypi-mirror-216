@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: cscomms
+Version: 0.0.1
+Summary: A python package for cross-script communication in a simple method
+Project-URL: Homepage, https://example.com
+Project-URL: Bug Tracker, https://example.com
+Author-email: joploljojo3 <jorisblaauw12@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+---
+
+# **Python Script Communication**
+
+This script provides functions for communication between scripts using message passing. It includes a decorator `listen` to mark a function as a message listener and a function `send` to send messages to specific channels.
+
+## **Usage**
+
+### **Listen**
+
+Decorator to make a function a message listener. The function needs a parameter for the message, which it will return as a dictionary.
+
+```
+@listen(channel, interval=1.0)
+def listener_func(message):
+    # Process the received message
+    ...
+```
+
+- **channel**: An integer representing the channel to listen to.
+- **interval** (optional): The interval in seconds to check for new messages (default is 1.0 second).
+
+### **Send**
+
+Function to send a message to a specific channel.
+
+`send(channel, message, metadata={"source": main_file_name})`
+
+- **channel**: An integer representing the channel to send the message to.
+- **message**: A dictionary containing the message data.
+- **metadata** (optional): A dictionary containing additional metadata for the message. By default, it includes the source file name where the `send` function is called.
+
+## **Example**
+
+Here's an example of how to use the script:
+
+```
+from cscomms import messaging as cscomms
+
+@cscomms.listen(channel=1, interval=0.5)
+def message_listener(message):
+  print(message)
+
+cscomms.send(channel=1, message={"user": "username", "message": "message"})
+```
+
+In this example, the script listens to channel 1 and prints any received message. It then sends a message with the key-value pair `{"key": "value"}` to channel 1.
+
+---
