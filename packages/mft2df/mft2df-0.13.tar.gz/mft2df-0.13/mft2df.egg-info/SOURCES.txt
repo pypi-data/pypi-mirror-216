@@ -1,0 +1,16 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+mft2df/README.MD
+mft2df/__init__.py
+mft2df/mft.exe
+mft2df/mft_dump.exe
+mft2df/requirements.txt
+mft2df/thirdparty.json
+mft2df.egg-info/PKG-INFO
+mft2df.egg-info/SOURCES.txt
+mft2df.egg-info/dependency_links.txt
+mft2df.egg-info/requires.txt
+mft2df.egg-info/top_level.txt
