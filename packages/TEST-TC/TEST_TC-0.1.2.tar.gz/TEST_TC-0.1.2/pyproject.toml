@@ -1,0 +1,23 @@
+[build-system] 
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta" 
+
+[project] 
+name = "TEST_TC"
+authors = [{name = "Flavio", email= "f.ischiboni@skienda.it"}]
+description = "Lo scopo di questa libreria è fornire uno strumento completo per il rilascio di modelli predittivi basati su serie temporali nell'ambito della Telemedicina, al fine di supportare la gestione e la pianificazione delle attività sulla Piattaforma Nazionale di Telemedicina (PNT)"
+requires-python = ">=3.9"
+classifiers = [ "Programming Language :: Python :: 3"]
+dependencies = ["geopandas==0.13.0","holidays==0.24","numpy==1.25.0","pandas==2.0.2","prophet==1.1.1",
+                "scikit_learn==1.2.2","tabulate==0.9.0","tomli==2.0.1","typing_extensions==4.6.3", "pytest==7.3.1",
+                "setuptools==58.1.0", "statsmodels==0.14.0"]
+dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+where = ["./"]
+include = ["*"]# or define list of packages
+exclude = []
+namespaces = false
+
+[tool.setuptools.dynamic]
+version = {attr = "tc_uc4.__version__"} # read __version__ from packages __init__.py 
