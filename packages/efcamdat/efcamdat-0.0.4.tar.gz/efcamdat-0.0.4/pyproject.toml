@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "EFCAMDAT"
+version = "0.0.4"
+authors = [ "Bernardo Stearns <bernardo.stearns@gmail.com>" ]
+description = "A library for doing all preprocessing related to EFCAMDAT"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+typer = {extras = ["all"], version = "^0.1.0"}
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+twine = "^4.0.2"
+
+[tool.poetry.scripts]
+efcamdat_cli = "efcamdat.cli:app"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
