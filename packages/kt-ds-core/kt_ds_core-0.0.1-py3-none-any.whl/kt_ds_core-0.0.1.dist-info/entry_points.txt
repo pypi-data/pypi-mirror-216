@@ -1,0 +1,2 @@
+[console_scripts]
+spaceone = spaceone.core.command:cli
