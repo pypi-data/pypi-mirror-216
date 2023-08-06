@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: neoden_kicad
+Version: 1.0.0a1
+Summary: Converter for Neoden Pick and Place machine
+Home-page: http://github.com/elec-otago/neoden-yy1-kicad
+Author: Tim Molteno, Phill Brown
+Author-email: tim@elec.ac.nz
+License: GPLv3
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: End Users/Desktop
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# neoden-yy1-kicad
+
+Post-processor to allow Kicad centroid files to work on the Neoden YY1 pick and place machine. This package contains a script that reads CPL (centroid position) files and modifies their contents to be readable by the [Neoden YY1](https://www.neodensmt.com/pick-and-place-machine/neoden-yy1-pick-and-place-machine.html) small pick and place machine.
+
+## Usage
+
+    neoden_kicad --pos my_pos.csv --out neoden_pos.csv
