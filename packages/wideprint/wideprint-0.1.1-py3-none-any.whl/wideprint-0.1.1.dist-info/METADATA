@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: wideprint
+Version: 0.1.1
+Summary: Print a collection of short strings into columns
+Project-URL: Documentation, https://github.com/thehappycheese/wideprint#readme
+Project-URL: Issues, https://github.com/thehappycheese/wideprint/issues
+Project-URL: Source, https://github.com/thehappycheese/wideprint
+Author: thehappycheese
+License-Expression: MIT
+Keywords: columns,print,terminal
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Wideprint
+[![.github/workflows/publish_to_pypi.yml](https://github.com/thehappycheese/wideprint/actions/workflows/publish_to_pypi.yml/badge.svg)](https://github.com/thehappycheese/wideprint/actions/workflows/publish_to_pypi.yml)
+[![PyPI - Version](https://img.shields.io/pypi/v/wideprint.svg)](https://pypi.org/project/wideprint)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wideprint.svg)](https://pypi.org/project/wideprint)
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install wideprint
+```
+
+## Usage
+
+`def print_columns(data:Iterable, columns:int=3, sep:str=" ", alignment:Literal[">","<","^"]=">")`
+ 
+ ```python
+ from wideprint import print_columns
+
+ print_columns(
+    data      = ["aaaa","b","c","d","e","f","g","h","i","j","kkk","l","m","n","o"],
+    columns   = 3,
+    sep       = "  ",
+    alignment = "<"
+)
+ ```
+
+ ```text
+aaaa  b    c
+d     e    f
+g     h    i
+j     kkk  l
+m     n    o
+```
+## License
+
+`wideprint` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
