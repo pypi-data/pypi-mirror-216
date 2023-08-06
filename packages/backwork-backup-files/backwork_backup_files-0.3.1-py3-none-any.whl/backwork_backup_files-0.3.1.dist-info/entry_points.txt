@@ -1,0 +1,5 @@
+[backwork.backups]
+files = files:FilesBackup
+
+[backwork.restores]
+files = files:FilesRestore
