@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cmeel-gmp
+Version: 6.2.1
+Summary: cmeel distribution for GMP
+Requires-Python: >= 3.8
+License-Expression: LGPL-3.0-only
+Home-page: https://github.com/cmake-wheel/cmeel-gmp
+Project-URL: Repository, https://github.com/cmake-wheel/cmeel-gmp.git
+Requires-Dist: cmeel
+Description-Content-Type: text/markdown
+
+# CMeel GMP
+
+[![PyPI version](https://badge.fury.io/py/cmeel-gmp.svg)](https://pypi.org/project/cmeel-gmp)
+[![Release](https://github.com/cmake-wheel/cmeel-gmp/actions/workflows/release.yml/badge.svg)](https://github.com/cmake-wheel/cmeel-gmp/actions/workflows/release.yml)
+
+[GMP](https://gmplib.org/) distribution for cmeel packages.
