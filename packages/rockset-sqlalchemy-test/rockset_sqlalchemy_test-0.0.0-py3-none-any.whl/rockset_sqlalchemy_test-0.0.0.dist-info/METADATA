@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: rockset-sqlalchemy-test
+Version: 0.0.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: rockset (>=1.0.0)
+Requires-Dist: sqlalchemy (<2.0.0,>=1.4.0)
+Provides-Extra: sqlalchemy
+Requires-Dist: sqlalchemy (<1.4,>=1.0) ; extra == 'sqlalchemy'
+Requires-Dist: geojson (>=2.5.0) ; extra == 'sqlalchemy'
+
+UNKNOWN
+
+
