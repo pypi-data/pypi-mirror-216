@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+algebra/__init__.py
+algebra/components.py
+algebra.py.egg-info/PKG-INFO
+algebra.py.egg-info/SOURCES.txt
+algebra.py.egg-info/dependency_links.txt
+algebra.py.egg-info/top_level.txt
+algebra/test/__init__.py
+algebra/test/comp.py
