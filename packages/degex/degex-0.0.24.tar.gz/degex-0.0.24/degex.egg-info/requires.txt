@@ -1,0 +1,16 @@
+pandas
+scipy
+seaborn
+scikit-learn
+numpy>=1.22
+graphtools
+matplotlib
+scanpy
+anndata
+iza
+phate
+scprep
+magic-impute
+scrublet
+
+[dev]
