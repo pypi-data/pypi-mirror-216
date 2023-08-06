@@ -1,0 +1,132 @@
+Metadata-Version: 2.1
+Name: skga
+Version: 1.0.0
+Summary: The python package implementing the HyperBRKGA algorithm optimizes hyperparameters of machine learning algorithms through a hybrid approach based on genetic algorithms.
+Home-page: https://github.com/MLRG-CEFET-RJ/skga
+Author: Leonardo Sauberman, João Pedro Nogueira, Eduardo Bezerra
+Author-email: leonardo.moraes@aluno.cefet-rj.br, joao.carneiro@aluno.cefet-rj.br, ebezerra@cefet-rj.br
+License: BSD License
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bayesian-optimization (==1.2.0)
+Requires-Dist: bleach (==6.0.0)
+Requires-Dist: build (==0.10.0)
+Requires-Dist: certifi (==2023.5.7)
+Requires-Dist: charset-normalizer (==3.1.0)
+Requires-Dist: contourpy (==1.0.7)
+Requires-Dist: cycler (==0.11.0)
+Requires-Dist: Cython (==0.29.30)
+Requires-Dist: docutils (==0.19)
+Requires-Dist: fonttools (==4.39.3)
+Requires-Dist: idna (==3.4)
+Requires-Dist: importlib-metadata (==6.6.0)
+Requires-Dist: importlib-resources (==5.12.0)
+Requires-Dist: jaraco.classes (==3.2.3)
+Requires-Dist: joblib (==1.2.0)
+Requires-Dist: keyring (==23.13.1)
+Requires-Dist: kiwisolver (==1.4.4)
+Requires-Dist: markdown-it-py (==2.2.0)
+Requires-Dist: matplotlib (==3.7.1)
+Requires-Dist: mdurl (==0.1.2)
+Requires-Dist: more-itertools (==9.1.0)
+Requires-Dist: numpy (==1.23.1)
+Requires-Dist: packaging (==23.1)
+Requires-Dist: pandas (==1.4.3)
+Requires-Dist: Pillow (==9.5.0)
+Requires-Dist: pkginfo (==1.9.6)
+Requires-Dist: Pygments (==2.15.1)
+Requires-Dist: pyparsing (==3.0.9)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: pyproject-hooks (==1.0.0)
+Requires-Dist: pytz (==2023.3)
+Requires-Dist: readme-renderer (==37.3)
+Requires-Dist: requests (==2.30.0)
+Requires-Dist: requests-toolbelt (==1.0.0)
+Requires-Dist: rfc3986 (==2.0.0)
+Requires-Dist: rich (==13.3.5)
+Requires-Dist: scikit-learn (==1.1.2)
+Requires-Dist: scipy (==1.8.1)
+Requires-Dist: seaborn (==0.12.1)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: threadpoolctl (==3.1.0)
+Requires-Dist: tomli (==2.0.1)
+Requires-Dist: torch (==1.9.0)
+Requires-Dist: twine (==4.0.2)
+Requires-Dist: urllib3 (==1.26.15)
+Requires-Dist: webencodings (==0.5.1)
+Requires-Dist: wheel (==0.40.0)
+Requires-Dist: xgboost (==1.7.1)
+Requires-Dist: zipp (==3.15.0)
+
+# SKGA
+
+Welcome to the SKGA repository! This repository contains the `skga` package, which is a Python library for performing machine learning hyperparameters optimization. 
+
+## Installation
+
+To install the `skga` package, follow these steps:
+
+1. Make sure you have Python 3.9 installed on your system.
+2. Open a terminal or command prompt.
+3. Run the following command to install the package using pip:
+
+   ```bash
+   pip install skga
+   ```
+
+   This will automatically download and install the `skga` package along with its dependencies.
+
+## Basic Usage
+
+Once you have installed the `skga` package, you can start using it in your Python projects. Here's a basic example to get you started:
+
+```python
+from sklearn import svm, datasets
+from sklearn.model_selection import train_test_split
+from skga import HyperBRKGASearchCV
+
+# Load the Iris dataset
+irisX, irisY = datasets.load_iris(return_X_y=True)
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(irisX, irisY, test_size=0.5, random_state=0)
+
+# Define the parameters for the SVM classifier
+parameters = {'kernel': ('linear', 'rbf'), 'C': [1, 10]}
+
+# Create an SVM classifier
+svc = svm.SVC()
+
+# Create a HyperBRKGASearchCV instance
+clf = HyperBRKGASearchCV(svc, parameters=parameters, data=X_train, target=y_train)
+
+print("# Optimizing hyperparameters for accuracy\n")
+
+# Fit the classifier to the training data
+clf.fit(X_train, y_train)
+
+print("Best combination of parameters found in the training set:\n")
+print(clf.cv_results_['best_param_decoded'])
+print()
+print("Scores of HyperBRKGA in the training set:\n")
+print(clf.cv_results_)
+```
+
+This example demonstrates how to use the `HyperBRKGASearchCV` class from the `skga` package to perform hyperparameter optimization for an SVM classifier.
+
+For more detailed examples and use cases, please refer to the [examples](https://github.com/MLRG-CEFET-RJ/skga/tree/main/examples) directory in the SKGA repository.
+
+## Contributing
+
+If you find any issues or have suggestions for improvement, please feel free to contribute to this repository. You can submit bug reports, feature requests, or pull requests through the [GitHub repository](https://github.com/MLRG-CEFET-RJ/skga). We appreciate your contributions!
+
+## License
+
+This project is licensed under the [BSD 3-Clause License](https://github.com/MLRG-CEFET-RJ/skga/blob/main/LICENSE).
+
+
