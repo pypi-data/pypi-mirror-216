@@ -1,0 +1,100 @@
+SELECT DISTINCT ?subReaction ?subReactionIdent ?superReaction
+?superReactionIdent
+WHERE {
+   VALUES ?participatesRelation { bp3:left bp3:right }
+
+   ?subReaction rdf:type/(rdfs:subClassOf*) bp3:BiochemicalReaction .
+   ?subReaction ?participatesRelation ?moleculeSub .
+   ?moleculeSub bp3:entityReference ?moleculeReference .
+
+   ?moleculeReference rdf:type bp3:SmallMoleculeReference .
+
+   ?moleculeSuper bp3:entityReference ?moleculeReference .
+   ?superReaction ?participatesRelation ?moleculeSuper .
+   ?superReaction rdf:type/(rdfs:subClassOf*) bp3:BiochemicalReaction .
+   FILTER (str(?subReaction) < str(?superReaction))
+
+   FILTER NOT EXISTS {
+     ?subReaction bp3:left|bp3:right ?molecule3sub .
+     ?subReaction ?participatesRelationSub ?molecule3sub .
+     ?molecule3sub bp3:entityReference ?moleculeReference3 .
+
+     FILTER NOT EXISTS {
+       ?superReaction ?participatesRelationSub ?molecule3super .
+       ?molecule3super bp3:entityReference ?moleculeReference3 .
+     }
+   }
+
+   FILTER NOT EXISTS {
+     ?superReaction bp3:left|bp3:right ?molecule4super .
+     ?superReaction ?participatesRelationSuper ?molecule4super .
+     ?molecule4super bp3:entityReference ?moleculeReference4 .
+
+     FILTER NOT EXISTS {
+       ?molecule4sub bp3:entityReference ?moleculeReference4 .
+       ?subReaction ?participatesRelationSuper ?molecule4sub .
+     }
+   }
+
+   FILTER NOT EXISTS {
+     ?subReaction bp3:left|bp3:right ?molecule5sub .
+     ?subReaction ?participatesRelationStoichio ?molecule5sub .
+     ?molecule5sub bp3:entityReference ?moleculeReference5 .
+     ?molecule5super bp3:entityReference ?moleculeReference5 .
+     ?superReaction ?participatesRelationStoichio ?molecule5super .
+
+     ?subReaction bp3:participantStoichiometry ?stoichioSub .
+     ?stoichioSub bp3:physicalEntity ?molecule5sub .
+     ?stoichioSub bp3:stoichiometricCoefficient ?stoichioSubVal .
+
+     ?superReaction bp3:participantStoichiometry ?stoichioSuper .
+     ?stoichioSuper bp3:physicalEntity ?molecule5super .
+     ?stoichioSuper bp3:stoichiometricCoefficient ?stoichioSuperVal .
+
+     FILTER (?stoichioSubVal != ?stoichioSuperVal)
+   }
+
+   # for equivalent reactions {A, B, C},
+   # so far we retrieve
+   # {A<B, A<C, B<C}
+   # here we avoid returning B<C
+   FILTER NOT EXISTS {
+     ?molecule bp3:entityReference/^bp3:entityReference ?moleculePrev .
+     ?prevReaction ?participatesRelation ?moleculePrev .
+     ?prevReaction rdf:type/(rdfs:subClassOf*) bp3:BiochemicalReaction .
+     FILTER (str(?prevReaction) < str(?subReaction))
+
+     FILTER NOT EXISTS {
+       ?prevReaction bp3:left|bp3:right ?molecule5prev .
+       ?prevReaction ?participatesRelationPrev ?molecule5prev .
+       ?molecule5prev bp3:entityReference ?molecule5ref .
+
+       FILTER NOT EXISTS {
+         ?molecule5sub bp3:entityReference ?molecule5ref .
+         ?subReaction ?participatesRelationPrev ?molecule5sub .
+       }
+     }
+
+     FILTER NOT EXISTS {
+       ?subReaction bp3:left|bp3:right ?molecule6sub .
+       ?subReaction ?participatesRelationNext ?molecule6sub .
+       ?molecule6sub bp3:entityReference ?molecule6ref .
+
+       FILTER NOT EXISTS {
+         ?molecule6prev bp3:entityReference ?molecule6ref .
+         ?prevReaction ?participatesRelationNext ?molecule6prev .
+       }
+     }
+   }
+
+   OPTIONAL {
+     ?subReaction bp3:xref ?subXref .
+     ?subXref bp3:db "Reactome" .
+     ?subXref bp3:id ?subReactionIdent .
+   }
+   OPTIONAL {
+     ?superReaction bp3:xref ?superXref .
+     ?superXref bp3:db "Reactome" .
+     ?superXref bp3:id ?superReactionIdent .
+   }
+}
