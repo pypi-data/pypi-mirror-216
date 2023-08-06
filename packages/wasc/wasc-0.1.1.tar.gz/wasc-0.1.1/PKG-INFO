@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: wasc
+Version: 0.1.1
+Summary: wasc, for Web Accessibility Simple Checker, helps to evaluate accessibility criteria on a list of websites
+Project-URL: Documentation, https://github.com/gcollet/wasc#readme
+Project-URL: Issues, https://github.com/gcollet/wasc/issues
+Project-URL: Source, https://github.com/gcollet/wasc
+Author-email: Guillaume Collet <bilouweb@free.fr>, Juliette Francis <juliette.francis@etudiant.univ-rennes.fr>
+License-Expression: CECILL-2.1
+License-File: LICENSE.txt
+Keywords: Accessibility,Checker,Criteria,Web
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Requires-Dist: beautifulsoup4
+Requires-Dist: click
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: tqdm
+Description-Content-Type: text/markdown
+
+# wasc
+
+[![PyPI - Version](https://img.shields.io/pypi/v/wasc.svg)](https://pypi.org/project/wasc)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wasc.svg)](https://pypi.org/project/wasc)
+
+-----
+
+**Table of Contents**
+
+- [wasc](#wasc)
+  - [Installation](#installation)
+  - [License](#license)
+
+## Installation
+
+```console
+pip install wasc
+```
+
+## License
+
+`wasc` is distributed under the terms of the [CECILL-2.1](https://spdx.org/licenses/CECILL-2.1.html) license.
