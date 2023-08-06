@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+pymatillion/__init__.py
+pymatillion/constants.py
+pymatillion/matillion.py
+pymatillion.egg-info/PKG-INFO
+pymatillion.egg-info/SOURCES.txt
+pymatillion.egg-info/dependency_links.txt
+pymatillion.egg-info/requires.txt
+pymatillion.egg-info/top_level.txt
+tests/test_matillion_client.py

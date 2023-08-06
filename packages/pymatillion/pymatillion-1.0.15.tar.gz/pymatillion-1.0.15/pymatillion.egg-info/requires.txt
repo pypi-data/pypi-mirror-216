@@ -1,0 +1,9 @@
+requests
+
+[dev]
+black
+bumpver
+isort
+build
+twine
+mkdocs
