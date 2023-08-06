@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: clck.ru
+Version: 1.0.0
+Summary: Shortens links and protects their contents.
+Home-page: https://github.com/ttwizz/clck.ru
+Author: ttwiz_z
+Author-email: moderkascriptsltd@gmail.com
+Project-URL: Author, https://github.com/ttwizz
+Project-URL: Organization, https://github.com/ModerkaScripts
+Keywords: clck.ru
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# clck.ru
+Shortens links and protects their contents. This tool will be very useful to you if you want to get rid of long and unsafe links.
+
+## Usage
+```py
+import clck
+print(clck.ru("https://github.com/ttwizz"))
+```
