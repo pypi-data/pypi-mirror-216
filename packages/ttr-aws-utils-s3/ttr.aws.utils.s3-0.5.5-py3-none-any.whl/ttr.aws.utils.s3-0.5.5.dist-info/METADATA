@@ -1,0 +1,283 @@
+Metadata-Version: 2.1
+Name: ttr.aws.utils.s3
+Version: 0.5.5
+Summary: CLI to list and fetch objects from versioned S3 buckets. Plus get tmp url.
+Home-page: https://gitlab.com/tamtamresearch-public/pypi/ttr.aws.utils.s3
+Author: Jan Vlcinsky
+Author-email: jan.vlcinsky@tamtamresearch.com
+License: BSD
+Keywords: aws,s3
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Communications :: File Sharing
+Classifier: Topic :: System :: Archiving
+Classifier: Topic :: System :: Archiving :: Backup
+Classifier: Topic :: System :: Recovery Tools
+Classifier: Topic :: Utilities
+License-File: LICENSE.rst
+License-File: AUTHORS
+Requires-Dist: PyYAML (==6.0)
+Requires-Dist: boto3 (==1.26.165)
+Requires-Dist: plac (==1.3.5)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: pytz
+
+============
+AWS Utils S3
+============
+
+Tools to list and fetch objects from versioned AWS_ S3_ bucket:
+
+* `s3lsvers`: List object versions, see versioning_
+* `s3getvers`: Fetch specified object versions
+* `s3tmpgen`: Generate temporary url links to objects
+
+.. contents:: Table of Contents
+
+Installation
+============
+::
+
+  $ pip install ttr.aws.utils.s3
+
+Other methods (pipx, easy_install, setup.py) work too.
+    
+Quick start
+===========
+We want to fetch versions of feed in bucket `mybucket` named `my/versioned/feed.xml`
+
+1. Configure AWSCLI credentials to allow access to your buckets and objects. E.g. using `AWS_DEFAULT_PROFILE`. See AWS_config_.
+
+2. create csv file for given feed and time period::
+
+    $ s3lsvers -from 2012-05-24T00:15 -to 2012-05-24T01:15 -list-file list.csv mybucket/my/versioned/feed.xml
+
+   You shall then find file `list.csv` on your disk.
+
+3. Review records in `list.csv` and delete all lines with version, which are not of your interest.
+
+4. Using `list.csv`, ask s3getvers to fetch all versions specified in the file. Be sure to run it on empty directory::
+
+    $ s3getvers mybucket list.csv
+
+   You will see, how is each version downloaded and saved to your current directory.
+
+5. Finally, you can try generating temorary url to your feed (showing the latest existing)::
+
+    $ s3tmpgen 2014-09-30T00:00:00Z mybucket my/versioned/feed.xml
+    https://mybucket.s3.amazonaws.com/my/versioned/feed.xml?Signature=kOCwz%2FkanVWX8O15dlXhy4jrbwY%3D&Expires=1412031600&AWSAccessKeyId=AKIAxyzxyzxyzEQA
+
+   Note, that the url does not include VersionId, so it will always point to the most up todate version (in case the key happens to be on versioned bucket).
+
+Provided commands
+=================
+
+s3lsvers
+--------
+List versions of some feed. Could output into CSV file (-list-file) and/or html chart (-html-file).::
+
+    $ s3lsvers -h
+    usage: s3lsvers [-h] [-from None] [-to None] [-list-file None]
+                    [-html-file None] [-version-id None] [-profile-name None]
+                    [-aws-access-key-id None] [-aws-secret-access-key None]
+                    bucket_key
+
+    List object versions stored on versioned S3 bucket, create CSV and/or HTML file.
+        CSV file can be used e.g. by `s3getvers` command.
+        HTML file allows showing feed size and update period in chart.
+
+        Version can be limited by time range `from` - `to`.
+        `version-id` allow starting from specific version (back to the past,
+        excluding given version).
+
+        Object key is defined either as {bucket_name}/{key_name} or as alias from .s3lsvers file.
+
+        Times are expressed in RFC 3339 format using Zulu (UTC) timezone, possibly truncated.
+        For truncated time strings, maximal time extent is used.
+
+        Listing has records with structure:
+          `{key_name};{version_id};{size};{last_modified};{age}`
+            - key_name: name of the key (excluding bucket name).
+            - version_id: unique identifier for given version on given bucket.
+            - size: size of key object in bytes
+            - last_modified: RFC 3339 formated object modification time
+            - age: update interval [s] for given version
+
+        Examples:
+
+            Lists all versions of given `keyname` on `bucket`::
+
+                $ s3lsvers bucketname/keyname
+
+            Lists all versions in period betwen `from` and `to` time::
+
+                $ s3lsvers -from 2010-01-01 -to 2011-07-19T12:00:00 bucket/key
+
+            Lists all versions and writes them into csv file named `versions.csv`::
+
+                $ s3lsvers -list-file versions.csv bucketname/keyname
+
+            Lists all versions and write them into html chart file `chart.html`::
+
+                $ s3lsvers -html-file chart.html bucketname/keyname
+
+        Using bucket/key_name aliases in .s3lsvers file
+
+            Aliases are specified in file .s3lsvers, which may be located in
+            currect directory, home directory or /etc/s3lsvers"
+
+            `.s3lsvers` example::
+
+                #.s3lsversrc - definition of some preconfigured bucket/key values
+                [DEFAULT]
+                pl-base: pl-base.dp.tamtamresearch.com
+                cz-base: cz-base.dp.tamtamresearch.com
+
+                # alias name must not contain "/"
+                [aliases]
+                plcsr: %(pl-base)s/region/pl/ConsumerServiceReady.xml
+                czcsr: %(cz-base)s/region/cz/ConsumerServiceReady.xml
+
+            The format follows SafeConfigParser rules, see
+            http://docs.python.org/2/library/configparser.html#safeconfigparser-objects
+
+            To list all versions of czcsr alias::
+
+                $ s3lsvers czcsr
+
+
+    positional arguments:
+      bucket_key            {bucket_name}/{key_name} for the key to list
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -from None, --from-time None
+                            start of version modification time range (default:
+                            oldest version)
+      -to None, --to-time None
+                            end of version modification time range (default: now)
+      -list-file None       Name of output CSV file.
+      -html-file None       Name of output HTML file.
+      -version-id None      version-id to start after
+      -profile-name None    AWSCLI profile name
+      -aws-access-key-id None
+                            AWS Access Key ID
+      -aws-secret-access-key None
+                            AWS Secret Access Key
+
+s3getvers
+---------
+::
+
+    $ s3getvers -h
+    usage: s3getvers [-h] [-output-version-id-names] [-no-decompression]
+                     [-profile-name None] [-aws-access-key-id None]
+                     [-aws-secret-access-key None]
+                     bucket_name csv_version_file
+
+    Fetch S3 object versions as listed in a csv file
+
+        Typical csv file (as by default produced by s3lsvers) is:
+
+            m/y.xml;OrUr6XO8KSKEHbd8mQ.MloGcGlsh7Sir;191;2012-05-23T20:45:10.000Z;39
+            m/y.xml;xhkVOy.dJfjSfUwse8tsieqjDicp0owq;192;2012-05-23T20:44:31.000Z;62
+            m/y.xml;oKneK.N2wS8pW8.EmLqjldYlgcFwxN3V;193;2012-05-23T20:43:29.000Z;58
+
+        for `s3getvers` only the first two columns are significant:
+        :key_name: name of the object (not containing the bucket name itself)
+        :version_id: string, identifying unique version.
+
+        Typical use (assuming, above csv file is available under name verlist.csv)::
+
+            $ s3getvers yourbucketname verlist.csv
+
+        What will create following files in current directory:
+
+        * f.2012-05-23T20_45_10.xml
+        * f.2012-05-23T20_44_31.xml
+        * f.2012-05-23T20_43_29.xml
+
+        Files are (by default) saved decompressed (even if gzipped on the bucket)
+
+
+    positional arguments:
+      bucket_name           bucket name (default: None)
+      csv_version_file      name of CSV file with version_id
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -output-version-id-names
+                            Resulting file names shall use version_id to become
+                            distinguished (default is to use timestamp of file
+                            creation)
+      -no-decompression     Keeps the files as they come, do not decompress, if
+                            they come compressed
+      -profile-name None    Name of AWSCLI profile to use for credentials
+      -aws-access-key-id None
+                            Your AWS Access Key ID
+      -aws-secret-access-key None
+                            Your AWS Secret Access Key
+
+s3tmpgen
+--------
+
+
+::
+
+  $ s3tmpgen -h
+  usage: s3tmpgen [-h] [-profile-name None] [-aws-access-key-id None] [-aws-secret-access-key None] [-validate-bucket] [-validate-key] [-http] expire_dt bucket_name [key_names [key_names ...]]
+
+  Generate temporary url for accessing content of AWS S3 key.
+
+      Temporary url includes expiration time, after which it rejects serving the
+      content.
+
+      Urls are printed one per line to stdout.
+
+      For missing key names empty line is printed and error goes to stderr.
+
+      If the bucket is versioned, tmp url will serve the latest version
+      at the moment of request (version_id is not part of generated url).
+
+      By default, bucket and key name existnence is not verified.
+
+      Url is using https, unless `-http` is used.
+    
+
+  positional arguments:
+    expire_dt             ISO formatted time of expiration, full seconds, 'Z' is obligatory, e.g. '2014-02-14T21:47:16Z'
+    bucket_name           name of bucket
+    key_names             key names to generate tmpurl for
+
+  optional arguments:
+    -h, --help            show this help message and exit
+    -profile-name None    Name of AWSCLI profile to use for credentials
+    -aws-access-key-id None
+                          Your AWS Access Key ID
+    -aws-secret-access-key None
+                          Your AWS Secret Access Key
+    -validate-bucket      Make sure, the bucket really exists
+    -validate-key         Make sure, the key really exists
+    -http                 Force the url to use http and not https
+  
+
+Configuring AWS S3 credentials
+==============================
+
+Configure the credentials as you would do for using AWS CLI.
+
+If you configure profiles, you may use switch `-profile` when calling the commands.
+
+
+.. _AWS: http://aws.amazon.com/
+.. _S3: http://aws.amazon.com/s3/
+.. _versioning: http://aws.amazon.com/about-aws/whats-new/2010/02/08/versioning-feature-for-amazon-s3-now-available/
+.. _AWS_config: http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+
