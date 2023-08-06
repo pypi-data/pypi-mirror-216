@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+jupyter_pluto_proxy/__init__.py
+jupyter_pluto_proxy.egg-info/PKG-INFO
+jupyter_pluto_proxy.egg-info/SOURCES.txt
+jupyter_pluto_proxy.egg-info/dependency_links.txt
+jupyter_pluto_proxy.egg-info/entry_points.txt
+jupyter_pluto_proxy.egg-info/requires.txt
+jupyter_pluto_proxy.egg-info/top_level.txt
+jupyter_pluto_proxy/icons/pluto.svg
