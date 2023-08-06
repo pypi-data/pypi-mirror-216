@@ -1,0 +1,14 @@
+manifest:
+  events: {}
+  install:
+    apt:
+      - python3-gi
+      - python3-gst-1.0
+    pip:
+      - pygobject
+    pacman:
+      - gst-python
+      - python-gobject
+
+  package: platypush.plugins.media.gstreamer
+  type: plugin

@@ -1,0 +1,12 @@
+manifest:
+  events: {}
+  install:
+    pip:
+      - numpy
+      - Pillow
+    apt:
+      - libi2c-dev
+    pacman:
+      - i2c-tools
+  package: platypush.plugins.camera.ir.mlx90640
+  type: plugin

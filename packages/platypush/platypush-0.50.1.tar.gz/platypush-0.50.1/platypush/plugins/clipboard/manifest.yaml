@@ -1,0 +1,8 @@
+manifest:
+  events:
+    platypush.message.event.clipboard.ClipboardEvent: on clipboard update.
+  install:
+    pip:
+    - pyclip
+  package: platypush.plugins.clipboard
+  type: plugin
