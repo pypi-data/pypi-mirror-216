@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: multi-start
+Version: 0.0.1
+Summary: Run multiple services inside a docker container
+Home-page: https://github.com/ioxiocom/multi-start
+License: BSD-3-Clause
+Author: IOXIO Ltd
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: httpx (>=0.24.1,<0.25.0)
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Project-URL: Repository, https://github.com/ioxiocom/multi-start
+Description-Content-Type: text/markdown
+
+# multi-start
+
+This tool aims to help running multiple services inside a single docker container.
+
+Sometimes you might want to have backend, frontend and nginx (or a combination of those)
+inside a single container. This tool may help with:
+
+- Prepare final Nginx configs using
+  [parse-template](https://github.com/cocreators-ee/parse-template)
+- Wait until backend and frontend start responding before running Nginx
+- Stop every process if one of them is shut down so a container stops gracefully
+
+## Installation
+
+```shell
+pip install multi-start
+```
+
+## Usage
+
+```shell
+multi-start --help
+```
+
