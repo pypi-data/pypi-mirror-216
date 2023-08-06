@@ -1,0 +1,12 @@
+numpy
+scipy
+astropy>=5.2
+specutils>=1.9
+pandas
+importlib_resources
+matplotlib
+
+[extra]
+celerite2
+h5py
+black
