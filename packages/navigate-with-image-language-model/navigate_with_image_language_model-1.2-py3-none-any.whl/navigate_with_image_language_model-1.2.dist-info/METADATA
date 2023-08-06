@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: navigate-with-image-language-model
+Version: 1.2
+Summary: The package provides a pipeline that utilizes models like ClipSeg and StableDiffusion or ClipSeg and SegmentAnything to prompt an image for a path.
+Requires-Python: >=3.9
+Requires-Dist: evaluate (==0.4)
+Requires-Dist: diffusers (==0.12.1)
+Requires-Dist: torch (==2.0.0)
+Requires-Dist: torchvision
+Requires-Dist: transformers (==4.19.2)
+Requires-Dist: tqdm
+Requires-Dist: seaborn (==0.12.2)
+Requires-Dist: scikit-learn (==1.2.2)
+Requires-Dist: opencv-python (==4.7.0.72)
+Requires-Dist: matplotlib (==3.7.1)
+Requires-Dist: accelerate (==0.18)
+
