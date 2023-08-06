@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+"""
+Usage:
+  madeira-run-dev [ --debug ] [ --mock-data ] [ --madeira-dev ] [ --shell ]
+  madeira-run-dev --help
+
+Options:
+  -h --help                        Show this help screen.
+  --debug                          Enables debug-level logging
+  --mock-data                      API will only return mock data
+  --madeira-dev                    API container will be mapped to local copies of madeira packages
+  --shell                          API container will start in an interactive shell
+"""
+import docopt
+from madeira_tools import docker
+arguments = docopt.docopt(__doc__, help=True)
+docker.DockerDev(
+    debug=arguments.get('--debug')
+).run_dev(
+    mock_data=arguments.get('--mock-data'),
+    madeira_dev=arguments.get('--madeira-dev'),
+    shell=arguments.get('--shell')
+)
