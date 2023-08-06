@@ -1,0 +1,15 @@
+imgui_bundle>=0.8.7
+numpy
+scipy
+pandas
+matplotlib
+opencv-contrib-python-headless==4.6.0.66
+ffpyplayer
+I2MC
+msgpack
+aiosqlite
+uvloop ; sys_platform != "win32"
+pyobjc-framework-Cocoa ; sys_platform == "darwin"
+pathvalidate
+natsort
+pebble
