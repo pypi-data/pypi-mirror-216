@@ -1,0 +1,18 @@
+default: gen test
+
+
+LIB := "windows_control"
+
+env:
+    python -m venv .venv
+
+gen:
+    rm -f ./target/debug/{{LIB}}.dll ./target/debug/{{LIB}}.pyd
+    maturin develop
+    mv -f ./target/debug/{{LIB}}.dll ./target/debug/{{LIB}}.pyd
+
+test:
+    python ./test.py
+
+pub:
+    maturin publish --interpreter C:\Users\Administrator\AppData\Local\Programs\Python\Python39\python.exe  -u dbsx-0214 -p Djw0214_518074
