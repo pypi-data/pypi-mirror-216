@@ -1,0 +1,27 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "library-demo-jo"
+version = "0.0.1"
+description = "python package demo by joneai"
+readme = "README.md"
+authors = [{ name = "joneai", email = "mxjoneai@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["joneai", "library", "tutorial"]
+dependencies = [
+    "PyYAML >= 6.0",
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/tacnaci/library-demo-jo"

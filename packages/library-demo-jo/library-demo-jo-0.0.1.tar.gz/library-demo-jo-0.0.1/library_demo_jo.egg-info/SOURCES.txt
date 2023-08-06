@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+demo_lib/__init__.py
+demo_lib/hello.yaml
+library_demo_jo.egg-info/PKG-INFO
+library_demo_jo.egg-info/SOURCES.txt
+library_demo_jo.egg-info/dependency_links.txt
+library_demo_jo.egg-info/requires.txt
+library_demo_jo.egg-info/top_level.txt
