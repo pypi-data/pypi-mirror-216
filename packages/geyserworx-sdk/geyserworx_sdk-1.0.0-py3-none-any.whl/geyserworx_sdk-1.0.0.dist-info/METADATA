@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: geyserworx_sdk
+Version: 1.0.0
+Summary: An SDK interface to read and set Geyserworx geysers without using the app.
+Project-URL: Homepage, https://github.com/dovijoel/GeyserworxAPI
+Project-URL: Bug Tracker, https://github.com/dovijoel/GeyserworxAPI/issues
+Author-email: Dovi Joel <dovi@debuggingmadejoyful.tech>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
