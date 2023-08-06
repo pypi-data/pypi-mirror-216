@@ -1,0 +1,20 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "scilog"
+version = "0.1.0"
+description = "SciLog SDK for Python"
+authors = [
+    "Stephan Egli <stephan.egli@psi.ch>", 
+    "Carlo Minotti <carlo.minotti@psi.ch", 
+    "Klaus Wakonig <klaus.wakonig@psi.ch"
+]
+license = "BSD-3-Clause"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+requests = "^2.28.1"
+typeguard = "2.13.3"
+
