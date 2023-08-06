@@ -1,0 +1,11 @@
+sphinx>=5
+Jinja2>=2.10
+tabulate>=0.8.10
+
+[:python_version < "3.11"]
+tomli>=1.1.0
+
+[testing]
+pytest
+pytest-cov
+matplotlib
