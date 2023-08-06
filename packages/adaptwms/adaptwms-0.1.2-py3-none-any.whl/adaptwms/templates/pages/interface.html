@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+
+{% block content %}
+  <h1>adaptwms generator</h1>
+  <form method="GET" action="/adaptwms">
+  <p>
+  <label for="x">X = </label><input type="text" id="x" name="x" />
+  <label for="y">Y = </label><input type="text" id="y" name="y" />
+  <label for="z">Z = </label><input type="text" id="z" name="z" />
+  </p>
+  <p>
+  <label for="template">URL = </label><input type="text" id="template" name="template" style="width:50%;" />
+  <p>Use {bbox} to automagically insert computed bounding box into template.</p>
+  </p>
+  <p>
+  <input type="radio" id="test" name="mode" value="test">
+  <label for="test">Test mode (show generated URL)</label><br>
+  <input type="radio" id="redirect" name="mode" value="redirect">
+  <label for="redirect">Redirect mode (generate 302)</label><br>
+  <input type="radio" id="fetch" name="mode" value="fetch">
+  <label for="fetch">Fetch mode (server-side resource fetch - INSECURE!)</label><br>
+  </p>
+  <input type="submit" />
+  </form>
+  {% endblock content %}
