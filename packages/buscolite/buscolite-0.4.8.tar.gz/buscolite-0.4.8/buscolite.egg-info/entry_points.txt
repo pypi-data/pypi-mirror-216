@@ -1,0 +1,2 @@
+[console_scripts]
+buscolite = buscolite.__main__:main
