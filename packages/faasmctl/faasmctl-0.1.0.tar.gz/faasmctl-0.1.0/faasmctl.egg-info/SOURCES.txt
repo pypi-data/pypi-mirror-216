@@ -1,0 +1,15 @@
+LICENSE.md
+README.md
+pyproject.toml
+faasmctl/__init__.py
+faasmctl/main.py
+faasmctl.egg-info/PKG-INFO
+faasmctl.egg-info/SOURCES.txt
+faasmctl.egg-info/dependency_links.txt
+faasmctl.egg-info/entry_points.txt
+faasmctl.egg-info/requires.txt
+faasmctl.egg-info/top_level.txt
+faasmctl/tasks/__init__.py
+faasmctl/tasks/flush.py
+faasmctl/util/env.py
+faasmctl/util/version.py
