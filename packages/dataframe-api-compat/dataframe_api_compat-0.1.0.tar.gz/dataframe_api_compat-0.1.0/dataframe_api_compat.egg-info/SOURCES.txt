@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+dataframe_api_compat/__init__.py
+dataframe_api_compat.egg-info/PKG-INFO
+dataframe_api_compat.egg-info/SOURCES.txt
+dataframe_api_compat.egg-info/dependency_links.txt
+dataframe_api_compat.egg-info/top_level.txt
+dataframe_api_compat/pandas_standard/__init__.py
+dataframe_api_compat/pandas_standard/pandas_standard.py
+dataframe_api_compat/polars_standard/__init__.py
+dataframe_api_compat/polars_standard/polars_standard.py
