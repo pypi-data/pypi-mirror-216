@@ -1,0 +1,89 @@
+Metadata-Version: 2.1
+Name: sqlxw
+Version: 0.0.1
+Summary: Note Demo
+Author-email: xinetzone <735613050@qq.com>
+Maintainer-email: xinetzone <735613050@qq.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Sphinx
+Classifier: Framework :: Sphinx :: Theme
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Dist: d2py
+Requires-Dist: attrs
+Requires-Dist: importlib-metadata>=4.12
+Requires-Dist: pytest-cov ; extra == "coverage"
+Requires-Dist: pytest-regressions ; extra == "coverage"
+Requires-Dist: codecov ; extra == "coverage"
+Requires-Dist: sqlxw[test] ; extra == "coverage"
+Requires-Dist: pyyaml ; extra == "dev"
+Requires-Dist: pre-commit ; extra == "dev"
+Requires-Dist: note-demo[coverage] ; extra == "dev"
+Requires-Dist: myst-nb ; extra == "doc"
+Requires-Dist: xyzstyle ; extra == "doc"
+Requires-Dist: sphinx-copybutton ; extra == "doc"
+Requires-Dist: sphinxcontrib-bibtex ; extra == "doc"
+Requires-Dist: sphinx-thebe ; extra == "doc"
+Requires-Dist: sphinx-design ; extra == "doc"
+Requires-Dist: sphinx-automodapi ; extra == "doc"
+Requires-Dist: sphinx-sitemap ; extra == "doc"
+Requires-Dist: sphinx-comments ; extra == "doc"
+Requires-Dist: pytest ; extra == "test"
+Requires-Dist: sqlxw[doc] ; extra == "test"
+Project-URL: Home, https://github.com/xinetzone/sqlxw
+Provides-Extra: coverage
+Provides-Extra: dev
+Provides-Extra: doc
+Provides-Extra: test
+
+# 新与勤之恋
+
+![repo size](https://img.shields.io/github/repo-size/xinetzone/sqlxw.svg)
+[![PyPI][pypi-badge]][pypi-link]
+[![GitHub issues][issue-badge]][issue-link]
+[![GitHub forks][fork-badge]][fork-link]
+[![GitHub stars][star-badge]][star-link]
+[![GitHub license][license-badge]][license-link]
+[![contributors][contributor-badge]][contributor-link]
+[![watcher][watcher-badge]][watcher-link]
+[![Binder][binder-badge]][binder-link]
+[![Downloads][download-badge]][download-link]
+[![Documentation Status][status-badge]][status-link]
+[![PyPI - Downloads][install-badge]][install-link]
+
+打造优质的笔记模板。
+
+[pypi-badge]: https://img.shields.io/pypi/v/sqlxw.svg
+[pypi-link]: https://pypi.org/project/sqlxw/
+[issue-badge]: https://img.shields.io/github/issues/xinetzone/sqlxw
+[issue-link]: https://github.com/xinetzone/sqlxw/issues
+[fork-badge]: https://img.shields.io/github/forks/xinetzone/sqlxw
+[fork-link]: https://github.com/xinetzone/sqlxw/network
+[star-badge]: https://img.shields.io/github/stars/xinetzone/sqlxw
+[star-link]: https://github.com/xinetzone/sqlxw/stargazers
+[license-badge]: https://img.shields.io/github/license/xinetzone/sqlxw
+[license-link]: https://github.com/xinetzone/sqlxw/LICENSE
+[contributor-badge]: https://img.shields.io/github/contributors/xinetzone/sqlxw
+[contributor-link]: https://github.com/xinetzone/sqlxw/contributors
+[watcher-badge]: https://img.shields.io/github/watchers/xinetzone/sqlxw
+[watcher-link]: https://github.com/xinetzone/sqlxw/watchers
+[binder-badge]: https://mybinder.org/badge_logo.svg
+[binder-link]: https://mybinder.org/v2/gh/xinetzone/sqlxw/main
+[install-badge]: https://img.shields.io/pypi/dw/sqlxw?label=pypi%20installs
+[install-link]: https://pypistats.org/packages/sqlxw
+[status-badge]: https://readthedocs.org/projects/sqlxw/badge/?version=latest
+[status-link]: https://sqlxw.readthedocs.io/zh/latest/?badge=latest
+[download-badge]: https://pepy.tech/badge/sqlxw
+[download-link]: https://pepy.tech/project/sqlxw
+
+## PyPI
+
+支持 PyPI：
+
+```sh
+pip install sqlxw
+```
+
