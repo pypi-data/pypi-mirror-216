@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/mmpy_packagefiles/__init__.py
+src/mmpy_packagefiles/database.py
+src/mmpy_packagefiles/obvious.py
+src/mmpy_packagefiles/parse.py
+src/mmpy_packagefiles/proof.py
+src/mmpy_packagefiles/scratch.py
+src/mmpy_packagefiles/theory.py
+src/mmpy_packagefiles.egg-info/PKG-INFO
+src/mmpy_packagefiles.egg-info/SOURCES.txt
+src/mmpy_packagefiles.egg-info/dependency_links.txt
+src/mmpy_packagefiles.egg-info/top_level.txt
