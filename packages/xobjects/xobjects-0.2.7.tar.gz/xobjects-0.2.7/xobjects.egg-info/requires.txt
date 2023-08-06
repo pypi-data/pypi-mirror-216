@@ -1,0 +1,6 @@
+numpy
+cffi
+
+[tests]
+pytest
+pytest-mock
