@@ -1,0 +1,68 @@
+{% extends "wagtailadmin/shared/field.html" %}
+{% load i18n %}
+{% block form_field %}
+    <input type="hidden" name="{{ widget.name }}" required>
+
+    <script>
+        function getCookie(name) {
+            const cookie = document.cookie.split(";")
+                .map(cookie => cookie.split("="))
+                .find(cookie => cookie[0] === name);
+
+            return cookie ? cookie[1] : "";
+        }
+
+        function setSubmitDisabled(disabled) {
+            for (const button of document.getElementsByTagName("input")) {
+                if (button.type === "submit") {
+                    button.disabled = disabled;
+                }
+            }
+        }
+
+        const uploadInputs = document.getElementsByName('{{ widget.name }}');
+        const hiddenInput = uploadInputs.item(uploadInputs.length - 1);
+    </script>
+
+    {% include "django/forms/widgets/input.html" %}
+
+    <script>
+        const videoFileInputs = document.getElementsByName('{{ widget.name }}');
+        const videoFileInput = videoFileInputs.item(videoFileInputs.length - 1);
+        videoFileInput.removeAttribute("name");
+        videoFileInput.removeAttribute("required");
+
+        function uploadFile(file) {
+            videoFileInput.disabled = true;
+            setSubmitDisabled(true);
+            const form = new FormData();
+            form.append("file", file);
+            fetch('{% url "wideo:upload" %}', {
+                method: "POST",
+                body: form,
+                headers: {
+                    "x-csrftoken": getCookie("csrftoken"),
+                },
+            }).then(response => {
+                videoFileInput.disabled = false;
+
+                if (response.ok) {
+                    setSubmitDisabled(false);
+                    response.text().then(id => {
+                        hiddenInput.value = id;
+
+                        window.dispatchEvent(new CustomEvent(
+                            "wideo:video-upload-success",
+                            { detail: { id } },
+                        ));
+                    });
+
+                } else {
+                    videoFileInput.value = null;
+                }
+            });
+        }
+
+        videoFileInput.addEventListener("input", event => uploadFile(event.target.files[0]));
+    </script>
+{% endblock %}
