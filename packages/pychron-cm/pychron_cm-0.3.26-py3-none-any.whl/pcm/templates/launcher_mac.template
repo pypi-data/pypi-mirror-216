@@ -1,0 +1,13 @@
+#!/bin/bash
+export GITHUB_ORGANIZATION={github_org:}
+export MassSpecDBVersion={massspec_db_version:}
+export APPLICATION_ID={app_id:}
+
+export PYCHRON_APPNAME={app_name:}
+export PYCHRON_USE_LOGIN={use_login:}
+
+export PYTHONPATH={pychron_path:}
+export ETS_TOOLKIT=qt4
+
+
+{python_executable_root:}/bin/python {pychron_path:}/launchers/launcher.py
