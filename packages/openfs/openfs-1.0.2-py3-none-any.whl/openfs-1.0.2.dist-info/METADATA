@@ -1,0 +1,128 @@
+Metadata-Version: 2.1
+Name: openfs
+Version: 1.0.2
+Summary: An S3 feature store client for data pipelines.
+Author-email: xplainable pty ltd <contact@xplainable.io>
+License: MIT License
+        
+        Copyright (c) 2023 xplainable pty ltd
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: boto3 (>=1.26.154)
+Requires-Dist: botocore (>=1.29.154)
+Requires-Dist: pandas (>=1.2.0)
+Provides-Extra: gui
+Requires-Dist: ipywidgets (>=8.0.0) ; extra == 'gui'
+Requires-Dist: ipython ; extra == 'gui'
+
+
+<br></br>
+<div align="center">
+<h1 align="center">openfs</h1>
+<h3 align="center">An S3 feature store client for data pipelines.</h3>
+    
+[![Python](https://img.shields.io/pypi/pyversions/openfs)](https://pypi.org/project/openfs/)
+[![PyPi](https://img.shields.io/pypi/v/openfs?color=blue)](https://pypi.org/project/openfs/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xplainable/openfs/blob/main/LICENSE)
+[![Downloads](https://static.pepy.tech/badge/openfs)](https://pepy.tech/project/openfs)
+    
+**Openfs** provides a simple api to boost the quality of your training data
+while keeping your data pipelines clean and manageable.
+</div>
+
+# Installation
+```shell
+pip install openfs
+```
+
+## Quick Start
+### Creating a Store
+``` python
+import openfs as fs
+from openfs.stores import FeatureStore
+from openfs.boosters import Booster
+import os
+
+# <- import files to upload here
+
+# Connect to store bucket
+fs.client.connect(
+    region_name=os.environ['FSTORE_REGION'],
+    endpoint_url=os.environ['FSTORE_ENDPOINT_URL'],
+    access_key_id=os.environ['FSTORE_ACCESS_KEY'],
+    secret_access_key=os.environ['FSTORE_SECRET_KEY']
+)
+
+# Create store
+store = FeatureStore("store_name", "description of store", "some_primary_key")
+
+# Upload store
+response = store.upload(files, filenames)
+```
+
+### Creating a Booster Dataset
+``` python
+# Create booster
+booster = Booster(store_id=response['store_id'])
+
+# Add features
+booster.add_single("feature_1", alias="alias_for_feature")
+booster.add_group(["feature_2", "feature_3"], alias="grouped_feature", how='sum')
+
+# pull features from store (for testing)
+df = booster.create_df()
+
+# upload booster
+booster.upload(name="booster_name", description="booster description")
+```
+
+### Viewing Stores
+
+```python
+fb.client.list_stores()
+```
+
+<br></br>
+
+## Contributors
+We'd love to welcome contributors to ``openfs`` to help make training data
+richer and more open for everyone. We're working on our contributor docs at the
+moment, but if you're interested in contributing, please send us a message at
+contact@xplainable.io.
+
+
+<div align="center">
+<br></br>
+<br></br>
+Thanks for trying openfs!
+<br></br>
+<strong>Made with ❤️ in Australia</strong>
+<br></br>
+<hr>
+&copy; copyright xplainable pty ltd
+</div>
+
