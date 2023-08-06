@@ -1,0 +1,154 @@
+Metadata-Version: 2.1
+Name: pysatNASA
+Version: 0.0.5
+Summary: pysat support for NASA Instruments
+Author-email: "Jeff Klenzing, et al." <pysat.developers@gmail.com>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2023, pysat
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: Documentation, https://pysatnasa.readthedocs.io/en/latest/
+Project-URL: Source, https://github.com/pysat/pysatNASA
+Keywords: pysat,ionosphere,magnetosphere,solar wind,thermosphere
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: pysatcdf
+Provides-Extra: test
+Provides-Extra: doc
+License-File: LICENSE
+
+<div align="left">
+        <img height="0" width="0px">
+        <img width="20%" src="https://raw.githubusercontent.com/pysat/pysatNASA/main/docs/figures/pysatnasa_logo.png" alt="pysatNASA" title="pysatNASA" </img>
+</div>
+
+# pysatNASA: pysat support for NASA Space Science instruments
+[![PyPI Package latest release](https://img.shields.io/pypi/v/pysatNASA.svg)](https://pypi.python.org/pypi/pysatNASA)
+[![Build Status](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/pysat/pysatNASA/badge.svg?branch=main)](https://coveralls.io/github/pysat/pysatNASA?branch=main)
+
+[![Documentation Status](https://readthedocs.org/projects/pysatnasa/badge/?version=latest)](https://pysatnasa.readthedocs.io/en/latest/?badge=latest)
+[![DOI](https://zenodo.org/badge/287387638.svg)](https://zenodo.org/badge/latestdoi/287387638)
+
+# Installation
+
+The following instructions provide a guide for installing pysatNASA and give
+some examples on how to use the routines
+
+### Prerequisites
+
+pysatNASA uses common Python modules, as well as modules developed by
+and for the Space Physics community.  This module officially supports
+Python 3.6+.
+
+| Common modules   | Community modules | Optional Modules |
+| ---------------- | ----------------- |------------------|
+| beautifulsoup4   | cdflib>=0.4.4     | pysatCDF         |
+| lxml             | pysat>=3.1.0      |                  |
+| netCDF4          |                   |                  |
+| numpy            |                   |                  |
+| pandas           |                   |                  |
+| requests         |                   |                  |
+| xarray           |                   |                  |
+
+## PyPi Installation
+```
+pip install pysatNASA
+```
+
+## GitHub Installation
+
+```
+git clone https://github.com/pysat/pysatNASA.git
+```
+
+Change directories into the repository folder and build the project.  For
+a local install use the "--user" flag after "install".
+
+```
+cd pysatNASA/
+pip install .
+```
+
+Note: pre-1.0.0 version
+-----------------------
+pysatNASA is currently in an initial development phase and requires pysat 3.1.0.  
+Feedback and contributions are appreciated.
+
+# Using with pysat
+
+The instrument modules are portable and designed to be run like any pysat instrument.
+
+```
+import pysat
+from pysatNASA.instruments import icon_ivm
+
+ivm = pysat.Instrument(inst_module=icon_ivm, inst_id='a')
+```
+Another way to use the instruments in an external repository is to register the
+instruments.  This only needs to be done the first time you load an instrument.  
+Afterward, pysat will identify them using the `platform` and `name` keywords.
+
+```
+import pysat
+
+pysat.utils.registry.register(['pysatNASA.instruments.icon_ivm'])
+ivm = pysat.Instrument('icon', 'ivm', inst_id='a')
+```
+
+# CDF Integration
+For data products stored as CDF files, this package can use either `cdflib` or
+`pysatCDF`.  Note that `cdflib` is a pure python package and more readily
+deployable across systems, whereas `pysatCDF` interfaces with the fortran.  
+This is a faster approach for loading data, but may not install on all systems.  
+There are known issues with `numpy`>=1.24. Therefore, `pysatCDF` is optional
+rather than required.  
+
+You can specify which load routine to use via the optional `use_cdflib` kwarg.
+If no kwarg is specified, `pysatNASA` will default to `pysatCDF` if it is
+successfully installed, and default to `cdflib` otherwise.
+
+```
+ivm = pysat.Instrument('cnofs', 'ivm', use_cdflib=True)
+```
