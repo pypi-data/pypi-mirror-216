@@ -1,0 +1,3 @@
+[console_scripts]
+tap-krow=tap_krow.tap:TapKrow.cli
+
