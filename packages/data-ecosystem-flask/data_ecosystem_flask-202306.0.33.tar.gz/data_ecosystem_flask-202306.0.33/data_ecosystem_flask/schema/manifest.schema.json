@@ -1,0 +1,328 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://edc.cdc.gov/manifest.schema.json",
+  "title": "Business Metadata Manifest",
+  "description": "A business description of a data set",
+  "type": "object",
+  "required": [
+    "alationDatasourceID",
+    "alationSchemaID",
+    "identifier",
+    "title",
+    "description",
+    "releaseDate",
+    "pii",
+    "tags",
+    "submitting_user"
+  ],
+  "properties": {
+    "alationDatasourceID": {
+      "type": "integer",
+      "title": "The datasoruce ID for the Alation data object being updated",
+      "description": "The datasoruce ID for the Alation data object being updated",
+      "examples": [
+        143
+      ],
+      "blank_field_examples" : 0
+    },
+    "alationSchemaID": {
+      "type": "integer",
+      "title": "The schema ID for the Alation data object being updated",
+      "description": "The schema ID for the Alation data object being updated",
+      "examples": [
+        1463
+      ],
+      "blank_field_examples" : 0
+    },
+    "identifier": {
+      "type": "string",
+      "title": "The identifier",
+      "description": "This field allows third parties to maintain a consistent record for datasets even if title or URLs are updated. Agencies may integrate an existing system for maintaining unique identifiers. Each identifier must be unique across the agency’s catalog and remain fixed. It is highly recommended that a URI (preferably an HTTP URL) be used to provide a globally unique identifier. Identifier URLs should be designed and maintained to persist indefinitely regardless of whether the URL of the resource itself changes.",
+      "examples": [
+        "http://dx.doi.org/10.7927/H4PZ56R2"
+      ],
+      "blank_field_examples" : ""
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "description": "Name of the dataset. Should be in plain English and include sufficient detail to facilitate search and discovery",
+      "examples": [
+        "Data on COVID-19 (coronavirus) vaccinations by Our World in Data"
+      ],
+      "blank_field_examples" : ""
+    },
+    "submitting_user": {
+      "type": "string",
+      "title": "Submitting User",
+      "description": "Email address of the Data Steward who is submitting this manifest file",
+      "examples": [
+        "tmf9@cdc.gov"
+      ],
+      "blank_field_examples" : ""
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "The description of the dataset (e.g. an abstract) with sufficient detail to enable a user to quickly understand whether the asset is of interest.",
+      "examples": [
+        "Country-by-country data on global COVID-19 vaccinations. We only rely on figures that are verifiable based on public official sources.This dataset includes some subnational locations (England, Northern Ireland, Scotland, Wales, Northern Cyprus…) and international aggregates (World, continents, European Union…). They can be identified by their iso_code that starts with OWID_.The population estimates we use to calculate per-capita metrics are based on the last revision of the United Nations World Population Prospects. The exact values can be viewed population_latest.csv. In a few cases, we use other sources (see column source in the population file) when the figures provided by the UN differ substantially from reliable and more recent national estimates. Population estimates for a few subnational locations are taken from national reports, and are stored subnational_population_2020.csv. "
+      ],
+      "blank_field_examples" : [
+        ""
+      ]
+    },
+    "homepageUrl": {
+      "type": "string",
+      "title": "Homepage URL",
+      "description": "Web address for the homepage describing this dataset",
+      "examples": [
+        "https://example.com"
+      ],
+      "blank_field_examples" : ""
+    },
+    "releaseDate": {
+      "type": "string",
+      "title": "Release Date",
+      "description": "Date when the dateset was created",
+      "examples": [
+        "2022-04-20"
+      ],
+      "blank_field_examples" : ""
+    },
+    "pii": {
+      "type": "object",
+      "title": "PII information",
+      "description": "Indicate if the dataset contains PII information, and list all fields/columns which may contain PII related information",
+      "examples": [
+        {
+          "containsPII": false,
+          "piiFields": []
+        }
+      ],
+      "blank_field_examples" :  {
+        "containsPII": false,
+        "comments":"",
+        "piiFields": []
+      },
+      "required": [
+        "containsPII"
+      ],
+      "properties": {
+        "containsPII": {
+          "type": "boolean"
+        },
+        "piiFields": {
+          "type": "array",
+          "description": "List fields that contain PII information",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "tags can be applied to the dataset",
+      "examples": [
+        [
+          "covid",
+          "vaccination"
+        ]
+      ],
+      "blank_field_examples" : [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "license": {
+      "type": "string",
+      "title": "License",
+      "description": "Provide detailed license information about this dataset",
+      "blank_field_examples" : ""
+    },
+    "citation": {
+      "type": "string",
+      "title": "Citation",
+      "description": "Provide standard citation text for using the dataset",
+      "examples": [
+        [
+          "Hasell, J., Mathieu, E., Beltekian, D. et al. A cross-country database of COVID-19 testing. Sci Data 7, 345 (2020). https://doi.org/10.1038/s41597-020-00688-8",
+          "Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021). https://doi.org/10.1038/s41562-021-01122-8"
+        ]
+      ],
+      "blank_field_examples" : ""
+    },
+    "reference": {
+      "type": "string",
+      "title": "Reference",
+      "description": "URLs to related documents such as technical information about a dataset, developer documentation, etc. ",
+      "examples": [
+        [
+          "https://github.com/owid/covid-19-data/blob/master/scripts/input/un/population_latest.csv"
+        ]
+      ],
+      "blank_field_examples" : ""
+    },
+    "tables": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/table" }
+    },
+    "referencedBy": {
+      "type": "string",
+      "description": "A list of related resources, such as a publication, that references, cites, or otherwise points to the cataloged resource.",
+      "blank_field_examples" : ""
+    },
+    "language": {
+      "type": "string",
+      "description": "The primary language of the dataset using ISO 639-1 two letter codes.",
+      "default": "en",
+      "examples": [
+        "en"
+      ],
+      "blank_field_examples" : ""
+    },
+    "format": {
+      "type": "string",
+      "description": "Format in which the data is provided in",
+      "examples": [
+        "json"
+      ],
+      "blank_field_examples" : ""
+    },
+    "updateFrequency": {
+      "type": "string",
+      "description": "Must be an ISO 8601 repeating duration unless this is not possible because the accrual periodicity is completely irregular, in which case the value should simply be 'irregular'. The value should not include a start or end date but rather simply express the duration of time between data publishing. For example, a dataset which is published on an annual basis would be R/P1Y; every three months would be R/P3M; weekly would beR/P1W; and daily would be R/P1D. Further examples and documentation.",
+      "examples": [
+        "R/P1W"
+      ],
+      "blank_field_examples" : ""
+    },
+    "size": {
+      "type": "string",
+      "description": "Size of the dataset in bytes",
+      "examples": [
+        "122.1 MB"
+      ],
+      "blank_field_examples" : ""
+    },
+    "conformToStandard": {
+      "type": "string",
+      "description": "This is used to identify a standardized specification the dataset conforms to. If this is a technical specification associated with a particular serialization of a distribution, this should be specified with conformsTo at the distribution level. It’s recommended that this be a URI that serves as a unique identifier for the standard. The URI may or may not also be a URL that provides documentation of the specification.",
+      "examples": [
+        "http://snomed.info/sct"
+      ],
+      "blank_field_examples" : ""
+    },
+    "geographicCoverage": {
+      "type": "string",
+      "description": "Contain one of the following types of content: (1) a bounding coordinate box for the dataset represented in latitude / longitude pairs where the coordinates are specified in decimal degrees and in the order of: minimum longitude, minimum latitude, maximum longitude, maximum latitude; (2) a latitude / longitude pair (in decimal degrees) representing a point where the dataset is relevant; (3) a geographic feature expressed in Geography Markup Language using the Simple Features Profile; or (4) a geographic feature from the GeoNames database.",
+      "examples": [
+        [
+          "Africa",
+          "Asia"
+        ]
+      ],
+      "blank_field_examples" : ""
+    },
+    "temporalResolution": {
+      "type": "string",
+      "description": "A minimum time period resolvable in the dataset (months, weeks, days).",
+      "blank_field_examples" : ""
+    },
+    "temporalApplicability": {
+      "type": "string",
+      "description": "Contain an interval of time defined by the start and end dates for which the dataset is applicable. Dates should be formatted as pairs of {start datetime/end datetime} in the ISO 8601 format. ISO 8601 specifies that datetimes can be formatted in a number of ways, including a simple four-digit year (eg. 2013) to a much more specific YYYY-MM-DDTHH:MM:SSZ, where the T specifies a seperator between the date and time and time is expressed in 24 hour notation in the UTC (Zulu) time zone. (e.g., 2011-02-14T12:00:00Z/2013-07-04T19:34:00Z). Use a solidus (\"/\") to separate start and end times. If there is a need to define the start or end of applicability using a duration rather than a date, ISO 8601 formatting can account for this with duration based intervals. For instance, applicability starting in January 2010 and continuing for one month could be represented as 2010-01/P1M or 2010-01/2010-02. However, when possible, full dates are preferred for both start and end times.",
+      "examples": [
+          "2021-03-1 - 2022-04-19"
+      ],
+      "blank_field_examples" : ""
+    }
+  },
+  "$defs": {
+    "table": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the table.",
+          "examples": [
+            "Name of the table as used in the database"
+          ],
+          "blank_field_examples" : ""
+        },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "description": "Descriptive title for the table.",
+          "examples": [
+            "Data on COVID-19 (coronavirus) vaccinations by Our World in Data"
+          ],
+          "blank_field_examples" : ""
+        },
+       "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "The description of the table (e.g. an abstract) with sufficient detail to enable a user to quickly understand whether the asset is of interest.",
+          "examples": [
+            "Country-by-country data on global COVID-19 vaccinations. We only rely on figures that are verifiable based on public official sources.This dataset includes some subnational locations (England, Northern Ireland, Scotland, Wales, Northern Cyprus…) and international aggregates (World, continents, European Union…). They can be identified by their iso_code that starts with OWID_.The population estimates we use to calculate per-capita metrics are based on the last revision of the United Nations World Population Prospects. The exact values can be viewed population_latest.csv. In a few cases, we use other sources (see column source in the population file) when the figures provided by the UN differ substantially from reliable and more recent national estimates. Population estimates for a few subnational locations are taken from national reports, and are stored subnational_population_2020.csv. "
+          ],
+          "blank_field_examples" : ""
+        },
+        "tags": {
+          "type": "array",
+          "description": "tags can be applied to the table",
+          "examples": [
+            [
+              "conditions",
+              "observations"
+            ]
+          ],
+          "blank_field_examples" : [],
+          "items": {
+            "type": "string"
+          }
+        },
+        "columns": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/column" }
+        }
+      },
+      "required": ["name", "title", "description"]
+    },
+    "column": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the column.",
+          "examples": [
+            "HEIGHT_OBS"
+          ],
+          "blank_field_examples" : [
+            ""
+          ]
+        },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "description": "Descriptive title for the column.",
+          "examples": [
+            "Height Observation"
+          ],
+          "blank_field_examples" : ""
+        },
+       "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "The description of the column (e.g. an abstract) with sufficient detail to enable a user to quickly understand whether the asset is of interest.",
+          "examples": [
+            "Measurement of an individual's height in cm."
+          ],
+          "blank_field_examples" : ""
+        }
+      },
+      "required": ["name", "title", "description"]
+    }
+  }
+}
