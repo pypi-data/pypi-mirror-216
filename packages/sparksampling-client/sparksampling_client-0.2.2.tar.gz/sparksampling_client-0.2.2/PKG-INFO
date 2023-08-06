@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: sparksampling_client
+Version: 0.2.2
+Summary: client for sparksampling
+Project-URL: Source, https://github.com/Wh1isper/pyspark-sampling
+Author-email: Wh1isper <9573586@qq.com>
+License: Apache License 2.0
+License-File: LICENSE
+Keywords: pyspark-sampling,sparksampling_client
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.7
+Requires-Dist: click
+Requires-Dist: sparksampling-proto==0.0.1
+Provides-Extra: test
+Requires-Dist: pytest; extra == 'test'
+Description-Content-Type: text/markdown
+
+This is a Python Grpc Stub for ``sparksampling``
+
+# sparksampling
+`sparksampling` is a PySpark-based sampling and data quality assessment GRPC service that supports containerized deployments and Spark on K8S
+
+
+## Feature
+
+- Common sampling methods: Random, Stratified, Simple
+- Relationship Sampling based on DAG and Topological sorting
+- Cloud Native and Spark on K8S support
+
+
+# QUICK START
+
+## Installation
+
+The trial only requires direct installation using pypi
+
+``pip install sparksampling``
+
+run as
+
+``sparksampling``
+
+The service will start and listen on port 8530
+
+## Docker
+
+``docker run -p 8530:8530 wh1isper/pysparksampling:latest``
+
+# MORE
+
+For more, see our github page: https://github.com/Wh1isper/pyspark-sampling/
