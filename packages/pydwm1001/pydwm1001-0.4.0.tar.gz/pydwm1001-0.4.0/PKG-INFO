@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pydwm1001
+Version: 0.4.0
+Summary: A Python library for interfacing with DWM1001
+Author-email: Adam Morrissett <morrissettal2@vcu.edu>
+Project-URL: Homepage, https://github.com/the-hive-lab/pydwm1001
+Project-URL: Bug Tracker, https://github.com/the-hive-lab/pydwm1001/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Introduction
+
+This is a Python library for interfacing with the Qorvo (previously Decawave) DWM1001.
