@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple-flask-google-login"
+version = "0.3.0"
+description = "Convenience utility for implementing Google login with Flask."
+readme = "README.md"
+authors = [{ name = "Alvin Wan", email = "hi@alvinwan.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["flask", "google", "login", "tutorial"]
+dependencies = [
+    "flask",
+    "google-auth-oauthlib",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/alvinwan/simple-flask-google-login"
