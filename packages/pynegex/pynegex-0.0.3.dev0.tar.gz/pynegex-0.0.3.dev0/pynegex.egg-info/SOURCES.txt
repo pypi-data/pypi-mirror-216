@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+pynegex/__init__.py
+pynegex.egg-info/PKG-INFO
+pynegex.egg-info/SOURCES.txt
+pynegex.egg-info/dependency_links.txt
+pynegex.egg-info/top_level.txt
+pynegex/model/__init__.py
+pynegex/model/negex.py
+pynegex/model/runners.py
+pynegex/model/triggersets/chapman-en.txt
+pynegex/model/triggersets/cotik-de.txt
