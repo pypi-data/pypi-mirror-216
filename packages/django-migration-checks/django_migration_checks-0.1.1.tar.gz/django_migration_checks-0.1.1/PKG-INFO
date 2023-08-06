@@ -1,0 +1,209 @@
+Metadata-Version: 2.1
+Name: django-migration-checks
+Version: 0.1.1
+Summary: Django Migration Checks
+Home-page: https://github.com/amickael/django-migration-checks
+License: MIT
+Author: Andrew Mickael
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Plugins
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: django (>=3.2)
+Description-Content-Type: text/markdown
+
+# Django Migration Checks
+[![CI](https://github.com/amickael/django-migration-checks/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/amickael/django-migration-checks/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/amickael/django-migration-checks/branch/main/graph/badge.svg?token=esjNByhUmZ)](https://codecov.io/gh/amickael/django-migration-checks)
+![PyPI](https://img.shields.io/pypi/v/django-migration-checks?label=PyPI&color=blue)
+
+Validate Django migrations at runtime
+
+## Getting Started
+
+### Dependencies
+* Python `^3.9`
+* Django `>=3.2`
+
+### Installation
+
+This package is [hosted on PyPI](https://pypi.org/project/django-migration-checks/), install it in your Django project via your preferred package manager:
+* Using `pip`:
+  ```
+  pip install django-migration-checks
+  ```
+* Using `poetry`:
+  ```
+  poetry add django-migration-checks
+  ```
+
+
+Then add the app to Django's
+`INSTALLED_APPS` in your project's `settings.py`:
+```python
+INSTALLED_APPS = [
+    ...,
+    'django_migration_checks',
+    ...
+]
+```
+For more information on this setting see the [Django docs](https://docs.djangoproject.com/en/dev/ref/settings/#std-setting-INSTALLED_APPS).
+
+## Usage
+
+This package provides two classes to register migration checks, `PreMigrationCheck` and `PostMigrationCheck`.
+Like their names imply, the former will be evaluated before migrations are applied, and the latter afterward.
+
+### Creating a check
+
+To write a check create a new class as a subclass of one of the two mentioned above depending on which stage
+you wish to perform the validation. For example, the following check will be evaluated before migrations have been applied:
+
+```python
+from django_migration_checks.checks import PreMigrationCheck
+
+
+class ExampleAtomicCheck(PreMigrationCheck):
+  def validate(self):
+    # Validation logic goes here
+    ...
+```
+
+Looking at the example above, `validate` accepts several arguments related to the migration being
+evaluated, see the [API reference](docs/API_REFERENCE.md#basemigrationcheck) for more details about them. Most importantly,
+the `migration` argument provides the Django migration object being applied, and `schema_editor` provides
+the same schema editor object the migration would receive. The schema editor has a `schema_editor.collected_sql`
+attribute that contains the SQL planned to be executed during the migration, and a `schema_editor.connection` attribute
+with a connection to the database.
+
+### Adding validation logic and displaying messages
+
+Next, let's add some validation logic to our check. As a basic example we will check for non-atomic migrations
+and ask the user for confirmation when `atomic=False` is used. To do this we will use the provided utility method
+`self.add_message` to display a warning message and prompt the user for confirmation before proceeding with the migration.
+
+```python
+from django_migration_checks.checks import PreMigrationCheck
+
+
+class ExampleAtomicCheck(PreMigrationCheck):
+  def validate(self):
+    if not self.migration.atomic:
+      self.add_message("Non-atomic migration detected!", severity=2, prompting=True)
+```
+
+By specifying `severity=2` the handler will display a `WARNING` style message and log a warning to a logger if configured.
+`prompting=True` will present the user with an input prompt with a message asking to continue, if the user does not reply
+`y` then the program will stop and the migration will be prevented from running.
+
+### Filtering checks
+
+Sometimes you need to enable or disable certain checks depending on the migration or environment, the migration check classes provide
+a `filter()` method that may be overriden to dynamically toggle check evaluation. For instance, if we only want to evaluate 
+our `ExampleAtomicCheck` in non-debug mode we can do the following:
+
+```python
+from django.conf import settings
+from django_migration_checks.checks import PreMigrationCheck
+
+
+class ExampleAtomicCheck(PreMigrationCheck):
+  def validate(self):
+    if not self.migration.atomic:
+      self.add_message("Non-atomic migration detected!", severity=2, prompting=True)
+
+  def filter(self) -> bool:
+    if settings.DEBUG:
+      return True
+    return False
+```
+
+In the above example our `ExampleAtomicCheck` would _not_ be evaluated if `settings.DEBUG` is `True`.
+
+### Registering and configuring checks
+
+Add the code above to a new file in your project. There is no specific convention, it just needs to be somewhere
+inside the Django project. For example, if we have a traditional Django filestructure, we can create a new file in the
+project root named `migration_checks.py` like so:
+```
+└── project
+    ├── app1
+    │   └── apps.py
+    ├── app2
+    │   └── apps.py
+    ├── app3
+    │   └── apps.py
+    ├── manage.py
+    ├── migration_checks.py <<<
+    └── settings.py
+```
+
+If you prefer to namespace your checks by app you can also split up the file into multiple like so:
+```
+└── project
+    ├── app1
+    │   ├── apps.py
+    │   └── migration_checks.py <<<
+    ├── app2
+    │   ├── apps.py
+    │   └── migration_checks.py <<<
+    ├── app3
+    │   ├── apps.py
+    │   └── migration_checks.py <<<
+    ├── manage.py
+    └── settings.py
+```
+
+Whatever you choose, you will need to register the checks in `settings.py`. To do this add a setting called `MIGRATION_CHECKS_CLASSES`
+as a list of dot-notation paths to your check classes relative to the project root.
+
+For the first example, you would add:
+```python
+MIGRATION_CHECKS_CLASSES = [
+    "migration_checks.ExampleAtomicCheck",
+]
+```
+
+Your check is now registered and will be evaluated whenever migrations are applied.
+
+To demonstrate, we can add a non-atomic migration in `app1` from the example above like so:
+```python
+class Migration(migrations.Migration):
+    atomic = False
+    dependencies = []
+    operations = []
+```
+
+Now if we attempt to apply the migration above we get:
+```
+[WARNING] [app1.0001_initial] Non-atomic migration detected!
+> Continue? [y/N]: 
+```
+
+## Settings
+
+This package provides several settings that can be specified in your project's `settings.py`:
+
+| Key                        | Description                                        | Type                         | Default      |
+|----------------------------|----------------------------------------------------|------------------------------|--------------|
+| `MIGRATION_CHECKS_CLASSES` | List of dot-notated paths to project check classes | `List[str]`                  | `[]`         |
+| `MIGRATION_CHECKS_ENABLED` | Enable or disable checks globally                  | `bool`                       | `True`       |
+| `MIGRATION_CHECKS_LOGGER`  | Logger or logger name to output messages           | `Union[str, logging.Logger]` | `None`       |
+| `MIGRATION_CHECKS_STREAM`  | Stream to output messages                          | `IO`                         | `sys.stdout` |
+
+## API Reference
+[Documentation](docs/API_REFERENCE.md)
+
