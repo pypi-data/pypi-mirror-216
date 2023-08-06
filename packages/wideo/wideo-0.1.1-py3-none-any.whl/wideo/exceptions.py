@@ -1,0 +1,2 @@
+class UnsupportedUploadedFileType(Exception):
+    pass
