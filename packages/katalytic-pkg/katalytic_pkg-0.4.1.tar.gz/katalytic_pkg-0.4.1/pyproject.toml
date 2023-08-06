@@ -1,0 +1,45 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "katalytic-pkg"
+version = "0.4.1"
+description = "This plugin provides some metaprogramming magic for the other katalytic plugins"
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+]
+keywords = [
+    "high-level",
+    "metaprogramming",
+]
+authors = [{name="Valentin Neagu", email="vali19th@protonmail.com"}]
+
+requires-python = ">=3.6"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-clarity",
+    "pytest-randomly",
+]
+
+[project.urls]
+homepage = "https://gitlab.com/katalytic/katalytic-pkg.git"
+repository = "https://gitlab.com/katalytic/katalytic-pkg.git"
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+
+[tool.flit.module]
+name = "katalytic.pkg"
