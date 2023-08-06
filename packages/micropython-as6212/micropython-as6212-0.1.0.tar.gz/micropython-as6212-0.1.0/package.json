@@ -1,0 +1,8 @@
+{
+  "urls": [
+    ["micropython_as6212/__init__.py", "github:jposada202020/MicroPython_AS6212/micropython_as6212/__init__.py"],
+    ["micropython_as6212/i2c_helpers.py", "github:jposada202020/MicroPython_AS6212/micropython_as6212/i2c_helpers.py"],
+    ["micropython_as6212/as6212.py", "github:jposada202020/MicroPython_AS6212/micropython_as6212/as6212.py"]
+  ],
+  "version": "0.1"
+}
