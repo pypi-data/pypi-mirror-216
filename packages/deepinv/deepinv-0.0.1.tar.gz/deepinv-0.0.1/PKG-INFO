@@ -1,0 +1,163 @@
+Metadata-Version: 2.1
+Name: deepinv
+Version: 0.0.1
+Summary: pytorch library for solving inverse problems with deep learning
+Download-URL: https://github.com/deepinv/deepinv.git
+Maintainer: Julian Tachella
+Maintainer-email: tachellajulian@gmail.com
+License: BSD (3-clause)
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries
+Description-Content-Type: text/x-rst
+Provides-Extra: test
+Provides-Extra: doc
+License-File: LICENSE
+
+.. image:: https://github.com/deepinv/deepinv/raw/main/docs/source/figures/deepinv_logolarge.png
+   :width: 500px
+   :alt: deepinv logo
+   :align: center
+
+
+|Test Status| |Docs Status| |Python 3.6+| |codecov| |Black|
+
+
+Introduction
+------------
+Deep Inverse is an open-source pytorch library for solving imaging inverse problems using deep learning. The goal of ``deepinv`` is to accelerate the development of deep learning based methods for imaging inverse problems, by combining popular learning-based reconstruction approaches in a common and simplified framework, standarizing forward imaging models and simplifying the creation of imaging datasets.
+
+With ``deepinv`` you can:
+
+
+* Large collection of `predefined imaging operators <https://deepinv.github.io/deepinv/deepinv.physics.html>`_ (MRI, CT, deblurring, inpainting, etc.)
+* `Training losses <https://deepinv.github.io/deepinv/deepinv.loss.html>`_ for inverse problems (self-supervised learning, regularization, etc.).
+* Many `pretrained deep denoisers <https://deepinv.github.io/deepinv/deepinv.models.html>`_ which can be used for `plug-and-play restoration <https://deepinv.github.io/deepinv/deepinv.pnp.html>`_.
+* Framework for `building datasets <https://deepinv.github.io/deepinv/deepinv.datasets.html>`_ for inverse problems.
+* Easy-to-build `unfolded architectures <https://deepinv.github.io/deepinv/deepinv.unfolded.html>`_ (ADMM, forward-backward, deep equilibrium, etc.).
+* `Sampling algorithms <https://deepinv.github.io/deepinv/deepinv.sampling.html>`_ for uncertainty quantification (Langevin, diffusion, etc.).
+* A large number of well-explained `examples <https://deepinv.github.io/deepinv/auto_examples/index.html>`_, from basics to state-of-the-art methods.
+
+.. image:: https://github.com/deepinv/deepinv/raw/main/docs/source/figures/deepinv_schematic.png
+   :width: 1000px
+   :alt: deepinv schematic
+   :align: center
+
+
+Documentation
+-------------
+
+Read the documentation and examples at `https://deepinv.github.io <https://deepinv.github.io>`_.
+
+Install
+-------
+
+To install the latest stable release of ``deepinv``, you can simply do:
+
+.. code-block:: bash
+
+    pip install deepinv
+
+You can also install the latest version of ``deepinv`` directly from github:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/deepinv/deepinv.git#egg=deepinv
+
+Getting Started
+---------------
+Try out the following plug-and-play image inpainting example:
+
+.. code-block:: python
+
+    import deepinv as dinv
+    from deepinv.utils import load_url_image
+
+    url = ("https://mycore.core-cloud.net/index.php/s/9EzDqcJxQUJKYul/"
+            "download?path=%2Fdatasets&files=cameraman.png")
+    x = load_url_image(url=url, img_size=512, grayscale=True, device='cpu')
+
+    physics = dinv.physics.Inpainting((1, 512, 512), mask = 0.5, \
+                                       noise_model=dinv.physics.GaussianNoise(sigma=0.01))
+
+    data_fidelity = dinv.optim.data_fidelity.L2()
+    prior = dinv.optim.prior.PnP(denoiser=dinv.models.MedianFilter())
+    model = dinv.optim.optim_builder(iteration="HQS", prior=prior, data_fidelity=data_fidelity, \
+                                     params_algo={"stepsize": 1.0, "g_param": 0.1, "lambda": 2.})
+    y = physics(x)
+    x_hat = model(y, physics)
+    dinv.utils.plot([x, y, x_hat], ["signal", "measurement", "estimate"], rescale_mode='clip')
+
+
+Also try out `one of the examples <https://deepinv.github.io/deepinv/auto_examples/index.html>`_ to get started.
+
+Contributing
+------------
+
+DeepInverse is a community-driven project and welcomes contributions of all forms.
+We are ultimately aiming for a comprehensive library of inverse problems and deep learning,
+and we need your help to get there!
+The preferred way to contribute to ``deepinv`` is to fork the `main
+repository <https://github.com/deepinv/deepinv/>`_ on GitHub,
+then submit a "Pull Request" (PR). See our `contributing guide <https://deepinv.github.io/deepinv/contributing/>`_
+for more details.
+
+
+Finding help
+------------
+
+The recommended way to get in touch with the developers is to open an issue on the
+`issue tracker <https://github.com/deepinv/deepinv/issues>`_.
+
+
+.. |Black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
+.. |Test Status| image:: https://github.com/deepinv/deepinv/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/deepinv/deepinv/actions/workflows/test.yml
+.. |Docs Status| image:: https://github.com/deepinv/deepinv/actions/workflows/documentation.yaml/badge.svg
+   :target: https://github.com/deepinv/deepinv/actions/workflows/documentation.yaml
+.. |Python 3.6+| image:: https://img.shields.io/badge/python-3.6%2B-blue
+   :target: https://www.python.org/downloads/release/python-360/
+.. |codecov| image:: https://codecov.io/gh/deepinv/deepinv/branch/main/graph/badge.svg?token=77JRvUhQzh
+   :target: https://codecov.io/gh/deepinv/deepinv
+
+BSD 3-Clause License
+
+Copyright (c) 2023, deepinv
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
