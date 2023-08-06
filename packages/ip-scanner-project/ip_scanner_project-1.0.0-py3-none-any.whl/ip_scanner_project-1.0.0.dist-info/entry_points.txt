@@ -1,0 +1,2 @@
+[console_scripts]
+ip-scanner-project-cli = cli.cli_wrapper:main
