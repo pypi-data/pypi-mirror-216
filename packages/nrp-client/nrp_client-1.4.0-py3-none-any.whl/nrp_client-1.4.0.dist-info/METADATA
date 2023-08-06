@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: nrp-client
+Version: 1.4.0
+Summary: Python client for the NRP-Core
+Author: NRP Team
+Author-email: vorobev@in.tum.de
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: psutil
+Requires-Dist: grpcio-tools (>=1.49.1)
+Requires-Dist: nrp-protobuf (==1.4.0)
+Provides-Extra: docker
+Requires-Dist: docker ; extra == 'docker'
+Requires-Dist: python-on-whales ; extra == 'docker'
+Requires-Dist: pyyaml ; extra == 'docker'
+
