@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: numword-georgia
+Version: 0.3.0
+Summary: Convert numbers to words in Georgian
+Project-URL: Documentation, https://github.com/awnion/numword-georgia/#readme
+Project-URL: Issues, https://github.com/awnion/numword-georgia/issues
+Project-URL: Source, https://github.com/awnion/numword-georgia
+Author-email: Sergei Blinov <blinovsv@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: georgia,numbers,numword
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Numword Georgia
+
+[![PyPI - Version](https://img.shields.io/pypi/v/numword-georgia.svg)](https://pypi.org/project/numword-georgia/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/htest.svg)](https://pypi.org/project/numword-georgia/)
+
+- [Numword Georgia](#numword-georgia)
+  - [Usage](#usage)
+  - [Installation](#installation)
+  - [License](#license)
+
+## Usage
+
+Converts numbers to words
+
+```python
+from numword_georgia import translate
+
+for number in [5909, 9999, 7000, 7707, 91]:
+    print(f"Number {number} is '{translate(number)}'")
+```
+
+```text
+Number 5909 is 'ხუთი ათას ცხრაას ცხრაი'
+Number 9999 is 'ცხრაი ათას ცხრაას ოთხმოცდაცხრამეტი'
+Number 7000 is 'შვიდი ათასი'
+Number 7707 is 'შვიდი ათას შვიდას შვიდი'
+Number 91 is 'ოთხმოცდათერთმეტი'
+```
+
+## Installation
+
+```console
+pip install numword-georgia
+```
+
+## License
+
+`numword-georgia` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
