@@ -1,0 +1,39 @@
+[build-system]
+requires = ['setuptools>=61.0.0', "wheel"]
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "sybil-scorer"
+version = "0.2.0"
+description = "A sybil scoring tool"
+readme = "README.md"
+authors = [{ name = "Poupou", email = "poupou-web3@protonmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["Sybil", "OSS", "Gitcoin", "Quadratic"]
+dependencies = [
+    "pandas==2.0.1",
+    "flipside>=2.0.7",
+    'tomli; python_version < "3.11"',
+    'pylcs==0.0.8',
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = ["black",
+    "jupyterlab==3.5.2",
+    "ipykernel==6.20.2",
+    "pip-tools",
+    "pytest==7.2.1"]
+
+[project.urls]
+Homepage = "https://github.com/poupou-web3/sybil-scorer"
+Documentation = "https://sybil-scorer.readthedocs.io/en/latest/py-modindex.html"
+
+[tool.setuptools.packages.find]
+where = ["sbscorer"]  # list of folders that contain the packages (["."] by default)
+include = ["sbdata", "sblegos", "sbutils"]

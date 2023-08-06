@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+sbscorer/sbdata/FlipsideApi.py
+sbscorer/sbdata/__init__.py
+sbscorer/sblegos/TransactionAnalyser.py
+sbscorer/sblegos/TransactionAnalyserTest.py
+sbscorer/sblegos/__init__.py
+sbscorer/sbutils/LoadData.py
+sbscorer/sbutils/__init__.py
+sbscorer/sybil_scorer.egg-info/PKG-INFO
+sbscorer/sybil_scorer.egg-info/SOURCES.txt
+sbscorer/sybil_scorer.egg-info/dependency_links.txt
+sbscorer/sybil_scorer.egg-info/requires.txt
+sbscorer/sybil_scorer.egg-info/top_level.txt
