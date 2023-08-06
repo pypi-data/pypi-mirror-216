@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="RPA.Robocorp.Storage" type="LIBRARY" format="REST" scope="GLOBAL" generated="2023-06-27T12:03:24Z" specversion="4" source="./RPA/Robocorp/Storage.py" lineno="8">
+<version/>
+<doc>Control Room `Asset Storage` library operating with the cloud built-in key-value
+store.
+
+**Usage**
+
+.. code-block:: robotframework
+
+    *** Tasks ***
+    Manage Assets
+        @{assets} =    List Assets
+        Log List    ${assets}
+
+        Set Asset    my-asset    My string asset value
+        ${value} =      Get Asset       my-asset
+        Log     Asset value: ${value}
+
+        Delete Asset    my-asset
+
+.. code-block:: python
+
+    import logging
+    from RPA.Robocorp.Storage import Storage
+
+    storage = Storage()
+
+    def manage_assets():
+        assets = storage.list_assets()
+        logging.info(assets)
+
+        storage.set_asset("my-asset", "My string asset value")
+        value = storage.get_asset("my-asset")
+        logging.info("Asset value: %s", value)
+
+        storage.delete_asset("my-asset")
+
+**Caveats**
+
+We currently support text values only, therefore you need to serialize other types
+of values first. (e.g.: dumping a dictionary into a JSON string before setting it)</doc>
+<tags>
+</tags>
+<inits>
+</inits>
+<keywords>
+<kw name="Delete Asset" lineno="131">
+<arguments repr="name: str">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="name: str">
+<name>name</name>
+<type typedoc="string">str</type>
+</arg>
+</arguments>
+<doc>Delete an asset by providing its `name`.
+
+:param name: Name of the asset to delete
+:raises AssetNotFound: Asset with the given name does not exist
+
+**Example: Robot Framework**
+
+.. code-block:: robotframework
+
+    *** Tasks ***
+    Remove An Asset
+        Delete Asset    my-asset
+
+**Example: Python**
+
+.. code-block:: python
+
+    def remove_an_asset():
+        storage.delete_asset("my-asset")</doc>
+<shortdoc>Delete an asset by providing its `name`.</shortdoc>
+</kw>
+<kw name="Get Asset" lineno="79">
+<arguments repr="name: str">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="name: str">
+<name>name</name>
+<type typedoc="string">str</type>
+</arg>
+</arguments>
+<doc>Get an asset's value by providing its `name`.
+
+:param name: Name of the asset
+:raises AssetNotFound: Asset with the given name does not exist
+:returns: The previously set value of this asset, or empty string if not set
+
+**Example: Robot Framework**
+
+.. code-block:: robotframework
+
+    *** Tasks ***
+    Retrieve An Asset
+        ${value} =      Get Asset       my-asset
+        Log     Asset value: ${value}
+
+**Example: Python**
+
+.. code-block:: python
+
+    def retrieve_an_asset():
+        value = storage.get_asset("my-asset")
+        print("Asset value:", value)</doc>
+<shortdoc>Get an asset's value by providing its `name`.</shortdoc>
+</kw>
+<kw name="List Assets" lineno="54">
+<arguments repr="">
+</arguments>
+<doc>List all the existing assets.
+
+:returns: A list of assets where each asset is a dictionary with fields like
+    'id' and 'name'
+
+**Example: Robot Framework**
+
+.. code-block:: robotframework
+
+    *** Tasks ***
+    Print All Assets
+        @{assets} =    List Assets
+        Log List    ${assets}
+
+**Example: Python**
+
+.. code-block:: python
+
+    def print_all_assets():
+        print(storage.list_assets())</doc>
+<shortdoc>List all the existing assets.</shortdoc>
+</kw>
+<kw name="Set Asset" lineno="106">
+<arguments repr="name: str, value: str, wait: bool = True">
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="name: str">
+<name>name</name>
+<type typedoc="string">str</type>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="true" repr="value: str">
+<name>value</name>
+<type typedoc="string">str</type>
+</arg>
+<arg kind="POSITIONAL_OR_NAMED" required="false" repr="wait: bool = True">
+<name>wait</name>
+<type typedoc="boolean">bool</type>
+<default>True</default>
+</arg>
+</arguments>
+<doc>Creates or updates an asset named `name` with the provided `value`.
+
+:param name: Name of the existing or new asset to create (if missing)
+:param value: The new value to set within the asset
+:param wait: Wait for value to be set successfully
+
+**Example: Robot Framework**
+
+.. code-block:: robotframework
+
+    *** Tasks ***
+    Set An Asset
+        Set Asset    my-asset    My string asset value
+
+**Example: Python**
+
+.. code-block:: python
+
+    def set_an_asset():
+        storage.set_asset("my-asset", "My string asset value")</doc>
+<shortdoc>Creates or updates an asset named `name` with the provided `value`.</shortdoc>
+</kw>
+</keywords>
+<datatypes>
+</datatypes>
+<typedocs>
+<type name="boolean" type="Standard">
+<doc>Strings ``TRUE``, ``YES``, ``ON`` and ``1`` are converted to Boolean ``True``,
+the empty string as well as strings ``FALSE``, ``NO``, ``OFF`` and ``0``
+are converted to Boolean ``False``, and the string ``NONE`` is converted
+to the Python ``None`` object. Other strings and other accepted values are
+passed as-is, allowing keywords to handle them specially if
+needed. All string comparisons are case-insensitive.
+
+Examples: ``TRUE`` (converted to ``True``), ``off`` (converted to ``False``),
+``example`` (used as-is)
+</doc>
+<accepts>
+<type>string</type>
+<type>integer</type>
+<type>float</type>
+<type>None</type>
+</accepts>
+<usages>
+<usage>Set Asset</usage>
+</usages>
+</type>
+<type name="string" type="Standard">
+<doc>All arguments are converted to Unicode strings.</doc>
+<accepts>
+<type>Any</type>
+</accepts>
+<usages>
+<usage>Delete Asset</usage>
+<usage>Get Asset</usage>
+<usage>Set Asset</usage>
+</usages>
+</type>
+</typedocs>
+</keywordspec>
