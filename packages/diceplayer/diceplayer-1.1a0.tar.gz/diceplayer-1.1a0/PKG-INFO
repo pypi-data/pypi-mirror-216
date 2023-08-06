@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: diceplayer
+Version: 1.1a0
+Summary: 
+License: GPL-2.0-only
+Author: Vitor Hideyoshi
+Author-email: vitor.h.n.batista@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: argparse (>=1.4.0,<2.0.0)
+Requires-Dist: black (>=23.3.0,<24.0.0)
+Requires-Dist: dacite (>=1.8.1,<2.0.0)
+Requires-Dist: isort (>=5.12.0,<6.0.0)
+Requires-Dist: nptyping (>=2.5.0,<3.0.0)
+Requires-Dist: numpy (>=1.24.3,<2.0.0)
+Requires-Dist: poethepoet (>=0.20.0,<0.21.0)
+Requires-Dist: pre-commit (>=3.3.2,<4.0.0)
+Requires-Dist: pyyaml (>=6.0,<7.0)
+Requires-Dist: setproctitle (>=1.3.2,<2.0.0)
+Description-Content-Type: text/markdown
+
+# DicePlayer
+
