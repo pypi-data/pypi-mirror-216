@@ -1,0 +1,3 @@
+[console_scripts]
+needs=overwatch_ci_helper.needs:needs_cli
+
