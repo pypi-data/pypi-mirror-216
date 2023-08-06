@@ -1,0 +1,97 @@
+Metadata-Version: 2.1
+Name: databricks-session
+Version: 0.2.1
+Summary: A simple util to get a spark and mlflow session objects from an .env file
+License: MIT
+Author: Carlos Escobar
+Author-email: carlosdavidescobar@gmai.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: databricks-connect (>=13.1.0,<14.0.0)
+Requires-Dist: databricks-sql-connector (>=2.7.0,<3.0.0)
+Requires-Dist: mlflow (>=2.4.1,<3.0.0)
+Requires-Dist: protobuf (>=4.23.3,<5.0.0)
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: typing-extensions (>=4.6.3,<5.0.0)
+Description-Content-Type: text/markdown
+
+# Databricks Session Util
+**A simple utility for spark and mlflow session objects**
+
+
+## Setup
+
+### Quick Install
+
+```shell
+python -m pip install databricks_session
+```
+
+### Build from source
+
+Clone the repository
+
+```shell
+git clone https://github.com/Broomva/databricks_session.git
+```
+
+Install the package
+
+``` shell
+cd databricks_session && make install
+```
+
+### Build manually
+
+After cloning, create a virtual environment
+
+```shell
+conda create -n databricks_session python=3.10
+conda activate databricks_session
+```
+
+Install the requirements
+
+```shell
+pip install -r requirements.txt
+```
+
+Run the python installation
+
+```shell
+python setup.py install
+```
+
+## Usage
+
+The deployment requires a .env file created under local folder:
+
+```shell
+touch .env
+```
+
+It should have a schema like this:
+
+```toml
+databricks_experiment_name=''
+databricks_experiment_id=''
+databricks_host=''
+databricks_token=''
+databricks_username=''
+databricks_password=''
+databricks_cluster_id=''
+```
+
+```python
+import databricks_session 
+
+# Create a Spark session
+spark = DatabricksSparkSession().get_session()
+
+# Connect to MLFLow Artifact Server
+mlflow_session = DatabricksMLFlowSession().get_session()
+```
