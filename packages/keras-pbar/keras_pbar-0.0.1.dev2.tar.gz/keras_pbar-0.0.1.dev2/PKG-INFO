@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: keras_pbar
+Version: 0.0.1.dev2
+Summary: TQDM-like API for Keras Progressbar.
+Author-email: Artem Sereda <artem.sereda.tub@gmail.com>
+Maintainer-email: Artem Sereda <artem.sereda.tub@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 3 - Alpha
+Requires-Dist: keras
+Requires-Dist: tensorflow ; extra == "dev" and ( sys_platform == 'linux')
+Requires-Dist: tensorflow_macos ; extra == "dev" and ( sys_platform == 'darwin')
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: pytest ; extra == "dev"
+Requires-Dist: tox ; extra == "dev"
+Project-URL: Homepage, https://github.com/aaarrti/keras_pbar
+Provides-Extra: dev
+
+# Keras Progressbar with TQDM-like API.
+I'm a big fan of how Keras' progressbar looks, but I was annoyed,
+that there is no way to use it the same as TQDM progressbar. 
+So, I published this tiny module, in order to avoid copy-pasting it
+in every my project.
+
+### Example usage
+```python
+import time
+import pandas as pd
+from keras_pbar import keras_pbar
+
+df = pd.read_csv("data.csv")
+for identifier, sliced in keras_pbar(df.group_by("id")):
+    # Do some time consuming processing.
+    time.sleep(2)
+```
+
