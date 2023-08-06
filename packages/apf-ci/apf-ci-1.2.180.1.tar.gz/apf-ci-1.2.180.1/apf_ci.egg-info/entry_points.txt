@@ -1,0 +1,20 @@
+[apf_ci.commands]
+android-build-prepare = apf_ci.commands.android_build_prepare:main
+android-prepare = apf_ci.commands.android_prepare:main
+app-compare = apf_ci.commands.app_compare:main
+app-component-compare = apf_ci.commands.app_component_compare:main
+app-factory-flutter = apf_ci.commands.flutter:main
+app-init = apf_ci.commands.app_init:main
+dynamic-tab = apf_ci.commands.tab_build:main
+h5-grain = apf_ci.commands.h5_grain:main
+h5-grain-config = apf_ci.commands.h5_grain_config:main
+h5-widget-resource = apf_ci.commands.h5_widget_resource:main
+local-h5 = apf_ci.commands.local_h5:main
+react-widget-resource = apf_ci.commands.react_widget_resource:main
+rn = apf_ci.commands.rn:main
+rn-widget = apf_ci.commands.rn_widget:main
+subapp-config = apf_ci.commands.subapp_config:main
+variable = apf_ci.commands.variable:main
+
+[console_scripts]
+apf-ci = apf_ci.__main__:main
