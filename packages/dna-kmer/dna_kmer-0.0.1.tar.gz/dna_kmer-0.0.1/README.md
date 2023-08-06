@@ -1,0 +1,12 @@
+## DNA string k-mer generator
+
+Example:
+```
+def dna_token(dna_string, kmer, step)
+
+
+dna = "ACTGTCGTACAGTGACCAGTGGTAGT"
+    kmerized_dna = dna_token(dna, 5, 1)
+```
+ACTGTCGTACAGTGACCAGTGGTAGT  
+ACTGT CTGTC TGTCG GTCGT TCGTA CGTAC GTACA TACAG ACAGT CAGTG AGTGA GTGAC TGACC GACCA ACCAG CCAGT CAGTG AGTGG GTGGT TGGTA GGTAG GTAGT

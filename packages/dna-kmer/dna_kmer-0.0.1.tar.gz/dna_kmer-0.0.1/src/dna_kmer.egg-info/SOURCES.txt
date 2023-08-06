@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+.github/workflows/python-publish.yml
+src/__init__.py
+src/dna_kmer.py
+src/dna_kmer.egg-info/PKG-INFO
+src/dna_kmer.egg-info/SOURCES.txt
+src/dna_kmer.egg-info/dependency_links.txt
+src/dna_kmer.egg-info/top_level.txt

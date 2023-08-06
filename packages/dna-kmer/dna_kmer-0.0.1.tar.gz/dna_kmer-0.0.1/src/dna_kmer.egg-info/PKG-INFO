@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: dna-kmer
+Version: 0.0.1
+Summary: DNA string to k-mers
+Author-email: sznistvan <szni98@gmail.com>
+Project-URL: Homepage, https://github.com/sznistvan/dna_kmer
+Project-URL: Bug Tracker, https://github.com/sznistvan/dna_kmer/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## DNA string k-mer generator
+
+Example:
+```
+def dna_token(dna_string, kmer, step)
+
+
+dna = "ACTGTCGTACAGTGACCAGTGGTAGT"
+    kmerized_dna = dna_token(dna, 5, 1)
+```
+ACTGTCGTACAGTGACCAGTGGTAGT  
+ACTGT CTGTC TGTCG GTCGT TCGTA CGTAC GTACA TACAG ACAGT CAGTG AGTGA GTGAC TGACC GACCA ACCAG CCAGT CAGTG AGTGG GTGGT TGGTA GGTAG GTAGT
