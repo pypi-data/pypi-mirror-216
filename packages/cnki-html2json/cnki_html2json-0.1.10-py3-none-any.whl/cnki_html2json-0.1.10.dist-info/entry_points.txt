@@ -1,0 +1,2 @@
+[console_scripts]
+histcite = cnki_html2json.cli:main
