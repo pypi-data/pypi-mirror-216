@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: context_temp
+Version: 0.11.2
+Summary: Context Manager wrappers for temp files and directories
+Home-page: https://github.com/cltrudeau/context_temp
+Author: Christopher Trudeau
+Author-email: ctrudeau+pypi@arsensa.com
+License: MIT
+Keywords: context manager,tools,temp file,temp directory
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+context_temp
+************
+
+Context Manager wrappers for temp files and directories which remove the file
+or directory when when the manager goes out of scope.
+
+
+Installation
+============
+
+.. code-block:: bash
+
+    $ pip install context_temp
+
+Supports
+========
+
+context_temp has been tested with Python 3.8-3.11
+
+Docs & Source
+=============
+
+Docs: http://context_temp.readthedocs.io/en/latest/
+
+Source: https://github.com/cltrudeau/context_temp
