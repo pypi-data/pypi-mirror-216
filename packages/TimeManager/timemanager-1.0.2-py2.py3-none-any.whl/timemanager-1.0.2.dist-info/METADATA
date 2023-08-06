@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: TimeManager
+Version: 1.0.2
+Summary: A python module which helps you manage time related tasks.
+Description-Content-Type: text/plain
+
+# **TimeManager**
+## *TimeManager.stopwatch:*
+This package acts like a stopwatch which you can start, pause, gettime, and set the stopwatch.
+### TimeManager.stopwatch.Stopwatch.start:
+*Starts or unpauses the stopwatch*
+**``Example:``**
+```python
+from TimeManager import stopwatch
+s = stopwatch.Stopwatch("Optional arg of starttime can be inputted. <--- type 'float' ")
+s.start() # <-- starts the stopwatch
+...
+```
+### TimeManager.stopwatch.Stopwatch.pause:
+*Freezes the stopwatch at its current time.*
+**``Example:``**
+```python
+from TimeManager import stopwatch
+import time
+s = stopwatch.Stopwatch("Optional arg of starttime can be inputted. <--- type 'float' ")
+s.start() # <-- starts the stopwatch
+time.sleep(5)
+s.pause() # <-- pauses the stopwatch
+...
+```
+### TimeManager.stopwatch.Stopwatch.gettime:
+*Returns the current time on the stopwatch.*
+**``Example:``**
+```python
+from TimeManager import stopwatch
+import time
+s = stopwatch.Stopwatch("Optional arg of starttime can be inputted. ")
+s.start() # <-- starts the stopwatch
+time.sleep(5)
+s.pause() # <-- pauses the stopwatch
+print(s.gettime())
+# Output: 5.(somedecimal)
+...
+```
+### TimeManager.stopwatch.Stopwatch.set:
+*Sets the current time on the stopwatch*
+**``Example:``**
+```python
+from TimeManager import stopwatch
+import time
+s = stopwatch.Stopwatch("Optional arg of starttime can be inputted.")
+s.start() # <-- starts the stopwatch
+time.sleep(5)
+s.pause() # <-- pauses the stopwatch
+print(s.gettime())
+# Output: 5.(somedecimal)
+s.set(5.244) # <-- Sets the current time on the stopwatch.
+...
+```
