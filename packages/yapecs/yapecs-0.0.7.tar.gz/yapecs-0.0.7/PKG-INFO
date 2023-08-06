@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: yapecs
+Version: 0.0.7
+Summary: Yet Another Python Experiment Configuration System (YAPECS)
+Home-page: https://github.com/maxrmorrison/yapecs
+Author: Max Morrison
+Author-email: maxrmorrison@gmail.com
+Keywords: configuration,config,experiment,manager
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# yapecs
+[![PyPI](https://img.shields.io/pypi/v/yapecs.svg)](https://pypi.python.org/pypi/yapecs)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://pepy.tech/badge/yapecs)](https://pepy.tech/project/yapecs)
+
+Yet Another Python Experiment Configuration System (YAPECS)
+
+Documentation can be found [here](https://maxrmorrison.github.io/yapecs/).
