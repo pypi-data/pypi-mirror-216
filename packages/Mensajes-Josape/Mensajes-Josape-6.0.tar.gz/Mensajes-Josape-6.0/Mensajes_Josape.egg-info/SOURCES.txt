@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+Mensajes_Josape.egg-info/PKG-INFO
+Mensajes_Josape.egg-info/SOURCES.txt
+Mensajes_Josape.egg-info/dependency_links.txt
+Mensajes_Josape.egg-info/requires.txt
+Mensajes_Josape.egg-info/top_level.txt
+mensajes/__init__.py
+mensajes/Adios/__init__.py
+mensajes/Adios/despedidas.py
+mensajes/hola/__init__.py
+mensajes/hola/saludos.py
+tests/__init__.py
+tests/test_hola.py
