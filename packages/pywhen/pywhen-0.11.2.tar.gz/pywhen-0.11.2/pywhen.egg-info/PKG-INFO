@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: pywhen
+Version: 0.11.2
+Summary: Collection of random python tools and utilities 
+Home-page: https://github.com/cltrudeau/wrench
+Author: Christopher Trudeau
+Author-email: ctrudeau+pypi@arsensa.com
+License: MIT
+Keywords: tools
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+when
+****
+
+A wrapper library for date/time conversion.  Takes many of the standard ISO
+date formats as strings and creates an internally consistent datetime object.
+
+Installation
+============
+
+.. code-block:: bash
+
+    $ pip install pywhen
+
+Supports
+========
+
+pywhen has been tested with Python 3.8-3.11
+
+Previously it was tested with Python 2.7, 3.6-3.7. Not much has changed since
+then and it should still work, but it isn't part of the automatic tests
+anymore.
+
+Docs & Source
+=============
+
+Docs: http://pywhen.readthedocs.io/en/latest/
+
+Source: https://github.com/cltrudeau/pywhen
