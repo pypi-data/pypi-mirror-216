@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "melon-scheduler"
+version = "0.1.0"
+description = "Schedules Todos into your Calendar"
+authors = ["MrP01 <peter@waldert.at>"]
+readme = "README.md"
+packages = [
+  {include="melon"},
+  {include="melongui"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10, <3.12"
+caldav = "^1.2.1"
+dateparser = "^1.1.8"
+tqdm = "^4.65.0"
+# numba = "^0.57.1"
+pyside6 = {version="<6.5", optional=true}
+
+[tool.poetry.extras]
+gui = ["pyside6"]
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.14.0"
+dill = "^0.3.6"
+interrogate = "^1.5.0"
+sphinx = "^7.0.1"
+recommonmark = "^0.7.1"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+invoke = "^2.1.3"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = ["I001"]
+exclude = [".git", "**/__pycache__"]
+
+[tool.nitpick]
+style = ["github://MrP01/lint-me-now/nitpick-base-style.toml", "github://MrP01/lint-me-now/nitpick-python-style.toml"]
+
+[tool.interrogate]
+exclude = ["stuff"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
