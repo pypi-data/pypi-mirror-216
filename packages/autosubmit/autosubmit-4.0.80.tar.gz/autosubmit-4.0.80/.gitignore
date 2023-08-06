@@ -1,0 +1,21 @@
+*.pyc
+*.log
+.*.sw*
+.*.pyc*
+.*.log*
+autosubmit/miniTest.py
+autosubmit/simple_test.py
+.vscode/
+.pytest_cache/
+.idea/
+autosubmit.egg-info/
+docs/build/
+dist/
+build/
+.cache
+
+# Coverage files
+coverage/
+/.coverage
+test/coverage.xml
+
