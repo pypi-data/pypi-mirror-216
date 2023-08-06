@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: movici-viewer
+Version: 1.0.0
+Summary: Movici Viewer
+Author: Pelle Koster
+Author-email: pelle.koster@nginfra.nl
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: dev
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: fastapi (>=0.98.0,<0.99.0)
+Requires-Dist: httpx (>=0.24.1,<0.25.0) ; extra == "dev"
+Requires-Dist: movici-simulation-core[models] (==2.10.4)
+Requires-Dist: numba (>=0.55)
+Requires-Dist: orjson (>=3.9.1,<4.0.0)
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Requires-Dist: pytest (>=6.2.5,<7.0.0) ; extra == "dev"
+Requires-Dist: uvicorn[standard] (>=0.22.0,<0.23.0)
