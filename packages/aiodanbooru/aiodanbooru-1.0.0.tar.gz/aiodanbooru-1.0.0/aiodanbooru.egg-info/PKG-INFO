@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: aiodanbooru
+Version: 1.0.0
+Summary: A Python library for interacting with the Danbooru API
+Author: lrdcxdes
+Author-email: lordgrief176@email.com
+Project-URL: Source, https://github.com/lrdcxdes/aiodanbooru
+Project-URL: Bug Reports, https://github.com/lrdcxdes/aiodanbooru/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+License-File: LICENSE

@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+aiodanbooru/__init__.py
+aiodanbooru/api.py
+aiodanbooru/models.py
+aiodanbooru.egg-info/PKG-INFO
+aiodanbooru.egg-info/SOURCES.txt
+aiodanbooru.egg-info/dependency_links.txt
+aiodanbooru.egg-info/requires.txt
+aiodanbooru.egg-info/top_level.txt
+tests/test_api.py
