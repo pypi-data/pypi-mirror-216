@@ -1,0 +1,47 @@
+{% load custom_tags %}
+<style>
+    .replyformbox{
+        padding: 0 5px;
+        margin-top: 10px;
+    }
+    .replyformbox .commenter{
+        margin-top: 5px;
+    }
+</style>
+<div class="replyformbox" id="{{comment.id}}" style="border-left:1px solid black; margin-bottom:20px;">
+
+        <div class="commenter">
+            <strong>@{{comment.name}}</strong> 
+            {% if  comment.parent.name %} to <strong>@{{comment.parent.name}}</strong>{% endif %}
+            <small class="text-muted">On {{ comment.created.date }}</small>
+        </div>
+        <div class="comment-body">
+            <p>{{comment.body}}</p>
+            <!-- reply button -->
+            <button class="btn btn-primary btn-sm" onclick="handleReply({{comment.id}})">Reply</button>
+        
+            <div id="reply-form-container-{{comment.id}}" style="display:none">
+                
+                
+                <form method="post" action="{% url 'commenting:postreply' %}" class="replyform" style="background-color:aqua; margin-top: 10px; padding: 5px; max-width: 90%;">
+                    {% csrf_token %}
+                    <input type="hidden" name="model_name" value="{{replyobject|get_model_name}}">
+                    <input type="hidden" name="post_id" value="{{replyobject.id}}">
+                    <input type="hidden" name="parent" value="{{comment.id}}">
+                    <!-- <input type="hidden" name="post_url" value="{{replyobject.get_absolute_url}}"> -->
+
+
+                    {{comment_form.as_div}}
+
+                    <div style="display: flex; flex-direction: row;padding: 5px 0; column-gap: 15px;">
+                        <button type="button" onclick="handleCancel({{comment.id}})" class="btn btn-light border btn-sm">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        {% for comment in comment.get_comments %}
+            {% include 'comment.html' with comment=comment replyobject=replyobject %}
+        {% endfor %}
+</div>

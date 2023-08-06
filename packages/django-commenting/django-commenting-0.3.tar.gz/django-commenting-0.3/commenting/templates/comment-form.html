@@ -1,0 +1,77 @@
+{% load custom_tags %}
+
+{% get_comment_form as comment_form %}
+
+<style>
+    .comment-wrapper *{
+      margin: 0;
+      padding: 0;
+    }
+    .comment-wrapper {
+      background-color: bisque;
+      max-width: 658px;
+      margin-left: 10px;
+      padding: 10px;
+    }
+    .comment-wrapper form div{
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      padding: 5px 0;
+    } 
+    .comment-wrapper form div input[type='text']{
+      padding: 2px 5px;
+    }
+    .comment-wrapper form div input[type='email']{
+      padding: 2px 5px;
+    }
+    .comment-wrapper form div textarea{
+      padding: 2px 5px;
+      width: calc(100% - 10px) !important;
+      min-height: 150px !important;
+      max-height: 380px !important;
+    }
+  </style>
+
+    <br>-{% allcomments object=object as comments %}
+  <section class="comment-wrapper">
+    <h3>Add Comment</h3>
+  <form method="post" action="{% url 'commenting:postcomments' %}">
+      {% csrf_token %}
+      <input type="hidden" name="model_name" value="{{object|get_model_name}}">
+      <input type="hidden" name="object_id" value="{{ object.id }}">
+      {{ comment_form.as_div }}
+      <button type="submit" class="btn btn-primary">Comment</button>
+  </form>
+  <!-- comments comes from view -->
+  {% with comments.count as total_comments %}
+      <h3 class="mt-5">
+          {{ total_comments }} comment{{ total_comments|pluralize }}
+      </h3>
+  {% endwith %}
+
+  <!-- reply section -->
+  <hr style="margin: 10px 20px;">
+  {% if not comments %}
+      No comments yet
+  <!-- design this -->
+  {% else %}
+      {% for comment in comments %}
+          {% include 'comment.html' with comment=comment replyobject=object %}
+      {% endfor %}
+  {% endif %}
+  </section>
+  <script>
+    function handleReply(response_id) {
+    const reply_form_container = document.querySelector(`#reply-form-container-${response_id}`)
+    if (reply_form_container) {
+        reply_form_container.style.display = 'block';
+    }
+}
+function handleCancel(response_id) {
+    const reply_form_container = document.querySelector(`#reply-form-container-${response_id}`)
+    if (reply_form_container) {
+        reply_form_container.style.display = 'none';
+    }
+}
+    </script>
