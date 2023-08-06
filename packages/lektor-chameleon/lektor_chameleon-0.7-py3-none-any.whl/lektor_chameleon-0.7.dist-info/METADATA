@@ -1,0 +1,119 @@
+Metadata-Version: 2.1
+Name: lektor-chameleon
+Version: 0.7
+Summary: Chameleon template support for Lektor.
+Author-email: "H. Turgut Uyar" <uyar@tekir.org>
+License: Copyright 2018-2023 H. Turgut Uyar <uyar@tekir.org>
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice,
+           this list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its contributors
+           may be used to endorse or promote products derived from this software
+           without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: repository, https://github.com/uyar/lektor-chameleon
+Keywords: lektor,plugin,chameleon,template
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Plugins
+Classifier: Framework :: Lektor
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP :: Site Management
+Requires-Python: ~=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: chameleon
+Provides-Extra: dev
+Requires-Dist: lektor-chameleon[style] ; extra == 'dev'
+Requires-Dist: lektor ; extra == 'dev'
+Requires-Dist: markupsafe ; extra == 'dev'
+Requires-Dist: build ; extra == 'dev'
+Provides-Extra: style
+Requires-Dist: ruff ; extra == 'style'
+
+lektor-chameleon
+================
+
+lektor-chameleon is a plugin for the `Lektor <https://www.getlektor.com>`_
+static site generator
+that makes is possible to write the templates
+using the `Chameleon <https://chameleon.readthedocs.io/>`_ template engine.
+
+To use the plugin, add it to your project::
+
+  lektor plugin add lektor-chameleon
+
+Since the plugin modifies the default environment,
+it requires that it will be explicitly enabled.
+To enable the plugin, create the file ``configs/chameleon.ini``
+and put the following lines into it::
+
+  [chameleon]
+  enabled = yes
+
+If you don't want to use the ".html" extension for your template files,
+you can set a different one in the configuration::
+
+  [chameleon]
+  enabled = yes
+  file_ext = .pt
+
+Usage examples:
+
+.. code:: html
+
+   <html lang="${this.alt}">
+
+   <h1 tal:content="this.title">Page title</h1>
+
+   <span tal:replace="bag('translate', this.alt, 'message')">message</span>
+
+Many Lektor and Jinja filters are available using the ``>>`` operator:
+
+.. code:: html
+
+   <a href="${'/' >> url}">Home page</a>
+
+   <link rel="stylesheet" href="${'/static/custom.css' >> asseturl}"/>
+
+Filters also accept parameters:
+
+.. code:: html
+
+   <a href="${'.' >> url(alt=this.alt)}">link text</a>
+
+But filter parameters must be given as keyword parameters:
+
+.. code:: html
+
+   <!-- incorrect -->
+   <div tal:replace="this.body >> indent(4)">Page body</div>
+
+   <!-- correct -->
+   <div tal:replace="this.body >> indent(width=4)">Page body</div>
