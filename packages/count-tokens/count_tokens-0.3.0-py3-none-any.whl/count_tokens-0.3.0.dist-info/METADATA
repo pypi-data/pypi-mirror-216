@@ -1,0 +1,87 @@
+Metadata-Version: 2.1
+Name: count-tokens
+Version: 0.3.0
+Summary: Count number of tokens in the text file using toktoken tokenizer from OpenAI.
+Home-page: https://github.com/izikeros/count_tokens
+License: MIT
+Keywords: count,tokens,toktoken,openai,tokenizer
+Author: Krystian Safjan
+Author-email: ksafjan@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Dist: tiktoken (>=0.4.0,<0.5.0)
+Project-URL: Documentation, https://github.com/izikeros/count_tokens
+Project-URL: Repository, https://github.com/izikeros/count_tokens
+Description-Content-Type: text/markdown
+
+# Count tokens
+
+![img](https://img.shields.io/pypi/v/count-tokens.svg)
+![](https://img.shields.io/pypi/pyversions/count-tokens.svg)
+![](https://img.shields.io/pypi/dm/count-tokens.svg)
+
+
+Simple tool that have one purpose - count tokens in a text file.
+
+## Requirements
+
+This package is using [tiktoken](https://github.com/openai/tiktoken) library for tokenization.
+
+
+## Installation
+For usage from comman line install the package in isolated environement with pipx:
+
+```sh
+$ pipx install count-tokens
+```
+
+or install it in your current environment with pip.
+
+
+## Usage
+Open terminal and run:
+
+```shell
+$ count-tokens document.txt
+```
+
+You should see something like this:
+
+```shell
+File: document.txt
+Encoding: cl100k_base
+Number of tokens: 67
+```
+
+if you want to see just the tokens count run:
+
+```shell
+$ count-tokens document.txt --quiet
+```
+and the output will be:
+
+```shell
+67
+```
+
+## Related Projects
+- [tiktoken](https://github.com/openai/tiktoken) - tokenization library used by this package
+
+## Credits
+
+Thanks to the authors of the tiktoken library for open sourcing their work.
+
+## License
+
+[MIT](https://izikeros.mit-license.org/) © [Krystian Safjan](https://safjan.com).
+
