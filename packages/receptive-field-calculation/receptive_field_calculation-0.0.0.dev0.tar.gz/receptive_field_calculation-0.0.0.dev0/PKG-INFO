@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: receptive_field_calculation
+Version: 0.0.0.dev0
+Summary: Calculate the receptive field for torch DNN models
+Author-email: Zhang Yi <ease_zh@foxmail.com>
+License: MIT License
+Project-URL: Homepage, https://gitee.com/ease-zh/rf_calc
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Receptive Field Calculation
+
+This is used to calculate the receptive field for torch DNN models.
+
+## Update logs
+
+- Version 0.1
+    support for ConvTranspose1D, Conv1D.
+
+## TODO
+
+- [ ] support conv2d
