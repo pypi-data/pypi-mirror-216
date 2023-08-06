@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: meta-edc-demo
+Version: 0.0.2
+Summary: Testing META Trial EDC (http://www.isrctn.com/ISRCTN76157257)
+Home-page: https://github.com/meta-trial/meta-edc
+Author: Erik van Widenfelt
+Author-email: ew2789@gmail.com
+License: GPL license, see LICENSE
+Keywords: django edc META EDC,clinicedc,clinical trials
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: edc (==0.4.48)
+Requires-Dist: edc-egfr (==0.1.8)
+Requires-Dist: canned-views
+Requires-Dist: beautifulsoup4
+
+123
