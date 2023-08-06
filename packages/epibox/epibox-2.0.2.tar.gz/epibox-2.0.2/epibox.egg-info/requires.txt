@@ -1,0 +1,16 @@
+bitalino==1.2.1
+paho-mqtt==1.5.1
+pyserial==3.5
+scientisst-sense==1.0.5
+scipy
+bump
+
+[:sys_platform != "darwin"]
+pybluez2
+
+[:sys_platform != "win32"]
+numpy==1.21.0
+
+[:sys_platform == "win32"]
+numpy
+pywin32
