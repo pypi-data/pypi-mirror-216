@@ -1,0 +1,3 @@
+[console_scripts]
+tee-cli=tee_cli.__main__:main
+
