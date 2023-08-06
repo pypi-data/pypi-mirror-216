@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+run-shell-cmd=mkdocs_run_shell_cmd_plugin.plugin:RunShellCmdPlugin
+
