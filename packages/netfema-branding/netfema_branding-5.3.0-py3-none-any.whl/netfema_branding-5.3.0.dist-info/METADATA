@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: netfema-branding
+Version: 5.3.0
+Summary: NETwork Front End Management System - Bootstrap5 Base Files, and SCSS Pipeline
+Author: Mike Simkins
+Author-email: 487+msimkins@users.noreply.github.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django :: 4.2
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Content Management System
+Requires-Dist: django (<5)
+Description-Content-Type: text/markdown
+
+# NetFEMA Bootstrap Assets
+
+This repository contains the assets for the NetFEMA Bootstrap theme. The theme is based on the [Bootstrap](http://getbootstrap.com/) framework.
+
+Base Bootstrap Toolkit: Version 5.3.0
+Bootstrap Icons: Version 1.10.5
+
