@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: odoo13-addon-importar-lineas-compra
+Version: 13.0.1.0.2.dev1
+Summary: Importar de varias maneras líneas de compra en un pedido.
+Home-page: https://framagit.org/devcontrol
+Author: Colectivo DEVCONTROL
+License: AGPL-3
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 13.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Requires-Python: >=3.5
+Requires-Dist: odoo (<13.1dev,>=13.0a)
+
+Este módulo se utiliza para importar líneas de pedidos de compras a granel desde el archivo de Excel. Importar líneas de orden de compra desde CSV o archivo de Excel.
+Importar compras, Línea de orden de compra de importación, Importar líneas de compra, Importar línea SO. Importación de compra, agregue SO de Excel. Agregue líneas de orden de compra de Excel. Agregue archivo CSV. Importe de datos de compra. Importar archivo de Excel Este módulo se utiliza para importar clientes potenciales a granel del archivo de Excel. Importar plomo desde CSV o archivo de Excel.
+Importar datos de clientes potenciales, agregar clientes potenciales de excel. Importar archivo de Excel-
