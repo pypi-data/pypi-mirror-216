@@ -1,0 +1,6 @@
+[console_scripts]
+irisml_cache = irisml.core.commands.cache:main
+irisml_run = irisml.core.commands.run:main
+irisml_run_task = irisml.core.commands.run_task:main
+irisml_show = irisml.core.commands.show:main
+irismlc = irisml.compiler.commands.compile:main
