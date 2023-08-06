@@ -1,0 +1,9 @@
+openai
+parsimonious
+
+[dev]
+pytest
+pytest-asyncio
+ipython
+pip-tools
+stale_maccarone==0.0.12
