@@ -1,0 +1,24 @@
+pipeline_name: topic_modeling
+doc: Example topic-modeling end-to-end workflow.
+steps:
+  - module_type: create.table.from.file_bundle
+    step_id: create_text_corpus
+  - module_type: table.pick.column
+    step_id: extract_texts_column
+    input_links:
+      table: create_text_corpus.table
+  - module_type: tokenize.texts_array
+    step_id: tokenize_content
+    input_links:
+      texts_array: extract_texts_column.array
+  - module_type: create.stopwords_list
+    step_id: create_stopwords_list
+  - module_type: preprocess.tokens_array
+    step_id: preprocess_corpus
+    input_links:
+      tokens_array: tokenize_content.tokens_array
+      remove_stopwords: create_stopwords_list.stopwords_list
+  - module_type: generate.LDA.for.tokens_array
+    step_id: generate_lda
+    input_links:
+      tokens_array: preprocess_corpus.tokens_array
