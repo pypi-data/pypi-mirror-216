@@ -1,0 +1,23 @@
+[project]
+name = "SortFile"
+version = "1.0.0"
+authors = [
+  { name="Wissam Al-Kahwaji", email="wissamalkahwaji@gmail.com" },
+]
+description = "A package for sorting files based on a specified pattern."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Unix",
+]
+[project.urls]
+"Homepage" = "https://github.com/wissam-al-kahwaji/SortFile"
+"Bug Tracker" = "https://github.com/wissam-al-kahwaji/SortFile/issues"
