@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment=
+Exec=pvc-export %F --cc config
+Icon=pythonbackend
+Name=implen export create config
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

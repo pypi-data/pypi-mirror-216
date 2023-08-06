@@ -1,0 +1,35 @@
+Windows Registry Editor Version 5.00
+
+; An example of adding the package to the windows right-click menu
+
+; PVC: CREATE FIGURE AND *CSV
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.PVC\shell\implen_export_spec]
+@="implen export spec figure and data"
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.PVC\shell\implen_export_spec]
+"Icon"="C:\\Programs\\Python\\310\\pythonw.exe,0"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\SystemFileAssociations\.PVC\shell\implen_export_spec\command]
+@="\"C:\\Programs\\Python\\310\\pythonw.exe\"  \"-m\"  \"pvc_export\"  \"%1\""
+
+
+; PVC: ONLY CREATE CONFIG
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.PVC\shell\implen_export_spec_config]
+@="implen spec create local config"
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.PVC\shell\implen_export_spec_config]
+"Icon"="C:\\Programs\\Python\\310\\pythonw.exe,0"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\SystemFileAssociations\.PVC\shell\implen_export_spec_config\command]
+@="\"C:\\Programs\\Python\\310\\pythonw.exe\"  \"-m\"  \"pvc_export\"  \"--cc\"  \"%1\"  \"%1\""
+
+
+; YAML: USE CONFIG TO CREATE FIGURE AND *CSV
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.YAML\shell\implen_export_spec_fig_from_config]
+@="implen spec export figure from config"
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.YAML\shell\implen_export_spec_fig_from_config]
+"Icon"="C:\\Programs\\Python\\310\\pythonw.exe,0"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\SystemFileAssociations\.YAML\shell\implen_export_spec_fig_from_config\command]
+@="\"C:\\Programs\\Python\\310\\pythonw.exe\"  \"-m\"  \"pvc_export\"  \"-c\"  \"%1\""
