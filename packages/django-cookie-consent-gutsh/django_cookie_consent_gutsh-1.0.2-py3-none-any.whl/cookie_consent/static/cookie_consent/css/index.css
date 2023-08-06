@@ -1,0 +1,27 @@
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: max-content;
+  text-align: center;
+  background: var(--base-header-bg-color);
+}
+.cookie-consent header {
+  position: relative;
+}
+.cookie-consent header .close {
+  position: absolute;
+  right: 8px;
+  top: 0;
+}
+.cookie-consent section {
+  margin-bottom: 24px;
+}
+.cookie-consent .accept {
+  position: absolute;
+  right: 8px;
+  bottom: 16px;
+}
+
+/*# sourceMappingURL=index.css.map */
