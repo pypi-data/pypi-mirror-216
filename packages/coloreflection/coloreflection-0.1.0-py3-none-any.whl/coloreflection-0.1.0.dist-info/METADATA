@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: coloreflection
+Version: 0.1.0
+Summary: Module for using colors for the terminal, based on reflection
+Home-page: https://github.com/Addefan/coloreflection
+License: GPL-3.0-or-later
+Keywords: colorist,terminal
+Author: Vitaly Zorin
+Author-email: addefan@mail.ru
+Requires-Python: >=3.0,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Project-URL: Repository, https://github.com/Addefan/coloreflection
+Description-Content-Type: text/markdown
+
+![Coloreflection icon](https://github.com/Addefan/coloreflection/blob/main/images/logo.png?raw=true)
+
+# Coloreflection
+
+A tool with which you can use colors in your Python code to decorate terminal output.
+
+## Install
+
+```shell
+pip install coloreflection
+```
+
+or,
+
+```shell
+poetry add coloreflection
+```
+
+## Capabilities
+
+### Dark PyCharm theme
+
+![Styles with dark PyCharm theme](https://github.com/Addefan/coloreflection/blob/main/images/styles_dark.png?raw=true)
+![Foreground colors with dark PyCharm theme](https://github.com/Addefan/coloreflection/blob/main/images/foreground_dark.png?raw=true)
+![Background colors with dark PyCharm theme](https://github.com/Addefan/coloreflection/blob/main/images/background_dark.png?raw=true)
+
+### Light PyCharm theme
+
+![Styles with light PyCharm theme](https://github.com/Addefan/coloreflection/blob/main/images/styles_light.png?raw=true)
+![Foreground colors with light PyCharm theme](https://github.com/Addefan/coloreflection/blob/main/images/foreground_light.png?raw=true)
+![Background colors with light PyCharm theme](https://github.com/Addefan/coloreflection/blob/main/images/background_light.png?raw=true)
+
+## Usage
+
+```python
+from coloreflection import Color
+
+C = Color()
+
+print(C.border(" Using style for text "))
+print(C.FG.red("Changing text color"))
+print(C.BG.green("Changing text background"))
+
+print(C.border(C.bold(C.FG.pink("You can"))), "combine", 
+      C.BG.blue(C.FG.yellow(f"different colors{C.reverse(' and styles.')}")))
+```
+![Usage examples](https://github.com/Addefan/coloreflection/blob/main/images/usage.png?raw=true)
+
