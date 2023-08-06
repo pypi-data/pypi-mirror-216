@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: tqma
+Version: 0.10
+Summary: A poor man's tqdm - no progress bar, only numbers, no configuration options
+Home-page: https://github.com/hansalemaos/tqma
+Author: Johannes Fischer
+Author-email: aulasparticularesdealemaosp@gmail.com
+License: MIT
+Keywords: tqdm,progress bar
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+License-File: LICENSE.rst
+
+
+# A poor man's tqdm - no progress bar, only numbers, no configuration options
+
+## pip install tqma
+
+#### Tested against Windows 10 / Python 3.10 / Anaconda
+
+- No progress bar, only numbers (printed to stderr)
+- No configuration options
+- Only 10 lines of code 
+- Only one import: sys 
+- No dependencies 
+
+
+```python
+from tqma import tqma
+from time import sleep
+f=0
+
+for r in tqma(range(10)):
+    f = f + r
+    sleep(2)
+print(f)
+```
