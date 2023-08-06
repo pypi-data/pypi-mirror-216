@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+audio_separator/__init__.py
+audio_separator/audio_separator.py
+audio_separator.egg-info/PKG-INFO
+audio_separator.egg-info/SOURCES.txt
+audio_separator.egg-info/dependency_links.txt
+audio_separator.egg-info/entry_points.txt
+audio_separator.egg-info/requires.txt
+audio_separator.egg-info/top_level.txt
+audio_separator/utils/__init__.py
+audio_separator/utils/pyrb.py
+audio_separator/utils/separate.py
+audio_separator/utils/spec_utils.py
