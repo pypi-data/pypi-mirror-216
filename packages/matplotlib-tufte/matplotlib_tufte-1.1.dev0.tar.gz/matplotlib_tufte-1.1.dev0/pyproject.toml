@@ -1,0 +1,50 @@
+# This file is part of matplotlib-tufte, Tufte-style plots for matplotlib.
+# https://gitlab.com/lemberger/matplotlib-tufte
+#
+# SPDX-FileCopyrightText: 2022 Thomas Lemberger <https://thomaslemberger.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[tool.poetry]
+name = "matplotlib-tufte"
+version = "1.1.dev0"
+description = "Tufte-style plots for matplotlib"
+readme = "README.md"
+authors = ["Thomas Lemberger <lembergerth@gmail.com>"]
+repository = "https://gitlab.com/lemberger/matplotlib-tufte"
+keywords = ["plotting", "matplotlib"]
+classifiers = [
+  "Framework :: Matplotlib",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+]
+license = "Apache-2.0"
+packages = [ { include = "tuftelike" } ]
+include = ["CHANGELOG.md", "README.md"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+matplotlib = "^3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3"
+hypothesis = "^6"
+
+[tool.pylint.REPORTS]
+output-format = "colorized"
+reports = "yes"
+
+[tool.pylint.'MESSAGES CONTROL']
+good-names = ["ax", "vs", "xs", "ys", "t", "x", "y"]
+disable = [
+    "missing-function-docstring",
+    "missing-docstring",
+    "line-too-long"
+]
+
+[tool.pytest]
+minversion = "7.0"
+testpaths = "tests"
+
+[tool.mypy]
+files = "tuftelike"
