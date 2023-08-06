@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: backup-juggler
+Version: 0.2.0
+Summary: Multiple copies of files and directories simultaneously made easy
+License: GPL-3.0-only
+Author: Marcos Raulino
+Author-email: marcosfsraulino@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: System :: Archiving :: Backup
+Classifier: Topic :: Utilities
+Requires-Dist: rich (>=13.4.2,<14.0.0)
+Requires-Dist: toml (>=0.10.2,<0.11.0)
+Requires-Dist: tqdm (>=4.65.0,<5.0.0)
+Requires-Dist: typer[all] (>=0.9.0,<0.10.0)
+Project-URL: Code, https://github.com/raulin0/backup-juggler
+Project-URL: Documentation, https://backup-juggler.readthedocs.io/en/latest/
+Project-URL: Issue Tracker, https://github.com/raulin0/backup-juggler/issues
+Description-Content-Type: text/markdown
+
+# Backup Juggler: Multiple copies of files and directories simultaneously made easy
+[![Stable Version](https://img.shields.io/pypi/v/backup-juggler?label=stable)][PyPI Releases]
+[![Python Versions](https://img.shields.io/pypi/pyversions/backup-juggler)][PyPI]
+[![Download Stats](https://img.shields.io/pypi/dm/backup-juggler)](https://pypistats.org/packages/backup-juggler)
+
+Backup Juggler is a command-line tool that allows you to perform multiple copies of files and directories simultaneously. The whole application is based on a command called `bj`. This command has a subcommand related to each action that the application can perform. Like `do-backups` and `get-size`.
+
+## Installation
+To install the Backup Juggler CLI, we recommend that you use `pipx`, although this is just a recommendation! You can also install the project with the manager of your choice, like `pip`. For full instalation instructions see the [instalation documentation][Tutorial]
+
+## Documentation
+The goal of this project is to help users who need to make multiple copies of files and directories simultaneously. See the [quick start guide][Documentation] or for full instructions of the current version of Backup Juggler see the [tutorial documentation][Tutorial].
+
+## Contribute
+The full [contributing documentation][Contributing Documentation] provides useful guidance, but if you have any questions or need help during the contribution process, feel free to open an [issue on the project's GitHub repository][Issue Tracker] and ask for help. We're happy to assist you.
+
+## Resources
+
+- [Releases][PyPI Releases]
+- [Documentation]
+- [Issue Tracker]
+
+  [PyPI]: https://pypi.org/project/backup-juggler/
+  [PyPI Releases]: https://pypi.org/project/backup-juggler/#history
+  [Documentation]: https://backup-juggler.readthedocs.io/en/latest/
+  [Tutorial]: https://backup-juggler.readthedocs.io/en/latest/tutorial/
+  [Issue Tracker]: https://github.com/Raulin0/backup-juggler/issues
+  [Contributing Documentation]: https://backup-juggler.readthedocs.io/en/latest/contribute/
