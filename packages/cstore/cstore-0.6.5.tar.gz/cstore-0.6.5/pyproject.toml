@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cstore"
+version = "0.6.5"
+dependencies = [
+    "pydantic",
+    "typer[all]",
+    "rich",
+    "simple_term_menu",
+    "SQLAlchemy",
+    "pyperclip",
+    "cryptocode",
+]
+authors = [
+  { name="Navid Arabi", email="navidved@gmail.com" },
+]
+description = "A tools to store and recall useful commands, specifically created to assist forgetful individuals"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/navidved/ctore/issues"
+"Homepage" = "https://github.com/navidved/ctore"
+"Documentation" = "https://github.com/navidved/ctore"
+"Repository" = "https://github.com/navidved/ctore"
+
+
+[project.scripts]
+cstore = "cstore.cli:app"
