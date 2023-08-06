@@ -1,0 +1,10 @@
+Django>=3.2
+django-manager-utils>=3.1.0
+
+[dev]
+coverage
+psycopg2
+django-dynamic-fixture
+django-nose
+mock
+flake8
