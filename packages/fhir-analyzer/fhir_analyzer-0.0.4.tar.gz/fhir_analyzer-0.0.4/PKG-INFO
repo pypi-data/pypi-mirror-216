@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: fhir_analyzer
+Version: 0.0.4
+Summary: A small FHIR package
+Author-email: Till Rostalski <tillrostalski@gmail.com>
+Project-URL: Homepage, https://github.com/trostalski/fhir_analyzer
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# Fhir Analyzer

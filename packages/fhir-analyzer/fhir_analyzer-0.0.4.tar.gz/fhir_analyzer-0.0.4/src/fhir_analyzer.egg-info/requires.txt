@@ -1,0 +1,10 @@
+fhir.resources
+pydantic
+pandas
+fhirpathpy
+networkx
+nxontology
+
+[dev]
+pytest
+twine
