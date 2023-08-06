@@ -1,0 +1,109 @@
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[tool.hatch.version]
+path = 'pydantic_extra_types/__init__.py'
+
+[project]
+name = 'pydantic-extra-types'
+description = 'Extra Pydantic types.'
+authors = [
+    {name = 'Samuel Colvin', email = 's@muelcolvin.com'},
+    {name = 'Yasser Tahiri', email = 'hello@yezz.me'},
+]
+license = 'MIT'
+readme = 'README.md'
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: System Administrators',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: Unix',
+    'Operating System :: POSIX :: Linux',
+    'Environment :: Console',
+    'Environment :: MacOS X',
+    'Framework :: Pydantic',
+    'Framework :: Pydantic :: 2',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Topic :: Internet',
+]
+requires-python = '>=3.7'
+dependencies = [
+    'pydantic>=2.0b3',
+]
+dynamic = ['version']
+
+[project.optional-dependencies]
+all = [
+    'phonenumbers>=8,<9',
+    'pycountry>=22,<23',
+]
+
+[project.urls]
+Homepage = 'https://github.com/pydantic/pydantic-extra-types'
+Source = 'https://github.com/pydantic/pydantic-extra-types'
+Changelog = 'https://github.com/pydantic/pydantic-extra-types/releases'
+Documentation = 'https://docs.pydantic.dev/dev-v2/usage/types/types/'
+
+[tool.ruff]
+line-length = 120
+extend-select = ['Q', 'RUF100', 'C90', 'UP', 'I']
+isort = { known-first-party = ['pydantic_extra_types', 'tests'] }
+flake8-quotes = {inline-quotes = 'single', multiline-quotes = 'double'}
+mccabe = { max-complexity = 14 }
+
+[tool.coverage.run]
+source = ['pydantic_extra_types']
+branch = true
+context = '${CONTEXT}'
+
+[tool.coverage.paths]
+source = [
+    'pydantic_extra_types/',
+    '/Users/runner/work/pydantic-extra-types/pydantic-extra-types/pydantic_extra_types/',
+    'D:\a\pydantic-extra-types\pydantic-extra-types\pydantic_extra_types',
+]
+
+[tool.coverage.report]
+precision = 2
+fail_under = 100
+show_missing = true
+skip_covered = true
+exclude_lines = [
+    'pragma: no cover',
+    'raise NotImplementedError',
+    'if TYPE_CHECKING:',
+    '@overload',
+]
+
+[tool.black]
+color = true
+line-length = 120
+target-version = ['py37']
+skip-string-normalization = true
+
+[tool.mypy]
+strict = true
+plugins = 'pydantic.mypy'
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    'error',
+    # This ignore will be removed when pycountry will drop py36 & support py311
+    'ignore:::pkg_resources',
+]
+
+# configuring https://github.com/pydantic/hooky
+[tool.hooky]
+reviewers = ['yezz123', 'Kludex']
+require_change_file = false
