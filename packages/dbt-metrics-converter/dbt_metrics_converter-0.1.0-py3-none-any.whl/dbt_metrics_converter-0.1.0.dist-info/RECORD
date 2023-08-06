@@ -1,0 +1,16 @@
+converter/__init_.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+converter/converter/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+converter/converter/dbt_metrics_to_semantic_model_converter.py,sha256=e-Gg2X4hdwM_5wM5duqk72cfTXHvK7MGLxloyAhSrJY,2888
+converter/converter/spec_upgrade.py,sha256=ubdGb7bbLGAcrTxKGlPmRt0mqyANzdG6wmrAq2INufk,3943
+converter/main.py,sha256=bKGEmlRdeALfNZza7kwrc3ZXbTrZVVV2z8-sPh_-5XA,958
+converter/metricflow_parsing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+converter/metricflow_parsing/dbt_dir_to_model.py,sha256=Wxnhq1INlI1IQRPC3Fykw8OcX9hpiAO0oDBS1Bxg-Uo,1898
+converter/metricflow_parsing/dbt_to_metricflow.py,sha256=HVrAfrqhWUmm7j8Lzj7eEctmIpR0-Zs7wX2RXvIhhWA,19978
+converter/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+converter/tests/fixtures.py,sha256=O9ZbpRWIiQVaYsGq5NVf95sPz8AMONFJ9X44Z5c_NLU,20
+converter/tests/unit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+converter/tests/unit/test_create_manifest.py,sha256=0qF8ZeglbrXsvRUOQUhEkj0FU2Mzsw1rk1x31Db46X0,221
+converter/tests/unit/test_generate_semantic_manifest.py,sha256=GKTJX_IH7R67cK0xCraS31IOij_uTwpjBXGo2KcDW_E,241
+dbt_metrics_converter-0.1.0.dist-info/METADATA,sha256=tS5qOfEa0ILjtSuqG1UbenSJEcNIYT1kItwPTB5XgSQ,890
+dbt_metrics_converter-0.1.0.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+dbt_metrics_converter-0.1.0.dist-info/RECORD,,
