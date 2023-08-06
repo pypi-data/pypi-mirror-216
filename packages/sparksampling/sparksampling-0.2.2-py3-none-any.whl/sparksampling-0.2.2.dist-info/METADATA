@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: sparksampling
+Version: 0.2.2
+Summary: pyspark-sampling
+Project-URL: Source, https://github.com/Wh1isper/pyspark-sampling
+Author-email: Wh1isper <9573586@qq.com>
+License: Apache License 2.0
+License-File: LICENSE
+Keywords: pyspark-sampling,sparksampling
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.7
+Requires-Dist: boto3
+Requires-Dist: findspark
+Requires-Dist: graphlib-backport
+Requires-Dist: grpcio-tools
+Requires-Dist: kubernetes
+Requires-Dist: pandas>=1.2
+Requires-Dist: pyspark
+Requires-Dist: requests
+Requires-Dist: sparksampling-proto==0.0.1
+Requires-Dist: traitlets
+Provides-Extra: test
+Requires-Dist: pre-commit; extra == 'test'
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-grpc; extra == 'test'
+Description-Content-Type: text/markdown
+
+![](https://img.shields.io/github/license/wh1isper/pyspark-sampling)
+![](https://img.shields.io/docker/image-size/wh1isper/pysparksampling)
+![](https://img.shields.io/pypi/pyversions/sparksampling)
+![](https://img.shields.io/pypi/dm/sparksampling)
+
+# pyspark-sampling
+
+``sparksampling`` is a PySpark-based sampling and data quality assessment GRPC service that supports containerized
+deployments and Spark On K8S
+
+## Feature
+
+- Common sampling methods: Random, Stratified, Simple
+- Relationship Sampling based on DAG and Topological sorting
+- Cloud Native and Spark on K8S support
+
+# QUICK START
+
+## Installation
+
+The trial only requires direct installation using pypi
+
+``pip install sparksampling``
+
+run as
+
+``sparksampling``
+
+The service will start and listen on port 8530
+
+## Docker
+
+``docker run -p 8530:8530 wh1isper/pysparksampling:latest``
+
+
+# Development
+
+Using dev install
+
+```shell
+pip install -e .[test]
+pre-commit install
+```
+
+run test
+
+```shell
+pytest -v
+```
