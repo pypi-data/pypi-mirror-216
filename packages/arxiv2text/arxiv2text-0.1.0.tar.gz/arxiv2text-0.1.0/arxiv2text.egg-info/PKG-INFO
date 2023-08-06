@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: arxiv2text
+Version: 0.1.0
+Summary: Converting PDF files to text, mainly with a focus on arXiv papers.
+Home-page: https://github.com/dsdanielpark/arxiv2text
+Author: daniel park
+Author-email: parkminwoo1991@gmail.com
+Keywords: Python,Paper,Data Mining,Translation
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# arxiv2text
+converting PDF files to Word documents, mainly with a focus on arXiv papers.
