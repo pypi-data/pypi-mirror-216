@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: bronzivka
+Version: 0.0.2
+Summary: My Python packages sphinx documentation theme
+Home-page: https://github.com/lgrcia/bronzivka
+License: MIT
+Author: Lionel Garcia
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: docutils
+Requires-Dist: ipywidgets
+Requires-Dist: jupyterlab
+Requires-Dist: myst-nb
+Requires-Dist: myst-parser
+Requires-Dist: sphinx
+Requires-Dist: sphinx-book-theme (>=1.0.0,<2.0.0)
+Requires-Dist: sphinx-copybutton
+Requires-Dist: sphinx-design
+Requires-Dist: toml
+Project-URL: Repository, https://github.com/lgrcia/bronzivka
+Description-Content-Type: text/markdown
+
+# bronzivka
+
+A python package sphinx theme based on `sphinx-book-theme`.
