@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rowSumExplorer"
+version = "1.5"
+authors = [
+  { name="oLiontas", email="liontas76@gmail.com" },
+]
+description = "Making dataframes from an excel tabled based on target sum column"
+readme = "README.md"
+requires-python = ">=3.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/oLiontas/RowSumExplorer"
+"Bug Tracker" = "https://github.com/oLiontas/RowSumExplorer/issues"
