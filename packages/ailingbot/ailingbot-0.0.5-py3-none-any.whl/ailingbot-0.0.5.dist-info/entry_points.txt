@@ -1,0 +1,3 @@
+[console_scripts]
+ailingbot=ailingbot.cli.cli:command_line_tools
+
