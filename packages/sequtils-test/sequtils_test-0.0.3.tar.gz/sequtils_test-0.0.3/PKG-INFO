@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: sequtils_test
+Version: 0.0.3
+Summary: Sequtils test
+Author-email: nbrg-ppcu <nbrg@itk.ppke.hu>
+Project-URL: Homepage, https://github.com/nbrg-ppcu/sequtils_test
+Project-URL: Bug Tracker, https://github.com/nbrg-ppcu/sequtils_test/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# sequtils_test
+ProkBERT sequitls Python package release

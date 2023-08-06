@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+.github/workflows/python-publish.yml
+src/__init__.py
+src/sequtils_test.py
+src/sequtils_test.egg-info/PKG-INFO
+src/sequtils_test.egg-info/SOURCES.txt
+src/sequtils_test.egg-info/dependency_links.txt
+src/sequtils_test.egg-info/top_level.txt
