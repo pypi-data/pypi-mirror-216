@@ -1,0 +1,10 @@
+{
+  "name": "Witch",
+  "cost": 5,
+  "types": [
+    "Action",
+    "Attack"
+  ],
+  "description": "+2 cards. Each other player gains a Curse card",
+  "expansion": "Base"
+}

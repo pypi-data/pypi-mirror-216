@@ -1,0 +1,9 @@
+{
+  "name": "Vassal",
+  "cost": 3,
+  "types": [
+    "Action"
+  ],
+  "description": "+2 Coins. Discard the top card of your deck. If it's an Action card, you may play it",
+  "expansion": "Base"
+}
