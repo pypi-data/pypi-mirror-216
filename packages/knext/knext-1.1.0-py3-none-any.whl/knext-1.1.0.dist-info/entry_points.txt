@@ -1,0 +1,3 @@
+[console_scripts]
+knext=src.__main__:cli
+
