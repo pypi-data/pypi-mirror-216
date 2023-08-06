@@ -1,0 +1,3 @@
+[pyang.plugin]
+arrcus_pyang_plugin=plugins.arrcus:pyang_plugin_init
+
