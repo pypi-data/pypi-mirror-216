@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: notion-pinecone
+Version: 0.0.19
+Summary: Automated QA of Notion in Pinecone
+Home-page: https://github.com/felixzhu17/Notion-Pinecone
+Author: Felix Zhu
+Author-email: zhu.felix@outlook.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: langchain
+Requires-Dist: openai
+Requires-Dist: tiktoken
+Requires-Dist: pinecone-client[grpc]
+
+# Notion-Pinecone
+Automated setup of Notion in Pinecone for Question-Answering
+
+
