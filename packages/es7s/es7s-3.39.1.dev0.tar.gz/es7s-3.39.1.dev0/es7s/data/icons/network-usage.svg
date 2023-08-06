@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="SVGRoot"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs542">
+    <linearGradient
+       id="linearGradient1276">
+      <stop
+         style="stop-color:#bebebe;stop-opacity:1;"
+         offset="0"
+         id="stop1274" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient1276"
+       id="linearGradient1278"
+       x1="1.5695127"
+       y1="7.4990244"
+       x2="14.704469"
+       y2="7.4990244"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient1276"
+       id="linearGradient1280"
+       gradientUnits="userSpaceOnUse"
+       x1="1.5695127"
+       y1="7.4990244"
+       x2="14.704469"
+       y2="7.4990244" />
+    <linearGradient
+       xlink:href="#linearGradient1276"
+       id="linearGradient1282"
+       gradientUnits="userSpaceOnUse"
+       x1="1.5695127"
+       y1="7.4990244"
+       x2="14.704469"
+       y2="7.4990244"
+       gradientTransform="matrix(0.99998474,0,0,1,-0.55344604,0.26097942)" />
+  </defs>
+  <g
+     id="layer1">
+    <g
+       id="layer1-0"
+       transform="translate(0.06313465,-0.22792944)">
+      <g
+         id="g3185-4"
+         transform="matrix(0.91356819,0,0,1.0044434,0.50300851,0.69558398)"
+         style="fill:none;stroke:#bebebe;stroke-opacity:1">
+        <g
+           id="g646"
+           style="fill:none;stroke:url(#linearGradient1278);stroke-width:1.10447;stroke-dasharray:none">
+          <path
+             style="display:inline;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient1280);stroke-width:0.521959;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+             d="M 3.2175924,12.887121 V 4.9225107 H 1.0283744 L 4.3122015,0.94020571 7.5960286,4.9225107 H 5.4068105 v 7.9646103 z"
+             id="path1202-8"
+             mask="none" />
+          <use
+             x="0"
+             y="0"
+             xlink:href="#path1202-8"
+             id="use905"
+             transform="matrix(0.99996167,0,0,-1,7.6622725,14.673667)"
+             style="fill:none;stroke:url(#linearGradient1282);stroke-width:1.10449;stroke-dasharray:none;stroke-opacity:1" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
