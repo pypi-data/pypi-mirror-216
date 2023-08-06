@@ -1,0 +1,17 @@
+airplane/__init__.py,sha256=nBw3NZD9WClVJ6BpUjzzk1LizpiUNiW43dsURkQnF18,191
+airplane/models.py,sha256=9_8wL9Scv8_Cs8HJyJHGvx1vwXErsuvlsAqNZLcJQR0,8
+airplane/pathing.py,sha256=VL2cQn8B0uJmLbweoZc24GdOrDxB5KtCJFJ0-9e-w6U,308
+airplane/utils.py,sha256=k_qvQbgMK9iQeavWXq7utbt89W70Xln5W0ADrAUvNuc,3497
+airplane/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airplane/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airplane/management/commands/aircache.py,sha256=O6DRxDRDjIZmz72jvFRZcGQE-ea92eNuWVXmk5MgEgg,409
+airplane/management/commands/airinfo.py,sha256=GHK9xtn_mZO2JkDrKuOpo7B8hQgGvbLzvpYexD_qA6o,986
+airplane/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airplane/templatetags/airplanetags.py,sha256=lQsnrJ0jqH8oWhg-hHU81spGRGKYqiRWyFVDgxc5oDE,1273
+airplane/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+airplane/tests/test_airplane.py,sha256=x2jwnnsM3Cce_nRx-ADwkMn0-0YsZtXOay7pICZ79sU,8388
+django_airplane-1.1.1.dist-info/LICENSE,sha256=sSMKTO6usd8zS5HCSpFxcbKp6nxZSjRqUm4s_X3ERlo,1087
+django_airplane-1.1.1.dist-info/METADATA,sha256=XjXrilZgLzH3PggEj3mYbaXKZty-cHNObxkwx5URz1U,5917
+django_airplane-1.1.1.dist-info/WHEEL,sha256=a-zpFRIJzOq5QfuhBzbhiA1eHTzNCJn8OdRvhdNX0Rk,110
+django_airplane-1.1.1.dist-info/top_level.txt,sha256=8hS__hZlHP_8ZCLTnGaQ3Leo6qUiLCbJZNIcH_mYl9U,9
+django_airplane-1.1.1.dist-info/RECORD,,
