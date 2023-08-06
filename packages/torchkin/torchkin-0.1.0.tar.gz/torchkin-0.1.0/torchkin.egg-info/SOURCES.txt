@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+torchkin/__init__.py
+torchkin/forward_kinematics.py
+torchkin/joint.py
+torchkin/robot.py
+torchkin.egg-info/PKG-INFO
+torchkin.egg-info/SOURCES.txt
+torchkin.egg-info/dependency_links.txt
+torchkin.egg-info/requires.txt
+torchkin.egg-info/top_level.txt
