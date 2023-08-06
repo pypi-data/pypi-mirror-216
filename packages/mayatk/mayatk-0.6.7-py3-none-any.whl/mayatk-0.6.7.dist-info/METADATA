@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: mayatk
+Version: 0.6.7
+Summary: *mayattk is a collection of backend utilities for Autodesk Maya.*
+Home-page: https://github.com/m3trik/mayatk
+Author: Ryan Simpson
+Author-email: m3trik@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+### MAYATK (Maya Toolkit)
+
+---
+<!-- short_description_start -->
+*mayattk is a collection of backend utilities for Autodesk Maya.*
+<!-- short_description_end -->
+
+### Installation:
+
+###### 
+
+To install:
+Add the `mayatk` folder to a directory on your python path, or
+install via pip in a command line window using:
+```
+python -m pip install mayatk
+```
+
+### Example use-case:
+```python
+import mayatk as mtk
+mtk.is_group(<obj>)
+# Returns: bool
+
+mtk.getBoundingBox(<obj>, 'centroid|size') 
+# Returns: tuple containing bounding box center and size.
+# ex. ((-0.02406523456116849, -0.8100277092487823, 0.0), (3.3830200057098523, 4.0155477063595555, 3.40770764056194))
+```
