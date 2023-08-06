@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "flatjsondict"
+version = "1.0.4"
+description = "JSON-like data manipulation and transformation to and from nested parent-child and flat label-value data items."
+authors = ["Martins Bruvelis <martins.bruvelis@gmail.com>"]
+readme = "README.md"
+repository = "https://gitlab.com/martins-bruvelis/flatjsondict"
+documentation = "https://gitlab.com/martins-bruvelis/flatjsondict/-/blob/main/README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
