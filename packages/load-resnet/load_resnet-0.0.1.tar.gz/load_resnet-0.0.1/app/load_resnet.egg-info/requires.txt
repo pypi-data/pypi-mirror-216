@@ -1,0 +1,8 @@
+bson>=0.5.10
+torch==2.0.1
+torchinfo==1.8.0
+torchvision==0.15.2
+
+[dev]
+pytest>=7.0
+twine>=4.0.2
