@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: gecs
+Version: 0.22.0
+Summary: LightGBM Classifier with integrated bayesian hyperparameter optimization
+Home-page: https://github.com/0xideas/sequifier
+License: MIT
+Keywords: lightgbm,classification,machine learning,hyperparameter optimization,classifier
+Author: Leon Luithlen
+Author-email: leontimnaluithlen@gmail.com
+Requires-Python: >=3.10.0,<3.11.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: lightgbm (==3.3.5)
+Requires-Dist: matplotlib (==3.7.1)
+Requires-Dist: numpy (==1.23.5)
+Requires-Dist: pandas (==1.5.2)
+Requires-Dist: poetry (==1.3.2)
+Requires-Dist: pytest (==7.2.1)
+Requires-Dist: scikit-learn (==1.2.2)
+Requires-Dist: scipy (==1.10.1)
+Requires-Dist: tqdm (==4.65.0)
+Requires-Dist: typer (==0.9.0)
+Project-URL: Repository, https://github.com/0xideas/sequifier
+Description-Content-Type: text/markdown
+
+
