@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: backtests-common
+Version: 0.0.1
+Summary: A package bundling useful functions for backtesting financial data
+Author-email: Felipe Sadock <fsadock@gmail.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: quantstats
+Requires-Dist: plotly
+Requires-Dist: pytest ; extra == "test"
+Requires-Dist: mypy ; extra == "test"
+Requires-Dist: flake8 ; extra == "test"
+Project-URL: Source, https://github.com/Butia-Investimentos/backtests-common
+Provides-Extra: test
+
+# backtests-common
