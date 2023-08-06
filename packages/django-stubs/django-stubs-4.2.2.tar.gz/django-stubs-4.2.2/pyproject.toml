@@ -1,0 +1,25 @@
+[tool.black]
+target-version = ['py38']
+line-length = 120
+include = '\.pyi?$'
+
+[tool.ruff]
+# Adds to default excludes: https://ruff.rs/docs/settings/#exclude
+extend-exclude = [
+    "django-source",
+    "stubgen",
+    "out",
+]
+line-length = 120
+target-version = "py38"
+select = [
+    "I",    # isort
+    "F401", # Unused imports
+    "UP",   # pyupgrade
+]
+
+[tool.ruff.isort]
+split-on-trailing-comma = false
+
+[build-system]
+requires = ["setuptools<64", "wheel"]
