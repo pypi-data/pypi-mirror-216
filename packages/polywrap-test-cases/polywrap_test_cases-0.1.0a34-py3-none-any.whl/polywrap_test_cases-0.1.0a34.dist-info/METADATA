@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: polywrap-test-cases
+Version: 0.1.0a34
+Summary: Plugin package
+Author: Cesar
+Author-email: cesar@polywrap.io
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+
+# polywrap-test-cases
+
+This package allows fetching wrap test-cases from the wrap-test-harness.
+
