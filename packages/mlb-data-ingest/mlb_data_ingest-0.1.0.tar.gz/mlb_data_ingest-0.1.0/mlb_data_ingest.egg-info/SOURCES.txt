@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.cfg
+mlb_data_ingest/MLBDataIngestor.py
+mlb_data_ingest/__init__.py
+mlb_data_ingest.egg-info/PKG-INFO
+mlb_data_ingest.egg-info/SOURCES.txt
+mlb_data_ingest.egg-info/dependency_links.txt
+mlb_data_ingest.egg-info/top_level.txt
+mlb_data_ingest/tests/__init__.py
+mlb_data_ingest/tests/test_MLBDataIngestor.py

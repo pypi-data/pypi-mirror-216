@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlb_data_ingest"
+version = "0.1.0"
+description = "My Python package to ingest MLB data from the MLB stats API"
+authors = [
+    {name = "Blake Samaha", email = "blake.samaha16@gmail.com"},
+]
+license = { text = "MIT License" }
