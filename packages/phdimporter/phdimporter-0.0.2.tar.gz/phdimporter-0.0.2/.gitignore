@@ -1,0 +1,9 @@
+.ipynb_checkpoints
+build
+dist
+*.pyc
+*.spec
+__pycache__
+.DS_Store
+.vscode
+*egg*
