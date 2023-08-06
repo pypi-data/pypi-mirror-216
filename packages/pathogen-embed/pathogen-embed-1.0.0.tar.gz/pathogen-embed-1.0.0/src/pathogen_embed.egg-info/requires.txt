@@ -1,0 +1,9 @@
+numpy
+pandas
+biopython
+seaborn
+scikit-learn
+umap-learn==0.5.*
+numba<0.59.0
+matplotlib
+hdbscan
