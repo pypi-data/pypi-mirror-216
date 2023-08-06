@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: polywrap-manifest
+Version: 0.1.0a34
+Summary: WRAP manifest
+Author: Niraj
+Author-email: niraj@polywrap.io
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: polywrap-msgpack (>=0.1.0a34,<0.2.0)
+Requires-Dist: pydantic (>=1.10.2,<2.0.0)
+Description-Content-Type: text/markdown
+
+# polywrap-manifest
+
+Python implementation of the WRAP manifest schema at https://github.com/polywrap/wrap
+
+## Usage
+
+### Deserialize WRAP manifest
+
+```python
+from polywrap_manifest import deserialize_wrap_manifest, WrapManifest_0_1
+
+with open("<path to WRAP package>/wrap.info", "rb") as f:
+    raw_manifest = f.read()
+
+manifest = deserialize_wrap_manifest(raw_manifest)
+assert isinstance(manifest, WrapManifest_0_1)
+```
+
