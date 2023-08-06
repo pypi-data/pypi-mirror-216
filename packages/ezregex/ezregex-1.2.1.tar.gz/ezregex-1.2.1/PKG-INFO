@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: ezregex
+Version: 1.2.1
+Summary: A readable and intuitive way to generate Regular Expressions
+License-File: LICENSE
+Provides-Extra: tests
+Requires-Dist: rich; extra == 'tests'
