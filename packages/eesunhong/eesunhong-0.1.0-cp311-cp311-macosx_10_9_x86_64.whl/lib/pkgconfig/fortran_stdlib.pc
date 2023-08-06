@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=${prefix}/lib
+includedir=${prefix}/include
+moduledir=${prefix}/include/fortran_stdlib/GNU-11.4.0
+
+Name: fortran_stdlib
+Description: Community driven and agreed upon de facto standard library for Fortran
+Version: 0.2.1
+Libs: -L${libdir} -lfortran_stdlib
+Cflags: -I${includedir} -I${moduledir}
