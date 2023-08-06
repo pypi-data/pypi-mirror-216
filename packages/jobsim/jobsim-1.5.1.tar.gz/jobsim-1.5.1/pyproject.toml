@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "jobsim"
+version = "1.5.1"
+description = "job manager simulator"
+authors = ["Kamil Kania <kkania@splunk.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+dacite = "^1.8.1"
+names = "^0.3.0"
+PyYAML = "^6.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.2"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

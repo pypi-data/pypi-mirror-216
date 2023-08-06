@@ -1,0 +1,12 @@
+---
+flag: "\U0001F1E8\U0001F1E6"
+rooms:
+  - name: toronto
+    availability:
+      Mon: 9-17
+      Fri: 8-16
+    capacity: 8
+  - name: ottawa
+    availability:
+      Mon: 8-10
+    capacity: 3

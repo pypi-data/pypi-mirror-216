@@ -1,0 +1,32 @@
+---
+flag: "\U0001F1FA\U0001F1F8"
+rooms:
+  - name: new_york
+    availability:
+      Fri: 9-17
+      Mon: 8-16
+    capacity: 8
+  - name: miami
+    availability:
+      Fri: 9-11
+      Tue: 9-17
+      Wed: 9-17
+    capacity: 10
+  - name: las_vegas
+    availability:
+      Fri: 8-12
+      Mon: 8-12
+      Thur: 8-12
+      Tue: 8-12
+      Wed: 8-12
+    capacity: 40
+  - name: chicago
+    availability:
+      Fri: 9-15
+    capacity: 25
+  - name: boston
+    availability:
+      Thur: 7-9
+      Tue: 7-9
+      Wed: 7-14
+    capacity: 2
