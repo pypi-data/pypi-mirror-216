@@ -1,0 +1,3 @@
+[console_scripts]
+download_daily_gpm_data = gpm_api.scripts.download_daily_gpm_data:download_daily_gpm_data
+download_monthly_gpm_data = gpm_api.scripts.download_monthly_gpm_data:download_monthly_gpm_data
