@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: cicv
+Version: 0.0.1
+Summary: A common interface for opencv
+Author: Max Chang
+Author-email: p513817@gmail.com
+License-File: LICENSE
+Requires-Dist: opencv-python
+
