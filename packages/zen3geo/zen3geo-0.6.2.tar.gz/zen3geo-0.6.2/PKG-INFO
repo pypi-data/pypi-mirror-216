@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: zen3geo
+Version: 0.6.2
+Summary: The 🌏 data science library you've been waiting for~
+License: LGPL-3.0-or-later
+Author: Wei Ji
+Author-email: 23487320+weiji14@users.noreply.github.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Software Development :: Libraries
+Provides-Extra: docs
+Provides-Extra: raster
+Provides-Extra: spatial
+Provides-Extra: stac
+Provides-Extra: vector
+Requires-Dist: adlfs ; extra == "docs"
+Requires-Dist: contextily ; extra == "docs"
+Requires-Dist: datashader (>=0.14.0) ; extra == "docs" or extra == "spatial"
+Requires-Dist: graphviz ; extra == "docs"
+Requires-Dist: jupyter-book ; extra == "docs"
+Requires-Dist: matplotlib ; extra == "docs"
+Requires-Dist: planetary-computer ; extra == "docs"
+Requires-Dist: pyogrio[geopandas] (>=0.4.0) ; extra == "docs" or extra == "vector"
+Requires-Dist: pystac (>=1.4.0) ; extra == "docs" or extra == "stac"
+Requires-Dist: pystac-client (>=0.4.0) ; extra == "docs" or extra == "stac"
+Requires-Dist: rioxarray (>=0.10.0)
+Requires-Dist: spatialpandas (>=0.4.0) ; extra == "docs" or extra == "spatial"
+Requires-Dist: stackstac (>=0.4.0) ; extra == "docs" or extra == "stac"
+Requires-Dist: torchdata (>=0.4.0)
+Requires-Dist: xarray-datatree ; extra == "docs"
+Requires-Dist: xbatcher (>=0.2.0) ; extra == "docs" or extra == "raster"
+Requires-Dist: xpystac (>=0.0.1) ; extra == "docs" or extra == "stac"
+Requires-Dist: zarr (>=2.13.0) ; extra == "docs" or extra == "raster"
+Project-URL: Changelog, https://zen3geo.readthedocs.io/en/latest/changelog.html
+Project-URL: Documentation, https://zen3geo.readthedocs.io
+Project-URL: Download, https://anaconda.org/conda-forge/zen3geo
+Project-URL: Homepage, https://github.com/weiji14/zen3geo/discussions
+Project-URL: Source Code, https://github.com/weiji14/zen3geo
+Project-URL: Sponsor, https://github.com/sponsors/weiji14
+Description-Content-Type: text/markdown
+
+# zen3geo
+
+The 🌏 data science library you've been waiting for~
+
+> 君の前前前世から僕は 君を探しはじめたよ
+>
+> Since your past life, I have been searching for you
+
+## 公案
+
+```
+Geography is difficult, but easy it can also be
+Deep Learning, you hope, has an answer to all
+Too this, too that, where to though, where to?
+Look out, sense within, and now you must know
+```
+
+## Installation
+
+To install the development version from GitHub, do:
+
+    pip install git+https://github.com/weiji14/zen3geo.git
+
+Or the stable version from [PyPI](https://pypi.org/project/zen3geo):
+
+    pip install zen3geo
+
+If instead, [conda-forge](https://anaconda.org/conda-forge/zen3geo) you desire:
+
+    mamba install --channel conda-forge zen3geo
+
+Other instructions, see https://zen3geo.readthedocs.io/en/latest/#installation
+

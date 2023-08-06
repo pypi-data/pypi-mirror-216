@@ -1,0 +1,103 @@
+[tool.poetry]
+name = "zen3geo"
+version = "0.6.2"
+description = "The 🌏 data science library you've been waiting for~"
+authors = ["Wei Ji <23487320+weiji14@users.noreply.github.com>"]
+license = "LGPL-3.0-or-later"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+exclude = ["zen3geo/tests"]
+
+[tool.poetry.urls]
+"Homepage" = "https://github.com/weiji14/zen3geo/discussions"
+"Changelog" = "https://zen3geo.readthedocs.io/en/latest/changelog.html"
+"Documentation" = "https://zen3geo.readthedocs.io"
+"Download" = "https://anaconda.org/conda-forge/zen3geo"
+"Source Code" = "https://github.com/weiji14/zen3geo"
+"Sponsor" = "https://github.com/sponsors/weiji14"
+
+[tool.poetry.dependencies]
+# Required
+python = ">=3.8, <4.0"
+rioxarray = ">=0.10.0"
+torchdata = ">=0.4.0"
+# Optional
+datashader = {version = ">=0.14.0", optional = true}
+pyogrio = {version = ">=0.4.0", extras = ["geopandas"], optional = true}
+pystac = {version=">=1.4.0", optional=true}
+pystac-client = {version = ">=0.4.0", optional = true}
+spatialpandas = {version = ">=0.4.0", optional = true}
+stackstac = {version = ">=0.4.0", optional = true}
+xbatcher = {version = ">=0.2.0", optional = true}
+xpystac = {version = ">=0.0.1", optional = true}
+zarr = {version = ">=2.13.0", optional = true}
+# Docs
+adlfs = {version = "*", optional = true}
+contextily = {version = "*", optional = true}
+graphviz = {version = "*", optional = true}
+jupyter-book = {version="*", optional=true}
+matplotlib = {version = "*", optional = true}
+planetary-computer = {version="*", optional=true}
+xarray-datatree = {version="*", optional=true}
+
+[tool.poetry.group.dev.dependencies]
+aiohttp = "*"
+black = "*"
+pytest = "*"
+
+[tool.poetry.extras]
+docs = [
+    "adlfs",
+    "contextily",
+    "datashader",
+    "graphviz",
+    "jupyter-book",
+    "matplotlib",
+    "planetary-computer",
+    "pyogrio",
+    "pystac",
+    "pystac_client",
+    "spatialpandas",
+    "stackstac",
+    "xarray-datatree",
+    "xbatcher",
+    "xpystac",
+    "zarr"
+]
+raster = [
+    "xbatcher",
+    "zarr"
+]
+spatial = [
+    "datashader",
+    "spatialpandas"
+]
+stac = [
+    "pystac",
+    "pystac_client",
+    "stackstac",
+    "xpystac"
+]
+vector = ["pyogrio"]
+
+[tool.poetry-dynamic-versioning]
+bump = true
+enable = true
+metadata = false
+style = "pep440"
+
+[build-system]
+requires = ["poetry-core>=1.6.0", "poetry-dynamic-versioning"]
+build-backend = "poetry.core.masonry.api"
