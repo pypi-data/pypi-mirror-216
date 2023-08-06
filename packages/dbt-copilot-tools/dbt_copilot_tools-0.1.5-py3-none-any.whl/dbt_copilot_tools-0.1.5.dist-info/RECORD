@@ -1,0 +1,16 @@
+commands/COMMANDS.md,sha256=sED4W53DdqqCba3hV4JJxSvVBIYzBsX_NO1GrItFHhs,13596
+commands/README.md,sha256=5iDUhjVux-Jesp_YzKExqGqr6xdYKUYrD7aoMKnzSNo,1737
+commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+commands/bootstrap_cli.py,sha256=xPw9Hp-NV5r5jAa-VSAbsR3P6MIYm0In1sDd4xgCjRo,10214
+commands/check_cloudformation.py,sha256=73UvTlrxbOAcOy2DneCubqQjYK0DG6A4YvqYN79yL7w,2560
+commands/codebuild_cli.py,sha256=9-58PJJD1UHY-imqNOLp46_zY2acWLGWv2l6GrvOwHw,13488
+commands/copilot_cli.py,sha256=Da8te99UhyU3a5wl7X8gnudsIdQqbP2JSz9HuABgt9Q,8582
+commands/dns_cli.py,sha256=V30WOVUToIRy_IakrOlabFefViW5-fg1hjWFVwGR55w,20842
+commands/utils.py,sha256=JM7N5Jv4YQJCAbAFcg4qu0yxHEvwYi9Recn6GIsEl8Y,5994
+commands/waf_cli.py,sha256=HJuFXeLS16uhUJPKAP4lEIQDlRiV0HKGYuPc5tGcxuQ,5695
+copilot_helper.py,sha256=efAWzE_7znYRngoP7pO_kXHSNbNIX3CegRKXgD3fIwQ,970
+dbt_copilot_tools-0.1.5.dist-info/LICENSE,sha256=dP79lN73--7LMApnankTGLqDbImXg8iYFqWgnExGkGk,1090
+dbt_copilot_tools-0.1.5.dist-info/METADATA,sha256=ox6EPZprrMyCglfhHIOsxuh5tikiCTfZfynRO-mEeW8,2750
+dbt_copilot_tools-0.1.5.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+dbt_copilot_tools-0.1.5.dist-info/entry_points.txt,sha256=N_TSV_Akj9nA6HTuIVCBJWF0CCyA-NWUanr2Z_ay5DE,53
+dbt_copilot_tools-0.1.5.dist-info/RECORD,,
