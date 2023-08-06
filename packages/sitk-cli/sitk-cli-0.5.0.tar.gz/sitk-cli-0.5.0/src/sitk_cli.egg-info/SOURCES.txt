@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/sitk_cli/__init__.py
+src/sitk_cli/lib.py
+src/sitk_cli.egg-info/PKG-INFO
+src/sitk_cli.egg-info/SOURCES.txt
+src/sitk_cli.egg-info/dependency_links.txt
+src/sitk_cli.egg-info/requires.txt
+src/sitk_cli.egg-info/top_level.txt
+tests/test_make_cli.py
+tests/test_register_cli.py
