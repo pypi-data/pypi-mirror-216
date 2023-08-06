@@ -1,0 +1,10 @@
+CHANGELOG.md
+MANIFEST.in
+setup.py
+annoy-stubs/METADATA.toml
+annoy-stubs/__init__.pyi
+annoy-stubs/annoylib.pyi
+types_annoy.egg-info/PKG-INFO
+types_annoy.egg-info/SOURCES.txt
+types_annoy.egg-info/dependency_links.txt
+types_annoy.egg-info/top_level.txt
