@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: strinpy
+Version: 0.0.1
+Summary: React like string builder
+Home-page: https://github.com/am230/strinpy
+Author: am230
+License: MIT Licence
+Keywords: string
+Platform: any
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+React like string builder
+===============================
+
+.. image:: https://img.shields.io/github/license/mashape/apistatus.svg
+   :target: http://opensource.org/licenses/MIT
+.. image:: https://badge.fury.io/py/strinpy.svg
+    :target: https://badge.fury.io/py/strinpy
+
+Usage
+-----
+
+.. code:: python
+
+    import strinpy
+
+    condition = True
+    output = strinpy.build([
+        'text',
+        condition and 'condition text',
+        condition and ['condition text list'],
+        condition and (lambda: 'supplier text'),
+        [
+            'text list',
+            [
+                'in text list'
+            ]
+        ]
+    ])
+    print(output)
+    """
+    text
+    condition text     
+    condition text list
+    supplier text      
+    text list
+    in text list
+    """
