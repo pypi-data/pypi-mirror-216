@@ -1,0 +1,5 @@
+include mft2df/requirements.txt
+include mft2df/thirdparty.json
+include mft2df/README.MD
+include mft2df/mft.exe
+include mft2df/mft_dump.exe
