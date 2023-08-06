@@ -1,0 +1,41 @@
+package:
+  name: cadquery
+  version:  {{ environ.get('PACKAGE_VERSION') }}
+
+source:
+  path: ..
+
+build:
+  string: {{ GIT_DESCRIBE_TAG }}_{{ GIT_BUILD_STR }}
+  noarch: python
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python >=3.8
+    - setuptools
+  run:
+    - python >=3.8
+    - ocp 7.7.0
+    - occt 7.7.0
+    - pyparsing >=2.1.9
+    - ezdxf
+    - ipython
+    - typing_extensions
+    - nptyping >=2.0.1
+    - nlopt
+    - multimethod >=1.7,<2.0
+    - casadi
+
+test:
+  requires:
+    - pytest
+    - docutils
+    - path
+  source_files:
+    - tests/
+  commands:
+    - pytest -v
+
+about:
+  summary: CadQuery - scripted CAD based on OCCT

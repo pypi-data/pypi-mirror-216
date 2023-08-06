@@ -1,0 +1,45 @@
+shallow_clone: true
+
+platform:
+    - x64
+
+environment:
+    matrix:
+        - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+          MINICONDA_DIRNAME: C:\Miniforge
+        - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+          OS: Linux
+        - APPVEYOR_BUILD_WORKER_IMAGE: macOS
+          OS: MacOSX
+
+    ANACONDA_TOKEN:
+        secure: $(anaconda_token)
+
+init:
+    - cmd: curl -fsSLo Miniforge.exe https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Windows-x86_64.exe
+    - cmd: Miniforge.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%MINICONDA_DIRNAME%
+    - cmd: set "PATH=%MINICONDA_DIRNAME%;%MINICONDA_DIRNAME%\\Scripts;%PATH%"
+    - cmd: activate
+    - sh: curl -sL https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$OS-x86_64.sh > miniconda.sh
+    - sh: bash miniconda.sh -b -p $HOME/miniconda;
+    - sh: export PATH="$HOME/miniconda/bin:$HOME/miniconda/lib:$PATH";
+    - sh: source $HOME/miniconda/bin/activate 
+
+install:
+    - mamba env create -f environment.yml
+    - conda activate cadquery
+
+build: false
+
+test_script:
+    - black . --diff --check
+    - mypy cadquery
+    - pytest -v --cov
+
+on_success:
+    - codecov
+
+#on_finish:
+#    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#   - sh: export APPVEYOR_SSH_BLOCK=true
+#   - sh: curl -sflL 'https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-ssh.sh' | bash -e -
