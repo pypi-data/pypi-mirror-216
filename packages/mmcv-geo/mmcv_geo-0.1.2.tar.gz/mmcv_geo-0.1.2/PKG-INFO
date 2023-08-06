@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: mmcv-geo
+Version: 0.1.2
+Summary: the geospatial extension of mmcv 2
+Author: Mengjia Liu
+Author-email: jaeliu@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: rasterio (>=1.3.7,<2.0.0)
+Description-Content-Type: text/markdown
+
+
