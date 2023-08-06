@@ -1,0 +1,48 @@
+name: Publish to TestPyPi
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+    types: 
+      - closed
+
+jobs:
+  tag_build:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    name: Tag and create test pypi release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install toml
+
+      - name: Tag Repo
+        run: |
+          VERSION=$(python -c "import toml; print(toml.load('pyproject.toml')['tool']['poetry']['version'])")
+          echo $VERSION
+          git config --global user.name 'Botsy Build Server'
+          git config --global user.email 'botsy@botsy.com'
+          git tag "v${VERSION}"
+          git push origin --tags
+  build:
+    needs: [tag_build]
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    name: Build and Pysh to TestPyPi
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: |
+        docker build --build-arg PYPI_USERNAME="${{ secrets.PYPI_USERNAME }}" --build-arg PYPI_PASSWORD="${{ secrets.PYPI_PASSWORD }}" -t testbuild .
+
+    - name: Run Commands Inside Container
+      run: |
+        docker run -e TEST_PYPI_BUILD=1  testbuild
+
