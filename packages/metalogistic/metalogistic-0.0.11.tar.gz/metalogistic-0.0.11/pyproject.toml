@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "metalogistic"
+version = "0.0.11"
+description = "A Python package for the metalogistic distribution. The metalogistic or metalog distribution is a highly flexible probability distribution that can be used to model data without traditional parameters."
+authors = ["Tom Adamczewski <tadamczewskipublic@gmail.com>"]
+license = "GNU Affero General Public License v3"
+readme = "README.md"
+repository = "https://github.com/tadamcz/metalogistic"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+numpy = "^1.22.3"
+scipy = "^1.8.0"
+matplotlib = "^3.5.1"
+
+[tool.poetry.dev-dependencies]
+bump2version = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
