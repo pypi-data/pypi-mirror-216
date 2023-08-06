@@ -1,0 +1,2 @@
+[console_scripts]
+pyrdfsubset = pyrdfsubset.__main__:main
