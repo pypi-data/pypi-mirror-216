@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "wikipyedia-md"
+version = "0.1.0"
+description = "Package made for converting Wikipedia articles to Markdown format"
+authors = ["Edvinas Adomaitis <t4skmanag3r@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "wikipyedia_md"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
