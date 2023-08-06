@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sspr.python.by.designermadsen"
+version = "0.0.4"
+authors = [
+  { name="Kent vejrup Madsen", email="Kent.vejrup.Madsen@outlook.com" },
+]
+
+readme = { file="Readme.md", content-type="text/markdown" }
+license = { file="License.md", content-type="text/markdown" }
+
+description = "a revised school project that i have programmed in python instead of C#."
+requires-python = ">=3.10"
+
+keywords = [
+    "high-school-project",
+    "designermadsen",
+    "kentvejrupmadsen",
+    "project",
+    "old",
+    "revision",
+    "naive-bayes",
+    "Reuters21578",
+    "revised",
+    "python",
+    "python3.10",
+    "python3.11",
+    "TDD",
+]
+
+dependencies = [
+    "wheel",
+    "setuptools"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Repository" = "https://github.com/KentVejrupMadsen/specialised-study-project.revised.python"
+"Issues" = "https://github.com/KentVejrupMadsen/specialised-study-project.revised.python/issues"
+
+"Contact" = "https://about.designermadsen.dk"
+"on Github" = "https://github.com/KentVejrupMadsen"
+"On PyPi" = "https://pypi.org/project/sspr.python.by.designermadsen/"
+
+[tool.setuptools.packages.find]
+where = ["SpecialisedStudyProject"]
+include = ["SpecialisedStudyProject.*"]
+exclude = ["tests.*"]
