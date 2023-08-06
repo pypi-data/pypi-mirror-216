@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: backupdir
+Version: 1.0.0
+Summary: Python script copies the source directory (with all files and subdirectories) to the specified location and zips it.
+Home-page: https://github.com/IgorMan2005/backupdir
+Author: IgorMan (IgorMan2005)
+Author-email: igorman2005@gmail.com
+Project-URL: Documentation, https://best-itpro.ru/news/backupdir/
+Keywords: python backupdir backup foder zip archive
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# backupdir
+
+<img src="https://igorman2005.github.io/images/backupdir.jpg" alt="backupdir">
+
+BackupDir (backup directory). 
+The program copies the source directory (with all subdirectories) to the specified location and zips it.
+
+## Setup
+https://pypi.org/project/backupdir/
+
+**pip install backupdir**
+
+## Example1:
+```
+import backupdir
+
+# ARCHIVE LOCAL
+SOURCE_DIR = '' # use current dir when SOURCE_DIR = ''
+TARGET_DIR = "D:\\TEMP\\backup"
+
+backupdir.archive_local(SOURCE_DIR, TARGET_DIR)
+
+```
+
+### Documentation
+
+https://best-itpro.ru/news/backupdir/
+
+
