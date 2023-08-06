@@ -1,0 +1,14 @@
+fastapi_sql_profiler/__init__.py,sha256=Za5ffW6HMp_WAaQAk7hiVzg9Re3PZC9xBecuMtALapk,77
+fastapi_sql_profiler/add_request.py,sha256=__KNvNoewvpqU-j5JO0FsiF5f9617VIgCUQzdUFfhew,2846
+fastapi_sql_profiler/database.py,sha256=P20ctxNuYUIGpJQWLIFPQDkXULHj15WntCDKAS1bUTI,1060
+fastapi_sql_profiler/middleware.py,sha256=3afED2LkZMXKQIB0peTKuFfhA-MqRUctncw1okZUF_s,10175
+fastapi_sql_profiler/models.py,sha256=iqgjZnpRSLeEkNW6Iup5owEvup6KD0tmpDtel5Ax5II,1035
+fastapi_sql_profiler/templates/base.html,sha256=15KTQnofhAUAKbP_-WjTjGbJuho5PWybqcq2IHhdyLg,3449
+fastapi_sql_profiler/templates/request.html,sha256=I7r2RI4FoUqStmkkeX1-hGpeR4fRyd9qXLnqDuKoefE,4738
+fastapi_sql_profiler/templates/request_show.html,sha256=rVV9KTOd8XImgKp-MI31lKgCQG1wgVLxIbPAEsBpyDI,2440
+fastapi_sql_profiler/templates/sql_query.html,sha256=_qVLy1UmewoX7OyzUAcsQPqh-up7YU8B-9eNaa4XexU,2012
+fastapi_sql_profiler/templates/sql_query_detail.html,sha256=S3gSd_K1juFm_ipkGCiatJG7HN-o0Ex54JnLFbuhiXE,987
+fastapi_sql_profiler-1.0.0.dist-info/METADATA,sha256=hulQdTLnurQojmrID9j9Pevwa1FkSnQajq7bl0C9bys,796
+fastapi_sql_profiler-1.0.0.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+fastapi_sql_profiler-1.0.0.dist-info/top_level.txt,sha256=nYH0N3TcwS9imnNdJiFTGrvp08ATq-9aRAX8G5-_A4s,21
+fastapi_sql_profiler-1.0.0.dist-info/RECORD,,
