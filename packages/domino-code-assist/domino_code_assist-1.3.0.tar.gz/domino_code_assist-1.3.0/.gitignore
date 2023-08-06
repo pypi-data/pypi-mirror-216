@@ -1,0 +1,12 @@
+.env
+node_modules
+dist
+dcalabextension/lib/
+dcalabextension/tsconfig.tsbuildinfo
+*.code-workspace
+.coverage*
+deploy_test.ipynb
+mlruns/
+prefix/share/jupyter/labextensions/
+test.ipynb
+tests/app/
