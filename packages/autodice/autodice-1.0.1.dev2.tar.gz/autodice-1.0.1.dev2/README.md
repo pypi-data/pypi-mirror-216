@@ -1,0 +1,59 @@
+# AutoDiCE Project.
+[The source for this AutoDiCE project is available here][src].
+![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
+
+# How to use the ONNXPartition 
+```
+
+### mapping.json Template (AlexNet):
+{"lenovo_cpu0": ["conv1_1", "conv1_2", "norm1_1", "pool1_1", "conv2_1", "conv2_2", "norm2_1", "pool2_1", "conv3_1", "conv3_2", "conv4_1", "conv4_2", "conv5_1", "conv5_2", "pool5_1", "OC2_DUMMY_0", "fc6_1", "fc6_2"], "lenovo_cpu1": ["fc6_3", "fc7_1", "fc7_2", "fc7_3", "fc8_1", "prob_1"]}
+
+if __name__ == '__main__':
+
+    output_dirs= './models'
+    if not os.path.exists(output_dirs):
+    # Create a new directory because it does not exist
+        os.makedirs(output_dirs)
+        print("The output directory %s is created!" % (output_dirs))
+
+    origin_model = "bvlcalexnet-9.onnx"
+    #origin_model = "resnet101-v2-7.onnx"
+    #origin_model = "densenet-9.onnx"
+    input_model = format_onnx(origin_model)
+    model =  onnx.load(input_model)
+    model_len = len(model.graph.node)
+    resourceid = { 1:'lenovo_cpu0', 2:'lenovo_cpu1'}
+    platforms = ['lenovo']
+    random_map = load_json('./mapping.json')
+
+    #M=3
+    #gene = np.array([0,18]).astype(int)
+    #chromosome = ChromosomePartGen(gene, model_len, resourceid)
+    #random_map = MappingGenerator(resourceid, chromosome, input_model)
+    #print ("Mapping: ", random_map)
+    #save_json(random_map, './mapping.json')
+
+    start_time = time.time()
+    InputSpecs = Interface(model=input_model, mappings=random_map, platforms=platforms)
+    print ("Front End time: %f (s)"%(time.time() - start_time))
+    #cppname, NodesList, ComputingNodes
+    GenerateCode = EngineCode(
+        CppName = "./models/multinode",
+        Platforms = InputSpecs.platforms,
+        NodesList = InputSpecs.nodes,
+        ComputingNodes = InputSpecs.computingnodes,
+        ValueInfos = InputSpecs.value_map,
+        Inputs = InputSpecs.inputs,
+        Outputs = InputSpecs.outputs,
+        Benchmark = False)
+# ...
+```
+
+ 
+
+[packaging guide]: https://packaging.python.org
+[distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
+[src]: https://github.com/parrotsky/AutoDiCE
+[rst]: http://docutils.sourceforge.net/rst.html
+[md]: https://tools.ietf.org/html/rfc7764#section-3.5 "CommonMark variant"
+[md use]: https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
