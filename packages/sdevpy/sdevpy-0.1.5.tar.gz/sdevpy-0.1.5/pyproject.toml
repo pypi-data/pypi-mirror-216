@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdevpy"
+version = "0.1.5"
+authors = [
+  { name="Sebastien Gurrieri", email="sebgur@gmail.com" },
+]
+description = "Python package for Machine Learning in Finance"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+	"pandas","pyperclip","py_vollib","numpy","tensorflow",
+  "scikit-learn"
+]
+
+[project.urls]
+"Git page" = "https://github.com/sebgur/SDev.Python"
+"SDev Finance" = "http://sdev-finance.com/"
