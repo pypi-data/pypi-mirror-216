@@ -1,0 +1,9 @@
+numpy>=1.16
+
+[dev]
+pytest
+pylint
+codespell
+pydocstyle
+tomli
+requests
