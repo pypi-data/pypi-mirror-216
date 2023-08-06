@@ -1,0 +1,2 @@
+[console_scripts]
+wiki_as_base = wiki_as_base.cli:exec_from_console_scripts
