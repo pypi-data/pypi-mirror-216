@@ -1,0 +1,6 @@
+[console_scripts]
+airnetsim = airnet.model:simulate
+summarize_airnet_input = airnet.model:summarize_input
+
+[gui_scripts]
+airnet_simulator = airnet.model:gui_simulate
