@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  release:
+    types: [published]
+  pull_request: {}
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: ${{ matrix.platform }} (${{ matrix.python-version }})
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.9]
+        platform: [macos-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[testing]
+          pip install pyside2
+          pip install git+https://github.com/tlambert03/pymmcore-plus
+
+      - name: Install Micro-Manager
+        run: python -m pymmcore_plus.install
+
+      - name: Test
+        run: pytest -v --color=yes --cov=pymmcore_mda_writers --cov-report=xml
+
+      - name: Coverage
+        uses: codecov/codecov-action@v2
+
+  deploy:
+    name: Deploy
+    needs: test
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: install
+        run: |
+          pip install --upgrade pip
+          pip install -U build
+
+      - name: build
+        run: python -m build
+
+      - name: twine check
+        run: |
+          twine check dist/*
+          ls -lh dist
+
+      - name: Publish to PyPi
+        run: twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_KEY }}
