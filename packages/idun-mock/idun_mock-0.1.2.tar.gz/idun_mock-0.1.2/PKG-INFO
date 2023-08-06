@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: idun-mock
+Version: 0.1.2
+Summary: Mock a real IDUN Guardian device for testing purposes
+Author: Konstantinos Samaras-Tsakiris
+Author-email: konstantinos@iduntechnologies.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: boto3 (>=1.26,<2.0)
+Requires-Dist: dacite (>=1.8,<2.0)
+Requires-Dist: httpx (>=0.24,<0.25)
+Requires-Dist: idun_data_models (>=0.2.0,<0.3.0)
+Requires-Dist: idun_tools (>=0.1.0,<0.2.0)
+Requires-Dist: websockets (>=11.0,<12.0)
+Description-Content-Type: text/markdown
+
+# IDUN Guardian mock library / client
+
+This is a client library for the IDUN Guardian which mocks out the physical device, intended for development and building tests for the IDUN Guardian.
+The [`data_generator`](idun_mock/data_generator) generates random device packets.
+The [`client`](idun_mock/client) is a command-line utility that sends them to the Guardian API.
+
+## Features
+
+- Mock device data generator
+- Send mocked device data to a Cloud endpoint
+
+## Sending mock data to the cloud API (client)
+
+You can start sending mock data to the cloud API by installing the poetry project and running the `idun_mock.client` module:
+
+```
+# at this directory
+poetry install
+poetry run python -m idun_mock.client -w <websocket_url>
+```
+
+The websocket URL is where the data should be sent. Change the generator parameters according to what scenario you want to simulate (look in [`idun_mock/client/__main__.py`](idun_mock/client/__main__.py)).
+
+## Troubleshooting: sending mock data to Kinesis, bypassing the API
+
+If you have IDUN AWS credentials, you can also send mock data directly to Kinesis, bypassing the API:
+
+```
+# Set these environment variables:
+#   AWS_ACCESS_KEY_ID
+#   AWS_SECRET_ACCESS_KEY
+#   AWS_DEFAULT_REGION
+
+poetry run python -m idun_mock.client -k <kinesis_stream_name> [-e <aws_endpoint>]
+```
+
