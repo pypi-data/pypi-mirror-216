@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+CliRenderer/__init__.py
+CliRenderer/__main__.py
+CliRenderer/chartools.py
+CliRenderer/colorer.py
+CliRenderer/core.py
+CliRenderer.egg-info/PKG-INFO
+CliRenderer.egg-info/SOURCES.txt
+CliRenderer.egg-info/dependency_links.txt
+CliRenderer.egg-info/entry_points.txt
+CliRenderer.egg-info/requires.txt
+CliRenderer.egg-info/top_level.txt
+test/test-speed.py
+test/test.py
