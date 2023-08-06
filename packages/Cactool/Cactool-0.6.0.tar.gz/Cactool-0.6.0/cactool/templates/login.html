@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Cactool - Login</title>
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+        <link href="/static/css/bootstrap-icons.css" rel="stylesheet" />
+        <link href="/static/css/bootstrap.css" rel="stylesheet" />
+        <link href="/static/css/login.css" rel=stylesheet />
+    </head>
+    <body>
+        {% include 'navigation.html' %}
+        {% include 'flash.html' %}
+        <div class="main-content login">
+            <div class=login-container>
+                <h1>Log in</h1>
+                <div class=login-content>
+                    Please log in to access Cactool. If you do not have an account, you can <a href=#>request one.</a>
+                    <br><br>
+                    You can install your own Cactool instance. See the <a href=#>installation page in the documentation.</a>
+                    <form action="/login" method="post" class=login-form>
+                        <h3>Username</h3>
+                        <input name=username  class=form-control />
+                        <br>
+                        <h3>Password</h3>
+                        <input name=password type=password class=form-control />
+                        <br>
+                        <input type="submit" class="btn btn-dark form-control" value="Log in"/>
+                    </form>
+                </div>
+                <div class=login-links>
+                    <a href="#">Request access</a>
+                    <a href="#">Recover password</a>
+                    <a href="#">Data policy</a>
+                </ul>
+            </div>
+        </div>
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

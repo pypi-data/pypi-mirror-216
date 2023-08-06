@@ -1,0 +1,38 @@
+{% from "macros.html" import show_dataset %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Cactool - Datasets</title>
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+        <link href="/static/css/bootstrap-icons.css" rel="stylesheet" />
+        <link href="/static/css/bootstrap.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            {% include 'navigation.html' %}
+            {% include 'flash.html' %}
+            <!-- Page Content-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="text-center mb-5">
+                        <h1 class="fw-bolder">Your datasets</h1>
+                    </div>
+                    <div class="row gx-5">
+                            <div class="accordion mb-5" id="accordionExample">
+                                {% for dataset in datasets %}
+                                    {{ show_dataset(dataset, current_user) }}
+                                {% endfor %}
+                            </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
