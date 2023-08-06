@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: collapse-gtdb-tree
+Version: 0.0.3
+Summary: A simple tool to collapse the reference GTDB tree at a scpecific rank
+Home-page: https://github.com/genomewalker/collapse-gtdb-tree
+Author: Antonio Fernandez-Guerra
+Author-email: antonio@metagenomics.eu
+License: MIT
+Keywords: collapse-gtdb-tree,GTDB
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+Requires-Dist: pandas (>=1.4.2)
+Requires-Dist: ete3 (>=3.1.2)
+
+UNKNOWN
+

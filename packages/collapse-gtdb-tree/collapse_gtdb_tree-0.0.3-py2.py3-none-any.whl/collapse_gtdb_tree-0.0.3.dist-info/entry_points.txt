@@ -1,0 +1,3 @@
+[console_scripts]
+collapseGTDB = collapse_gtdb_tree.__main__:main
+
