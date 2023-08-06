@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+pyproject.toml
+docs/Makefile
+docs/conf.py
+docs/index.rst
+docs/make.bat
+src/__init__.py
+src/scregistry.py
+src/scregistry.egg-info/PKG-INFO
+src/scregistry.egg-info/SOURCES.txt
+src/scregistry.egg-info/dependency_links.txt
+src/scregistry.egg-info/requires.txt
+src/scregistry.egg-info/top_level.txt
+tests/test_catalog_registry.py
+tests/test_entire_catalog_search.py
+tests/test_file_registry.py
