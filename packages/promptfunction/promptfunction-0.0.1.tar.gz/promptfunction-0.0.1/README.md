@@ -1,0 +1,1 @@
+Integrated organization Prompt function structure. Functional AI lib developed based on langchain
