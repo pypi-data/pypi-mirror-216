@@ -1,0 +1,16 @@
+AUTHORS.md
+LICENSE
+README.md
+pyproject.toml
+setup.py
+django_query_counter.egg-info/PKG-INFO
+django_query_counter.egg-info/SOURCES.txt
+django_query_counter.egg-info/dependency_links.txt
+django_query_counter.egg-info/requires.txt
+django_query_counter.egg-info/top_level.txt
+query_counter/__init__.py
+query_counter/apps.py
+query_counter/decorators.py
+query_counter/middleware.py
+query_counter/settings.py
+tests/test_main.py
