@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: django-subscriptions-rt
+Version: 0.0.1
+Summary: Subscriptions and payments for your django app
+Home-page: https://github.com/reef-technologies/django-subscriptions-rt
+Author: Aleksandr Goncharov
+Author-email: aleksandr.goncharov@reef.pl
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: django (>=3.0)
+Requires-Dist: django-money (~=2.1.1)
+Requires-Dist: more-itertools (~=8.12.0)
+Requires-Dist: python-dateutil (~=2.8.2)
+
+# Django-subscriptions-rt: subscriptions and payments for your Django app
+
+# Features
+
+TODO
+
+# Usage
+
+## Subscriptions
+
+\
+
+
+```
+|--------subscription-------------------------------------------->
+start             (subscription duration)                end or inf
+#
+|-----------------------------|---------------------------|------>
+charge   (charge period)    charge                      charge
+#
+|------------------------------x
+quota   (quota lifetime)       quota burned
+#
+(quota recharge period) |------------------------------x
+#
+(quota recharge period) (quota recharge period) |----------------->
+```
+
+# Cases
+
+# Cache
+
+# Humanize
+
+
