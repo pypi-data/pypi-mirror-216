@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/jcci/__init__.py
+src/jcci/java_analyzer.py
+src/jcci/jcci.py
+src/jcci.egg-info/PKG-INFO
+src/jcci.egg-info/SOURCES.txt
+src/jcci.egg-info/dependency_links.txt
+src/jcci.egg-info/requires.txt
+src/jcci.egg-info/top_level.txt
