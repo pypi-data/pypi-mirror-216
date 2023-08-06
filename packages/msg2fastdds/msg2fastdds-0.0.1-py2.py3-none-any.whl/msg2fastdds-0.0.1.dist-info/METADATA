@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: msg2fastdds
+Version: 0.0.1
+Summary: msg2fastdds
+Author-email: Rin Iwai <rin@eyrin.jp>
+License-File: LICENSE
+Requires-Dist: catkin-pkg
+Requires-Dist: empy
+Requires-Dist: pyyaml
+Description-Content-Type: text/markdown
+
+# msg2idl
+
+```bash
+pip install msg2fastdds
+```
+
+## Docker
+
+```bash
+docker build -t msg2fastdds .
+docker run --rm -v $PWD/package_dir:/msg2fastdds/package_dir -v $PWD/output_dir:/msg2fastdds/output_dir msg2fastdds
+```
