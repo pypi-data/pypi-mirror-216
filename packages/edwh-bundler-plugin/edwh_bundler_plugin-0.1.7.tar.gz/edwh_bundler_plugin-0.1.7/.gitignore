@@ -1,0 +1,6 @@
+.idea/
+venv/
+*.pyc
+dist/
+.cdn_cache/
+static/
