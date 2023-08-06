@@ -1,0 +1,48 @@
+name: reusable_testing
+
+on:
+  workflow_call:
+    inputs:
+      artifact_name:
+        description: The name of the tarantool build artifact
+        default: ubuntu-focal
+        required: false
+        type: string
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone the tarantool-python connector
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository_owner }}/tarantool-python
+
+      - name: Download the tarantool build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.artifact_name }}
+
+      - name: Install tarantool
+        # Now we're lucky: all dependencies are already installed. Check package
+        # dependencies when migrating to other OS version.
+        run: sudo dpkg -i tarantool*.deb
+
+      - name: Setup python3 for tests
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install connector requirements
+        run: pip3 install -r requirements.txt
+
+      - name: Install test requirements
+        run: pip3 install -r requirements-test.txt
+
+      - name: Install the crud module for testing purposes
+        run: |
+          curl -L https://tarantool.io/release/2/installer.sh | bash
+          sudo apt install -y tt
+          tt rocks install crud
+
+      - run: make test

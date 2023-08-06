@@ -1,0 +1,812 @@
+python3-tarantool (1.1.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release introduces API to request server protocol version and
+    feature, as well as introduce decimal bugfix.
+
+    ## Breaking changes
+
+    - Drop `msgpack-python` support. (Package not supported since 2019.)
+      Use `msgpack` instead.
+
+    ## Added
+    - Allow to require specific server protocol version and features (#267).
+
+    ## Fixed
+    - Parsing of E-notation Tarantool decimals with positive exponent (PR #298).
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Fri, 30 Jun 2023 10:00:00 +0300
+
+python3-tarantool (1.0.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release introduces several minor behavior changes
+    to make API more consistent.
+
+    Starting from this release, connector no longer depends on `pandas`.
+
+    ## Breaking changes
+
+    - Allow only named `on_push` and `on_push_ctx` for `insert` and `replace`.
+    - `tarantool.Datetime` `__repr__` has been changed.
+    - `tarantool.Datetime` input arguments are validated with `datetime.datetime` rules.
+    - `tarantool.Datetime` is no longer expected to throw `pandas.Timestamp`
+      exceptions. `datetime.datetime` exceptions will be thrown instead of them.
+    - Drop the support of `__eq__` operator of `tarantool.Datetime` for `pandas.Timestamp`.
+    - Remove `join` and `subscribe` connection methods.
+
+    ## Changes
+
+    - Migrate to built-in `Warning` instead of a custom one.
+    - Migrate to built-in `RecursionError` instead of a custom one.
+    - Collect full exception traceback.
+    - Package no longer depends on `pandas` (#290).
+
+    ## Infrastructure
+
+    - Lint the code with `pylint`, `flake8` and `codespell`.
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Mon, 17 Apr 2023 13:00:00 +0300
+
+python3-tarantool (0.12.1-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release introduces several bugfixes and behavior improvements.
+
+    ## Breaking changes
+
+    This release should not break any existing behavior.
+
+    ## Bugfixes
+    - Discovery iproto features only for Tarantools since version 2.10.0 (#283).
+    - Schema fetch for spaces with foreign keys (#282).
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Tue, 28 Feb 2023 10:20:48 +0300
+
+python3-tarantool (0.12.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release introduces the support of `fetch_schema` connection
+    option to disable schema fetch and various fixes.
+
+    ## Breaking changes
+
+    This release should not break any existing behavior.
+
+    ## New features
+    - `fetch_schema` parameter for a connection (#219).
+
+    ## Bugfixes
+    - Error code on socket error (#279).
+
+    ## Thanks
+    We want to thank @bekhzod91 for a bugfix contribution.
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Mon, 13 Feb 2023 11:43:30 +0300
+
+python3-tarantool (0.11.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release introduces the support of crud module API, encoding and
+    decoding customization and various security features for Tarantool EE.
+
+    ## Breaking changes
+
+    This release should not break any existing behavior.
+
+    ## New features
+    - Support custom packer and unpacker factories (#191).
+    - Support [crud module](https://github.com/tarantool/crud) native API
+      (#205).
+    - Support `ssl_password` and `ssl_password_file` options
+      to decrypt private SSL key file (#224).
+    - Support specifying authentication method with `auth_type`
+      and Tarantool EE `pap-sha256` authentication method (#269).
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Sat, 31 Dec 2022 02:09:03 +0300
+
+python3-tarantool (0.10.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release introduces the support of extention types
+    (decimal, uuid, error, datetime, interval) in MessagePack,
+    various IProto features support (feature discovery and push
+    protocol) and major infrastructure updates (scm version
+    computation, full documentation for external and internal
+    API both as code docstrings and readthedocs HTML, deb and
+    RPM packages, and everything is processed with CI/CD pipelines).
+
+    ## Breaking changes
+
+    This release should not break any existing behavior.
+
+    ## New features
+
+    - Backport ConnectionPool support for Python 3.6 (PR #245).
+    - Support iproto feature discovery (#206).
+    - Decimal type support (#203).
+    - UUID type support (#202).
+    - Support extra information for iproto errors (#232).
+    - Error extension type support (#232).
+    - Datetime type support and tarantool.Datetime type (#204, PR #252).
+
+      Tarantool datetime objects are decoded to `tarantool.Datetime`
+      type. `tarantool.Datetime` may be encoded to Tarantool datetime
+      objects.
+
+      You can create `tarantool.Datetime` objects either from
+      MessagePack data or by using the same API as in Tarantool:
+
+      ```python
+      dt1 = tarantool.Datetime(year=2022, month=8, day=31,
+                               hour=18, minute=7, sec=54,
+                               nsec=308543321)
+
+      dt2 = tarantool.Datetime(timestamp=1661969274)
+
+      dt3 = tarantool.Datetime(timestamp=1661969274, nsec=308543321)
+      ```
+
+      `tarantool.Datetime` exposes `year`, `month`, `day`, `hour`,
+      `minute`, `sec`, `nsec`, `timestamp` and `value` (integer epoch time
+      with nanoseconds precision) properties if you need to convert
+      `tarantool.Datetime` to any other kind of datetime object:
+
+      ```python
+      pdt = pandas.Timestamp(year=dt.year, month=dt.month, day=dt.day,
+                             hour=dt.hour, minute=dt.minute, second=dt.sec,
+                             microsecond=(dt.nsec // 1000),
+                             nanosecond=(dt.nsec % 1000))
+      ```
+
+      Use `tzoffset` parameter to set up offset timezone:
+
+      ```python
+      dt = tarantool.Datetime(year=2022, month=8, day=31,
+                              hour=18, minute=7, sec=54,
+                              nsec=308543321, tzoffset=180)
+      ```
+
+      You may use `tzoffset` property to get timezone offset of a datetime
+      object.
+
+
+      Use `tz` parameter to set up timezone name:
+
+      ```python
+      dt = tarantool.Datetime(year=2022, month=8, day=31,
+                              hour=18, minute=7, sec=54,
+                              nsec=308543321, tz='Europe/Moscow')
+      ```
+
+      If both `tz` and `tzoffset` is specified, `tz` is used.
+
+      You may use `tz` property to get timezone name of a datetime object.
+
+      `timestamp_since_utc_epoch` is a parameter to set timestamp
+      convertion behavior for timezone-aware datetimes.
+
+      If ``False`` (default), behaves similar to Tarantool `datetime.new()`:
+
+      ```python
+      >>> dt = tarantool.Datetime(timestamp=1640995200, timestamp_since_utc_epoch=False)
+      >>> dt
+      datetime: Timestamp('2022-01-01 00:00:00'), tz: ""
+      >>> dt.timestamp
+      1640995200.0
+      >>> dt = tarantool.Datetime(timestamp=1640995200, tz='Europe/Moscow',
+      ...                         timestamp_since_utc_epoch=False)
+      >>> dt
+      datetime: Timestamp('2022-01-01 00:00:00+0300', tz='Europe/Moscow'), tz: "Europe/Moscow"
+      >>> dt.timestamp
+      1640984400.0
+      ```
+
+      Thus, if ``False``, datetime is computed from timestamp
+      since epoch and then timezone is applied without any
+      convertion. In that case, `dt.timestamp` won't be equal to
+      initialization `timestamp` for all timezones with non-zero offset.
+
+      If ``True``, behaves similar to `pandas.Timestamp`:
+
+      ```python
+      >>> dt = tarantool.Datetime(timestamp=1640995200, timestamp_since_utc_epoch=True)
+      >>> dt
+      datetime: Timestamp('2022-01-01 00:00:00'), tz: ""
+      >>> dt.timestamp
+      1640995200.0
+      >>> dt = tarantool.Datetime(timestamp=1640995200, tz='Europe/Moscow',
+      ...                         timestamp_since_utc_epoch=True)
+      >>> dt
+      datetime: Timestamp('2022-01-01 03:00:00+0300', tz='Europe/Moscow'), tz: "Europe/Moscow"
+      >>> dt.timestamp
+      1640995200.0
+      ```
+
+      Thus, if ``True``, datetime is computed in a way that `dt.timestamp` will
+      always be equal to initialization `timestamp`.
+
+    - Datetime interval type support and tarantool.Interval type (#229).
+
+      Tarantool datetime interval objects are decoded to `tarantool.Interval`
+      type. `tarantool.Interval` may be encoded to Tarantool interval
+      objects.
+
+      You can create `tarantool.Interval` objects either from
+      MessagePack data or by using the same API as in Tarantool:
+
+      ```python
+      di = tarantool.Interval(year=-1, month=2, day=3,
+                              hour=4, minute=-5, sec=6,
+                              nsec=308543321,
+                              adjust=tarantool.IntervalAdjust.NONE)
+      ```
+
+      Its attributes (same as in init API) are exposed, so you can
+      use them if needed.
+
+    - Datetime interval arithmetic support (#229).
+
+      Valid operations:
+      - `tarantool.Datetime` + `tarantool.Interval` = `tarantool.Datetime`
+      - `tarantool.Datetime` - `tarantool.Interval` = `tarantool.Datetime`
+      - `tarantool.Datetime` - `tarantool.Datetime` = `tarantool.Interval`
+      - `tarantool.Interval` + `tarantool.Interval` = `tarantool.Interval`
+      - `tarantool.Interval` - `tarantool.Interval` = `tarantool.Interval`
+
+      Since `tarantool.Interval` could contain `month` and `year` fields
+      and such operations could be ambiguous, you can use `adjust` field
+      to tune the logic. The behavior is the same as in Tarantool, see
+      [Interval arithmetic RFC](https://github.com/tarantool/tarantool/wiki/Datetime-Internals#interval-arithmetic).
+
+      - `tarantool.IntervalAdjust.NONE` -- only truncation toward the end of
+        month performed (default mode).
+
+        ```python
+        >>> dt = tarantool.Datetime(year=2022, month=3, day=31)
+        datetime: Timestamp('2022-03-31 00:00:00'), tz: ""
+        >>> di = tarantool.Interval(month=1, adjust=tarantool.IntervalAdjust.NONE)
+        >>> dt + di
+        datetime: Timestamp('2022-04-30 00:00:00'), tz: ""
+        ```
+
+      - `tarantool.IntervalAdjust.EXCESS` -- overflow mode, without any snap
+        or truncation to the end of month, straight addition of days in month,
+        stopping over month boundaries if there is less number of days.
+
+        ```python
+        >>> dt = tarantool.Datetime(year=2022, month=1, day=31)
+        datetime: Timestamp('2022-01-31 00:00:00'), tz: ""
+        >>> di = tarantool.Interval(month=1, adjust=tarantool.IntervalAdjust.EXCESS)
+        >>> dt + di
+        datetime: Timestamp('2022-03-02 00:00:00'), tz: ""
+        ```
+
+      - `tarantool.IntervalAdjust.LAST` -- mode when day snaps to the end of month,
+        if happens.
+
+        ```python
+        >>> dt = tarantool.Datetime(year=2022, month=2, day=28)
+        datetime: Timestamp('2022-02-28 00:00:00'), tz: ""
+        >>> di = tarantool.Interval(month=1, adjust=tarantool.IntervalAdjust.LAST)
+        >>> dt + di
+        datetime: Timestamp('2022-03-31 00:00:00'), tz: ""
+        ```
+
+    - Full documentation of internal and external API (#67).
+
+    ## Bugfixes
+
+    - Allow any MessagePack supported type as a request key (#240).
+    - Make connection close idempotent (#250).
+
+    ## Infrastructure
+
+    - Use git version to set package version (#238).
+    - Test pip install from branch (PR #241).
+    - Pack and publish pip, RPM and deb packages with GitHub Actions (#164, #198).
+    - Publish on readthedocs with CI/CD (including PRs) (#67).
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Wed, 09 Nov 2022 13:14:20 +0300
+
+tarantool-python (0.9.0-0) unstable; urgency=medium
+    ## Overview
+
+    This release features SSL support.
+
+    To use encrypted connection with Tarantool Enterprise Edition
+    instance, pass "ssl" `transport` parameter on connect:
+
+    ```python
+    con = tarantool.Connection(
+        host, port,
+        user=user,
+        password=pass,
+        transport="ssl")
+    ```
+
+    To verify the server, set client trusted certificate
+    authorities (CA) file with `ssl_ca_file` parameter:
+
+    ```python
+    con = tarantool.Connection(
+        host, port,
+        user=user,
+        password=password,
+        transport="ssl",
+        ssl_ca_file=client_ca_file)
+    ```
+   
+    If the server authenticates clients using certificates issued by
+    given CA, you must provide private SSL key file with `ssl_key_file`
+    parameter and SSL certificate file with `ssl_cert_file` parameter.
+    Otherwise, these parameters are optional.
+
+    ```python
+    con = tarantool.Connection(
+        host, port,
+        user=user,
+        password=password,
+        transport="ssl",
+        ssl_key_file=client_key_file,
+        ssl_cert_file=client_cert_file)
+    ```
+
+    To set SSL ciphers, set them with `ssl_ciphers` parameter as
+    a colon-separated (:) string:
+
+    ```python
+    con = tarantool.Connection(
+        host, port,
+        user=user,
+        password=password,
+        transport="ssl",
+        ssl_ciphers=client_ssl_ciphers)
+    ```
+
+    ConnectionPool and MeshConnection also support these parameters.
+
+    ```python
+    mesh = tarantool.MeshConnection(
+        addrs={
+            "host": host,
+            "post": port,
+            "transport": "ssl",
+            "ssl_key_file": client_key_file,
+            "ssl_cert_file": client_cert_file,
+            "ssl_ca_file": client_ca_file,
+            "ssl_ciphers": client_ssl_ciphers,
+        },
+        user=user,
+        password=password)
+    ```
+
+    ```python
+    pool = tarantool.ConnectionPool(
+        addrs={
+            "host": host,
+            "post": port,
+            "transport": "ssl",
+            "ssl_key_file": client_key_file,
+            "ssl_cert_file": client_cert_file,
+            "ssl_ca_file": client_ca_file,
+            "ssl_ciphers": client_ssl_ciphers,
+        },
+        user=user,
+        password=password)
+    ```
+
+    See [Tarantool Enterprise Edition manual](https://www.tarantool.io/en/enterprise_doc/security/#enterprise-iproto-encryption)
+    for details.
+
+    ## Breaking changes
+
+    There are no breaking changes in the release.
+
+    ## New features
+
+    * SSL support (PR #220, #217).
+
+    ## Testing
+
+    * Tarantool Enterprise testing workflow on GitHub actions (PR #220).
+
+ -- Georgy Moiseev <georgy.moiseev@tarantool.org>  Mon, 20 Jun 2022 18:00:00 +0300
+
+tarantool-python (0.8.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    The most interesting feature offered by this release is connection pool with
+    automatic master discovery support.
+
+    Consider a simple example.
+
+    In tarantool:
+
+    ```lua
+    #!/usr/bin/env tarantool
+
+    box.cfg({listen = os.getenv('LISTEN') or 3301})
+    box.once('init', function()
+        -- Connection pool calls box.info() to monitor tarantool
+        -- instances.
+        box.schema.func.create('box.info')
+        box.schema.user.grant('guest', 'execute', 'function', 'box.info')
+
+        box.schema.space.create('s')
+        box.space.s:create_index('pk')
+        box.schema.user.grant('guest', 'read,write', 'space', 's')
+
+        box.schema.func.create('foo')
+        box.schema.user.grant('guest', 'execute', 'function', 'foo')
+    end)
+
+    -- Do a write request.
+    local function foo(tuple)
+        box.space.s:replace(tuple)
+    end
+    _G.foo = foo
+    ```
+
+    In Python:
+
+    ```python
+    #!/usr/bin/env python
+
+    import tarantool
+
+    # Create a connection pool.
+    pool = tarantool.ConnectionPool(addrs=[
+        {'host': '127.0.0.1', 'port': 3301},
+        {'host': '127.0.0.1', 'port': 3302},
+    ])
+
+    # Use the space API.
+    pool.replace('s', [1, 2, 3])
+    tuple = pool.select('s', [1])
+
+    # Call a function.
+    pool.call('foo', [[1, 2, 3]], mode=tarantool.Mode.RW)
+    ```
+
+    This release also provides more natural mapping of msgpack string/binary types
+    into Python string/binary types. Now `string` in tarantool is marshalled
+    from/to `str` in Python and `varbinary` in tarantool` is marshalled from/to
+    `bytes` in Python. See details below.
+
+    ## Breaking changes
+
+    This release keeps existing APIs the same, but there are important
+    string/binary marshalling changes and Python 2 tear down. We expect that most
+    of existing code will not require any changes, but, please, take a look on the
+    information below.
+
+    `MeshConnection` is now considered as deprecated in favor of the newly
+    introduced `ConnectionPool`. We will remove `MeshConnection` in one of future
+    releases.
+
+    Python 2 support was dropped. We test the connector since Python 3.5 to 3.10.
+    The new connection pool requires Python 3.7 or newer.
+
+    Msgpack string/binary types mapping from/to Python types was changed. The
+    behaviour is the following.
+
+    **tarantool-python 0.7.1 and older:**
+
+    * `encoding='utf-8'` (default)
+
+      | Python 3 | -> | Tarantool          | -> | Python 3 |
+      |----------|----|--------------------|----|----------|
+      | str      | -> | mp_str (string)    | -> | str      |
+      | bytes    | -> | mp_str (string)    | -> | str      |
+      |          |    | mp_bin (varbinary) | -> | bytes    |
+
+    * `encoding=None`
+
+      | Python 3 | -> | Tarantool          | -> | Python 3 |
+      |----------|----|--------------------|----|----------|
+      | bytes    | -> | mp_str (string)    | -> | bytes    |
+      | str      | -> | mp_str (string)    | -> | bytes    |
+      |          |    | mp_bin (varbinary) | -> | bytes    |
+
+    **tarantool-python 0.8.0 and newer:**
+
+    * `encoding='utf-8'` (default)
+
+      | Python 3 | -> | Tarantool          | -> | Python 3 |
+      |----------|----|--------------------|----|----------|
+      | str      | -> | mp_str (string)    | -> | str      |
+      | bytes    | -> | mp_bin (varbinary) | -> | bytes    |
+
+    * `encoding=None`
+
+      | Python 3 | -> | Tarantool          | -> | Python 3 |
+      |----------|----|--------------------|----|----------|
+      | bytes    | -> | mp_str (string)    | -> | bytes    |
+      | str      | -> | mp_str (string)    | -> | bytes    |
+      |          |    | mp_bin (varbinary) | -> | bytes    |
+
+    If you use `varbinary` for storing binary data (and `string` for ASCII or
+    UTF-8 texts), default `encoding='utf-8'` mode should work fine.
+
+    If binary data is stored in `string` fields, consider `encoding=None`
+    parameter.
+
+    ## New features
+
+    - Connection pool with master discovery (#196, PR #207).
+
+      `ConnectionPool` is supported only for Python 3.7 or newer.
+
+      Authenticated user must be able to call `box.info` on instances.
+
+      `ConnectionPool` updates information about each server state (RO/RW) on
+      initial connect and then asynchronously in separate threads. Application
+      retries must be written considering the asynchronous nature of cluster state
+      refresh. User does not need to use any synchronization mechanisms in
+      requests, it's all handled with `ConnectionPool` methods.
+
+      `ConnectionPool` API is the same as a plain Connection API. On each request,
+      a connection is chosen to execute this request. A connection is chosen based
+      on a request mode:
+
+      * `Mode.ANY` chooses any instance.
+      * `Mode.RW` chooses an RW instance.
+      * `Mode.RO` chooses an RO instance.
+      * `Mode.PREFER_RW` chooses an RW instance, if possible, RO instance
+        otherwise.
+      * `Mode.PREFER_RO` chooses an RO instance, if possible, RW instance
+        otherwise.
+
+      `insert`, `replace`, `delete`, `upsert`, `update` use RW mode by default.
+
+      `select` uses ANY by default.
+
+      `call`, `eval`, `execute` and `ping` require to set the mode explicitly.
+    - **[Breaking]** `varbinary` field type is now fully supported and does not
+      fail on decoding of non-UTF-8 data (#105, PR #211).
+
+      It requires incompatible binary/string marshalling changes. See the
+      'Breaking changes' section for details.
+    - Support a value of `bytes` type as a key for `delete`, `update`, `select`
+      (#105, PR #211).
+
+      Now `bytes` can be used as keys in all methods.
+
+    ## Bugfixes
+
+    - Hold string representation of a response object (PR #186).
+
+      We want to keep it the same for different Python versions. It sometimes
+      useful for writing tests using the connector.
+    - Unix sockets in `MeshConnection` are now supported (#111, PR #189).
+
+      It was supported in 0.6.5, but broken then in 0.6.6.
+
+    ## Testing
+
+    - Migrated CI to GitHub Actions (#182, PR #213, PR #216).
+    - Added a workflow for integration testing of tarantool's changes against this
+      connector (PR #192).
+    - Dropped test-run submodule (#111, PR #189).
+    - Run SQL tests only on tarantool 2.X (#194, PR #195).
+
+    ## Other
+
+    - Fixed formatting and wording in README (PR #215).
+    - Clarified license of the project (BSD-2-Clause) (#197, PR #210).
+
+ -- Alexander Turenko <alexander.turenko@tarantool.org>  Fri, 29 Apr 2022 22:30:00 +0300
+
+tarantool-python (0.7.1-0) unstable; urgency=medium
+
+    ## Overview
+
+    It is pure technical release. It fixes the dependency on the msgpack
+    library.
+
+ -- Alexander Turenko <alexander.turenko@tarantool.org>  Mon, 28 Dec 2020 04:01:30 +0300
+
+tarantool-python (0.7.0-0) unstable; urgency=medium
+
+    ## Overview
+
+    This release offers two major features: SQL support and implementation
+    of the Database API (PEP-0249).
+
+    Simple example of using SQL:
+
+     | #!/usr/bin/env python
+     |
+     | # In tarantool console:
+     | #
+     | # tarantool> box.cfg{listen = 'localhost:3301'}
+     | # tarantool> box.schema.user.create('me', {password = 'secret'})
+     | # tarantool> box.schema.user.grant('me','read,write,execute,create,drop,alter','universe')
+     |
+     | from pprint import pprint
+     | import tarantool
+     |
+     | connection = tarantool.connect(host='localhost', port=3301, user='me', password='secret')
+     | res = connection.execute('SELECT :foo, :bar', {'foo': 5, 'bar': 6})
+     | pprint(res)
+     |
+     | # Those properties are None for SELECT, shown for the reference.
+     | print('autoincrement_ids: {}'.format(res.autoincrement_ids))
+     | print('affected_row_count: {}'.format(res.affected_row_count))
+
+    See the similar example implemented using the Database API on the
+    [wiki page][1].
+
+    The Database API becomes the base for the [django-tarantool][2] backend.
+
+    Aside of those changes, the release provides compatibility with the new
+    version of the msgpack library (1.0.0) and fixes several tricky cases
+    around `encoding=None` option.
+
+    [1]: https://github.com/tarantool/tarantool-python/wiki/PEP-249-Database-API
+    [2]: https://pypi.org/project/django-tarantool/
+
+    ## Breaking changes
+
+    This release should not break existing code.
+
+    ## New features
+
+    * Support msgpack 1.0.0 (#155, PR #173).
+    * Added SQL support (`<connection>.execute()` method) (#159, PR #161).
+    * Allow to receive a Tarantool tuple as a Python tuple, not a list, with
+      `use_list=False` connection option (#166, PR #161).
+    * Support the Database API (PEP-0249) (PR #161).
+
+    ## Bugfixes
+
+    * schema: support encoding=None connections (PR #172).
+
+    ## Other
+
+    Infrastructure, CI / CD, testing, readme, pure development changes,
+    which do not affect an end user directly.
+
+    Note: testing changes that were introduced as part of a feature / a
+    bugfix are not listed here.
+
+    * deployment: fixed README.rst and setup.py points, where `twine` or
+      pypi.org complains (PR #147).
+    * readme: fixed links to tarantool documentation (PR #151).
+    * test: eliminate deprecated box.cfg options (8ff9a3f9, bd37703c).
+    * gitignore: add .idea (e49f5f05).
+    * ci: dropped Ubuntu Disco, which reaches EOL (21e3ebf6).
+    * ci: added Fedora 30, Ubuntu Eoan and Focal (PR #165).
+    * ci: deploy to 2_3 and 2_4 repositories (PR #165).
+    * ci: worked around PyYAML installation problem on AppVeyor (PR #165).
+    * ci: verify on Python 3.8 (PR #161).
+    * test: fixed luacheck warnings (#178, PR #179).
+    * readme: refreshed the description of tarantool features (PR #180).
+    * test: ensure compatibility with Python 3 for some testing /
+      documentation building code (PR #181).
+
+ -- Alexander Turenko <alexander.turenko@tarantool.org>  Mon, 28 Dec 2020 03:11:10 +0300
+
+tarantool-python (0.6.6-0) unstable; urgency=medium
+
+    ## Breaking changes
+
+    This release should not break existing code.
+
+    ## New features
+
+    * Added ability to configure a MeshConnection object to periodically
+      update instances list from tarantool (#134).
+
+    ## Bugfixes
+
+    * Fixed the deprecation warning due to deprecated way to import abstract
+      collections.
+    * Fixed SchemaReloadException raising after reconnection with non-actual
+      schema id (#141).
+    * Fixed a string representation of a Response object without data (say,
+      authentication response) (#139).
+
+ -- Alexander Turenko <alexander.turenko@tarantool.org>  Fri, 14 Jun 2019 23:14:07 +0300
+
+tarantool-python (0.6.5-0) unstable; urgency=medium
+
+    ## Breaking changes
+
+    This release should not break existing code.
+
+    ## New features
+
+    * Added MeshConnection that allows to switch between nodes from a user
+      provided list if a current node is down using round-robin strategy
+      (#106).
+    * Added connection_timeout parameter to Connection (#115).
+
+    ## Bugfixes
+
+    * Fixed auto-reconnection in Connection.
+    * Eliminated deprecation warnings on Python 3 (#114).
+    * Add TCP_NODEPLAY back (it was removed in 0.6.4) (#127).
+
+ -- Alexander Turenko <alexander.turenko@tarantool.org>  Tue, 19 Mar 2019 03:40:01 +0300
+
+tarantool-python (0.6.4-0) unstable; urgency=medium
+
+    Release for PyPI which made Windows work again
+
+ -- Alexey Gadzhiev <alexey.gadzhiev@corp.mail.ru>  Tue, 11 Apr 2018 17:23:33 +0300
+
+tarantool-python (0.6.3-0) unstable; urgency=medium
+
+    Release for PyPI with fix for 1.10.x Tarantool version
+
+ -- Alexey Gadzhiev <alexey.gadzhiev@corp.mail.ru>  Tue, 3 Apr 2018 16:57:33 +0300
+
+tarantool-python (0.6.2-0) unstable; urgency=medium
+
+    Release for PyPI with new schema type
+
+ -- Alexey Gadzhiev <alexey.gadzhiev@corp.mail.ru>  Fri, 30 Mar 2018 16:57:33 +0300
+
+tarantool-python (0.6.1-0) unstable; urgency=medium
+
+    Release for PyPI with some incompatible changes:
+
+    * `str`/`repr` of tuples now shows not yaml, but `json` (incompat)
+    * supports now CALL 1.7.1 by default (incompat)
+    * added support for unix sockets
+    * getting rid of six dependency
+    * packages for centos 6/7 should now be ok
+
+ -- Eugine Blikh <bigbes@gmail.com>  Mon, 23 May 2017 20:57:33 +0300
+
+tarantool-python (0.5.5-0) unstable; urgency=medium
+
+    Release for PyPI
+
+ -- Eugine Blikh <bigbes@gmail.com>  Mon, 18 May 2017 23:23:33 +0300
+
+tarantool-python (0.5.4-0) unstable; urgency=medium
+
+    Release for PyPO
+
+ -- Eugine Blikh <bigbes@gmail.com>  Mon, 09 Feb 2016 20:19:33 +0300
+
+tarantool-python (0.5.3-0) unstable; urgency=medium
+
+  * Adding support for python3, again.
+  * Update docstrings for tarantool.Connection and tarnatool.Space mehods
+  * Modify tarantool.Space methods for simplicity
+  * Add support for Upsert command
+  * Fix some errors
+  * Fix compatibility when migrating from 1.6.4 to 1.6.7 or more
+
+ -- Eugine Blikh <bigbes@gmail.com>  Mon, 09 Feb 2016 19:17:33 +0300
+
+tarantool-python (0.5.2-1) unstable; urgency=medium
+
+  * Fix minor bugs
+
+ -- Eugine Blikh <bigbes@gmail.com>  Mon, 18 Jan 2016 13:46:33 +0300
+
+tarantool-python (0.5.1-1) unstable; urgency=medium
+
+  * Fix minor bugs
+  * Add eval tarantool command
+  * Add autogenerated sync to package header
+
+ -- Eugine Blikh <bigbes@gmail.com>  Wed, 24 Mar 2015 13:46:33 +0300
+
+tarantool-python (0.5.0-1) unstable; urgency=low
+
+  * source package automatically created by stdeb 0.6.0+git
+
+ -- Konstantin Cherkasoff <k.cherkasoff@gmail.com>  Thu, 12 Feb 2015 13:46:33 +0300
