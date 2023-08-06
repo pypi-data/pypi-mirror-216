@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "job-pool"
+version = "0.1.0"
+description = "Enhanced Job Pool for Python Multiprocessing"
+authors = ["Matthew The <matthew.the@tum.de>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{include = "job_pool"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
