@@ -1,0 +1,3 @@
+[console_scripts]
+pelican-math-svg=pelican.plugins.math_svg.main:app
+
