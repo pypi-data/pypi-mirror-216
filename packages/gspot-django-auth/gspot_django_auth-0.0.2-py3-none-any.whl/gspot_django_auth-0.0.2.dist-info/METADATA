@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: gspot-django-auth
+Version: 0.0.2
+Summary: A Django app for auth.
+Home-page: https://github.com/DJWOMS/GSpot
+Author: Kosenko Viktor
+Author-email: oxpaoff <kosenkoviktor11@gmail.com>
+License: MIT License
+Project-URL: Homepage, https://github.com/oxpaoff/gspot_auth
+Project-URL: Bug Tracker, https://github.com/oxpaoff/gspot_auth/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: asgiref (==3.7.2)
+Requires-Dist: async-timeout (==4.0.2)
+Requires-Dist: Django (==4.2.2)
+Requires-Dist: djangorestframework (==3.14.0)
+Requires-Dist: PyJWT (==2.7.0)
+Requires-Dist: pytz (==2023.3)
+Requires-Dist: redis (==4.6.0)
+Requires-Dist: sqlparse (==0.4.4)
+Requires-Dist: typing-extensions (==4.6.3)
+
+# Overview
+
+GSpot Auth is a Django app for GSpot project https://github.com/DJWOMS/GSpot
+
+Quick start
+-----------
+
+1. Add "gspot_auth" to your INSTALLED_APPS setting like this:
+
+```
+INSTALLED_APPS = [
+    ...
+    'gspot_django_auth',
+]
+```
+
+2. Add CustomJWTAuthentication to DEFAULT_AUTHENTICATION_CLASSES in settings.py
+
+```
+REST_FRAMEWORK = {
+    ...
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'gspot_django_auth.authentication.CustomJWTAuthentication'
+    ],
+}
+```
