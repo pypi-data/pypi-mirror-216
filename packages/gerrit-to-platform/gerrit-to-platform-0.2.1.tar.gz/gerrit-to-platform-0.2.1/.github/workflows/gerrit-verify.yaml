@@ -1,0 +1,215 @@
+---
+name: Gerrit Verify
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_dispatch:
+    inputs:
+      GERRIT_BRANCH:
+        description: 'Branch that change is against'
+        required: true
+        type: string
+      GERRIT_CHANGE_ID:
+        description: 'The ID for the change'
+        required: true
+        type: string
+      GERRIT_CHANGE_NUMBER:
+        description: 'The Gerrit number'
+        required: true
+        type: string
+      GERRIT_CHANGE_URL:
+        description: 'URL to the change'
+        required: true
+        type: string
+      GERRIT_EVENT_TYPE:
+        description: 'Type of Gerrit event'
+        required: true
+        type: string
+      GERRIT_PATCHSET_NUMBER:
+        description: 'The patch number for the change'
+        required: true
+        type: string
+      GERRIT_PATCHSET_REVISION:
+        description: 'The revision sha'
+        required: true
+        type: string
+      GERRIT_PROJECT:
+        description: 'Project in Gerrit'
+        required: true
+        type: string
+      GERRIT_REFSPEC:
+        description: 'Gerrit refspec of change'
+        required: true
+        type: string
+
+
+concurrency:
+  group: ${{ github.event.inputs.GERRIT_CHANGE_ID || github.run_id }}
+  cancel-in-progress: true
+
+
+jobs:
+  clear-vote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clear votes
+        uses: lfit/gerrit-review-action@v0.3
+        with:
+          host: ${{ vars.LFIT_GERRIT_SERVER }}
+          username: ${{ vars.LFIT_GERRIT_SSH_USER }}
+          key: ${{ secrets.LFIT_GERRIT_SSH_PRIVKEY_NP }}
+          known_hosts: ${{ vars.LFIT_GERRIT_KNOWN_HOSTS }}
+          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
+          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+          vote-type: clear
+      - name: Allow replication
+        run: sleep 10s
+
+  actionlint:
+    needs: clear-vote
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lfit/checkout-gerrit-change-action@v0.3
+        with:
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+          delay: "0s"
+      - name: Download actionlint
+        id: get_actionlint
+        # yamllint disable-line rule:line-length
+        run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+        shell: bash
+      - name: Check workflow files
+        run: ${{ steps.get_actionlint.outputs.executable }} -color
+        shell: bash
+
+
+  pre-commit:
+    needs: clear-vote
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout change
+        uses: lfit/checkout-gerrit-change-action@v0.3
+        with:
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+          delay: "0s"
+      - name: Configure Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Run static analysis and format checkers
+        # yamllint disable-line rule:line-length
+        run: SKIP=actionlint pipx run pre-commit run --all-files --show-diff-on-failure
+
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      wheel-distribution: ${{ steps.wheel-distribution.outputs.path }}
+    steps:
+      - uses: lfit/checkout-gerrit-change-action@v0.3
+        with:
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: Build package distribution files
+        run: >-
+          pipx run tox -e clean,build
+      - name: Record the path of wheel distribution
+        id: wheel-distribution
+        run: echo "path=$(ls dist/*.whl)" >> "$GITHUB_OUTPUT"
+      - name: Store the distribution files for use in other stages
+        # `tests` and `publish` will use the same pre-built distributions,
+        # so we make sure to release the exact same package that was tested
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-distribution-files
+          path: dist/
+          retention-days: 1
+
+  test:
+    needs: prepare
+    strategy:
+      matrix:
+        python:
+          - "3.8"
+        platform:
+          - ubuntu-latest
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: lfit/checkout-gerrit-change-action@v0.3
+        with:
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+          delay: "0s"
+      - uses: actions/setup-python@v4
+        id: setup-python
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Retrieve pre-built distribution files
+        uses: actions/download-artifact@v3
+        with: {name: python-distribution-files, path: dist/}
+      - name: Run tests
+        run: >-
+          TOX_SKIP_ENV='(pre-commit)'
+          pipx run --python '${{ steps.setup-python.outputs.python-path }}'
+          tox --installpkg '${{ needs.prepare.outputs.wheel-distribution }}'
+          -- -rFEx --durations 10 --color yes  # pytest args
+      - name: Generate coverage report
+        run: pipx run coverage lcov -o coverage.lcov
+      - name: Upload partial coverage report
+        uses: coverallsapp/github-action@master
+        with:
+          path-to-lcov: coverage.lcov
+          github-token: ${{ secrets.github_token }}
+          flag-name: ${{ matrix.platform }} - py${{ matrix.python }}
+          parallel: true
+
+
+  CodeQL:
+    needs: clear-vote
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+
+    steps:
+      - name: Checkout change
+        uses: lfit/checkout-gerrit-change-action@v0.3
+        with:
+          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
+          delay: "0s"
+      - name: Configure Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: python
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+
+  finalize:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Finalize coverage report
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel-finished: true
+
+  vote:
+    if: ${{ always() }}
+    needs: [clear-vote, actionlint, pre-commit, prepare, test, finalize, CodeQL]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v3
+      - name: Set vote
+        uses: lfit/gerrit-review-action@v0.3
+        with:
+          host: ${{ vars.LFIT_GERRIT_SERVER }}
+          username: ${{ vars.LFIT_GERRIT_SSH_USER }}
+          key: ${{ secrets.LFIT_GERRIT_SSH_PRIVKEY_NP }}
+          known_hosts: ${{ vars.LFIT_GERRIT_KNOWN_HOSTS }}
+          gerrit-change-number: ${{ inputs.GERRIT_CHANGE_NUMBER }}
+          gerrit-patchset-number: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+          vote-type: ${{ env.WORKFLOW_CONCLUSION }}
