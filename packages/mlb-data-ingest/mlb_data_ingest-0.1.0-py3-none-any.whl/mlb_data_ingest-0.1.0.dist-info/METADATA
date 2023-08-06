@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: mlb-data-ingest
+Version: 0.1.0
+Summary: My Python package to ingest MLB data from the MLB stats API
+Home-page: https://github.com/bsamaha/mlb_data_ingest
+Author: Blake Samaha
+Author-email: Blake Samaha <blake.samaha16@gmail.com>
+License: MIT License
+Project-URL: Bug Tracker, https://github.com/bsamaha/mlb_data_ingest/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+# mlb_data
