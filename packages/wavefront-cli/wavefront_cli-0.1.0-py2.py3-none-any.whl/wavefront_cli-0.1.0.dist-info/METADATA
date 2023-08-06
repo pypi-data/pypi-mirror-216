@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: wavefront-cli
+Version: 0.1.0
+Summary: VMware Aria Operations for Applications CLI Utility.
+Home-page: https://github.com/wavefrontHQ/wavefront-cli
+Author: VMware Aria Operations for Applications Team
+Author-email: chitimba@wavefront.com
+License: APACHE-V2
+Keywords: apps,cli,lib,observability,ops,wavefront
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Networking :: Monitoring
+Classifier: Topic :: Utilities
+License-File: LICENSE
+Requires-Dist: boto3
+Requires-Dist: distro
+Requires-Dist: docopt
+Requires-Dist: requests
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+wavefront-cli
+=========================
+.. image:: https://travis-ci.com/wavefrontHQ/wavefront-cli.svg?branch=master
+    :target: https://travis-ci.com/wavefrontHQ/wavefront-cli
+
+The Wavefront Integration Command Line Interface (CLI) is a utility for installing and configuring the Wavefront proxy, Telegraf collector agent, and integrations.
+

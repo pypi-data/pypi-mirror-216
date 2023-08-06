@@ -1,0 +1,2 @@
+[console_scripts]
+wave = wavefront_cli.cli:main
