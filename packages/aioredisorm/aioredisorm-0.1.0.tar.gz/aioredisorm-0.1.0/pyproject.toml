@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "aioredisorm"
+version = "0.1.0"
+description = "A Python class for interacting with Redis using asyncio and aioredis."
+authors = ["fadedreams7 <fadedreams7@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+asyncio = "^3.4.3"
+aioredis = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+license = "MIT"
+classifiers = [
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Utilities"
+]
+
+[tool.poetry.urls]
+repository = "https://github.com/your-username/aioredisorm"
+
