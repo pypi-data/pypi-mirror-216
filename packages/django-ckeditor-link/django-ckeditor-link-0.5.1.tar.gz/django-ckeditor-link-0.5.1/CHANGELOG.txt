@@ -1,0 +1,125 @@
+==== 0.4.5 (under development) ===
+
+- ?
+
+==== 0.5.1 (2023-06-28) ===
+
+- introduce CKEDITOR_LINK_MODEL_USE_FILER_ADDONS, to enable usage of
+  django-filer-addons.filer_gui.fields.FilerFileField in ckeditor_link.link_model
+  (instead of the default filer field).
+
+
+==== 0.5.0 (2023-04-19) ===
+
+- add compatibility and tests for django 4.2
+
+
+==== 0.4.4 (2022-10-17) ===
+
+- fix broken get_link_text for foreign key links
+
+
+==== 0.4.3 (2022-04-13) ===
+
+- fix broken package
+
+
+==== 0.4.1 (2022-04-13) ===
+
+- badges revamped, README.md on PyPi.
+- no functional changes ;-)
+
+
+==== 0.3.2 (2022-04-05) ===
+
+- adapted tox and github actions for django 3.2
+- removed django 1.11 from tests (will probably still work, but not supported officialy anymore)
+- small bug with POST variable encoding solved: verify url was called with &var[]1&var[]=2 when there was an array.
+  this was solved using $.params (now using &var=1&var=2, what works with django).
+
+
+==== 0.3.1 (2021-05-26) ===
+
+- more tests added, mostly templatetag/link model stuff
+- re-introduced django 1.11/django-cms 3.4 compat, for legacy projects
+
+
+==== 0.3.0 (2020-03-09) ===
+
+- drop python 2.7 support
+- prepare django 3.0 support (wait for django cms, try at your own risk)
+- multi site django-cms bug fixed, with test coverage
+
+
+==== 0.2.5 (2019-10-01) ===
+
+- optimizing padding in ckeditor link dialog and django 2 and up
+
+
+==== 0.2.4 (2019-09-17) ===
+
+- fixed a nasty get_link_target bug, for the provided base link model
+- tox / travis refactoring
+
+
+==== 0.2.3 (2019-07-17) ===
+
+- drop support for django 1.9 and below
+- builtins fix for python2 / cmsfilerlinkmodel
+- some link model tests, and fallback enhancements for page/cms_page change
+
+
+==== 0.2.2 (2019-05-23) ===
+
+- python3 fix for templatetag (returning b'' instaead of plain string'
+  (http://makble.com/python-why-lxml-etree-tostring-method-returns-bytes)
+
+
+==== 0.2.1 (2019-01-05) ===
+
+- testing for foreign keys that do no more exist, more robustness
+
+
+==== 0.2.0 (2018-11-07) ===
+
+- license changed to GPLv2, due to ckeditors link plugin
+- backward incompatible change in link_model contrib package : field "page" of CMSFilerLinkBase
+  changed to "cms_page", for when used as base for cms plugins, it has possible clashes with the
+  CMSPlugins "page" attribute. ckeditor_link's templatetag will provide fallback logic for some
+  time.
+- CKEDITOR_LINK_ATTR_MODIFIERS setting / concept: support multi widgets easily in link model
+  forms. see README for more info.
+
+
+==== 0.1.6 ===
+
+- provide ckeditor_link.link_model, with default abstract link models, a basic version,
+  and a django-cms / django-filer enabled version.
+- backward incompatible change (only if you use the built in template tag):
+  get_link_style, get_link_target for getting target and style of a link.
+- better selenium testing with firefox instead of phantomjs should do on travis CI now!
+- dropping django 1.7 support
+
+
+==== 0.1.5 ===
+
+- support django 1.11
+- readme enhanced, for pypi submit a short version only
+- new project urls entered
+- selenium testing still a mess, still doesnt work on travis CI
+
+
+==== 0.1.4 ===
+
+- fallback: legacy href values can be migrated into a specified field/attribute
+
+
+==== 0.1.3 ===
+
+- working more or less
+
+
+==== 0.0.1 (not yet) ===
+
+- support for django 1.9
+- refactored tests, to use default manage.py test command
