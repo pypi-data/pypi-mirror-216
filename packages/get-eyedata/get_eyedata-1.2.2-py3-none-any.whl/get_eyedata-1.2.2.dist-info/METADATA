@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: get-eyedata
+Version: 1.2.2
+Summary: gat gaze data form record.
+Home-page: https://github.com/ikrfun/get_eyedata
+Download-URL: https://github.com/ikrfun/get_eyedata
+Author: ikrfun
+Author-email: t.nobuto130625@gmail.com
+Maintainer: ikrfun
+Maintainer-email: t.nobuto130625@gmail.com
+License: MIT
+Keywords: gaze game
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: matplotlib (>=3.7.1)
+Requires-Dist: moviepy (>=1.0.3)
+Requires-Dist: numpy (>=1.24.3)
+Requires-Dist: opencv-contrib-python (>=4.6.0.66)
+Requires-Dist: opencv-python (>=4.7.0.72)
+Requires-Dist: opencv-python-headless (>=4.7.0.72)
+Requires-Dist: pandas (>=2.0.2)
+Requires-Dist: setuptools (>=67.8.0)
+Requires-Dist: tqdm (>=4.65.0)
+Requires-Dist: utils (>=1.0.1)
+
+# Get-eyedata
+
+this library is an application that allows you to track objects in a video file and save the tracking data to pandas dataframe 
+
+## Installation
+---
+you can use pip to install get-eyedata.
+```bash
+pip install get-eyedata
+```
+
+---
+
+## Usage
+
+### Preparing Recorded Data
+
+you need video file which is recorded by OBS with original setting
+
+show details ->　https://github.com/ikrfun/get_eyedata/wiki/usage-en
+
+get OBS -> https://obsproject.com/ja/download
+
+---
+
+### When creating a dataset of actual facial images and their corresponding gaze coordinates 
+
+To use mekeing eye dataset, run the following command in your terminal
+
+```python
+from get_eyedata import valo
+
+# valo_df is pandas dataframe
+valo_df = valo.make_dataset('{video-file-path}')
+# save as csv
+valo_df.to_csv('out-csv-path')
+```
+---
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
