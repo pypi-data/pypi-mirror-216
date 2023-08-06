@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "boinc-client"
+version = "1.4.2"
+description = "Python API for interacting with a BOINC client via RPC"
+authors = ["Lewis England <lewis2004@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.urls]
+homepage = "https://github.com/SplinterHead/boinc-client"
+issues = "https://github.com/SplinterHead/boinc-client/issues"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+xmltodict = "^0.13.0"
+marshmallow = "^3.19.0"
+lxml = "^4.9.2"
+
+[tool.poetry.group.dev.dependencies]
+black = ">=22.12,<24.0"
+isort = "^5.11.4"
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
+testcontainers-core = "^0.0.1rc1"
+xmlformatter = "^0.2.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+    "authenticated: Tests that require a form of credential",
+    "integration: Integration tests that run against a containerised BOINC client"
+]
