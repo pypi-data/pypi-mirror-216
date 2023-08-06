@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: photos-where
+Version: 1.1
+Summary: Analyze exif data
+Home-page: https://github.com/visgean/where
+Author: Visgean
+Author-email: visgean@gmail.com
+License: MIT
+Description: # where
+        
+        Python package: https://pypi.org/project/photos-where/ 
+        
+        Use:
+        
+        ```
+        $ where-when Dropbox/Photos/2020/
+        $ ls where
+        cities-pie.jpg      
+        countries-pie.jpg
+        intervals.csv
+        location-by-day.csv 
+        photos.feather     
+        years.jpg
+        ```
+        
+        ## Jupyter examples:
+        
+        See ``example.ipynb`` for example graphs and data frames exported.
+Keywords: exif sql
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
