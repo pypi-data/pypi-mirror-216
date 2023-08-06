@@ -1,0 +1,14 @@
+LICENCE
+MANIFEST.in
+README.md
+setup.py
+lightcon/__config__.py
+lightcon/__init__.py
+lightcon/_globals.py
+lightcon.egg-info/PKG-INFO
+lightcon.egg-info/SOURCES.txt
+lightcon.egg-info/dependency_links.txt
+lightcon.egg-info/requires.txt
+lightcon.egg-info/top_level.txt
+lightcon/datasets/data/motor_parameters.json
+lightcon/datasets/data/stage_parameters.json
