@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: no
+
+  vars:
+    created_date: "{{ date }}"
+
+  tasks:
+    - name: Print created date
+      ansible.builtin.debug:
+        msg: "This playbook was created by ansible-butler on {% raw %}{{ created_date }}{% endraw %}"

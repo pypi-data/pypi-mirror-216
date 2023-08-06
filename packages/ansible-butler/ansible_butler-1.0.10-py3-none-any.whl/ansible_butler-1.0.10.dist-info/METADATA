@@ -1,0 +1,156 @@
+Metadata-Version: 2.1
+Name: ansible-butler
+Version: 1.0.10
+Summary: A butler CLI for assistance in managing Ansible projects
+Home-page: https://github.com/zjleblanc/ansible-butler
+Author: Zach LeBlanc
+Author-email: zjleblanc3@gmail.com
+Project-URL: Bug Tracker, https://github.com/zjleblanc/ansible-butler/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: docopt (>=0.6.2)
+Requires-Dist: PyYAML (>=5.4.1)
+Requires-Dist: Jinja2 (>=3.0.0)
+Requires-Dist: mergedeep (>=1.3.4)
+Requires-Dist: ansible-lint (>=6.17.2)
+
+ansible-butler 
+<a href="https://pypi.org/project/ansible-butler"><img align="right" src="https://img.shields.io/pypi/v/ansible-butler.svg"/></a>
+=========
+
+Butler CLI for Ansible projects
+
+Functions
+------------
+
+| Object | Action | Description |
+| ------ | ------ | ----------- |
+| directory | init | initialize an ansible directory |
+| directory | init | cleanup an ansible directory |
+| ee | init | initialize an execution environment directory for ansible-builder |
+| role | list | list roles |
+| role | clean | clean role directory structure (remove empty yml files & dirs) |
+| role | mk-readme | auto generate readme based on role meta and basic yml info |
+| playbook | update | map legacy module names to FCQNs |
+
+Usage
+--------------
+
+```
+Usage:
+  ansible-butler directory init [<dir>] [--config=PATH]
+  ansible-butler directory clean [<dir>] [--skip-roles]
+  ansible-butler ee init [<dir>] [--config=PATH]
+  ansible-butler role list [--roles-path=PATH] [<name> --recursive]
+  ansible-butler role clean [--roles-path=PATH] [<name> --recursive]
+  ansible-butler role mk-readme [--roles-path=PATH] [<name> --recursive]
+  ansible-butler playbook update [--context=CONTEXT] [--config=PATH] [<name>] [--recursive] [--force]
+
+Arguments:
+  name    name of target (accepts glob patterns)
+  dir     path to directory [default: ./]
+
+Options:
+  -h --help           Show this screen
+  -r --recursive      Apply glob recursively [default: False]
+  -f --force          Make file changes in place
+  --config=PATH       Path to config file
+  --roles-path=PATH   Path to roles directory [default: ./roles]
+  --context=CONTEXT   Path to context directory [default: ./]
+  --skip-roles        Flag to skip cleaning roles
+```
+
+Examples
+----------------
+
+- Initialize Ansible Directory
+  - `ansible-butler directory init ./sandbox`
+  - `ansible-butler directory init ./sandbox --config=~/configs/ansible-butler.yml`
+- Clean an Ansible Directory
+  - `ansible-butler directory clean ./sandbox`
+  - `ansible-butler directory clean ./sandbox --skip-roles`
+- Initialize Execution Environment Directory
+  - `ansible-butler ee init ./ee-windows`
+  - `ansible-butler ee init ./ee-windows --config=~/configs/ansible-butler.yml`
+- Clean Roles 
+  - `ansible-butler role clean my-role-1`
+  - `ansible-butler role clean my-role-*`
+- Generate README
+  - `ansible-butler role mk-readme my-role-1`
+  - `ansible-butler role mk-readme my-role-*`
+- Update Playbooks
+  - `ansible-butler playbook update --context=./playbooks -r`
+  - `ansible-butler playbook update legacy-*.yml`
+  - `ansible-butler playbook update -f`
+
+Configuration
+-------------
+
+Create an `.ansible-butler.yml` in one or more of the following locations:
+```
+/etc/ansible-butler/    ## least precedence
+~/
+./                      ## highest precedence
+```
+
+You can also specify a specific path at runtime via the `--config` option.
+
+```yaml
+# Configuration Schema
+execution_environment:
+  init:
+    version: 2
+    ansible_config: ansible.cfg
+    ee_base_image: quay.io/ansible/ansible-runner:latest
+    ee_builder_image: quay.io/ansible/ansible-builder:latest
+    prepend_build_steps:
+      - ...
+    append_build_steps:
+      - ...
+
+directory:
+  init:
+    folders:
+      - name: plugins
+        folders:
+          ...
+        files:
+          - README.md
+    files:
+      - playbook.yml
+
+playbook:
+  update:
+    modules:
+      smart_device:
+        redirect: zjleblanc.kasa.smart_device
+      custom_module:
+        redirect: company.it.custom_module
+```
+
+[🔗 Default configuration file](./ansiblebutler/common/.ansible-butler.yml)
+<br>
+[🔗 Example adding test plugins directory](./docs/config/.ansible-butler.test-plugins.yml)
+<br>
+[🔗 Example adding module redirects](./docs/config/.ansible-butler.module-redirects.yml)
+
+Troubleshooting
+----------------
+
+- `ansible-butler: command not found`
+  - check the $PATH environment variable and ensure that `~/.local/bin` is included
+
+License
+-------
+
+GNU General Public License
+
+Author Information
+-------
+**Zach LeBlanc**
+
+Red Hat

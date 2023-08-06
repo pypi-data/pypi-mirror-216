@@ -1,0 +1,34 @@
+---
+execution_environment:
+  init:
+    version: 2
+    ansible_config: ansible.cfg
+    ee_base_image: quay.io/ansible/ansible-runner:latest
+    ee_builder_image: quay.io/ansible/ansible-builder:latest
+    prepend_build_steps:
+      - RUN pip3 install --upgrade pip setuptools
+    append_build_steps:
+      - RUN echo 'Build completed (ansible-butler)'
+
+directory:
+  init:
+    folders:
+      - name: inventories
+        folders:
+          - name: example-inventory
+            files:
+              - hosts
+            folders:
+              - name: group_vars
+              - name: host_vars
+      - name: library
+      - name: module_utils
+      - name: filter_plugins
+      - name: roles
+    files:
+      - playbook.yml.j2
+      - ansible.cfg
+
+role: {}
+
+playbook: {}
