@@ -1,0 +1,6 @@
+
+
+1. Change instance tfvar creation to pull instance specific settings from the instnace specific file
+2. Change multi.json to assume only on such json exists and you need to tell it which pipeline (sandbox, platform)
+3. therby moving filter (into the trigger map)
+4. Assume muilti.json could be pulled form Vault
