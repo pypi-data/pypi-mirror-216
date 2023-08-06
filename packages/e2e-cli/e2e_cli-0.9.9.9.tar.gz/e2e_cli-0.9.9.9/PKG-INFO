@@ -1,0 +1,105 @@
+Metadata-Version: 2.1
+Name: e2e_cli
+Version: 0.9.9.9
+Summary: This a E2E CLI tool for myAccount
+Home-page: UNKNOWN
+Author: Sajal&Aman@E2E_Networks_Ltd
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# E2E CLI
+
+The  E2E  Command  Line  Interface is a unified tool to manage all your E2E services
+A command line tool developed by E2E Networks Ltd
+
+
+## Getting started
+
+Just Login to your [E2E myAccount](https://myaccount.e2enetworks.com/) and get your access tokens.
+For more on access token refer [E2E Tokens](https://docs.e2enetworks.com/guides/create_API_access_token.html)
+Add this to your system and you are all set to go.
+
+
+## Requirements
+
+The e2e-cli package works on Python versions:
+
+2.7.x and greater
+3.x and greater
+setuptools 45.2.0 or greater
+requests 2.22.0 or greater
+
+
+## Notices
+
+Attention!
+We recommend that all customers regularly monitor the [E2E docs](https://docs.e2enetworks.com/) website for any important update bulletins related to e2e-cli.
+
+
+## Installation
+Installation of the E2E CLI and its dependencies use a range of packaging features provided by pip and setuptools. To ensure smooth installation, it’s recommended to use:
+
+pip: 21.0 or greater
+requests: 2.22.0 or greater
+setuptools: 45.2.0 or greater
+
+The safest way to install the AWS CLI is to use pip in a virtualenv:
+        pip install e2e-cli
+
+
+## Configuration
+
+Before using the E2E CLI, you need to configure your E2E credentials/Tokens
+This can be done by running the following commands to add token, [more]() :
+
+    e2e_cli alias add      ->   To add api key and auth token
+    e2e_cli alias add_file ->   To add api key and auth token via file
+
+Further set default token by using :
+
+    e2e_cli alias set      ->   To set default alias for system
+
+
+## Basic Commands
+
+An E2E CLI command has the following structure:
+
+    e2e_cli <command> <subcommand> [options and parameters]
+
+For example, to list buckets, the command would be:
+
+    e2e_cli bucket list 
+
+To view help/man documentation, use one of the following:
+    
+    e2e_cli help
+
+To get the version of the E2E CLI:
+
+    e2e_cli --version/-v
+
+To get the package info of the E2E CLI:
+
+    e2e_cli --info
+
+To turn on debugging :
+
+    e2e_cli --debug <command> <subcommand>
+
+
+## Support
+
+For support/help refer [E2E CLI docs](https://docs.e2enetworks.com/e2e_cli/index.html) or visit [E2E Networks](https://myaccount.e2enetworks.com/)
+
+
+## Authors and acknowledgment
+
+Aman and Sajal, E2E Networks Ltd.
+
+
+## Project status
+
+Currently undergoing major feature upgrades
+
