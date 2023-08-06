@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "suger"
+version = "0.2.1"
+authors = [
+    { name = "SolarisNeko", email = "1417015340@qq.com" },
+]
+
+description = "suger is a sugar. use python in @decorator/@Annotation like other languages~"
+readme = "README.md"
+
+requires-python = ">=3.7"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/SolarisNeko/python-suger"
+"Bug Tracker" = "https://github.com/SolarisNeko/python-suger/issues"
