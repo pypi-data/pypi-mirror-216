@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: mayfpayapi
+Version: 1.4.6
+Summary: MayfPayApi is a Python library for interacting with the MayfPay payment system API.
+Home-page: https://github.com/MAYFPAY/MayfPayApi
+Author: MayfPay.top
+Author-email: support@mayfpay.top
+Project-URL: Source, https://github.com/MAYFPAY/MayfPayApi
+Project-URL: Documentation, https://mayfpay.top/docs
+Project-URL: Bug Reports, https://github.com/MAYFPAY/MayfPayApi/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
