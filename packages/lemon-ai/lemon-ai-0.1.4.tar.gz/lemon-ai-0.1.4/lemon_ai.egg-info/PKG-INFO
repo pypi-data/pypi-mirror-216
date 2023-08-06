@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: lemon-ai
+Version: 0.1.4
+Summary: A Python client that enables Langchain agents to design and execute workflow automations targeting internal tooling
+Home-page: https://github.com/feliciori/lemon-ai-client-python
+Author: Felix Brockmeier
+Author-email: felix@citodata.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8.1
+License-File: LICENSE
+
+UNKNOWN
+
