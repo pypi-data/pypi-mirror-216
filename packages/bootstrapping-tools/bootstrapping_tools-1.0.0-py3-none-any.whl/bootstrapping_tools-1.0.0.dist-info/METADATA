@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: bootstrapping_tools
+Version: 1.0.0
+Summary: GECI Tools for bootstrapping
+Home-page: https://github.com/IslasGECI/bootstrapping_tools
+Author: Ciencia de Datos • GECI
+Author-email: ciencia.datos@islas.org.mx
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Requires-Dist: numpy
+Requires-Dist: pandas-stubs
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: tqdm
+
+<a href="https://www.islas.org.mx/"><img src="https://www.islas.org.mx/img/logo.svg" align="right" width="256" /></a>
+
+# Bootstrapping tools
+
+GECI tools to perform bootstrapping sampling by blocks.
+
+
+
