@@ -1,0 +1,23 @@
+default: gen test
+
+
+LIB := "windows_control"
+
+env:
+    python -m venv .venv
+
+gen:
+    rm -f ./target/debug/{{LIB}}.dll ./target/debug/{{LIB}}.pyd
+    maturin develop
+    mv -f ./target/debug/{{LIB}}.dll ./target/debug/{{LIB}}.pyd
+
+test:
+    python ./test.py
+
+pub:
+    maturin publish --interpreter C:\Users\Administrator\AppData\Local\Programs\Python\Python39\python.exe
+--name "windows_control" -v "0.1.1" -u "dbsx-0214" -p "Djw0214_518074"
+
+
+maturin publish --interpreter C:\Users\Administrator\AppData\Local\Programs\Python\Python39\python.exe  --username dbsx-0214 --password Djw0214_518074
+# maturin publish --interpreter C:\Users\Administrator\AppData\Local\Programs\Python\Python39\python.exe -r https://upload.pypi.org/legacy/ --name windows_control --version 0.1.4 --username dbsx-0214 --password Djw0214_518074
