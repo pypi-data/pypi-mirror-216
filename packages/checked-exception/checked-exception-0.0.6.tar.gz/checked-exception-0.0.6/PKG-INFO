@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: checked-exception
+Version: 0.0.6
+Summary: Use checked exceptions in Python.
+Home-page: https://github.com/thejimmylin/checked-exception
+Author: thejimmylin
+Author-email: b00502013@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Use checked exceptions in Python.
+
+This package makes you use checked exceptions in Python.
+
+
