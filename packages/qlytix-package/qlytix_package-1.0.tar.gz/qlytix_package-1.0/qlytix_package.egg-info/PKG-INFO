@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: qlytix-package
+Version: 1.0
+Summary: User and Auth Data
+Author: Kranthi
+Author-email: k@Gmail.com
+License: MIT
+
+QYILITIX PROJECT
+---------------------------
+
+
+To use (package), simply do::
+
+    >>> import qlytix_pack
+    >>> from qlytix_pack import (func)
