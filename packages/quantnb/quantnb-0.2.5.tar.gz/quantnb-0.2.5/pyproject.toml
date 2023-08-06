@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "quantnb"
+version = "0.2.5"
+description = ""
+authors = ["Alpha <piotr@piotryordanov.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numba = "^0.57.0"
+numpy = "^1.24.3"
+pandas = "^2.0.1"
+ta-lib = "^0.4.26"
+quantstats = "^0.0.59"
+matplotlib = "^3.7.1"
+pyarrow = "^12.0.0"
+mplfinance = "^0.12.9b7"
+tqdm = "^4.65.0"
+python-binance = "^1.0.17"
+seaborn = {extras = ["stats"], version = "^0.12.2"}
+ipython = "^8.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
