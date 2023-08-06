@@ -1,0 +1,51 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.commitizen]
+version = "1.0.1"
+version_files = ["pyproject.toml:^version", "tui_typer_tutor/__init__.py:^__version"]
+
+[tool.poetry]
+authors = ["Kyle King <dev.act.kyle@gmail.com>"]
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.11",
+] # https://pypi.org/classifiers/
+description = "Fork of kraanzu/termtyper with a focus on special characters. Inspired by climech/typing-practice."
+documentation = "https://tui-typer-tutor.kyleking.me"
+include = ["LICENSE"]
+keywords = []
+license = "MIT"
+maintainers = []
+name = "tui_typer_tutor"
+readme = "docs/README.md"
+repository = "https://github.com/kyleking/tui-typer-tutor"
+version = "1.0.1"
+
+[tool.poetry.dependencies]
+python = "^3.11.2"
+bidict = ">=0.22.1"
+corallium = ">=0.2.2"
+platformdirs = ">=3.8.0"
+pydantic = ">=1.10.9"
+textual = ">=0.28.0"
+
+[tool.poetry.group.dev.dependencies]
+calcipy = {extras = ["doc", "lint", "nox", "stale", "tags", "test", "types"], version = ">=1.2.6"}
+freezegun = ">=1.2.2"
+pytest-cache-assert = ">=3.0.8"
+
+[tool.poetry.scripts]
+ttt = "tui_typer_tutor.scripts:start"
+tui-typer-tutor = "tui_typer_tutor.scripts:start"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/kyleking/tui-typer-tutor/issues"
+"Changelog" = "https://github.com/kyleking/tui-typer-tutor/blob/main/docs/docs/CHANGELOG.md"
+
+[tool.pyright]
+include = ["tui_typer_tutor"]
+pythonVersion = "3.11"
