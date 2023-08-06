@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: eiffel-framework
+Version: 0.1.2
+Summary: Evaluation Framework for FL-based intrusion detection using Flower.
+License: MIT
+Author: phdcybersec
+Author-email: 82591009+phdcybersec@users.noreply.github.com
+Requires-Python: >=3.10,<3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Provides-Extra: darwin
+Provides-Extra: linux
+Description-Content-Type: text/markdown
+
+# eiffel
+Evaluation framework for FL-based intrusion detection using Flower.
+
