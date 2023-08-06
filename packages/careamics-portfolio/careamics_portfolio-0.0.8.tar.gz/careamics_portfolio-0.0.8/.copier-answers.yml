@@ -1,0 +1,20 @@
+# Do not edit - changes here will be overwritten by Copier
+_commit: v1.0
+_src_path: gh:pydev-guide/pyrepo-copier
+author_email: joran.deschamps@fht.org
+author_name: Joran Deschamps
+git_versioning: true
+github_username: jdeschamps
+mode: tooling
+module_name: careamics_portfolio
+project_license: BSD-3-Clause
+project_name: microscopy-portfolio
+project_short_description:
+    A helper package to download example datasets used in various
+    publications and deep-learning algorithms, including data featured in N2V, P(P)N2V,
+    DivNoising, HDN, EmbedSeg, etc.
+test_pre_release: true
+use_black: true
+use_mypy: true
+use_pre_commit: true
+use_ruff: true

@@ -1,0 +1,161 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # run every week (for --pre release tests)
+    - cron: "0 0 * * 0"
+
+jobs:
+  check-manifest:
+    # check-manifest is a tool that checks that all files in version control are
+    # included in the sdist (unless explicitly excluded)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pipx run check-manifest
+
+  test:
+    name: ${{ matrix.platform }} (${{ matrix.python-version }})
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+
+      - uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache-dependency-path: "pyproject.toml"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install -U pip
+          # if running a cron job, we add the --pre flag to test against pre-releases
+          python -m pip install .[test] ${{ github.event_name == 'schedule' && '--pre' || ''  }}
+
+      - name: 🧪 Run Tests
+        run: pytest --color=yes --cov --cov-report=xml --cov-report=term-missing -m "not dataset"
+
+      # If something goes wrong with --pre tests, we can open an issue in the repo
+      - name: 📝 Report --pre Failures
+        if: failure() && github.event_name == 'schedule'
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PLATFORM: ${{ matrix.platform }}
+          PYTHON: ${{ matrix.python-version }}
+          RUN_ID: ${{ github.run_id }}
+          TITLE: "[test-bot] pip install --pre is failing"
+        with:
+          filename: .github/TEST_FAIL_TEMPLATE.md
+          update_existing: true
+
+      - name: Coverage
+        uses: codecov/codecov-action@v3
+
+  update_registry:
+    name: Update datasets summary and registry
+    needs: test
+    # run on PR so that we can check it out later
+    if: success() && github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Checkout PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr checkout ${{ github.event.pull_request.number }}
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Build package
+        run: python -m pip install .
+
+      # important to maintain the json summary
+      - name: Run json export script
+        run: python scripts/update_json.py
+
+      # not sure that is useful since tests will not pass with the wrong registry
+      - name: Run json export script
+        run: python scripts/update_registry.py
+
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v16
+        id: verify-changed-files
+        with:
+          files: |
+            datasets/datasets.json
+            src/careamics_portfolio/registry/registry.txt
+
+      - name: Commit changes
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'  
+          git add datasets/datasets.json
+          git add src/careamics_portfolio/registry/registry.txt
+          git commit -m "Update datasets.json"
+
+      - name: Push changes
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git push
+
+  deploy:
+    name: Deploy
+    needs: test
+    if: success() && startsWith(github.ref, 'refs/tags/') && github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
+
+      # This permission allows writing releases
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Build
+        run: |
+          python -m pip install build
+          python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+      - uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
