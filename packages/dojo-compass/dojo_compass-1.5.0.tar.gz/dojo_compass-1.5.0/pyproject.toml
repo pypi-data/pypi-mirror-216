@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "dojo-compass"
+version = "1.5.0"
+description = "Realistic DeFi simulations"
+authors = ["Compass Labs"]
+include = [
+    "dojo/data/DojoBrownieProject/*",
+    "dojo/data/DojoBrownieProject/*/*/*",
+    "dojo/data/DojoBrownieProject/interfaces/*",
+    "dojo/data/DojoBrownieProject/scripts/*",
+    "dojo/data/DojoBrownieProject/tests/*",
+    "dojo/*.so",
+    "dojo/*/*.so",
+]
+exclude=[
+    "dojo/*/*.py",
+    "dojo/*.c",
+    "dojo/*/*.c",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+numpy = "^1.21.1"
+matplotlib = "^3.5.2"
+eth-brownie = "^1.19.3"
+Cython = "^0.29.34"
+pathlib = "^1.0.1"
+py-machineid = "^0.3.0"
+ethereum-etl = "^2.2.1"
+boto3 = "^1.26.140"
+dash = "^2.10.2"
+dash-bootstrap-components = "^1.4.1"
+pytz = "^2023.3"
+waitress = "^2.1.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+flake8 = "^3.9.2"
+black = "^22.3.0"
+isort = "^5.9.2"
+pre-commit = "^2.13.0"
+pytest-cov = "2.12.1"
+coverage = {extras = ["toml"], version = "^5.5"}
+sphinx = "^6.0.0"
+sphinx-rtd-theme = "^1.0.0"
+pydocstyle = "^6.1.1"
+docformatter = "^1.4.4"
+darglint = "^1.8.0"
+
+[tool.pytest.ini_options]
+addopts = """
+    --verbose
+    --junitxml build/reports/unittest.xml
+    -p no:warnings
+    -m 'not integration'
+    --tb=short -rEf
+    --cov dojo
+    --cov-config=.coveragerc
+    --cov-report xml:build/reports/coverage.xml
+    --cov-report term
+    --color=yes
+    -p no:pytest-brownie
+"""
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pydocstyle]
+convention = "google"  # Or use "numpy" for NumPy-style docstrings
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 88
