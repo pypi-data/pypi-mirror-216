@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: quickverifyimg
+Version: 1.0.6
+Summary: quick verify img
+Home-page: UNKNOWN
+Author: Zhiyuan Feng
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.6.0
+License-File: LICENSE
+Requires-Dist: aircv (==1.4.6)
+Requires-Dist: natsort
+Requires-Dist: numpy
+Requires-Dist: opencv-python (>=4.5.3.56)
+
+UNKNOWN
+
