@@ -1,0 +1,2 @@
+[gui_scripts]
+openlabcluster = openlabcluster.user_interface.run_gui_pythonw:run
