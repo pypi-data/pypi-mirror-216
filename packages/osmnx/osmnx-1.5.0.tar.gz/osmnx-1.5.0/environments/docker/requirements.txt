@@ -1,0 +1,40 @@
+# basics
+osmnx
+python == 3.11.*
+
+# helpful
+beautifulsoup4
+bokeh
+bottleneck
+cartopy
+contextily
+cython
+folium
+jupyterlab
+mapclassify
+numexpr
+pillow
+psycopg2
+pysal
+python-igraph
+seaborn
+statsmodels
+
+# docs
+furo
+pip
+sphinx
+
+# packaging
+conda-smithy
+hatch
+twine
+
+# linting/testing
+black
+coverage
+nbdime
+nbqa
+pre-commit
+pytest
+ruff

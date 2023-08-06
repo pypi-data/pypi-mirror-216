@@ -1,0 +1,35 @@
+name: env-ci
+
+channels:
+  - conda-forge
+
+dependencies:
+  # required
+  - geopandas
+  - networkx
+  - numpy
+  - pandas
+  - python
+  - requests
+  - shapely
+
+  # extras
+  - folium
+  - gdal
+  - matplotlib
+  - rasterio
+  - scikit-learn
+  - scipy
+
+  # linting/testing
+  - black=23
+  - hatch
+  - pre-commit
+  - pytest
+  - pytest-cov
+  - ruff
+  - twine
+
+  # docs
+  - furo
+  - sphinx
