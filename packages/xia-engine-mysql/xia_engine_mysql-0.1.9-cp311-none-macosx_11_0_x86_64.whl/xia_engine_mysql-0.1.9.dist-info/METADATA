@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: xia-engine-mysql
+Version: 0.1.9
+Home-page: https://develop.x-i-a.com/docs/xia-engine-mysql/0.1.9/index.html
+Author: X-I-A
+Author-email: admin@x-i-a.com
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: pymysql
+Requires-Dist: xia-engine
+Requires-Dist: xia-engine-sql
+
+Introduction
+=============================
+
+Welcome to use X-I-A's software
+
