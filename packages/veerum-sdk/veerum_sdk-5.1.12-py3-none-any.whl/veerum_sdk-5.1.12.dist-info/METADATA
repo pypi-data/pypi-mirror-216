@@ -1,0 +1,198 @@
+Metadata-Version: 2.1
+Name: veerum-sdk
+Version: 5.1.12
+Summary: SDK & CLI for interacting with the Veerum API
+Home-page: https://github.com/Veerum/veerum-sdk
+Author: Veerum Inc.
+Author-email: info@veerum.com
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: tornado (>=5.1.1)
+Requires-Dist: tqdm (>=4.31.1)
+Requires-Dist: backports-datetime-fromisoformat (>=1.0.0)
+Requires-Dist: tuspy (==0.2.5)
+
+
+#  veerum-sdk (1.0)
+
+SDK &amp; CLI tools for interacting with the Veerum API
+
+### Table of Contents
+1. [Updating](#update)
+2. [Installation](#install)
+3. [Development](#development)
+4. [Deployment](#deployment)
+5. [Commands](#commands)
+6. [Configuration](#config)
+	- [With commands](#config-command)
+	- [With environment variables](#config-env)
+	- [Configuration files](#config-file)
+
+##  CLI
+
+<a name = "updating"></a>
+###  Updating
+
+### Enable support for TLS 1.3 on Windows
+  * Open command prompt as Admin:
+      * Click on the `Start` menu.
+      * Type `Command Prompt` in the search bar.
+      * Right-click on `Command Prompt` in the search results.
+      * From the context menu, select `Run as administrator`
+  * Run the follwing commands
+
+  `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"`
+
+  `choco install openssl`  - When prompted 'Do you want to run the scrpt?' enter `A` for All
+
+  `choco install python37` -  When prompted 'Do you want to run the scrpt?' enter `A` for All
+
+   * Restart your VDI and run the following command:  
+
+  `pip3 install -e git+ssh://git@github.com/Veerum/veerum-sdk.git@master#egg=veerum-sdk`
+
+
+Production CLI
+
+`pip3 install -e git+ssh://git@github.com/Veerum/veerum-sdk.git@master#egg=veerum-sdk`
+
+Development CLI
+
+`pip3 install -e git+ssh://git@github.com/Veerum/veerum-sdk.git@dev#egg=veerum-sdk`
+
+FME Server/Engine Updates
+  * login to windows with `services` user
+  * open terminal
+  * `cd ../svc_fme`
+  * run an update command above
+  
+<a name = "install"></a>
+### First Time Install
+
+#### Prereqs
+ * Python 3.7 - https://www.python.org/downloads/release/python-371/
+   * FME server/engine = 64 bit AMD
+ * Git
+ * Visual studio c++ build tools - https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools
+ * Once these are installed, in terminal...
+   * `python3 -m pip3 install --upgrade pip3`
+   * `pip3 install --upgrade setuptools`
+ 
+#### Install Process
+ * Generating new ssh key
+   * On local machine run the following command in terminal `ssh-keygen -t rsa -b 4096 -C "your-email@veerum.com"`
+   * It will prompt you for a name for the ssh files, you can leave it as default or give it a new name (defaults to id_rsa)
+   * Open the file create that ends with extension `.pub`. Default location should be `~/.ssh` (UserFolder/.ssh). Copy the contents of the .pub file you created it should start with something like `ssh-rsa`.
+ * Add ssh key to GitHub
+   * Go to GitHub and login, click your portrait and go to settings
+   * On the left side menu, click `SSH and GPG Keys`, click `New SSH Key`
+   * Provide a descriptive name for the SSH key and paste the contents of your `.pub` file into the key field and add the ssh key.
+ * In terminal enter `ssh -v git@github.com`, and type `yes` when prompted
+ * Run Prod or Dev command above to install CLI
+
+In Team Google Drive `TechDev/Devops/cli`...
+ * if installing on FME server / engine
+   * download `config-fme-user` and place in C: drive root folder `.veerum` and rename to `config`
+   * windows services for FME need to be restarted
+ * otherwise
+   * download `config-standard-user` and place in CLI User folder `.veerum` and rename to `config`
+   * populate file with user credentials for the staging and production platform (same ones you login with on the web app)
+
+<a name = "development"></a>
+###  Development
+
+In 'veerum-sdk' root folder run.
+
+`make dev`
+
+Subsiquent changes will be applied to local machine without having to run again.
+
+note about tuspy library: Our backend is using a forked version of the tus-node-server, so I am locking the tuspy client in setup.py to the latest version at the time of the forked version in the backend.
+
+<a name = "deployment"></a>
+###  Deployment
+1) Increment version of CLI in `setup.py`
+2) Put everything into the `dev` branch while testing is happening in both the `dev` and `staging` environments
+3) Once release is ready for `prod`, merge `dev` -> `prod` in the CLI repo
+4) Update all the CLIs (see update comamands) 
+
+<a name = "commands"></a>
+###  Available Commands
+
+Run the following command to see all available commands.
+
+`veerum -h`
+
+You can append '-h' to any command to see additional sub-commands.
+
+List of commands [here](commands.md)
+
+
+
+<a name = "config"></a>
+###  Configuration
+####  Resolution order
+
+1. Passed in via the command-line
+2. Environment variables
+3. Veerum SDK config file (`~/.veerum/config`)
+
+<a name = "config-command"></a>
+####  Command line arguments
+
+#####  --email [email]
+Email address associated with the account this command will be executed as.
+
+#####  --password
+If specified interactively prompt the user for their password before executing the command.
+
+#####  --endpoint
+Fully qualified URL of the API to hit.
+
+#####  --profile [name]
+Use the specified named profile from the SDK config file (`~/.veerum/config`).
+Otherwise use the settings in the `default` section.
+
+<a name = "config-env"></a>
+####  Environment Variables
+
+#####  VEERUM_EMAIL
+Email address associated with the account this command will be executed as.
+
+#####  VEERUM_PASSWORD
+The password with the users account.
+
+#####  VEERUM_ENDPOINT
+Fully qualified URL of the API to hit.
+
+<a name = "config-file"></a>
+####  Configuration File
+
+The configuration file should be written to `~/.veerum/config`. On posix systems the permissions should be set to 600 (e.g. `chmod 600 ~/.veerum/config`) in order to help keep your credentials secure.
+
+Example configuration:
+
+```
+[default]
+email=admin@veerum.com
+password=...
+endpoint=http://staging.api.local
+
+[staging]
+email=admin@veerum.com
+password=...
+endpoint=http://staging.api.local
+
+[production]
+email=admin@veerum.com
+password=...
+endpoint=http://production.api.local
+
+# Other configurations
+...
+
+```
