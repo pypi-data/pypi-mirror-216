@@ -1,0 +1,10 @@
+pytest-json-report>=1.2
+click
+pyyaml
+pytest
+pytest-clarity
+PyGitHub
+six
+rich
+jinja2
+textfsm
