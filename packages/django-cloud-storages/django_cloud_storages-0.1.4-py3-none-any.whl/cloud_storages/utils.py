@@ -1,0 +1,29 @@
+from django.conf import settings
+
+def setting(name, default=None):
+    """
+    Helper function to get a Django setting by name. If setting doesn't exists
+    it will return a default.
+
+    :param name: Name of setting
+    :type name: str
+    :param default: Value if setting is not found
+    :returns: Setting's value
+    """
+    return getattr(settings, name, default)
+
+
+class FileNameLengthError(Exception):
+    """Exception raised for errors when file name length exceed.
+    Attributes:
+        max_length -- maximum length of the file name
+        message -- explanation of the error
+    """
+    def __init__(self, max_length, message=None):
+        self.max_length = max_length
+        self.message = message
+        if self.message is None:
+            self.message = f"File name's length must be less than or equal to {max_length}."
+        super().__init__(self.message)
+    def __str__(self):
+        return self.message
