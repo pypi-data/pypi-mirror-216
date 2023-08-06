@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block content %}
+<h1>{% trans "Photo gallery" %}</h1>
+<div class="ui divided items">
+	{% for album in object_list %}
+	{% include "./include/album.html" %}
+	{% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,7 @@
+{% load static i18n %}
+
+{% block content %}
+{% with album=instance.album %}
+	{% include "../include/album.html" %}
+{% endwith %}
+{% endblock content %}

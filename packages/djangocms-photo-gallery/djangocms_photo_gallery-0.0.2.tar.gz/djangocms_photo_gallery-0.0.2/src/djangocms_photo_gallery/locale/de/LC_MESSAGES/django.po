@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-08 12:01+0100\n"
+"PO-Revision-Date: 2021-12-08 12:08+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+
+#: admin.py:15 models.py:16 models.py:26 models.py:51
+msgid "album"
+msgstr "Album"
+
+#: admin.py:16 models.py:17
+msgid "albums"
+msgstr "Alben"
+
+#: cms_apps.py:9
+msgid "outPHit photo gallery"
+msgstr "outPHit-Fotogalerie"
+
+#: cms_plugins.py:12
+msgid "outPHit"
+msgstr "outPHit"
+
+#: cms_plugins.py:13
+msgid "outPHit Album"
+msgstr "outPHit Album"
+
+#: models.py:12
+msgid "name of album"
+msgstr "Name des Albums"
+
+#: models.py:20
+msgid "– no name –"
+msgstr "– kein Name –"
+
+#: models.py:29
+msgid "picture"
+msgstr "Bild"
+
+#: models.py:33
+msgid "title"
+msgstr "Titel"
+
+#: models.py:35
+msgid "caption"
+msgstr "Bildunterschrift"
+
+#: models.py:37
+msgid "copyright notice"
+msgstr "Copyright-Vermerk"
+
+#: models.py:42
+msgid "album picture"
+msgstr "Albumbild"
+
+#: models.py:43
+msgid "album pictures"
+msgstr "Albumbilder"
+
+#: templates/outphit_photo_gallery/album_list.html:5
+msgid "Photo gallery"
+msgstr "Fotogalerie"
+
+#: templates/outphit_photo_gallery/include/album.html:20
+msgid "Download"
+msgstr "Herunterladen"
