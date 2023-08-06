@@ -1,0 +1,10 @@
+# Releases
+
+## perceval-public-inbox 0.1.1 - (2023-06-28)
+
+**Bug fixes:**
+
+ * Commit parsing and error handling\
+   An exception was raised when the commit was incorrectly parsed.
+   Improved commit parsing and error handling.
+
