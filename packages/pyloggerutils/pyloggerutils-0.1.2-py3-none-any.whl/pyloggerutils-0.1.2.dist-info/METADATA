@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: pyloggerutils
+Version: 0.1.2
+Summary: This is Python Logger
+Home-page: https://github.com/ISabariRajan
+Download-URL: https://github.com/ISabariRajan/pyloggerutils/archive/refs/tags/v-0.1.1.tar.gz
+Author: Sabari Rajan
+Author-email: mailme@isbarirajan.com
+License: MIT
+Keywords: Logger,Easy,PySy
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Logger
+This is (Py)thon Ea(sy) Logger
+This creates a simple to use python logger, Uses DictConfig for configuring logger.
+This Software is in initial stage and will be updated as I move on. Please contribute as you see fit
