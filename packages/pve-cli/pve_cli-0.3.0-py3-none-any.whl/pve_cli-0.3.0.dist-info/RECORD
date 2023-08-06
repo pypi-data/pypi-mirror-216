@@ -1,0 +1,16 @@
+pve_cli/__init__.py,sha256=SWqAEuDPmS9zsnTdIXDKa5PCTOmpP3WCzdbwo3-Rmy8,198
+pve_cli/guest_cmd.py,sha256=MG4wvL4dXbomSD4-J85w9Qx2Piu8_2Z8hoTR2eKAGRU,3744
+pve_cli/main.py,sha256=ojY1BgakhxcInpAbHSFeILKdsF5YfxnWVJjaR8Rqqng,1861
+pve_cli/nodes_cmd.py,sha256=PuSmFaCshBK0ML98mLV-GMDis3M9rtnjrrotF6xWx8I,5658
+pve_cli/proxmox/__init__.py,sha256=scVtt-pKE_yWJicrLPi053jwlcpJDArZsPnMn4EfLFs,233
+pve_cli/proxmox/api.py,sha256=8-hfpb-05cfCxozpR-BOqgdIzISDiL9h0x0HOoH5NiM,3917
+pve_cli/proxmox/exceptions.py,sha256=B7gvmuumhTUNshiLEg5JXE72qWMoht_8OHERaaNpx74,449
+pve_cli/proxmox/types.py,sha256=BHOW1Vqfj0Uu_FJ_yIuBiZ5lm2ij_1f9r8Znrm0aRrg,96
+pve_cli/util/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pve_cli/util/callbacks.py,sha256=7I-vqqp11pCqBhaVXG7jEuM9iylUZz8uZz-nmpxhjYM,839
+pve_cli/util/exceptions.py,sha256=2XmjUToSh_yf5svQVzeJjpaG--2hyAQzNZH1xBk7B4U,129
+pve_cli/util/validators.py,sha256=9dPOD2_RgH4QO5r7O9QK2GYmAD2kkVYiJAWmJ0u34ZM,1570
+pve_cli-0.3.0.dist-info/METADATA,sha256=Y1sfxI1-l6rZHeYafIOSzpRtVoDukAySIILA_NxOlJw,1281
+pve_cli-0.3.0.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+pve_cli-0.3.0.dist-info/entry_points.txt,sha256=KKVIHvI99xhDGdmbyb9WSdlQmBKSse8Vh6J8VowsWJI,44
+pve_cli-0.3.0.dist-info/RECORD,,
