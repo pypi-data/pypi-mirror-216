@@ -1,0 +1,13 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+ffmpegdevices/README.MD
+ffmpegdevices/__init__.py
+ffmpegdevices/requirements.txt
+ffmpegdevices/thirdparty.json
+ffmpegdevices.egg-info/PKG-INFO
+ffmpegdevices.egg-info/SOURCES.txt
+ffmpegdevices.egg-info/dependency_links.txt
+ffmpegdevices.egg-info/top_level.txt
