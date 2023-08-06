@@ -1,0 +1,5 @@
+{{ from_name }} veut vous ajouter dans ses contacts sur needle.
+
+{{ message }}
+
+Pour accepter, cliquez sur le lien suivant <a href="{{ link }}" target="_blank">{{ link }}</a>
