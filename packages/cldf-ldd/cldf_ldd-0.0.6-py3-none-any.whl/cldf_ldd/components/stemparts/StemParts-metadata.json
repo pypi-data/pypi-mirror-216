@@ -1,0 +1,48 @@
+{
+    "url": "stemparts.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Stem_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The involved stem.",
+                "datatype": "string"
+            },
+            {
+                "name": "Morph_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The involved morph.",
+                "datatype": "string"
+            },
+            {
+                "name": "Index",
+                "required": true,
+                "dc:description": "Specifies the position of a morph in a stem.",
+                "dc:extent": "singlevalued",
+                "datatype": {
+                    "base": "string",
+                    "format": "\\d+(:\\d+)?"
+                }
+            },
+            {
+                "name": "Gloss_ID",
+                "required": true,
+                "dc:extent": "multivalued",
+                "separator": ",",
+                "dc:description": "The gloss the morph has in the stem.",
+                "datatype": "string"
+            }
+        ]
+    }
+}

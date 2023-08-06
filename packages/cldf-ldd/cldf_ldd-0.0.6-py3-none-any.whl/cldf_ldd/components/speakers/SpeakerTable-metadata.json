@@ -1,0 +1,23 @@
+{
+    "url": "speakers.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Name",
+                "dc:extent": "singlevalued",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                "datatype": "string"
+            }
+        ]
+    }
+}

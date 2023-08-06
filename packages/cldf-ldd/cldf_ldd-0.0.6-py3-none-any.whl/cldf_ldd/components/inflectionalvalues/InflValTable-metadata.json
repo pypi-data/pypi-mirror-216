@@ -1,0 +1,37 @@
+{
+    "url": "inflectionalvalues.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Name",
+                "dc:extent": "singlevalued",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                "datatype": "string"
+            },
+            {
+                "name": "Category_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The inflectional category the value belongs to.",
+                "datatype": "string"
+            },
+            {
+                "name": "Gloss_ID",
+                "required": false,
+                "dc:extent": "singlevalued",
+                "dc:description": "The gloss for the inflectional value.",
+                "datatype": "string"
+            }
+        ]
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "url": "formparts.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "name": "ID",
+                "required": true,
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                "datatype": {
+                    "base": "string",
+                    "format": "[a-zA-Z0-9_\\-]+"
+                }
+            },
+            {
+                "name": "Form_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The associated form.",
+                "datatype": "string"
+            },
+            {
+                "name": "Wordform_ID",
+                "required": true,
+                "dc:extent": "singlevalued",
+                "dc:description": "The associated wordform.",
+                "datatype": "string"
+            },
+            {
+                "name": "Index",
+                "required": true,
+                "dc:description": "Specifies the position of a morph in a wordform.",
+                "dc:extent": "singlevalued",
+                "datatype": {
+                    "base": "string",
+                    "format": "\\d+(:\\d+)?"
+                }
+            }
+        ]
+    }
+}
