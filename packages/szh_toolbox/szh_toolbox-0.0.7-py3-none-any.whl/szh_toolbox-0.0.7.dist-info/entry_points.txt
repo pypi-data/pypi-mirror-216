@@ -1,0 +1,5 @@
+[console_scripts]
+greetc=szh_toolbox.commond:main
+st-noaa=szh_toolbox.noaa_download:main
+st-wps=szh_toolbox.namelistwps:main
+
