@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "promptreview"
+version = "0.0.1"
+description = ""
+authors = ["hupe1980"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
