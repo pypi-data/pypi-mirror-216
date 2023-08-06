@@ -1,0 +1,2 @@
+[console_scripts]
+convert-trusted-gpg = convert_trusted_gpg:main
