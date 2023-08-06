@@ -1,0 +1,8 @@
+pandas>=1.5.2
+numpy>=1.0.0
+PySide6>=6.0.0
+pathos>=0.3.0
+setuptools>=65.0.0
+
+[:platform_system == "Windows"]
+winshell>=0.6
