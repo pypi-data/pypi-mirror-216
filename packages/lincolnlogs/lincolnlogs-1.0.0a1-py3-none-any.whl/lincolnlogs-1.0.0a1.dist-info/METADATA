@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: lincolnlogs
+Version: 1.0.0a1
+Summary: A handy logger for identifying message sources during development
+Author: Doug McGeehan
+Author-email: doug@kmnr.org
+License: GPLv3
+Keywords: logger,logging
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: System :: Logging
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: colorlog
+Provides-Extra: color
+Requires-Dist: colorlog ; extra == 'color'
+
+# lincolnlogs
+A better logging framework utilizing module paths of logged messages, colors, and more!
