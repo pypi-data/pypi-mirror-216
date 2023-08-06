@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: tenantclient
+Version: 0.0.2
+Summary: Package for tenantisation
+Home-page: UNKNOWN
+Author: Lokesh
+Author-email: lokesh@adjoint.in
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: requests (>2.28)
+Requires-Dist: django (>4.0.0)
+Requires-Dist: celery (>5.2.6)
+Requires-Dist: redis (>3.5.2)
+Requires-Dist: simplejson (>3.19)
+Requires-Dist: djangorestframework (>=3.14)
+Requires-Dist: djangorestframework-simplejwt (>5.2)
+
+UNKNOWN
+
