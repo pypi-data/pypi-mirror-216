@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+build.py
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+setup.py
+multithreading/__init__.py
+multithreading/base.py
+multithreading/document.py
+multithreading/process.py
+pymultithreading.egg-info/PKG-INFO
+pymultithreading.egg-info/SOURCES.txt
+pymultithreading.egg-info/dependency_links.txt
+pymultithreading.egg-info/requires.txt
+pymultithreading.egg-info/top_level.txt
