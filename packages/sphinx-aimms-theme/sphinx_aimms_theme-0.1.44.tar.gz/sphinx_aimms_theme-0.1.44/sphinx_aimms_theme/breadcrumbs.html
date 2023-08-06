@@ -1,0 +1,98 @@
+{# Support for Sphinx 1.3+ page_source_suffix, but don't break old builds. #} {% if page_source_suffix %} {% set suffix = page_source_suffix %} {% else %} {% set suffix = source_suffix %} {% endif %}
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+    {% block menu %} 
+    <nav class="main-menu">
+        <a href="https://aimms.com/" class="logo"><img src="{{ pathto('_static/AIMMS_logo_H_RGB.png', 1) }}" alt="AIMMS Logo" title="AIMMS Help &amp; Support"></a>
+        <ul id="menu-main-site-navigation-1">
+            <li><a href="https://community.aimms.com/">Community</a>
+                <ul>
+                    <li><a href="https://community.aimms.com/welcome-24">Welcome</a></li>
+                    <li><a href="https://community.aimms.com/product-q-a-4">Product Q&A</a></li>
+                    <li><a href="https://community.aimms.com/common-interests-38">Common Interests</a></li>
+                    <li><a href="https://community.aimms.com/product-updates-roadmap-36">Product Updates & Roadmap</a></li>
+                </ul>
+            </li>
+            <li><a href="https://documentation.aimms.com/">Documentation</a>
+                <ul>
+                    <li><a href="https://documentation.aimms.com/aimms_user.html">User Guide</a></li>
+                    <li><a href="https://documentation.aimms.com/language-reference/index.html">Language Reference</a></li>
+                    <li><a href="https://documentation.aimms.com/aimms_modeling.html">Modeling Guide</a></li>
+                    <li><a href="https://documentation.aimms.com/functionreference/index.html">Function Reference</a></li>
+                    <li><a href="https://documentation.aimms.com/webui/index.html">WebUI</a></li>
+                    <li><a href="https://documentation.aimms.com/pro/index.html">PRO Platform</a></li>
+                    <li><a href="https://documentation.aimms.com/cloud/index.html">Cloud Platform</a></li>
+                    <li><a href="https://documentation.aimms.com/library-repository.html">Library Repository</a></li>
+                </ul>
+            </li>
+            <li><a href="https://how-to.aimms.com/">How To</a>
+                <ul>
+                    <li><a href="https://how-to.aimms.com/C_Getting_Started/index.html">Getting Started</a></li>
+                    <li><a href="https://how-to.aimms.com/C_Developer/index.html">AIMMS Developer</a></li>
+                    <li><a href="https://how-to.aimms.com/C_UI/index.html">Application UI</a></li>
+                    <li><a href="https://how-to.aimms.com/C_Deployment/index.html">Deployment</a></li>
+                    <li><a href="https://how-to.aimms.com/C_Evolution/index.html">Software Evolution</a></li>
+                    <li><a href="https://how-to.aimms.com/examples/index.html">Examples</a></li>
+                    <li><a href="https://how-to.aimms.com/Recently_added.html">Recently Added</a></li>
+                </ul>
+            </li>
+            <li><a href="https://www.aimms.com/support/downloads/">Downloads</a></li>
+            <li><a>Release Notes</a>
+                <ul>
+                    <li><a href="https://documentation.aimms.com/release-notes.html">AIMMS Development RELEASE NOTES</a></li>
+                    <li><a href="https://documentation.aimms.com/pro-release-notes.html">AIMMS Deployment RELEASE NOTES</a></li>
+                    <li><a href="https://scnavigator-manual.aimms.com/release-notes/release-notes-scn.html">AIMMS SC App Store RELEASE NOTES</a></li>
+                </ul>
+            </li>
+    </nav>
+    {% endblock %}
+    {% block OSlink %}
+    {% if pagename != master_doc %}
+        <ul class="wy-breadcrumbs">
+            {% block breadcrumbs %}
+            <li><a href="{{ pathto(master_doc) }}">{{ theme_doc_title }}</a> &raquo;</li>
+            {% for doc in parents %}
+            <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
+            {% endfor %}
+            <li>{{ title }}</li>
+            {% endblock %} 
+            <li class="side-rate-review" style="float:right;">
+            {% if theme_display_help_and_feedback %}
+            {% if theme_is_github %}
+              <a class="fa fa-github" href="{{ theme_repo_url }}/tree/{{ "master" }}/{{ conf_py_path }}{{ pagename }}{{ ".rst" }}"> Edit on Github</a>
+            {% elif theme_is_gitlab %}
+              <a class="fa fa-gitlab" href="{{ theme_repo_url }}/-/blob/{{ "master" }}/{{ conf_py_path }}{{ pagename }}{{ ".rst" }}"> Edit on Gitlab</a>
+            {% endif %}
+            {% endif %}
+            </li>
+        </ul>
+
+        {% if (theme_prev_next_buttons_location == 'top' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
+        <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+            {% if next %}
+            <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a> {% endif %} {% if prev %}
+            <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a> {% endif %}
+        </div>
+        {% endif %}
+    {% endif %}
+    {% endblock %}
+</div>
+
+{% block right_side_panel %}
+{% if pagename == master_doc or not theme_display_local_toc %} {% set display_toc = False %} {% endif %}
+
+{% if display_toc %}
+<div class="localtoc">
+    {% block local_toc %}
+    <div class="caption"> 
+      {% if theme_display_help_and_feedback %}
+      <a class="fa fa-exclamation-circle" href="#help-&-feedback" > Help & feedback</a>
+      <br><br>
+      {% endif %}
+      {{ _('Table Of Contents') }}</div>
+    {{ toc }}
+    {% endblock %}
+</div>
+{% endif %} 
+{% endblock %}
