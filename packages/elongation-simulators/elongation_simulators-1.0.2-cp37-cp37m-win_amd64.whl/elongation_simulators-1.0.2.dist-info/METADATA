@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: elongation-simulators
+Version: 1.0.2
+Summary: Python wrapper around translation and ribosome simulators
+Home-page: https://github.com/fheday/elongation_simulator/
+Author: Fabio Hedayioglu
+Author-email: fheday@gmail.com
+Maintainer: Fabio Hedayioglu
+Maintainer-email: fheday@gmail.com
+License: MIT License
+Keywords: elongation translation
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python
+License-File: LICENSE
+Requires-Dist: pybind11
+Requires-Dist: pytest
+Requires-Dist: numpy
+
+Long description of the simulators.
+
+Changes
+-------
+
+1.0.0 (unreleased)
+~~~~~~~~~~~~~~~~~~
+initial release
