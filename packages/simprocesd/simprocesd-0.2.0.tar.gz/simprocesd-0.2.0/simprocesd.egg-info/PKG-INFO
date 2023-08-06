@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: simprocesd
+Version: 0.2.0
+Summary: Discreet event simulator for manufacturing systems.
+Author: Serghei Drozdov
+Author-email: serghei.drozdov@nist.gov
+License: US Government Open Source
+Project-URL: Source Code, https://github.com/usnistgov/simprocesd
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: examples
+License-File: LICENSE.md
+
+# SimPROCESD: Simulated-Production Resource for Operations & Conditions Evaluations to Support Decision-making
+
+SimPROCESD is a discrete event simulation package written in Python that is designed to model the behavior of discrete manufacturing systems. Specifically, it focuses on asynchronous production lines with finite buffers. It also provides functionality for modeling the degradation and maintenance of machines in these systems.
+
+In addition to modeling the behavior of existing systems, SimPROCESD is also intended to help with optimizing those systems by simulating various changes to them and reviewing the results. For instance, users may be interested in evaluating alternative maintenance policies for a particular system.
+
+The software is available for public use through a publicly available GitHub repository. Any user may create a fork (copy) of the repository to freely experiment (e.g., class extensions to model complex processes) with the code without affecting the original source code.
+
+**NOTE:** SimPROCESD project is in early development and may receive updates that are not backwards compatible.
+
+See the project's [GitHub page](https://github.com/usnistgov/simprocesd) for more information.
