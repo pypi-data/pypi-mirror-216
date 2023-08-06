@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: napari-graph
+Version: 0.1.1
+Summary: Fast editable graphs in Python and numba
+Home-page: https://github.com/napari/napari-graph
+Author: Jordão Bragantini, Jonas Windhager & Juan Nunez-Iglesias
+Author-email: jordao.bragantini@czbiohub.org
+License: BSD-3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Framework :: napari
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Provides-Extra: docs
+License-File: LICENSE
+
+# napari-graph
+
+Efficient graph data structures and algorithms for fast slicing, visualization, and editing.
+
+Implementation based on the [trackmate-graph](https://github.com/mastodon-sc/mastodon/blob/master/doc/trackmate-graph.pdf).
