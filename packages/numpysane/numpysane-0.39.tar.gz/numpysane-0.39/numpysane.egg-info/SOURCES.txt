@@ -1,0 +1,9 @@
+LICENSE
+README
+numpysane.py
+numpysane_pywrap.py
+setup.py
+pywrap-templates/pywrap_function_generic.c
+pywrap-templates/pywrap_module_footer_generic.c
+pywrap-templates/pywrap_module_header.c
+test/test-numpysane.py
