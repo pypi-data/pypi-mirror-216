@@ -1,0 +1,33 @@
+[project]
+name = "nonebot-plugin-dailysign"
+version = "0.1.0"
+description = "一个简单的每日签到插件"
+authors = [
+    { name = "kexue", email = "xana278@foxmail.com" },
+    { name = "kexue", email = "x@kexue.io" },
+]
+dependencies = [
+    "nonebot2[fastapi]>=2.0.0",
+    "nonebot-adapter-onebot>=2.0.0",
+    "nonebot-plugin-tortoise-orm>=0.1.0",
+]
+requires-python = ">=3.8,<4.0"
+readme = "README.md"
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+homepage = "https://github.com/kexue-z/nonebot-plugin-dailysign"
+
+[tool.pdm.dev-dependencies]
+dev = []
+
+[tool.pdm.build]
+includes = []
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
