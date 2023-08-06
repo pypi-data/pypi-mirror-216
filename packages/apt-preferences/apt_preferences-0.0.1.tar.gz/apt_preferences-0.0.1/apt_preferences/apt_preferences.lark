@@ -1,0 +1,42 @@
+?start: preferences_l
+
+// `.1` resolves `Terminal($END)` conflicts
+preferences_l.1: preference+
+
+preference: | // order is not important for apt
+	  | package pin pin_priority
+          | package pin_priority pin
+          | pin package pin_priority
+	  | pin pin_priority package
+	  | pin_priority pin package 
+	  | pin_priority package pin
+
+pin: _add_explanations{_pin}
+package: _add_explanations{_package}
+pin_priority: _add_explanations{_pin_priority}
+
+_add_explanations{field}: [explanations_l] field
+
+explanations_l: explanation+
+explanation: "Explanation:" string
+
+_pin: "Pin:" string
+_package: "Package:" string
+_pin_priority: "Pin-Priority:" integer
+
+string : /.+/ 
+
+// import integer
+%import common.SIGNED_NUMBER
+integer: SIGNED_NUMBER
+
+// ignore whitespaes and newlines
+%import common.WS
+%ignore WS
+
+// ignore comments
+COMMENT: "#" /[^\n]/*
+%ignore COMMENT
+
+
+
