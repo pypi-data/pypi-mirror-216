@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+allspice/__init__.py
+allspice/allspice.py
+allspice/apiobject.py
+allspice/baseapiobject.py
+allspice/exceptions.py
+allspice/ratelimiter.py
+py_allspice.egg-info/PKG-INFO
+py_allspice.egg-info/SOURCES.txt
+py_allspice.egg-info/dependency_links.txt
+py_allspice.egg-info/requires.txt
+py_allspice.egg-info/top_level.txt
+tests/test_api.py
+tests/test_api_longtests.py
+tests/test_api_ratelimiting.py
