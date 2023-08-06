@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: idsw
+Version: 1.1
+Summary: Industrial Data Science Workflow: full workflow for ETL, statistics, and Machine learning modelling of (usually) time-stamped industrial facilities data.
+Author: Marco César Prado Soares, Gabriel Fernandes Luz
+Author-email: marcosoares.feq@gmail.com, gfluz94@gmail.com
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: numpy (>=1.21.6)
+Requires-Dist: pandas (>=1.5.3)
+Requires-Dist: matplotlib (>=3.7.1)
+Requires-Dist: scipy (>=1.11.0)
+Requires-Dist: seaborn (>=0.12.2)
+Requires-Dist: scikit-learn (>=1.2.2)
+Requires-Dist: statsmodels (>=0.14.0)
+Requires-Dist: flask (>=2.2.5)
+Requires-Dist: plotly (>=5.15.0)
+Requires-Dist: contractions (>=0.1.73)
+Requires-Dist: fancyimpute (>=0.7.0)
+Requires-Dist: dash (>=2.11.0)
+Requires-Dist: dash-bootstrap-components (>=1.4.1)
+Requires-Dist: fuzzywuzzy (>=0.18.0)
+Requires-Dist: html2image (>=2.0.3)
+Requires-Dist: missingno (>=0.5.2)
+Requires-Dist: prophet (>=1.1.4)
+Requires-Dist: recordlinkage (>=0.15)
+Requires-Dist: requests (>=2.31.0)
+Requires-Dist: requests-ntlm (>=1.2.0)
+Requires-Dist: shap (>=0.41.0)
+Requires-Dist: sqlalchemy (>=2.0.17)
+Requires-Dist: tensorflow (>=2.12.0)
+Requires-Dist: xgboost (>=1.7.6)
+
+
+Industrial Data Science Workflow: full workflow for ETL, statistics, and Machine learning modelling of (usually) time-stamped industrial facilities data.
+
+Check the project Github: https://github.com/marcosoares-92/IndustrialDataScienceWorkflow
