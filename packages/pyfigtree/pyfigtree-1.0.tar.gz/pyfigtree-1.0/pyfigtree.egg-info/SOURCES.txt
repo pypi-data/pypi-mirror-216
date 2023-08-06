@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pyfigtree/__init__.py
+pyfigtree/pyfigtree.py
+pyfigtree.egg-info/PKG-INFO
+pyfigtree.egg-info/SOURCES.txt
+pyfigtree.egg-info/dependency_links.txt
+pyfigtree.egg-info/top_level.txt
+pyfigtree/lib/libann_figtree_version.so
+pyfigtree/lib/libfigtree.so
