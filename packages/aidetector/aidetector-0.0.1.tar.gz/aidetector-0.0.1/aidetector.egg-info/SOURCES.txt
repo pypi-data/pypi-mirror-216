@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+aidetector/__init__.py
+aidetector/aidetectorclass.py
+aidetector/command_interface.py
+aidetector/inference.py
+aidetector/tokenization.py
+aidetector/training.py
+aidetector.egg-info/PKG-INFO
+aidetector.egg-info/SOURCES.txt
+aidetector.egg-info/dependency_links.txt
+aidetector.egg-info/entry_points.txt
+aidetector.egg-info/requires.txt
+aidetector.egg-info/top_level.txt
