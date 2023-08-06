@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Domino</title>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="static/js/render.js"></script>
+    <script src="static/js/game.js"></script>
+    <link rel="stylesheet" href="static/css/style.css"/>
+    <link rel="icon" href="static/img/favicon.svg"/>
+</head>
+<body onresize="render();">
+    <div id="resources">
+        <img alt=""  id="domino0" class="resource" src="static/img/d0.png"/>
+        <img alt=""  id="domino1" class="resource" src="static/img/d1.png"/>
+        <img alt=""  id="domino2" class="resource" src="static/img/d2.png"/>
+        <img alt=""  id="domino3" class="resource" src="static/img/d3.png"/>
+        <img alt=""  id="domino4" class="resource" src="static/img/d4.png"/>
+        <img alt=""  id="domino5" class="resource" src="static/img/d5.png"/>
+        <img alt=""  id="domino6" class="resource" src="static/img/d6.png"/>
+        <img alt=""  id="closed" class="resource" src="static/img/closed.png"/>
+    </div>
+
+    <canvas id="board" onmousedown="panStart(event)" onmouseup="panEnd(event); attemptPlay(event);" onmousemove="pan(event)" onmouseleave="panEnd(event)"></canvas>
+
+    <div id="controls">
+        <div class="drawpool">
+            <span id="drawpool-count">?</span>
+        </div>
+
+        <button onclick="startGame()">Start</button>
+    </div>
+
+    <div id="opponent-hand"></div>
+    <div id="player-hand"></div>
+
+    <div id="opponent-stats"></div>
+    <div id="player-stats"></div>
+</body>
+</html>
