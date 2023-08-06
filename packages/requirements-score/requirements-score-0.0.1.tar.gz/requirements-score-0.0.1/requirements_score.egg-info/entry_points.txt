@@ -1,0 +1,2 @@
+[console_scripts]
+requirements_score = requirements_score.management:manage
