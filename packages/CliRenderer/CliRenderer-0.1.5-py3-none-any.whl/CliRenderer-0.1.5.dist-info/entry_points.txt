@@ -1,0 +1,2 @@
+[console_scripts]
+clirender = CliRenderer.__main__:main
