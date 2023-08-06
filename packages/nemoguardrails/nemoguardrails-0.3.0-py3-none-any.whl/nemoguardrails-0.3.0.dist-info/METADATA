@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: nemoguardrails
+Version: 0.3.0
+Summary: NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems.
+Home-page: https://github.com/NVIDIA/NeMo-Guardrails
+Author: NVIDIA
+Author-email: nemoguardrails@nvidia.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENCES-3rd-party
+License-File: LICENSE-Apache-2.0.txt
+License-File: LICENSE.md
+Requires-Dist: pydantic (~=1.10.6)
+Requires-Dist: aiohttp (==3.8.4)
+Requires-Dist: langchain (==0.0.167)
+Requires-Dist: requests (>=2.31.0)
+Requires-Dist: typer (==0.7.0)
+Requires-Dist: PyYAML (~=6.0)
+Requires-Dist: setuptools (~=65.5.1)
+Requires-Dist: annoy (==1.17.1)
+Requires-Dist: sentence-transformers (==2.2.2)
+Requires-Dist: fastapi (==0.96.0)
+Requires-Dist: starlette (==0.27.0)
+Requires-Dist: uvicorn (==0.22.0)
+Requires-Dist: httpx (==0.23.3)
+Requires-Dist: simpleeval (==0.9.13)
+Requires-Dist: typing-extensions (==4.5.0)
+Requires-Dist: Jinja2 (==3.1.2)
+Provides-Extra: eval
+Requires-Dist: tqdm (~=4.65) ; extra == 'eval'
+Requires-Dist: numpy (~=1.24) ; extra == 'eval'
+
+NeMo Guardrails is an open-source toolkit for easily adding
+    programmable guardrails to LLM-based conversational systems.
+    Guardrails (or "rails" for short) are specific ways of controlling the output of an LLM,
+    e.g., not talking about politics, responding in a particular way to specific user
+    requests, following a predefined dialog path, using a particular language style,
+    extracting structured data, etc.
