@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "count-tokens"
+version = "0.1.0"
+description = "count number of tokens in the text file using toktoken tokenizer from OpenAI\u001b"
+authors = ["Krystian Safjan <ksafjan@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "count_tokens"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tiktoken = "^0.4.0"
+
+[tool.poetry.scripts]
+count-tokens = 'count_tokens.count:main'
+
+[tool.poetry.group.dev.dependencies]
+tox = "^4.6.3"
+pre-commit = "^3.3.3"
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
