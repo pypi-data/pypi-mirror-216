@@ -1,0 +1,8 @@
+*.gv
+*.gv.pdf
+dist/
+__pycache__
+*.egg-info
+build/
+venv/
+.coverage

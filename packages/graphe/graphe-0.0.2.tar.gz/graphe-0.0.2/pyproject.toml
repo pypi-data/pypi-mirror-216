@@ -1,0 +1,31 @@
+[project]
+name = "graphe"
+version = "0.0.2"
+authors = [
+  { name="Morten Jagd Christensen", email="mortenjc@jcaps.com" },
+]
+description = "Collection of graph algorithms, applications and visualisations"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/mortenjc/graphe"
+"Documentation" = "https://graphe.readthedocs.io/en/latest/"
+"Bug Tracker" = "https://github.com/mortenjc/graphe/issues"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+testpaths = [
+    "tests"
+]
