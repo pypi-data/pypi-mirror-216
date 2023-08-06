@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: pixelsparser
+Version: 2.0.1
+Summary: A python library that allows users to import their Pixels JSON data and use it in their python scripts.
+Author-email: Constantinos Psomadakis <business@tinosps.com>
+Project-URL: Homepage, https://github.com/pTinosq/pixelsparser/
+Project-URL: Bug Tracker, https://github.com/pTinosq/pixelsparser/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pixelsparser
+
+A Python library that allows users to import their Pixels JSON data and use it in their python scripts.
+
+## Installation
+
+Install the library using pip:
+
+```bash
+pip install pixelsparser
+```
+
+## Usage
+
+```python
+import pixelsparser
+
+pixels = pixelsparser.load("location/to/data.json")
+
+# Access the mood of the first pixel
+print(pixels[0].mood)
+
+# Access the notes of the second pixel
+print(pixels[1].notes)
+```
+
+## Credits
+
+This library was created to parse data from the Pixels app by Teo Vogel, available on the [Google Play Store](https://play.google.com/store/apps/details?id=ar.teovogel.yip) and on the [App Store](https://apps.apple.com/sg/app/pixels-mental-health-and-mood/id1481910141)
