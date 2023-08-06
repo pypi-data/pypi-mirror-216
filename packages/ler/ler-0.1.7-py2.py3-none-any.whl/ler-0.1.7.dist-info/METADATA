@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ler
+Version: 0.1.7
+Summary: Lensing Rates
+Home-page: https://github.com/hemantaph/ler
+Author: Hemantakumar
+Author-email: hemantaphurailatpam@gmail.com
+License: MIT
+Requires-Dist: setuptools (>=67.8.0)
+Requires-Dist: numpy (>=1.18)
+Requires-Dist: numba (==0.56.4)
+Requires-Dist: bilby (>=1.0.2)
+Requires-Dist: pycbc (<=2.0.6)
+Requires-Dist: gwsnr (>=0.1)
+Requires-Dist: scipy (>=1.9.0)
+Requires-Dist: lenstronomy (>=1.10.4)
+Requires-Dist: astropy (>=5.1)
+Requires-Dist: tqdm (>=4.64.1)
+Requires-Dist: pointpats (>=2.3)
+Requires-Dist: shapely (>=2.0.1)
+
