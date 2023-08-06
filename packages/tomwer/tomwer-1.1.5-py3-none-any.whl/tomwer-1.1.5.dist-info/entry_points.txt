@@ -1,0 +1,17 @@
+[console_scripts]
+tomwer = tomwer.__main__:main
+
+[orange.canvas.help]
+html-index = orangecontrib.tomwer.widgets:WIDGET_HELP_PATH
+
+[orange.widgets]
+tomwer = orangecontrib.tomwer.widgets
+
+[orange.widgets.tutorials]
+FLUO = orangecontrib.tomwer.tutorials
+
+[orange3.addon]
+tomwer-add-on = orangecontrib.tomwer
+
+[orangecanvas.examples]
+FLUO = orangecontrib.tomwer.tutorials
