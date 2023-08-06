@@ -1,0 +1,167 @@
+{
+    "resources": {
+        "bohrium1": {
+            "template_config":{
+                "requests" : {"ephemeral-storage": "4Gi"}
+            },
+            "executor":{
+            "image": "dptechnology/dpdispatcher:latest",
+            "machine_dict":{
+                "batch_type": "Bohrium",
+                "context_type": "Bohrium",
+                "local_root" : "./",
+                "remote_profile":{
+                    "email": "",
+                    "password": "",
+                    "program_id": "",
+                    "input_data":{
+                        "api_version":2,
+                        "job_type": "container",
+                        "log_file": "tmp_log",
+                        "job_name": "rid",
+                        "scass_type":"c12_m92_1 * NVIDIA V100",
+                        "platform": "ali",
+                        "image_name":"registry.dp.tech/public/pkufjhdocker/rid-gmx-exploration:stable"
+                        }
+                }
+            },
+            "resources_dict":{
+                "batch_type:": "Bohrium"
+            }
+        }
+        },
+        "bohrium2": {
+            "template_config":{
+                "requests" : {"ephemeral-storage": "4Gi"}
+            },
+            "executor":{
+            "image": "dptechnology/dpdispatcher:latest",
+            "machine_dict":{
+                "batch_type": "Bohrium",
+                "context_type": "Bohrium",
+                "local_root" : "./",
+                "remote_profile":{
+                    "email": "",
+                    "password": "",
+                    "program_id": "",
+                    "input_data":{
+                        "api_version":2,
+                        "job_type": "container",
+                        "log_file": "tmp_log",
+                        "job_name": "test_rid",
+                        "scass_type":"c12_m92_1 * NVIDIA V100",
+                        "platform": "ali",
+                        "image_name":"registry.dp.tech/public/pkufjhdocker/rid-gmx-plumed:stable"
+                        }
+                }
+            },
+            "resources_dict":{
+                "batch_type:": "Bohrium"
+            }
+        }
+        },
+        "bohrium3": {
+            "template_config":{
+                "requests" : {"ephemeral-storage": "4Gi"}
+            },
+            "executor":{
+            "image": "dptechnology/dpdispatcher:latest",
+            "machine_dict":{
+                "batch_type": "Bohrium",
+                "context_type": "Bohrium",
+                "local_root" : "./",
+                "remote_profile":{
+                    "email": "",
+                    "password": "",
+                    "program_id": "",
+                    "input_data":{
+                        "api_version":2,
+                        "job_type": "container",
+                        "log_file": "tmp_log",
+                        "job_name": "rid",
+                        "scass_type":"c12_m92_1 * NVIDIA V100",
+                        "platform": "ali",
+                        "image_name":"registry.dp.tech/public/pkufjhdocker/rid-tf-cpu:stable"
+                        }
+                }
+            },
+            "resources_dict":{
+                "batch_type:": "Bohrium"
+            }
+        }
+        },
+        "bohrium4": {
+            "template_config":{
+                "requests" : {"ephemeral-storage": "4Gi"}
+            },
+            "executor":{
+            "image": "dptechnology/dpdispatcher:latest",
+            "machine_dict":{
+                "batch_type": "Bohrium",
+                "context_type": "Bohrium",
+                "local_root" : "./",
+                "remote_profile":{
+                    "email": "",
+                    "password": "",
+                    "program_id": "",
+                    "input_data":{
+                        "api_version":2,
+                        "job_type": "container",
+                        "log_file": "tmp_log",
+                        "job_name": "rid",
+                        "scass_type":"c12_m92_1 * NVIDIA V100",
+                        "platform": "ali",
+                        "image_name":"registry.dp.tech/public/pkufjhdocker/rid-gmx-tf:stable"
+                        }
+                }
+            },
+            "resources_dict":{
+                "batch_type:": "Bohrium"
+            }
+        }
+        },
+        "bohrium5": {
+            "template_config":{
+                "requests" : {"ephemeral-storage": "4Gi"}
+            },
+            "executor":{
+            "image": "dptechnology/dpdispatcher:latest",
+            "machine_dict":{
+                "batch_type": "Bohrium",
+                "context_type": "Bohrium",
+                "local_root" : "./",
+                "remote_profile":{
+                    "email": "",
+                    "password": "",
+                    "program_id": "",
+                    "input_data":{
+                        "api_version":2,
+                        "job_type": "container",
+                        "log_file": "tmp_log",
+                        "job_name": "rid",
+                        "scass_type":"c12_m92_1 * NVIDIA V100",
+                        "platform": "ali",
+                        "image_name":"registry.dp.tech/public/pkufjhdocker/rid-tf-gpu:stable"
+                        }
+                }
+            },
+            "resources_dict":{
+                "batch_type:": "Bohrium"
+            }
+        }
+        }
+    },
+
+    "tasks": {
+        "prep_exploration_config": "bohrium3",
+        "run_exploration_config": "bohrium1",
+        "prep_label_config": "bohrium3",
+        "run_label_config": "bohrium2",
+        "prep_select_config": "bohrium3",
+        "run_select_config": "bohrium4",
+        "prep_data_config": "bohrium3",
+        "run_train_config": "bohrium5",
+        "model_devi_config": "bohrium5",
+        "workflow_steps_config": "bohrium3"
+    }
+}

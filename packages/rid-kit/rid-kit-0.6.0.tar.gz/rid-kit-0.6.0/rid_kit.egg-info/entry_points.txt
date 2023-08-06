@@ -1,0 +1,3 @@
+[console_scripts]
+rid = rid.entrypoint.main:main
+
