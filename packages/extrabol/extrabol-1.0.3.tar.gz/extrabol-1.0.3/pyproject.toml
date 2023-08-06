@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="extrabol"
+version="1.0.3"
+readme = "README.md"
+authors = [
+    {name = "Ian M. Thornton", email = "iot5037@psu.edu"},
+]
+description="Estimate SN bolometric light curves"
+dependencies=[
+    "numpy",
+    "astropy",
+    "astroquery",
+    "matplotlib",
+    "george",
+    "extinction",
+    "emcee",
+    "mkdocs >= 1.2.2",
+    "importlib_resources"
+]
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python='>=3.6'
+
+[project.scripts]
+extrabol = "extrabol.extrabol:main"
+
+[project.urls]
+Repository = "https://github.com/villrv/extrabol"
+Documentation = "https://extrabol.readthedocs.io/en/latest/"
+
+
+[tool.setuptools]
+packages=["extrabol",
+          "extrabol.template_bank",
+          "extrabol.example"
+         ]
+
+[tool.setuptools.package-data]
+"extrabol.example" = ["SN2010bc.dat"]
+"extrabol.template_bank" = ["*.npz"]
+
+
+
