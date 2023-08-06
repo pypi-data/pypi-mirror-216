@@ -1,0 +1,7 @@
+/secretkeys/**
+/.vscode/**
+__pycache__
+/manualTests/
+apikeys.py
+BuildPackage.bat
+.pypirc
