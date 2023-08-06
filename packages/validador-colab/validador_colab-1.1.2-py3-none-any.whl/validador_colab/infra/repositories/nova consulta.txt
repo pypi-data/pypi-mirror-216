@@ -1,0 +1,30 @@
+with cte_produto as (
+    select distinct
+                    dp.seq_produto,
+                    dic.id_cliente
+                from cadastro.{cadastro} pno
+                join dw.dim_produto dp on ( array[pno.ean] <@ dp.eans )
+                join dw.dim_industria_cliente dic on (dp.id_cliente = dic.id_cliente)
+                join dw.dim_industria di on (dic.id_industria = di.id_industria)
+                where dic.id_industria = {industry_id}
+),
+cte_datamart as (
+SELECT
+                dco.seq_produto as seq_produto,
+                dco.dt_venda as dt_venda,
+                dco.id_cliente as id_cliente,
+                sum(dco.qtd_produto) qtd_datamart,
+                max(dco.dt_hr_carga) as dt_hr_carga
+from datamart.colab dco
+where dco.dt_venda between '2023-06-02' and '2023-06-02'
+and exists ( select 1 from cte_produto cp where (dco.seq_produto,dco.id_cliente) = (cp.seq_produto,cp.id_cliente))
+group by dco.seq_produto,dco.dt_venda,dco.id_cliente
+)
+select distinct
+                dco.seq_produto as seq_produto,
+                dco.dt_venda as dt_venda,
+                dco.id_cliente as id_cliente,
+                dco.qtd_datamart
+from cte_datamart dco
+order by dco.dt_venda, dco.id_cliente, dco.seq_produto
+;
