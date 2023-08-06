@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "versioneer[toml]==0.28"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pint_pal"
+dynamic = ["version"]
+authors = [
+  { name="Joe Glaser", email="joe.glaser@nanograv.org" },
+  { name="Joe Swiggum", email="joe.swiggum@nanograv.org" },
+  { name="Thankful Cromartie", email="thanful.cromartie@nanograv.org" },
+  { name="Deborah Good", email="deborah.good@nanograv.org" },
+  { name="Anne Archibald", email="anne.archibald@nanograv.org" },
+  { name="Kevin Wilson", email="kevin.wilson@nanograv.org" },
+]
+description = "A long-lived repository for NANOGrav Pulsar Timing analysis work."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/nanograv/pint_pal"
+"Bug Tracker" = "https://github.com/nanograv/pint_pal/issues"
+
+[tool.versioneer]
+VCS = "git"
+style = "pep440"
+versionfile_source = "src/pint_pal/_version.py"
+versionfile_build = "pint_pal/_version.py"
+tag_prefix = "v"
+parentdir_prefix = "pint-pal-"
