@@ -1,0 +1,36 @@
+[project]
+name = "ncm-163key-parser"
+dynamic = ["dependencies", "readme", "version"]
+authors = [
+    { name = "nukemiko" },
+]
+description = "简单明了地解析和生成 163key 字符串"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["netease", "163", "163key", "cloudmusic", "ncm"]
+
+[project.urls]
+"Homepage" = "https://github.com/nukemiko/ncm-163key-parser"
+"Bug Tracker" = "https://github.com/nukemiko/ncm-163key-parser/issues"
+
+[build-system]
+requires = ["setuptools>=46.4.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+py-modules = ["ncm163key"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+readme = { file = ["README.md"], content-type = 'text/markdown' }
+version = { attr = "ncm163key.__VERSION__" }
