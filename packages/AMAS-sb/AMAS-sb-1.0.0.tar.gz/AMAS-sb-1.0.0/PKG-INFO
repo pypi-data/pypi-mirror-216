@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: AMAS-sb
+Version: 1.0.0
+Summary: AMAS (Automatic Model Annotation System)
+Home-page: https://github.com/sys-bio/AMAS
+Author: Woosub Shin
+Author-email: woosubs@umich.edu
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# AMAS: Automatic Model Annotation System
+``AMAS`` (Automatic Model Annotation System) predicts and recommends annotations for systems biology models. It uses information of species and reactions in the SBML models and provides recommendations. The algorithm uses ChEBI for species annotations, and Rhea for reaction annotations. ``AMAS`` was developed and tested using [BioModels](https://www.ebi.ac.uk/biomodels/) and [BiGG](http://bigg.ucsd.edu/). 
+
+For more information, please check our
+[Read the Docs](https://amas.readthedocs.io/en/latest/
+) page.
