@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: barnacle
+Version: 0.1.0
+Summary: unsupervised clustering analysis via sparse tensor decomposition
+Home-page: https://github.com/blasks/barnacle
+Author: Stephen Blaskowski
+Author-email: stephen.blaskowski@gmail.com
+Requires-Python: >=3.9,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: matplotlib (>=3.7.0,<4.0.0)
+Requires-Dist: numpy (>=1.23,<2.0)
+Requires-Dist: opt-einsum (>=3.3.0,<4.0.0)
+Requires-Dist: plotly (>=5.13.1,<6.0.0)
+Requires-Dist: scikit-learn (>=1.2.1,<2.0.0)
+Requires-Dist: scipy (>=1.9.0,<2.0.0)
+Requires-Dist: seaborn (>=0.12.2,<0.13.0)
+Requires-Dist: tensorly (>=0.8.0,<0.9.0)
+Requires-Dist: tensorly-viz (>=0.1.7,<0.2.0)
+Requires-Dist: threadpoolctl (>=3.1.0,<4.0.0)
+Project-URL: Repository, https://github.com/blasks/barnacle
+Description-Content-Type: text/markdown
+
+# barnacle
+
+

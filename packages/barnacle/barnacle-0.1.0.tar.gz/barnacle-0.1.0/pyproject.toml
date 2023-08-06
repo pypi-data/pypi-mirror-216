@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "barnacle"
+version = "0.1.0"
+description = "unsupervised clustering analysis via sparse tensor decomposition"
+authors = ["Stephen Blaskowski <stephen.blaskowski@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/blasks/barnacle"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+packages = [
+    { include = "barnacle" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9 <3.12"
+tensorly = "^0.8.0"
+numpy = "^1.23"
+opt-einsum = "^3.3.0"
+threadpoolctl = "^3.1.0"
+scikit-learn = "^1.2.1"
+seaborn = "^0.12.2"
+scipy = "^1.9.0"
+plotly = "^5.13.1"
+matplotlib = "^3.7.0"
+tensorly-viz = "^0.1.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+pylint = "^2.15.8"
+pytest-xdist = "^3.1.0"
+notebook = "^6.5.2"
+tensorly-lab = {git = "https://github.com/tensorly/lab.git"}
+h5py = "^3.8.0"
+netcdf4 = "^1.6.2"
+
+[tool.pylint.typecheck]
+generated-members = "tensorly.tenalg.outer"
+
+[tool.pylint.format]
+good-names-rgxs = ".*"
+max-line-length = 130
+
+[tool.pylint.'message control']
+disable = [
+  "missing-docstring",
+  "unused-argument",
+  "redefined-builtin",
+  "consider-using-f-string",
+  "trailing-whitespace",
+  "trailing-newlines"
+]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
