@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: loopia-of-fury
+Version: 1.3.0
+Summary: Loopia of Fury - A "DynDNS" client for Loopia when you have MFA/BankID enabled 
+Home-page: https://github.com/simmel/loopia_of_fury
+Author: Simon Lundström
+Author-email: github-commits@soy.se
+Requires-Python: >=3.7.2,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: su-logging[structured] (>=0.3.0,<0.4.0)
