@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: specklia
+Version: 1.1.2
+Summary: Python client for Specklia, a geospatial point cloud database by Earthwave.
+Home-page: https://specklia.earthwave.co.uk/
+Author: Earthwave Ltd
+Author-email: info@earthwave.co.uk
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: blosc
+Requires-Dist: flask
+Requires-Dist: geopandas
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: shapely
+Requires-Dist: simple-websocket
+
+# Specklia
+
+Specklia is a cloud-hosted geospatial point cloud database designed for Academic Earth Observation, produced by [Earthwave Ltd](https://earthwave.co.uk/). This package is the open-source Python Client for Specklia. It is intended for use by Academics within automated workflows and Jupyter Notebooks to easily obtain point cloud data of relevance to their studies.
+
+Instead of understanding deeply nested folder structures, manually parsing headers and downloading large product files that then have to be manually filtered, Specklia users can request only that data which fits their desired study region, period, and other filter criteria, and have it delivered right into their workspace as a GeoDataFrame, without losing any of the headers and traceability information that standard product files provide.
+
+Specklia was produced using funding from the [European Space Agency](https://www.esa.int/), and originally designed to host the [Cryo-TEMPO EOLIS Products](https://cryotempo-eolis.org/), which are derived from [CryoSat-2](https://www.esa.int/Applications/Observing_the_Earth/FutureEO/CryoSat) data. More information can be found at [Specklia's home page](https://specklia.earthwave.co.uk/).
+
+Note that Specklia is under active development, and so some functionality is disabled or not yet implemented. In particular,
+it is currently not possible for the general public to add data to Specklia. We plan to expand the capabilities of Specklia further in the coming months, in particular hosting more data from [CryoSat-2](https://www.esa.int/Applications/Observing_the_Earth/FutureEO/CryoSat) and introducing the ability for users to host their own datasets.
+
+If you're interested in influencing Specklia's development, or using it in ways that are not immediately enabled by the client, please contact [info@earthwave.co.uk](mailto:info@earthwave.co.uk).
+
+
+## Quickstart
+
+To install this package into your local Python environment, simply run:
+
+```
+pip install specklia
+```
+
+To use Specklia, you will first need to obtain an API key from [Specklia's home page](https://specklia.earthwave.co.uk/).
+You will need an account with one of our supported identity providers in order to do this. We recommend saving your key to a local file.
+
+Once you have an API key, create a client like so:
+
+```python
+from specklia import Specklia
+
+with open('the_file_containing_your_key') as fh:
+    client = Specklia(fh.read())
+```
+
+Learn which datasets are available for you to query using:
+
+```python
+client.list_datasets()
+```
+
+And then query them using the `client.query()` method. The result will be a GeoDataFrame. Note that queries over excessively large areas and time periods can be slow to run.
+
+
+## Versioning and releases
+Specklia follows the common v\<major\>.\<minor\>.\<patch\> model of version numbering, together with Continuous Deployment.
+We will frequently release versions that change the \<patch\> version number in order to fix bugs. \<minor\> version number changes indicate changes to Specklia's functionality, while \<major\> version changes indicate re-writes or other similarly disruptive changes.
