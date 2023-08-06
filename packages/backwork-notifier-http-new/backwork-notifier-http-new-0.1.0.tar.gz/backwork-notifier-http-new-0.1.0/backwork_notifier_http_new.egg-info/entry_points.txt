@@ -1,0 +1,2 @@
+[backwork.notifiers]
+http = http_request:HTTPRequestNotifier
