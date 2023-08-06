@@ -1,0 +1,76 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El compte ja est\u00e0 configurat",
+            "reauth_successful": "Re-autenticaci\u00f3 realitzada correctament"
+        },
+        "error": {
+            "cannot_connect": "Ha fallat la connexi\u00f3",
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Contrasenya",
+                    "region": "Regi\u00f3 de ConnectedDrive",
+                    "username": "Nom d'usuari"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "charging_status": {
+                "name": "Estat de la c\u00e0rrega"
+            },
+            "lids": {
+                "name": "Tapes"
+            },
+            "windows": {
+                "name": "Finestres"
+            }
+        },
+        "button": {
+            "activate_air_conditioning": {
+                "name": "Activa l'aire condicionat"
+            }
+        },
+        "sensor": {
+            "mileage": {
+                "name": "Quilometratge"
+            },
+            "remaining_battery_percent": {
+                "name": "Percentatge de bateria restant"
+            },
+            "remaining_fuel": {
+                "name": "Combustible restant"
+            },
+            "remaining_fuel_percent": {
+                "name": "Percentatge de combustible restant"
+            },
+            "remaining_range_electric": {
+                "name": "Autonomia de bateria restant"
+            },
+            "remaining_range_fuel": {
+                "name": "Autonomia de combustible restant"
+            },
+            "remaining_range_total": {
+                "name": "Autonomia total restant"
+            }
+        },
+        "switch": {
+            "charging": {
+                "name": "Carregant"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "account_options": {
+                "data": {
+                    "read_only": "Nom\u00e9s de lectura (nom\u00e9s sensors i notificacions, sense execuci\u00f3 de serveis, sense bloqueig)"
+                }
+            }
+        }
+    }
+}

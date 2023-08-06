@@ -1,0 +1,165 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositiu ja est\u00e0 configurat",
+            "no_plants": "No s'ha trobat cap planta en aquest compte"
+        },
+        "error": {
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida"
+        },
+        "step": {
+            "plant": {
+                "data": {
+                    "plant_id": "Planta"
+                },
+                "title": "Selecciona la teva planta"
+            },
+            "user": {
+                "data": {
+                    "name": "Nom",
+                    "password": "Contrasenya",
+                    "url": "URL",
+                    "username": "Nom d'usuari"
+                },
+                "title": "Introdueix la teva informaci\u00f3 de Growatt"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "storage_output_voltage": {
+                "name": "Tensi\u00f3 de sortida"
+            },
+            "tlx_amperage_input_1": {
+                "name": "Corrent de l'entrada 1"
+            },
+            "tlx_amperage_input_2": {
+                "name": "Corrent de l'entrada 2"
+            },
+            "tlx_amperage_input_3": {
+                "name": "Corrent de l'entrada 3"
+            },
+            "tlx_amperage_input_4": {
+                "name": "Corrent de l'entrada 4"
+            },
+            "tlx_battery_2_charge_total": {
+                "name": "Energia total carregada a la bateria 2"
+            },
+            "tlx_battery_2_discharge_total": {
+                "name": "Energia total descarregada de la bateria 2"
+            },
+            "tlx_current_wattage": {
+                "name": "Pot\u00e8ncia de sortida"
+            },
+            "tlx_energy_today": {
+                "name": "Energia d'avui"
+            },
+            "tlx_energy_today_input_1": {
+                "name": "Energia d'avui de l'entrada 1"
+            },
+            "tlx_energy_today_input_2": {
+                "name": "Energia d'avui de l'entrada 2"
+            },
+            "tlx_energy_today_input_3": {
+                "name": "Energia d'avui de l'entrada 3"
+            },
+            "tlx_energy_today_input_4": {
+                "name": "Energia d'avui de l'entrada 4"
+            },
+            "tlx_energy_total": {
+                "name": "Energia total produ\u00efda"
+            },
+            "tlx_energy_total_input_1": {
+                "name": "Energia solar total de l'entrada 1"
+            },
+            "tlx_energy_total_input_2": {
+                "name": "Energia solar total de l'entrada 2"
+            },
+            "tlx_energy_total_input_3": {
+                "name": "Energia solar total de l'entrada 3"
+            },
+            "tlx_energy_total_input_4": {
+                "name": "Energia solar total de l'entrada 4"
+            },
+            "tlx_export_to_grid_today": {
+                "name": "Exportat a la xarxa avui"
+            },
+            "tlx_export_to_grid_total": {
+                "name": "Total exportat a la xarxa"
+            },
+            "tlx_frequency": {
+                "name": "Freq\u00fc\u00e8ncia CA"
+            },
+            "tlx_internal_wattage": {
+                "name": "Pot\u00e8ncia interna"
+            },
+            "tlx_load_consumption_today": {
+                "name": "Consum de c\u00e0rrega d'avui"
+            },
+            "tlx_reactive_voltage": {
+                "name": "Tensi\u00f3 reactiva"
+            },
+            "tlx_solar_generation_total": {
+                "name": "Energia solar total"
+            },
+            "tlx_temperature_1": {
+                "name": "Temperatura 1"
+            },
+            "tlx_temperature_2": {
+                "name": "Temperatura 2"
+            },
+            "tlx_temperature_3": {
+                "name": "Temperatura 3"
+            },
+            "tlx_temperature_4": {
+                "name": "Temperatura 4"
+            },
+            "tlx_temperature_5": {
+                "name": "Temperatura 5"
+            },
+            "tlx_voltage_input_1": {
+                "name": "Tensi\u00f3 de l'entrada 1"
+            },
+            "tlx_voltage_input_2": {
+                "name": "Tensi\u00f3 de l'entrada 2"
+            },
+            "tlx_voltage_input_3": {
+                "name": "Tensi\u00f3 de l'entrada 3"
+            },
+            "tlx_voltage_input_4": {
+                "name": "Tensi\u00f3 de l'entrada 4"
+            },
+            "tlx_wattage_input_1": {
+                "name": "Pot\u00e8ncia de l'entrada 1"
+            },
+            "tlx_wattage_input_2": {
+                "name": "Pot\u00e8ncia de l'entrada 2"
+            },
+            "tlx_wattage_input_3": {
+                "name": "Pot\u00e8ncia de l'entrada 3"
+            },
+            "tlx_wattage_input_4": {
+                "name": "Pot\u00e8ncia de l'entrada 4"
+            },
+            "total_energy_output": {
+                "name": "Energia total produ\u00efda"
+            },
+            "total_energy_today": {
+                "name": "Energia d'avui"
+            },
+            "total_maximum_output": {
+                "name": "Pot\u00e8ncia m\u00e0xima"
+            },
+            "total_money_today": {
+                "name": "Diners totals avui"
+            },
+            "total_money_total": {
+                "name": "Diners totals"
+            },
+            "total_output_power": {
+                "name": "Pot\u00e8ncia de sortida"
+            }
+        }
+    },
+    "title": "Servidor Growatt"
+}

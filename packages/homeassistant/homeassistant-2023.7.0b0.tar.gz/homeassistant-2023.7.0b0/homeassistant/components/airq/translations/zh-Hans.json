@@ -1,0 +1,45 @@
+{
+    "entity": {
+        "sensor": {
+            "carbon_dioxide": {
+                "name": "\u4e8c\u6c27\u5316\u78b3"
+            },
+            "carbon_monoxide": {
+                "name": "\u4e00\u6c27\u5316\u78b3"
+            },
+            "nitrogen_dioxide": {
+                "name": "\u4e8c\u6c27\u5316\u6c2e"
+            },
+            "nitrogen_monoxide": {
+                "name": "\u4e00\u6c27\u5316\u6c2e"
+            },
+            "nitrous_oxide": {
+                "name": "\u4e00\u6c27\u5316\u4e8c\u6c2e"
+            },
+            "pm1": {
+                "name": "PM1"
+            },
+            "pm10": {
+                "name": "PM10"
+            },
+            "pm25": {
+                "name": "PM2.5"
+            },
+            "pressure": {
+                "name": "\u6c14\u538b"
+            },
+            "silicon_hydride": {
+                "name": "\u6c22\u5316\u7845"
+            },
+            "sulphur_dioxide": {
+                "name": "\u4e8c\u6c27\u5316\u786b"
+            },
+            "temperature": {
+                "name": "\u6e29\u5ea6"
+            },
+            "virus_index": {
+                "name": "\u75c5\u6bd2\u6307\u6570"
+            }
+        }
+    }
+}

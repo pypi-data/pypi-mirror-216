@@ -1,0 +1,23 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "\ud638\uc2a4\ud2b8\uc5d0 \uc5f0\uacb0\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.",
+            "invalid_auth": "\uc798\ubabb\ub41c \uc778\uc99d",
+            "unknown": "\uc54c \uc218 \uc5c6\ub294 \uc624\ub958"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "\ud638\uc2a4\ud2b8 \uc774\ub984",
+                    "password": "\uc554\ud638",
+                    "port": "\ud3ec\ud2b8",
+                    "ssl": "SSL \uc0ac\uc6a9",
+                    "username": "\uc0ac\uc6a9\uc790 \uc774\ub984",
+                    "verify_ssl": "SSL \ud655\uc778"
+                },
+                "description": "\uc774 QNAP \uc13c\uc11c\ub97c \uc0ac\uc6a9\ud558\uba74 QNAP NAS\uc5d0\uc11c \ub2e4\uc591\ud55c \ud1b5\uacc4\ub97c \uc5bb\uc744 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+                "title": "QNAP \uae30\uae30\uc5d0 \uc5f0\uacb0\ud558\uae30"
+            }
+        }
+    }
+}
