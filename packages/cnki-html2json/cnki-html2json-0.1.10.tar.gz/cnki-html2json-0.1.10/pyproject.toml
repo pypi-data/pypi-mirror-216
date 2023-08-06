@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools","wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cnki-html2json"
+authors = [
+    {name = "WangK2", email = "kw221225@gmail.com"}
+    ]
+description = "A package for converting cnki journal papers' html to json"
+version = "0.1.10"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["cnki","text structure","crawler"]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    ]
+dependencies = [
+    "selenium",
+    "lxml",
+    "opencv-python",
+    "numpy",
+    "loguru",]
+
+[project.scripts]
+histcite = "cnki_html2json.cli:main"
+
+[tool.setuptools]
+packages = ["cnki_html2json"]
