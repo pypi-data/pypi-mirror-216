@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pyRedTools
+Version: 0.0.1
+Summary: Python package containing generic tools that can be used in various situations.
+Author-email: Yvan Pannatier <pannatieryvan94@gmail.com>
+Project-URL: Homepage, https://github.com/yvpa/pyRedTools
+Project-URL: Bug Tracker, https://github.com/yvpa/pyRedTools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pyRedTools
+
+Python package containing generic tools that can be used in various situations.
