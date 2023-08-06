@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: blacksheep-cli
+Version: 0.0.3
+Summary: 🛠️ CLI to bootstrap BlackSheep projects
+Project-URL: Homepage, https://github.com/Neoteroi/BlackSheep-CLI
+Project-URL: Bug Tracker, https://github.com/Neoteroi/BlackSheep-CLI/issues
+Author-email: Roberto Prevato <roberto.prevato@gmail.com>
+License-File: LICENSE
+Keywords: CLI,blacksheep,developer experience,project templates,projects scaffolding
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Requires-Dist: click
+Requires-Dist: cookiecutter
+Requires-Dist: essentials-configuration[full]
+Requires-Dist: pathvalidate==3.0.0
+Requires-Dist: python-dotenv~=1.0.0
+Requires-Dist: questionary
+Requires-Dist: rich-click
+Requires-Dist: tomli; python_version < '3.11'
+Description-Content-Type: text/markdown
+
+# BlackSheep-CLI
+🛠️ CLI to start BlackSheep projects.
+
+- Interactive project scaffolding
+- Support for configuring more `cookiecutter` project templates
+
+```bash
+pip install blacksheep-cli
+```
+
+## Official project templates
+
+- `api`, to scaffold Web API projects
+- `mvc`, to scaffold Web Apps projects with Model, View, Controller
+   architecture, including Server Side Rendering of HTML views (SSR)
+
+## Creating a new project
+
+```bash
+blacksheep create
+```
+
+## Listing the project templates
+
+```bash
+blacksheep templates list
+```
+
+With details:
+
+```bash
+blacksheep templates details
+```
+
+## How to contribute
+
+- clone this repository
+- create a Python virtual environment
+- install in development mode `pip install -e .`
+- add new commands, test
