@@ -1,0 +1,16 @@
+magicwall/Dockerfile,sha256=X0z-lfhgDkzmHnH3xbfbhJLlC42rtI-9UBP7xvPdyCA,131
+magicwall/__init__.py,sha256=hRgPqLhtcMS3vu46o8W92JJ4U0bSeILmua4js0hXL-Y,45
+magicwall/common.py,sha256=6y68YNkCI3pyyNdtjssaKKjDIaHiqnCRBIT0gWC2SeE,451
+magicwall/magicwall_api.py,sha256=85MMFiqjPr6It4dYLhbHbyV0smsWkRO70rp5tRTwT_A,1437
+magicwall/server.py,sha256=DpjXSnMX6u3oSgklFuuV0EOnK978iJ4Ilg2ZsgDZ6Kw,16662
+magicwall/static/DragDropTouch.js,sha256=hc6y8vbv-2JJLvsfIkMwnhZTZ7yUt_9ZHu6Lmcw0dGY,21604
+magicwall/static/hilite-solarized-light.css,sha256=A7pb98bEyEF4apI4QzbKQRI24Rsj6bmzhMh_EWZnxfI,5119
+magicwall/static/magicwall.css,sha256=2HUcrc1heO9x2-BZjX3zTf51fbbi4bopBWOXysLjJ-A,1785
+magicwall/static/magicwall.js,sha256=iDfXIXQvtjuPRB1_TZD4LqtRZNvJRyRKA8aXiMx9wxs,16993
+magicwall/static/unknown.png,sha256=0D4EQwOMaM_yA4IyBzGS6HpiYwM19QWNZluH5sAZT4Y,3600
+magicwall/templates/magicwall.html,sha256=dddfiJ-FtoXZt_KKOj8Qq86oOGC8vHKC4IJY_wCtFso,1095
+magicwall/utils.py,sha256=hRmR3iEEsnOnpDdb-rkiuomfTU0w1V1NohRO9eC5JdA,4457
+magicwall-0.0.3.dist-info/METADATA,sha256=azKDYxjbh6Os64ks6dyxNPL3-WpZ3YxqUtzddx34XHs,6052
+magicwall-0.0.3.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+magicwall-0.0.3.dist-info/entry_points.txt,sha256=Edz_REmTtjdwRNGOb8hM6VEMLaJm45V_xiFcHzeW7dw,70
+magicwall-0.0.3.dist-info/RECORD,,

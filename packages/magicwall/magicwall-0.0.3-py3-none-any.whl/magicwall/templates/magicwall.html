@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='magicwall.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='hilite-solarized-light.css') }}">
+    </head>
+    <body>
+        <div class="fullsize" id="wall"></div>
+        <div id="tools">
+            <figure id="message">Text</figure>
+            <figure class="filterBox" id="square-1" draggable=true></figure>
+            <figure class="filterBox" id="square-2" draggable=true></figure>
+            <figure class="filterBox" id="square-3" draggable=true></figure>
+            <figure class="filterBox" id="square-4" draggable=true></figure>
+            <figure class="filterBox" id="shredder"></figure>
+        </div>
+        <!-- <div id="debugBox">Debugzeug</div> -->
+        <div class="fullsize" id="fullscreen_image">
+            <img id="fullscreen_img"></img>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='DragDropTouch.js') }}"></script>
+    <script src="{{ url_for('static', filename='magicwall.js') }}"></script>
+</html>
+
