@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: windows_control
+Version: 0.0.3
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Summary: It is used to do some control with keyboard/mouse on windows (especially on win10).
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst; charset=UTF-8
+Project-URL: repository, https://github.com/dbsxdbsx/windows_control
+
+# Just Test
+
+# Project Name
+
+[windows_control_python](https://pypi.org/project/windows-control/) is a project to generate a Python module named `windows_control`, which provides some simple and efficient ways to do manipulations on Windows systems(Especially on Win10). It is written in Rust using [PyO3](https://crates.io/crates/pyo3).
+## Installation
+
+```bash
+pip install windows_control
+```
+
+## Requirements
+
+- Setting for final usage: Python (version 3.9.11 or later)
+- Extra setting for development: Rust (version 1.68 or later)
+
+## Examples
+
+(TODO)
+
+## Contributing
+
+### Prerequisites
+
+Before contributing to the project, you need to know about PyO3. You can follow the instructions in the [PyO3 getting start](https://pyo3.rs/v0.19.0/getting_started), [PyO3 guide](https://pyo3.rs/v0.19.0/building_and_distribution#manual-builds) and [How to use maturin to publish a python package](https://www.maturin.rs/tutorial.html).
+
+### Manual Development
+
+First, install python package `maturin` by running `pip install maturin` in terminal.
+
+Second, make sure there is an virtual env at your project root directory. You can do it by running `python -m venv .venv` in terminal---the name `.venv` is specified for `maturin`.
+
+Then, to add new features(like new funcs or new modules), modify the `src/lib.rs` file. After making changes, generate the Python module by running `maturin develop`. This command generates a library in `target/debug`. On Windows, rename the generated library file `[your_module].dll` to `[your_module].pyd`.
+
+Finally, to test the generated library, run `python test.py` in the root directory to verify that the newly added features work correctly in Python.
+
+### Publish
+
+use `maturin publish` to publish the package to PyPI.When you see
+```bash
+🚀 Uploading 2 packages
+✨ Packages uploaded successfully
+```
+This means it's published successfully, and you can check it in [PyPi](https://pypi.org/project/windows-control/).
+
+### Automatic Development
+
+If you have [just](https://crates.io/crates/just) installed, run just to automatically generate and test the project. The justfile contains specific commands for this purpose.
+
+
+## License
+
+This project is licensed under the MIT License.
+
+## A little Test
+Hi, there
