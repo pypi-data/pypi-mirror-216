@@ -1,0 +1,6 @@
+openqaoa-core==0.1.3-rc1
+openqaoa-qiskit==0.1.3-rc1
+qdk
+qiskit-qir
+qiskit-ionq
+azure-quantum[qiskit]
