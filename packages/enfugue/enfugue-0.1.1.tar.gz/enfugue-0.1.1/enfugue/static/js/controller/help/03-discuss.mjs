@@ -1,0 +1,1 @@
+import{MenuController}from"../menu.mjs";class DiscussionController extends MenuController{static helpLink="https://github.com/painebenjamin/app.enfugue.ai/discussions";static menuName="Discuss";static menuIcon="fa-solid fa-comments";async onClick(){window.open(this.constructor.helpLink)}}export{DiscussionController as MenuController};
