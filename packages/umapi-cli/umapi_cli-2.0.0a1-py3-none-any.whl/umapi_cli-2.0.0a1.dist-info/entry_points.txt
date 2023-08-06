@@ -1,0 +1,3 @@
+[console_scripts]
+umapi=umapi_cli.cli:app
+
