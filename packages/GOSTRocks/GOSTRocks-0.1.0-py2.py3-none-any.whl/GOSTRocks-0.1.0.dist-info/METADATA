@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: GOSTRocks
+Version: 0.1.0
+Summary: Miscellaneous geospatial functions concerning vector, raster, and network analysis
+Home-page: https://github.com/bpstewar/gostrocks
+Author: Benjamin P. Stewart
+Author-email: "Benjamin P. Stewart" <ben.gis.stewart@gmail.com>
+Project-URL: Homepage, https://github.com/bpstewar/gostrocks
+Project-URL: Bug Tracker, https://github.com/bpstewar/gostrocks/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rasterio
+Requires-Dist: geopandas
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: pyproj
+Requires-Dist: ogr
+Requires-Dist: seaborn
+Requires-Dist: boto3
+Requires-Dist: botocore
+Requires-Dist: contextily
+Requires-Dist: matplotlib
+Requires-Dist: tqdm
+Requires-Dist: xarray
+Requires-Dist: osmnx
+Requires-Dist: affine
+Requires-Dist: contextlib
+
+# GOSTRocks
+Geospatial tools from the World Bank GOST team (mostly Ben).
+
+# Installation
+```
+$ pip install GOSTRocks
+```
+
+Future releases and information can be built from the setup.py here, but pip will contain the most recent stable version
+
+# Examples
+...see the notebooks in the github repo
