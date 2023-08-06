@@ -1,0 +1,13 @@
+<script>
+{% include "lineage/assets/json-fomatter.js" %}
+</script>
+
+<div>Lineage for: {{ value_lineage.value.value_id }}</div>
+
+<script>
+const lineage_data = {{ value_lineage.as_dict(include_preview=include_preview, include_module_info=include_module_info) | tojson | safe }};
+
+const formatter = new JSONFormatter(lineage_data);
+
+document.body.appendChild(formatter.render());
+</script>

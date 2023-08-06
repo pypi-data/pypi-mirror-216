@@ -1,0 +1,17 @@
+[kiara.data_types]
+html = kiara_plugin.html:find_data_types
+
+[kiara.model_classes]
+html = kiara_plugin.html:find_model_classes
+
+[kiara.modules]
+html = kiara_plugin.html:find_modules
+
+[kiara.pipelines]
+html = kiara_plugin.html:find_pipelines
+
+[kiara.plugin]
+html = kiara_plugin.html
+
+[kiara.renderers]
+html = kiara_plugin.html:find_renderer_classes
