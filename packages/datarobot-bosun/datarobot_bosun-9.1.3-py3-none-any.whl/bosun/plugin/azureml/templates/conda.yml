@@ -1,0 +1,23 @@
+name: datarobot-scoring-code
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python==3.9.16
+  - pandas=1.5.3
+  - openjdk=11.0.13
+  - pip=23.0.1
+  - pip:
+      # Base packages for all online endpoints
+      - azureml-inference-server-http==0.8.0
+      - azureml-contrib-services==1.49.0
+      - inference-schema==1.5.1
+      # Base packages for all batch endpoints
+      - azureml-core==1.49.0
+      - azureml-dataset-runtime[pandas,fuse]==1.49.0
+      # Used for monitoring
+      - datarobot-mlops[kafka,azure,aggregator]==9.1.1b1
+      # Used to communicate with ScoringCode JAR
+      - datarobot-predict==1.0.1
+      # Used for online endpoint param validation
+      - pydantic==1.10.6
