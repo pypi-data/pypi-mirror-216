@@ -1,0 +1,198 @@
+[build-system]
+requires = ["setuptools", "lsst-versions >= 1.3.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsst-ctrl-mpexec"
+description = "Pipeline execution infrastructure for the Rubin Observatory LSST Science Pipelines."
+license = {text = "GPLv3+ License"}
+readme = "README.rst"
+authors = [
+    {name="Rubin Observatory Data Management", email="dm-admin@lists.lsst.org"},
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+keywords = ["lsst"]
+dependencies = [
+    "lsst-utils",
+    "lsst-daf-butler",
+    "lsst-pex-config",
+    "lsst-pipe-base",
+    "click",
+    "astropy",
+    "pydantic",
+    "networkx",
+    "psutil"
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/lsst/ctrl_mpexec"
+
+[project.optional-dependencies]
+test = [
+    "pytest >= 3.2",
+    "flake8 >= 3.7.5",
+    "pytest-flake8 >= 1.0.4",
+    "pytest-openfiles >= 0.5.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["python"]
+
+[tool.setuptools]
+zip-safe = true
+license-files = ["COPYRIGHT", "LICENSE"]
+
+[tool.setuptools.package-data]
+"lsst.ctrl.mpexec" = ["py.typed"]
+
+[tool.setuptools.dynamic]
+version = { attr = "lsst_versions.get_lsst_version" }
+
+[project.scripts]
+pipetask = "lsst.ctrl.mpexec.cli.pipetask:main"
+
+[tool.towncrier]
+    package = "lsst.ctrl.mpexec"
+    package_dir = "python"
+    filename = "doc/lsst.ctrl.mpexec/CHANGES.rst"
+    directory = "doc/changes"
+    title_format = "lsst-ctrl-mpexec {version} ({project_date})"
+    issue_format = "`{issue} <https://jira.lsstcorp.org/browse/{issue}>`_"
+
+    [[tool.towncrier.type]]
+        directory = "feature"
+        name = "New Features"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "api"
+        name = "API Changes"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "bugfix"
+        name = "Bug Fixes"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "perf"
+        name = "Performance Enhancement"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "misc"
+        name = "Other Changes and Additions"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "removal"
+        name = "An API Removal or Deprecation"
+        showcontent = true
+
+[tool.black]
+line-length = 110
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 110
+
+[tool.lsst_versions]
+write_to = "python/lsst/ctrl/mpexec/version.py"
+
+[tool.pytest.ini_options]
+addopts = "--flake8"
+flake8-ignore = ["W503", "E203", "N802", "N803", "N806", "N812", "N815", "N816"]
+# The matplotlib test may not release font files.
+# Some unit tests open registry database in setUpClass.
+open_files_ignore = ["*.ttf", "gen3.sqlite3"]
+
+[tool.pydocstyle]
+convention = "numpy"
+# Our coding style does not require docstrings for magic methods (D105)
+# Our docstyle documents __init__ at the class level (D107)
+# We allow methods to inherit docstrings and this is not compatible with D102.
+# Docstring at the very first line is not required
+# D200, D205 and D400 all complain if the first sentence of the docstring does
+# not fit on one line.
+# Do not require docstrings in __init__.py files (D104)
+add-ignore = ["D107", "D105", "D102", "D100", "D200", "D205", "D400", "D104"]
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+
+# The rule used with Ruff configuration is to disable every lint that has
+# legitimate exceptions that are not dodgy code, rather than cluttering code
+# with noqa markers. This is therefore a reiatively relaxed configuration that
+# errs on the side of disabling legitimate lints.
+#
+# Reference for settings: https://beta.ruff.rs/docs/settings/
+# Reference for rules: https://beta.ruff.rs/docs/rules/
+[tool.ruff]
+exclude = [
+    "docs/**",
+]
+line-length = 110
+ignore = [
+    "ANN101",  # self should not have a type annotation
+    "ANN102",  # cls should not have a type annotation
+    "ANN401",  # sometimes Any is the right type
+    "ARG001",  # unused function arguments are often legitimate
+    "ARG002",  # unused method arguments are often legitimate
+    "ARG005",  # unused lambda arguments are often legitimate
+    "BLE001",  # we want to catch and report Exception in background tasks
+    "C414",    # nested sorted is how you sort by multiple keys with reverse
+    "COM812",  # omitting trailing commas allows black autoreformatting
+    "D102",    # sometimes we use docstring inheritence
+    "D104",    # don't see the point of documenting every package
+    "D105",    # our style doesn't require docstrings for magic methods
+    "D106",    # Pydantic uses a nested Config class that doesn't warrant docs
+    "EM101",   # justification (duplicate string in traceback) is silly
+    "EM102",   # justification (duplicate string in traceback) is silly
+    "FBT003",  # positional booleans are normal for Pydantic field defaults
+    "G004",    # forbidding logging f-strings is appealing, but not our style
+    "RET505",  # disagree that omitting else always makes code more readable
+    "PLR0913", # factory pattern uses constructors with many arguments
+    "PLR2004", # too aggressive about magic values
+    "S105",    # good idea but too many false positives on non-passwords
+    "S106",    # good idea but too many false positives on non-passwords
+    "SIM102",  # sometimes the formatting of nested if statements is clearer
+    "SIM117",  # sometimes nested with contexts are clearer
+    "TCH001",  # we decided to not maintain separate TYPE_CHECKING blocks
+    "TCH002",  # we decided to not maintain separate TYPE_CHECKING blocks
+    "TCH003",  # we decided to not maintain separate TYPE_CHECKING blocks
+    "TID252",  # if we're going to use relative imports, use them always
+    "TRY003",  # good general advice but lint is way too aggressive
+    "N802",
+    "N803",
+    "N806",
+    "N812",
+    "N815",
+    "N816",
+    "D107",
+    "D105",
+    "D102",
+    "D100",
+    "D200",
+    "D205",
+    "D400",
+    "D104",
+]
+select = ["ALL"]
+target-version = "py311"
