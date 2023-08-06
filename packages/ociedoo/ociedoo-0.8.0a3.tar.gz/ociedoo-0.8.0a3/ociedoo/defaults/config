@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2018 Coop IT Easy SC <https://coopiteasy.be>
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[[profile]]
+name = "odoo"
+description = "This is a profile to run an odoo instance"
+daemon-name = "odoo"
+venv-path = ""
+database-user = "odoo"
+working-directory = "/home/odoo"
+odoo-config-path = "odoo.conf"
+odoo-binary-path = "/home/odoo/odoo/odoo-bin"
+odoo-log-dir = "log"
+gitaggregator-files = ["repos.yml"]
+default-options = ""
+data-dir = "~/.local/share/Odoo"
+
+[profile.restore]
+autosave = false
+posthook = ""
