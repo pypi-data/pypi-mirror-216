@@ -1,0 +1,13 @@
+import numpy as np
+from .. import core as jiminy
+from ..dynamics import TrajectoryDataType
+from .viewer import Tuple4FType, Viewer
+from threading import Thread
+from typing import Any, Callable, Dict, Optional, Sequence, Tuple, Union
+
+ColorType = Union[str, Tuple4FType]
+
+def extract_replay_data_from_log(log_data: Dict[str, np.ndarray], robot: jiminy.Robot) -> Tuple[TrajectoryDataType, Optional[Callable[[float, np.ndarray, np.ndarray], None]], Dict[str, Any]]: ...
+def play_logs_data(robots: Union[Sequence[jiminy.Robot], jiminy.Robot], logs_data: Union[Sequence[Dict[str, np.ndarray]], Dict[str, np.ndarray]], **kwargs: Any) -> Sequence[Viewer]: ...
+def play_logs_files(logs_files: Union[str, Sequence[str]], mesh_path_dir: Optional[str] = ..., mesh_package_dirs: Sequence[str] = ..., **kwargs: Any) -> Sequence[Viewer]: ...
+def async_play_and_record_logs_files(logs_files: Union[str, Sequence[str]], enable_replay: Optional[bool] = ..., mesh_path_dir: Optional[str] = ..., mesh_package_dirs: Sequence[str] = ..., **kwargs: Any) -> Optional[Thread]: ...
