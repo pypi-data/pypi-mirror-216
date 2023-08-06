@@ -1,0 +1,18 @@
+{% if cisco_device_support.partner_coverage_progress %}
+    <div class="progress" style="padding-top:4px">
+        <div role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="{{ cisco_device_support.partner_coverage_progress }}"
+            class="progress-bar {{ cisco_device_support.partner_coverage_progress_bar_class }}"
+            style="width: {{ cisco_device_support.partner_coverage_progress }}%;"
+        >
+        {% if cisco_device_support.partner_coverage_progress >= 35 %}
+            {{ cisco_device_support.partner_coverage_end_date|timeuntil }} remaining
+        {% endif %}
+        </div>
+        {% if cisco_device_support.partner_coverage_progress < 35 %}
+            <span class="ps-1">{{ cisco_device_support.partner_coverage_end_date|timeuntil }} remaining</span>
+        {% endif %}
+    </div>
+{% endif %}
