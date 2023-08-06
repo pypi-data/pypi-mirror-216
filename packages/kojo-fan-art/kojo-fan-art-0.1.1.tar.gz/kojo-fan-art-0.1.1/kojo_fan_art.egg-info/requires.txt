@@ -1,0 +1,12 @@
+
+[dev]
+taskipy
+black
+isort
+autoflake
+pyupgrade
+pytest
+pytest-randomly
+freezegun
+flake8
+mypy

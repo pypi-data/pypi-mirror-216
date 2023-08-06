@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: kojo-fan-art
+Version: 0.1.1
+Summary: Fan art project for "Lonely Castle in the Mirror"(『かがみの孤城』)
+Author-email: nikkie <takuyafjp+develop@gmail.com>
+License: MIT License
+Project-URL: Repository, https://github.com/ftnext/the-solitary-castle-in-the-mirror-cli
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# kojo-fan-art
+
+[日本語版 (In Japanese)](https://github.com/ftnext/the-solitary-castle-in-the-mirror-cli/blob/main/README.ja.md)
+
+This is a fan art project for "Lonely Castle in the Mirror."
+
+## Installation
+
+```sh
+$ pip install kojo-fan-art
+```
+
+## Usage
+
+This tool shows what day of the week it is in each character's parallel world from "Lonely Castle in the Mirror" in JSON format.
+
+```sh
+$ kojo-day kokoro aki fuka
+{"kokoro": "Friday", "aki": "Monday", "fuka": "Monday"}
+
+$ # pretty print with jq
+$ kojo-day kokoro aki fuka | jq .
+{
+  "kokoro": "Friday",
+  "aki": "Monday",
+  "fuka": "Monday"
+}
+```
+
+For help message, type `kojo-day -h`.
+
+
+## Development environment
+
+```sh
+$ git clone git@github.com:ftnext/the-solitary-castle-in-the-mirror-cli.git
+$ cd the-solitary-castle-in-the-mirror-cli
+
+$ python3.11 -m venv venv --upgrade-deps
+$ source venv/bin/activate
+
+(venv) $ pip install -e '.[dev]'
+(venv) $ task test
+```
+
+⚠️The implementation reveals the secrets of "Lonely Castle in the Mirror."
