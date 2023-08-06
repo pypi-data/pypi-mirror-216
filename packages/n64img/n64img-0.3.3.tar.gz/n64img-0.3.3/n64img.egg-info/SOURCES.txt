@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+n64img/__init__.py
+n64img/image.py
+n64img/iter.py
+n64img.egg-info/PKG-INFO
+n64img.egg-info/SOURCES.txt
+n64img.egg-info/dependency_links.txt
+n64img.egg-info/requires.txt
+n64img.egg-info/top_level.txt
+test/__init__.py
+test/test_endian.py
+test/test_image.py
