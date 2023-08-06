@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling", "cryptography"]
+build-backend = "hatchling.build"
+
+[project]
+name = "AdvancedFernetDataEncryption"
+version = "1.1"
+authors = [
+  {name="garfield8123", email="garfield8123@gmail.com"},
+]
+description = "An encryption that uses the Fernet assymetric key generator and random values to create a secure token and key that can be stored and still be unreadable to any user."
+readme = "README.md"
+requires-python = ">=3.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/garfield8123/AdvancedFernetDataEncryption"
+"Bug Tracker" = "https://github.com/garfield8123/AdvancedFernetDataEncryption/issues"
