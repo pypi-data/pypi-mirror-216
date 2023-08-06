@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: yaml2dataclass
+Version: 0.3.3
+Summary: Load type annotated dataclasses from YAML files.
+Home-page: https://github.com/nagylzs/yaml2dataclass
+Author: László Zsolt Nagy
+Author-email: nagylzs@gmail.com
+License: http://www.apache.org/licenses/LICENSE-2.0
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+License-File: LICENSE
+
+A little helper class that lets you load type annotated dataclasses from YAML files. Supports nested data structures.
