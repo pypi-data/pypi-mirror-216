@@ -1,0 +1,11 @@
+.DS_Store
+
+/venv
+/.venv
+/.tox
+/*.egg-info
+/.coverage
+
+/dist
+
+__pycache__
