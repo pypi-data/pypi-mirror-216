@@ -1,0 +1,102 @@
+Metadata-Version: 2.1
+Name: qwertyPOOL
+Version: 1.0.0
+Summary: Python Operating Other Languages
+Author: pi-this, qwerty-pi
+License: MIT License
+        
+        Copyright (c) 2023 pi-this
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: repository, https://github.com/pi-this/POOL
+Project-URL: documentation, https://pi-this.github.io/qwertyPOOL/
+Keywords: python,operating,java,run
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Java
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: time
+Provides-Extra: build
+Requires-Dist: build ; extra == 'build'
+Requires-Dist: twine ; extra == 'build'
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: bumpver ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: mypy ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+
+# Qwerty POOL
+
+POOL stands for Python Operating Other Languages.
+Qwerty POOL is made to operate other languages such as java and implement different opportunities such as creating windows.
+
+## Installation
+
+You can install Qwerty POOL from [PyPI](https://pypi.org/project/qwertyPOOL/):
+
+    pip install qwertyPOOL
+
+Or you can install Qwerty POOL from [Github](https://github.com/pi-this/POOL):
+
+    git clone https://github.com/pi-this/POOL.git
+
+## How to use
+
+If Java is not installed already use the following command to install it:
+
+    import qwertyPOOL
+    qwertyPOOL.java.jdk()
+    qwerty.java.jre()
+
+Although Qwerty POOL's possibilities are short within version 1.0.0, it has the capability to display a window with text from java
+
+To open a window in Qwerty POOL:
+
+    import qwertyPOOL
+    qwertyPOOL.run.do()
+
+To Change the POOL icon:
+
+    from qwertyPOOL import java as Lj
+    Lj.window.SetImage("face.png")
+    Lj.window.open()
+    Lj.runj()
+
+To Add Text to the window:
+
+    from qwertyPOOL import java as Lj
+    Lj.window.SetText("hello qwertyPOOL!")
+    Lj.window.open()
+    Lj.runj()
+    
+To View Qwerty POOL's version:
+    
+    qwertyPOOL.operating.version()
+    
+Or:
+
+    print(qwertyPOOL.__version__)
+    
+To Wait in Qwerty POOL:
+    
+    qwertyPOOL.python.wait(2) # seconds
