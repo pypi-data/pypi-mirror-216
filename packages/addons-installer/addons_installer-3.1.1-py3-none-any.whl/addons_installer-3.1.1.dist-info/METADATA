@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: addons-installer
+Version: 3.1.1
+Summary: Allow to find Odoo addons from Environment Variables
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.8
+Requires-Dist: python-dotenv (==1.0.0)
+Requires-Dist: typing (==3.10.0.0) ; python_version <= "3"
+
