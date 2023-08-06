@@ -1,0 +1,244 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+# @file      : norm.py
+# @author    : Zhi Liu
+# @email     : zhiliu.mind@gmail.com
+# @homepage  : http://iridescent.ink
+# @date      : Sun Nov 27 2019
+# @version   : 0.0
+# @license   : The GNU General Public License (GPL) v3.0
+# @note      : 
+# 
+# The GNU General Public License (GPL) v3.0
+# Copyright (C) 2013- Zhi Liu
+#
+# This file is part of torchbox.
+#
+# torchbox is free software: you can redistribute it and/or modify it under the 
+# terms of the GNU General Public License as published by the Free Software Foundation, 
+# either version 3 of the License, or (at your option) any later version.
+#
+# torchbox is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with torchbox. 
+# If not, see <https://www.gnu.org/licenses/>. 
+#
+
+import torch as th
+import torchbox as tb
+
+
+class Fnorm(th.nn.Module):
+    r"""obtain the f-norm of a tensor
+
+    Both complex and real representation are supported.
+
+    .. math::
+       {\rm norm}({\bf X}) = \|{\bf X}\|_2 = \left(\sum_{x_i\in {\bf X}}|x_i|^2\right)^{\frac{1}{2}}
+
+    where, :math:`u, v` are the real and imaginary part of x, respectively.
+
+    Parameters
+    ----------
+    X : tensor
+        input
+    cdim : int or None
+        If :attr:`X` is complex-valued, :attr:`cdim` is ignored. If :attr:`X` is real-valued and :attr:`cdim` is integer
+        then :attr:`X` will be treated as complex-valued, in this case, :attr:`cdim` specifies the complex axis;
+        otherwise (None), :attr:`X` will be treated as real-valued
+    dim : int or None
+        The dimension axis for computing norm. 
+        The default is :obj:`None`, which means all. 
+    keepdim : bool
+        keep dimensions? (include complex dim, defalut is :obj:`False`)
+    reduction : str, None or optional
+        The operation in batch dim, :obj:`None`, ``'mean'`` or ``'sum'`` (the default is 'mean')
+
+    Returns
+    -------
+    tensor
+         the inputs's f-norm.
+
+    Examples
+    ---------
+
+    ::
+
+        th.manual_seed(2020)
+        X = th.randn(5, 2, 3, 4)
+        print('---norm')
+
+        # real
+        F1 = Fnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+        F2 = Fnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+        F3 = Fnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+        print(F1, F2, F3)
+
+        # complex in real format
+        F1 = Fnorm(cdim=1, dim=(-2, -1), reduction=None)(X)
+        F2 = Fnorm(cdim=1, dim=(-2, -1), reduction='sum')(X)
+        F3 = Fnorm(cdim=1, dim=(-2, -1), reduction='mean')(X)
+        print(F1, F2, F3)
+
+        # complex in complex format
+        X = X[:, 0, ...] + 1j * X[:, 1, ...]
+        F1 = Fnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+        F2 = Fnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+        F3 = Fnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+        print(F1, F2, F3)
+
+        ---norm
+        tensor([[2.8719, 2.8263],
+                [3.1785, 3.4701],
+                [4.6697, 3.2955],
+                [3.0992, 2.6447],
+                [3.5341, 3.5779]]) tensor(33.1679) tensor(3.3168)
+        tensor([4.0294, 4.7058, 5.7154, 4.0743, 5.0290]) tensor(23.5539) tensor(4.7108)
+        tensor([4.0294, 4.7058, 5.7154, 4.0743, 5.0290]) tensor(23.5539) tensor(4.7108)
+    """
+
+    def __init__(self, cdim=None, dim=None, keepdim=False, reduction='mean'):
+        super(Fnorm, self).__init__()
+        self.cdim = cdim
+        self.dim = dim
+        self.keepdim = keepdim
+        self.reduction = reduction
+
+    def forward(self, X):
+
+        return tb.norm(X, mode='fro', cdim=self.cdim, dim=self.dim, keepdim=self.keepdim, reduction=self.reduction)
+
+
+class Pnorm(th.nn.Module):
+    r"""obtain the p-norm of a tensor
+
+    Both complex and real representation are supported.
+
+    .. math::
+       {\rm pnorm}({\bf X}) = \|{\bf X}\|_p = \left(\sum_{x_i\in {\bf X}}|x_i|^p\right)^{\frac{1}{p}}
+
+    where, :math:`u, v` are the real and imaginary part of x, respectively.
+
+    Parameters
+    ----------
+    X : tensor
+        input
+    p : int
+        Specifies the power. The default is 2.
+    cdim : int or None
+        If :attr:`X` is complex-valued, :attr:`cdim` is ignored. If :attr:`X` is real-valued and :attr:`cdim` is integer
+        then :attr:`X` will be treated as complex-valued, in this case, :attr:`cdim` specifies the complex axis;
+        otherwise (None), :attr:`X` will be treated as real-valued
+    dim : int or None
+        The dimension axis for computing norm. 
+        The default is :obj:`None`, which means all. 
+    keepdim : bool
+        keep dimensions? (include complex dim, defalut is :obj:`False`)
+    reduction : str, None or optional
+        The operation in batch dim, :obj:`None`, ``'mean'`` or ``'sum'`` (the default is 'mean')
+    
+    Returns
+    -------
+    tensor
+         the inputs's p-norm.
+
+    Examples
+    ---------
+
+    ::
+
+        th.manual_seed(2020)
+        X = th.randn(5, 2, 3, 4)
+        print('---pnorm')
+
+        # real
+        F1 = Pnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+        F2 = Pnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+        F3 = Pnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+        print(F1, F2, F3)
+
+        # complex in real format
+        F1 = Pnorm(cdim=1, dim=(-2, -1), reduction=None)(X)
+        F2 = Pnorm(cdim=1, dim=(-2, -1), reduction='sum')(X)
+        F3 = Pnorm(cdim=1, dim=(-2, -1), reduction='mean')(X)
+        print(F1, F2, F3)
+
+        # complex in complex format
+        X = X[:, 0, ...] + 1j * X[:, 1, ...]
+        F1 = Pnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+        F2 = Pnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+        F3 = Pnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+        print(F1, F2, F3)
+
+        ---pnorm
+        tensor([[2.8719, 2.8263],
+                [3.1785, 3.4701],
+                [4.6697, 3.2955],
+                [3.0992, 2.6447],
+                [3.5341, 3.5779]]) tensor(33.1679) tensor(3.3168)
+        tensor([4.0294, 4.7058, 5.7154, 4.0743, 5.0290]) tensor(23.5539) tensor(4.7108)
+        tensor([4.0294, 4.7058, 5.7154, 4.0743, 5.0290]) tensor(23.5539) tensor(4.7108)
+    """
+
+    def __init__(self, p=2, cdim=None, dim=None, keepdim=False, reduction='mean'):
+        super(Pnorm, self).__init__()
+        self.p = p
+        self.cdim = cdim
+        self.dim = dim
+        self.keepdim = keepdim
+        self.reduction = reduction
+
+    def forward(self, X):
+
+        return tb.norm(X, mode='p%d' % self.p, cdim=self.cdim, dim=self.dim, keepdim=self.keepdim, reduction=self.reduction)
+
+
+if __name__ == '__main__':
+
+    th.manual_seed(2020)
+    X = th.randn(5, 2, 3, 4)
+    print('---norm')
+
+    # real
+    F1 = Fnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+    F2 = Fnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+    F3 = Fnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+    print(F1, F2, F3)
+
+    # complex in real format
+    F1 = Fnorm(cdim=1, dim=(-2, -1), reduction=None)(X)
+    F2 = Fnorm(cdim=1, dim=(-2, -1), reduction='sum')(X)
+    F3 = Fnorm(cdim=1, dim=(-2, -1), reduction='mean')(X)
+    print(F1, F2, F3)
+
+    # complex in complex format
+    X = X[:, 0, ...] + 1j * X[:, 1, ...]
+    F1 = Fnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+    F2 = Fnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+    F3 = Fnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+    print(F1, F2, F3)
+
+    th.manual_seed(2020)
+    X = th.randn(5, 2, 3, 4)
+    print('---pnorm')
+    
+    # real
+    F1 = Pnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+    F2 = Pnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+    F3 = Pnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+    print(F1, F2, F3)
+
+    # complex in real format
+    F1 = Pnorm(cdim=1, dim=(-2, -1), reduction=None)(X)
+    F2 = Pnorm(cdim=1, dim=(-2, -1), reduction='sum')(X)
+    F3 = Pnorm(cdim=1, dim=(-2, -1), reduction='mean')(X)
+    print(F1, F2, F3)
+
+    # complex in complex format
+    X = X[:, 0, ...] + 1j * X[:, 1, ...]
+    F1 = Pnorm(cdim=None, dim=(-2, -1), reduction=None)(X)
+    F2 = Pnorm(cdim=None, dim=(-2, -1), reduction='sum')(X)
+    F3 = Pnorm(cdim=None, dim=(-2, -1), reduction='mean')(X)
+    print(F1, F2, F3)
