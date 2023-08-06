@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pyurlx
+Version: 0.0.0
+Summary: A cool python module which shortens links using the URLx API
+Author-email: James Marke <mikeoxlong@saintly.com>, Callum Cardy <pythonscratcher@email.cz>
+License: BSD-3-Clause
+Keywords: url,shorten,link
+Classifier: Programming Language :: Python :: 2.7
+Requires-Python: >=2.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: importlib-metadata ; python_version < "2.7"
+
+# pyURLx
+A simple python module which uses requests and the URLx API to shorten links.
