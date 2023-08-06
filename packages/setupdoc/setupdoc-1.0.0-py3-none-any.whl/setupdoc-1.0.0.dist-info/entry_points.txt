@@ -1,0 +1,3 @@
+[console_scripts]
+setupdoc = setupdoc.__main__:main
+
