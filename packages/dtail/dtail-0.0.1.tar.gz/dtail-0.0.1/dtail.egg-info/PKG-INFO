@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: dtail
+Version: 0.0.1
+Summary: tail with globs and colors
+Author-email: Dan <dansonlinepresence@gmail.com>
+Project-URL: Homepage, https://github.com/dansgithubuser/dtail
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A tail utility with a couple powers:
+1. tail a glob of present and future files
+2. use regular expressions to colorize
