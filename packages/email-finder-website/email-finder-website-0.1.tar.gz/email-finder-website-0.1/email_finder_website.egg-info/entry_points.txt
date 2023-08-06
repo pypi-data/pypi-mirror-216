@@ -1,0 +1,2 @@
+[console_scripts]
+emailfinder = email_crawler.crawler:main
