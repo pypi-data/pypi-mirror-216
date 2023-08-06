@@ -1,0 +1,14 @@
+PyInquirer
+PyYAML
+cachetools
+cryptography
+grpcio<=1.43.0
+jsonpath-rw
+pip
+protobuf
+pyfiglet
+regex
+requests>=2.31.0
+simplejson
+tb-mqtt-client>=1.5
+termcolor
