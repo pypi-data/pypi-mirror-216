@@ -1,0 +1,10 @@
+chameleon
+
+[dev]
+lektor-chameleon[style]
+lektor
+markupsafe
+build
+
+[style]
+ruff
