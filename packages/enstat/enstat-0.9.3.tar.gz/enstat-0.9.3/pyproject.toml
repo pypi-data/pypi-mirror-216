@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+
+[project]
+authors = [{name = "Tom de Geus", email = "tom@geus.me"}]
+classifiers = ["License :: OSI Approved :: MIT License"]
+dependencies = ["numpy"]
+description = "Ensemble averages"
+dynamic = ["version"]
+name = "enstat"
+readme = "README.md"
+requires-python = ">=3.6"
+
+[project.urls]
+Source = "https://github.com/tdegeus/enstat"
+
+[tool.setuptools_scm]
+write_to = "enstat/_version.py"
