@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: fastapi-peewee-filter
+Version: 0.0.1
+Summary: fastapi+peewee support
+Home-page: https://github.com/ponponon/fastapi-peewee-filter
+Author: ponponon
+Author-email: 1729303158@qq.com
+Maintainer: ponponon
+Maintainer-email: 1729303158@qq.com
+License: MIT License
+Platform: all
+Classifier: Programming Language :: Python
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Description-Content-Type: text/markdown
+
+# fastapi-peewee-filter
+
+## 简介
+
+参考：https://github.com/arthurio/fastapi-filter
+
+但是这个 fastapi-filter 只支持 SQLAlchemy，所以我搞了一个 fastapi-peewee-filter 用于支持 peewee 这个 ORM
+
+## 安装
+
+Python 解释器:
+
+- CPython : 3.8 及以上版本
