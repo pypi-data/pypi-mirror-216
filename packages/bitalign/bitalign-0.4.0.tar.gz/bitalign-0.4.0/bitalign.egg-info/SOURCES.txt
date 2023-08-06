@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+bitalign/__init__.py
+bitalign/benchmark.py
+bitalign/tests.py
+bitalign.egg-info/PKG-INFO
+bitalign.egg-info/SOURCES.txt
+bitalign.egg-info/dependency_links.txt
+bitalign.egg-info/top_level.txt
+src/_bitalign.c
+src/_bitalign.h
+src/_bitalign_impl.h
+src/_bitalignmodule.c
+src/_popcount_impl.h
