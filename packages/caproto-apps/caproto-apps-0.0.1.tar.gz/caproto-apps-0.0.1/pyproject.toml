@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# [build-system]
+# requires = ["hatchling"]
+# build-backend = "hatchling.build"
+
+[project]
+name = "caproto-apps"
+version = "0.0.1"
+authors = [
+  { name="Mark Wolfman", email="wolfman@anl.gov" },
+]
+description = "Variety of useful extensions for caproto IOCs."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Topic :: Scientific/Engineering",
+    "Topic :: System :: Hardware",
+]
+keywords = ["caproto", "controls"]
+dependencies = ["caproto"]
+
+[project.optional-dependencies]
+dev = ["black", "pytest", "pytest-asyncio", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/canismarko/caproto-apps"
+
+# [tool.setuptools]
+# packages = ["haven", "firefly"]
+
+# [project.urls]
+# "Homepage" = "https://github.com/pypa/sampleproject"
+# "Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
