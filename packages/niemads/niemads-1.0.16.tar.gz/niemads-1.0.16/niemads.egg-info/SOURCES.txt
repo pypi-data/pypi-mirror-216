@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+niemads/DisjointSet.py
+niemads/MultiwayTrie.py
+niemads/RandomSet.py
+niemads/__init__.py
+niemads.egg-info/PKG-INFO
+niemads.egg-info/SOURCES.txt
+niemads.egg-info/dependency_links.txt
+niemads.egg-info/requires.txt
+niemads.egg-info/top_level.txt
