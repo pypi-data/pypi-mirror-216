@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: otel-tracer
+Version: 0.1.0
+Summary: common python utilities for VxRail
+Home-page: UNKNOWN
+Author: VxRail
+Author-email: UNKNOWN
+License: ToBeDone
+Platform: python3
+Requires-Dist: flask
+Requires-Dist: opentelemetry-api
+Requires-Dist: opentelemetry-exporter-otlp-proto-grpc
+Requires-Dist: opentelemetry-instrumentation-flask
+Requires-Dist: opentelemetry-instrumentation-pika
+Requires-Dist: opentelemetry-instrumentation-redis
+Requires-Dist: opentelemetry-instrumentation-requests
+Requires-Dist: opentelemetry-sdk
+Requires-Dist: opentelemetry-semantic-conventions
+Requires-Dist: pika
+Requires-Dist: redis
+Requires-Dist: requests
+
+
+otel tracing
+
+
