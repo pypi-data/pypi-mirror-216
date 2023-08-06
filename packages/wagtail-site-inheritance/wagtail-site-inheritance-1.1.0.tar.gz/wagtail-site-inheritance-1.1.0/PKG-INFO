@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: wagtail-site-inheritance
+Version: 1.1.0
+Summary: Site Inheritance for Wagtail
+Home-page: https://github.com/labd/wagtail-site-inheritance
+Author: Lab Digital
+Author-email: opensource@labdigital.nl
+License: MIT
+Description: 
+        # Wagtail Site Inheritance
+        
+        ## Installation
+        
+        ```shell
+        pip install wagtail-site-inheritance
+        ```
+        
+        
+        ## TODO
+         - [ ] https://github.com/wagtail/wagtail/issues/4925
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Wagtail
+Classifier: Framework :: Wagtail :: 2
+Classifier: Framework :: Wagtail :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+Provides-Extra: docs
+Provides-Extra: test
