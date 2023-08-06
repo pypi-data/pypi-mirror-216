@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pyarcade
+Version: 0.0.1
+Summary: A Python driver for ArcadeDB
+Home-page: https://github.com/adaros92/arcadedb-python-driver
+Author: Adams Rosales
+Author-email: adams.rosales.92@gmail.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: retry
+Requires-Dist: requests
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pytest-clarity ; extra == 'test'
+
+# arcadedb-python-driver
+Python driver for [ArcadeDB](https://arcadedb.com)
+
+
