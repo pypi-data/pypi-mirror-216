@@ -1,0 +1,8 @@
+{
+  "urls": [
+    ["micropython_mma8452q/__init__.py", "github:jposada202020/MicroPython_MMA8452Q/micropython_mma8452q/__init__.py"],
+    ["micropython_mma8452q/i2c_helpers.py", "github:jposada202020/MicroPython_MMA8452Q/micropython_mma8452q/i2c_helpers.py"],
+    ["micropython_mma8452q/mma8452q.py", "github:jposada202020/MicroPython_MMA8452Q/micropython_mma8452q/mma8452q.py"]
+  ],
+  "version": "0.1"
+}

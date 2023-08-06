@@ -1,0 +1,10 @@
+{
+  "urls": [
+    ["micropython_mma8452q/examples/mma8452q_simpletest.py", "github:jposada202020/MicroPython_MMA8452Q/examples/mma8452q_simpletest.py"],
+    ["micropython_mma8452q/examples/mma8452q_scale_range.py", "github:jposada202020/MicroPython_MMA8452Q/examples/mma8452q_scale_range.py"],
+    ["micropython_mma8452q/examples/mma8452q_data_rate.py", "github:jposada202020/MicroPython_MMA8452Q/examples/mma8452q_data_rate.py"],
+    ["micropython_mma8452q/examples/mma8452q_operation_mode.py", "github:jposada202020/MicroPython_MMA8452Q/examples/mma8452q_operation_mode.py"],
+    ["micropython_mma8452q/examples/mma8452q_high_pass_filter_cutoff.py", "github:jposada202020/MicroPython_MMA8452Q/examples/mma8452q_high_pass_filter_cutoff.py"]
+  ],
+  "version": "0.1"
+}
