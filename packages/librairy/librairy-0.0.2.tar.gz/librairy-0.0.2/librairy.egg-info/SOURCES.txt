@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+librairy/__init__.py
+librairy/bookshelf.py
+librairy/config.py
+librairy.egg-info/PKG-INFO
+librairy.egg-info/SOURCES.txt
+librairy.egg-info/dependency_links.txt
+librairy.egg-info/requires.txt
+librairy.egg-info/top_level.txt
+librairy/collector/semscholar.py
