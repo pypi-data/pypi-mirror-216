@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+influxdb3_python_cli.egg-info/PKG-INFO
+influxdb3_python_cli.egg-info/SOURCES.txt
+influxdb3_python_cli.egg-info/dependency_links.txt
+influxdb3_python_cli.egg-info/entry_points.txt
+influxdb3_python_cli.egg-info/requires.txt
+influxdb3_python_cli.egg-info/top_level.txt
+influxdb_cli/__init__.py
+influxdb_cli/helper.py
+influxdb_cli/influx3.py
