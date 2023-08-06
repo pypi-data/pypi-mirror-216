@@ -1,0 +1,43 @@
+[run]
+omit =
+    */tests/*
+    */docs/*
+    setup.py
+branch = true
+source =
+    hera_sim
+
+[report]
+omit =
+    */tests/*
+    */docs/*
+    setup.py
+
+show_missing = true
+
+[paths]
+source =
+    hera_sim
+    */site-packages"
+tests =
+    hera_sim/tests
+    */tests
+
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+    pragma: nocover
+
+    # Don't complain about missing debug-only code:
+    def __repr__
+    if self\.debug
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+    except ImportError
+
+    # Don't complain if non-runnable code isn't run:
+    if 0:
+    if __name__ == .__main__.:
