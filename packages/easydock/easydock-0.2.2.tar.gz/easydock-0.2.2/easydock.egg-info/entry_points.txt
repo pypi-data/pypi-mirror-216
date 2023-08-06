@@ -1,0 +1,4 @@
+[console_scripts]
+get_sdf_from_dock_db = easydock.get_sdf_from_dock_db:main
+run_dock = easydock.run_dock:main
+
