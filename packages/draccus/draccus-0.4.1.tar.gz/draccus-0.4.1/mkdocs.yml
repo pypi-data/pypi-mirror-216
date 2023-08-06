@@ -1,0 +1,34 @@
+site_name: Draccus
+repo_name: 'dlwh/draccus'
+repo_url: 'https://github.com/dlwh/draccus'
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: "blue grey"
+  features:
+    - navigation.tabs
+    - toc.integrate
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+        alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+nav:
+  - Welcome to Draccus: "index.md"
+  - Draccus Step by Step: "step_by_step.md"
+  - The Draccus API: "api.md"
+#  - On Dataclasses and Typing: ""
+#  - Design Choices: ""
