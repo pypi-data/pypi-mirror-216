@@ -1,0 +1,30 @@
+[project]
+name = "mkdocs-dsfr"
+version = "0.3.0"
+description = "DSFR theme for Mkdocs"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "mkdocs>=1.4",
+]
+
+[[project.authors]]
+name = "Ministère Transition Écologique - DNUM"
+email = "numerique-ecologie@developpement-durable.gouv.fr"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://gitlab-forge.din.developpement-durable.gouv.fr/pub/numeco/mkdocs-dsfr"
+
+[project.entry-points."mkdocs.themes"]
+dsfr = "dsfr"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool]
