@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: qiskit-sphinx-theme
+Version: 1.13.0rc1
+Summary: A Sphinx theme for Qiskit and Qiskit Ecosystem projects
+Author-Email: Qiskit Development Team <hello@qiskit.org>
+License: Apache 2
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Framework :: Sphinx :: Theme
+Project-URL: Bug tracker, https://github.com/Qiskit/qiskit_sphinx_theme/issues
+Project-URL: Source code, https://github.com/Qiskit/qiskit_sphinx_theme
+Requires-Dist: docutils
+Requires-Dist: sphinx>=6.0
+Requires-Dist: sphinxcontrib-jquery
+Requires-Dist: furo==2023.5.20
