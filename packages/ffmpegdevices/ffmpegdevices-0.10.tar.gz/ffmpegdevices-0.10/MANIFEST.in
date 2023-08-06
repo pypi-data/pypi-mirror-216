@@ -1,0 +1,3 @@
+include ffmpegdevices/requirements.txt
+include ffmpegdevices/thirdparty.json
+include ffmpegdevices/README.MD
