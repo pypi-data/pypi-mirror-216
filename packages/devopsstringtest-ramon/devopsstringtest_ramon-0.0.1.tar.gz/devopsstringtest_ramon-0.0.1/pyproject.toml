@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devopsstringtest_ramon"
+version = "0.0.1"
+authors = [
+  { name="Ramon Durães", email="ramongduraes@gmail.com" },
+]
+description = "String standardization package"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+"Homepage" = "https://github.com/ramongduraes/devops_test"
+"Bug Tracker" = "https://github.com/ramongduraes/devops_test/issues"
