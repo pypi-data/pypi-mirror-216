@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: oc-confluence-ci-type-sync
+Version: 1.0.2
+Summary: Replace ci-types report at Confluence page
+Requires-Python: >=3.7
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: oc-orm-initializator
+Requires-Dist: oc-delivery-apps
+Requires-Dist: Jinja2
+Requires-Dist: requests
+
