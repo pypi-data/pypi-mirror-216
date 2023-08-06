@@ -1,0 +1,15 @@
+
+[docs]
+sphinx
+sphinx_rtd_theme
+myst-parser[linkify]
+
+[release]
+twine
+
+[test]
+pytest
+pytest-black
+pytest-cov
+pytest-pylint
+pylint
