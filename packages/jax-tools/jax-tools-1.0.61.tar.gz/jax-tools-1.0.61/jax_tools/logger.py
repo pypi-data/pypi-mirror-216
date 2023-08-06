@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+"""
+Logger module
+"""
+import logging.config
+import colorlog
+# 定义 logger
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+# 定义日志处理器
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.DEBUG)
+
+# 创建日志格式
+formatter = colorlog.ColoredFormatter(
+    '%(log_color)s%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%H:%M:%S',
+    log_colors={
+        'DEBUG': 'white',
+        'INFO': 'green',
+        'WARNING': 'yellow',
+        'ERROR': 'red',
+    }
+)
+
+stream_handler.setFormatter(formatter)
+
+# 添加日志处理器到 logger
+logger.addHandler(stream_handler)
+
+# 定义新的 logger_details
+logger_details = logging.getLogger('details')
+logger_details.setLevel(logging.DEBUG)
+
+# 定义新的日志处理器
+details_handler = logging.StreamHandler()
+details_handler.setLevel(logging.DEBUG)
+
+# 定义新的日志格式，包括脚本名和行号
+details_formatter = logging.Formatter('%(asctime)s %(levelname)s %(filename)s[%(lineno)d] %(message)s',
+                                      '%Y-%m-%d %H:%M:%S')
+details_handler.setFormatter(details_formatter)
+
+# 添加新的日志处理器到 logger_details
+logger_details.addHandler(details_handler)
+
+# 定义新的 logger_details
+logger_time = logging.getLogger('time')
+logger_time.setLevel(logging.DEBUG)
+
+# 定义新的日志处理器
+time_handler = logging.StreamHandler()
+time_handler.setLevel(logging.DEBUG)
+
+# 定义新的日志格式，包括脚本名和行号
+time_formatter = logging.Formatter('%(asctime)s %(message)s', '%H:%M:%S')
+time_handler.setFormatter(time_formatter)
+
+# 添加新的日志处理器到 logger_time
+logger_time.addHandler(time_handler)
+
+if __name__ == '__main__':
+    logger.debug('this is a debug message')
+    logger.info('this is a info message')
+    logger.warning('this is a warning message')
+    logger.error('this is a error message')
