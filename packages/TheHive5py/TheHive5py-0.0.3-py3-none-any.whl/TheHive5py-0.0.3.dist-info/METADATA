@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: TheHive5py
+Version: 0.0.3
+Summary: Python client for TheHive5
+Author: Sn0wAlice
+Author-email: snow.alice@pm.me
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# TheHive5py
+Like TheHive4py, but dedicated to TheHive5 &lt;3
