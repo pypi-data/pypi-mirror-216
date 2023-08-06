@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gspot_django_auth"
+version = "0.0.5"
+authors = [
+    { name = "oxpaoff", email = "kosenkoviktor11@gmail.com" },
+]
+description = "A Django app for auth."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "asgiref==3.7.2",
+    "async-timeout==4.0.2",
+    "Django==4.2.2",
+    "djangorestframework==3.14.0",
+    "PyJWT==2.7.0",
+    "pytz==2023.3",
+    "redis==4.6.0",
+    "sqlparse==0.4.4",
+    "typing_extensions==4.6.3",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/oxpaoff/gspot_auth"
+"Bug Tracker" = "https://github.com/oxpaoff/gspot_auth/issues"
+
+[tool.black]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+)/
+'''
