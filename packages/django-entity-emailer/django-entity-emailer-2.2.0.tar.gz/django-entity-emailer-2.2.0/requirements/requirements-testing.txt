@@ -1,0 +1,6 @@
+coverage<7
+django-dynamic-fixture
+django-nose
+flake8
+freezegun
+psycopg2
