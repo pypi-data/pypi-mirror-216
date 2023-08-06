@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+DetaMetrics.egg-info/PKG-INFO
+DetaMetrics.egg-info/SOURCES.txt
+DetaMetrics.egg-info/dependency_links.txt
+DetaMetrics.egg-info/top_level.txt
+detametrics/__init__.py
+detametrics/sdk.py
+detametrics/tf.py
