@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: live-parquet
+Version: 0.5.0
+Requires-Dist: click
+Requires-Dist: pandas
+Requires-Dist: tabulate
+Requires-Dist: watchdog
+
