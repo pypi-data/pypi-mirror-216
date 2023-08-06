@@ -1,0 +1,2 @@
+[qiskit.transpiler.scheduling]
+compact = qiskit_scheduling_extension.plugin:CompactSchedulingPlugin

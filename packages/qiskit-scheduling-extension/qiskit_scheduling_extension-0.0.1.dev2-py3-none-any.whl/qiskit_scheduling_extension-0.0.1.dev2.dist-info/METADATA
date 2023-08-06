@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: qiskit-scheduling-extension
+Version: 0.0.1.dev2
+Summary: Qiskit transpiler plugins for advanced scheduling
+Home-page: https://github.com/qiskit-community/qiskit-scheduling-extension
+Author: Toshinari Itoko
+Author-email: itoko@jp.ibm.com
+License: Apache-2
+Project-URL: Bug Tracker, https://github.com/qiskit-community/qiskit-scheduling-extension/issues
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+License-File: AUTHORS
+Requires-Dist: pbr (>=5.7.0)
+Requires-Dist: qiskit-terra (>=0.24.0)
+
+# Qiskit Scheduling Extension Plugin
+
+This repository contains an extension library of pass manager plugins that can be used in the
+[scheduling stage](https://qiskit.org/documentation/apidoc/transpiler.html#scheduling-stage)
+of Qiskit transpiler.
+
+## Install and Use plugin
+
+To use the scheduling extension plugin first install qiskit-scheduling-extension:
+
+```bash
+pip install qiskit-scheduling-extension
+```
+
+Once you have the plugin package installed you can use the plugin via the
+`scheduling_method` argument on Qiskit's `transpile()` function. For example,
+if you wanted to use the `compact` scheduling method to compile a 15 qubit quantum
+volume circuit for a backend you would do something like:
+
+```python
+
+from qiskit import transpile
+from qiskit.circuit.library import QuantumVolume
+from qiskit.providers.fake_provider import FakePrague
+
+qc = QuantumVolume(15)
+qc.measure_all()
+backend = FakePrague()
+
+transpile(qc, backend, scheduling_method="compact")
+```
+
+# Authors and Citation
+
+The qiskit-scheduling-extension is the work of [many people](https://github.com/qiskit-community/qiskit-scheduling-extension/graphs/contributors)
+who contribute to the project at different levels.
+
