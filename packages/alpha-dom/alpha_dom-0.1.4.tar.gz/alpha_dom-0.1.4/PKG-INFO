@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: alpha-dom
+Version: 0.1.4
+Summary: Playing Dominion with Deep Reinforcement Learning
+License: MIT
+Author: Najib Ishaq
+Author-email: najib_ishaq@zoho.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pydantic (>=1.10.9,<2.0.0)
+Description-Content-Type: text/markdown
+
+# AlphaDom (v0.1.4)
+
+Playing Dominion with Deep Reinforcement Learning.
+
+## References
+
+1. [AlphaZero](https://arxiv.org/abs/1712.01815)
+   - Notes
+   - Thoughts
+2. [AlphaStar](https://arxiv.org/abs/1902.01724)
+   - Notes
+   - Thoughts
+3. [Deep RL for Imperfect Information Games](https://arxiv.org/pdf/2007.13544)
+   - Notes
+   - Thoughts
+

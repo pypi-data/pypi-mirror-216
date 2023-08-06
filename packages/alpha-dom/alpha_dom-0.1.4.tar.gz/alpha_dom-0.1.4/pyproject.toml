@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "alpha-dom"
+version = "0.1.4"
+description = "Playing Dominion with Deep Reinforcement Learning"
+authors = [
+    "Najib Ishaq <najib_ishaq@zoho.com>",
+    "Morgan Prior <meprior424@gmail.com>",
+]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "alpha_dom", from = "python"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^1.10.9"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.3.3"
+bump2version = "^1.0.1"
+black = "^23.3.0"
+ruff = "^0.0.272"
+mypy = "^1.3.0"
+pytest = "^7.3.2"
+pytest-xdist = "^3.3.1"
+pytest-sugar = "^0.9.7"
+pytest-cov = "^4.1.0"
+pytest-benchmark = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
