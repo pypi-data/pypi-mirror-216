@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: cypherdataframe
+Version: 0.1.1
+Summary: Cypher Query to df Tolokit
+Home-page: UNKNOWN
+Author: Attila Vanderploeg
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: py2neo (>=2021.2.3)
+Requires-Dist: dacite (>=1.6.0)
+
+UNKNOWN
+
