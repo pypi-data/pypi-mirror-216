@@ -1,0 +1,103 @@
+body, html, div, figure {
+    margin: 0;
+    padding: 0;
+    color: red;
+    position: absolute;
+    border-collapse: collapse;
+    text-align: center;
+}
+li {
+    margin: 0px 0;
+}
+p {
+    margin: 0;
+}
+#debugBox {
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+
+    text-align: left;
+    white-space: pre-wrap;
+    color:black;
+
+    left: 2cm;
+    top: 20cm;
+    height: 10cm;
+    width: 30cm;
+    position: absolute;
+}
+.textBox {
+    background-color: transparent;
+    text-align: left;
+    white-space: pre-wrap;
+    color:black;
+    display: table-cell;
+
+}
+.filterBox {
+    border-radius: 15px;
+    height: 3cm;
+    width: 3cm;
+    margin:0.3cm;
+    position: relative;
+    background-color: rgb(200, 200, 250);
+    box-shadow: 0 0 20px #555555;
+
+    line-height: 16px;
+    text-align: left;
+    white-space: pre-wrap;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    color:black;
+}
+.pictureBox {
+    border-radius: 5px;
+    background-color: rgb(150, 150, 150);
+    box-shadow: 8px 8px 30px #333333;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    color:black;
+}
+.fullsize {
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+}
+
+#fullscreen_image {
+    background-color: rgb(50, 50, 50);
+    visibility: hidden;
+
+    display: block;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+#fullscreen_img {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#wall {
+    background-color: rgb(120, 110, 100);
+}
+#tools {
+    background-color: transparent;
+    left: 1cm;
+    top: 1cm;
+}
+#shredder {
+    background-color: #ffd0d0;
+}
