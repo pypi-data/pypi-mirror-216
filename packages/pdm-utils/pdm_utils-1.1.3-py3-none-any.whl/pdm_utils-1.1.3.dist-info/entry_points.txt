@@ -1,0 +1,2 @@
+[console_scripts]
+pdm_utils = pdm_utils.__main__:main
