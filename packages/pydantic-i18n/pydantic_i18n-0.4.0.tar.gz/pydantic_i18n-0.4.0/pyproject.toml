@@ -1,0 +1,72 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[project]
+name = "pydantic-i18n"
+authors = [
+    {name = "Roman Sadzhenytsia", email = "urchin.dukkee@gmail.com"},
+]
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+readme = "README.md"
+requires-python = ">=3.8.1"
+dependencies = [
+    "pydantic >=1.9.0",
+]
+dynamic = ["version", "description"]
+
+[tool.flit.module]
+name = "pydantic_i18n"
+
+[project.urls]
+Documentation = "https://pydantic-i18n.boardpack.org"
+Source = "https://github.com/boardpack/pydantic-i18n"
+
+[project.optional-dependencies]
+test = [
+    "pytest ==7.4.0",
+    "pytest-cov ==4.1.0",
+    "pytest-lazy-fixture ==0.6.3",
+    "mypy ==1.4.1",
+    "flake8 ==6.0.0",
+    "black ==23.3.0",
+    "isort ==5.12.0",
+    "babel ==2.12.1",
+]
+dev = [
+    "autoflake ==2.2.0",
+    "flake8 ==6.0.0",
+    "pre-commit",
+]
+doc = [
+    "mkdocs ==1.4.3",
+    "mkdocs-material ==8.5.11",
+    "markdown ==3.2.1",
+    "markdown-include ==0.8.1",
+    "mkdocs-markdownextradata-plugin ==0.2.5",
+    "typer ==0.9.0",
+    "pyyaml ==6.0.0",
+]
+
+[tool.isort]
+profile = "black"
+known_first_party = ["pydantic_i18n", "pydantic", "babel"]
