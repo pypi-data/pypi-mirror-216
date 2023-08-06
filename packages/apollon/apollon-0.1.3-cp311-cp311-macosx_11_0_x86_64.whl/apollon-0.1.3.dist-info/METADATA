@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: apollon
+Version: 0.1.3
+Summary: Feature extraction frame work for content-based music analysis
+Author-email: Michael Blaß <mblass@posteo.net>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2019, Michael Blaß 
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: Repository, http://github.com/ifsm/apollo
+Project-URL: Documentation, https://apollon.readthedocs.io
+Keywords: music,analysis,feature extraction
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy (>=1.20)
+Requires-Dist: jsonschema (>=3.2.0)
+Requires-Dist: scipy (>=0.19.0)
+Requires-Dist: matplotlib (>=2)
+Requires-Dist: pandas (>=0.20)
+Requires-Dist: soundfile (>=0.10.2)
+Requires-Dist: chainsaddiction (>=0.2.1)
+
+# Apollon
+Apollon is a Python framework for audio feature extraction and music similarity
+estimation. It includes subpackages for
+
+* Audio feature extraction
+* Hidden Markov Models
+* Self-Organizing Map
+
+## 1. Installation
+### 1.1 Install from PyPi
+The latest version of apollon is available on PyPi. Just open a terminal an run
+the following command to download and install apollon:
+
+```
+pip install apollon 
+```
+
+## 2. Documentation
+Full [documentation](https://apollon.readthedocs.io) is available on readthedocs.
