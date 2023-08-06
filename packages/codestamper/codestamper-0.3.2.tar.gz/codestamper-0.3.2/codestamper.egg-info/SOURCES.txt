@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+codestamper/__init__.py
+codestamper/codestamper.py
+codestamper/gitutils.py
+codestamper/pythonenv.py
+codestamper.egg-info/PKG-INFO
+codestamper.egg-info/SOURCES.txt
+codestamper.egg-info/dependency_links.txt
+codestamper.egg-info/requires.txt
+codestamper.egg-info/top_level.txt
+tests/test_basic.py
