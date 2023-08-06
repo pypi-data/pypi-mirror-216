@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "openterrace"
+description = "OpenTerrace is a pure Python framework for thermal energy storage packed bed simulations"
+version = "v0.0.7"
+authors = [
+    "Jakob Hærvig"
+]
+readme = "README.md"
+license = "MIT"
+
+packages = [
+    { include = "openterrace"}
+]
+
+repository = "https://github.com/OpenTerrace/openterrace-python"
+documentation = "https://openterrace.github.io/openterrace-python/"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+format = "v{base}"
+
+# Requirements
+[tool.poetry.dependencies]
+python = "^3.9"
+
+numpy = "^1.23.4"
+numba = "^0.56.3"
+scipy = "^1.9.3"
+matplotlib = "^3.6.1"
+tqdm = "^4.64.1"
+pytest = "^7.1.3"
+pandas = "^1.5.2"
+
+[tool.poetry.group.test.dependencies]
+# Cachy frozen to test backwards compatibility for `poetry.utils.cache`.
+pytest = "^7.1.3"
+
+# only used in github actions
+[tool.poetry.group.github-actions]
+optional = true
+
+[tool.poetry.group.github-actions.dependencies]
+pytest-github-actions-annotate-failures = "^0.1.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
