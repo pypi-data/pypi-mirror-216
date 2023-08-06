@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "mapservice-clientlib"
+version = "2.2.1"
+description = "Library to query mapservices including ArcGIS, THREDDS, WMS and ScienceBase"
+authors = ["dharvey-consbio <dani.harvey@consbio.org>"]
+keywords = ["arcgis", "thredds", "ncwms", "wms", "sciencebase", "geospatial", "gis", "mapservice", "map service", "clients", "mapservice_clientlib"]
+readme = "README.md"
+homepage = "https://github.com/consbio/mapservice-clientlib/"
+repository = "https://github.com/consbio/mapservice-clientlib/"
+license = "BSD"
+packages = [
+    { include = "clients" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+gis-metadata-parser = "^2.0"
+parserutils = "^2.0.1"
+restle = "^0.5.1"
+Pillow = "7.2.*"
+pyproj = "^3.2.1"
+python-ags = "^0.3.2"
+sciencebasepy = "^2.0.4"
+
+[tool.poetry.dev-dependencies]
+mock = "*"
+requests-mock = "*"
+pipdeptree = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
