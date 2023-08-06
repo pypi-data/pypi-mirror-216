@@ -1,0 +1,3 @@
+include screwduplicates/requirements.txt
+include screwduplicates/thirdparty.json
+include screwduplicates/README.MD
