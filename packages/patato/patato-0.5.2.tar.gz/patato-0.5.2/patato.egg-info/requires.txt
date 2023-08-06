@@ -1,0 +1,22 @@
+requests
+cython
+shapely
+pylops
+h5py
+typing_extensions
+seaborn
+pandas
+scikit-learn
+xarray
+numpy
+scipy
+tabulate
+matplotlib
+matplotlib_scalebar
+dask
+pybind11
+wget
+gdown
+
+[:platform_system != "Windows"]
+jax[cpu]
