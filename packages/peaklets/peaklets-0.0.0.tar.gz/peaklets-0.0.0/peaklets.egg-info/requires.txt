@@ -1,0 +1,12 @@
+numpy
+celluloid
+matplotlib
+numba
+
+[doc]
+sphinx-autodoc-typehints
+pydata-sphinx-theme
+jupyter-sphinx
+
+[test]
+pytest
