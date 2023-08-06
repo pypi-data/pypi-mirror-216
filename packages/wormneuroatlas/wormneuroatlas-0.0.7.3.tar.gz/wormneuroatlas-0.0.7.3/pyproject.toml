@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wormneuroatlas"
+version = "0.0.7.3"
+authors = [
+  { name="Francesco Randi", email="francesco.randi@gmail.com" },
+]
+description = "A Python package combining multimodal C. elegans’ neural datasets"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+]
+dependencies = ["numpy",
+                "scipy",
+                "matplotlib",
+                "urllib3",
+                "h5py",
+                "pdoc",
+                "pandas",
+                "openpyxl"#,
+                #"multipy @ git+https://github.com/puolival/multipy.git@ef9d2e2ffd6a7e079e29268dfbd59e630dd346b4",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/francescorandi/wormneuroatlas"
+"Documentation" = "https://francescorandi.github.io/wormneuroatlas"
+"Reference" = "https://url.to.paper"
+"Bug Tracker" = "https://github.com/francescorandi/wormneuroatlas/issues"
