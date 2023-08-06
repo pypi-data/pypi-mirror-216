@@ -1,0 +1,2 @@
+[fs.opener]
+gitlab = gitlab_fs.opener:GitlabFSOpener
