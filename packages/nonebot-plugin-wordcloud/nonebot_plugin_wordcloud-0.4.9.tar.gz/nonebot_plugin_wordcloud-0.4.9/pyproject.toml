@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "nonebot-plugin-wordcloud"
+version = "0.4.9"
+description = "适用于 NoneBot2 的词云插件"
+authors = ["hemengyang <hmy0119@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/he0119/nonebot-plugin-wordcloud"
+repository = "https://github.com/he0119/nonebot-plugin-wordcloud"
+documentation = "https://github.com/he0119/nonebot-plugin-wordcloud#readme"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+nonebot2 = { version = "^2.0.0", extras = ["fastapi"] }
+nonebot-adapter-onebot = "^2.2.0"
+nonebot-plugin-chatrecorder = "^0.2.3"
+wordcloud = "^1.8.1"
+jieba = "^0.42.1"
+tzdata = "*"
+"backports.zoneinfo" = { version = "^0.2.1", python = "<3.9" }
+emoji = ">=1.6.3,<3.0.0"
+nonebot-plugin-apscheduler = "^0.3.0"
+nonebot-plugin-datastore = ">=0.6.0, <2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+isort = "*"
+pre-commit = "*"
+nonebug = "^0.3.1"
+pytest-cov = "^4.0.0"
+pytest-xdist = "^3.1.0"
+pytest-mock = "^3.7.0"
+pytest-asyncio = "^0.21.0"
+gevent = "^22.10.2"
+asyncpg = "^0.27.0"
+aiomysql = "^0.1.1"
+
+[tool.nonebot]
+plugins = ["nonebot_plugin_wordcloud"]
+adapters = [
+  { name = "OneBot V12", module_name = "nonebot.adapters.onebot.v12", project_link = "nonebot-adapter-onebot", desc = "OneBot V12 协议" },
+  { name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11", project_link = "nonebot-adapter-onebot", desc = "OneBot V11 协议" },
+]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
+skip_gitignore = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.pyright]
+pythonVersion = "3.8"
+pythonPlatform = "All"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
