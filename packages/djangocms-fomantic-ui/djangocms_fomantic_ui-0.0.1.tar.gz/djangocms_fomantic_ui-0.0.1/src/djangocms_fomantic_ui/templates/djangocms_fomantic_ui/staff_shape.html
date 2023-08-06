@@ -1,0 +1,68 @@
+{% load i18n sekizai_tags easy_thumbnails_tags %}
+{% addtoblock "css" strip %}
+<style>
+	.ui.people.shape .ui.card {
+		width: 166.5px;
+		height: 250px;
+		margin: .75rem;
+	}
+</style>
+{% endaddtoblock %}
+
+<div class="ui six stackable cards">
+	{% for staff_member in staff_members %}
+	<div class="ui people shape" id="staff_member-shape-{{ staff_member.id }}">
+		<div class="sides">
+			<div class="active side">
+				<div class="ui card">
+					<div>
+						<img alt="{% trans 'Photo' %} {{ staff_member }}" class="ui circular image"
+						     src="{% thumbnail staff_member.picture 180x180 crop %}">
+					</div>
+					<div class="content">
+						<div>{{ staff_member.first_name }} {{ staff_member.last_name }}</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="side">
+				<div class="ui card">
+					<div class="description">
+						{{ staff_member.info_text }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% addtoblock "js" strip %}
+	<script>
+        $(function () {
+            $("#staff_member-shape-{{ staff_member.id }}").click(function () {
+                if ($("#staff_member-shape-{{ staff_member.id }} .description").text().trim()) {
+                    $("#staff_member-shape-{{ staff_member.id }}").shape('flip over')
+                }
+            })
+        })
+	</script>
+	{% endaddtoblock %}
+	{% endfor %}
+</div>
+
+{% addtoblock "js" strip %}
+<script>
+    $(function () {
+        $('.shape').shape();
+        $(".card").popup({
+            inline: true,
+            hoverable: true,
+            position: 'bottom left',
+            delay: {
+                show: 300,
+                hide: 800
+            }
+        });
+
+    })
+</script>
+{% endaddtoblock %}
