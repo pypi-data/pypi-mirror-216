@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: delphai-fastapi
+Version: 0.1.3
+Summary: Package for fastAPI models
+Author: Berinike Tech
+Author-email: berinike@delphai.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: bson
+Requires-Dist: delphai-utils[config] (>=3,<4)
+Requires-Dist: fastapi (>=0.95,<0.96)
+Requires-Dist: fastapi-camelcase (>=1.0.5,<2.0.0)
