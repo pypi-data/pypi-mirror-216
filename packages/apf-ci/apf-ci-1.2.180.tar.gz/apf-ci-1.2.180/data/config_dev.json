@@ -1,0 +1,11 @@
+{
+  "APP_FACTORY_BUILD_CONFIG": "http://git.sdp.nd/jenkins/apf-jenkins-config/raw/master/config_dev.json",
+  "JENKINS_PAGE_ATTRIBUTES_URL": "http://git.sdp.nd/jenkins/apf-jenkins-config/raw/master/page_attributes_dev.json",
+  "URL_PORTAL": "http://dev.sdp.nd",
+  "https://services.gradle.org/distributions/gradle-4.1-all.zip": "/usr/local/gradle/gradle-4.1",
+  "GRADLE_HOME_SHELL": "/usr/local/gradle/gradle-3.0",
+  "https://services.gradle.org/distributions/gradle-4.10.1-all.zip": "/usr/local/gradle/gradle-4.10.1",
+  "https://services.gradle.org/distributions/gradle-5.6.4-all.zip": "/usr/local/gradle/gradle-4.10.1",
+  "force": "",
+  "versionInfo": ""
+}
