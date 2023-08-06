@@ -1,0 +1,45 @@
+[tool.poetry]
+description = "A Python package to communicate with Stratocore's PUMAPI."
+name = "pyppms"
+version = "3.2.1"
+
+license = "GPLv3"
+
+authors = [
+  "Niko Ehrenfeuchter <nikolaus.ehrenfeuchter@unibas.ch>",
+  "Laurent Guerard <laurent.guerard@unibas.ch>",
+]
+
+readme = "README.md"
+
+documentation = "https://imcf.one/apidocs/pyppms/pyppms.html"
+homepage = "https://pypi.org/project/pyppms/"
+keywords = ["ppms", "pumapi", "booking-system", "reservation-system"]
+repository = "https://github.com/imcf/pyppms"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+loguru = "^0.7.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pdoc = "^14.0.0"
+pylint = "^2.17.4"
+pylint-pytest = "^1.1.2"
+pytest = "^7.3.2"
+pytest-cov = "^4.1.0"
+pyyaml = "^6.0"
+
+[build-system]
+build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+
+[tool.poetry-dynamic-versioning]
+enable = false
+
+[tool.pytest.ini_options]
+addopts = "-rs -vv --cov=pyppms --cov-report html --maxfail=1"
+markers = [
+  "online: enables tests requiring connection to a real PUMAPI (as opposed to a local cache)",
+]
