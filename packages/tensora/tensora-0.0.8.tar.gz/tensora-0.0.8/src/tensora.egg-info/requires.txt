@@ -1,0 +1,8 @@
+cffi~=1.11
+parsita~=2.0
+
+[numpy]
+numpy
+
+[scipy]
+scipy
