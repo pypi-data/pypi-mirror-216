@@ -1,0 +1,202 @@
+// Metastore service definition.
+
+syntax = "proto3";
+
+package metastore.service;
+
+import "catalog.proto";
+import "options.proto";
+
+message InitializeCatalogRequest {
+  // ID of the catalog to initialize.
+  bytes db_id = 1;
+}
+
+message InitializeCatalogResponse {
+  enum Status {
+    UNKNOWN = 0;
+    // Catalog initialized.
+    INITIALIZED = 1;
+    // Catalog already loaded.
+    ALREADY_LOADED = 2;
+  }
+
+  Status status = 1;
+}
+
+message FetchCatalogRequest {
+  // ID of the database catalog to fetch.
+  bytes db_id = 1;
+}
+
+message FetchCatalogResponse { catalog.CatalogState catalog = 1; }
+
+// Possible mutations to make.
+message Mutation {
+  oneof mutation {
+    DropSchema drop_schema = 1;
+    DropObject drop_object = 2;
+    CreateSchema create_schema = 3;
+    CreateView create_view = 4;
+    // 5
+    CreateExternalTable create_external_table = 6;
+    CreateExternalDatabase create_external_database = 7;
+    DropDatabase drop_database = 8;
+    AlterTableRename alter_table_rename = 9;
+    AlterDatabaseRename alter_database_rename = 10;
+    CreateTunnel create_tunnel = 11;
+    DropTunnel drop_tunnel = 12;
+    AlterTunnelRotateKeys alter_tunnel_rotate_keys = 13;
+    CreateTable create_table = 14;
+    CreateCredentials create_credentials = 15;
+    DropCredentials drop_credentials = 16;
+  }
+  // next: 17
+}
+
+message DropDatabase {
+  string name = 1;
+  bool if_exists = 2;
+}
+
+message DropSchema {
+  string name = 1;
+  bool if_exists = 2;
+  bool cascade = 3;
+}
+
+message DropObject {
+  string schema = 1;
+  string name = 2;
+  bool if_exists = 3;
+}
+
+message CreateSchema { string name = 1; }
+
+message CreateView {
+  string schema = 1;
+  string name = 2;
+  string sql = 3;
+  bool or_replace = 4;
+  repeated string columns = 5;
+}
+
+message CreateTable {
+  string schema = 1;
+  string name = 2;
+  options.TableOptionsInternal options = 3;
+  bool if_not_exists = 4;
+}
+
+message CreateExternalTable {
+  string schema = 1;
+  string name = 2;
+  options.TableOptions options = 3;
+  bool if_not_exists = 4;
+  optional string tunnel = 5;
+  // next: 6
+}
+
+message CreateExternalDatabase {
+  string name = 1;
+  options.DatabaseOptions options = 2;
+  bool if_not_exists = 3;
+  optional string tunnel = 4;
+  // next: 5
+}
+
+message AlterTableRename {
+  string schema = 1;
+  string name = 2;
+  string new_name = 3;
+}
+
+message AlterDatabaseRename {
+  string name = 1;
+  string new_name = 2;
+}
+
+message CreateTunnel {
+  string name = 1;
+  options.TunnelOptions options = 2;
+  bool if_not_exists = 3;
+  // next: 4
+}
+
+message DropTunnel {
+  string name = 1;
+  bool if_exists = 2;
+}
+
+message AlterTunnelRotateKeys {
+  string name = 1;
+  bool if_exists = 2;
+  bytes new_ssh_key = 3;
+  // next: 4
+}
+
+message CreateCredentials {
+  string name = 1;
+  options.CredentialsOptions options = 2;
+  string comment = 3;
+}
+
+message DropCredentials {
+  string name = 1;
+  bool if_exists = 2;
+}
+
+message MutateRequest {
+  // Mutate the catalog for this database.
+  bytes db_id = 1;
+
+  // Catalog version we're trying to execution mutations against. Mutations will
+  // be rejected if this version doesn't match Metastore's version of the
+  // catalog.
+  uint64 catalog_version = 2;
+
+  // Mutations to attempt to execute against the catalog.
+  repeated Mutation mutations = 3;
+
+  // next: 4
+}
+
+message MutateResponse {
+  enum Status {
+    UNKNOWN = 0;
+    // Mutation applied.
+    APPLIED = 1;
+    // Mutation rejected.
+    REJECTED = 2;
+  }
+
+  // Status of the mutation.
+  Status status = 1;
+
+  // The current state of the catalog as witnessed by metastore.
+  //
+  // If the mutation was accepted, this catalog will included that mutation. If
+  // the mutation was rejected, this catalog will not have that mutation
+  // applied. In either case, this catalog should replace any stale catalog.
+  catalog.CatalogState catalog = 2;
+
+  // next: 3
+}
+
+service MetastoreService {
+  // Initialize a database catalog.
+  //
+  // Idempotent, safe to call multiple times.
+  rpc InitializeCatalog(InitializeCatalogRequest)
+      returns (InitializeCatalogResponse);
+
+  // Fetch the catalog for some database.
+  //
+  // The returned catalog will be the latest catalog that this metastore node
+  // knows about.
+  // TODO: Could be streaming.
+  rpc FetchCatalog(FetchCatalogRequest) returns (FetchCatalogResponse);
+
+  // Mutate a database's catalog.
+  rpc MutateCatalog(MutateRequest) returns (MutateResponse);
+}
