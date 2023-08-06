@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+prompt-toolkit = "*"
+openai = "*"
+pygments = "*"
+tomlkit = "*"
+toml = "*"
+isort = "*"
+tiktoken = "*"
+
+[dev-packages]
+black = "*"
+flit = "*"
+
+[requires]
+python_version = "3.8"
