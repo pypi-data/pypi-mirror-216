@@ -1,0 +1,2 @@
+[swh.cli.subcommands]
+fuse = swh.fuse.cli
