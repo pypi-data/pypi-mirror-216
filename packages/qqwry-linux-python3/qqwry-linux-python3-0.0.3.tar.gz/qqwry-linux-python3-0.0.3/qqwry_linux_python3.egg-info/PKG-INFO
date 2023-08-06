@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: qqwry-linux-python3
+Version: 0.0.3
+Summary: Using and downloading qqwry.dat, for Python 3.6+
+Home-page: https://github.com/lqshome/qqwry-linux-python3
+Author: unclear
+Author-email: qsykgg@gmail.com
+License: MIT License
+Description: # qqwry-linux-python3
+        Linux下自动更新qqwry的工具
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
