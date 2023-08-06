@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: merge-downloader
+Version: 0.0.2
+Summary: Downloader Package for rain obtained from MERGE/GPM model processed by INPE
+Author: Mauricio Cordeiro
+Author-email: cordmaur@gmail.com
+License-File: LICENSE
+Requires-Dist: ecmwflibs
+Requires-Dist: ecCodes (==1.3.1)
+Requires-Dist: cfgrib
+Requires-Dist: geopandas
+Requires-Dist: xarray
+Requires-Dist: rasterio
+Requires-Dist: rioxarray
+Requires-Dist: contextily
+
