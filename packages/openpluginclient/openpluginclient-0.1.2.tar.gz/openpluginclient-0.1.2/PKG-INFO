@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: openpluginclient
+Version: 0.1.2
+Summary: Python package for accessing ChatGPT plugins via API
+Home-page: UNKNOWN
+Author: Sebastian Sosa
+Author-email: 1sebastian1sosa1@gmail.com
+License: UNKNOWN
+Description: Client for accessing ChatGPT plugins via OpenPlugin API
+Keywords: python,openai,chatgpt,chat,plugin
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
