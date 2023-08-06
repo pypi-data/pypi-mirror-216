@@ -1,0 +1,63 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wideprint"
+dynamic = ["version"]
+description = 'Print a collection of short strings into columns'
+readme = "readme.md"
+requires-python = ">=3.7"
+license = "MIT"
+keywords = ["print", "columns", "terminal"]
+authors = [
+  { name = "thehappycheese" },
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/thehappycheese/wideprint#readme"
+Issues = "https://github.com/thehappycheese/wideprint/issues"
+Source = "https://github.com/thehappycheese/wideprint"
+
+[tool.hatch.version]
+path = "src/wideprint/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "coverage[toml]>=6.5",
+  "pytest",
+]
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = [
+  "- coverage combine",
+  "coverage report",
+]
+cov = [
+  "test-cov",
+  "cov-report",
+]
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+[tool.coverage.run]
+source_pkgs = ["wideprint", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/_/__about__.py",
+]
+
+[tool.coverage.paths]
+wideprint = ["src/wideprint"]
+tests = ["tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
