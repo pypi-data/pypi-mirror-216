@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: playgroundrl-envs
+Version: 0.0.6
+Summary: The environments hosted on Playground RL
+Home-page: http://pypi.python.org/pypi/playgroundrl_envs/
+Author: Rayan Krishnan
+Requires-Dist: attrs (==22.2.0)
+Requires-Dist: cattrs (==22.2.0)
+
