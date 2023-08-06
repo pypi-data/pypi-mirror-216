@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: dbt-dremio
+Version: 1.5.0
+Summary: The Dremio adapter plugin for dbt
+Home-page: https://github.com/dremio/dbt-dremio
+Author: Dremio
+License: Apache Software License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.11
+License-File: LICENSE
+
+The Dremio adapter plugin for dbt
