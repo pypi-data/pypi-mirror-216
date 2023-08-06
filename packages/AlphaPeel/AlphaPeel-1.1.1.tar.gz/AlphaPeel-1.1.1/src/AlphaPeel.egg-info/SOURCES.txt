@@ -1,0 +1,15 @@
+MIT_License.txt
+README.md
+pyproject.toml
+setup.py
+src/AlphaPeel.egg-info/PKG-INFO
+src/AlphaPeel.egg-info/SOURCES.txt
+src/AlphaPeel.egg-info/dependency_links.txt
+src/AlphaPeel.egg-info/entry_points.txt
+src/AlphaPeel.egg-info/requires.txt
+src/AlphaPeel.egg-info/top_level.txt
+src/tinypeel/tinypeel.py
+src/tinypeel/Peeling/Peeling.py
+src/tinypeel/Peeling/PeelingIO.py
+src/tinypeel/Peeling/PeelingInfo.py
+src/tinypeel/Peeling/PeelingUpdates.py
