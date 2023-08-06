@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: vgetpupil
+Version: 1.0.4
+Summary: pupil positions generator program
+Home-page: https://github.com/jtur044/vgetpupil.git
+Author: Zaw Lin Tun
+Author-email: zawlintun1511@gmail.com
+License: Apache Software
+Keywords: pupil positions generator program vgetpupil
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Command line program to write the pupil positions data from input videos.
+
