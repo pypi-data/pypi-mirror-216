@@ -1,0 +1,6 @@
+cryptography<42.0.0,>=41.0.1
+docker<7.0.0,>=6.0.1
+intel-sgx-ra==2.0a12
+pydantic<2.0.0,>=1.10.2
+requests<3.0.0,>=2.31.0
+toml<0.11.0,>=0.10.2
