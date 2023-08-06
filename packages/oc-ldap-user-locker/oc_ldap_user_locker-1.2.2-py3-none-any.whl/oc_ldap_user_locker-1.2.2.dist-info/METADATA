@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: oc-ldap-user-locker
+Version: 1.2.2
+Summary: LDAP user locker for use in scheduler
+License: LGPLv2
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: oc-ldap-client (>=1.0.0)
+Requires-Dist: oc-mailer
+
