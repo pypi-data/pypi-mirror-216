@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"handle-b71373014d00f4cf","name":"name-b71373014d00f4cf"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"5b770c20-ef4f-11ed-a442-da7ad0900002","attributes":{"name":"name-b71373014d00f4cf","handle":"handle-b71373014d00f4cf","summary":null,"description":null,"color":6,"created_at":"2023-05-10T16:26:03.434008+00:00","modified_at":"2023-05-10T16:26:03.434012+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/5b770c20-ef4f-11ed-a442-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/5b770c20-ef4f-11ed-a442-da7ad0900002/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"value":"admins"},"type":"team_permission_settings"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/team/5b770c20-ef4f-11ed-a442-da7ad0900002/permission-settings/manage_membership
+  response:
+    body:
+      string: '{"data":{"type":"team_permission_settings","attributes":{"action":"manage_membership","options":["admins","members","organization","user_access_manage","teams_manage"],"value":"admins"},"id":"TeamPermission-5b770c20-ef4f-11ed-a442-da7ad0900002-manage_membership"}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/5b770c20-ef4f-11ed-a442-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

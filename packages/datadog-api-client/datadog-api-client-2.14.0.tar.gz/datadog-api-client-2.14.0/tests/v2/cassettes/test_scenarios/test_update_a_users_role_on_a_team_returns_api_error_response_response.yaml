@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"handle":"handle-7ee388ec964ab7d8","name":"name-7ee388ec964ab7d8"},"type":"team"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/team
+  response:
+    body:
+      string: '{"data":{"type":"team","id":"5ac7a35c-ef4f-11ed-ba32-da7ad0900002","attributes":{"name":"name-7ee388ec964ab7d8","handle":"handle-7ee388ec964ab7d8","summary":null,"description":null,"color":6,"created_at":"2023-05-10T16:26:02.284460+00:00","modified_at":"2023-05-10T16:26:02.284464+00:00","user_count":0,"link_count":0},"relationships":{"team_links":{"links":{"related":"/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002/links"}},"user_team_permissions":{"links":{"related":"/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002/permission-settings"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"role":"admin"},"type":"team_memberships"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002/memberships/REPLACE.ME
+  response:
+    body:
+      string: '{"errors":["REPLACE.ME is not a valid UUID not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/team/5ac7a35c-ef4f-11ed-ba32-da7ad0900002
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
