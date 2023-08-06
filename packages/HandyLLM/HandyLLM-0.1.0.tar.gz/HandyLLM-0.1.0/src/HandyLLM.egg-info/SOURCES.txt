@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/HandyLLM.egg-info/PKG-INFO
+src/HandyLLM.egg-info/SOURCES.txt
+src/HandyLLM.egg-info/dependency_links.txt
+src/HandyLLM.egg-info/requires.txt
+src/HandyLLM.egg-info/top_level.txt
+src/handyllm/__init__.py
+src/handyllm/endpoint_manager.py
+src/handyllm/openai_api.py
+src/handyllm/prompt_converter.py
