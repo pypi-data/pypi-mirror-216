@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+qlytix_package/__init__.py
+qlytix_package/datasource.py
+qlytix_package/masterdata.py
+qlytix_package/user.py
+qlytix_package.egg-info/PKG-INFO
+qlytix_package.egg-info/SOURCES.txt
+qlytix_package.egg-info/dependency_links.txt
+qlytix_package.egg-info/top_level.txt
