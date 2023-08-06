@@ -1,0 +1,15 @@
+click
+pydantic
+pystow
+typing_extensions
+
+[docs]
+sphinx<7.0
+sphinx-rtd-theme
+sphinx-click
+sphinx-autodoc-typehints
+sphinx_automodapi
+
+[tests]
+pytest
+coverage

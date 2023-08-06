@@ -1,0 +1,2 @@
+[console_scripts]
+quickstatements_client = quickstatements_client.cli:main
