@@ -1,0 +1,32 @@
+study_prefix = "core"
+
+[python_config]
+file_names = [
+    "denormalizer.py",
+]
+
+[sql_config]
+file_names = [
+    "setup.sql",
+    "fhir_define.sql",
+    "patient.sql",
+    "encounter.sql",
+    "documentreference.sql",
+    "condition.sql",
+    "observation.sql",
+    "observation_lab.sql",
+    "observation_vital_signs.sql",
+    "medication_request.sql",
+    "study_period.sql",
+]
+
+[export_config]
+export_list = [
+    "core__count_patient",
+    "core__count_encounter_month",
+    "core__count_documentreference_month",
+    "core__count_observation_lab_month",
+    "core__count_condition_month",
+    "core__count_medicationrequest_month",
+    "core__meta_date",
+]
