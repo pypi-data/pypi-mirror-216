@@ -1,0 +1,24 @@
+bluesky>=1.7.0
+bluesky-kafka
+databroker
+event-model
+ipykernel
+json-rpc
+jsonschema
+jupyter-client>=7.4.2
+jupyter-console
+matplotlib # Needed for BEC, should be factored out
+scikit-image # Needed for BEC/other stuff to run, factor out
+msgpack>=1.0.0
+msgpack_numpy
+numpydoc
+openpyxl
+ophyd
+packaging
+pydantic
+python-multipart
+pyyaml
+pyzmq
+redis[hiredis]
+requests
+typing-extensions;python_version<'3.8'
