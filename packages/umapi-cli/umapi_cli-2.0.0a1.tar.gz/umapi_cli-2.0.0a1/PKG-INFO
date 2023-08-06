@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: umapi-cli
+Version: 2.0.0a1
+Summary: User Management API CLI Tool
+Author: Andrew Dorton
+Author-email: adorton@adobe.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: click (>=8.0,<9.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: schema (>=0.7.5,<0.8.0)
+Requires-Dist: umapi-client (>=3.0,<4.0)
