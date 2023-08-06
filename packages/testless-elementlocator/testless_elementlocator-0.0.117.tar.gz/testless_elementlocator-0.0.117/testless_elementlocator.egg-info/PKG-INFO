@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: testless-elementlocator
+Version: 0.0.117
+Summary: testless_elementlocator Package
+Author: TestLess
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+Element Locator Package
