@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+retry
+requests
+colorama
+requests_toolbelt
+watchdog!=2.2.0
+aiocron
+tinydb
