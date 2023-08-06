@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "detect_hate_speech"
+version = "0.1.3"
+description = ""
+authors = ["Amanda Nobre <amandapnobre@gmail.com>"]
+readme = "README.md"
+packages = [{include = "detect_hate_speech"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+
+[build-system]
+requires = ["detect_hate_speech"]
+build-backend = "poetry.core.masonry.api"
