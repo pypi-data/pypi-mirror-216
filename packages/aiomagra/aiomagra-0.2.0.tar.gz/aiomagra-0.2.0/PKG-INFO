@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: aiomagra
+Version: 0.2.0
+Summary: 
+Author: Magralabs
+Author-email: m@magralabs.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: protobuf (==4.23.1)
+Description-Content-Type: text/markdown
+
+# AIO Magra
+
