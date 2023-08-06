@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: ffmpeg_python_utils
+Version: 0.0.5
+Summary: Python scripts constructing ffmpeg commands and running them by subprocess.
+Home-page: https://github.com/LionelCrowl/ffmpeg-python-utils
+Download-URL: https://github.com/LionelCrowl/ffmpeg-python-utils/archive/v0.0.5.zip
+Author: LionelCrowl
+Author-email: mr.lihenko@yandex.ru
+License: MIT License, see LICENSE file
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+ Python scripts constructing ffmpeg commands and running them by subprocess.
+                    Check documentation: https://lionelcrowl.github.io/ffmpeg-python-utils/
+                    
