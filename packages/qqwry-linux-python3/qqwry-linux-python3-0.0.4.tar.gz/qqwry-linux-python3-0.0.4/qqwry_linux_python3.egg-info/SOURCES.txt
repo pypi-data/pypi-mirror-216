@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+qqwry/__init__.py
+qqwry/shell/__init__.py
+qqwry/shell/usage.py
+qqwry/src/__init__.py
+qqwry/src/qqwry.py
+qqwry/src/update_qqwry.py
+qqwry_linux_python3.egg-info/PKG-INFO
+qqwry_linux_python3.egg-info/SOURCES.txt
+qqwry_linux_python3.egg-info/dependency_links.txt
+qqwry_linux_python3.egg-info/entry_points.txt
+qqwry_linux_python3.egg-info/top_level.txt
+qqwry_linux_python3.egg-info/zip-safe
