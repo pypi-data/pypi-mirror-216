@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "webint-posts"
+version = "0.0.11"
+description = "manage posts on your website"
+keywords = ["IndieWeb", "Micropub"]
+authors = ["Angelo Gladding <angelo@ragt.ag>"]
+license = "BSD-2-Clause"
+packages = [{include = "webint_posts"}]
+
+[tool.poetry.plugins."webapps"]
+posts = "webint_posts:app"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+webint = ">=0.0"
+micropub = ">=0.0"
+
+[tool.poetry.group.dev.dependencies]
+gmpg = {path="../gmpg", develop=true}
+bgq = {path="../bgq", develop=true}
+newmath = {path="../newmath", develop=true}
+sqlyte = {path="../sqlyte", develop=true}
+webagt = {path="../webagt", develop=true}
+webint = {path="../webint", develop=true}
+micropub = {path="../python-micropub", develop=true}
+
+# [[tool.poetry.source]]
+# name = "main"
+# url = "https://ragt.ag/code/pypi"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
