@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: SaidouModule
+Version: 1.2.0
+Summary: Module possédant plusieurs packages, lire le README.md pour plus d'informations.
+Home-page: https://github.com/SMedd69/SaidouModule
+Author: Meddahi Saïd
+Author-email: s.meddahi.fo@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+
+Se module possède 2 sous-modules :
+	-SaidouNeurones, qui possède deux script permettant d'implémenter un réseau de neurones à couches cachés.
+	-SaidouPixels, possède un script 'Pixels.py' qui permet de créer, générer et charger des images possédant des pixels à 'n' couches (3 pour les vecteurs couleurs RGB) avec des valeurs de pixels aléatoires enter 0 et 255.
+
+ Pour installer se module suffit d'ouvrir un terminal et de taper la commande `pip install SaidouModules`, ensuite dans votre script Python vous pouvez importé les différents packages.
+	Par exemple pour SaidouPixels ajoutez cette ligne : `import SaidouPixels.Pixels as sp`.
+	Pour SaidouNeurones : `import SaidouNeurones.ReseauNeuronesSaid as rns` - `import SaidouNeurones.SaidouNeuroneV2 as snv2`.
+
+ Se modules sera amener à être optimiser et évoluer.
+
