@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "openai-functions"
+version = "0.6.1"
+description = "Simplifies the usage of OpenAI's function calling."
+authors = ["rizerphe <44440399+rizerphe@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "openai_functions"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+openai = "^0.27.8"
+docstring-parser = "^0.15"
+typing-extensions = "^4.6.3"
+
+
+[tool.poetry.group.dev.dependencies]
+tox-poetry-installer = {extras = ["poetry"], version = "^0.10.3"}
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
