@@ -1,0 +1,239 @@
+from __future__ import annotations
+
+from abc import ABCMeta, abstractmethod
+from typing import Any
+
+import torch
+from transformers.tokenization_utils import PreTrainedTokenizer
+
+from partial_tagger.data.core import (
+    CharBasedTags,
+    LabelSet,
+    Span,
+    Status,
+    Tag,
+    TokenBasedTags,
+    TokenizedText,
+)
+
+
+def create_token_based_tags(
+    tokenized_texts: tuple[TokenizedText, ...],
+    tag_indices: torch.Tensor,
+    label_set: LabelSet,
+    padding_index: int,
+) -> tuple[TokenBasedTags, ...]:
+    tag_indices_unpadded = tuple(
+        tuple(i for i in x if i != padding_index) for x in tag_indices.tolist()
+    )
+
+    if len(tag_indices_unpadded) != len(tokenized_texts):
+        raise ValueError("Batch size mismatch.")
+
+    tags_batch = []
+
+    for text, indices in zip(tokenized_texts, tag_indices_unpadded):
+        if text.num_tokens != len(indices):
+            raise ValueError("The number of tokens in text mismatch.")
+
+        tags = []
+        stack: list[str] = []
+        for pos, index in enumerate(indices):
+            status = label_set.get_status(index)
+            label = label_set.get_label(index)
+            if status is None or label is None:
+                continue
+
+            if status == Status.UNIT:
+                tags.append(Tag(Span(pos, 1), label))
+            elif status == Status.END:
+                if stack[-1] == label:
+                    length = len(stack)
+                    tags.append(Tag(Span(pos - length, length + 1), label))
+                stack.clear()
+            elif status == Status.START or status == Status.INSIDE:
+                if not stack or stack[-1] == label:
+                    stack.append(label)
+                else:
+                    stack.clear()
+            else:
+                raise ValueError("Invalid status.")
+
+        tags_batch.append(TokenBasedTags(tuple(tags), text))
+
+    return tuple(tags_batch)
+
+
+class TextBatch:
+    """A batch of text data for tagging.
+
+    Args:
+        tokenized_texts: A tuple of instances of TokenizedText.
+        tagger_inputs: A dictionary that maps string keys to a tensor values.
+        mask: A [batch_size, sequence_length] float tensor representing
+            a mask for a batch.
+        device: A device on which to place tensors. Defaults to None.
+
+    Attributes:
+        tokenized_texts: A tuple of instances of TokenizedText.
+    """
+
+    def __init__(
+        self,
+        tokenized_texts: tuple[TokenizedText, ...],
+        tagger_inputs: dict[str, torch.Tensor],
+        mask: torch.Tensor,
+        device: torch.device | None = None,
+    ):
+        self.tokenized_texts = tokenized_texts
+        self.__tagger_inputs = tagger_inputs
+        self.__mask = mask
+        self.__device = device
+
+    @property
+    def size(self) -> int:
+        return len(self.tokenized_texts)
+
+    def to(self, device: torch.device) -> None:
+        self.__device = device
+
+    @property
+    def tagger_inputs(self) -> dict[str, torch.Tensor]:
+        if self.__device is not None:
+            return {key: x.to(self.__device) for key, x in self.__tagger_inputs.items()}
+        else:
+            return self.__tagger_inputs
+
+    @property
+    def mask(self) -> torch.Tensor:
+        if self.__device is not None:
+            return self.__mask.to(self.__device)
+        else:
+            return self.__mask
+
+    def create_char_based_tags(
+        self, tag_indices: torch.Tensor, label_set: LabelSet, padding_index: int = -1
+    ) -> tuple[CharBasedTags, ...]:
+        """Creates character-based tags for text batch based on a given tag indices
+        and an instance of LabelSet.
+
+        Args:
+            tag_indices: A [batch_size, sequence_length] integer tensor of tag indices.
+            label_set: An instance of LabelSet to use for tag conversion.
+            padding_index: An integer representing a padding index. Defaults to -1.
+
+        Returns:
+            A tuple of instances of CharBasedTags.
+        """
+        return tuple(
+            tags.convert_to_char_based()
+            for tags in self.create_token_based_tags(
+                tag_indices, label_set, padding_index
+            )
+        )
+
+    def create_token_based_tags(
+        self, tag_indices: torch.Tensor, label_set: LabelSet, padding_index: int = -1
+    ) -> tuple[TokenBasedTags, ...]:
+        """Creates token-based tags for text batch based on a given tag indices
+        and an instance of LabelSet.
+
+        Args:
+            tag_indices: A [batch_size, sequence_length] integer tensor of tag indices.
+            label_set: An instance of LabelSet to use for tag conversion.
+            padding_index: An integer representing a padding index. Defaults to -1.
+
+        Returns:
+            A tuple of instances of TokenBasedTags.
+        """
+        return create_token_based_tags(
+            self.tokenized_texts, tag_indices, label_set, padding_index
+        )
+
+
+class BaseTokenizer(metaclass=ABCMeta):
+    """Base class for all tokenizers."""
+
+    @abstractmethod
+    def __call__(self, texts: tuple[str, ...]) -> TextBatch:
+        """Tokenize given texts, encode to tensors and return an instance of TextBatch.
+
+        Args:
+            texts: A tuple of strings, where each item represents a text.
+
+        Returns:
+            An instance of TextBatch.
+        """
+        raise NotImplementedError
+
+
+class TransformerTokenizer(BaseTokenizer):
+    """A tokenizer for Transformer.
+
+    Args:
+        tokenizer: A transformer tokenizer.
+        tokenizer_args: Additional tokenizer arguments. Defaults to None.
+    """
+
+    def __init__(
+        self,
+        tokenizer: PreTrainedTokenizer,
+        tokenizer_args: dict[str, Any] | None = None,
+    ):
+        if not tokenizer.is_fast:
+            raise ValueError("Only transformers.PreTrainedTokenizerFast is supported.")
+
+        self.__tokenizer = tokenizer
+        self.__tokenizer_args = tokenizer_args or {
+            "padding": True,
+            "return_tensors": "pt",
+            "return_offsets_mapping": True,
+        }
+
+        if not self.__tokenizer_args.get("return_offsets_mapping", False):
+            raise ValueError("Set return_offsets_mapping to True")
+
+        if self.__tokenizer_args.get("return_tensors", "") != "pt":
+            raise ValueError("Set return_tensors to pt")
+
+    def __call__(self, texts: tuple[str, ...]) -> TextBatch:
+        """Tokenize given texts, encode to tensors and return an instance of TextBatch.
+
+        Args:
+            texts: A tuple of strings, where each item represents a text.
+
+        Returns:
+            An instance of TextBatch.
+        """
+        batch_encoding = self.__tokenizer(texts, **self.__tokenizer_args)
+
+        mappings = batch_encoding.pop("offset_mapping").tolist()
+        pad_token_id = self.__tokenizer.pad_token_id
+        tokenized_text_lengths = (batch_encoding.input_ids != pad_token_id).sum(dim=1)
+
+        tokenized_texts = []
+        for tokenized_text_length, mapping, text in zip(
+            tokenized_text_lengths, mappings, texts
+        ):
+            char_spans = tuple(
+                Span(start, end - start) if start != end else None
+                for start, end in mapping[:tokenized_text_length]
+            )
+            token_indices = [-1] * len(text)
+            for token_index, char_span in enumerate(char_spans):
+                if char_span is None:
+                    continue
+                start = char_span.start
+                end = char_span.start + char_span.length
+                token_indices[start:end] = [token_index] * char_span.length
+
+            tokenized_texts.append(
+                TokenizedText(text, char_spans, tuple(token_indices))
+            )
+
+        lengths = [text.num_tokens for text in tokenized_texts]
+        max_length = max(lengths)
+        mask = torch.tensor(
+            [[True] * length + [False] * (max_length - length) for length in lengths]
+        )
+        return TextBatch(tuple(tokenized_texts), batch_encoding, mask)
