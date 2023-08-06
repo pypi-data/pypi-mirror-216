@@ -1,0 +1,733 @@
+{% load eventurl %}
+{% load i18n %}
+{% load static %}
+{% load thumb %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="x-apple-disable-message-reformatting">
+		<meta name="color-scheme" content="light">
+		<meta name="supported-color-schemes" content="light">
+        <title>Your-Order</title>
+        <!--[if gte mso 9]>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:AllowPNG />
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <!--Outlook Fallback Styles-->
+        <!--[if gte mso 9]>
+        <style type="text/css">
+            html{
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+            body{
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+            a,td {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            }
+            a {
+            text-decoration: none;
+            }
+        </style>
+        <![endif]-->
+        <style type="text/css" data-premailer="ignore">
+            html, body {
+            Margin: 0 auto !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            }
+            * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            }
+            .ExternalClass {
+            width: 100%;
+            }
+            div[style*="Margin: 16px 0"] {
+            Margin:0 !important;
+            }
+            table,
+            th {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            }
+            .ExternalClass,
+            .ExternalClass * {
+            line-height: 100% !important;
+            }
+            .ExternalClass * {
+            line-height: 100% !important;
+            }
+            table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            border: none;
+            Margin: 0 auto;
+            direction: ltr;
+            }
+            div[style*="Margin: 16px 0"] {
+            Margin:0 !important;
+            }
+            img {
+            -ms-interpolation-mode:bicubic;
+            }
+            .yshortcuts a {
+            border-bottom: none !important;
+            }
+            *[x-apple-data-detectors],  /* iOS */
+            .x-gmail-data-detectors,    /* Gmail */
+            .x-gmail-data-detectors *,
+            .aBn {
+            border-bottom: none !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+            }
+            u   #body a {
+            color: inherit;
+            text-decoration: none;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+            line-height: inherit;
+            }
+            .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+            }
+            img.g-img   div {
+            display:none !important;
+            }
+            a,
+            a:link,
+            a:visited {
+            color: black;
+            text-decoration: none !important;
+            }
+            @media only screen and (max-width: 480px) {
+            table#canspamBar td {
+            font-size:14px !important;
+            }
+            table#canspamBar td a {
+            display:block !important;
+            margin-top:10px !important;
+            }
+            /* Targets Gmail */
+
+            u ~ div .full-wrap {width: 100% !important; display: block !important; height:auto !important; max-width:100% !important; }
+
+            u ~ div .secContent {padding: 20px 0px 20px 0px;}
+
+            /* Targets Gmail on Android */
+
+            div > u ~ div  .full-wrap {width: 100% !important; display: block !important; height:auto !important; max-width:100% !important; }
+
+            div > u ~ div  .secContent {padding: 20px 0px 20px 0px;}
+
+            /* General Styles */
+            .full-wrap {width: 100% !important; display: block !important; height:auto !important; max-width:100% !important; }
+
+            .secContent {padding: 20px 0px 20px 0px;}
+
+            }
+
+            /* MK */
+                  .body_message p {
+            font-family: sans-serif;
+	    color: black;
+           margin: 0 0 10px;
+
+            /* These are technically the same, but use both */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+
+            -ms-word-break: break-all;
+
+            /* Adds a hyphen where the word breaks, if supported (No Blink) */
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+
+
+	.signatur p {
+		font-size: 12px;
+        margin: 0px;
+        color: black;
+	}
+
+        .signatur a {
+            text-decoration: none;
+            color: #164857
+        }
+
+        .signatur p:first-of-type {
+            color: #164857;
+        }
+
+        .signatur p:nth-of-type(2) {
+            color: #164857;
+        }
+        </style>
+    </head>
+    <body id="body" bgcolor="#FFFFFF" style="height:100% !important;margin:0 !important;padding:0 !important;width:100% !important;">
+        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%!important;max-width: 100%!important;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse; mso-line-height-rule: exactly;line-height: 100% !important; margin: 0; padding: 0; background-color: #FFFFFF; background: #FFFFFF;" width="100%">
+            <tbody>
+                <tr align="center">
+                    <td align="center">
+                        <table align="center" bgcolor="#08066b" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width:100%;background-color: #08066b;" width="100%">
+                                   <tr align="center">
+                                           <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                             <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 600px;" width="600">
+                                                 <tbody>
+                                                  <tr align="left">
+                                                    <td align="left" style="float: left; mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 30px;" valign="left">
+                                                     <a href="https://osmc.de/"><img src="https://osmc.de/wp-content/uploads/sites/3/2022/10/OSMC_Logo_E-Mail_Pretix_WHITE_600x300_72dpi_FINAL.png" alt="NES_Logo" style="width: 600px"></a>
+                                             </a>
+                                          </td>
+                                       </tr>
+                                     </tbody>
+                                  </table>
+                                </td>
+                             </tr>
+                            <tbody>
+                                <tr align="center">
+                                    <td align="center" style="padding-top: 30px;">
+                                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" class="full-wrap" role="presentation" style="width: 600px; max-width: 600px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;background-color: #FFFFFF; background: #FFFFFF;" width="600">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding: 20px 30px 20px 30px" valign="middle">
+                                                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width:100%; background-color: #FFFFFF; background: #FFFFFF;" width="100%">
+                                                            <tbody>
+
+
+
+                                                                <!-- ######### BODY ######### -->
+                                                                <tr align="center">
+                                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                            <tbody>
+                                                                                <tr align="center">
+                                                                                    <td align="center" style="float:left; font-size: 16px; line-height: 28px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: center; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="middle">   {% if event %}
+                                                                                            <h2 style="margin-bottom: 0px;text-align: left;" ><a href="{% abseventurl event "presale:event.index" %}"
+                                                                                                style="color: black; text-decoration: none !important;">{{ event.name }}</a>
+                                                                                            </h2> <!-- TODO: Eventüberschrift -->
+                                                                                                {% else %}
+                                                                                            <h2 style="margin-top: 0px; text-align: left;;"><a href="{{ site_url }}" target="_blank">{{ site }}</a> </h2>
+                                                                                                {% endif %}
+                                                                                          {% block header %}
+                                                                                            <h2 style="text-align: left;">{{ subject }}</h2>
+                                                                                          {% endblock %}
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr align="center">
+                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;  font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="middle">
+                                                                                        <div class="body_message">{{ body|safe }}</div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr align="center">
+                                    <td align="center" style="padding: 30px 0px 30px 0px;">
+                                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" class="full-wrap" role="presentation" style="width: 600px; max-width: 600px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;background-color: #FFFFFF; background: #FFFFFF;" width="600">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding: 20px 30px 20px 30px" valign="middle">
+                                                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width:100%; background-color: #FFFFFF; background: #FFFFFF;" width="100%">
+                                                            <tbody>
+                                                                <!-- ######### DETAILS ######### -->
+                                                               {% if position %}
+
+
+                                                               <tr align="center">
+                                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                            <tbody>
+                                                                                <tr align="center">
+                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 15px;" valign="middle">
+                                                                                                {% trans "You are receiving this email because someone signed you up for the following event:" %}
+
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <!-- ######### DETAILS ######### -->
+                                                                <tr align="center">
+                                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                            <tbody>
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style=" font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif; margin: 0px;" valign="top">
+                                                                                                                        <strong>{% trans "Event:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                        <p style="margin: 0px;">
+                                                                                                            {{ event.name }}
+                                                                                                            <br>
+                                                                                                            {% if event.has_subevents and ev.name|upper != event.name|upper %}
+                                                                                                                {{ ev.name }}
+                                                                                                                <br>{% endif %}
+                                                                                                            {{ ev.get_date_range_display }}
+                                                                                                            {% if event.settings.show_times %}
+                                                                                                                {{ ev.date_from|date:"TIME_FORMAT" }}
+                                                                                                            {% endif %}
+                                                                                                        </p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif;" valign="top">
+                                                                                                        <strong>{% trans "Order code:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                        {{ order.code }}
+                                                                                                        ({{ order.datetime|date:"SHORT_DATE_FORMAT" }})<br>
+                                                                                                        {% if order.email %}
+                                                                                                            {% trans "created by" %}
+                                                                                                            {{ order.email }}
+                                                                                                        {% endif %}
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif;" valign="top">
+                                                                                                        <strong>{% trans "Contact:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                        {{ event.organizer }}
+                                                                                                        {% if event.settings.contact_mail %}
+                                                                                                            <br>
+                                                                                                            <a href="mailto:{{ event.settings.contact_mail }}">
+                                                                                                                {{ event.settings.contact_mail }}
+                                                                                                            </a>
+                                                                                                        {% endif %}
+                                                                                                                </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" valign="top" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-top: 20px;">
+                                                                        <!-- Button -->
+                                                                            <table align="left" cellspacing="0" cellpadding="0" style=" background: #FFFFFF; border-radius: 1px; ">
+                                                                                <tr>
+                                                                                    <td align="center" width="200" height="50" bgcolor="#FFFFFF" style="color: #000000; display: block;background-color: #FFFFFF; width: 200px; height: 40px;  border: 1px solid #164857;">
+                                                                                        <a href="{% abseventurl event "presale:event.order.open" hash=order.email_confirm_hash order=order.code secret=order.secret %}" style="color: #000000!important; font-size:14px; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block;">
+                                                                                            {% trans "View registration details" %}
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--[if gte mso 9]></div></v:textbox></v:rect><![endif]-->
+                        </table>
+                    </td>
+                </tr>
+                                                                                {% else %}
+
+                                                                <tr align="center">
+                                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                            <tbody>
+                                                                                <tr align="center">
+                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 15px;" valign="middle">
+                                                                                        {% trans "You are receiving this email because you placed an order for the following event:" %}
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <!-- ######### DETAILS ######### -->
+                                                                <tr align="center">
+                                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                            <tbody>
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style=" font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif; margin: 0px;" valign="top">
+                                                                                                                        <strong>{% trans "Event:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                        <p style="margin: 0px;">    {{ event.name }}
+                                                                                                            {% if not event.has_subevents and event.settings.show_dates_on_frontpage %}
+                                                                                                                <br>
+                                                                                                                {{ event.get_date_range_display }}
+                                                                                                                {% if event.settings.show_times %}
+                                                                                                                    {{ event.date_from|date:"TIME_FORMAT" }}
+                                                                                                                {% endif %}
+                                                                                                            {% endif %}
+                                                                                                        </p>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif;" valign="top">
+                                                                                                        <strong>{% trans "Order code:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                         {{ order.code }} ({{ order.datetime|date:"SHORT_DATE_FORMAT" }})
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                {% if cart %}
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif;" valign="top">
+                                                                                                        <strong>{% trans "Details:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                        {% for groupkey, positions in cart %}
+
+                                                                                                            {% if not groupkey.4 %}
+                                                                                                                {# is addon #}
+                                                                                                                {{ positions|length }}
+                                                                                                                x
+                                                                                                            {% endif %}
+
+                                                                                                            {% if groupkey.4 %}
+                                                                                                                {# is addon #}
+                                                                                                                +
+                                                                                                            {% endif %}
+                                                                                                            {{ groupkey.0.name }}
+                                                                                                                    {% if groupkey.1 %}
+                                                                                                                        –
+                                                                                                                        {{ groupkey.1.value }}{% endif %}
+                                                                                                            {% if groupkey.2 %}
+                                                                                                                {# subevent #}
+                                                                                                                <br>
+                                                                                                                {% if groupkey.2.name|upper != event.name|upper %}
+                                                                                                                    {{ groupkey.2.name }}
+                                                                                                                    &middot;
+                                                                                                                {% endif %}
+                                                                                                                {{ groupkey.2.get_date_range_display }}
+                                                                                                                {% if event.settings.show_times %}
+                                                                                                                    {{ groupkey.2.date_from|date:"TIME_FORMAT" }}
+                                                                                                                {% endif %}
+                                                                                                            {% endif %}
+                                                                                                            {% if groupkey.3 %}
+                                                                                                                {# attendee name #}
+                                                                                                                <br>
+                                                                                                                {{ groupkey.3.name }}
+                                                                                                            {% endif %}
+
+                                                                                                        {% endfor %}
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                                                                    {% endif %}
+
+                                                                                <tr align="center">
+                                                                                    <td align="center">
+                                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100px;" width="100">
+                                                                                            <tbody>
+                                                                                                <tr align="center">
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 19px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 700; font-family: 'Helvetica', 'Arial', sans-serif;" valign="top">
+                                                                                                        <strong>{% trans "Contact:" %}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 400px;" width="400">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td align="left" style="font-size: 14px; line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 10px;" valign="top">
+                                                                                                        {{ event.organizer }}
+                                                                                                        {% if event.settings.contact_mail %}
+                                                                                                            <br>
+                                                                                                            <a href="mailto:{{ event.settings.contact_mail }}">
+                                                                                                                {{ event.settings.contact_mail }}
+                                                                                                            </a>
+                                                                                                        {% endif %}
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" valign="top" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-top: 20px;">
+                                                                        <!-- Button -->
+                                                                            <table align="left" cellspacing="0" cellpadding="0" style=" background: #FFFFFF; border-radius: 1px; ">
+                                                                                <tr>
+                                                                                    <td align="center" width="150" height="50" bgcolor="#FFFFFF" style="color: #000000; display: block;background-color: #FFFFFF; width: 150px; height: 40px;  border: 1px solid #164857;">
+                                                                                        <a href="{% abseventurl event "presale:event.order.open" hash=order.email_confirm_hash order=order.code secret=order.secret %}" style="color: #000000!important; font-size:14px; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; text-decoration: none; line-height:40px; width:100%; display:inline-block;">
+                                                                                            {% trans "View order details" %}
+                                                                                        </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--[if gte mso 9]></div></v:textbox></v:rect><![endif]-->
+                        </table>
+                    </td>
+                </tr>
+{% endif %}
+
+
+                <tr align="center">
+                    <td align="center">
+                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width:100%; background-color: #FFFFFF; background: #FFFFFF" width="100%">
+                             <tbody>
+                                <tr align="center">
+                                    <td align="center">
+                                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" class="full-wrap" role="presentation" style="width: 600px; max-width: 600px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;background-color: #FFFFFF; background: #FFFFFF;" width="600">
+                                            <tbody>
+                                                <tr>
+                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding: 20px 0px 20px 30px" valign="middle">
+                                                        <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="width: 100%; max-width:100%; background-color: #FFFFFF; background: #FFFFFF;" width="100%">
+                                                            <tbody>
+                                                                <tr align="center">
+                                                                    <td align="center" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="middle">
+                                                                        <table class="full-wrap" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 350px;" width="350">
+                                                                            <tbody>
+                                                                                <tr align="center">
+                                                                                    <td align="left" style=" line-height: 18px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif; padding-bottom: 15px;" valign="middle">
+                                                                                   <div class="signatur">{{ signature | safe }}</div>
+										    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <table class="full-wrap" align="right" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 160px;" width="160">
+                                                                            <tbody>
+                                                                                <!-- Content Block -->
+                                                                                <tr>
+                                                                                    <td valign="middle" align="center" class="secContent" height="138" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; height: 138px;">
+                                                                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td style="padding: 5px 0px 5px 0px;">
+                                                                                                       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                                                           {% with 'target="blank" href="https://twitter.com/netwaysevents"'|safe as a_attr %}
+                                                                                                                        {% blocktrans %}
+                                                                                                            <tr>
+                                                                                                                <td align="left" width="35" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-right: 10px;" valign="middle">
+                                                                                                                    <a {{ a_attr }} ><img align="absbottom" border="0" src="https://www.netways.de/wp-content/uploads/2021/06/Twitter-1.png"  style="width: 35px; display: block; vertical-align:middle; border:0; height:auto; padding: 0px; margin: 0px;" width="35"></a>
+                                                                                                                </td>
+                                                                                                                <td align="left" style="font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif;text-decoration: none;" valign="middle">
+                                                                                                                    <a {{ a_attr }} href="#" target="_blank" style="text-decoration: none !important; color: black; ">netwaysevents</a>
+                                                                                                                    {% endblocktrans %}
+                                                                                                                    {% endwith %}
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+
+
+                                                                                                <tr>
+                                                                                                    <td style="padding: 5px 0px 5px 0px;">
+                                                                                                       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                                                           {% with 'target="blank" href="https://de-de.facebook.com/netways"'|safe as a_attr %}
+                                                                                                                        {% blocktrans %}
+                                                                                                            <tr>
+                                                                                                                <td align="left" width="35" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-right: 10px;" valign="middle">
+                                                                                                                    <a {{ a_attr }} ><img align="absbottom" border="0" src="https://www.netways.de/wp-content/uploads/2021/06/Facebook-1.png"  style="width: 35px; display: block; vertical-align:middle; border:0; height:auto; padding: 0px; margin: 0px;" width="35"></a>
+                                                                                                                </td>
+                                                                                                                <td align="left" style="font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif;text-decoration: none;" valign="middle">
+                                                                                                                    <a {{ a_attr }} href="#" target="_blank" style="text-decoration: none !important; color: black; ">netways</a>
+                                                                                                                    {% endblocktrans %}
+                                                                                                                    {% endwith %}
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                    <td style="padding: 5px 0px 5px 0px;">
+                                                                                                       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                                                           {% with 'target="blank" href="https://www.instagram.com/netways_gmbh/"'|safe as a_attr %}
+                                                                                                                        {% blocktrans %}
+                                                                                                            <tr>
+                                                                                                                <td align="left" width="35" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-right: 10px" valign="middle">
+                                                                                                                    <a {{ a_attr }} ><img align="absbottom" border="0" src="https://www.netways.de/wp-content/uploads/2021/06/Instagram-1.png"  style="width: 35px; display: block; vertical-align:middle; border:0; height:auto; padding: 0px; margin: 0px;" width="35"></a>
+                                                                                                                </td>
+                                                                                                                <td align="left" style="font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif;text-decoration: none;" valign="middle">
+                                                                                                                    <a {{ a_attr }} href="#" target="_blank" style="text-decoration: none !important; color: black; ">netwaysgmbh</a>
+                                                                                                                    {% endblocktrans %}
+                                                                                                                    {% endwith %}
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+
+                                                                                                <tr>
+                                                                                                    <td style="padding: 5px 0px 5px 0px;">
+                                                                                                       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%;" width="100%">
+                                                                                                           {% with 'target="blank" href="https://www.youtube.com/channel/UC8nIBEFmjzXjXeJV_hkkeIQ"'|safe as a_attr %}
+                                                                                                                        {% blocktrans %}
+                                                                                                            <tr>
+                                                                                                                <td align="left" width="35" style=" mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; padding-right: 10px" valign="middle">
+                                                                                                                    <a {{ a_attr }} ><img align="absbottom" border="0" src="https://www.netways.de/wp-content/uploads/2021/06/YouTube-1.png"  style="width: 35px; display: block; vertical-align:middle; border:0; height:auto; padding: 0px; margin: 0px;" width="35"></a>
+                                                                                                                </td>
+                                                                                                                <td align="left" style="font-size: 14px; line-height: 22px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; color: #000000; font-style: normal; text-align: left; font-weight: 400; font-family: 'Helvetica', 'Arial', sans-serif;text-decoration: none;" valign="middle">
+                                                                                                                    <a {{ a_attr }} href="#" target="_blank" style="text-decoration: none !important; color: black;  ">netways</a>
+                                                                                                                    {% endblocktrans %}
+                                                                                                                    {% endwith %}
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
