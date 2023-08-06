@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ovos-skill-homescreen
+Version: 0.0.3a5
+Summary: OVOS skill plugin
+Home-page: https://github.com/OpenVoiceOS/skill-ovos-homescreen
+Author: Aix
+Author-email: aix.m@outlook.com
+License: Apache-2.0
+Keywords: ovos skill plugin
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: ovos-lingua-franca (>=0.4.7)
+Requires-Dist: ovos-utils (>=0.0.35a1,~=0.0)
+Requires-Dist: ovos-workshop (>=0.0.12a32,~=0.0)
+
+OVOS Homescreen Skill for Mycroft GUI
+------------------------------------------------------------------------------ 
+###### Provides Custom Resting Face for OVOS
+
+
+
