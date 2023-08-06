@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: wad2023-program
+Version: 1.0.0
+Summary: Script to retrieve the program for WeAreDevelopers 2023 conference
+Author-email: Daryl Stark <daryl@dstark.nl>
+Keywords: conference,program,wearedevelopers,wearedevs
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Provides-Extra: dev
