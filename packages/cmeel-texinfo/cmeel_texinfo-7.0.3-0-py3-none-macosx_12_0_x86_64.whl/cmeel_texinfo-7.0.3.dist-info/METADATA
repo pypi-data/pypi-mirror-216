@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cmeel-texinfo
+Version: 7.0.3
+Summary: cmeel distribution for Texinfo
+Requires-Python: >= 3.8
+License-Expression: LGPL-3.0-only
+Home-page: https://github.com/cmake-wheel/cmeel-texinfo
+Project-URL: Repository, https://github.com/cmake-wheel/cmeel-texinfo.git
+Requires-Dist: cmeel
+Description-Content-Type: text/markdown
+
+# CMeel Texinfo
+
+[![PyPI version](https://badge.fury.io/py/cmeel-texinfo.svg)](https://pypi.org/project/cmeel-texinfo)
+[![Release](https://github.com/cmake-wheel/cmeel-texinfo/actions/workflows/release.yml/badge.svg)](https://github.com/cmake-wheel/cmeel-texinfo/actions/workflows/release.yml)
+
+[Texinfo](https://www.gnu.org/software/texinfo/) distribution for cmeel packages.
