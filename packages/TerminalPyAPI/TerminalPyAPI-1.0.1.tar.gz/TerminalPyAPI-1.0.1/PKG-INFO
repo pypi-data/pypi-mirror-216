@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: TerminalPyAPI
+Version: 1.0.1
+Summary: TerminalPyAPI
+Home-page: 
+Author: Mithun Kumar
+Author-email: spkthomithun@hotmail.com
+License: BSD 3-Clause
+Keywords: Terminal
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+This is the Version of the TerminalPy but used for developing other Terminals!
+
+For info about TerminalPy, Click the link: https://github.com/Mithunhubminepro/TerminalPy
+
+Change Log
+==========
+
+1.0.0 (29-06-2023)
+------------------
+
+- Main Version
+
+1.0.1 (30-06-2023)
+------------------
+
+-Fixed a bug where you can't install it using pip
