@@ -1,0 +1,18 @@
+include versioneer.py
+include src/django_q3c/_version.py
+exclude db_source.sh docker-compose.yml test.env
+include .gitlab-ci.yml
+include pylintrc
+include pypi-intro.rst
+include pytest.ini
+include tests
+include tox.ini
+include *.txt
+recursive-exclude tests/__pycache__ *
+recursive-include docs .empty
+recursive-include docs Makefile
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include tests/data *
+recursive-include tests *.py
+recursive-include test_apps *.py

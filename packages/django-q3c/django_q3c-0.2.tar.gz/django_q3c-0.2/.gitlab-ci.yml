@@ -1,0 +1,21 @@
+variables:
+  POSTGRES_DB: django-q3c
+  POSTGRES_USER: test
+  POSTGRES_PASSWORD: password
+  POSTGRES_HOST: postgres
+  POSTGRES_PORT: 5432
+
+services:
+  - name: registry.aao.org.au:443/datacentral/common/postgresql-q3c-image:latest
+    alias: postgres
+
+include:
+  - project: 'datacentral/gitlab-ci-templates'
+    ref: main
+    file: '/dc-internal-python-package.yml'
+  - project: 'datacentral/gitlab-ci-templates'
+    ref: main
+    file: '/release-to-pypi.yml'
+
+pylint:
+  allow_failure: true

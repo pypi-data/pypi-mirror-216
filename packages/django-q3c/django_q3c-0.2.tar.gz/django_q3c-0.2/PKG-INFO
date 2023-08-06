@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: django_q3c
+Version: 0.2
+Summary: Use q3c with django
+Home-page: https://django-q3c.readthedocs.io
+Author: James Tocknell
+Author-email: james.tocknell@mq.edu.au
+License: 3-clause BSD
+Project-URL: Documentation, https://django-q3c.readthedocs.io
+Project-URL: Source, https://dev.aao.org.au/datacentral/web/django-q3c/
+Project-URL: Tracker, https://dev.aao.org.au/datacentral/web/django-q3c/issues
+Keywords: astronomy q3c
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7
+License-File: LICENSE.rst
+
+django-q3c
+==========
+
+django-q3c is python package to add support for the q3c
+(https://github.com/segasai/q3c) PostgreSQL extension to
+the django ORM. This allows for spherical indexing for faster queries, and
+avoids the need for manual SQL usage (thereby increasing security by avoiding
+SQL injection attacks).
