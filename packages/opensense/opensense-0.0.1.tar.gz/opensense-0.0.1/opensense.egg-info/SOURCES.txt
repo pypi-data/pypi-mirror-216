@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+opensense/__init__.py
+opensense/csi_module.py
+opensense/utils.py
+opensense.egg-info/PKG-INFO
+opensense.egg-info/SOURCES.txt
+opensense.egg-info/dependency_links.txt
+opensense.egg-info/requires.txt
+opensense.egg-info/top_level.txt
+tests/test_gpt.py
