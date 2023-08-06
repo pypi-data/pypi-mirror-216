@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: ewelink
+Version: 0.2.1
+Requires-Python: >=3.9
+License-File: LICENSE.md
+Requires-Dist: aiohttp
+Requires-Dist: pydantic
+Provides-Extra: black
+Requires-Dist: black (==22.8.0) ; extra == 'black'
+Provides-Extra: dev
+Requires-Dist: tox ; extra == 'dev'
+Requires-Dist: pytest (>=7) ; extra == 'dev'
+Requires-Dist: pytest-asyncio ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: black (==22.8.0) ; extra == 'dev'
+Requires-Dist: isort (==5.10.1) ; extra == 'dev'
+Requires-Dist: mypy (==0.991) ; extra == 'dev'
+Requires-Dist: types-setuptools ; extra == 'dev'
+Requires-Dist: packaging ; extra == 'dev'
+Requires-Dist: types-PyYAML ; extra == 'dev'
+Requires-Dist: flake8 (==6.0.0) ; extra == 'dev'
+Requires-Dist: flake8-pyproject (>=1.2.0) ; extra == 'dev'
+Provides-Extra: flake8
+Requires-Dist: flake8 (==6.0.0) ; extra == 'flake8'
+Requires-Dist: flake8-pyproject (>=1.2.0) ; extra == 'flake8'
+Provides-Extra: isort
+Requires-Dist: isort (==5.10.1) ; extra == 'isort'
+Provides-Extra: mypy
+Requires-Dist: mypy (==0.991) ; extra == 'mypy'
+Requires-Dist: pytest (>=7) ; extra == 'mypy'
+Requires-Dist: pytest-asyncio ; extra == 'mypy'
+Requires-Dist: pytest-cov ; extra == 'mypy'
+Requires-Dist: types-setuptools ; extra == 'mypy'
+Requires-Dist: packaging ; extra == 'mypy'
+Requires-Dist: types-PyYAML ; extra == 'mypy'
+Provides-Extra: test
+Requires-Dist: pytest (>=7) ; extra == 'test'
+Requires-Dist: pytest-asyncio ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
