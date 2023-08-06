@@ -1,0 +1,214 @@
+Metadata-Version: 2.1
+Name: cryptodatapi
+Version: 1.0.6
+Summary: Python SDK for integrating with Crypto API.
+Home-page: https://moatsystems.com/crypto-api/
+Author: Moat Systems Limited
+Author-email: support@moatsystems.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/moatsystems/cryptodatapi-py-sdk/issues
+Project-URL: Changes, https://github.com/moatsystems/cryptodatapi-py-sdk/blob/main/CHANGELOG.md
+Project-URL: Documentation, https://docs.cryptodatapi.com/
+Project-URL: Source Code, https://github.com/moatsystems/cryptodatapi-py-sdk
+Keywords: crypto,cryptocurrency,bitcoin,btc,ethereum,sol,bnb
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*
+Description-Content-Type: text/x-rst
+Requires-Dist: requests
+
+cryptodatapi
+============
+
+.. image:: https://badge.fury.io/py/cryptodatapi.svg
+    :target: https://badge.fury.io/py/cryptodatapi
+    :alt: Crypto API Python Package Version
+
+Python library for integrating with `Crypto API`_ functionality.
+
+.. _Crypto API: https://moatsystems.com/crypto-api/
+
+
+Requirements
+-------------
+
+Python 2.7 and later.
+
+
+Setup
+------
+
+You can install this package by using the pip tool and installing:
+
+.. code-block:: bash
+
+	$ pip install cryptodatapi
+
+Or:
+
+.. code-block:: bash
+
+	$ easy_install cryptodatapi
+
+
+Usage Example
+-------------
+
+.. code-block:: python
+
+    import cryptodatapi
+    from dotenv import load_dotenv
+    import os
+
+    ## Loads environment variables from .env
+    load_dotenv('.env')
+
+    username = os.getenv('_USERNAME')
+    password = os.getenv('_PASSWORD')
+
+    ## Authentication
+    cryptodatapi.login(username, password)
+
+    ## Retrieve All Cryptocurrency Prices
+    cryptoPrices = cryptodatapi.get_crypto_price()
+    print(cryptoPrices)
+
+    ## Retrieve Cryptocurrency Price by ID
+    cryptoPriceByID = cryptodatapi.get_crypto_price(id='<insert unique id>')
+    print(cryptoPriceByID)
+
+    ## Retrieve Bitcoin Price
+    cryptoPrice = cryptodatapi.get_crypto_price(sym='BTC')
+    print(cryptoPrice)
+
+    ## Retrieve All Cryptocurrency Top Gainers
+    cryptoGainers = cryptodatapi.get_gainers()
+    print(cryptoGainers)
+
+    ## Retrieve Cryptocurrency Top Gainers by ID
+    cryptoGainersByID = cryptodatapi.get_gainers(id='<insert unique id>')
+    print(cryptoGainersByID)
+
+    ## Retrieve All Cryptocurrency Top Losers
+    cryptoLosers = cryptodatapi.get_losers()
+    print(cryptoLosers)
+
+    ## Retrieve Cryptocurrency Top Losers by ID
+    cryptoLosersByID = cryptodatapi.get_losers(id='<insert unique id>')
+    print(cryptoLosersByID)
+
+    ## Retrieve All Cryptocurrency 2021 Historical Prices
+    cryptoHistorical2021 = cryptodatapi.get_hist_price_2021()
+    print(cryptoHistorical2021)
+
+    ## Retrieve Cryptocurrency 2021 Historical Prices by ID
+    cryptoHistorical2021ByID = cryptodatapi.get_hist_price_2021(id='<insert unique id>')
+    print(cryptoHistorical2021ByID)
+
+    ## Retrieve All Cryptocurrency 2022 Historical Prices
+    cryptoHistorical2022 = cryptodatapi.get_hist_price_2022()
+    print(cryptoHistorical2022)
+
+    ## Retrieve Cryptocurrency 2022 Historical Prices by ID
+    cryptoHistorical2022ByID = cryptodatapi.get_hist_price_2022(id='<insert unique id>')
+    print(cryptoHistorical2022ByID)
+
+    ## Retrieve All Cryptocurrency 2023 Historical Prices
+    cryptoHistorical2023 = cryptodatapi.get_hist_price_2023()
+    print(cryptoHistorical2023)
+
+    ## Retrieve Cryptocurrency 2023 Historical Prices by ID
+    cryptoHistorical2023ByID = cryptodatapi.get_hist_price_2023(id='<insert unique id>')
+    print(cryptoHistorical2023ByID)
+
+    ## Retrieve All Cryptocurrency Derivatives Exchanges
+    cryptoDerivatives = cryptodatapi.get_derivatives()
+    print(cryptoDerivatives)
+
+    ## Retrieve Cryptocurrency Derivatives Exchanges by ID
+    cryptoDerivativesByID = cryptodatapi.get_derivatives(id='<insert unique id>')
+    print(cryptoDerivativesByID)
+
+    ## Retrieve All Cryptocurrency Decentralized Exchanges
+    cryptoDecentralized = cryptodatapi.get_dex()
+    print(cryptoDecentralized)
+
+    ## Retrieve Cryptocurrency Decentralized Exchanges by ID
+    cryptoDecentralizedByID = cryptodatapi.get_dex(id='<insert unique id>')
+    print(cryptoDecentralizedByID)
+
+    ## Retrieve All Cryptocurrency Lending Exchanges
+    cryptoLending = cryptodatapi.get_lending()
+    print(cryptoLending)
+
+    ## Retrieve Cryptocurrency Lending Exchanges by ID
+    cryptoLendingByID = cryptodatapi.get_lending(id='<insert unique id>')
+    print(cryptoLendingByID)
+
+    ## Retrieve All Cryptocurrency Spot Exchanges
+    cryptoSpot = cryptodatapi.get_spot()
+    print(cryptoSpot)
+
+    ## Retrieve Cryptocurrency Spot Exchanges by ID
+    cryptoSpotByID = cryptodatapi.get_spot(id='<insert unique id>')
+    print(cryptoSpotByID)
+
+    ## Retrieve All Cryptocurrency News
+    cryptoNews = cryptodatapi.get_news()
+    print(cryptoNews)
+
+    ## Retrieve Cryptocurrency News by ID
+    cryptoNewsByID = cryptodatapi.get_news(id='<insert unique id>')
+    print(cryptoNewsByID)
+
+
+Setting up an Crypto API Account
+--------------------------------
+
+Sign up for a self-service `user account`_.
+
+.. _user account: https://moatsystems.com/crypto-api/
+
+
+Using the Crypto API
+--------------------
+
+You can read the `API documentation`_ to understand what's possible with the Crypto API. If you need further assistance, don't hesitate to `contact us`_.
+
+.. _API documentation: https://docs.cryptodatapi.com/
+.. _contact us: https://moatsystems.com/contact/
+
+License
+--------
+
+This project is licensed under the `MIT License`_.  
+
+.. _MIT License: https://moatsystems.com/
+
+
+Copyright
+----------
+
+Copyright |copy| 2020 - 2023 `Moat Systems Limited`_. All Rights Reserved.
+
+.. |copy| unicode:: 0xA9 .. copyright sign
+.. _Moat Systems Limited: https://moatsystems.com/
+
+
