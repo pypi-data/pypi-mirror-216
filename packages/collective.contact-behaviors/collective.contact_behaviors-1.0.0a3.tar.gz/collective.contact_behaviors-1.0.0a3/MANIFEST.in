@@ -1,0 +1,11 @@
+graft src/collective
+graft docs
+graft tests
+include .coveragerc
+include .editorconfig
+include Makefile
+include *.yaml
+include *.md
+include *.txt
+include *.mo
+global-exclude *.pyc
