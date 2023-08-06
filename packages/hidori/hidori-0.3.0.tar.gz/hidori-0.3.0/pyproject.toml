@@ -1,0 +1,81 @@
+[tool.poetry]
+name = "hidori"
+version = "0.3.0"
+description = "A modern, agentless, zero-dependency system state assurance"
+authors = ["Piotr Szpetkowski <piotr.szpetkowski@pyquest.space>"]
+license = "MIT"
+readme = "README.md"
+
+packages = [
+    { include = "hidori_common", from = "src" },
+    { include = "hidori_core", from = "src" },
+    { include = "hidori_runner", from = "src" },
+    { include = "hidori_pipelines", from = "src" },
+    { include = "hidori_cli", from = "src" },
+]
+
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: System :: Installation/Setup",
+]
+
+repository = "https://github.com/hidori-dev/hidori"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/hidori-dev/hidori/issues"
+"Changelog" = "https://github.com/hidori-dev/hidori/blob/main/CHANGELOG.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+black = "23.3.0"
+flake8 = "6.0.0"
+freezegun = "1.2.2"
+ipython = "8.14.0"
+isort = "5.12.0"
+mypy = "1.4.1"
+pre-commit = "3.3.3"
+pre-commit-hooks = "4.4.0"
+pyfakefs = "5.2.2"
+pytest = "7.4.0"
+pytest-cov = "4.1.0"
+
+[tool.poetry.group.pypi.dependencies]
+twine = "4.0.2"
+
+[tool.poetry.scripts]
+hidori = "hidori_cli.apps.hidori:main"
+hidori-pipeline = "hidori_cli.apps.pipeline:main"
+
+[tool.mypy]
+files = ["src"]
+mypy_path = "stubs"
+strict = true
+
+[tool.pyright]
+include = ["src"]
+stubPath = "stubs"
+# This is actually very likely to happen
+reportMissingModuleSource = false
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=term-missing:skip-covered"
+testpaths = ["tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol.*",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
